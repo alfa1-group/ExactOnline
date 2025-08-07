@@ -417,3 +417,4 @@ FodyWeavers.xsd
 *.msm
 *.msp
 /src/ExactOnline.Api.Client/Generated/kiota-lock.json
+/examples/ConsoleApp/appsettings.Development.json

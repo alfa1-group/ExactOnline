@@ -1,44 +1,50 @@
-﻿//using ExactOnline.Api.Client.Authentication.Implementations;
-//using ExactOnline.Api.Client.Authentication.Interfaces;
-//using ExactOnline.Api.Client.Authentication.Options;
-//using Microsoft.Extensions.Configuration;
-//using Microsoft.Extensions.DependencyInjection;
+﻿using ExactOnline.Api.Client;
+using ExactOnline.Api.Client.Authentication;
+using ExactOnline.Api.Client.Authentication.Implementations;
+using ExactOnline.Api.Client.Authentication.Interfaces;
+using ExactOnline.Api.Client.Authentication.Options;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
-//namespace ExactOnline.Api.Client.Authentication.Extensions;
+// ReSharper disable once CheckNamespace
+namespace Microsoft.Extensions.DependencyInjection;
 
-///// <summary>
-///// Extension methods for setting up localization services in an <see cref="IServiceCollection" />.
-///// </summary>
-//public static class ServiceCollectionExtensions
-//{
-//    /// <summary>
-//    /// Adds services required for Exact integration.
-//    /// </summary>
-//    /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
-//    /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
-//    public static IServiceCollection AddIntegrationExact(this IServiceCollection services, IConfiguration configuration)
-//    {
-//        Guard.NotNull(services, nameof(services));
+/// <summary>
+/// Extension methods for setting up Exact Online services in an <see cref="IServiceCollection" />.
+/// </summary>
+public static class ServiceCollectionExtensions
+{
+    public static IServiceCollection AddExactOnlineAuthenticatedClient(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddOptionsWithValidateOnStart<ExactOnlineOptions>();
+        services.AddHttpClient();
+        services.AddMemoryCache();
+        services.AddServices();
 
-//        var exactOptions = configuration.GetSection("ExactIntegration").Get<ExactIntegrationOptions>();
-//        ArgumentNullException.ThrowIfNull(exactOptions, nameof(exactOptions));
+        return services;
+    }
 
-//        services.AddOptions();
-//        services.AddServices();
-//        services.AddHttpClient();
-//        services.AddMemoryCache();
+    public static IServiceCollection AddServices(this IServiceCollection services)
+    {
+        services.AddSingleton<ExactOnlineAuthenticationProvider>();
+        services.AddSingleton<IExactTokenClient, ExactTokenClient>();
+        services.AddSingleton<IExactTokenService, ExactTokenService>();
 
-//        return services;
-//    }
+        return services.AddScoped(sp =>
+        {
+            try
+            {
+                _ = sp.GetRequiredService<IExactRefreshTokenStorageService>();
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException($"The {nameof(IExactRefreshTokenStorageService)} is required for {nameof(ExactOnlineServiceClient)}. Please register it in the service collection.", ex);
+            }
 
-//    public static void AddServices(this IServiceCollection services)
-//    {
-//        Guard.NotNull(services, nameof(services));
+            var authenticationProvider = sp.GetRequiredService<ExactOnlineAuthenticationProvider>();
+            var options = sp.GetRequiredService<IOptions<ExactOnlineOptions>>();
 
-//        services.AddTransient<IExactClient, ExactClient>();
-//        services.AddTransient<IExactTokenClient, ExactTokenClient>();
-//        services.AddTransient<IExactTokenService, ExactAuthTokenService>();
-//        services.AddTransient<IExactRefreshTokenStorageService, ExactConfigurationProvider>();
-//        services.AddTransient<IUBLHelper, UBLHelper>();
-//    }
-//}
+            return new ExactOnlineServiceClient(authenticationProvider, options.Value.BaseUrl);
+        });
+    }
+}

@@ -12,9 +12,9 @@ internal class ExactOnlineAuthenticationProvider(IExactTokenService tokenService
     {
         if (!request.Headers.ContainsKey(AuthorizationHeaderKey))
         {
-            var token = await tokenService.GetAccessTokenAsync();
+            var accessToken = await tokenService.GetAccessTokenAsync(cancellationToken);
 
-            request.Headers.Add(AuthorizationHeaderKey, $"Bearer {token}");
+            request.Headers.Add(AuthorizationHeaderKey, $"Bearer {accessToken}");
         }
     }
 }

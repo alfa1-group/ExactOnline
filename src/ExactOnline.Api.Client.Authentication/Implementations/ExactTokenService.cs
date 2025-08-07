@@ -1,5 +1,4 @@
-﻿using Duende.IdentityModel.Client;
-using ExactOnline.Api.Client.Authentication.Interfaces;
+﻿using ExactOnline.Api.Client.Authentication.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
@@ -36,7 +35,7 @@ internal class ExactTokenService(
     public async Task<string> RefreshTokenAsync(CancellationToken cancellationToken = default)
     {
         // For refreshing the token we first need to fetch the current refresh token from storage
-        var refreshToken = await blobStorageService.GetRefreshTokenAsync(cancellationToken);
+        var refreshToken = await blobStorageService.RetrieveAsync(cancellationToken);
 
         // The client will issue the refresh request and should get a fresh access + refresh token in response
         var response = await exactTokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken);
@@ -56,18 +55,16 @@ internal class ExactTokenService(
         // Store the new refresh token back in storage as the previous one is now invalid.
         try
         {
-            await blobStorageService.SaveRefreshTokenAsync(response.RefreshToken, cancellationToken);
+            await blobStorageService.StoreAsync(response.RefreshToken, cancellationToken);
         }
         catch (Exception ex)
         {
-            // This is a bit nasty because it leaves the RefreshToken in the logs. But that way we can at least
-            // track it down where otherwise we need to generate a complete new token from Exact again (which requires Wendy)
+            // This is a bit nasty because it leaves the RefreshToken in the logs.
+            // But that way we can at least track it down where otherwise we need to generate a complete new token from Exact again, which requires admin.
             throw new Exception($"Uploading the new RefreshToken failed. Here is the token: {response.RefreshToken}", ex);
         }
 
         // Store the access token in memory for reuse
-        memoryCache.Set(ExactAccessTokenKey, response.AccessToken, _accessTokenExpirationTime);
-
-        return response.AccessToken!;
+        return memoryCache.Set(ExactAccessTokenKey, response.AccessToken, _accessTokenExpirationTime)!;
     }
 }

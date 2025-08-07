@@ -2,7 +2,7 @@
 
 public interface IExactRefreshTokenStorageService
 {
-    Task SaveRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default);
+    Task StoreAsync(string refreshToken, CancellationToken cancellationToken = default);
 
-    Task<string> GetRefreshTokenAsync(CancellationToken cancellationToken = default);
+    Task<string> RetrieveAsync(CancellationToken cancellationToken = default);
 }

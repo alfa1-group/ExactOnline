@@ -1,10 +1,21 @@
-﻿using CVMatch.ConsoleApp;
+﻿using ConsoleApp;
 using ExactOnline.Api.Client;
+using ExactOnline.Api.Client.Authentication.Interfaces;
 using ExactOnline.Api.Client.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
-var authenticationProvider = new ExampleTokenAuthenticationProvider();
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json")
+    .Build();
 
-var client = new ExactOnlineServiceClientProxy(new ExactOnlineServiceClient(authenticationProvider));
+var serviceProvider = new ServiceCollection()
+    .AddSingleton<IExactRefreshTokenStorageService, ExactRefreshTokenFileStorageService>()
+    .AddExactOnlineAuthenticatedClient(configuration)
+    .BuildServiceProvider();
+
+var client = serviceProvider.GetRequiredService<ExactOnlineServiceClient>();
 
 var me = await client.Api.V1.Current.Me.GetAsync();
 
