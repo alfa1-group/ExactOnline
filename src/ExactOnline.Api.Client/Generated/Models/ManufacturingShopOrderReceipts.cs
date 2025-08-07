@@ -14,6 +14,130 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>ID of creating user</summary>
+        public Guid? CreatedBy { get; set; }
+        /// <summary>Name of the creating user</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByFullName { get; set; }
+#nullable restore
+#else
+        public string CreatedByFullName { get; set; }
+#endif
+        /// <summary>Date of this ShopOrderReceipt</summary>
+        public DateTimeOffset? CreatedDate { get; set; }
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Serial or batch numbers are reserved prior to a POST to ShopOrderReceipts. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.</summary>
+        public Guid? DraftStockTransactionID { get; set; }
+        /// <summary>Indicates if this ShopOrderReceipt has a quantity eligible to be reversed via ShopOrderReversals</summary>
+        public bool? HasReversibleQuantity { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Does the shop order receipt&apos;s item use batch numbers</summary>
+        public int? IsBatch { get; set; }
+        /// <summary>Indicates if fractions (for example 0.35) are allowed for quantities of the shop order receipt&apos;s item</summary>
+        public int? IsFractionAllowedItem { get; set; }
+        /// <summary>Boolean indicating if this ShopOrderReceipt was part of an SubOrderReceipt</summary>
+        public bool? IsIssueToParent { get; set; }
+        /// <summary>Does the shop order receipt&apos;s item use serial numbers</summary>
+        public int? IsSerial { get; set; }
+        /// <summary>Item finished</summary>
+        public Guid? Item { get; set; }
+        /// <summary>Code of item finished</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of item finished</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>Picture url of shop order item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemPictureUrl { get; set; }
+#nullable restore
+#else
+        public string ItemPictureUrl { get; set; }
+#endif
+        /// <summary>Parent shop order if this ShopOrderReceipt is part of a SubOrderReceipt</summary>
+        public Guid? ParentShopOrder { get; set; }
+        /// <summary>Parent shop order number if this ShopOrderReceipt is part of a SubOrderReceipt</summary>
+        public int? ParentShopOrderNumber { get; set; }
+        /// <summary>Quantity of this ShopOrderReceipt</summary>
+        public double? Quantity { get; set; }
+        /// <summary>Number to identify the shop order stock receipts of a finished item</summary>
+        public int? ReceiptNumber { get; set; }
+        /// <summary>If this transaction was part of a SubOrderReceipt, this ID is the related MaterialIssue.StockTransactionID.</summary>
+        public Guid? RelatedStockTransaction { get; set; }
+        /// <summary>Shop order finished</summary>
+        public Guid? ShopOrder { get; set; }
+        /// <summary>Number of shop order finished</summary>
+        public int? ShopOrderNumber { get; set; }
+        /// <summary>ID of stock transaction of this ShopOrderReceipt</summary>
+        public Guid? StockTransactionId { get; set; }
+        /// <summary>ID of storage location finished to</summary>
+        public Guid? StorageLocation { get; set; }
+        /// <summary>Code of storage location finished to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StorageLocationCode { get; set; }
+#nullable restore
+#else
+        public string StorageLocationCode { get; set; }
+#endif
+        /// <summary>Description of storage location finished to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StorageLocationDescription { get; set; }
+#nullable restore
+#else
+        public string StorageLocationDescription { get; set; }
+#endif
+        /// <summary>Effective date of this ShopOrderReceipt</summary>
+        public DateTimeOffset? TransactionDate { get; set; }
+        /// <summary>Unit of measurement abbreviation of item finished</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Unit { get; set; }
+#nullable restore
+#else
+        public string Unit { get; set; }
+#endif
+        /// <summary>Unit of measurement of item finished</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UnitDescription { get; set; }
+#nullable restore
+#else
+        public string UnitDescription { get; set; }
+#endif
+        /// <summary>ID of warehouse finished to</summary>
+        public Guid? Warehouse { get; set; }
+        /// <summary>Code of warehouse finished to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseCode { get; set; }
+#nullable restore
+#else
+        public string WarehouseCode { get; set; }
+#endif
+        /// <summary>Description of warehouse finished to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseDescription { get; set; }
+#nullable restore
+#else
+        public string WarehouseDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingShopOrderReceipts"/> and sets the default values.
         /// </summary>
@@ -39,6 +163,38 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "CreatedBy", n => { CreatedBy = n.GetGuidValue(); } },
+                { "CreatedByFullName", n => { CreatedByFullName = n.GetStringValue(); } },
+                { "CreatedDate", n => { CreatedDate = n.GetDateTimeOffsetValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "DraftStockTransactionID", n => { DraftStockTransactionID = n.GetGuidValue(); } },
+                { "HasReversibleQuantity", n => { HasReversibleQuantity = n.GetBoolValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "IsBatch", n => { IsBatch = n.GetIntValue(); } },
+                { "IsFractionAllowedItem", n => { IsFractionAllowedItem = n.GetIntValue(); } },
+                { "IsIssueToParent", n => { IsIssueToParent = n.GetBoolValue(); } },
+                { "IsSerial", n => { IsSerial = n.GetIntValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "ItemPictureUrl", n => { ItemPictureUrl = n.GetStringValue(); } },
+                { "ParentShopOrder", n => { ParentShopOrder = n.GetGuidValue(); } },
+                { "ParentShopOrderNumber", n => { ParentShopOrderNumber = n.GetIntValue(); } },
+                { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
+                { "ReceiptNumber", n => { ReceiptNumber = n.GetIntValue(); } },
+                { "RelatedStockTransaction", n => { RelatedStockTransaction = n.GetGuidValue(); } },
+                { "ShopOrder", n => { ShopOrder = n.GetGuidValue(); } },
+                { "ShopOrderNumber", n => { ShopOrderNumber = n.GetIntValue(); } },
+                { "StockTransactionId", n => { StockTransactionId = n.GetGuidValue(); } },
+                { "StorageLocation", n => { StorageLocation = n.GetGuidValue(); } },
+                { "StorageLocationCode", n => { StorageLocationCode = n.GetStringValue(); } },
+                { "StorageLocationDescription", n => { StorageLocationDescription = n.GetStringValue(); } },
+                { "TransactionDate", n => { TransactionDate = n.GetDateTimeOffsetValue(); } },
+                { "Unit", n => { Unit = n.GetStringValue(); } },
+                { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
+                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
+                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
+                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +204,38 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("CreatedBy", CreatedBy);
+            writer.WriteStringValue("CreatedByFullName", CreatedByFullName);
+            writer.WriteDateTimeOffsetValue("CreatedDate", CreatedDate);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("DraftStockTransactionID", DraftStockTransactionID);
+            writer.WriteBoolValue("HasReversibleQuantity", HasReversibleQuantity);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteIntValue("IsBatch", IsBatch);
+            writer.WriteIntValue("IsFractionAllowedItem", IsFractionAllowedItem);
+            writer.WriteBoolValue("IsIssueToParent", IsIssueToParent);
+            writer.WriteIntValue("IsSerial", IsSerial);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteStringValue("ItemPictureUrl", ItemPictureUrl);
+            writer.WriteGuidValue("ParentShopOrder", ParentShopOrder);
+            writer.WriteIntValue("ParentShopOrderNumber", ParentShopOrderNumber);
+            writer.WriteDoubleValue("Quantity", Quantity);
+            writer.WriteIntValue("ReceiptNumber", ReceiptNumber);
+            writer.WriteGuidValue("RelatedStockTransaction", RelatedStockTransaction);
+            writer.WriteGuidValue("ShopOrder", ShopOrder);
+            writer.WriteIntValue("ShopOrderNumber", ShopOrderNumber);
+            writer.WriteGuidValue("StockTransactionId", StockTransactionId);
+            writer.WriteGuidValue("StorageLocation", StorageLocation);
+            writer.WriteStringValue("StorageLocationCode", StorageLocationCode);
+            writer.WriteStringValue("StorageLocationDescription", StorageLocationDescription);
+            writer.WriteDateTimeOffsetValue("TransactionDate", TransactionDate);
+            writer.WriteStringValue("Unit", Unit);
+            writer.WriteStringValue("UnitDescription", UnitDescription);
+            writer.WriteGuidValue("Warehouse", Warehouse);
+            writer.WriteStringValue("WarehouseCode", WarehouseCode);
+            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

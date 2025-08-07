@@ -14,6 +14,98 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>First address line.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AddressLine1 { get; set; }
+#nullable restore
+#else
+        public string AddressLine1 { get; set; }
+#endif
+        /// <summary>Second address line.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AddressLine2 { get; set; }
+#nullable restore
+#else
+        public string AddressLine2 { get; set; }
+#endif
+        /// <summary>Third address line.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AddressLine3 { get; set; }
+#nullable restore
+#else
+        public string AddressLine3 { get; set; }
+#endif
+        /// <summary>City.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? City { get; set; }
+#nullable restore
+#else
+        public string City { get; set; }
+#endif
+        /// <summary>Email.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Email { get; set; }
+#nullable restore
+#else
+        public string Email { get; set; }
+#endif
+        /// <summary>The account ID of the accountant.</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Indicates if the customer is an accountant himself.</summary>
+        public bool? IsAccountant { get; set; }
+        /// <summary>Logo.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public byte[]? Logo { get; set; }
+#nullable restore
+#else
+        public byte[] Logo { get; set; }
+#endif
+        /// <summary>Url to retrieve the logo of the accountant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MenuLogoUrl { get; set; }
+#nullable restore
+#else
+        public string MenuLogoUrl { get; set; }
+#endif
+        /// <summary>The name of the accountant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>Phone.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Phone { get; set; }
+#nullable restore
+#else
+        public string Phone { get; set; }
+#endif
+        /// <summary>Postcode.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Postcode { get; set; }
+#nullable restore
+#else
+        public string Postcode { get; set; }
+#endif
+        /// <summary>Website.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Website { get; set; }
+#nullable restore
+#else
+        public string Website { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SystemSystemAccountantInfo"/> and sets the default values.
         /// </summary>
@@ -39,6 +131,19 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "AddressLine1", n => { AddressLine1 = n.GetStringValue(); } },
+                { "AddressLine2", n => { AddressLine2 = n.GetStringValue(); } },
+                { "AddressLine3", n => { AddressLine3 = n.GetStringValue(); } },
+                { "City", n => { City = n.GetStringValue(); } },
+                { "Email", n => { Email = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "IsAccountant", n => { IsAccountant = n.GetBoolValue(); } },
+                { "Logo", n => { Logo = n.GetByteArrayValue(); } },
+                { "MenuLogoUrl", n => { MenuLogoUrl = n.GetStringValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "Phone", n => { Phone = n.GetStringValue(); } },
+                { "Postcode", n => { Postcode = n.GetStringValue(); } },
+                { "Website", n => { Website = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +153,19 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("AddressLine1", AddressLine1);
+            writer.WriteStringValue("AddressLine2", AddressLine2);
+            writer.WriteStringValue("AddressLine3", AddressLine3);
+            writer.WriteStringValue("City", City);
+            writer.WriteStringValue("Email", Email);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteBoolValue("IsAccountant", IsAccountant);
+            writer.WriteByteArrayValue("Logo", Logo);
+            writer.WriteStringValue("MenuLogoUrl", MenuLogoUrl);
+            writer.WriteStringValue("Name", Name);
+            writer.WriteStringValue("Phone", Phone);
+            writer.WriteStringValue("Postcode", Postcode);
+            writer.WriteStringValue("Website", Website);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,6 +14,42 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>This is a URL to get the documents that were created after the payments were successfully processed. These documents have to be sent to the bank in order to do the payments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BankExportDocumentsUrl { get; set; }
+#nullable restore
+#else
+        public string BankExportDocumentsUrl { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Contains the error message if an error occurred during the processing of the payment(s).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorMessage { get; set; }
+#nullable restore
+#else
+        public string ErrorMessage { get; set; }
+#endif
+        /// <summary>Primary key.</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Use this field to pass a collection of GUIDs representing the IDs of the payments that have to be processed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<UntypedNode>? PaymentIDs { get; set; }
+#nullable restore
+#else
+        public List<UntypedNode> PaymentIDs { get; set; }
+#endif
+        /// <summary>Contains information if the payments were successfully processed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SuccessMessage { get; set; }
+#nullable restore
+#else
+        public string SuccessMessage { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CashflowProcessPayments"/> and sets the default values.
         /// </summary>
@@ -39,6 +75,12 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "BankExportDocumentsUrl", n => { BankExportDocumentsUrl = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "ErrorMessage", n => { ErrorMessage = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "PaymentIDs", n => { PaymentIDs = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "SuccessMessage", n => { SuccessMessage = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +90,12 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("BankExportDocumentsUrl", BankExportDocumentsUrl);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteStringValue("ErrorMessage", ErrorMessage);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("PaymentIDs", PaymentIDs);
+            writer.WriteStringValue("SuccessMessage", SuccessMessage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

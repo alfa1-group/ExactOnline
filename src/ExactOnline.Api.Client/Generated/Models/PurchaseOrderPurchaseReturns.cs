@@ -14,6 +14,114 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Creation Date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of the creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of the creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Description of the return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Document linked to the return</summary>
+        public Guid? Document { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of the last modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of the last modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>The collection of lines that belong to the purchase return.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseReturnLines>? PurchaseReturnLines { get; set; }
+#nullable restore
+#else
+        public List<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseReturnLines> PurchaseReturnLines { get; set; }
+#endif
+        /// <summary>Remarks linked to the return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Remarks { get; set; }
+#nullable restore
+#else
+        public string Remarks { get; set; }
+#endif
+        /// <summary>Date of the return</summary>
+        public DateTimeOffset? ReturnDate { get; set; }
+        /// <summary>Return number</summary>
+        public int? ReturnNumber { get; set; }
+        /// <summary>Status</summary>
+        public int? Status { get; set; }
+        /// <summary>Reference to supplier account</summary>
+        public Guid? Supplier { get; set; }
+        /// <summary>Reference for supplier address</summary>
+        public Guid? SupplierAddress { get; set; }
+        /// <summary>Reference for contact of supplier</summary>
+        public Guid? SupplierContact { get; set; }
+        /// <summary>Name of supplier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SupplierContactFullName { get; set; }
+#nullable restore
+#else
+        public string SupplierContactFullName { get; set; }
+#endif
+        /// <summary>Tracking number of the return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TrackingNumber { get; set; }
+#nullable restore
+#else
+        public string TrackingNumber { get; set; }
+#endif
+        /// <summary>Warehouse for the return</summary>
+        public Guid? Warehouse { get; set; }
+        /// <summary>Code of warehouse</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseCode { get; set; }
+#nullable restore
+#else
+        public string WarehouseCode { get; set; }
+#endif
+        /// <summary>Description of warehouse</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseDescription { get; set; }
+#nullable restore
+#else
+        public string WarehouseDescription { get; set; }
+#endif
+        /// <summary>Reference number linked to the return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? YourRef { get; set; }
+#nullable restore
+#else
+        public string YourRef { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseReturns"/> and sets the default values.
         /// </summary>
@@ -39,6 +147,30 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "Document", n => { Document = n.GetGuidValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "PurchaseReturnLines", n => { PurchaseReturnLines = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseReturnLines>(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseReturnLines.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "Remarks", n => { Remarks = n.GetStringValue(); } },
+                { "ReturnDate", n => { ReturnDate = n.GetDateTimeOffsetValue(); } },
+                { "ReturnNumber", n => { ReturnNumber = n.GetIntValue(); } },
+                { "Status", n => { Status = n.GetIntValue(); } },
+                { "Supplier", n => { Supplier = n.GetGuidValue(); } },
+                { "SupplierAddress", n => { SupplierAddress = n.GetGuidValue(); } },
+                { "SupplierContact", n => { SupplierContact = n.GetGuidValue(); } },
+                { "SupplierContactFullName", n => { SupplierContactFullName = n.GetStringValue(); } },
+                { "TrackingNumber", n => { TrackingNumber = n.GetStringValue(); } },
+                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
+                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
+                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
+                { "YourRef", n => { YourRef = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +180,30 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("Document", Document);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseReturnLines>("PurchaseReturnLines", PurchaseReturnLines);
+            writer.WriteStringValue("Remarks", Remarks);
+            writer.WriteDateTimeOffsetValue("ReturnDate", ReturnDate);
+            writer.WriteIntValue("ReturnNumber", ReturnNumber);
+            writer.WriteIntValue("Status", Status);
+            writer.WriteGuidValue("Supplier", Supplier);
+            writer.WriteGuidValue("SupplierAddress", SupplierAddress);
+            writer.WriteGuidValue("SupplierContact", SupplierContact);
+            writer.WriteStringValue("SupplierContactFullName", SupplierContactFullName);
+            writer.WriteStringValue("TrackingNumber", TrackingNumber);
+            writer.WriteGuidValue("Warehouse", Warehouse);
+            writer.WriteStringValue("WarehouseCode", WarehouseCode);
+            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
+            writer.WriteStringValue("YourRef", YourRef);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

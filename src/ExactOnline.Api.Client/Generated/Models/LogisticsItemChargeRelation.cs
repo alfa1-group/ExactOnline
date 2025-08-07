@@ -14,6 +14,110 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Item charge amount per unit</summary>
+        public double? Amount { get; set; }
+        /// <summary>Code of item charge</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChargeCode { get; set; }
+#nullable restore
+#else
+        public string ChargeCode { get; set; }
+#endif
+        /// <summary>Description of item charge</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChargeDescription { get; set; }
+#nullable restore
+#else
+        public string ChargeDescription { get; set; }
+#endif
+        /// <summary>Item charge ID</summary>
+        public Guid? ChargeID { get; set; }
+        /// <summary>VAT code that is used when the item charge is registered</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChargeVATCode { get; set; }
+#nullable restore
+#else
+        public string ChargeVATCode { get; set; }
+#endif
+        /// <summary>Description of VAT Code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChargeVATDescription { get; set; }
+#nullable restore
+#else
+        public string ChargeVATDescription { get; set; }
+#endif
+        /// <summary>VAT percentage of the VAT code</summary>
+        public double? ChargeVATPercentage { get; set; }
+        /// <summary>Indicates how the VAT amount should be calculated in relation to the item charge amount. B = VAT 0% (Only base amount), E = Excluding, I = Including, N = No VAT</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChargeVATType { get; set; }
+#nullable restore
+#else
+        public string ChargeVATType { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Currency of the item charge</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Primary key of relationship between item and item charge</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Code of item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>Item ID</summary>
+        public Guid? ItemID { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Quantity of the item charge requires in the item</summary>
+        public double? Quantity { get; set; }
+        /// <summary>Total of item charge amount per unit x quantity</summary>
+        public double? TotalAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.LogisticsItemChargeRelation"/> and sets the default values.
         /// </summary>
@@ -39,6 +143,28 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Amount", n => { Amount = n.GetDoubleValue(); } },
+                { "ChargeCode", n => { ChargeCode = n.GetStringValue(); } },
+                { "ChargeDescription", n => { ChargeDescription = n.GetStringValue(); } },
+                { "ChargeID", n => { ChargeID = n.GetGuidValue(); } },
+                { "ChargeVATCode", n => { ChargeVATCode = n.GetStringValue(); } },
+                { "ChargeVATDescription", n => { ChargeVATDescription = n.GetStringValue(); } },
+                { "ChargeVATPercentage", n => { ChargeVATPercentage = n.GetDoubleValue(); } },
+                { "ChargeVATType", n => { ChargeVATType = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Currency", n => { Currency = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "ItemID", n => { ItemID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
+                { "TotalAmount", n => { TotalAmount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +174,28 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("Amount", Amount);
+            writer.WriteStringValue("ChargeCode", ChargeCode);
+            writer.WriteStringValue("ChargeDescription", ChargeDescription);
+            writer.WriteGuidValue("ChargeID", ChargeID);
+            writer.WriteStringValue("ChargeVATCode", ChargeVATCode);
+            writer.WriteStringValue("ChargeVATDescription", ChargeVATDescription);
+            writer.WriteDoubleValue("ChargeVATPercentage", ChargeVATPercentage);
+            writer.WriteStringValue("ChargeVATType", ChargeVATType);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Currency", Currency);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteGuidValue("ItemID", ItemID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteDoubleValue("Quantity", Quantity);
+            writer.WriteDoubleValue("TotalAmount", TotalAmount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

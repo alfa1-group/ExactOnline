@@ -14,6 +14,72 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Date and time when the project restriction was created</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>ID of user that created the project restriction</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Full name of user that created the project restriction</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Division of project and project restriction</summary>
+        public int? Division { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>ID of item that linked to the project restriction</summary>
+        public Guid? Item { get; set; }
+        /// <summary>Code of item that linked to the project restriction</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of item that linked to the project restriction</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>Indicates if the item is a time unit item</summary>
+        public int? ItemIsTime { get; set; }
+        /// <summary>Last date when the project restriction was modified</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>ID of user that modified the project restriction</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Full name of user that modified the project restriction</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Project ID that the restriction is referenced to</summary>
+        public Guid? Project { get; set; }
+        /// <summary>Project code that the restriction is referenced to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectCode { get; set; }
+#nullable restore
+#else
+        public string ProjectCode { get; set; }
+#endif
+        /// <summary>Project description that the restriction is referenced to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectDescription { get; set; }
+#nullable restore
+#else
+        public string ProjectDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ProjectProjectRestrictionItems"/> and sets the default values.
         /// </summary>
@@ -39,6 +105,21 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "ItemIsTime", n => { ItemIsTime = n.GetIntValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Project", n => { Project = n.GetGuidValue(); } },
+                { "ProjectCode", n => { ProjectCode = n.GetStringValue(); } },
+                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +129,21 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteIntValue("ItemIsTime", ItemIsTime);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteGuidValue("Project", Project);
+            writer.WriteStringValue("ProjectCode", ProjectCode);
+            writer.WriteStringValue("ProjectDescription", ProjectDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

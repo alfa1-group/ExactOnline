@@ -12,8 +12,92 @@ namespace ExactOnline.Api.Client.Models
     public partial class ProjectProjectAccountMutations : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The account that is involved in project account mutation</summary>
+        public Guid? Account { get; set; }
+        /// <summary>Account code that is involved in project account mutation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountCode { get; set; }
+#nullable restore
+#else
+        public string AccountCode { get; set; }
+#endif
+        /// <summary>Name of Account that is involved in project account mutation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountName { get; set; }
+#nullable restore
+#else
+        public string AccountName { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The date and time when the project account mutation was created</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>The guid ID of the user that created the project account mutation</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>The full name of the user that created the project account mutation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>The division of the project and account mutation</summary>
+        public int? Division { get; set; }
+        /// <summary>Name of Division</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DivisionName { get; set; }
+#nullable restore
+#else
+        public string DivisionName { get; set; }
+#endif
+        /// <summary>End date of the project account mutation</summary>
+        public DateTimeOffset? EndDate { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>The date when the project account mutation was modified</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>The guid ID of the user that modified the project account mutation</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>The full name of the user that modified the project account mutation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>For additional information about project account mutations</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>The project that is involved in project account mutation</summary>
+        public Guid? Project { get; set; }
+        /// <summary>Project code that is involved in project account mutation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectCode { get; set; }
+#nullable restore
+#else
+        public string ProjectCode { get; set; }
+#endif
+        /// <summary>Project description that is involved in project account mutation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectDescription { get; set; }
+#nullable restore
+#else
+        public string ProjectDescription { get; set; }
+#endif
+        /// <summary>Start date of a project account mutation</summary>
+        public DateTimeOffset? StartDate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ProjectProjectAccountMutations"/> and sets the default values.
         /// </summary>
@@ -39,6 +123,24 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Account", n => { Account = n.GetGuidValue(); } },
+                { "AccountCode", n => { AccountCode = n.GetStringValue(); } },
+                { "AccountName", n => { AccountName = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "DivisionName", n => { DivisionName = n.GetStringValue(); } },
+                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "Project", n => { Project = n.GetGuidValue(); } },
+                { "ProjectCode", n => { ProjectCode = n.GetStringValue(); } },
+                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
+                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +150,24 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("Account", Account);
+            writer.WriteStringValue("AccountCode", AccountCode);
+            writer.WriteStringValue("AccountName", AccountName);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteStringValue("DivisionName", DivisionName);
+            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteGuidValue("Project", Project);
+            writer.WriteStringValue("ProjectCode", ProjectCode);
+            writer.WriteStringValue("ProjectDescription", ProjectDescription);
+            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

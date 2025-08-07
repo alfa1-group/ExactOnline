@@ -14,6 +14,30 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Defines the number of decimals of the exchange rate used to calculate the amount in domestic currency from the amount in foreign currency</summary>
+        public double? AmountPrecision { get; set; }
+        /// <summary>Primary key</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>Description of the currency</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>Defines the number of decimals used to calculate the item price in created invoices</summary>
+        public double? PricePrecision { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.GeneralCurrencies"/> and sets the default values.
         /// </summary>
@@ -39,6 +63,12 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "AmountPrecision", n => { AmountPrecision = n.GetDoubleValue(); } },
+                { "Code", n => { Code = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "PricePrecision", n => { PricePrecision = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +78,12 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("AmountPrecision", AmountPrecision);
+            writer.WriteStringValue("Code", Code);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteDoubleValue("PricePrecision", PricePrecision);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

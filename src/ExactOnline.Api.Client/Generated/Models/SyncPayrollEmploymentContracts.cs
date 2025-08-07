@@ -14,6 +14,112 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Flexible employment contract phase</summary>
+        public int? ContractFlexPhase { get; set; }
+        /// <summary>Flexible employment contract phase description.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContractFlexPhaseDescription { get; set; }
+#nullable restore
+#else
+        public string ContractFlexPhaseDescription { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Document ID of the employment contract</summary>
+        public Guid? Document { get; set; }
+        /// <summary>ID of employee</summary>
+        public Guid? Employee { get; set; }
+        /// <summary>Name of employee</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmployeeFullName { get; set; }
+#nullable restore
+#else
+        public string EmployeeFullName { get; set; }
+#endif
+        /// <summary>Numeric ID of the employee</summary>
+        public int? EmployeeHID { get; set; }
+        /// <summary>Type of employee. 1 - Employee, 2 - Contractor, 3 - Temporary, 4 - Student, 5 - Flexworker</summary>
+        public int? EmployeeType { get; set; }
+        /// <summary>Employee type description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmployeeTypeDescription { get; set; }
+#nullable restore
+#else
+        public string EmployeeTypeDescription { get; set; }
+#endif
+        /// <summary>Employment ID</summary>
+        public Guid? Employment { get; set; }
+        /// <summary>Employment number</summary>
+        public int? EmploymentNumber { get; set; }
+        /// <summary>End date of employment contract</summary>
+        public DateTimeOffset? EndDate { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Employment probation end date</summary>
+        public DateTimeOffset? ProbationEndDate { get; set; }
+        /// <summary>Employment probation period</summary>
+        public int? ProbationPeriod { get; set; }
+        /// <summary>Contract probation period description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProbationPeriodDescription { get; set; }
+#nullable restore
+#else
+        public string ProbationPeriodDescription { get; set; }
+#endif
+        /// <summary>Employment contract reason code. 1 - New employment, 2 - Employment change, 3 - New legal employer, 4 - Acquisition 5 - Previous contract expired, 6 - Other</summary>
+        public int? ReasonContract { get; set; }
+        /// <summary>Employment contract reason description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReasonContractDescription { get; set; }
+#nullable restore
+#else
+        public string ReasonContractDescription { get; set; }
+#endif
+        /// <summary>Sequence number</summary>
+        public int? Sequence { get; set; }
+        /// <summary>Start date of employment contract</summary>
+        public DateTimeOffset? StartDate { get; set; }
+        /// <summary>Timestamp</summary>
+        public long? Timestamp { get; set; }
+        /// <summary>Type of employment contract. 1 - Definite, 2 - Indefinite, 3 - External</summary>
+        public int? Type { get; set; }
+        /// <summary>Description of employment contract type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TypeDescription { get; set; }
+#nullable restore
+#else
+        public string TypeDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncPayrollEmploymentContracts"/> and sets the default values.
         /// </summary>
@@ -39,6 +145,35 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ContractFlexPhase", n => { ContractFlexPhase = n.GetIntValue(); } },
+                { "ContractFlexPhaseDescription", n => { ContractFlexPhaseDescription = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "Document", n => { Document = n.GetGuidValue(); } },
+                { "Employee", n => { Employee = n.GetGuidValue(); } },
+                { "EmployeeFullName", n => { EmployeeFullName = n.GetStringValue(); } },
+                { "EmployeeHID", n => { EmployeeHID = n.GetIntValue(); } },
+                { "EmployeeType", n => { EmployeeType = n.GetIntValue(); } },
+                { "EmployeeTypeDescription", n => { EmployeeTypeDescription = n.GetStringValue(); } },
+                { "Employment", n => { Employment = n.GetGuidValue(); } },
+                { "EmploymentNumber", n => { EmploymentNumber = n.GetIntValue(); } },
+                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "ProbationEndDate", n => { ProbationEndDate = n.GetDateTimeOffsetValue(); } },
+                { "ProbationPeriod", n => { ProbationPeriod = n.GetIntValue(); } },
+                { "ProbationPeriodDescription", n => { ProbationPeriodDescription = n.GetStringValue(); } },
+                { "ReasonContract", n => { ReasonContract = n.GetIntValue(); } },
+                { "ReasonContractDescription", n => { ReasonContractDescription = n.GetStringValue(); } },
+                { "Sequence", n => { Sequence = n.GetIntValue(); } },
+                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Type", n => { Type = n.GetIntValue(); } },
+                { "TypeDescription", n => { TypeDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +183,35 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("ContractFlexPhase", ContractFlexPhase);
+            writer.WriteStringValue("ContractFlexPhaseDescription", ContractFlexPhaseDescription);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("Document", Document);
+            writer.WriteGuidValue("Employee", Employee);
+            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
+            writer.WriteIntValue("EmployeeHID", EmployeeHID);
+            writer.WriteIntValue("EmployeeType", EmployeeType);
+            writer.WriteStringValue("EmployeeTypeDescription", EmployeeTypeDescription);
+            writer.WriteGuidValue("Employment", Employment);
+            writer.WriteIntValue("EmploymentNumber", EmploymentNumber);
+            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteDateTimeOffsetValue("ProbationEndDate", ProbationEndDate);
+            writer.WriteIntValue("ProbationPeriod", ProbationPeriod);
+            writer.WriteStringValue("ProbationPeriodDescription", ProbationPeriodDescription);
+            writer.WriteIntValue("ReasonContract", ReasonContract);
+            writer.WriteStringValue("ReasonContractDescription", ReasonContractDescription);
+            writer.WriteIntValue("Sequence", Sequence);
+            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
+            writer.WriteLongValue("Timestamp", Timestamp);
+            writer.WriteIntValue("Type", Type);
+            writer.WriteStringValue("TypeDescription", TypeDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

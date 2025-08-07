@@ -14,6 +14,52 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Level of the sub shop order within the shop order structure</summary>
+        public int? Level { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Reference to ShopOrders for the current shop order</summary>
+        public Guid? ShopOrder { get; set; }
+        /// <summary>Reference to ShopOrders for main shop order</summary>
+        public Guid? ShopOrderMain { get; set; }
+        /// <summary>Number of main shop order</summary>
+        public int? ShopOrderMainNumber { get; set; }
+        /// <summary>Reference to ShopOrderMaterialPlans</summary>
+        public Guid? ShopOrderMaterialPlan { get; set; }
+        /// <summary>Number of the current shop order</summary>
+        public int? ShopOrderNumber { get; set; }
+        /// <summary>Reference to ShopOrders for parent shop order</summary>
+        public Guid? ShopOrderParent { get; set; }
+        /// <summary>Number of parent shop order</summary>
+        public int? ShopOrderParentNumber { get; set; }
+        /// <summary>Timestamp</summary>
+        public long? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncManufacturingShopOrderSubOrders"/> and sets the default values.
         /// </summary>
@@ -39,6 +85,23 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Level", n => { Level = n.GetIntValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "ShopOrder", n => { ShopOrder = n.GetGuidValue(); } },
+                { "ShopOrderMain", n => { ShopOrderMain = n.GetGuidValue(); } },
+                { "ShopOrderMainNumber", n => { ShopOrderMainNumber = n.GetIntValue(); } },
+                { "ShopOrderMaterialPlan", n => { ShopOrderMaterialPlan = n.GetGuidValue(); } },
+                { "ShopOrderNumber", n => { ShopOrderNumber = n.GetIntValue(); } },
+                { "ShopOrderParent", n => { ShopOrderParent = n.GetGuidValue(); } },
+                { "ShopOrderParentNumber", n => { ShopOrderParentNumber = n.GetIntValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +111,23 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteIntValue("Level", Level);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteGuidValue("ShopOrder", ShopOrder);
+            writer.WriteGuidValue("ShopOrderMain", ShopOrderMain);
+            writer.WriteIntValue("ShopOrderMainNumber", ShopOrderMainNumber);
+            writer.WriteGuidValue("ShopOrderMaterialPlan", ShopOrderMaterialPlan);
+            writer.WriteIntValue("ShopOrderNumber", ShopOrderNumber);
+            writer.WriteGuidValue("ShopOrderParent", ShopOrderParent);
+            writer.WriteIntValue("ShopOrderParentNumber", ShopOrderParentNumber);
+            writer.WriteLongValue("Timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

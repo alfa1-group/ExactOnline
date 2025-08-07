@@ -1,22 +1,24 @@
 ﻿using ConsoleApp;
 using ExactOnline.Api.Client;
 using ExactOnline.Api.Client.Authentication.Interfaces;
-using ExactOnline.Api.Client.Models;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Kiota.Serialization;
 
-var configuration = new ConfigurationBuilder()
-    .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appsettings.json")
-    .Build();
+var builder = Host.CreateDefaultBuilder(args)
+    .ConfigureServices((context, services) =>
+    {
+        services
+            .AddLogging()
+            .AddSingleton<IExactRefreshTokenStorageService, ExactRefreshTokenFileStorageService>()
+            .AddExactOnlineAuthenticatedClient(context.Configuration);
+    });
 
-var serviceProvider = new ServiceCollection()
-    .AddLogging()
-    .AddSingleton<IExactRefreshTokenStorageService, ExactRefreshTokenFileStorageService>()
-    .AddExactOnlineAuthenticatedClient(configuration)
-    .BuildServiceProvider();
+var host = builder.Build();
 
-var client = serviceProvider.GetRequiredService<ExactOnlineServiceClient>();
+
+using var scope = host.Services.CreateScope();
+var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>();
 
 var me = await client.Api.V1.Current.Me.GetAsync();
 

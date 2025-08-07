@@ -14,6 +14,112 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Entry Date</summary>
+        public DateTimeOffset? EntryDate { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Warehouse pick/Location pick user</summary>
+        public Guid? PickedBy { get; set; }
+        /// <summary>Planned delivery date / Planned transfer date It shows the date the items will be sent for transfer delivery.</summary>
+        public DateTimeOffset? PlannedDeliveryDate { get; set; }
+        /// <summary>Planned receipt date It shows the date the items will arrive at the warehouse location.</summary>
+        public DateTimeOffset? PlannedReceiptDate { get; set; }
+        /// <summary>Remarks</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Remarks { get; set; }
+#nullable restore
+#else
+        public string Remarks { get; set; }
+#endif
+        /// <summary>Source of warehouse transfer entry: 1-Manual entry, 2-Import, 3-Transfer advice, 4-Web service</summary>
+        public int? Source { get; set; }
+        /// <summary>Warehouse transfer status: 10-Open, 50-Complete</summary>
+        public int? Status { get; set; }
+        /// <summary>Transfer Date of the processed warehouse transfer</summary>
+        public DateTimeOffset? TransferDate { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? TransferID { get; set; }
+        /// <summary>Transfer Number</summary>
+        public int? TransferNumber { get; set; }
+        /// <summary>Warehouse transfer/Location transfer user</summary>
+        public Guid? TransferredBy { get; set; }
+        /// <summary>ID of warehouse to transfer item from</summary>
+        public Guid? WarehouseFrom { get; set; }
+        /// <summary>Code of warehouse to transfer item from</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseFromCode { get; set; }
+#nullable restore
+#else
+        public string WarehouseFromCode { get; set; }
+#endif
+        /// <summary>Description of warehouse to transfer item from</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseFromDescription { get; set; }
+#nullable restore
+#else
+        public string WarehouseFromDescription { get; set; }
+#endif
+        /// <summary>ID of warehouse to transfer item to</summary>
+        public Guid? WarehouseTo { get; set; }
+        /// <summary>Code of warehouse to transfer item to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseToCode { get; set; }
+#nullable restore
+#else
+        public string WarehouseToCode { get; set; }
+#endif
+        /// <summary>Description of warehouse to transfer item to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseToDescription { get; set; }
+#nullable restore
+#else
+        public string WarehouseToDescription { get; set; }
+#endif
+        /// <summary>Collection of warehouse transfer lines</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ExactOnline.Api.Client.Models.InventoryWarehouseTransferLines>? WarehouseTransferLines { get; set; }
+#nullable restore
+#else
+        public List<global::ExactOnline.Api.Client.Models.InventoryWarehouseTransferLines> WarehouseTransferLines { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryWarehouseTransfers"/> and sets the default values.
         /// </summary>
@@ -39,6 +145,32 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "EntryDate", n => { EntryDate = n.GetDateTimeOffsetValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "PickedBy", n => { PickedBy = n.GetGuidValue(); } },
+                { "PlannedDeliveryDate", n => { PlannedDeliveryDate = n.GetDateTimeOffsetValue(); } },
+                { "PlannedReceiptDate", n => { PlannedReceiptDate = n.GetDateTimeOffsetValue(); } },
+                { "Remarks", n => { Remarks = n.GetStringValue(); } },
+                { "Source", n => { Source = n.GetIntValue(); } },
+                { "Status", n => { Status = n.GetIntValue(); } },
+                { "TransferDate", n => { TransferDate = n.GetDateTimeOffsetValue(); } },
+                { "TransferID", n => { TransferID = n.GetGuidValue(); } },
+                { "TransferNumber", n => { TransferNumber = n.GetIntValue(); } },
+                { "TransferredBy", n => { TransferredBy = n.GetGuidValue(); } },
+                { "WarehouseFrom", n => { WarehouseFrom = n.GetGuidValue(); } },
+                { "WarehouseFromCode", n => { WarehouseFromCode = n.GetStringValue(); } },
+                { "WarehouseFromDescription", n => { WarehouseFromDescription = n.GetStringValue(); } },
+                { "WarehouseTo", n => { WarehouseTo = n.GetGuidValue(); } },
+                { "WarehouseToCode", n => { WarehouseToCode = n.GetStringValue(); } },
+                { "WarehouseToDescription", n => { WarehouseToDescription = n.GetStringValue(); } },
+                { "WarehouseTransferLines", n => { WarehouseTransferLines = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryWarehouseTransferLines>(global::ExactOnline.Api.Client.Models.InventoryWarehouseTransferLines.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,6 +180,32 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteDateTimeOffsetValue("EntryDate", EntryDate);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteGuidValue("PickedBy", PickedBy);
+            writer.WriteDateTimeOffsetValue("PlannedDeliveryDate", PlannedDeliveryDate);
+            writer.WriteDateTimeOffsetValue("PlannedReceiptDate", PlannedReceiptDate);
+            writer.WriteStringValue("Remarks", Remarks);
+            writer.WriteIntValue("Source", Source);
+            writer.WriteIntValue("Status", Status);
+            writer.WriteDateTimeOffsetValue("TransferDate", TransferDate);
+            writer.WriteGuidValue("TransferID", TransferID);
+            writer.WriteIntValue("TransferNumber", TransferNumber);
+            writer.WriteGuidValue("TransferredBy", TransferredBy);
+            writer.WriteGuidValue("WarehouseFrom", WarehouseFrom);
+            writer.WriteStringValue("WarehouseFromCode", WarehouseFromCode);
+            writer.WriteStringValue("WarehouseFromDescription", WarehouseFromDescription);
+            writer.WriteGuidValue("WarehouseTo", WarehouseTo);
+            writer.WriteStringValue("WarehouseToCode", WarehouseToCode);
+            writer.WriteStringValue("WarehouseToDescription", WarehouseToDescription);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryWarehouseTransferLines>("WarehouseTransferLines", WarehouseTransferLines);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

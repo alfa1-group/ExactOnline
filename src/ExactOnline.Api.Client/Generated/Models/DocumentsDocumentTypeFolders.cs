@@ -14,6 +14,22 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Date created</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User id of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Folder to which document type is linked</summary>
+        public Guid? DocumentFolder { get; set; }
+        /// <summary>Code of document type which is linked to folder</summary>
+        public int? DocumentType { get; set; }
+        /// <summary>The ID property</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Date Modified</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User id of modifier</summary>
+        public Guid? Modifier { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.DocumentsDocumentTypeFolders"/> and sets the default values.
         /// </summary>
@@ -39,6 +55,14 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "DocumentFolder", n => { DocumentFolder = n.GetGuidValue(); } },
+                { "DocumentType", n => { DocumentType = n.GetIntValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +72,14 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("DocumentFolder", DocumentFolder);
+            writer.WriteIntValue("DocumentType", DocumentType);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

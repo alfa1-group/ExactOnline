@@ -14,6 +14,48 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Storage location of assembled item</summary>
+        public Guid? AssembledItemStorageLocation { get; set; }
+        /// <summary>Date of the assembly order is initiated</summary>
+        public DateTimeOffset? AssemblyDate { get; set; }
+        /// <summary>A guid that is the unique identifier of the assembly order</summary>
+        public Guid? AssemblyOrder { get; set; }
+        /// <summary>The collection of batch numbers that belongs to the assembled and part items in the assembly order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>? BatchNumbers { get; set; }
+#nullable restore
+#else
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers> BatchNumbers { get; set; }
+#endif
+        /// <summary>Description of assembly order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Finish order quantity of assembly order</summary>
+        public double? FinishOrderQuantity { get; set; }
+        /// <summary>Notes of assembly order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>The collection of serial numbers that belongs to the assembled and part items in the assembly order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>? SerialNumbers { get; set; }
+#nullable restore
+#else
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers> SerialNumbers { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryFinishAssemblyOrder"/> and sets the default values.
         /// </summary>
@@ -39,6 +81,15 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "AssembledItemStorageLocation", n => { AssembledItemStorageLocation = n.GetGuidValue(); } },
+                { "AssemblyDate", n => { AssemblyDate = n.GetDateTimeOffsetValue(); } },
+                { "AssemblyOrder", n => { AssemblyOrder = n.GetGuidValue(); } },
+                { "BatchNumbers", n => { BatchNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "FinishOrderQuantity", n => { FinishOrderQuantity = n.GetDoubleValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "SerialNumbers", n => { SerialNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,6 +99,15 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("AssembledItemStorageLocation", AssembledItemStorageLocation);
+            writer.WriteDateTimeOffsetValue("AssemblyDate", AssemblyDate);
+            writer.WriteGuidValue("AssemblyOrder", AssemblyOrder);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>("BatchNumbers", BatchNumbers);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteDoubleValue("FinishOrderQuantity", FinishOrderQuantity);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>("SerialNumbers", SerialNumbers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

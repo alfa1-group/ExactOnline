@@ -14,6 +14,56 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Business component name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BusinessComponentName { get; set; }
+#nullable restore
+#else
+        public string BusinessComponentName { get; set; }
+#endif
+        /// <summary>Custom field description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Caption { get; set; }
+#nullable restore
+#else
+        public string Caption { get; set; }
+#endif
+        /// <summary>Entity id</summary>
+        public Guid? LinkId { get; set; }
+        /// <summary>Custom business property name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PropertyName { get; set; }
+#nullable restore
+#else
+        public string PropertyName { get; set; }
+#endif
+        /// <summary>The name of the referencing entity. The supported values are Item, Account, Project, Opportunity, SalesOrder, Contact,User, Employee, Document, Team, CostUnit, CostCenter and Journal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RefersTo { get; set; }
+#nullable restore
+#else
+        public string RefersTo { get; set; }
+#endif
+        /// <summary>Represents the data type of the custom field. The supported datatypes are boolean, integer, string, double, date and GUID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
+        /// <summary>Custom field data</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Value { get; set; }
+#nullable restore
+#else
+        public string Value { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomField"/> and sets the default values.
         /// </summary>
@@ -39,6 +89,13 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "BusinessComponentName", n => { BusinessComponentName = n.GetStringValue(); } },
+                { "Caption", n => { Caption = n.GetStringValue(); } },
+                { "LinkId", n => { LinkId = n.GetGuidValue(); } },
+                { "PropertyName", n => { PropertyName = n.GetStringValue(); } },
+                { "RefersTo", n => { RefersTo = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetStringValue(); } },
+                { "Value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +105,13 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("BusinessComponentName", BusinessComponentName);
+            writer.WriteStringValue("Caption", Caption);
+            writer.WriteGuidValue("LinkId", LinkId);
+            writer.WriteStringValue("PropertyName", PropertyName);
+            writer.WriteStringValue("RefersTo", RefersTo);
+            writer.WriteStringValue("Type", Type);
+            writer.WriteStringValue("Value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

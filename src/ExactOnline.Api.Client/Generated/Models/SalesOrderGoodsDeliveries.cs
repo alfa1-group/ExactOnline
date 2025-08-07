@@ -14,6 +14,148 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The Created property</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>The Creator property</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>The CreatorFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>The DeliveryAccount property</summary>
+        public Guid? DeliveryAccount { get; set; }
+        /// <summary>The DeliveryAccountCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeliveryAccountCode { get; set; }
+#nullable restore
+#else
+        public string DeliveryAccountCode { get; set; }
+#endif
+        /// <summary>The DeliveryAccountName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeliveryAccountName { get; set; }
+#nullable restore
+#else
+        public string DeliveryAccountName { get; set; }
+#endif
+        /// <summary>The DeliveryAddress property</summary>
+        public Guid? DeliveryAddress { get; set; }
+        /// <summary>The DeliveryContact property</summary>
+        public Guid? DeliveryContact { get; set; }
+        /// <summary>The DeliveryContactPersonFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeliveryContactPersonFullName { get; set; }
+#nullable restore
+#else
+        public string DeliveryContactPersonFullName { get; set; }
+#endif
+        /// <summary>The DeliveryDate property</summary>
+        public DateTimeOffset? DeliveryDate { get; set; }
+        /// <summary>The DeliveryNumber property</summary>
+        public int? DeliveryNumber { get; set; }
+        /// <summary>The Description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>The Division property</summary>
+        public int? Division { get; set; }
+        /// <summary>The Document property</summary>
+        public Guid? Document { get; set; }
+        /// <summary>The DocumentSubject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DocumentSubject { get; set; }
+#nullable restore
+#else
+        public string DocumentSubject { get; set; }
+#endif
+        /// <summary>The EntryID property</summary>
+        public Guid? EntryID { get; set; }
+        /// <summary>The EntryNumber property</summary>
+        public int? EntryNumber { get; set; }
+        /// <summary>The GoodsDeliveryLines property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines? GoodsDeliveryLines { get; set; }
+#nullable restore
+#else
+        public global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines GoodsDeliveryLines { get; set; }
+#endif
+        /// <summary>The Modified property</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>The Modifier property</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>The ModifierFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>The Remarks property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Remarks { get; set; }
+#nullable restore
+#else
+        public string Remarks { get; set; }
+#endif
+        /// <summary>The ShippingMethod property</summary>
+        public Guid? ShippingMethod { get; set; }
+        /// <summary>The ShippingMethodCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ShippingMethodCode { get; set; }
+#nullable restore
+#else
+        public string ShippingMethodCode { get; set; }
+#endif
+        /// <summary>The ShippingMethodDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ShippingMethodDescription { get; set; }
+#nullable restore
+#else
+        public string ShippingMethodDescription { get; set; }
+#endif
+        /// <summary>The TrackingNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TrackingNumber { get; set; }
+#nullable restore
+#else
+        public string TrackingNumber { get; set; }
+#endif
+        /// <summary>The Warehouse property</summary>
+        public Guid? Warehouse { get; set; }
+        /// <summary>The WarehouseCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseCode { get; set; }
+#nullable restore
+#else
+        public string WarehouseCode { get; set; }
+#endif
+        /// <summary>The WarehouseDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseDescription { get; set; }
+#nullable restore
+#else
+        public string WarehouseDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveries"/> and sets the default values.
         /// </summary>
@@ -39,6 +181,35 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "DeliveryAccount", n => { DeliveryAccount = n.GetGuidValue(); } },
+                { "DeliveryAccountCode", n => { DeliveryAccountCode = n.GetStringValue(); } },
+                { "DeliveryAccountName", n => { DeliveryAccountName = n.GetStringValue(); } },
+                { "DeliveryAddress", n => { DeliveryAddress = n.GetGuidValue(); } },
+                { "DeliveryContact", n => { DeliveryContact = n.GetGuidValue(); } },
+                { "DeliveryContactPersonFullName", n => { DeliveryContactPersonFullName = n.GetStringValue(); } },
+                { "DeliveryDate", n => { DeliveryDate = n.GetDateTimeOffsetValue(); } },
+                { "DeliveryNumber", n => { DeliveryNumber = n.GetIntValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "Document", n => { Document = n.GetGuidValue(); } },
+                { "DocumentSubject", n => { DocumentSubject = n.GetStringValue(); } },
+                { "EntryID", n => { EntryID = n.GetGuidValue(); } },
+                { "EntryNumber", n => { EntryNumber = n.GetIntValue(); } },
+                { "GoodsDeliveryLines", n => { GoodsDeliveryLines = n.GetObjectValue<global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines>(global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines.CreateFromDiscriminatorValue); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Remarks", n => { Remarks = n.GetStringValue(); } },
+                { "ShippingMethod", n => { ShippingMethod = n.GetGuidValue(); } },
+                { "ShippingMethodCode", n => { ShippingMethodCode = n.GetStringValue(); } },
+                { "ShippingMethodDescription", n => { ShippingMethodDescription = n.GetStringValue(); } },
+                { "TrackingNumber", n => { TrackingNumber = n.GetStringValue(); } },
+                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
+                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
+                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +219,35 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteGuidValue("DeliveryAccount", DeliveryAccount);
+            writer.WriteStringValue("DeliveryAccountCode", DeliveryAccountCode);
+            writer.WriteStringValue("DeliveryAccountName", DeliveryAccountName);
+            writer.WriteGuidValue("DeliveryAddress", DeliveryAddress);
+            writer.WriteGuidValue("DeliveryContact", DeliveryContact);
+            writer.WriteStringValue("DeliveryContactPersonFullName", DeliveryContactPersonFullName);
+            writer.WriteDateTimeOffsetValue("DeliveryDate", DeliveryDate);
+            writer.WriteIntValue("DeliveryNumber", DeliveryNumber);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("Document", Document);
+            writer.WriteStringValue("DocumentSubject", DocumentSubject);
+            writer.WriteGuidValue("EntryID", EntryID);
+            writer.WriteIntValue("EntryNumber", EntryNumber);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines>("GoodsDeliveryLines", GoodsDeliveryLines);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Remarks", Remarks);
+            writer.WriteGuidValue("ShippingMethod", ShippingMethod);
+            writer.WriteStringValue("ShippingMethodCode", ShippingMethodCode);
+            writer.WriteStringValue("ShippingMethodDescription", ShippingMethodDescription);
+            writer.WriteStringValue("TrackingNumber", TrackingNumber);
+            writer.WriteGuidValue("Warehouse", Warehouse);
+            writer.WriteStringValue("WarehouseCode", WarehouseCode);
+            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

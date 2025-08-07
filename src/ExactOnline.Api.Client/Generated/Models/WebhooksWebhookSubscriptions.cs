@@ -14,6 +14,50 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Callback URL endpoint</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CallbackURL { get; set; }
+#nullable restore
+#else
+        public string CallbackURL { get; set; }
+#endif
+        /// <summary>OAuth client Id</summary>
+        public Guid? ClientID { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Description of the OAuth Client</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Webhook subscription topic, e.g.: Accounts, Items, StockPositions</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Topic { get; set; }
+#nullable restore
+#else
+        public string Topic { get; set; }
+#endif
+        /// <summary>Subscribing User ID</summary>
+        public Guid? UserID { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.WebhooksWebhookSubscriptions"/> and sets the default values.
         /// </summary>
@@ -39,6 +83,16 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "CallbackURL", n => { CallbackURL = n.GetStringValue(); } },
+                { "ClientID", n => { ClientID = n.GetGuidValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Topic", n => { Topic = n.GetStringValue(); } },
+                { "UserID", n => { UserID = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +102,16 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("CallbackURL", CallbackURL);
+            writer.WriteGuidValue("ClientID", ClientID);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteStringValue("Topic", Topic);
+            writer.WriteGuidValue("UserID", UserID);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

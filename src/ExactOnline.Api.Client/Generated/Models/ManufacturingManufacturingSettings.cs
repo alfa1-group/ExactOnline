@@ -14,6 +14,20 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>This division.</summary>
+        public int? Division { get; set; }
+        /// <summary>What is the division&apos;s main inventory method? Standard=3,Average=4</summary>
+        public int? InventoryMainMethod { get; set; }
+        /// <summary>What is the division&apos;s sub inventory method? Perpetual=1,NonPerpetual=2,AngloSaxon=3</summary>
+        public int? InventorySubMethod { get; set; }
+        /// <summary>Does the current division allow negative stock?</summary>
+        public int? NegativeStockIsAllowed { get; set; }
+        /// <summary>Are serial numbers mandatory in this division?</summary>
+        public int? SerialNumbersAreMandatory { get; set; }
+        /// <summary>This property is obsolete. Should ShopOrderMaterialPlans with Backflush=True be shown within Smart Shop Floor?</summary>
+        public int? ShowBackflushMaterials { get; set; }
+        /// <summary>This property is obsolete. Should ShopOrderMaterialPlans linked to a SubOrder be shown within Smart Shop Floor?</summary>
+        public int? ShowSubOrderMaterials { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingManufacturingSettings"/> and sets the default values.
         /// </summary>
@@ -39,6 +53,13 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "InventoryMainMethod", n => { InventoryMainMethod = n.GetIntValue(); } },
+                { "InventorySubMethod", n => { InventorySubMethod = n.GetIntValue(); } },
+                { "NegativeStockIsAllowed", n => { NegativeStockIsAllowed = n.GetIntValue(); } },
+                { "SerialNumbersAreMandatory", n => { SerialNumbersAreMandatory = n.GetIntValue(); } },
+                { "ShowBackflushMaterials", n => { ShowBackflushMaterials = n.GetIntValue(); } },
+                { "ShowSubOrderMaterials", n => { ShowSubOrderMaterials = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +69,13 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("Division", Division);
+            writer.WriteIntValue("InventoryMainMethod", InventoryMainMethod);
+            writer.WriteIntValue("InventorySubMethod", InventorySubMethod);
+            writer.WriteIntValue("NegativeStockIsAllowed", NegativeStockIsAllowed);
+            writer.WriteIntValue("SerialNumbersAreMandatory", SerialNumbersAreMandatory);
+            writer.WriteIntValue("ShowBackflushMaterials", ShowBackflushMaterials);
+            writer.WriteIntValue("ShowSubOrderMaterials", ShowSubOrderMaterials);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

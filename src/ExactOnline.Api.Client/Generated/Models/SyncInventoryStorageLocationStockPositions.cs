@@ -14,6 +14,90 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Item</summary>
+        public Guid? Item { get; set; }
+        /// <summary>Code of the item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of the item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>To pick quantity</summary>
+        public double? QuantityToPicked { get; set; }
+        /// <summary>To pick quantity with SerialBatch reserved</summary>
+        public double? ReservedPick { get; set; }
+        /// <summary>Reserved serial batch stock</summary>
+        public double? SerialBatchReservedStock { get; set; }
+        /// <summary>Stock</summary>
+        public double? Stock { get; set; }
+        /// <summary>Storage location</summary>
+        public Guid? StorageLocation { get; set; }
+        /// <summary>Code of the storage location</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StorageLocationCode { get; set; }
+#nullable restore
+#else
+        public string StorageLocationCode { get; set; }
+#endif
+        /// <summary>Description of the storage location</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StorageLocationDescription { get; set; }
+#nullable restore
+#else
+        public string StorageLocationDescription { get; set; }
+#endif
+        /// <summary>Timestamp</summary>
+        public long? Timestamp { get; set; }
+        /// <summary>Code of the unit for the item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UnitCode { get; set; }
+#nullable restore
+#else
+        public string UnitCode { get; set; }
+#endif
+        /// <summary>Description of the unit for the item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UnitDescription { get; set; }
+#nullable restore
+#else
+        public string UnitDescription { get; set; }
+#endif
+        /// <summary>Warehouse</summary>
+        public Guid? Warehouse { get; set; }
+        /// <summary>Code of the warehouse</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseCode { get; set; }
+#nullable restore
+#else
+        public string WarehouseCode { get; set; }
+#endif
+        /// <summary>Description of the warehouse</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseDescription { get; set; }
+#nullable restore
+#else
+        public string WarehouseDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncInventoryStorageLocationStockPositions"/> and sets the default values.
         /// </summary>
@@ -39,6 +123,24 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "QuantityToPicked", n => { QuantityToPicked = n.GetDoubleValue(); } },
+                { "ReservedPick", n => { ReservedPick = n.GetDoubleValue(); } },
+                { "SerialBatchReservedStock", n => { SerialBatchReservedStock = n.GetDoubleValue(); } },
+                { "Stock", n => { Stock = n.GetDoubleValue(); } },
+                { "StorageLocation", n => { StorageLocation = n.GetGuidValue(); } },
+                { "StorageLocationCode", n => { StorageLocationCode = n.GetStringValue(); } },
+                { "StorageLocationDescription", n => { StorageLocationDescription = n.GetStringValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "UnitCode", n => { UnitCode = n.GetStringValue(); } },
+                { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
+                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
+                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
+                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +150,24 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteDoubleValue("QuantityToPicked", QuantityToPicked);
+            writer.WriteDoubleValue("ReservedPick", ReservedPick);
+            writer.WriteDoubleValue("SerialBatchReservedStock", SerialBatchReservedStock);
+            writer.WriteDoubleValue("Stock", Stock);
+            writer.WriteGuidValue("StorageLocation", StorageLocation);
+            writer.WriteStringValue("StorageLocationCode", StorageLocationCode);
+            writer.WriteStringValue("StorageLocationDescription", StorageLocationDescription);
+            writer.WriteLongValue("Timestamp", Timestamp);
+            writer.WriteStringValue("UnitCode", UnitCode);
+            writer.WriteStringValue("UnitDescription", UnitDescription);
+            writer.WriteGuidValue("Warehouse", Warehouse);
+            writer.WriteStringValue("WarehouseCode", WarehouseCode);
+            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,6 +14,54 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Factor</summary>
+        public double? Factor { get; set; }
+        /// <summary>Conversion factor type between produced item and Subcontract purchase Unit</summary>
+        public int? FactorType { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Reference to PurchaseOrderLines</summary>
+        public Guid? PurchaseOrder { get; set; }
+        /// <summary>Number of the purchase order</summary>
+        public int? PurchaseOrderNumber { get; set; }
+        /// <summary>Quantity</summary>
+        public double? Quantity { get; set; }
+        /// <summary>Reference to ShopOrders</summary>
+        public Guid? ShopOrder { get; set; }
+        /// <summary>Reference to ShopOrderMaterialPlans</summary>
+        public Guid? ShopOrderMaterialPlan { get; set; }
+        /// <summary>Unique number to indentify the shop order</summary>
+        public int? ShopOrderNumber { get; set; }
+        /// <summary>Reference to ShopOrderRoutingStepPlans</summary>
+        public Guid? ShopOrderRoutingStepPlan { get; set; }
+        /// <summary>Timestamp</summary>
+        public long? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncManufacturingShopOrderPurchasePlanning"/> and sets the default values.
         /// </summary>
@@ -39,6 +87,24 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "Factor", n => { Factor = n.GetDoubleValue(); } },
+                { "FactorType", n => { FactorType = n.GetIntValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "PurchaseOrder", n => { PurchaseOrder = n.GetGuidValue(); } },
+                { "PurchaseOrderNumber", n => { PurchaseOrderNumber = n.GetIntValue(); } },
+                { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
+                { "ShopOrder", n => { ShopOrder = n.GetGuidValue(); } },
+                { "ShopOrderMaterialPlan", n => { ShopOrderMaterialPlan = n.GetGuidValue(); } },
+                { "ShopOrderNumber", n => { ShopOrderNumber = n.GetIntValue(); } },
+                { "ShopOrderRoutingStepPlan", n => { ShopOrderRoutingStepPlan = n.GetGuidValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +114,24 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteDoubleValue("Factor", Factor);
+            writer.WriteIntValue("FactorType", FactorType);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteGuidValue("PurchaseOrder", PurchaseOrder);
+            writer.WriteIntValue("PurchaseOrderNumber", PurchaseOrderNumber);
+            writer.WriteDoubleValue("Quantity", Quantity);
+            writer.WriteGuidValue("ShopOrder", ShopOrder);
+            writer.WriteGuidValue("ShopOrderMaterialPlan", ShopOrderMaterialPlan);
+            writer.WriteIntValue("ShopOrderNumber", ShopOrderNumber);
+            writer.WriteGuidValue("ShopOrderRoutingStepPlan", ShopOrderRoutingStepPlan);
+            writer.WriteLongValue("Timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

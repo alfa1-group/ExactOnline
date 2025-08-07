@@ -12,8 +12,198 @@ namespace ExactOnline.Api.Client.Models
     public partial class SyncProjectTimeCostTransactions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The Account property</summary>
+        public Guid? Account { get; set; }
+        /// <summary>The AccountName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountName { get; set; }
+#nullable restore
+#else
+        public string AccountName { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The AmountFC property</summary>
+        public double? AmountFC { get; set; }
+        /// <summary>The Attachment property</summary>
+        public Guid? Attachment { get; set; }
+        /// <summary>The Created property</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>The Creator property</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>The CreatorFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>The Currency property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>The CustomField property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomField { get; set; }
+#nullable restore
+#else
+        public string CustomField { get; set; }
+#endif
+        /// <summary>The Date property</summary>
+        public DateTimeOffset? Date { get; set; }
+        /// <summary>The Division property</summary>
+        public int? Division { get; set; }
+        /// <summary>The DivisionDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DivisionDescription { get; set; }
+#nullable restore
+#else
+        public string DivisionDescription { get; set; }
+#endif
+        /// <summary>The Employee property</summary>
+        public Guid? Employee { get; set; }
+        /// <summary>The EndTime property</summary>
+        public DateTimeOffset? EndTime { get; set; }
+        /// <summary>The EntryNumber property</summary>
+        public int? EntryNumber { get; set; }
+        /// <summary>The ErrorText property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorText { get; set; }
+#nullable restore
+#else
+        public string ErrorText { get; set; }
+#endif
+        /// <summary>The HourStatus property</summary>
+        public int? HourStatus { get; set; }
+        /// <summary>The ID property</summary>
+        public Guid? ID { get; set; }
+        /// <summary>The Item property</summary>
+        public Guid? Item { get; set; }
+        /// <summary>The ItemDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>The ItemDivisable property</summary>
+        public bool? ItemDivisable { get; set; }
+        /// <summary>The Modified property</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>The Modifier property</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>The ModifierFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>The Notes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>The PriceFC property</summary>
+        public double? PriceFC { get; set; }
+        /// <summary>The Project property</summary>
+        public Guid? Project { get; set; }
+        /// <summary>The ProjectAccount property</summary>
+        public Guid? ProjectAccount { get; set; }
+        /// <summary>The ProjectAccountCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectAccountCode { get; set; }
+#nullable restore
+#else
+        public string ProjectAccountCode { get; set; }
+#endif
+        /// <summary>The ProjectAccountName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectAccountName { get; set; }
+#nullable restore
+#else
+        public string ProjectAccountName { get; set; }
+#endif
+        /// <summary>The ProjectCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectCode { get; set; }
+#nullable restore
+#else
+        public string ProjectCode { get; set; }
+#endif
+        /// <summary>The ProjectDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectDescription { get; set; }
+#nullable restore
+#else
+        public string ProjectDescription { get; set; }
+#endif
+        /// <summary>The Quantity property</summary>
+        public double? Quantity { get; set; }
+        /// <summary>The StartTime property</summary>
+        public DateTimeOffset? StartTime { get; set; }
+        /// <summary>The Subscription property</summary>
+        public Guid? Subscription { get; set; }
+        /// <summary>The SubscriptionAccount property</summary>
+        public Guid? SubscriptionAccount { get; set; }
+        /// <summary>The SubscriptionAccountCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubscriptionAccountCode { get; set; }
+#nullable restore
+#else
+        public string SubscriptionAccountCode { get; set; }
+#endif
+        /// <summary>The SubscriptionAccountName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubscriptionAccountName { get; set; }
+#nullable restore
+#else
+        public string SubscriptionAccountName { get; set; }
+#endif
+        /// <summary>The SubscriptionDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubscriptionDescription { get; set; }
+#nullable restore
+#else
+        public string SubscriptionDescription { get; set; }
+#endif
+        /// <summary>The SubscriptionNumber property</summary>
+        public int? SubscriptionNumber { get; set; }
+        /// <summary>The Timestamp property</summary>
+        public long? Timestamp { get; set; }
+        /// <summary>The Type property</summary>
+        public int? Type { get; set; }
+        /// <summary>The WBS property</summary>
+        public Guid? WBS { get; set; }
+        /// <summary>The WBSDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WBSDescription { get; set; }
+#nullable restore
+#else
+        public string WBSDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncProjectTimeCostTransactions"/> and sets the default values.
         /// </summary>
@@ -39,6 +229,50 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Account", n => { Account = n.GetGuidValue(); } },
+                { "AccountName", n => { AccountName = n.GetStringValue(); } },
+                { "AmountFC", n => { AmountFC = n.GetDoubleValue(); } },
+                { "Attachment", n => { Attachment = n.GetGuidValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Currency", n => { Currency = n.GetStringValue(); } },
+                { "CustomField", n => { CustomField = n.GetStringValue(); } },
+                { "Date", n => { Date = n.GetDateTimeOffsetValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "DivisionDescription", n => { DivisionDescription = n.GetStringValue(); } },
+                { "Employee", n => { Employee = n.GetGuidValue(); } },
+                { "EndTime", n => { EndTime = n.GetDateTimeOffsetValue(); } },
+                { "EntryNumber", n => { EntryNumber = n.GetIntValue(); } },
+                { "ErrorText", n => { ErrorText = n.GetStringValue(); } },
+                { "HourStatus", n => { HourStatus = n.GetIntValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "ItemDivisable", n => { ItemDivisable = n.GetBoolValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "PriceFC", n => { PriceFC = n.GetDoubleValue(); } },
+                { "Project", n => { Project = n.GetGuidValue(); } },
+                { "ProjectAccount", n => { ProjectAccount = n.GetGuidValue(); } },
+                { "ProjectAccountCode", n => { ProjectAccountCode = n.GetStringValue(); } },
+                { "ProjectAccountName", n => { ProjectAccountName = n.GetStringValue(); } },
+                { "ProjectCode", n => { ProjectCode = n.GetStringValue(); } },
+                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
+                { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
+                { "StartTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
+                { "Subscription", n => { Subscription = n.GetGuidValue(); } },
+                { "SubscriptionAccount", n => { SubscriptionAccount = n.GetGuidValue(); } },
+                { "SubscriptionAccountCode", n => { SubscriptionAccountCode = n.GetStringValue(); } },
+                { "SubscriptionAccountName", n => { SubscriptionAccountName = n.GetStringValue(); } },
+                { "SubscriptionDescription", n => { SubscriptionDescription = n.GetStringValue(); } },
+                { "SubscriptionNumber", n => { SubscriptionNumber = n.GetIntValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Type", n => { Type = n.GetIntValue(); } },
+                { "WBS", n => { WBS = n.GetGuidValue(); } },
+                { "WBSDescription", n => { WBSDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +282,50 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("Account", Account);
+            writer.WriteStringValue("AccountName", AccountName);
+            writer.WriteDoubleValue("AmountFC", AmountFC);
+            writer.WriteGuidValue("Attachment", Attachment);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Currency", Currency);
+            writer.WriteStringValue("CustomField", CustomField);
+            writer.WriteDateTimeOffsetValue("Date", Date);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteStringValue("DivisionDescription", DivisionDescription);
+            writer.WriteGuidValue("Employee", Employee);
+            writer.WriteDateTimeOffsetValue("EndTime", EndTime);
+            writer.WriteIntValue("EntryNumber", EntryNumber);
+            writer.WriteStringValue("ErrorText", ErrorText);
+            writer.WriteIntValue("HourStatus", HourStatus);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteBoolValue("ItemDivisable", ItemDivisable);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteDoubleValue("PriceFC", PriceFC);
+            writer.WriteGuidValue("Project", Project);
+            writer.WriteGuidValue("ProjectAccount", ProjectAccount);
+            writer.WriteStringValue("ProjectAccountCode", ProjectAccountCode);
+            writer.WriteStringValue("ProjectAccountName", ProjectAccountName);
+            writer.WriteStringValue("ProjectCode", ProjectCode);
+            writer.WriteStringValue("ProjectDescription", ProjectDescription);
+            writer.WriteDoubleValue("Quantity", Quantity);
+            writer.WriteDateTimeOffsetValue("StartTime", StartTime);
+            writer.WriteGuidValue("Subscription", Subscription);
+            writer.WriteGuidValue("SubscriptionAccount", SubscriptionAccount);
+            writer.WriteStringValue("SubscriptionAccountCode", SubscriptionAccountCode);
+            writer.WriteStringValue("SubscriptionAccountName", SubscriptionAccountName);
+            writer.WriteStringValue("SubscriptionDescription", SubscriptionDescription);
+            writer.WriteIntValue("SubscriptionNumber", SubscriptionNumber);
+            writer.WriteLongValue("Timestamp", Timestamp);
+            writer.WriteIntValue("Type", Type);
+            writer.WriteGuidValue("WBS", WBS);
+            writer.WriteStringValue("WBSDescription", WBSDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

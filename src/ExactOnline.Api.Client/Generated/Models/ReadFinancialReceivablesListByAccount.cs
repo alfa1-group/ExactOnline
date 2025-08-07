@@ -12,8 +12,90 @@ namespace ExactOnline.Api.Client.Models
     public partial class ReadFinancialReceivablesListByAccount : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Code of Account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountCode { get; set; }
+#nullable restore
+#else
+        public string AccountCode { get; set; }
+#endif
+        /// <summary>Reference to the account</summary>
+        public Guid? AccountId { get; set; }
+        /// <summary>Name of Account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountName { get; set; }
+#nullable restore
+#else
+        public string AccountName { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Amount</summary>
+        public double? Amount { get; set; }
+        /// <summary>Amount in transit - The amount that you have requested your bank to pay</summary>
+        public double? AmountInTransit { get; set; }
+        /// <summary>Code of Currency</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CurrencyCode { get; set; }
+#nullable restore
+#else
+        public string CurrencyCode { get; set; }
+#endif
+        /// <summary>Description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Date the invoice is due (This due date is not the discount due date)</summary>
+        public DateTimeOffset? DueDate { get; set; }
+        /// <summary>The entry number of this payment term corresponding sales/cashflow entry</summary>
+        public int? EntryNumber { get; set; }
+        /// <summary>Primary key, human readable ID</summary>
+        public long? HID { get; set; }
+        /// <summary>Obsolete</summary>
+        public Guid? Id { get; set; }
+        /// <summary>The date of the invoice or the date when money is collected from the customer</summary>
+        public DateTimeOffset? InvoiceDate { get; set; }
+        /// <summary>For sales entry, it would be the entrynumber. For the cashflow entry, it will be entrynumber of an invoice which this collection is for</summary>
+        public int? InvoiceNumber { get; set; }
+        /// <summary>Code of Journal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? JournalCode { get; set; }
+#nullable restore
+#else
+        public string JournalCode { get; set; }
+#endif
+        /// <summary>Description of Journal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? JournalDescription { get; set; }
+#nullable restore
+#else
+        public string JournalDescription { get; set; }
+#endif
+        /// <summary>Notes collection</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ExactOnline.Api.Client.Models.ReadFinancialReceivablesListByAccount_Notes? Notes { get; set; }
+#nullable restore
+#else
+        public global::ExactOnline.Api.Client.Models.ReadFinancialReceivablesListByAccount_Notes Notes { get; set; }
+#endif
+        /// <summary>Sales invoice Your Reference number. Will be null if it is a cashflow entry</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? YourRef { get; set; }
+#nullable restore
+#else
+        public string YourRef { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialReceivablesListByAccount"/> and sets the default values.
         /// </summary>
@@ -39,6 +121,23 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "AccountCode", n => { AccountCode = n.GetStringValue(); } },
+                { "AccountId", n => { AccountId = n.GetGuidValue(); } },
+                { "AccountName", n => { AccountName = n.GetStringValue(); } },
+                { "Amount", n => { Amount = n.GetDoubleValue(); } },
+                { "AmountInTransit", n => { AmountInTransit = n.GetDoubleValue(); } },
+                { "CurrencyCode", n => { CurrencyCode = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "DueDate", n => { DueDate = n.GetDateTimeOffsetValue(); } },
+                { "EntryNumber", n => { EntryNumber = n.GetIntValue(); } },
+                { "HID", n => { HID = n.GetLongValue(); } },
+                { "Id", n => { Id = n.GetGuidValue(); } },
+                { "InvoiceDate", n => { InvoiceDate = n.GetDateTimeOffsetValue(); } },
+                { "InvoiceNumber", n => { InvoiceNumber = n.GetIntValue(); } },
+                { "JournalCode", n => { JournalCode = n.GetStringValue(); } },
+                { "JournalDescription", n => { JournalDescription = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ReadFinancialReceivablesListByAccount_Notes>(global::ExactOnline.Api.Client.Models.ReadFinancialReceivablesListByAccount_Notes.CreateFromDiscriminatorValue); } },
+                { "YourRef", n => { YourRef = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +147,23 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("AccountCode", AccountCode);
+            writer.WriteGuidValue("AccountId", AccountId);
+            writer.WriteStringValue("AccountName", AccountName);
+            writer.WriteDoubleValue("Amount", Amount);
+            writer.WriteDoubleValue("AmountInTransit", AmountInTransit);
+            writer.WriteStringValue("CurrencyCode", CurrencyCode);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteDateTimeOffsetValue("DueDate", DueDate);
+            writer.WriteIntValue("EntryNumber", EntryNumber);
+            writer.WriteLongValue("HID", HID);
+            writer.WriteGuidValue("Id", Id);
+            writer.WriteDateTimeOffsetValue("InvoiceDate", InvoiceDate);
+            writer.WriteIntValue("InvoiceNumber", InvoiceNumber);
+            writer.WriteStringValue("JournalCode", JournalCode);
+            writer.WriteStringValue("JournalDescription", JournalDescription);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ReadFinancialReceivablesListByAccount_Notes>("Notes", Notes);
+            writer.WriteStringValue("YourRef", YourRef);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,8 +12,240 @@ namespace ExactOnline.Api.Client.Models
     public partial class VATVATCodes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Tax account</summary>
+        public Guid? Account { get; set; }
+        /// <summary>Code of Account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountCode { get; set; }
+#nullable restore
+#else
+        public string AccountCode { get; set; }
+#endif
+        /// <summary>Name of Account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountName { get; set; }
+#nullable restore
+#else
+        public string AccountName { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates how to calculate the tax. 0 = based on the gross amount, 1 = based on the gross amount + another tax</summary>
+        public int? CalculationBasis { get; set; }
+        /// <summary>Indicates if transactions using the VAT code are transactions of the domestic VAT charging regulation (such as those for subcontractors) or transactions that are registered within the EU. If Charged=1 and linked to a purchase invoice, both a line for the VAT to pay and a line for the VAT to claim are being created</summary>
+        public bool? Charged { get; set; }
+        /// <summary>VAT code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
+        /// <summary>Obsolete</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Country { get; set; }
+#nullable restore
+#else
+        public string Country { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Custom field endpoint</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomField { get; set; }
+#nullable restore
+#else
+        public string CustomField { get; set; }
+#endif
+        /// <summary>Description of the VAT code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Used in all legislations except France. Indicates if and how transactions using the VAT code appear on the ICT return (EU sales list). L = Listing goods, N = No listing, S = Listing services, T = Triangulation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EUSalesListing { get; set; }
+#nullable restore
+#else
+        public string EUSalesListing { get; set; }
+#endif
+        /// <summary>ExcludeVATListing. Used in Belgium Legislation to indicate whether the entries need to be excluded from the VAT Listing.</summary>
+        public int? ExcludeVATListing { get; set; }
+        /// <summary>Indicates the purchase discount GL account linked to the VAT codes for German legislation</summary>
+        public Guid? GLDiscountPurchase { get; set; }
+        /// <summary>Code of the G/L account used for VAT corrections of settlement discount purchase (Germany only)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLDiscountPurchaseCode { get; set; }
+#nullable restore
+#else
+        public string GLDiscountPurchaseCode { get; set; }
+#endif
+        /// <summary>Description of the G/L account used for VAT corrections of settlement discount purchase (Germany only)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLDiscountPurchaseDescription { get; set; }
+#nullable restore
+#else
+        public string GLDiscountPurchaseDescription { get; set; }
+#endif
+        /// <summary>Indicates the sales discount GL account linked to the VAT codes for German legislation</summary>
+        public Guid? GLDiscountSales { get; set; }
+        /// <summary>Code of the G/L account used for VAT corrections of settlement discount sales (Germany only)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLDiscountSalesCode { get; set; }
+#nullable restore
+#else
+        public string GLDiscountSalesCode { get; set; }
+#endif
+        /// <summary>Description of the G/L account used for VAT corrections of settlement discount sales (Germany only)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLDiscountSalesDescription { get; set; }
+#nullable restore
+#else
+        public string GLDiscountSalesDescription { get; set; }
+#endif
+        /// <summary>G/L account that is used to book the VAT to claim. If you enter purchases with a VAT code, the VAT amount to be claimed is entered to this VAT account. Must be of type VAT</summary>
+        public Guid? GLToClaim { get; set; }
+        /// <summary>Code of the VAT to claim G/L account for the VAT code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLToClaimCode { get; set; }
+#nullable restore
+#else
+        public string GLToClaimCode { get; set; }
+#endif
+        /// <summary>Description of the VAT to claim G/L account for the VAT code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLToClaimDescription { get; set; }
+#nullable restore
+#else
+        public string GLToClaimDescription { get; set; }
+#endif
+        /// <summary>G/L account that is used to book the VAT to pay. If you enter sales with a VAT code, the VAT amount to be paid is entered to this VAT account. Must be of type VAT</summary>
+        public Guid? GLToPay { get; set; }
+        /// <summary>Code of the VAT to pay G/L account for the VAT code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLToPayCode { get; set; }
+#nullable restore
+#else
+        public string GLToPayCode { get; set; }
+#endif
+        /// <summary>Description of the VAT to pay G/L account for the VAT code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLToPayDescription { get; set; }
+#nullable restore
+#else
+        public string GLToPayDescription { get; set; }
+#endif
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Used in all legislations except France. Indicates if intrastat is used</summary>
+        public bool? IntraStat { get; set; }
+        /// <summary>Used in France legislation only. Indicates if and how transactions using the VAT code appear on the DEB/DES return. L = Goods, N = Empty, S = Services</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntrastatType { get; set; }
+#nullable restore
+#else
+        public string IntrastatType { get; set; }
+#endif
+        /// <summary>Indicates if the VAT code may still be used</summary>
+        public bool? IsBlocked { get; set; }
+        /// <summary>Legal description for VAT code to print in the total block of the invoice</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LegalText { get; set; }
+#nullable restore
+#else
+        public string LegalText { get; set; }
+#endif
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>User name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>OSS country. Available when OneStopShop featureset is enabled in the administration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OssCountry { get; set; }
+#nullable restore
+#else
+        public string OssCountry { get; set; }
+#endif
+        /// <summary>Percentage of the VAT code</summary>
+        public double? Percentage { get; set; }
+        /// <summary>Indicates what type of Taxcode it is: can be VAT, IncomeTax</summary>
+        public int? TaxReturnType { get; set; }
+        /// <summary>Indicates how the VAT amount should be calculated in relation to the invoice amount. B = VAT 0% (Only base amount), E = Excluding, I = Including, N = No VAT</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
+        /// <summary>Field in VAT code maintenance to calculate different VATs depending on the selected document type. P = purchase invoice, F = freelance invoice, E = expense voucher. The field is valid for witholding tax type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VatDocType { get; set; }
+#nullable restore
+#else
+        public string VatDocType { get; set; }
+#endif
+        /// <summary>The VAT margin scheme is used for the trade of secondhand goods which are purchased without VAT (for example when a company buys a secondhand good from a private person). In the VAT margin scheme, the VAT is not calculated based on the sales price. Instead of that, the VAT is calculated based on the margin (gross sales price minus the gross purchase price)</summary>
+        public int? VatMargin { get; set; }
+        /// <summary>Partial ratio explains which part of the VAT the company has to pay. Used in some branches where the sellers have a bad reputation, so the buyers have to take over the VAT-liability</summary>
+        public int? VATPartialRatio { get; set; }
+        /// <summary>The VATPercentages property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ExactOnline.Api.Client.Models.VATVatPercentages? VATPercentages { get; set; }
+#nullable restore
+#else
+        public global::ExactOnline.Api.Client.Models.VATVatPercentages VATPercentages { get; set; }
+#endif
+        /// <summary>Indicates the type of transactions for which the VAT code may be used. B = Both, P = Purchase, S = Sales</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATTransactionType { get; set; }
+#nullable restore
+#else
+        public string VATTransactionType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.VATVATCodes"/> and sets the default values.
         /// </summary>
@@ -39,6 +271,50 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Account", n => { Account = n.GetGuidValue(); } },
+                { "AccountCode", n => { AccountCode = n.GetStringValue(); } },
+                { "AccountName", n => { AccountName = n.GetStringValue(); } },
+                { "CalculationBasis", n => { CalculationBasis = n.GetIntValue(); } },
+                { "Charged", n => { Charged = n.GetBoolValue(); } },
+                { "Code", n => { Code = n.GetStringValue(); } },
+                { "Country", n => { Country = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "CustomField", n => { CustomField = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "EUSalesListing", n => { EUSalesListing = n.GetStringValue(); } },
+                { "ExcludeVATListing", n => { ExcludeVATListing = n.GetIntValue(); } },
+                { "GLDiscountPurchase", n => { GLDiscountPurchase = n.GetGuidValue(); } },
+                { "GLDiscountPurchaseCode", n => { GLDiscountPurchaseCode = n.GetStringValue(); } },
+                { "GLDiscountPurchaseDescription", n => { GLDiscountPurchaseDescription = n.GetStringValue(); } },
+                { "GLDiscountSales", n => { GLDiscountSales = n.GetGuidValue(); } },
+                { "GLDiscountSalesCode", n => { GLDiscountSalesCode = n.GetStringValue(); } },
+                { "GLDiscountSalesDescription", n => { GLDiscountSalesDescription = n.GetStringValue(); } },
+                { "GLToClaim", n => { GLToClaim = n.GetGuidValue(); } },
+                { "GLToClaimCode", n => { GLToClaimCode = n.GetStringValue(); } },
+                { "GLToClaimDescription", n => { GLToClaimDescription = n.GetStringValue(); } },
+                { "GLToPay", n => { GLToPay = n.GetGuidValue(); } },
+                { "GLToPayCode", n => { GLToPayCode = n.GetStringValue(); } },
+                { "GLToPayDescription", n => { GLToPayDescription = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "IntraStat", n => { IntraStat = n.GetBoolValue(); } },
+                { "IntrastatType", n => { IntrastatType = n.GetStringValue(); } },
+                { "IsBlocked", n => { IsBlocked = n.GetBoolValue(); } },
+                { "LegalText", n => { LegalText = n.GetStringValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "OssCountry", n => { OssCountry = n.GetStringValue(); } },
+                { "Percentage", n => { Percentage = n.GetDoubleValue(); } },
+                { "TaxReturnType", n => { TaxReturnType = n.GetIntValue(); } },
+                { "Type", n => { Type = n.GetStringValue(); } },
+                { "VATPartialRatio", n => { VATPartialRatio = n.GetIntValue(); } },
+                { "VATPercentages", n => { VATPercentages = n.GetObjectValue<global::ExactOnline.Api.Client.Models.VATVatPercentages>(global::ExactOnline.Api.Client.Models.VATVatPercentages.CreateFromDiscriminatorValue); } },
+                { "VATTransactionType", n => { VATTransactionType = n.GetStringValue(); } },
+                { "VatDocType", n => { VatDocType = n.GetStringValue(); } },
+                { "VatMargin", n => { VatMargin = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +324,50 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("Account", Account);
+            writer.WriteStringValue("AccountCode", AccountCode);
+            writer.WriteStringValue("AccountName", AccountName);
+            writer.WriteIntValue("CalculationBasis", CalculationBasis);
+            writer.WriteBoolValue("Charged", Charged);
+            writer.WriteStringValue("Code", Code);
+            writer.WriteStringValue("Country", Country);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("CustomField", CustomField);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteStringValue("EUSalesListing", EUSalesListing);
+            writer.WriteIntValue("ExcludeVATListing", ExcludeVATListing);
+            writer.WriteGuidValue("GLDiscountPurchase", GLDiscountPurchase);
+            writer.WriteStringValue("GLDiscountPurchaseCode", GLDiscountPurchaseCode);
+            writer.WriteStringValue("GLDiscountPurchaseDescription", GLDiscountPurchaseDescription);
+            writer.WriteGuidValue("GLDiscountSales", GLDiscountSales);
+            writer.WriteStringValue("GLDiscountSalesCode", GLDiscountSalesCode);
+            writer.WriteStringValue("GLDiscountSalesDescription", GLDiscountSalesDescription);
+            writer.WriteGuidValue("GLToClaim", GLToClaim);
+            writer.WriteStringValue("GLToClaimCode", GLToClaimCode);
+            writer.WriteStringValue("GLToClaimDescription", GLToClaimDescription);
+            writer.WriteGuidValue("GLToPay", GLToPay);
+            writer.WriteStringValue("GLToPayCode", GLToPayCode);
+            writer.WriteStringValue("GLToPayDescription", GLToPayDescription);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteBoolValue("IntraStat", IntraStat);
+            writer.WriteStringValue("IntrastatType", IntrastatType);
+            writer.WriteBoolValue("IsBlocked", IsBlocked);
+            writer.WriteStringValue("LegalText", LegalText);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("OssCountry", OssCountry);
+            writer.WriteDoubleValue("Percentage", Percentage);
+            writer.WriteIntValue("TaxReturnType", TaxReturnType);
+            writer.WriteStringValue("Type", Type);
+            writer.WriteStringValue("VatDocType", VatDocType);
+            writer.WriteIntValue("VatMargin", VatMargin);
+            writer.WriteIntValue("VATPartialRatio", VATPartialRatio);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.VATVatPercentages>("VATPercentages", VATPercentages);
+            writer.WriteStringValue("VATTransactionType", VATTransactionType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

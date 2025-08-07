@@ -14,6 +14,112 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>ID of creating user</summary>
+        public Guid? CreatedBy { get; set; }
+        /// <summary>Name of the creating user</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByFullName { get; set; }
+#nullable restore
+#else
+        public string CreatedByFullName { get; set; }
+#endif
+        /// <summary>Creation date of this SubOrderReversal</summary>
+        public DateTimeOffset? CreatedDate { get; set; }
+        /// <summary>Does the SubOrderReversal&apos;s item use batch numbers</summary>
+        public int? IsBatch { get; set; }
+        /// <summary>Indicates if fractions (for example 0.35) are allowed for quantities of the SubOrderReversal&apos;s item</summary>
+        public int? IsFractionAllowedItem { get; set; }
+        /// <summary>Does the SubOrderReversal&apos;s item use serial numbers</summary>
+        public int? IsSerial { get; set; }
+        /// <summary>Item reversed</summary>
+        public Guid? Item { get; set; }
+        /// <summary>Code of item reversed</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of item reversed</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>Picture url of shop order item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemPictureUrl { get; set; }
+#nullable restore
+#else
+        public string ItemPictureUrl { get; set; }
+#endif
+        /// <summary>MaterialReversal.StockTransactionId related to this SubOrderReversal&apos;s MaterialReversal</summary>
+        public Guid? MaterialReversalStockTransactionId { get; set; }
+        /// <summary>Notes logged with this reversal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Note { get; set; }
+#nullable restore
+#else
+        public string Note { get; set; }
+#endif
+        /// <summary>MaterialIssue.StockTransactionId related to this SubOrderReceipt&apos;s original MaterialIssue</summary>
+        public Guid? OriginalMaterialIssueStockTransactionId { get; set; }
+        /// <summary>ShopOrderReceipt.StockTransactionId related to this SubOrderReceipt&apos;s original ShopOrderReceipt</summary>
+        public Guid? OriginalShopOrderReceiptStockTransactionId { get; set; }
+        /// <summary>Shop order reversed from</summary>
+        public Guid? ParentShopOrder { get; set; }
+        /// <summary>Number of shop order reversed from</summary>
+        public int? ParentShopOrderNumber { get; set; }
+        /// <summary>Quantity of this SubOrderReversal</summary>
+        public double? Quantity { get; set; }
+        /// <summary>ShopOrderReversal.StockTransactionId related to this SubOrderReversal&apos;s ShopOrderReversal</summary>
+        public Guid? ShopOrderReversalStockTransactionId { get; set; }
+        /// <summary>Shop order reversed to</summary>
+        public Guid? SubShopOrder { get; set; }
+        /// <summary>Number of shop order reversed to</summary>
+        public int? SubShopOrderNumber { get; set; }
+        /// <summary>Effective date of this SubOrderReversal</summary>
+        public DateTimeOffset? TransactionDate { get; set; }
+        /// <summary>Unit of measurement abbreviation of this SubOrderReversal&apos;s item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Unit { get; set; }
+#nullable restore
+#else
+        public string Unit { get; set; }
+#endif
+        /// <summary>Unit of measurement of this SubOrderReversal&apos;s item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UnitDescription { get; set; }
+#nullable restore
+#else
+        public string UnitDescription { get; set; }
+#endif
+        /// <summary>ID of warehouse of this SubOrderReversal</summary>
+        public Guid? Warehouse { get; set; }
+        /// <summary>Code of warehouse of this SubOrderReversal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseCode { get; set; }
+#nullable restore
+#else
+        public string WarehouseCode { get; set; }
+#endif
+        /// <summary>Description of warehouse of this SubOrderReversal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseDescription { get; set; }
+#nullable restore
+#else
+        public string WarehouseDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingSubOrderReversals"/> and sets the default values.
         /// </summary>
@@ -39,6 +145,32 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "CreatedBy", n => { CreatedBy = n.GetGuidValue(); } },
+                { "CreatedByFullName", n => { CreatedByFullName = n.GetStringValue(); } },
+                { "CreatedDate", n => { CreatedDate = n.GetDateTimeOffsetValue(); } },
+                { "IsBatch", n => { IsBatch = n.GetIntValue(); } },
+                { "IsFractionAllowedItem", n => { IsFractionAllowedItem = n.GetIntValue(); } },
+                { "IsSerial", n => { IsSerial = n.GetIntValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "ItemPictureUrl", n => { ItemPictureUrl = n.GetStringValue(); } },
+                { "MaterialReversalStockTransactionId", n => { MaterialReversalStockTransactionId = n.GetGuidValue(); } },
+                { "Note", n => { Note = n.GetStringValue(); } },
+                { "OriginalMaterialIssueStockTransactionId", n => { OriginalMaterialIssueStockTransactionId = n.GetGuidValue(); } },
+                { "OriginalShopOrderReceiptStockTransactionId", n => { OriginalShopOrderReceiptStockTransactionId = n.GetGuidValue(); } },
+                { "ParentShopOrder", n => { ParentShopOrder = n.GetGuidValue(); } },
+                { "ParentShopOrderNumber", n => { ParentShopOrderNumber = n.GetIntValue(); } },
+                { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
+                { "ShopOrderReversalStockTransactionId", n => { ShopOrderReversalStockTransactionId = n.GetGuidValue(); } },
+                { "SubShopOrder", n => { SubShopOrder = n.GetGuidValue(); } },
+                { "SubShopOrderNumber", n => { SubShopOrderNumber = n.GetIntValue(); } },
+                { "TransactionDate", n => { TransactionDate = n.GetDateTimeOffsetValue(); } },
+                { "Unit", n => { Unit = n.GetStringValue(); } },
+                { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
+                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
+                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
+                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +180,32 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("CreatedBy", CreatedBy);
+            writer.WriteStringValue("CreatedByFullName", CreatedByFullName);
+            writer.WriteDateTimeOffsetValue("CreatedDate", CreatedDate);
+            writer.WriteIntValue("IsBatch", IsBatch);
+            writer.WriteIntValue("IsFractionAllowedItem", IsFractionAllowedItem);
+            writer.WriteIntValue("IsSerial", IsSerial);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteStringValue("ItemPictureUrl", ItemPictureUrl);
+            writer.WriteGuidValue("MaterialReversalStockTransactionId", MaterialReversalStockTransactionId);
+            writer.WriteStringValue("Note", Note);
+            writer.WriteGuidValue("OriginalMaterialIssueStockTransactionId", OriginalMaterialIssueStockTransactionId);
+            writer.WriteGuidValue("OriginalShopOrderReceiptStockTransactionId", OriginalShopOrderReceiptStockTransactionId);
+            writer.WriteGuidValue("ParentShopOrder", ParentShopOrder);
+            writer.WriteIntValue("ParentShopOrderNumber", ParentShopOrderNumber);
+            writer.WriteDoubleValue("Quantity", Quantity);
+            writer.WriteGuidValue("ShopOrderReversalStockTransactionId", ShopOrderReversalStockTransactionId);
+            writer.WriteGuidValue("SubShopOrder", SubShopOrder);
+            writer.WriteIntValue("SubShopOrderNumber", SubShopOrderNumber);
+            writer.WriteDateTimeOffsetValue("TransactionDate", TransactionDate);
+            writer.WriteStringValue("Unit", Unit);
+            writer.WriteStringValue("UnitDescription", UnitDescription);
+            writer.WriteGuidValue("Warehouse", Warehouse);
+            writer.WriteStringValue("WarehouseCode", WarehouseCode);
+            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

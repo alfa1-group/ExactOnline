@@ -14,6 +14,28 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Description of the free field</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Item Identidy</summary>
+        public Guid? ItemID { get; set; }
+        /// <summary>Item last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>Used to determine the unique free field name as FreeField{Number}, first of all this is used for the external communication</summary>
+        public int? Number { get; set; }
+        /// <summary>The value store in free field</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Value { get; set; }
+#nullable restore
+#else
+        public string Value { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadLogisticsItemExtraField"/> and sets the default values.
         /// </summary>
@@ -39,6 +61,11 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "ItemID", n => { ItemID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Number", n => { Number = n.GetIntValue(); } },
+                { "Value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +75,11 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("Description", Description);
+            writer.WriteGuidValue("ItemID", ItemID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteIntValue("Number", Number);
+            writer.WriteStringValue("Value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

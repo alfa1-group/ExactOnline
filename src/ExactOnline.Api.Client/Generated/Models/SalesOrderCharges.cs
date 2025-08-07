@@ -12,8 +12,92 @@ namespace ExactOnline.Api.Client.Models
     public partial class SalesOrderCharges : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Active</summary>
+        public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Amount of order charge</summary>
+        public double? Amount { get; set; }
+        /// <summary>Code of the order charge</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Description of order charge</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>ID of GLAccount</summary>
+        public Guid? GLAccount { get; set; }
+        /// <summary>Code of GLAccount</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLAccountCode { get; set; }
+#nullable restore
+#else
+        public string GLAccountCode { get; set; }
+#endif
+        /// <summary>Description of GLAccount</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLAccountDescription { get; set; }
+#nullable restore
+#else
+        public string GLAccountDescription { get; set; }
+#endif
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>VAT Code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATCode { get; set; }
+#nullable restore
+#else
+        public string VATCode { get; set; }
+#endif
+        /// <summary>Description of VAT Code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATDescription { get; set; }
+#nullable restore
+#else
+        public string VATDescription { get; set; }
+#endif
+        /// <summary>The VAT Percentage of the VAT Code</summary>
+        public double? VATPercentage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesOrderCharges"/> and sets the default values.
         /// </summary>
@@ -39,6 +123,24 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Active", n => { Active = n.GetBoolValue(); } },
+                { "Amount", n => { Amount = n.GetDoubleValue(); } },
+                { "Code", n => { Code = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "GLAccount", n => { GLAccount = n.GetGuidValue(); } },
+                { "GLAccountCode", n => { GLAccountCode = n.GetStringValue(); } },
+                { "GLAccountDescription", n => { GLAccountDescription = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "VATCode", n => { VATCode = n.GetStringValue(); } },
+                { "VATDescription", n => { VATDescription = n.GetStringValue(); } },
+                { "VATPercentage", n => { VATPercentage = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +150,24 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("Active", Active);
+            writer.WriteDoubleValue("Amount", Amount);
+            writer.WriteStringValue("Code", Code);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("GLAccount", GLAccount);
+            writer.WriteStringValue("GLAccountCode", GLAccountCode);
+            writer.WriteStringValue("GLAccountDescription", GLAccountDescription);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("VATCode", VATCode);
+            writer.WriteStringValue("VATDescription", VATDescription);
+            writer.WriteDoubleValue("VATPercentage", VATPercentage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

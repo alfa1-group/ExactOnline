@@ -14,6 +14,40 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Extra description of the mailbox</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Only used when this mailbox is used for one specific administration, for example invoices to this mailbox will only be booked in this administration</summary>
+        public int? ForDivision { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Indicates whether this service is used for messages returned by the scanning service</summary>
+        public bool? IsScanServiceMailbox { get; set; }
+        /// <summary>E-mail address-like format, for example johndoe@exactonline.nl</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Mailbox { get; set; }
+#nullable restore
+#else
+        public string Mailbox { get; set; }
+#endif
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Date that this mailbox became valid</summary>
+        public DateTimeOffset? ValidFrom { get; set; }
+        /// <summary>Date that this mailbox will not be valid anymore</summary>
+        public DateTimeOffset? ValidTo { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadMailboxPreferredMailbox"/> and sets the default values.
         /// </summary>
@@ -39,6 +73,17 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "ForDivision", n => { ForDivision = n.GetIntValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "IsScanServiceMailbox", n => { IsScanServiceMailbox = n.GetBoolValue(); } },
+                { "Mailbox", n => { Mailbox = n.GetStringValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ValidFrom", n => { ValidFrom = n.GetDateTimeOffsetValue(); } },
+                { "ValidTo", n => { ValidTo = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +93,17 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("ForDivision", ForDivision);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteBoolValue("IsScanServiceMailbox", IsScanServiceMailbox);
+            writer.WriteStringValue("Mailbox", Mailbox);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteDateTimeOffsetValue("ValidFrom", ValidFrom);
+            writer.WriteDateTimeOffsetValue("ValidTo", ValidTo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

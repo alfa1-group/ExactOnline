@@ -14,6 +14,20 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The FreeStock property</summary>
+        public double? FreeStock { get; set; }
+        /// <summary>The InStock property</summary>
+        public double? InStock { get; set; }
+        /// <summary>The ItemId property</summary>
+        public Guid? ItemId { get; set; }
+        /// <summary>The PlanningIn property</summary>
+        public double? PlanningIn { get; set; }
+        /// <summary>The PlanningOut property</summary>
+        public double? PlanningOut { get; set; }
+        /// <summary>The ProjectedStock property</summary>
+        public double? ProjectedStock { get; set; }
+        /// <summary>The ReservedStock property</summary>
+        public double? ReservedStock { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadLogisticsStockPosition"/> and sets the default values.
         /// </summary>
@@ -39,6 +53,13 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "FreeStock", n => { FreeStock = n.GetDoubleValue(); } },
+                { "InStock", n => { InStock = n.GetDoubleValue(); } },
+                { "ItemId", n => { ItemId = n.GetGuidValue(); } },
+                { "PlanningIn", n => { PlanningIn = n.GetDoubleValue(); } },
+                { "PlanningOut", n => { PlanningOut = n.GetDoubleValue(); } },
+                { "ProjectedStock", n => { ProjectedStock = n.GetDoubleValue(); } },
+                { "ReservedStock", n => { ReservedStock = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +69,13 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("FreeStock", FreeStock);
+            writer.WriteDoubleValue("InStock", InStock);
+            writer.WriteGuidValue("ItemId", ItemId);
+            writer.WriteDoubleValue("PlanningIn", PlanningIn);
+            writer.WriteDoubleValue("PlanningOut", PlanningOut);
+            writer.WriteDoubleValue("ProjectedStock", ProjectedStock);
+            writer.WriteDoubleValue("ReservedStock", ReservedStock);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

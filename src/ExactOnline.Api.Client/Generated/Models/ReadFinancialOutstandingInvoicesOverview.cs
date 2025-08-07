@@ -14,6 +14,30 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Primary key</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CurrencyCode { get; set; }
+#nullable restore
+#else
+        public string CurrencyCode { get; set; }
+#endif
+        /// <summary>Total invoice amount to be paid</summary>
+        public double? OutstandingPayableInvoiceAmount { get; set; }
+        /// <summary>Number of invoices to be paid</summary>
+        public double? OutstandingPayableInvoiceCount { get; set; }
+        /// <summary>Total invoice amount to be received</summary>
+        public double? OutstandingReceivableInvoiceAmount { get; set; }
+        /// <summary>Number of invoices to be received</summary>
+        public double? OutstandingReceivableInvoiceCount { get; set; }
+        /// <summary>Total payable invoice amount that is overdue</summary>
+        public double? OverduePayableInvoiceAmount { get; set; }
+        /// <summary>Number of payable invoices that are overdue</summary>
+        public double? OverduePayableInvoiceCount { get; set; }
+        /// <summary>Total receivable invoice amount that is overdue</summary>
+        public double? OverdueReceivableInvoiceAmount { get; set; }
+        /// <summary>Number of receivable invoices that are overdue</summary>
+        public double? OverdueReceivableInvoiceCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialOutstandingInvoicesOverview"/> and sets the default values.
         /// </summary>
@@ -39,6 +63,15 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "CurrencyCode", n => { CurrencyCode = n.GetStringValue(); } },
+                { "OutstandingPayableInvoiceAmount", n => { OutstandingPayableInvoiceAmount = n.GetDoubleValue(); } },
+                { "OutstandingPayableInvoiceCount", n => { OutstandingPayableInvoiceCount = n.GetDoubleValue(); } },
+                { "OutstandingReceivableInvoiceAmount", n => { OutstandingReceivableInvoiceAmount = n.GetDoubleValue(); } },
+                { "OutstandingReceivableInvoiceCount", n => { OutstandingReceivableInvoiceCount = n.GetDoubleValue(); } },
+                { "OverduePayableInvoiceAmount", n => { OverduePayableInvoiceAmount = n.GetDoubleValue(); } },
+                { "OverduePayableInvoiceCount", n => { OverduePayableInvoiceCount = n.GetDoubleValue(); } },
+                { "OverdueReceivableInvoiceAmount", n => { OverdueReceivableInvoiceAmount = n.GetDoubleValue(); } },
+                { "OverdueReceivableInvoiceCount", n => { OverdueReceivableInvoiceCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +81,15 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("CurrencyCode", CurrencyCode);
+            writer.WriteDoubleValue("OutstandingPayableInvoiceAmount", OutstandingPayableInvoiceAmount);
+            writer.WriteDoubleValue("OutstandingPayableInvoiceCount", OutstandingPayableInvoiceCount);
+            writer.WriteDoubleValue("OutstandingReceivableInvoiceAmount", OutstandingReceivableInvoiceAmount);
+            writer.WriteDoubleValue("OutstandingReceivableInvoiceCount", OutstandingReceivableInvoiceCount);
+            writer.WriteDoubleValue("OverduePayableInvoiceAmount", OverduePayableInvoiceAmount);
+            writer.WriteDoubleValue("OverduePayableInvoiceCount", OverduePayableInvoiceCount);
+            writer.WriteDoubleValue("OverdueReceivableInvoiceAmount", OverdueReceivableInvoiceAmount);
+            writer.WriteDoubleValue("OverdueReceivableInvoiceCount", OverdueReceivableInvoiceCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

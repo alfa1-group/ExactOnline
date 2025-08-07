@@ -98,17 +98,20 @@ internal class EndpointCrawler
         var properties = new Dictionary<string, IOpenApiSchema>();
         var requiredProperties = new HashSet<string>();
 
-        var propertyRows = doc.DocumentNode.SelectNodes("//table[@id='referencetable']/tr[not(@class='header')]");
+        var propertyRows = doc.DocumentNode.SelectNodes("//table[@id='referencetable']//tr[not(@class='header')]");
         // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
         if (propertyRows != null)
         {
             foreach (var row in propertyRows)
             {
+                var rowIsKey = row.GetClasses().Contains("key");
+
                 var columns = row.SelectNodes("td");
                 if (columns is { Count: >= 7 })
                 {
-                    var name = columns[1].InnerText.Trim();
-                    var linkNode = columns[1].SelectSingleNode(".//a");
+                    var nameColumn = columns[1];
+                    var name = nameColumn.InnerText.Trim();
+                    var linkNode = nameColumn.SelectSingleNode(".//a");
                     var href = linkNode?.Attributes["href"]?.Value;
                     var linkedSchemaName = href?.Split("?name=").Last().Trim();
 
@@ -119,7 +122,7 @@ internal class EndpointCrawler
                         description = columns[8].InnerText.Trim();
                     }
                     var isCollection = description.Contains("collection of", StringComparison.OrdinalIgnoreCase);
-                    var isRequired = bool.TryParse(columns[2].InnerText.Trim(), out var isMandatoryValue) && isMandatoryValue;
+                    var isRequired = rowIsKey || bool.TryParse(columns[2].InnerText.Trim(), out var isMandatoryValue) && isMandatoryValue;
 
                     if (string.IsNullOrEmpty(name))
                     {

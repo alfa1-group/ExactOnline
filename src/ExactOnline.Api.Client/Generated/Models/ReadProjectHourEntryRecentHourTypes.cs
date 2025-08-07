@@ -14,6 +14,28 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The last date that the item has been used for hour entry</summary>
+        public DateTimeOffset? DateLastUsed { get; set; }
+        /// <summary>Optional property indicating if the type is still valid for new entries. Can be used to show valid defaults</summary>
+        public bool? IsValid { get; set; }
+        /// <summary>Code of the item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>Guid ID of the item used for hour entries</summary>
+        public Guid? ItemId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentHourTypes"/> and sets the default values.
         /// </summary>
@@ -39,6 +61,11 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "DateLastUsed", n => { DateLastUsed = n.GetDateTimeOffsetValue(); } },
+                { "IsValid", n => { IsValid = n.GetBoolValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "ItemId", n => { ItemId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +75,11 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("DateLastUsed", DateLastUsed);
+            writer.WriteBoolValue("IsValid", IsValid);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteGuidValue("ItemId", ItemId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,8 +12,98 @@ namespace ExactOnline.Api.Client.Models
     public partial class SalesShippingMethods : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Active</summary>
+        public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Amount of Shipping Cost</summary>
+        public double? Amount { get; set; }
+        /// <summary>Code of the shipping method</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Description of shipping method</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Notes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>Shipping method rates URL</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ShippingRatesURL { get; set; }
+#nullable restore
+#else
+        public string ShippingRatesURL { get; set; }
+#endif
+        /// <summary>Tracking URL</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TrackingURL { get; set; }
+#nullable restore
+#else
+        public string TrackingURL { get; set; }
+#endif
+        /// <summary>VAT Code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATCode { get; set; }
+#nullable restore
+#else
+        public string VATCode { get; set; }
+#endif
+        /// <summary>Description of VAT Code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATCodeDescription { get; set; }
+#nullable restore
+#else
+        public string VATCodeDescription { get; set; }
+#endif
+        /// <summary>The VAT Percentage of the VAT code</summary>
+        public double? VATPercentage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesShippingMethods"/> and sets the default values.
         /// </summary>
@@ -39,6 +129,24 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Active", n => { Active = n.GetBoolValue(); } },
+                { "Amount", n => { Amount = n.GetDoubleValue(); } },
+                { "Code", n => { Code = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "ShippingRatesURL", n => { ShippingRatesURL = n.GetStringValue(); } },
+                { "TrackingURL", n => { TrackingURL = n.GetStringValue(); } },
+                { "VATCode", n => { VATCode = n.GetStringValue(); } },
+                { "VATCodeDescription", n => { VATCodeDescription = n.GetStringValue(); } },
+                { "VATPercentage", n => { VATPercentage = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +156,24 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("Active", Active);
+            writer.WriteDoubleValue("Amount", Amount);
+            writer.WriteStringValue("Code", Code);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteStringValue("ShippingRatesURL", ShippingRatesURL);
+            writer.WriteStringValue("TrackingURL", TrackingURL);
+            writer.WriteStringValue("VATCode", VATCode);
+            writer.WriteStringValue("VATCodeDescription", VATCodeDescription);
+            writer.WriteDoubleValue("VATPercentage", VATPercentage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

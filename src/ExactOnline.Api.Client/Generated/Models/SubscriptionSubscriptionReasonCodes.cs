@@ -12,8 +12,70 @@ namespace ExactOnline.Api.Client.Models
     public partial class SubscriptionSubscriptionReasonCodes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Boolean values to indicate if the reason code is still active</summary>
+        public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Code of the reason of cancellation of the subscription</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
+        /// <summary>Date and time of the creation of the reason of cancellation of the subscription record</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>GUID id of the user that created the reason of cancellation of the subscription</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Full name of the user that created the reason of cancellation of the subscription</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomField { get; set; }
+#nullable restore
+#else
+        public string CustomField { get; set; }
+#endif
+        /// <summary>The description written for the cancellation of the subscription</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>The division that the record was created in</summary>
+        public int? Division { get; set; }
+        /// <summary>The GUID id of the record</summary>
+        public Guid? ID { get; set; }
+        /// <summary>The date and time the record was modified</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>Guid id of the user that modified the reason of cancellation of the subscription record</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Full name of the user that modified the reason of cancellation of the subscription record</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Remarks written link to the reason of cancellation of the subscription</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionReasonCodes"/> and sets the default values.
         /// </summary>
@@ -39,6 +101,19 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Active", n => { Active = n.GetBoolValue(); } },
+                { "Code", n => { Code = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "CustomField", n => { CustomField = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +123,19 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("Active", Active);
+            writer.WriteStringValue("Code", Code);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("CustomField", CustomField);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

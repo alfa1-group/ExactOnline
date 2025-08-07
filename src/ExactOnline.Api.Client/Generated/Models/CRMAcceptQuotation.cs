@@ -12,8 +12,150 @@ namespace ExactOnline.Api.Client.Models
     public partial class CRMAcceptQuotation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>0 = No action (Default), 1 = create sales order, 2 = create sales invoice, 3 = create project, 4 = add to existing project, 5 = create subscription, 99 = follow email with sign off action.For CRM standalone:Code 99 only applicable for quotation with status &apos;60 - Awaiting online acceptance&apos;.</summary>
+        public int? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Contains information if the quotation was successfully added to existing project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AddToExistingProjectSuccess { get; set; }
+#nullable restore
+#else
+        public string AddToExistingProjectSuccess { get; set; }
+#endif
+        /// <summary>Create a project item price agreement. Only needed when Action = 3 or Action = 4. Default = True.</summary>
+        public bool? CreateItemPriceAgreement { get; set; }
+        /// <summary>Create a project work breakdown structure. Only needed when ProjectBudgetType = 2.</summary>
+        public bool? CreateProjectWBS { get; set; }
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Contains the error message if an error occurred during the acception of the quotation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorMessage { get; set; }
+#nullable restore
+#else
+        public string ErrorMessage { get; set; }
+#endif
+        /// <summary>The journal in which the sales invoice will be booked. Mandatory for Action = 2.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvoiceJournal { get; set; }
+#nullable restore
+#else
+        public string InvoiceJournal { get; set; }
+#endif
+        /// <summary>Based on this layout the notification email is sent. In case it is not specified, then no email is sent.</summary>
+        public Guid? NotificationLayout { get; set; }
+        /// <summary>Collection of optional quotation line IDs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ExactOnline.Api.Client.Models.CRMOptionalQuotationLineID>? OptionalQuotationLineIDs { get; set; }
+#nullable restore
+#else
+        public List<global::ExactOnline.Api.Client.Models.CRMOptionalQuotationLineID> OptionalQuotationLineIDs { get; set; }
+#endif
+        /// <summary>The budget type of the project that will be created. Default = 0.</summary>
+        public int? ProjectBudgetType { get; set; }
+        /// <summary>The ID of the project classification.</summary>
+        public Guid? ProjectClassification { get; set; }
+        /// <summary>The code of the project that will be created. Mandatory for Action = 3.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectCode { get; set; }
+#nullable restore
+#else
+        public string ProjectCode { get; set; }
+#endif
+        /// <summary>The description of the project that will be created. Mandatory for Action = 3.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectDescription { get; set; }
+#nullable restore
+#else
+        public string ProjectDescription { get; set; }
+#endif
+        /// <summary>The ID of the project that will be linked to the quotation. Mandatory for Action = 4.</summary>
+        public Guid? ProjectID { get; set; }
+        /// <summary>The invoicing date of the project. Mandatory for ProjectInvoicingAction = 2.</summary>
+        public DateTimeOffset? ProjectInvoiceDate { get; set; }
+        /// <summary>The project invoicing action. 0 = None (Default), 1 = Create invoice terms, 2 = As quoted.</summary>
+        public int? ProjectInvoicingAction { get; set; }
+        /// <summary>The prepaid type. Mandatory for ProjectType = 5. 1 = Retainer, 2 = Hour type bundle.</summary>
+        public int? ProjectPrepaindTypes { get; set; }
+        /// <summary>PriceAgreement.</summary>
+        public double? ProjectPriceAgreement { get; set; }
+        /// <summary>Contains information if the project was successfully created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectSuccess { get; set; }
+#nullable restore
+#else
+        public string ProjectSuccess { get; set; }
+#endif
+        /// <summary>The type of the project that will be created. 2 = Fixed price (Default), 3 = Time and Material, 4 = Non billable, 5 = Prepaid.</summary>
+        public int? ProjectType { get; set; }
+        /// <summary>The ID of the WBS deliverable part of. Only needed when Action = 4 and CreateProjectWBS = True.</summary>
+        public Guid? ProjectWBSPartOf { get; set; }
+        /// <summary>Identifier of the quotation.</summary>
+        public Guid? QuotationID { get; set; }
+        /// <summary>Reason why the quotation was accepted.</summary>
+        public Guid? ReasonCode { get; set; }
+        /// <summary>Contains information if the sales invoice was successfully created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SalesInvoiceSuccess { get; set; }
+#nullable restore
+#else
+        public string SalesInvoiceSuccess { get; set; }
+#endif
+        /// <summary>Contains information if the sales order was successfully created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SalesOrderSuccess { get; set; }
+#nullable restore
+#else
+        public string SalesOrderSuccess { get; set; }
+#endif
+        /// <summary>Description of the subscription.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubscriptionDescription { get; set; }
+#nullable restore
+#else
+        public string SubscriptionDescription { get; set; }
+#endif
+        /// <summary>Start date of the subscription.</summary>
+        public DateTimeOffset? SubscriptionStartDate { get; set; }
+        /// <summary>Contains information if the subscription was successfully created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubscriptionSuccess { get; set; }
+#nullable restore
+#else
+        public string SubscriptionSuccess { get; set; }
+#endif
+        /// <summary>The ID of the subscription condition. Mandatory for Action = 5.</summary>
+        public Guid? SubscriptionType { get; set; }
+        /// <summary>Contains information if the quotation was successfully accepted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SuccessMessage { get; set; }
+#nullable restore
+#else
+        public string SuccessMessage { get; set; }
+#endif
+        /// <summary>Update project budget, price agreement and hours. Only needed when Action = 4. Default = True.</summary>
+        public bool? UpdateProjectBudgetAndPriceAgreement { get; set; }
+        /// <summary>The number by which this quotation is identified by the order account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? YourRef { get; set; }
+#nullable restore
+#else
+        public string YourRef { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CRMAcceptQuotation"/> and sets the default values.
         /// </summary>
@@ -39,6 +181,38 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Action", n => { Action = n.GetIntValue(); } },
+                { "AddToExistingProjectSuccess", n => { AddToExistingProjectSuccess = n.GetStringValue(); } },
+                { "CreateItemPriceAgreement", n => { CreateItemPriceAgreement = n.GetBoolValue(); } },
+                { "CreateProjectWBS", n => { CreateProjectWBS = n.GetBoolValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "ErrorMessage", n => { ErrorMessage = n.GetStringValue(); } },
+                { "InvoiceJournal", n => { InvoiceJournal = n.GetStringValue(); } },
+                { "NotificationLayout", n => { NotificationLayout = n.GetGuidValue(); } },
+                { "OptionalQuotationLineIDs", n => { OptionalQuotationLineIDs = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.CRMOptionalQuotationLineID>(global::ExactOnline.Api.Client.Models.CRMOptionalQuotationLineID.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ProjectBudgetType", n => { ProjectBudgetType = n.GetIntValue(); } },
+                { "ProjectClassification", n => { ProjectClassification = n.GetGuidValue(); } },
+                { "ProjectCode", n => { ProjectCode = n.GetStringValue(); } },
+                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
+                { "ProjectID", n => { ProjectID = n.GetGuidValue(); } },
+                { "ProjectInvoiceDate", n => { ProjectInvoiceDate = n.GetDateTimeOffsetValue(); } },
+                { "ProjectInvoicingAction", n => { ProjectInvoicingAction = n.GetIntValue(); } },
+                { "ProjectPrepaindTypes", n => { ProjectPrepaindTypes = n.GetIntValue(); } },
+                { "ProjectPriceAgreement", n => { ProjectPriceAgreement = n.GetDoubleValue(); } },
+                { "ProjectSuccess", n => { ProjectSuccess = n.GetStringValue(); } },
+                { "ProjectType", n => { ProjectType = n.GetIntValue(); } },
+                { "ProjectWBSPartOf", n => { ProjectWBSPartOf = n.GetGuidValue(); } },
+                { "QuotationID", n => { QuotationID = n.GetGuidValue(); } },
+                { "ReasonCode", n => { ReasonCode = n.GetGuidValue(); } },
+                { "SalesInvoiceSuccess", n => { SalesInvoiceSuccess = n.GetStringValue(); } },
+                { "SalesOrderSuccess", n => { SalesOrderSuccess = n.GetStringValue(); } },
+                { "SubscriptionDescription", n => { SubscriptionDescription = n.GetStringValue(); } },
+                { "SubscriptionStartDate", n => { SubscriptionStartDate = n.GetDateTimeOffsetValue(); } },
+                { "SubscriptionSuccess", n => { SubscriptionSuccess = n.GetStringValue(); } },
+                { "SubscriptionType", n => { SubscriptionType = n.GetGuidValue(); } },
+                { "SuccessMessage", n => { SuccessMessage = n.GetStringValue(); } },
+                { "UpdateProjectBudgetAndPriceAgreement", n => { UpdateProjectBudgetAndPriceAgreement = n.GetBoolValue(); } },
+                { "YourRef", n => { YourRef = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +222,38 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("Action", Action);
+            writer.WriteStringValue("AddToExistingProjectSuccess", AddToExistingProjectSuccess);
+            writer.WriteBoolValue("CreateItemPriceAgreement", CreateItemPriceAgreement);
+            writer.WriteBoolValue("CreateProjectWBS", CreateProjectWBS);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteStringValue("ErrorMessage", ErrorMessage);
+            writer.WriteStringValue("InvoiceJournal", InvoiceJournal);
+            writer.WriteGuidValue("NotificationLayout", NotificationLayout);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.CRMOptionalQuotationLineID>("OptionalQuotationLineIDs", OptionalQuotationLineIDs);
+            writer.WriteIntValue("ProjectBudgetType", ProjectBudgetType);
+            writer.WriteGuidValue("ProjectClassification", ProjectClassification);
+            writer.WriteStringValue("ProjectCode", ProjectCode);
+            writer.WriteStringValue("ProjectDescription", ProjectDescription);
+            writer.WriteGuidValue("ProjectID", ProjectID);
+            writer.WriteDateTimeOffsetValue("ProjectInvoiceDate", ProjectInvoiceDate);
+            writer.WriteIntValue("ProjectInvoicingAction", ProjectInvoicingAction);
+            writer.WriteIntValue("ProjectPrepaindTypes", ProjectPrepaindTypes);
+            writer.WriteDoubleValue("ProjectPriceAgreement", ProjectPriceAgreement);
+            writer.WriteStringValue("ProjectSuccess", ProjectSuccess);
+            writer.WriteIntValue("ProjectType", ProjectType);
+            writer.WriteGuidValue("ProjectWBSPartOf", ProjectWBSPartOf);
+            writer.WriteGuidValue("QuotationID", QuotationID);
+            writer.WriteGuidValue("ReasonCode", ReasonCode);
+            writer.WriteStringValue("SalesInvoiceSuccess", SalesInvoiceSuccess);
+            writer.WriteStringValue("SalesOrderSuccess", SalesOrderSuccess);
+            writer.WriteStringValue("SubscriptionDescription", SubscriptionDescription);
+            writer.WriteDateTimeOffsetValue("SubscriptionStartDate", SubscriptionStartDate);
+            writer.WriteStringValue("SubscriptionSuccess", SubscriptionSuccess);
+            writer.WriteGuidValue("SubscriptionType", SubscriptionType);
+            writer.WriteStringValue("SuccessMessage", SuccessMessage);
+            writer.WriteBoolValue("UpdateProjectBudgetAndPriceAgreement", UpdateProjectBudgetAndPriceAgreement);
+            writer.WriteStringValue("YourRef", YourRef);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,6 +16,10 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddExactOnlineAuthenticatedClient(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddOptions<ExactOnlineOptions>()
+            .Bind(configuration.GetSection(nameof(ExactOnlineOptions)))
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
         services.AddOptionsWithValidateOnStart<ExactOnlineOptions>();
         services.AddHttpClient();
         services.AddMemoryCache();

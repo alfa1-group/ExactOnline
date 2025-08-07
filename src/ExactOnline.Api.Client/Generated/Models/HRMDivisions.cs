@@ -14,6 +14,198 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Date on which the division is archived</summary>
+        public DateTimeOffset? ArchiveDate { get; set; }
+        /// <summary>Values: 0 = Not blocked, 1 = Backup/restore, 2 = Conversion busy, 3 = Conversion shadow, 4 = Conversion waiting, 5 = Copy data waiting, 6 = Copy data busy</summary>
+        public int? BlockingStatus { get; set; }
+        /// <summary>The Class_01 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses? Class01 { get; set; }
+#nullable restore
+#else
+        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses Class01 { get; set; }
+#endif
+        /// <summary>The Class_02 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses? Class02 { get; set; }
+#nullable restore
+#else
+        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses Class02 { get; set; }
+#endif
+        /// <summary>The Class_03 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses? Class03 { get; set; }
+#nullable restore
+#else
+        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses Class03 { get; set; }
+#endif
+        /// <summary>The Class_04 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses? Class04 { get; set; }
+#nullable restore
+#else
+        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses Class04 { get; set; }
+#endif
+        /// <summary>The Class_05 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses? Class05 { get; set; }
+#nullable restore
+#else
+        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses Class05 { get; set; }
+#endif
+        /// <summary>Primary key</summary>
+        public int? Code { get; set; }
+        /// <summary>Country of the division. Is used for determination of legislation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Country { get; set; }
+#nullable restore
+#else
+        public string Country { get; set; }
+#endif
+        /// <summary>Description of Country</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CountryDescription { get; set; }
+#nullable restore
+#else
+        public string CountryDescription { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of the creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Default currency of the division</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>Description of Currency</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CurrencyDescription { get; set; }
+#nullable restore
+#else
+        public string CurrencyDescription { get; set; }
+#endif
+        /// <summary>Owner account of the division</summary>
+        public Guid? Customer { get; set; }
+        /// <summary>Owner account code of the division</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomerCode { get; set; }
+#nullable restore
+#else
+        public string CustomerCode { get; set; }
+#endif
+        /// <summary>Owner account name of the division</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomerName { get; set; }
+#nullable restore
+#else
+        public string CustomerName { get; set; }
+#endif
+        /// <summary>Description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Number that customers give to the division</summary>
+        public long? HID { get; set; }
+        /// <summary>True for the main (hosting) division</summary>
+        public bool? Main { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of the last modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>The soletrader VAT number used for offical returns to tax authority</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OBNumber { get; set; }
+#nullable restore
+#else
+        public string OBNumber { get; set; }
+#endif
+        /// <summary>Siret Number of the division (France)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SiretNumber { get; set; }
+#nullable restore
+#else
+        public string SiretNumber { get; set; }
+#endif
+        /// <summary>Date on which the division becomes active</summary>
+        public DateTimeOffset? StartDate { get; set; }
+        /// <summary>Regular administrations will have status 0.  Currently, the only other possibility is &apos;archived&apos; (1), which means the administration is not actively used, but still needs to be accessible for the customer/accountant to meet legal obligations</summary>
+        public int? Status { get; set; }
+        /// <summary>Number of your local tax authority (Germany)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TaxOfficeNumber { get; set; }
+#nullable restore
+#else
+        public string TaxOfficeNumber { get; set; }
+#endif
+        /// <summary>Local tax reference number (Germany)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TaxReferenceNumber { get; set; }
+#nullable restore
+#else
+        public string TaxReferenceNumber { get; set; }
+#endif
+        /// <summary>Division template code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TemplateCode { get; set; }
+#nullable restore
+#else
+        public string TemplateCode { get; set; }
+#endif
+        /// <summary>VAT number</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATNumber { get; set; }
+#nullable restore
+#else
+        public string VATNumber { get; set; }
+#endif
+        /// <summary>Customer value, hyperlink to external website</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Website { get; set; }
+#nullable restore
+#else
+        public string Website { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.HRMDivisions"/> and sets the default values.
         /// </summary>
@@ -39,6 +231,39 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ArchiveDate", n => { ArchiveDate = n.GetDateTimeOffsetValue(); } },
+                { "BlockingStatus", n => { BlockingStatus = n.GetIntValue(); } },
+                { "Class_01", n => { Class01 = n.GetObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>(global::ExactOnline.Api.Client.Models.HRMDivisionClasses.CreateFromDiscriminatorValue); } },
+                { "Class_02", n => { Class02 = n.GetObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>(global::ExactOnline.Api.Client.Models.HRMDivisionClasses.CreateFromDiscriminatorValue); } },
+                { "Class_03", n => { Class03 = n.GetObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>(global::ExactOnline.Api.Client.Models.HRMDivisionClasses.CreateFromDiscriminatorValue); } },
+                { "Class_04", n => { Class04 = n.GetObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>(global::ExactOnline.Api.Client.Models.HRMDivisionClasses.CreateFromDiscriminatorValue); } },
+                { "Class_05", n => { Class05 = n.GetObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>(global::ExactOnline.Api.Client.Models.HRMDivisionClasses.CreateFromDiscriminatorValue); } },
+                { "Code", n => { Code = n.GetIntValue(); } },
+                { "Country", n => { Country = n.GetStringValue(); } },
+                { "CountryDescription", n => { CountryDescription = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Currency", n => { Currency = n.GetStringValue(); } },
+                { "CurrencyDescription", n => { CurrencyDescription = n.GetStringValue(); } },
+                { "Customer", n => { Customer = n.GetGuidValue(); } },
+                { "CustomerCode", n => { CustomerCode = n.GetStringValue(); } },
+                { "CustomerName", n => { CustomerName = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "HID", n => { HID = n.GetLongValue(); } },
+                { "Main", n => { Main = n.GetBoolValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "OBNumber", n => { OBNumber = n.GetStringValue(); } },
+                { "SiretNumber", n => { SiretNumber = n.GetStringValue(); } },
+                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
+                { "Status", n => { Status = n.GetIntValue(); } },
+                { "TaxOfficeNumber", n => { TaxOfficeNumber = n.GetStringValue(); } },
+                { "TaxReferenceNumber", n => { TaxReferenceNumber = n.GetStringValue(); } },
+                { "TemplateCode", n => { TemplateCode = n.GetStringValue(); } },
+                { "VATNumber", n => { VATNumber = n.GetStringValue(); } },
+                { "Website", n => { Website = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +273,39 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("ArchiveDate", ArchiveDate);
+            writer.WriteIntValue("BlockingStatus", BlockingStatus);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_01", Class01);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_02", Class02);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_03", Class03);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_04", Class04);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_05", Class05);
+            writer.WriteIntValue("Code", Code);
+            writer.WriteStringValue("Country", Country);
+            writer.WriteStringValue("CountryDescription", CountryDescription);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Currency", Currency);
+            writer.WriteStringValue("CurrencyDescription", CurrencyDescription);
+            writer.WriteGuidValue("Customer", Customer);
+            writer.WriteStringValue("CustomerCode", CustomerCode);
+            writer.WriteStringValue("CustomerName", CustomerName);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteLongValue("HID", HID);
+            writer.WriteBoolValue("Main", Main);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("OBNumber", OBNumber);
+            writer.WriteStringValue("SiretNumber", SiretNumber);
+            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
+            writer.WriteIntValue("Status", Status);
+            writer.WriteStringValue("TaxOfficeNumber", TaxOfficeNumber);
+            writer.WriteStringValue("TaxReferenceNumber", TaxReferenceNumber);
+            writer.WriteStringValue("TemplateCode", TemplateCode);
+            writer.WriteStringValue("VATNumber", VATNumber);
+            writer.WriteStringValue("Website", Website);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

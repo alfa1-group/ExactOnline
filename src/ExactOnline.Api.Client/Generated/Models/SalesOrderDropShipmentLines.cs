@@ -14,6 +14,126 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Collection of batch numbers</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>? BatchNumbers { get; set; }
+#nullable restore
+#else
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers> BatchNumbers { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Code the customer uses for this item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomerItemCode { get; set; }
+#nullable restore
+#else
+        public string CustomerItemCode { get; set; }
+#endif
+        /// <summary>Date of goods delivery</summary>
+        public DateTimeOffset? DeliveryDate { get; set; }
+        /// <summary>Description of sales order dropshipment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>The EntryID identifies the dropshipment. All the lines of a dropshipment have the same EntryID</summary>
+        public Guid? EntryID { get; set; }
+        /// <summary>The unique identifier of a stock transaction for a dropshipment line.</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Reference to item</summary>
+        public Guid? Item { get; set; }
+        /// <summary>Item code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>Line number</summary>
+        public int? LineNumber { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Notes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>Reference to purchase order</summary>
+        public Guid? PurchaseOrderLineID { get; set; }
+        /// <summary>Quantity delivered</summary>
+        public double? QuantityDelivered { get; set; }
+        /// <summary>Quantity ordered</summary>
+        public double? QuantityOrdered { get; set; }
+        /// <summary>Reference to sales order</summary>
+        public Guid? SalesOrderLineID { get; set; }
+        /// <summary>Sales order line number</summary>
+        public int? SalesOrderLineNumber { get; set; }
+        /// <summary>Sales order number</summary>
+        public int? SalesOrderNumber { get; set; }
+        /// <summary>Collection of serial numbers</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>? SerialNumbers { get; set; }
+#nullable restore
+#else
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers> SerialNumbers { get; set; }
+#endif
+        /// <summary>Reference to tracking number</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TrackingNumber { get; set; }
+#nullable restore
+#else
+        public string TrackingNumber { get; set; }
+#endif
+        /// <summary>Code of item unit</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Unitcode { get; set; }
+#nullable restore
+#else
+        public string Unitcode { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLines"/> and sets the default values.
         /// </summary>
@@ -39,6 +159,33 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "BatchNumbers", n => { BatchNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "CustomerItemCode", n => { CustomerItemCode = n.GetStringValue(); } },
+                { "DeliveryDate", n => { DeliveryDate = n.GetDateTimeOffsetValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "EntryID", n => { EntryID = n.GetGuidValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "LineNumber", n => { LineNumber = n.GetIntValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "PurchaseOrderLineID", n => { PurchaseOrderLineID = n.GetGuidValue(); } },
+                { "QuantityDelivered", n => { QuantityDelivered = n.GetDoubleValue(); } },
+                { "QuantityOrdered", n => { QuantityOrdered = n.GetDoubleValue(); } },
+                { "SalesOrderLineID", n => { SalesOrderLineID = n.GetGuidValue(); } },
+                { "SalesOrderLineNumber", n => { SalesOrderLineNumber = n.GetIntValue(); } },
+                { "SalesOrderNumber", n => { SalesOrderNumber = n.GetIntValue(); } },
+                { "SerialNumbers", n => { SerialNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "TrackingNumber", n => { TrackingNumber = n.GetStringValue(); } },
+                { "Unitcode", n => { Unitcode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +195,33 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>("BatchNumbers", BatchNumbers);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("CustomerItemCode", CustomerItemCode);
+            writer.WriteDateTimeOffsetValue("DeliveryDate", DeliveryDate);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("EntryID", EntryID);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteIntValue("LineNumber", LineNumber);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteGuidValue("PurchaseOrderLineID", PurchaseOrderLineID);
+            writer.WriteDoubleValue("QuantityDelivered", QuantityDelivered);
+            writer.WriteDoubleValue("QuantityOrdered", QuantityOrdered);
+            writer.WriteGuidValue("SalesOrderLineID", SalesOrderLineID);
+            writer.WriteIntValue("SalesOrderLineNumber", SalesOrderLineNumber);
+            writer.WriteIntValue("SalesOrderNumber", SalesOrderNumber);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>("SerialNumbers", SerialNumbers);
+            writer.WriteStringValue("TrackingNumber", TrackingNumber);
+            writer.WriteStringValue("Unitcode", Unitcode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

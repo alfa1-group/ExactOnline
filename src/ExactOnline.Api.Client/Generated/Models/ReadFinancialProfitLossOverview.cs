@@ -14,6 +14,46 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Total cost for the current year and period</summary>
+        public double? CostsCurrentPeriod { get; set; }
+        /// <summary>Total cost for the current year</summary>
+        public double? CostsCurrentYear { get; set; }
+        /// <summary>Total cost for the previous year</summary>
+        public double? CostsPreviousYear { get; set; }
+        /// <summary>Total cost for the previous year and period</summary>
+        public double? CostsPreviousYearPeriod { get; set; }
+        /// <summary>Currency code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CurrencyCode { get; set; }
+#nullable restore
+#else
+        public string CurrencyCode { get; set; }
+#endif
+        /// <summary>Current period</summary>
+        public int? CurrentPeriod { get; set; }
+        /// <summary>Primary key, Current year</summary>
+        public int? CurrentYear { get; set; }
+        /// <summary>Previous year</summary>
+        public int? PreviousYear { get; set; }
+        /// <summary>Period in previous year</summary>
+        public int? PreviousYearPeriod { get; set; }
+        /// <summary>Results of current year and period</summary>
+        public double? ResultCurrentPeriod { get; set; }
+        /// <summary>Results of current year</summary>
+        public double? ResultCurrentYear { get; set; }
+        /// <summary>Results of previous year</summary>
+        public double? ResultPreviousYear { get; set; }
+        /// <summary>Results of previous year and period</summary>
+        public double? ResultPreviousYearPeriod { get; set; }
+        /// <summary>Total revenue for the current year and period</summary>
+        public double? RevenueCurrentPeriod { get; set; }
+        /// <summary>Total revenue for the current year</summary>
+        public double? RevenueCurrentYear { get; set; }
+        /// <summary>Total revenue for the previous year</summary>
+        public double? RevenuePreviousYear { get; set; }
+        /// <summary>Total revenue for the previous year and period</summary>
+        public double? RevenuePreviousYearPeriod { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialProfitLossOverview"/> and sets the default values.
         /// </summary>
@@ -39,6 +79,23 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "CostsCurrentPeriod", n => { CostsCurrentPeriod = n.GetDoubleValue(); } },
+                { "CostsCurrentYear", n => { CostsCurrentYear = n.GetDoubleValue(); } },
+                { "CostsPreviousYear", n => { CostsPreviousYear = n.GetDoubleValue(); } },
+                { "CostsPreviousYearPeriod", n => { CostsPreviousYearPeriod = n.GetDoubleValue(); } },
+                { "CurrencyCode", n => { CurrencyCode = n.GetStringValue(); } },
+                { "CurrentPeriod", n => { CurrentPeriod = n.GetIntValue(); } },
+                { "CurrentYear", n => { CurrentYear = n.GetIntValue(); } },
+                { "PreviousYear", n => { PreviousYear = n.GetIntValue(); } },
+                { "PreviousYearPeriod", n => { PreviousYearPeriod = n.GetIntValue(); } },
+                { "ResultCurrentPeriod", n => { ResultCurrentPeriod = n.GetDoubleValue(); } },
+                { "ResultCurrentYear", n => { ResultCurrentYear = n.GetDoubleValue(); } },
+                { "ResultPreviousYear", n => { ResultPreviousYear = n.GetDoubleValue(); } },
+                { "ResultPreviousYearPeriod", n => { ResultPreviousYearPeriod = n.GetDoubleValue(); } },
+                { "RevenueCurrentPeriod", n => { RevenueCurrentPeriod = n.GetDoubleValue(); } },
+                { "RevenueCurrentYear", n => { RevenueCurrentYear = n.GetDoubleValue(); } },
+                { "RevenuePreviousYear", n => { RevenuePreviousYear = n.GetDoubleValue(); } },
+                { "RevenuePreviousYearPeriod", n => { RevenuePreviousYearPeriod = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +105,23 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("CostsCurrentPeriod", CostsCurrentPeriod);
+            writer.WriteDoubleValue("CostsCurrentYear", CostsCurrentYear);
+            writer.WriteDoubleValue("CostsPreviousYear", CostsPreviousYear);
+            writer.WriteDoubleValue("CostsPreviousYearPeriod", CostsPreviousYearPeriod);
+            writer.WriteStringValue("CurrencyCode", CurrencyCode);
+            writer.WriteIntValue("CurrentPeriod", CurrentPeriod);
+            writer.WriteIntValue("CurrentYear", CurrentYear);
+            writer.WriteIntValue("PreviousYear", PreviousYear);
+            writer.WriteIntValue("PreviousYearPeriod", PreviousYearPeriod);
+            writer.WriteDoubleValue("ResultCurrentPeriod", ResultCurrentPeriod);
+            writer.WriteDoubleValue("ResultCurrentYear", ResultCurrentYear);
+            writer.WriteDoubleValue("ResultPreviousYear", ResultPreviousYear);
+            writer.WriteDoubleValue("ResultPreviousYearPeriod", ResultPreviousYearPeriod);
+            writer.WriteDoubleValue("RevenueCurrentPeriod", RevenueCurrentPeriod);
+            writer.WriteDoubleValue("RevenueCurrentYear", RevenueCurrentYear);
+            writer.WriteDoubleValue("RevenuePreviousYear", RevenuePreviousYear);
+            writer.WriteDoubleValue("RevenuePreviousYearPeriod", RevenuePreviousYearPeriod);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

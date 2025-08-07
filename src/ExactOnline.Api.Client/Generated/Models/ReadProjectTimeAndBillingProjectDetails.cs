@@ -12,8 +12,38 @@ namespace ExactOnline.Api.Client.Models
     public partial class ReadProjectTimeAndBillingProjectDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The ID of the account that the project is linked to</summary>
+        public Guid? Account { get; set; }
+        /// <summary>The name of the account that the project is linked to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountName { get; set; }
+#nullable restore
+#else
+        public string AccountName { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The code of the account that the project is linked to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
+        /// <summary>The description of the account that project is linked to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>The project type. E.g: 1 = Campaign, 2 = Fixed Price, 3 = Time and Material, 4 = Non Billable, 5 = Prepaid</summary>
+        public int? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingProjectDetails"/> and sets the default values.
         /// </summary>
@@ -39,6 +69,12 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Account", n => { Account = n.GetGuidValue(); } },
+                { "AccountName", n => { AccountName = n.GetStringValue(); } },
+                { "Code", n => { Code = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Type", n => { Type = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +84,12 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("Account", Account);
+            writer.WriteStringValue("AccountName", AccountName);
+            writer.WriteStringValue("Code", Code);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteIntValue("Type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

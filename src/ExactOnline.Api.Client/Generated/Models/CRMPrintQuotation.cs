@@ -14,6 +14,60 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Contains the id of the document that was created</summary>
+        public Guid? Document { get; set; }
+        /// <summary>Contains the error message if an error occurred during the creation of the document</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DocumentCreationError { get; set; }
+#nullable restore
+#else
+        public string DocumentCreationError { get; set; }
+#endif
+        /// <summary>Contains information if a document was successfully created</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DocumentCreationSuccess { get; set; }
+#nullable restore
+#else
+        public string DocumentCreationSuccess { get; set; }
+#endif
+        /// <summary>Based on this layout a PDF is created and attached to an Exact Online document and an email. In case it is not specified, the default layout is used.</summary>
+        public Guid? DocumentLayout { get; set; }
+        /// <summary>Contains the error message if an error occurred during the creation of the Email</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmailCreationError { get; set; }
+#nullable restore
+#else
+        public string EmailCreationError { get; set; }
+#endif
+        /// <summary>Based on this layout the email text is produced. In case it is not specified, the default layout is used.</summary>
+        public Guid? EmailLayout { get; set; }
+        /// <summary>Extra text that can be added to the printed document and email</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExtraText { get; set; }
+#nullable restore
+#else
+        public string ExtraText { get; set; }
+#endif
+        /// <summary>Date of the quotation printed</summary>
+        public DateTimeOffset? QuotationDate { get; set; }
+        /// <summary>Identifier of the quotation</summary>
+        public Guid? QuotationID { get; set; }
+        /// <summary>Set to True if an email containing the quotation should be sent to the customer</summary>
+        public bool? SendEmailToCustomer { get; set; }
+        /// <summary>Email address from which the email will be sent. If not specified, the company email address will be used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SenderEmailAddress { get; set; }
+#nullable restore
+#else
+        public string SenderEmailAddress { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CRMPrintQuotation"/> and sets the default values.
         /// </summary>
@@ -39,6 +93,18 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "Document", n => { Document = n.GetGuidValue(); } },
+                { "DocumentCreationError", n => { DocumentCreationError = n.GetStringValue(); } },
+                { "DocumentCreationSuccess", n => { DocumentCreationSuccess = n.GetStringValue(); } },
+                { "DocumentLayout", n => { DocumentLayout = n.GetGuidValue(); } },
+                { "EmailCreationError", n => { EmailCreationError = n.GetStringValue(); } },
+                { "EmailLayout", n => { EmailLayout = n.GetGuidValue(); } },
+                { "ExtraText", n => { ExtraText = n.GetStringValue(); } },
+                { "QuotationDate", n => { QuotationDate = n.GetDateTimeOffsetValue(); } },
+                { "QuotationID", n => { QuotationID = n.GetGuidValue(); } },
+                { "SendEmailToCustomer", n => { SendEmailToCustomer = n.GetBoolValue(); } },
+                { "SenderEmailAddress", n => { SenderEmailAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +114,18 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("Document", Document);
+            writer.WriteStringValue("DocumentCreationError", DocumentCreationError);
+            writer.WriteStringValue("DocumentCreationSuccess", DocumentCreationSuccess);
+            writer.WriteGuidValue("DocumentLayout", DocumentLayout);
+            writer.WriteStringValue("EmailCreationError", EmailCreationError);
+            writer.WriteGuidValue("EmailLayout", EmailLayout);
+            writer.WriteStringValue("ExtraText", ExtraText);
+            writer.WriteDateTimeOffsetValue("QuotationDate", QuotationDate);
+            writer.WriteGuidValue("QuotationID", QuotationID);
+            writer.WriteBoolValue("SendEmailToCustomer", SendEmailToCustomer);
+            writer.WriteStringValue("SenderEmailAddress", SenderEmailAddress);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

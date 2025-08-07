@@ -12,8 +12,106 @@ namespace ExactOnline.Api.Client.Models
     public partial class ManufacturingOperationResources : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Reference to Accounts</summary>
+        public Guid? Account { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Attended percentage</summary>
+        public double? AttendedPercentage { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Reference to Currencies</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Efficiency percentage</summary>
+        public double? EfficiencyPercentage { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Indicates if this is the primary operation of the workcenter</summary>
+        public int? IsPrimary { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Reference to Operations</summary>
+        public Guid? Operation { get; set; }
+        /// <summary>Description of Operation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OperationDescription { get; set; }
+#nullable restore
+#else
+        public string OperationDescription { get; set; }
+#endif
+        /// <summary>Lead days from purchase</summary>
+        public int? PurchaseLeadDays { get; set; }
+        /// <summary>Unit of purchased item from supplier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PurchaseUnit { get; set; }
+#nullable restore
+#else
+        public string PurchaseUnit { get; set; }
+#endif
+        /// <summary>VAT code used for purchased item from supplier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PurchaseVATCode { get; set; }
+#nullable restore
+#else
+        public string PurchaseVATCode { get; set; }
+#endif
+        /// <summary>Used in conjuction with RunMethod and EfficiencyPercentage to determine PlannedRunHours</summary>
+        public double? Run { get; set; }
+        /// <summary>Reference to OperationRunMethods</summary>
+        public int? RunMethod { get; set; }
+        /// <summary>Used in conjunction with SetupCount and SetupUnit to determine PlannedSetupHours</summary>
+        public double? Setup { get; set; }
+        /// <summary>Reference to TimeUnits</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SetupUnit { get; set; }
+#nullable restore
+#else
+        public string SetupUnit { get; set; }
+#endif
+        /// <summary>Reference to RoutingStepTypes</summary>
+        public int? Type { get; set; }
+        /// <summary>Reference to Workcenter</summary>
+        public Guid? Workcenter { get; set; }
+        /// <summary>Description of Workcenter</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WorkcenterDescription { get; set; }
+#nullable restore
+#else
+        public string WorkcenterDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingOperationResources"/> and sets the default values.
         /// </summary>
@@ -39,6 +137,31 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Account", n => { Account = n.GetGuidValue(); } },
+                { "AttendedPercentage", n => { AttendedPercentage = n.GetDoubleValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Currency", n => { Currency = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "EfficiencyPercentage", n => { EfficiencyPercentage = n.GetDoubleValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "IsPrimary", n => { IsPrimary = n.GetIntValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Operation", n => { Operation = n.GetGuidValue(); } },
+                { "OperationDescription", n => { OperationDescription = n.GetStringValue(); } },
+                { "PurchaseLeadDays", n => { PurchaseLeadDays = n.GetIntValue(); } },
+                { "PurchaseUnit", n => { PurchaseUnit = n.GetStringValue(); } },
+                { "PurchaseVATCode", n => { PurchaseVATCode = n.GetStringValue(); } },
+                { "Run", n => { Run = n.GetDoubleValue(); } },
+                { "RunMethod", n => { RunMethod = n.GetIntValue(); } },
+                { "Setup", n => { Setup = n.GetDoubleValue(); } },
+                { "SetupUnit", n => { SetupUnit = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetIntValue(); } },
+                { "Workcenter", n => { Workcenter = n.GetGuidValue(); } },
+                { "WorkcenterDescription", n => { WorkcenterDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +171,31 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("Account", Account);
+            writer.WriteDoubleValue("AttendedPercentage", AttendedPercentage);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Currency", Currency);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteDoubleValue("EfficiencyPercentage", EfficiencyPercentage);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteIntValue("IsPrimary", IsPrimary);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteGuidValue("Operation", Operation);
+            writer.WriteStringValue("OperationDescription", OperationDescription);
+            writer.WriteIntValue("PurchaseLeadDays", PurchaseLeadDays);
+            writer.WriteStringValue("PurchaseUnit", PurchaseUnit);
+            writer.WriteStringValue("PurchaseVATCode", PurchaseVATCode);
+            writer.WriteDoubleValue("Run", Run);
+            writer.WriteIntValue("RunMethod", RunMethod);
+            writer.WriteDoubleValue("Setup", Setup);
+            writer.WriteStringValue("SetupUnit", SetupUnit);
+            writer.WriteIntValue("Type", Type);
+            writer.WriteGuidValue("Workcenter", Workcenter);
+            writer.WriteStringValue("WorkcenterDescription", WorkcenterDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

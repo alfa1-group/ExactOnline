@@ -14,6 +14,82 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Code of the warehouse</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>The default storage location of this warehouse. Warehouses can have a default storage location in packages Manufacturing Professional &amp;amp; Premium or Wholesale Professional &amp;amp; Premium</summary>
+        public Guid? DefaultStorageLocation { get; set; }
+        /// <summary>Default storage location&apos;s code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultStorageLocationCode { get; set; }
+#nullable restore
+#else
+        public string DefaultStorageLocationCode { get; set; }
+#endif
+        /// <summary>Default storage location&apos;s description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultStorageLocationDescription { get; set; }
+#nullable restore
+#else
+        public string DefaultStorageLocationDescription { get; set; }
+#endif
+        /// <summary>The description of the warehouse</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Email address</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EMail { get; set; }
+#nullable restore
+#else
+        public string EMail { get; set; }
+#endif
+        /// <summary>A guid that is the unique identifier of the warehouse</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Indicates if this is the main warehouse. There&apos;s always exactly one main warehouse per administration</summary>
+        public int? Main { get; set; }
+        /// <summary>User reponsible for the warehouse</summary>
+        public Guid? ManagerUser { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Indicates if this warehouse is using storage locations. The storage locations will not be removed when when this is deactivated</summary>
+        public int? UseStorageLocations { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryWarehouses"/> and sets the default values.
         /// </summary>
@@ -39,6 +115,23 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Code", n => { Code = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "DefaultStorageLocation", n => { DefaultStorageLocation = n.GetGuidValue(); } },
+                { "DefaultStorageLocationCode", n => { DefaultStorageLocationCode = n.GetStringValue(); } },
+                { "DefaultStorageLocationDescription", n => { DefaultStorageLocationDescription = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "EMail", n => { EMail = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Main", n => { Main = n.GetIntValue(); } },
+                { "ManagerUser", n => { ManagerUser = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "UseStorageLocations", n => { UseStorageLocations = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +141,23 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("Code", Code);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteGuidValue("DefaultStorageLocation", DefaultStorageLocation);
+            writer.WriteStringValue("DefaultStorageLocationCode", DefaultStorageLocationCode);
+            writer.WriteStringValue("DefaultStorageLocationDescription", DefaultStorageLocationDescription);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteStringValue("EMail", EMail);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteIntValue("Main", Main);
+            writer.WriteGuidValue("ManagerUser", ManagerUser);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteIntValue("UseStorageLocations", UseStorageLocations);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

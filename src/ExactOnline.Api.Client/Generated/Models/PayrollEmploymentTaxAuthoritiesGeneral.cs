@@ -12,8 +12,116 @@ namespace ExactOnline.Api.Client.Models
     public partial class PayrollEmploymentTaxAuthoritiesGeneral : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>ID of the account</summary>
+        public Guid? Account { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Employee ID</summary>
+        public Guid? Employee { get; set; }
+        /// <summary>Name of employee</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmployeeFullName { get; set; }
+#nullable restore
+#else
+        public string EmployeeFullName { get; set; }
+#endif
+        /// <summary>Employee number</summary>
+        public int? EmployeeHID { get; set; }
+        /// <summary>Employment</summary>
+        public Guid? Employment { get; set; }
+        /// <summary>Obsolete</summary>
+        public int? EmploymentHID { get; set; }
+        /// <summary>Employment number</summary>
+        public int? EmploymentNumber { get; set; }
+        /// <summary>End date of employment agencies</summary>
+        public DateTimeOffset? EndDate { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Influence insurance obligation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InfluenceInsuranceObligation { get; set; }
+#nullable restore
+#else
+        public string InfluenceInsuranceObligation { get; set; }
+#endif
+        /// <summary>Influence insurance obligation description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InfluenceInsuranceObligationDescription { get; set; }
+#nullable restore
+#else
+        public string InfluenceInsuranceObligationDescription { get; set; }
+#endif
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Nature of work relationship</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NatureOfWorkRelationship { get; set; }
+#nullable restore
+#else
+        public string NatureOfWorkRelationship { get; set; }
+#endif
+        /// <summary>Nature of work relationship description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NatureOfWorkRelationshipDescription { get; set; }
+#nullable restore
+#else
+        public string NatureOfWorkRelationshipDescription { get; set; }
+#endif
+        /// <summary>Payroll taxes number</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PayrollTaxesNumber { get; set; }
+#nullable restore
+#else
+        public string PayrollTaxesNumber { get; set; }
+#endif
+        /// <summary>Start date of employment agencies</summary>
+        public DateTimeOffset? StartDate { get; set; }
+        /// <summary>Type of income</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TypeOfIncome { get; set; }
+#nullable restore
+#else
+        public string TypeOfIncome { get; set; }
+#endif
+        /// <summary>Type of income description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TypeOfIncomeDescription { get; set; }
+#nullable restore
+#else
+        public string TypeOfIncomeDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PayrollEmploymentTaxAuthoritiesGeneral"/> and sets the default values.
         /// </summary>
@@ -39,6 +147,30 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Account", n => { Account = n.GetGuidValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "Employee", n => { Employee = n.GetGuidValue(); } },
+                { "EmployeeFullName", n => { EmployeeFullName = n.GetStringValue(); } },
+                { "EmployeeHID", n => { EmployeeHID = n.GetIntValue(); } },
+                { "Employment", n => { Employment = n.GetGuidValue(); } },
+                { "EmploymentHID", n => { EmploymentHID = n.GetIntValue(); } },
+                { "EmploymentNumber", n => { EmploymentNumber = n.GetIntValue(); } },
+                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "InfluenceInsuranceObligation", n => { InfluenceInsuranceObligation = n.GetStringValue(); } },
+                { "InfluenceInsuranceObligationDescription", n => { InfluenceInsuranceObligationDescription = n.GetStringValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "NatureOfWorkRelationship", n => { NatureOfWorkRelationship = n.GetStringValue(); } },
+                { "NatureOfWorkRelationshipDescription", n => { NatureOfWorkRelationshipDescription = n.GetStringValue(); } },
+                { "PayrollTaxesNumber", n => { PayrollTaxesNumber = n.GetStringValue(); } },
+                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
+                { "TypeOfIncome", n => { TypeOfIncome = n.GetStringValue(); } },
+                { "TypeOfIncomeDescription", n => { TypeOfIncomeDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +180,30 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("Account", Account);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("Employee", Employee);
+            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
+            writer.WriteIntValue("EmployeeHID", EmployeeHID);
+            writer.WriteGuidValue("Employment", Employment);
+            writer.WriteIntValue("EmploymentHID", EmploymentHID);
+            writer.WriteIntValue("EmploymentNumber", EmploymentNumber);
+            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteStringValue("InfluenceInsuranceObligation", InfluenceInsuranceObligation);
+            writer.WriteStringValue("InfluenceInsuranceObligationDescription", InfluenceInsuranceObligationDescription);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("NatureOfWorkRelationship", NatureOfWorkRelationship);
+            writer.WriteStringValue("NatureOfWorkRelationshipDescription", NatureOfWorkRelationshipDescription);
+            writer.WriteStringValue("PayrollTaxesNumber", PayrollTaxesNumber);
+            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
+            writer.WriteStringValue("TypeOfIncome", TypeOfIncome);
+            writer.WriteStringValue("TypeOfIncomeDescription", TypeOfIncomeDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

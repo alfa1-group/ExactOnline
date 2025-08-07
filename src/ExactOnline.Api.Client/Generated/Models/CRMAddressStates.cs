@@ -14,6 +14,44 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Country code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Country { get; set; }
+#nullable restore
+#else
+        public string Country { get; set; }
+#endif
+        /// <summary>Description of state prefixed with the code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayValue { get; set; }
+#nullable restore
+#else
+        public string DisplayValue { get; set; }
+#endif
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Latitude</summary>
+        public double? Latitude { get; set; }
+        /// <summary>Longitude</summary>
+        public double? Longitude { get; set; }
+        /// <summary>State name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>State code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? State { get; set; }
+#nullable restore
+#else
+        public string State { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CRMAddressStates"/> and sets the default values.
         /// </summary>
@@ -39,6 +77,13 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Country", n => { Country = n.GetStringValue(); } },
+                { "DisplayValue", n => { DisplayValue = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Latitude", n => { Latitude = n.GetDoubleValue(); } },
+                { "Longitude", n => { Longitude = n.GetDoubleValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "State", n => { State = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +93,13 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("Country", Country);
+            writer.WriteStringValue("DisplayValue", DisplayValue);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteDoubleValue("Latitude", Latitude);
+            writer.WriteDoubleValue("Longitude", Longitude);
+            writer.WriteStringValue("Name", Name);
+            writer.WriteStringValue("State", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

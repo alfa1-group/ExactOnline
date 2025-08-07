@@ -12,8 +12,366 @@ namespace ExactOnline.Api.Client.Models
     public partial class SyncFinancialTransactionLines : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The Account property</summary>
+        public Guid? Account { get; set; }
+        /// <summary>The AccountCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountCode { get; set; }
+#nullable restore
+#else
+        public string AccountCode { get; set; }
+#endif
+        /// <summary>The AccountName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountName { get; set; }
+#nullable restore
+#else
+        public string AccountName { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The AmountDC property</summary>
+        public double? AmountDC { get; set; }
+        /// <summary>The AmountFC property</summary>
+        public double? AmountFC { get; set; }
+        /// <summary>The AmountVATBaseFC property</summary>
+        public double? AmountVATBaseFC { get; set; }
+        /// <summary>The AmountVATFC property</summary>
+        public double? AmountVATFC { get; set; }
+        /// <summary>The Asset property</summary>
+        public Guid? Asset { get; set; }
+        /// <summary>The AssetCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssetCode { get; set; }
+#nullable restore
+#else
+        public string AssetCode { get; set; }
+#endif
+        /// <summary>The AssetDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssetDescription { get; set; }
+#nullable restore
+#else
+        public string AssetDescription { get; set; }
+#endif
+        /// <summary>The CostCenter property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CostCenter { get; set; }
+#nullable restore
+#else
+        public string CostCenter { get; set; }
+#endif
+        /// <summary>The CostCenterDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CostCenterDescription { get; set; }
+#nullable restore
+#else
+        public string CostCenterDescription { get; set; }
+#endif
+        /// <summary>The CostUnit property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CostUnit { get; set; }
+#nullable restore
+#else
+        public string CostUnit { get; set; }
+#endif
+        /// <summary>The CostUnitDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CostUnitDescription { get; set; }
+#nullable restore
+#else
+        public string CostUnitDescription { get; set; }
+#endif
+        /// <summary>The Created property</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>The Creator property</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>The CreatorFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>The Currency property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>The CustomField property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomField { get; set; }
+#nullable restore
+#else
+        public string CustomField { get; set; }
+#endif
+        /// <summary>The Date property</summary>
+        public DateTimeOffset? Date { get; set; }
+        /// <summary>The Description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>The Division property</summary>
+        public int? Division { get; set; }
+        /// <summary>The Document property</summary>
+        public Guid? Document { get; set; }
+        /// <summary>The DocumentNumber property</summary>
+        public int? DocumentNumber { get; set; }
+        /// <summary>The DocumentSubject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DocumentSubject { get; set; }
+#nullable restore
+#else
+        public string DocumentSubject { get; set; }
+#endif
+        /// <summary>The DueDate property</summary>
+        public DateTimeOffset? DueDate { get; set; }
+        /// <summary>The EntryID property</summary>
+        public Guid? EntryID { get; set; }
+        /// <summary>The EntryNumber property</summary>
+        public int? EntryNumber { get; set; }
+        /// <summary>The ExchangeRate property</summary>
+        public double? ExchangeRate { get; set; }
+        /// <summary>The ExternalLinkDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalLinkDescription { get; set; }
+#nullable restore
+#else
+        public string ExternalLinkDescription { get; set; }
+#endif
+        /// <summary>The ExternalLinkReference property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalLinkReference { get; set; }
+#nullable restore
+#else
+        public string ExternalLinkReference { get; set; }
+#endif
+        /// <summary>The ExtraDutyAmountFC property</summary>
+        public double? ExtraDutyAmountFC { get; set; }
+        /// <summary>The ExtraDutyPercentage property</summary>
+        public double? ExtraDutyPercentage { get; set; }
+        /// <summary>The FinancialPeriod property</summary>
+        public int? FinancialPeriod { get; set; }
+        /// <summary>The FinancialYear property</summary>
+        public int? FinancialYear { get; set; }
+        /// <summary>The GLAccount property</summary>
+        public Guid? GLAccount { get; set; }
+        /// <summary>The GLAccountCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLAccountCode { get; set; }
+#nullable restore
+#else
+        public string GLAccountCode { get; set; }
+#endif
+        /// <summary>The GLAccountDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLAccountDescription { get; set; }
+#nullable restore
+#else
+        public string GLAccountDescription { get; set; }
+#endif
+        /// <summary>The ID property</summary>
+        public Guid? ID { get; set; }
+        /// <summary>The InvoiceNumber property</summary>
+        public int? InvoiceNumber { get; set; }
+        /// <summary>The Item property</summary>
+        public Guid? Item { get; set; }
+        /// <summary>The ItemCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>The ItemDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>The JournalCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? JournalCode { get; set; }
+#nullable restore
+#else
+        public string JournalCode { get; set; }
+#endif
+        /// <summary>The JournalDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? JournalDescription { get; set; }
+#nullable restore
+#else
+        public string JournalDescription { get; set; }
+#endif
+        /// <summary>The LineNumber property</summary>
+        public int? LineNumber { get; set; }
+        /// <summary>The LineType property</summary>
+        public int? LineType { get; set; }
+        /// <summary>The Modified property</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>The Modifier property</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>The ModifierFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>The Notes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>The OffsetID property</summary>
+        public Guid? OffsetID { get; set; }
+        /// <summary>The OrderNumber property</summary>
+        public int? OrderNumber { get; set; }
+        /// <summary>The PaymentDiscountAmount property</summary>
+        public double? PaymentDiscountAmount { get; set; }
+        /// <summary>The PaymentReference property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaymentReference { get; set; }
+#nullable restore
+#else
+        public string PaymentReference { get; set; }
+#endif
+        /// <summary>The Project property</summary>
+        public Guid? Project { get; set; }
+        /// <summary>The ProjectCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectCode { get; set; }
+#nullable restore
+#else
+        public string ProjectCode { get; set; }
+#endif
+        /// <summary>The ProjectDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectDescription { get; set; }
+#nullable restore
+#else
+        public string ProjectDescription { get; set; }
+#endif
+        /// <summary>The ProjectWBS property</summary>
+        public Guid? ProjectWBS { get; set; }
+        /// <summary>The ProjectWBSDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectWBSDescription { get; set; }
+#nullable restore
+#else
+        public string ProjectWBSDescription { get; set; }
+#endif
+        /// <summary>The Quantity property</summary>
+        public double? Quantity { get; set; }
+        /// <summary>The SerialNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SerialNumber { get; set; }
+#nullable restore
+#else
+        public string SerialNumber { get; set; }
+#endif
+        /// <summary>The Status property</summary>
+        public int? Status { get; set; }
+        /// <summary>The Subscription property</summary>
+        public Guid? Subscription { get; set; }
+        /// <summary>The SubscriptionDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubscriptionDescription { get; set; }
+#nullable restore
+#else
+        public string SubscriptionDescription { get; set; }
+#endif
+        /// <summary>The Timestamp property</summary>
+        public long? Timestamp { get; set; }
+        /// <summary>The TrackingNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TrackingNumber { get; set; }
+#nullable restore
+#else
+        public string TrackingNumber { get; set; }
+#endif
+        /// <summary>The TrackingNumberDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TrackingNumberDescription { get; set; }
+#nullable restore
+#else
+        public string TrackingNumberDescription { get; set; }
+#endif
+        /// <summary>The Type property</summary>
+        public int? Type { get; set; }
+        /// <summary>The VATCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATCode { get; set; }
+#nullable restore
+#else
+        public string VATCode { get; set; }
+#endif
+        /// <summary>The VATCodeDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATCodeDescription { get; set; }
+#nullable restore
+#else
+        public string VATCodeDescription { get; set; }
+#endif
+        /// <summary>The VATPercentage property</summary>
+        public double? VATPercentage { get; set; }
+        /// <summary>The VATType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATType { get; set; }
+#nullable restore
+#else
+        public string VATType { get; set; }
+#endif
+        /// <summary>The YourRef property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? YourRef { get; set; }
+#nullable restore
+#else
+        public string YourRef { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncFinancialTransactionLines"/> and sets the default values.
         /// </summary>
@@ -39,6 +397,80 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Account", n => { Account = n.GetGuidValue(); } },
+                { "AccountCode", n => { AccountCode = n.GetStringValue(); } },
+                { "AccountName", n => { AccountName = n.GetStringValue(); } },
+                { "AmountDC", n => { AmountDC = n.GetDoubleValue(); } },
+                { "AmountFC", n => { AmountFC = n.GetDoubleValue(); } },
+                { "AmountVATBaseFC", n => { AmountVATBaseFC = n.GetDoubleValue(); } },
+                { "AmountVATFC", n => { AmountVATFC = n.GetDoubleValue(); } },
+                { "Asset", n => { Asset = n.GetGuidValue(); } },
+                { "AssetCode", n => { AssetCode = n.GetStringValue(); } },
+                { "AssetDescription", n => { AssetDescription = n.GetStringValue(); } },
+                { "CostCenter", n => { CostCenter = n.GetStringValue(); } },
+                { "CostCenterDescription", n => { CostCenterDescription = n.GetStringValue(); } },
+                { "CostUnit", n => { CostUnit = n.GetStringValue(); } },
+                { "CostUnitDescription", n => { CostUnitDescription = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Currency", n => { Currency = n.GetStringValue(); } },
+                { "CustomField", n => { CustomField = n.GetStringValue(); } },
+                { "Date", n => { Date = n.GetDateTimeOffsetValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "Document", n => { Document = n.GetGuidValue(); } },
+                { "DocumentNumber", n => { DocumentNumber = n.GetIntValue(); } },
+                { "DocumentSubject", n => { DocumentSubject = n.GetStringValue(); } },
+                { "DueDate", n => { DueDate = n.GetDateTimeOffsetValue(); } },
+                { "EntryID", n => { EntryID = n.GetGuidValue(); } },
+                { "EntryNumber", n => { EntryNumber = n.GetIntValue(); } },
+                { "ExchangeRate", n => { ExchangeRate = n.GetDoubleValue(); } },
+                { "ExternalLinkDescription", n => { ExternalLinkDescription = n.GetStringValue(); } },
+                { "ExternalLinkReference", n => { ExternalLinkReference = n.GetStringValue(); } },
+                { "ExtraDutyAmountFC", n => { ExtraDutyAmountFC = n.GetDoubleValue(); } },
+                { "ExtraDutyPercentage", n => { ExtraDutyPercentage = n.GetDoubleValue(); } },
+                { "FinancialPeriod", n => { FinancialPeriod = n.GetIntValue(); } },
+                { "FinancialYear", n => { FinancialYear = n.GetIntValue(); } },
+                { "GLAccount", n => { GLAccount = n.GetGuidValue(); } },
+                { "GLAccountCode", n => { GLAccountCode = n.GetStringValue(); } },
+                { "GLAccountDescription", n => { GLAccountDescription = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "InvoiceNumber", n => { InvoiceNumber = n.GetIntValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "JournalCode", n => { JournalCode = n.GetStringValue(); } },
+                { "JournalDescription", n => { JournalDescription = n.GetStringValue(); } },
+                { "LineNumber", n => { LineNumber = n.GetIntValue(); } },
+                { "LineType", n => { LineType = n.GetIntValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "OffsetID", n => { OffsetID = n.GetGuidValue(); } },
+                { "OrderNumber", n => { OrderNumber = n.GetIntValue(); } },
+                { "PaymentDiscountAmount", n => { PaymentDiscountAmount = n.GetDoubleValue(); } },
+                { "PaymentReference", n => { PaymentReference = n.GetStringValue(); } },
+                { "Project", n => { Project = n.GetGuidValue(); } },
+                { "ProjectCode", n => { ProjectCode = n.GetStringValue(); } },
+                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
+                { "ProjectWBS", n => { ProjectWBS = n.GetGuidValue(); } },
+                { "ProjectWBSDescription", n => { ProjectWBSDescription = n.GetStringValue(); } },
+                { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
+                { "SerialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                { "Status", n => { Status = n.GetIntValue(); } },
+                { "Subscription", n => { Subscription = n.GetGuidValue(); } },
+                { "SubscriptionDescription", n => { SubscriptionDescription = n.GetStringValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "TrackingNumber", n => { TrackingNumber = n.GetStringValue(); } },
+                { "TrackingNumberDescription", n => { TrackingNumberDescription = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetIntValue(); } },
+                { "VATCode", n => { VATCode = n.GetStringValue(); } },
+                { "VATCodeDescription", n => { VATCodeDescription = n.GetStringValue(); } },
+                { "VATPercentage", n => { VATPercentage = n.GetDoubleValue(); } },
+                { "VATType", n => { VATType = n.GetStringValue(); } },
+                { "YourRef", n => { YourRef = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +480,80 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("Account", Account);
+            writer.WriteStringValue("AccountCode", AccountCode);
+            writer.WriteStringValue("AccountName", AccountName);
+            writer.WriteDoubleValue("AmountDC", AmountDC);
+            writer.WriteDoubleValue("AmountFC", AmountFC);
+            writer.WriteDoubleValue("AmountVATBaseFC", AmountVATBaseFC);
+            writer.WriteDoubleValue("AmountVATFC", AmountVATFC);
+            writer.WriteGuidValue("Asset", Asset);
+            writer.WriteStringValue("AssetCode", AssetCode);
+            writer.WriteStringValue("AssetDescription", AssetDescription);
+            writer.WriteStringValue("CostCenter", CostCenter);
+            writer.WriteStringValue("CostCenterDescription", CostCenterDescription);
+            writer.WriteStringValue("CostUnit", CostUnit);
+            writer.WriteStringValue("CostUnitDescription", CostUnitDescription);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Currency", Currency);
+            writer.WriteStringValue("CustomField", CustomField);
+            writer.WriteDateTimeOffsetValue("Date", Date);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("Document", Document);
+            writer.WriteIntValue("DocumentNumber", DocumentNumber);
+            writer.WriteStringValue("DocumentSubject", DocumentSubject);
+            writer.WriteDateTimeOffsetValue("DueDate", DueDate);
+            writer.WriteGuidValue("EntryID", EntryID);
+            writer.WriteIntValue("EntryNumber", EntryNumber);
+            writer.WriteDoubleValue("ExchangeRate", ExchangeRate);
+            writer.WriteStringValue("ExternalLinkDescription", ExternalLinkDescription);
+            writer.WriteStringValue("ExternalLinkReference", ExternalLinkReference);
+            writer.WriteDoubleValue("ExtraDutyAmountFC", ExtraDutyAmountFC);
+            writer.WriteDoubleValue("ExtraDutyPercentage", ExtraDutyPercentage);
+            writer.WriteIntValue("FinancialPeriod", FinancialPeriod);
+            writer.WriteIntValue("FinancialYear", FinancialYear);
+            writer.WriteGuidValue("GLAccount", GLAccount);
+            writer.WriteStringValue("GLAccountCode", GLAccountCode);
+            writer.WriteStringValue("GLAccountDescription", GLAccountDescription);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteIntValue("InvoiceNumber", InvoiceNumber);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteStringValue("JournalCode", JournalCode);
+            writer.WriteStringValue("JournalDescription", JournalDescription);
+            writer.WriteIntValue("LineNumber", LineNumber);
+            writer.WriteIntValue("LineType", LineType);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteGuidValue("OffsetID", OffsetID);
+            writer.WriteIntValue("OrderNumber", OrderNumber);
+            writer.WriteDoubleValue("PaymentDiscountAmount", PaymentDiscountAmount);
+            writer.WriteStringValue("PaymentReference", PaymentReference);
+            writer.WriteGuidValue("Project", Project);
+            writer.WriteStringValue("ProjectCode", ProjectCode);
+            writer.WriteStringValue("ProjectDescription", ProjectDescription);
+            writer.WriteGuidValue("ProjectWBS", ProjectWBS);
+            writer.WriteStringValue("ProjectWBSDescription", ProjectWBSDescription);
+            writer.WriteDoubleValue("Quantity", Quantity);
+            writer.WriteStringValue("SerialNumber", SerialNumber);
+            writer.WriteIntValue("Status", Status);
+            writer.WriteGuidValue("Subscription", Subscription);
+            writer.WriteStringValue("SubscriptionDescription", SubscriptionDescription);
+            writer.WriteLongValue("Timestamp", Timestamp);
+            writer.WriteStringValue("TrackingNumber", TrackingNumber);
+            writer.WriteStringValue("TrackingNumberDescription", TrackingNumberDescription);
+            writer.WriteIntValue("Type", Type);
+            writer.WriteStringValue("VATCode", VATCode);
+            writer.WriteStringValue("VATCodeDescription", VATCodeDescription);
+            writer.WriteDoubleValue("VATPercentage", VATPercentage);
+            writer.WriteStringValue("VATType", VATType);
+            writer.WriteStringValue("YourRef", YourRef);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

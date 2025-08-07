@@ -14,6 +14,390 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Amount in the default currency of the company</summary>
+        public double? AmountDC { get; set; }
+        /// <summary>Discount amount in the default currency of the company. Only supported for header</summary>
+        public double? AmountDiscount { get; set; }
+        /// <summary>Discount amount excluding VAT in the default currency of the company. Only supported for header</summary>
+        public double? AmountDiscountExclVat { get; set; }
+        /// <summary>Amount in the currency of the transaction</summary>
+        public double? AmountFC { get; set; }
+        /// <summary>Amount exclude VAT in the currency of the transaction. Only supported for header</summary>
+        public double? AmountFCExclVat { get; set; }
+        /// <summary>Shows if this sales order is approved</summary>
+        public int? ApprovalStatus { get; set; }
+        /// <summary>Description of ApprovalStatus</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ApprovalStatusDescription { get; set; }
+#nullable restore
+#else
+        public string ApprovalStatusDescription { get; set; }
+#endif
+        /// <summary>Approval datetime</summary>
+        public DateTimeOffset? Approved { get; set; }
+        /// <summary>User who approved the sales order</summary>
+        public Guid? Approver { get; set; }
+        /// <summary>Name of approver</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ApproverFullName { get; set; }
+#nullable restore
+#else
+        public string ApproverFullName { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Currency code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomField { get; set; }
+#nullable restore
+#else
+        public string CustomField { get; set; }
+#endif
+        /// <summary>Reference to the delivery customer. For an existing sales order this value can not be changed.</summary>
+        public Guid? DeliverTo { get; set; }
+        /// <summary>Reference to contact person of delivery customer</summary>
+        public Guid? DeliverToContactPerson { get; set; }
+        /// <summary>Name of contact person of delivery customer</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeliverToContactPersonFullName { get; set; }
+#nullable restore
+#else
+        public string DeliverToContactPersonFullName { get; set; }
+#endif
+        /// <summary>Name of delivery customer</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeliverToName { get; set; }
+#nullable restore
+#else
+        public string DeliverToName { get; set; }
+#endif
+        /// <summary>Delivery address</summary>
+        public Guid? DeliveryAddress { get; set; }
+        /// <summary>Delivery date of this line</summary>
+        public DateTimeOffset? DeliveryDate { get; set; }
+        /// <summary>Shipping status of the sales order. 12=Open, 20=Partial, 21=Complete, 45=Cancelled</summary>
+        public int? DeliveryStatus { get; set; }
+        /// <summary>Description of DeliveryStatus</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeliveryStatusDescription { get; set; }
+#nullable restore
+#else
+        public string DeliveryStatusDescription { get; set; }
+#endif
+        /// <summary>Description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Discount given on the default price. Discount = (DefaultPrice of Item - PriceItem in line) / DefaultPrice of Item</summary>
+        public double? Discount { get; set; }
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Document that is manually linked to the sales order</summary>
+        public Guid? Document { get; set; }
+        /// <summary>Number of the document</summary>
+        public int? DocumentNumber { get; set; }
+        /// <summary>Subject of the document</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DocumentSubject { get; set; }
+#nullable restore
+#else
+        public string DocumentSubject { get; set; }
+#endif
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Address of Incoterm</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IncotermAddress { get; set; }
+#nullable restore
+#else
+        public string IncotermAddress { get; set; }
+#endif
+        /// <summary>Code of Incoterm</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IncotermCode { get; set; }
+#nullable restore
+#else
+        public string IncotermCode { get; set; }
+#endif
+        /// <summary>Version of Incoterm Supported version for Incoterms : 2010, 2020</summary>
+        public int? IncotermVersion { get; set; }
+        /// <summary>Invoice status of the sales order. 12=Open, 20=Partial, 21=Complete, 45=Cancelled</summary>
+        public int? InvoiceStatus { get; set; }
+        /// <summary>Description of InvoiceStatus</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvoiceStatusDescription { get; set; }
+#nullable restore
+#else
+        public string InvoiceStatusDescription { get; set; }
+#endif
+        /// <summary>Reference to the customer who will receive the invoice. For an existing sales order this value can not be changed.</summary>
+        public Guid? InvoiceTo { get; set; }
+        /// <summary>Reference to the contact person of the customer who will receive the invoice</summary>
+        public Guid? InvoiceToContactPerson { get; set; }
+        /// <summary>Name of the contact person of the customer who will receive the invoice</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvoiceToContactPersonFullName { get; set; }
+#nullable restore
+#else
+        public string InvoiceToContactPersonFullName { get; set; }
+#endif
+        /// <summary>Name of the customer who will receive the invoice</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvoiceToName { get; set; }
+#nullable restore
+#else
+        public string InvoiceToName { get; set; }
+#endif
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Extra notes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>Order date</summary>
+        public DateTimeOffset? OrderDate { get; set; }
+        /// <summary>Customer who ordered the sales order. For an existing sales order this value can not be changed.</summary>
+        public Guid? OrderedBy { get; set; }
+        /// <summary>Contact person of the customer who ordered the sales order</summary>
+        public Guid? OrderedByContactPerson { get; set; }
+        /// <summary>Name of contact person of the customer who ordered the sales order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrderedByContactPersonFullName { get; set; }
+#nullable restore
+#else
+        public string OrderedByContactPersonFullName { get; set; }
+#endif
+        /// <summary>Name of the customer who ordered the sales order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrderedByName { get; set; }
+#nullable restore
+#else
+        public string OrderedByName { get; set; }
+#endif
+        /// <summary>The OrderID identifies the sales order. All the lines of a sales order have the same OrderID</summary>
+        public Guid? OrderID { get; set; }
+        /// <summary>Number of sales order</summary>
+        public int? OrderNumber { get; set; }
+        /// <summary>The payment condition used for due date and discount calculation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaymentCondition { get; set; }
+#nullable restore
+#else
+        public string PaymentCondition { get; set; }
+#endif
+        /// <summary>Description of PaymentCondition</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaymentConditionDescription { get; set; }
+#nullable restore
+#else
+        public string PaymentConditionDescription { get; set; }
+#endif
+        /// <summary>Payment reference for sales order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaymentReference { get; set; }
+#nullable restore
+#else
+        public string PaymentReference { get; set; }
+#endif
+        /// <summary>The project to which the sales order line is linked. The project can be different per line. Sometimes also the project in the header is filled although this is not really used</summary>
+        public Guid? Project { get; set; }
+        /// <summary>Code of Project</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectCode { get; set; }
+#nullable restore
+#else
+        public string ProjectCode { get; set; }
+#endif
+        /// <summary>Description of Project</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectDescription { get; set; }
+#nullable restore
+#else
+        public string ProjectDescription { get; set; }
+#endif
+        /// <summary>Extra remarks</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Remarks { get; set; }
+#nullable restore
+#else
+        public string Remarks { get; set; }
+#endif
+        /// <summary>ID of Sales channel.</summary>
+        public Guid? SalesChannel { get; set; }
+        /// <summary>Code of Sales channel</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SalesChannelCode { get; set; }
+#nullable restore
+#else
+        public string SalesChannelCode { get; set; }
+#endif
+        /// <summary>Description of Sales channel</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SalesChannelDescription { get; set; }
+#nullable restore
+#else
+        public string SalesChannelDescription { get; set; }
+#endif
+        /// <summary>Sales representative</summary>
+        public Guid? Salesperson { get; set; }
+        /// <summary>Name of sales representative</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SalespersonFullName { get; set; }
+#nullable restore
+#else
+        public string SalespersonFullName { get; set; }
+#endif
+        /// <summary>ID of selection code</summary>
+        public Guid? SelectionCode { get; set; }
+        /// <summary>Code of selection code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SelectionCodeCode { get; set; }
+#nullable restore
+#else
+        public string SelectionCodeCode { get; set; }
+#endif
+        /// <summary>Description of selection code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SelectionCodeDescription { get; set; }
+#nullable restore
+#else
+        public string SelectionCodeDescription { get; set; }
+#endif
+        /// <summary>ShippingMethod</summary>
+        public Guid? ShippingMethod { get; set; }
+        /// <summary>Code of Shipping Method</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ShippingMethodCode { get; set; }
+#nullable restore
+#else
+        public string ShippingMethodCode { get; set; }
+#endif
+        /// <summary>Description of Shipping Method</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ShippingMethodDescription { get; set; }
+#nullable restore
+#else
+        public string ShippingMethodDescription { get; set; }
+#endif
+        /// <summary>The status of the sales order. 12 = Open, 20 = Partial, 21 = Complete, 45 = Cancelled.</summary>
+        public int? Status { get; set; }
+        /// <summary>Description of Status</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StatusDescription { get; set; }
+#nullable restore
+#else
+        public string StatusDescription { get; set; }
+#endif
+        /// <summary>Timestamp</summary>
+        public long? Timestamp { get; set; }
+        /// <summary>VAT amount in the currency of the transaction</summary>
+        public double? VATAmount { get; set; }
+        /// <summary>VAT code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATCode { get; set; }
+#nullable restore
+#else
+        public string VATCode { get; set; }
+#endif
+        /// <summary>Description of VATCode</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATCodeDescription { get; set; }
+#nullable restore
+#else
+        public string VATCodeDescription { get; set; }
+#endif
+        /// <summary>Code of Warehouse</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseCode { get; set; }
+#nullable restore
+#else
+        public string WarehouseCode { get; set; }
+#endif
+        /// <summary>Description of Warehouse</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseDescription { get; set; }
+#nullable restore
+#else
+        public string WarehouseDescription { get; set; }
+#endif
+        /// <summary>Warehouse</summary>
+        public Guid? WarehouseID { get; set; }
+        /// <summary>The reference number of the customer</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? YourRef { get; set; }
+#nullable restore
+#else
+        public string YourRef { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncSalesOrderSalesOrderHeaders"/> and sets the default values.
         /// </summary>
@@ -39,6 +423,84 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "AmountDC", n => { AmountDC = n.GetDoubleValue(); } },
+                { "AmountDiscount", n => { AmountDiscount = n.GetDoubleValue(); } },
+                { "AmountDiscountExclVat", n => { AmountDiscountExclVat = n.GetDoubleValue(); } },
+                { "AmountFC", n => { AmountFC = n.GetDoubleValue(); } },
+                { "AmountFCExclVat", n => { AmountFCExclVat = n.GetDoubleValue(); } },
+                { "ApprovalStatus", n => { ApprovalStatus = n.GetIntValue(); } },
+                { "ApprovalStatusDescription", n => { ApprovalStatusDescription = n.GetStringValue(); } },
+                { "Approved", n => { Approved = n.GetDateTimeOffsetValue(); } },
+                { "Approver", n => { Approver = n.GetGuidValue(); } },
+                { "ApproverFullName", n => { ApproverFullName = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Currency", n => { Currency = n.GetStringValue(); } },
+                { "CustomField", n => { CustomField = n.GetStringValue(); } },
+                { "DeliverTo", n => { DeliverTo = n.GetGuidValue(); } },
+                { "DeliverToContactPerson", n => { DeliverToContactPerson = n.GetGuidValue(); } },
+                { "DeliverToContactPersonFullName", n => { DeliverToContactPersonFullName = n.GetStringValue(); } },
+                { "DeliverToName", n => { DeliverToName = n.GetStringValue(); } },
+                { "DeliveryAddress", n => { DeliveryAddress = n.GetGuidValue(); } },
+                { "DeliveryDate", n => { DeliveryDate = n.GetDateTimeOffsetValue(); } },
+                { "DeliveryStatus", n => { DeliveryStatus = n.GetIntValue(); } },
+                { "DeliveryStatusDescription", n => { DeliveryStatusDescription = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Discount", n => { Discount = n.GetDoubleValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "Document", n => { Document = n.GetGuidValue(); } },
+                { "DocumentNumber", n => { DocumentNumber = n.GetIntValue(); } },
+                { "DocumentSubject", n => { DocumentSubject = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "IncotermAddress", n => { IncotermAddress = n.GetStringValue(); } },
+                { "IncotermCode", n => { IncotermCode = n.GetStringValue(); } },
+                { "IncotermVersion", n => { IncotermVersion = n.GetIntValue(); } },
+                { "InvoiceStatus", n => { InvoiceStatus = n.GetIntValue(); } },
+                { "InvoiceStatusDescription", n => { InvoiceStatusDescription = n.GetStringValue(); } },
+                { "InvoiceTo", n => { InvoiceTo = n.GetGuidValue(); } },
+                { "InvoiceToContactPerson", n => { InvoiceToContactPerson = n.GetGuidValue(); } },
+                { "InvoiceToContactPersonFullName", n => { InvoiceToContactPersonFullName = n.GetStringValue(); } },
+                { "InvoiceToName", n => { InvoiceToName = n.GetStringValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "OrderDate", n => { OrderDate = n.GetDateTimeOffsetValue(); } },
+                { "OrderID", n => { OrderID = n.GetGuidValue(); } },
+                { "OrderNumber", n => { OrderNumber = n.GetIntValue(); } },
+                { "OrderedBy", n => { OrderedBy = n.GetGuidValue(); } },
+                { "OrderedByContactPerson", n => { OrderedByContactPerson = n.GetGuidValue(); } },
+                { "OrderedByContactPersonFullName", n => { OrderedByContactPersonFullName = n.GetStringValue(); } },
+                { "OrderedByName", n => { OrderedByName = n.GetStringValue(); } },
+                { "PaymentCondition", n => { PaymentCondition = n.GetStringValue(); } },
+                { "PaymentConditionDescription", n => { PaymentConditionDescription = n.GetStringValue(); } },
+                { "PaymentReference", n => { PaymentReference = n.GetStringValue(); } },
+                { "Project", n => { Project = n.GetGuidValue(); } },
+                { "ProjectCode", n => { ProjectCode = n.GetStringValue(); } },
+                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
+                { "Remarks", n => { Remarks = n.GetStringValue(); } },
+                { "SalesChannel", n => { SalesChannel = n.GetGuidValue(); } },
+                { "SalesChannelCode", n => { SalesChannelCode = n.GetStringValue(); } },
+                { "SalesChannelDescription", n => { SalesChannelDescription = n.GetStringValue(); } },
+                { "Salesperson", n => { Salesperson = n.GetGuidValue(); } },
+                { "SalespersonFullName", n => { SalespersonFullName = n.GetStringValue(); } },
+                { "SelectionCode", n => { SelectionCode = n.GetGuidValue(); } },
+                { "SelectionCodeCode", n => { SelectionCodeCode = n.GetStringValue(); } },
+                { "SelectionCodeDescription", n => { SelectionCodeDescription = n.GetStringValue(); } },
+                { "ShippingMethod", n => { ShippingMethod = n.GetGuidValue(); } },
+                { "ShippingMethodCode", n => { ShippingMethodCode = n.GetStringValue(); } },
+                { "ShippingMethodDescription", n => { ShippingMethodDescription = n.GetStringValue(); } },
+                { "Status", n => { Status = n.GetIntValue(); } },
+                { "StatusDescription", n => { StatusDescription = n.GetStringValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "VATAmount", n => { VATAmount = n.GetDoubleValue(); } },
+                { "VATCode", n => { VATCode = n.GetStringValue(); } },
+                { "VATCodeDescription", n => { VATCodeDescription = n.GetStringValue(); } },
+                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
+                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
+                { "WarehouseID", n => { WarehouseID = n.GetGuidValue(); } },
+                { "YourRef", n => { YourRef = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +510,84 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("AmountDC", AmountDC);
+            writer.WriteDoubleValue("AmountDiscount", AmountDiscount);
+            writer.WriteDoubleValue("AmountDiscountExclVat", AmountDiscountExclVat);
+            writer.WriteDoubleValue("AmountFC", AmountFC);
+            writer.WriteDoubleValue("AmountFCExclVat", AmountFCExclVat);
+            writer.WriteIntValue("ApprovalStatus", ApprovalStatus);
+            writer.WriteStringValue("ApprovalStatusDescription", ApprovalStatusDescription);
+            writer.WriteDateTimeOffsetValue("Approved", Approved);
+            writer.WriteGuidValue("Approver", Approver);
+            writer.WriteStringValue("ApproverFullName", ApproverFullName);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Currency", Currency);
+            writer.WriteStringValue("CustomField", CustomField);
+            writer.WriteGuidValue("DeliverTo", DeliverTo);
+            writer.WriteGuidValue("DeliverToContactPerson", DeliverToContactPerson);
+            writer.WriteStringValue("DeliverToContactPersonFullName", DeliverToContactPersonFullName);
+            writer.WriteStringValue("DeliverToName", DeliverToName);
+            writer.WriteGuidValue("DeliveryAddress", DeliveryAddress);
+            writer.WriteDateTimeOffsetValue("DeliveryDate", DeliveryDate);
+            writer.WriteIntValue("DeliveryStatus", DeliveryStatus);
+            writer.WriteStringValue("DeliveryStatusDescription", DeliveryStatusDescription);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteDoubleValue("Discount", Discount);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("Document", Document);
+            writer.WriteIntValue("DocumentNumber", DocumentNumber);
+            writer.WriteStringValue("DocumentSubject", DocumentSubject);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteStringValue("IncotermAddress", IncotermAddress);
+            writer.WriteStringValue("IncotermCode", IncotermCode);
+            writer.WriteIntValue("IncotermVersion", IncotermVersion);
+            writer.WriteIntValue("InvoiceStatus", InvoiceStatus);
+            writer.WriteStringValue("InvoiceStatusDescription", InvoiceStatusDescription);
+            writer.WriteGuidValue("InvoiceTo", InvoiceTo);
+            writer.WriteGuidValue("InvoiceToContactPerson", InvoiceToContactPerson);
+            writer.WriteStringValue("InvoiceToContactPersonFullName", InvoiceToContactPersonFullName);
+            writer.WriteStringValue("InvoiceToName", InvoiceToName);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteDateTimeOffsetValue("OrderDate", OrderDate);
+            writer.WriteGuidValue("OrderedBy", OrderedBy);
+            writer.WriteGuidValue("OrderedByContactPerson", OrderedByContactPerson);
+            writer.WriteStringValue("OrderedByContactPersonFullName", OrderedByContactPersonFullName);
+            writer.WriteStringValue("OrderedByName", OrderedByName);
+            writer.WriteGuidValue("OrderID", OrderID);
+            writer.WriteIntValue("OrderNumber", OrderNumber);
+            writer.WriteStringValue("PaymentCondition", PaymentCondition);
+            writer.WriteStringValue("PaymentConditionDescription", PaymentConditionDescription);
+            writer.WriteStringValue("PaymentReference", PaymentReference);
+            writer.WriteGuidValue("Project", Project);
+            writer.WriteStringValue("ProjectCode", ProjectCode);
+            writer.WriteStringValue("ProjectDescription", ProjectDescription);
+            writer.WriteStringValue("Remarks", Remarks);
+            writer.WriteGuidValue("SalesChannel", SalesChannel);
+            writer.WriteStringValue("SalesChannelCode", SalesChannelCode);
+            writer.WriteStringValue("SalesChannelDescription", SalesChannelDescription);
+            writer.WriteGuidValue("Salesperson", Salesperson);
+            writer.WriteStringValue("SalespersonFullName", SalespersonFullName);
+            writer.WriteGuidValue("SelectionCode", SelectionCode);
+            writer.WriteStringValue("SelectionCodeCode", SelectionCodeCode);
+            writer.WriteStringValue("SelectionCodeDescription", SelectionCodeDescription);
+            writer.WriteGuidValue("ShippingMethod", ShippingMethod);
+            writer.WriteStringValue("ShippingMethodCode", ShippingMethodCode);
+            writer.WriteStringValue("ShippingMethodDescription", ShippingMethodDescription);
+            writer.WriteIntValue("Status", Status);
+            writer.WriteStringValue("StatusDescription", StatusDescription);
+            writer.WriteLongValue("Timestamp", Timestamp);
+            writer.WriteDoubleValue("VATAmount", VATAmount);
+            writer.WriteStringValue("VATCode", VATCode);
+            writer.WriteStringValue("VATCodeDescription", VATCodeDescription);
+            writer.WriteStringValue("WarehouseCode", WarehouseCode);
+            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
+            writer.WriteGuidValue("WarehouseID", WarehouseID);
+            writer.WriteStringValue("YourRef", YourRef);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,8 +12,84 @@ namespace ExactOnline.Api.Client.Models
     public partial class ReadFinancialAgingReceivablesList : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Code of Account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountCode { get; set; }
+#nullable restore
+#else
+        public string AccountCode { get; set; }
+#endif
+        /// <summary>Primary key</summary>
+        public Guid? AccountId { get; set; }
+        /// <summary>Name of Account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountName { get; set; }
+#nullable restore
+#else
+        public string AccountName { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Age group 1</summary>
+        public int? AgeGroup1 { get; set; }
+        /// <summary>Amount of age group 1</summary>
+        public double? AgeGroup1Amount { get; set; }
+        /// <summary>Description of AgeGroup1</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AgeGroup1Description { get; set; }
+#nullable restore
+#else
+        public string AgeGroup1Description { get; set; }
+#endif
+        /// <summary>Age group 2</summary>
+        public int? AgeGroup2 { get; set; }
+        /// <summary>Amount of age group 2</summary>
+        public double? AgeGroup2Amount { get; set; }
+        /// <summary>Description of AgeGroup2</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AgeGroup2Description { get; set; }
+#nullable restore
+#else
+        public string AgeGroup2Description { get; set; }
+#endif
+        /// <summary>Age group 3</summary>
+        public int? AgeGroup3 { get; set; }
+        /// <summary>Amount of age group 3</summary>
+        public double? AgeGroup3Amount { get; set; }
+        /// <summary>Description of AgeGroup3</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AgeGroup3Description { get; set; }
+#nullable restore
+#else
+        public string AgeGroup3Description { get; set; }
+#endif
+        /// <summary>Age group 4</summary>
+        public int? AgeGroup4 { get; set; }
+        /// <summary>Amount of age group 4</summary>
+        public double? AgeGroup4Amount { get; set; }
+        /// <summary>Description of AgeGroup4</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AgeGroup4Description { get; set; }
+#nullable restore
+#else
+        public string AgeGroup4Description { get; set; }
+#endif
+        /// <summary>Code of Currency</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CurrencyCode { get; set; }
+#nullable restore
+#else
+        public string CurrencyCode { get; set; }
+#endif
+        /// <summary>Total amount of all age groups</summary>
+        public double? TotalAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialAgingReceivablesList"/> and sets the default values.
         /// </summary>
@@ -39,6 +115,23 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "AccountCode", n => { AccountCode = n.GetStringValue(); } },
+                { "AccountId", n => { AccountId = n.GetGuidValue(); } },
+                { "AccountName", n => { AccountName = n.GetStringValue(); } },
+                { "AgeGroup1", n => { AgeGroup1 = n.GetIntValue(); } },
+                { "AgeGroup1Amount", n => { AgeGroup1Amount = n.GetDoubleValue(); } },
+                { "AgeGroup1Description", n => { AgeGroup1Description = n.GetStringValue(); } },
+                { "AgeGroup2", n => { AgeGroup2 = n.GetIntValue(); } },
+                { "AgeGroup2Amount", n => { AgeGroup2Amount = n.GetDoubleValue(); } },
+                { "AgeGroup2Description", n => { AgeGroup2Description = n.GetStringValue(); } },
+                { "AgeGroup3", n => { AgeGroup3 = n.GetIntValue(); } },
+                { "AgeGroup3Amount", n => { AgeGroup3Amount = n.GetDoubleValue(); } },
+                { "AgeGroup3Description", n => { AgeGroup3Description = n.GetStringValue(); } },
+                { "AgeGroup4", n => { AgeGroup4 = n.GetIntValue(); } },
+                { "AgeGroup4Amount", n => { AgeGroup4Amount = n.GetDoubleValue(); } },
+                { "AgeGroup4Description", n => { AgeGroup4Description = n.GetStringValue(); } },
+                { "CurrencyCode", n => { CurrencyCode = n.GetStringValue(); } },
+                { "TotalAmount", n => { TotalAmount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +141,23 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("AccountCode", AccountCode);
+            writer.WriteGuidValue("AccountId", AccountId);
+            writer.WriteStringValue("AccountName", AccountName);
+            writer.WriteIntValue("AgeGroup1", AgeGroup1);
+            writer.WriteDoubleValue("AgeGroup1Amount", AgeGroup1Amount);
+            writer.WriteStringValue("AgeGroup1Description", AgeGroup1Description);
+            writer.WriteIntValue("AgeGroup2", AgeGroup2);
+            writer.WriteDoubleValue("AgeGroup2Amount", AgeGroup2Amount);
+            writer.WriteStringValue("AgeGroup2Description", AgeGroup2Description);
+            writer.WriteIntValue("AgeGroup3", AgeGroup3);
+            writer.WriteDoubleValue("AgeGroup3Amount", AgeGroup3Amount);
+            writer.WriteStringValue("AgeGroup3Description", AgeGroup3Description);
+            writer.WriteIntValue("AgeGroup4", AgeGroup4);
+            writer.WriteDoubleValue("AgeGroup4Amount", AgeGroup4Amount);
+            writer.WriteStringValue("AgeGroup4Description", AgeGroup4Description);
+            writer.WriteStringValue("CurrencyCode", CurrencyCode);
+            writer.WriteDoubleValue("TotalAmount", TotalAmount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

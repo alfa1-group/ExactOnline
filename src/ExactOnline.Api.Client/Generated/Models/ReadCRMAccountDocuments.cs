@@ -12,8 +12,108 @@ namespace ExactOnline.Api.Client.Models
     public partial class ReadCRMAccountDocuments : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>ID of the related account of this document</summary>
+        public Guid? Account { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The Attachments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachments? Attachments { get; set; }
+#nullable restore
+#else
+        public global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachments Attachments { get; set; }
+#endif
+        /// <summary>ID of the related contact of this document</summary>
+        public Guid? Contact { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Entry date of the incoming document</summary>
+        public DateTimeOffset? DocumentDate { get; set; }
+        /// <summary>Id of document folder</summary>
+        public Guid? DocumentFolder { get; set; }
+        /// <summary>Url to view the document</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DocumentViewUrl { get; set; }
+#nullable restore
+#else
+        public string DocumentViewUrl { get; set; }
+#endif
+        /// <summary>Indicates that the document body is empty</summary>
+        public bool? HasEmptyBody { get; set; }
+        /// <summary>Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero</summary>
+        public int? HID { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>The opportunity linked to the document</summary>
+        public Guid? Opportunity { get; set; }
+        /// <summary>Purchase invoice number.</summary>
+        public int? PurchaseInvoiceNumber { get; set; }
+        /// <summary>Purchase order number.</summary>
+        public int? PurchaseOrderNumber { get; set; }
+        /// <summary>&apos;Our reference&apos; of the transaction that belongs to this document</summary>
+        public int? SalesInvoiceNumber { get; set; }
+        /// <summary>Number of the sales order</summary>
+        public int? SalesOrderNumber { get; set; }
+        /// <summary>Send Method</summary>
+        public int? SendMethod { get; set; }
+        /// <summary>The Share property</summary>
+        public int? Share { get; set; }
+        /// <summary>SharePointConnectionStatus of this document</summary>
+        public int? SharePointConnectionStatus { get; set; }
+        /// <summary>SharePointID of this document</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SharePointID { get; set; }
+#nullable restore
+#else
+        public string SharePointID { get; set; }
+#endif
+        /// <summary>Source</summary>
+        public int? Source { get; set; }
+        /// <summary>Translated description of the Source type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceDescription { get; set; }
+#nullable restore
+#else
+        public string SourceDescription { get; set; }
+#endif
+        /// <summary>Subject of this document</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Subject { get; set; }
+#nullable restore
+#else
+        public string Subject { get; set; }
+#endif
+        /// <summary>The document type</summary>
+        public int? Type { get; set; }
+        /// <summary>Translated description of the document type. $filter and $orderby are not supported for this property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TypeDescription { get; set; }
+#nullable restore
+#else
+        public string TypeDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadCRMAccountDocuments"/> and sets the default values.
         /// </summary>
@@ -39,6 +139,35 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Account", n => { Account = n.GetGuidValue(); } },
+                { "Attachments", n => { Attachments = n.GetObjectValue<global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachments>(global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachments.CreateFromDiscriminatorValue); } },
+                { "Contact", n => { Contact = n.GetGuidValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "DocumentDate", n => { DocumentDate = n.GetDateTimeOffsetValue(); } },
+                { "DocumentFolder", n => { DocumentFolder = n.GetGuidValue(); } },
+                { "DocumentViewUrl", n => { DocumentViewUrl = n.GetStringValue(); } },
+                { "HID", n => { HID = n.GetIntValue(); } },
+                { "HasEmptyBody", n => { HasEmptyBody = n.GetBoolValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "Opportunity", n => { Opportunity = n.GetGuidValue(); } },
+                { "PurchaseInvoiceNumber", n => { PurchaseInvoiceNumber = n.GetIntValue(); } },
+                { "PurchaseOrderNumber", n => { PurchaseOrderNumber = n.GetIntValue(); } },
+                { "SalesInvoiceNumber", n => { SalesInvoiceNumber = n.GetIntValue(); } },
+                { "SalesOrderNumber", n => { SalesOrderNumber = n.GetIntValue(); } },
+                { "SendMethod", n => { SendMethod = n.GetIntValue(); } },
+                { "Share", n => { Share = n.GetIntValue(); } },
+                { "SharePointConnectionStatus", n => { SharePointConnectionStatus = n.GetIntValue(); } },
+                { "SharePointID", n => { SharePointID = n.GetStringValue(); } },
+                { "Source", n => { Source = n.GetIntValue(); } },
+                { "SourceDescription", n => { SourceDescription = n.GetStringValue(); } },
+                { "Subject", n => { Subject = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetIntValue(); } },
+                { "TypeDescription", n => { TypeDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +177,35 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("Account", Account);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachments>("Attachments", Attachments);
+            writer.WriteGuidValue("Contact", Contact);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteDateTimeOffsetValue("DocumentDate", DocumentDate);
+            writer.WriteGuidValue("DocumentFolder", DocumentFolder);
+            writer.WriteStringValue("DocumentViewUrl", DocumentViewUrl);
+            writer.WriteBoolValue("HasEmptyBody", HasEmptyBody);
+            writer.WriteIntValue("HID", HID);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteGuidValue("Opportunity", Opportunity);
+            writer.WriteIntValue("PurchaseInvoiceNumber", PurchaseInvoiceNumber);
+            writer.WriteIntValue("PurchaseOrderNumber", PurchaseOrderNumber);
+            writer.WriteIntValue("SalesInvoiceNumber", SalesInvoiceNumber);
+            writer.WriteIntValue("SalesOrderNumber", SalesOrderNumber);
+            writer.WriteIntValue("SendMethod", SendMethod);
+            writer.WriteIntValue("Share", Share);
+            writer.WriteIntValue("SharePointConnectionStatus", SharePointConnectionStatus);
+            writer.WriteStringValue("SharePointID", SharePointID);
+            writer.WriteIntValue("Source", Source);
+            writer.WriteStringValue("SourceDescription", SourceDescription);
+            writer.WriteStringValue("Subject", Subject);
+            writer.WriteIntValue("Type", Type);
+            writer.WriteStringValue("TypeDescription", TypeDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

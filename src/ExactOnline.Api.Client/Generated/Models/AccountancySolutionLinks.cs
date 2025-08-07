@@ -12,8 +12,62 @@ namespace ExactOnline.Api.Client.Models
     public partial class AccountancySolutionLinks : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>ID of account to which solution is linked</summary>
+        public Guid? Account { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Accountant main division</summary>
+        public int? Division { get; set; }
+        /// <summary>If type is external predefined, represents ID of PracticeManagementExternalSolutions (mandatory for External solution)</summary>
+        public int? ExternalSolutionCode { get; set; }
+        /// <summary>Name of the external solution</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalSolutionName { get; set; }
+#nullable restore
+#else
+        public string ExternalSolutionName { get; set; }
+#endif
+        /// <summary>Customer URl in external solution, like solution.com/id123 (mandatory for External and ExternalOther solution)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalSolutionUrl { get; set; }
+#nullable restore
+#else
+        public string ExternalSolutionUrl { get; set; }
+#endif
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Division code of linked internal solution (mandatory for Internal solution)</summary>
+        public int? InternalSolutionDivision { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of the solution link</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>Name of the custom external solution (mandatory for ExternalOther solution)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OtherExternalSolutionName { get; set; }
+#nullable restore
+#else
+        public string OtherExternalSolutionName { get; set; }
+#endif
+        /// <summary>Type of solution: 0 - Internal(EOL), 1 - External(Wellknown solution), 2 - ExternalOther</summary>
+        public int? SolutionType { get; set; }
+        /// <summary>Link status: 0 - Active, 1 - Inactive, 2 -Archived</summary>
+        public int? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.AccountancySolutionLinks"/> and sets the default values.
         /// </summary>
@@ -39,6 +93,21 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Account", n => { Account = n.GetGuidValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "ExternalSolutionCode", n => { ExternalSolutionCode = n.GetIntValue(); } },
+                { "ExternalSolutionName", n => { ExternalSolutionName = n.GetStringValue(); } },
+                { "ExternalSolutionUrl", n => { ExternalSolutionUrl = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "InternalSolutionDivision", n => { InternalSolutionDivision = n.GetIntValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "OtherExternalSolutionName", n => { OtherExternalSolutionName = n.GetStringValue(); } },
+                { "SolutionType", n => { SolutionType = n.GetIntValue(); } },
+                { "Status", n => { Status = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +117,21 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("Account", Account);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteIntValue("ExternalSolutionCode", ExternalSolutionCode);
+            writer.WriteStringValue("ExternalSolutionName", ExternalSolutionName);
+            writer.WriteStringValue("ExternalSolutionUrl", ExternalSolutionUrl);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteIntValue("InternalSolutionDivision", InternalSolutionDivision);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("Name", Name);
+            writer.WriteStringValue("OtherExternalSolutionName", OtherExternalSolutionName);
+            writer.WriteIntValue("SolutionType", SolutionType);
+            writer.WriteIntValue("Status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

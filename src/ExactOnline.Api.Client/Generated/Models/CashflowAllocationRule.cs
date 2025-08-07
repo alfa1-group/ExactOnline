@@ -12,8 +12,64 @@ namespace ExactOnline.Api.Client.Models
     public partial class CashflowAllocationRule : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The account ID to which the imported bank transaction must be allocated.</summary>
+        public Guid? Account { get; set; }
+        /// <summary>The bank account number that should be in the imported bank transaction in order to perform the automatic allocation on bank account. Either bank account or word must be filled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountBankAccount { get; set; }
+#nullable restore
+#else
+        public string AccountBankAccount { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The cost centre that will be allocated to the imported bank transaction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Costcenter { get; set; }
+#nullable restore
+#else
+        public string Costcenter { get; set; }
+#endif
+        /// <summary>The cost unit that will be allocated to the imported bank transaction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Costunit { get; set; }
+#nullable restore
+#else
+        public string Costunit { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Division Code</summary>
+        public int? Division { get; set; }
+        /// <summary>The G/L account to which the imported bank transaction must be allocated.</summary>
+        public Guid? GLAccount { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>The VAT code that will be allocated to the imported bank transaction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATCode { get; set; }
+#nullable restore
+#else
+        public string VATCode { get; set; }
+#endif
+        /// <summary>Words for the automatic allocation. Either bank account or word must be filled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Words { get; set; }
+#nullable restore
+#else
+        public string Words { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CashflowAllocationRule"/> and sets the default values.
         /// </summary>
@@ -39,6 +95,19 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Account", n => { Account = n.GetGuidValue(); } },
+                { "AccountBankAccount", n => { AccountBankAccount = n.GetStringValue(); } },
+                { "Costcenter", n => { Costcenter = n.GetStringValue(); } },
+                { "Costunit", n => { Costunit = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "GLAccount", n => { GLAccount = n.GetGuidValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "VATCode", n => { VATCode = n.GetStringValue(); } },
+                { "Words", n => { Words = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +117,19 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("Account", Account);
+            writer.WriteStringValue("AccountBankAccount", AccountBankAccount);
+            writer.WriteStringValue("Costcenter", Costcenter);
+            writer.WriteStringValue("Costunit", Costunit);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("GLAccount", GLAccount);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("VATCode", VATCode);
+            writer.WriteStringValue("Words", Words);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

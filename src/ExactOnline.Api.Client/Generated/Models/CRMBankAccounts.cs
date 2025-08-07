@@ -12,8 +12,134 @@ namespace ExactOnline.Api.Client.Models
     public partial class CRMBankAccounts : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The Account property</summary>
+        public Guid? Account { get; set; }
+        /// <summary>The AccountName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountName { get; set; }
+#nullable restore
+#else
+        public string AccountName { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The Bank property</summary>
+        public Guid? Bank { get; set; }
+        /// <summary>The BankAccount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BankAccount { get; set; }
+#nullable restore
+#else
+        public string BankAccount { get; set; }
+#endif
+        /// <summary>The BankAccountHolderName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BankAccountHolderName { get; set; }
+#nullable restore
+#else
+        public string BankAccountHolderName { get; set; }
+#endif
+        /// <summary>The BankDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BankDescription { get; set; }
+#nullable restore
+#else
+        public string BankDescription { get; set; }
+#endif
+        /// <summary>The BankName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BankName { get; set; }
+#nullable restore
+#else
+        public string BankName { get; set; }
+#endif
+        /// <summary>The BICCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BICCode { get; set; }
+#nullable restore
+#else
+        public string BICCode { get; set; }
+#endif
+        /// <summary>The Blocked property</summary>
+        public bool? Blocked { get; set; }
+        /// <summary>The Created property</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>The Creator property</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>The CreatorFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>The Description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>The Division property</summary>
+        public int? Division { get; set; }
+        /// <summary>The Format property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Format { get; set; }
+#nullable restore
+#else
+        public string Format { get; set; }
+#endif
+        /// <summary>The IBAN property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IBAN { get; set; }
+#nullable restore
+#else
+        public string IBAN { get; set; }
+#endif
+        /// <summary>The ID property</summary>
+        public Guid? ID { get; set; }
+        /// <summary>The Main property</summary>
+        public bool? Main { get; set; }
+        /// <summary>The Modified property</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>The Modifier property</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>The ModifierFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>The PaymentServiceAccount property</summary>
+        public Guid? PaymentServiceAccount { get; set; }
+        /// <summary>The Type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
+        /// <summary>The TypeDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TypeDescription { get; set; }
+#nullable restore
+#else
+        public string TypeDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CRMBankAccounts"/> and sets the default values.
         /// </summary>
@@ -39,6 +165,30 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Account", n => { Account = n.GetGuidValue(); } },
+                { "AccountName", n => { AccountName = n.GetStringValue(); } },
+                { "BICCode", n => { BICCode = n.GetStringValue(); } },
+                { "Bank", n => { Bank = n.GetGuidValue(); } },
+                { "BankAccount", n => { BankAccount = n.GetStringValue(); } },
+                { "BankAccountHolderName", n => { BankAccountHolderName = n.GetStringValue(); } },
+                { "BankDescription", n => { BankDescription = n.GetStringValue(); } },
+                { "BankName", n => { BankName = n.GetStringValue(); } },
+                { "Blocked", n => { Blocked = n.GetBoolValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "Format", n => { Format = n.GetStringValue(); } },
+                { "IBAN", n => { IBAN = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Main", n => { Main = n.GetBoolValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "PaymentServiceAccount", n => { PaymentServiceAccount = n.GetGuidValue(); } },
+                { "Type", n => { Type = n.GetStringValue(); } },
+                { "TypeDescription", n => { TypeDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +198,30 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("Account", Account);
+            writer.WriteStringValue("AccountName", AccountName);
+            writer.WriteGuidValue("Bank", Bank);
+            writer.WriteStringValue("BankAccount", BankAccount);
+            writer.WriteStringValue("BankAccountHolderName", BankAccountHolderName);
+            writer.WriteStringValue("BankDescription", BankDescription);
+            writer.WriteStringValue("BankName", BankName);
+            writer.WriteStringValue("BICCode", BICCode);
+            writer.WriteBoolValue("Blocked", Blocked);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteStringValue("Format", Format);
+            writer.WriteStringValue("IBAN", IBAN);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteBoolValue("Main", Main);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteGuidValue("PaymentServiceAccount", PaymentServiceAccount);
+            writer.WriteStringValue("Type", Type);
+            writer.WriteStringValue("TypeDescription", TypeDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

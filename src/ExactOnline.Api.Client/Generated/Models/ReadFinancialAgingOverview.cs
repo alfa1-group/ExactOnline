@@ -14,6 +14,28 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Primary key</summary>
+        public int? AgeGroup { get; set; }
+        /// <summary>Description of AgeGroup</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AgeGroupDescription { get; set; }
+#nullable restore
+#else
+        public string AgeGroupDescription { get; set; }
+#endif
+        /// <summary>Amount payable</summary>
+        public double? AmountPayable { get; set; }
+        /// <summary>Amount receivable</summary>
+        public double? AmountReceivable { get; set; }
+        /// <summary>Code of Currency</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CurrencyCode { get; set; }
+#nullable restore
+#else
+        public string CurrencyCode { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialAgingOverview"/> and sets the default values.
         /// </summary>
@@ -39,6 +61,11 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "AgeGroup", n => { AgeGroup = n.GetIntValue(); } },
+                { "AgeGroupDescription", n => { AgeGroupDescription = n.GetStringValue(); } },
+                { "AmountPayable", n => { AmountPayable = n.GetDoubleValue(); } },
+                { "AmountReceivable", n => { AmountReceivable = n.GetDoubleValue(); } },
+                { "CurrencyCode", n => { CurrencyCode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +75,11 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("AgeGroup", AgeGroup);
+            writer.WriteStringValue("AgeGroupDescription", AgeGroupDescription);
+            writer.WriteDoubleValue("AmountPayable", AmountPayable);
+            writer.WriteDoubleValue("AmountReceivable", AmountReceivable);
+            writer.WriteStringValue("CurrencyCode", CurrencyCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

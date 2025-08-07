@@ -14,6 +14,146 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates if this is a backflush step</summary>
+        public int? Backflush { get; set; }
+        /// <summary>Barcode of the item (numeric string)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Barcode { get; set; }
+#nullable restore
+#else
+        public string Barcode { get; set; }
+#endif
+        /// <summary>Calculator type</summary>
+        public int? CalculatorType { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Description of the material</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Detail drawing reference</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DetailDrawing { get; set; }
+#nullable restore
+#else
+        public string DetailDrawing { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Reference to Items table</summary>
+        public Guid? Item { get; set; }
+        /// <summary>Item Code (material)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of Item (material)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>Reference to BillOfMaterialMaterials</summary>
+        public Guid? ItemMaterial { get; set; }
+        /// <summary>URL of the material item&apos;s picture</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemPictureUrl { get; set; }
+#nullable restore
+#else
+        public string ItemPictureUrl { get; set; }
+#endif
+        /// <summary>Line number</summary>
+        public int? LineNumber { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Line notes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>Planned amount in the currency of the transaction</summary>
+        public double? PlannedAmountFC { get; set; }
+        /// <summary>Date that the material is required.</summary>
+        public DateTimeOffset? PlannedDate { get; set; }
+        /// <summary>Planned price of the material</summary>
+        public double? PlannedPriceFC { get; set; }
+        /// <summary>Intended total planned quantity of the material including waste</summary>
+        public double? PlannedQuantity { get; set; }
+        /// <summary>Intended quantity of the material per unit excluding waste</summary>
+        public double? PlannedQuantityFactor { get; set; }
+        /// <summary>ID of the routing step.</summary>
+        public Guid? RoutingStepID { get; set; }
+        /// <summary>Reference to ShopOrders table</summary>
+        public Guid? ShopOrder { get; set; }
+        /// <summary>Line status: 5 = Draft, 10 = Open, 20 = On order, 25 = Partial, 30 = Finished</summary>
+        public int? Status { get; set; }
+        /// <summary>Description of Status</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StatusDescription { get; set; }
+#nullable restore
+#else
+        public string StatusDescription { get; set; }
+#endif
+        /// <summary>Timestamp</summary>
+        public long? Timestamp { get; set; }
+        /// <summary>Type: 1 = Material, 2 = By-product</summary>
+        public int? Type { get; set; }
+        /// <summary>Unit</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Unit { get; set; }
+#nullable restore
+#else
+        public string Unit { get; set; }
+#endif
+        /// <summary>Unit description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UnitDescription { get; set; }
+#nullable restore
+#else
+        public string UnitDescription { get; set; }
+#endif
+        /// <summary>Waste percentage must be null or integer from 1 to 9999 (only available in Manufacturing Professional and Premium)</summary>
+        public double? WastePercentage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncManufacturingShopOrderMaterialPlans"/> and sets the default values.
         /// </summary>
@@ -39,6 +179,40 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Backflush", n => { Backflush = n.GetIntValue(); } },
+                { "Barcode", n => { Barcode = n.GetStringValue(); } },
+                { "CalculatorType", n => { CalculatorType = n.GetIntValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "DetailDrawing", n => { DetailDrawing = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "ItemMaterial", n => { ItemMaterial = n.GetGuidValue(); } },
+                { "ItemPictureUrl", n => { ItemPictureUrl = n.GetStringValue(); } },
+                { "LineNumber", n => { LineNumber = n.GetIntValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "PlannedAmountFC", n => { PlannedAmountFC = n.GetDoubleValue(); } },
+                { "PlannedDate", n => { PlannedDate = n.GetDateTimeOffsetValue(); } },
+                { "PlannedPriceFC", n => { PlannedPriceFC = n.GetDoubleValue(); } },
+                { "PlannedQuantity", n => { PlannedQuantity = n.GetDoubleValue(); } },
+                { "PlannedQuantityFactor", n => { PlannedQuantityFactor = n.GetDoubleValue(); } },
+                { "RoutingStepID", n => { RoutingStepID = n.GetGuidValue(); } },
+                { "ShopOrder", n => { ShopOrder = n.GetGuidValue(); } },
+                { "Status", n => { Status = n.GetIntValue(); } },
+                { "StatusDescription", n => { StatusDescription = n.GetStringValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Type", n => { Type = n.GetIntValue(); } },
+                { "Unit", n => { Unit = n.GetStringValue(); } },
+                { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
+                { "WastePercentage", n => { WastePercentage = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +222,40 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("Backflush", Backflush);
+            writer.WriteStringValue("Barcode", Barcode);
+            writer.WriteIntValue("CalculatorType", CalculatorType);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteStringValue("DetailDrawing", DetailDrawing);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteGuidValue("ItemMaterial", ItemMaterial);
+            writer.WriteStringValue("ItemPictureUrl", ItemPictureUrl);
+            writer.WriteIntValue("LineNumber", LineNumber);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteDoubleValue("PlannedAmountFC", PlannedAmountFC);
+            writer.WriteDateTimeOffsetValue("PlannedDate", PlannedDate);
+            writer.WriteDoubleValue("PlannedPriceFC", PlannedPriceFC);
+            writer.WriteDoubleValue("PlannedQuantity", PlannedQuantity);
+            writer.WriteDoubleValue("PlannedQuantityFactor", PlannedQuantityFactor);
+            writer.WriteGuidValue("RoutingStepID", RoutingStepID);
+            writer.WriteGuidValue("ShopOrder", ShopOrder);
+            writer.WriteIntValue("Status", Status);
+            writer.WriteStringValue("StatusDescription", StatusDescription);
+            writer.WriteLongValue("Timestamp", Timestamp);
+            writer.WriteIntValue("Type", Type);
+            writer.WriteStringValue("Unit", Unit);
+            writer.WriteStringValue("UnitDescription", UnitDescription);
+            writer.WriteDoubleValue("WastePercentage", WastePercentage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

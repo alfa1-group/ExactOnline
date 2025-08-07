@@ -14,6 +14,244 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>URL to CAD Drawing Specified on General tab shoporder</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CADDrawingURL { get; set; }
+#nullable restore
+#else
+        public string CADDrawingURL { get; set; }
+#endif
+        /// <summary>The cost center linked to the shop order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Costcenter { get; set; }
+#nullable restore
+#else
+        public string Costcenter { get; set; }
+#endif
+        /// <summary>Description of Costcenter</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CostcenterDescription { get; set; }
+#nullable restore
+#else
+        public string CostcenterDescription { get; set; }
+#endif
+        /// <summary>The cost unit linked to the shop order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Costunit { get; set; }
+#nullable restore
+#else
+        public string Costunit { get; set; }
+#endif
+        /// <summary>Description of Costunit</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CostunitDescription { get; set; }
+#nullable restore
+#else
+        public string CostunitDescription { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Description of the shop order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Date on which the shop order was entered, does not need to be the same as syscreated date but is usually the same.</summary>
+        public DateTimeOffset? EntryDate { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Indicates if the item created by this shoporder is a batch item or not</summary>
+        public int? IsBatch { get; set; }
+        /// <summary>Indicates if fractions (for example 0.35) are allowed for quantities of the item created by this shoporder</summary>
+        public int? IsFractionAllowedItem { get; set; }
+        /// <summary>Indicator that Shop order is in planning</summary>
+        public int? IsInPlanning { get; set; }
+        /// <summary>Indicator if the Shop order is on hold</summary>
+        public int? IsOnHold { get; set; }
+        /// <summary>Indicator that the Shop order has been released to production</summary>
+        public int? IsReleased { get; set; }
+        /// <summary>Does the material plan&apos;s item use serial numbers</summary>
+        public int? IsSerial { get; set; }
+        /// <summary>Reference to the item created by this shoporder</summary>
+        public Guid? Item { get; set; }
+        /// <summary>Code of the item created by this shop order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of the item created by this shop order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>URL of the picture linked to the item created by this shop order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemPictureUrl { get; set; }
+#nullable restore
+#else
+        public string ItemPictureUrl { get; set; }
+#endif
+        /// <summary>Reference to ItemVersion</summary>
+        public Guid? ItemVersion { get; set; }
+        /// <summary>Description of Item Version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemVersionDescription { get; set; }
+#nullable restore
+#else
+        public string ItemVersionDescription { get; set; }
+#endif
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Notes - only viewed internally</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>Planned end date of this shop order</summary>
+        public DateTimeOffset? PlannedDate { get; set; }
+        /// <summary>Planned quantity</summary>
+        public double? PlannedQuantity { get; set; }
+        /// <summary>Planned start date of this shop order</summary>
+        public DateTimeOffset? PlannedStartDate { get; set; }
+        /// <summary>Quantity finished</summary>
+        public double? ProducedQuantity { get; set; }
+        /// <summary>Production lead days</summary>
+        public int? ProductionLeadDays { get; set; }
+        /// <summary>Reference to Project</summary>
+        public Guid? Project { get; set; }
+        /// <summary>Description of Project</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectDescription { get; set; }
+#nullable restore
+#else
+        public string ProjectDescription { get; set; }
+#endif
+        /// <summary>Quantity ready to ship</summary>
+        public double? ReadyToShipQuantity { get; set; }
+        /// <summary>Number of sales orders linked to this shop order</summary>
+        public int? SalesOrderLineCount { get; set; }
+        /// <summary>ID of selection code. Only supported by the Plus, Professional and Premium editions for Wholesale &amp;amp; Distribution and Manufacturing</summary>
+        public Guid? SelectionCode { get; set; }
+        /// <summary>Code of Selection code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SelectionCodeCode { get; set; }
+#nullable restore
+#else
+        public string SelectionCodeCode { get; set; }
+#endif
+        /// <summary>Description of Selection code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SelectionCodeDescription { get; set; }
+#nullable restore
+#else
+        public string SelectionCodeDescription { get; set; }
+#endif
+        /// <summary>Number of shop order by-product plans, which are backflushed, for this shop order</summary>
+        public int? ShopOrderByProductPlanBackflushCount { get; set; }
+        /// <summary>Number of shop order by-product plans for this shop order</summary>
+        public int? ShopOrderByProductPlanCount { get; set; }
+        /// <summary>Shop order main</summary>
+        public Guid? ShopOrderMain { get; set; }
+        /// <summary>Shop order main number</summary>
+        public int? ShopOrderMainNumber { get; set; }
+        /// <summary>Number of shop order material plans, which are backflushed, for this shop order</summary>
+        public int? ShopOrderMaterialPlanBackflushCount { get; set; }
+        /// <summary>Number of shop order material plans for this shop order</summary>
+        public int? ShopOrderMaterialPlanCount { get; set; }
+        /// <summary>Unique number to indentify the shop order</summary>
+        public int? ShopOrderNumber { get; set; }
+        /// <summary>Unique number to indentify the shop order (as a string to allow OData filtering, e.g. $filter=substringof(&apos;123&apos;,ShopOrderNumberString) eq true</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ShopOrderNumberString { get; set; }
+#nullable restore
+#else
+        public string ShopOrderNumberString { get; set; }
+#endif
+        /// <summary>Shop order parent</summary>
+        public Guid? ShopOrderParent { get; set; }
+        /// <summary>Shop order parent number</summary>
+        public int? ShopOrderParentNumber { get; set; }
+        /// <summary>Number of shop order routing step plans for this shop order</summary>
+        public int? ShopOrderRoutingStepPlanCount { get; set; }
+        /// <summary>Indicates the status of  the Shop Order: 10 Open, 20 In process, 30 Finished, 40 Completed</summary>
+        public int? Status { get; set; }
+        /// <summary>The count of material lines of this shop order, which have been linked to a sub order</summary>
+        public int? SubShopOrderCount { get; set; }
+        /// <summary>Timestamp</summary>
+        public long? Timestamp { get; set; }
+        /// <summary>Type of shoporder: always 9040 Regular</summary>
+        public int? Type { get; set; }
+        /// <summary>Unit of the item created by this shop order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Unit { get; set; }
+#nullable restore
+#else
+        public string Unit { get; set; }
+#endif
+        /// <summary>Unit description of the unit of the item created by this shop order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UnitDescription { get; set; }
+#nullable restore
+#else
+        public string UnitDescription { get; set; }
+#endif
+        /// <summary>Reference to the Warehouse associated with the Shop order</summary>
+        public Guid? Warehouse { get; set; }
+        /// <summary>Your reference (of the customer)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? YourRef { get; set; }
+#nullable restore
+#else
+        public string YourRef { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncManufacturingShopOrders"/> and sets the default values.
         /// </summary>
@@ -39,6 +277,65 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "CADDrawingURL", n => { CADDrawingURL = n.GetStringValue(); } },
+                { "Costcenter", n => { Costcenter = n.GetStringValue(); } },
+                { "CostcenterDescription", n => { CostcenterDescription = n.GetStringValue(); } },
+                { "Costunit", n => { Costunit = n.GetStringValue(); } },
+                { "CostunitDescription", n => { CostunitDescription = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "EntryDate", n => { EntryDate = n.GetDateTimeOffsetValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "IsBatch", n => { IsBatch = n.GetIntValue(); } },
+                { "IsFractionAllowedItem", n => { IsFractionAllowedItem = n.GetIntValue(); } },
+                { "IsInPlanning", n => { IsInPlanning = n.GetIntValue(); } },
+                { "IsOnHold", n => { IsOnHold = n.GetIntValue(); } },
+                { "IsReleased", n => { IsReleased = n.GetIntValue(); } },
+                { "IsSerial", n => { IsSerial = n.GetIntValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "ItemPictureUrl", n => { ItemPictureUrl = n.GetStringValue(); } },
+                { "ItemVersion", n => { ItemVersion = n.GetGuidValue(); } },
+                { "ItemVersionDescription", n => { ItemVersionDescription = n.GetStringValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "PlannedDate", n => { PlannedDate = n.GetDateTimeOffsetValue(); } },
+                { "PlannedQuantity", n => { PlannedQuantity = n.GetDoubleValue(); } },
+                { "PlannedStartDate", n => { PlannedStartDate = n.GetDateTimeOffsetValue(); } },
+                { "ProducedQuantity", n => { ProducedQuantity = n.GetDoubleValue(); } },
+                { "ProductionLeadDays", n => { ProductionLeadDays = n.GetIntValue(); } },
+                { "Project", n => { Project = n.GetGuidValue(); } },
+                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
+                { "ReadyToShipQuantity", n => { ReadyToShipQuantity = n.GetDoubleValue(); } },
+                { "SalesOrderLineCount", n => { SalesOrderLineCount = n.GetIntValue(); } },
+                { "SelectionCode", n => { SelectionCode = n.GetGuidValue(); } },
+                { "SelectionCodeCode", n => { SelectionCodeCode = n.GetStringValue(); } },
+                { "SelectionCodeDescription", n => { SelectionCodeDescription = n.GetStringValue(); } },
+                { "ShopOrderByProductPlanBackflushCount", n => { ShopOrderByProductPlanBackflushCount = n.GetIntValue(); } },
+                { "ShopOrderByProductPlanCount", n => { ShopOrderByProductPlanCount = n.GetIntValue(); } },
+                { "ShopOrderMain", n => { ShopOrderMain = n.GetGuidValue(); } },
+                { "ShopOrderMainNumber", n => { ShopOrderMainNumber = n.GetIntValue(); } },
+                { "ShopOrderMaterialPlanBackflushCount", n => { ShopOrderMaterialPlanBackflushCount = n.GetIntValue(); } },
+                { "ShopOrderMaterialPlanCount", n => { ShopOrderMaterialPlanCount = n.GetIntValue(); } },
+                { "ShopOrderNumber", n => { ShopOrderNumber = n.GetIntValue(); } },
+                { "ShopOrderNumberString", n => { ShopOrderNumberString = n.GetStringValue(); } },
+                { "ShopOrderParent", n => { ShopOrderParent = n.GetGuidValue(); } },
+                { "ShopOrderParentNumber", n => { ShopOrderParentNumber = n.GetIntValue(); } },
+                { "ShopOrderRoutingStepPlanCount", n => { ShopOrderRoutingStepPlanCount = n.GetIntValue(); } },
+                { "Status", n => { Status = n.GetIntValue(); } },
+                { "SubShopOrderCount", n => { SubShopOrderCount = n.GetIntValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Type", n => { Type = n.GetIntValue(); } },
+                { "Unit", n => { Unit = n.GetStringValue(); } },
+                { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
+                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
+                { "YourRef", n => { YourRef = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +345,65 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("CADDrawingURL", CADDrawingURL);
+            writer.WriteStringValue("Costcenter", Costcenter);
+            writer.WriteStringValue("CostcenterDescription", CostcenterDescription);
+            writer.WriteStringValue("Costunit", Costunit);
+            writer.WriteStringValue("CostunitDescription", CostunitDescription);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteDateTimeOffsetValue("EntryDate", EntryDate);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteIntValue("IsBatch", IsBatch);
+            writer.WriteIntValue("IsFractionAllowedItem", IsFractionAllowedItem);
+            writer.WriteIntValue("IsInPlanning", IsInPlanning);
+            writer.WriteIntValue("IsOnHold", IsOnHold);
+            writer.WriteIntValue("IsReleased", IsReleased);
+            writer.WriteIntValue("IsSerial", IsSerial);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteStringValue("ItemPictureUrl", ItemPictureUrl);
+            writer.WriteGuidValue("ItemVersion", ItemVersion);
+            writer.WriteStringValue("ItemVersionDescription", ItemVersionDescription);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteDateTimeOffsetValue("PlannedDate", PlannedDate);
+            writer.WriteDoubleValue("PlannedQuantity", PlannedQuantity);
+            writer.WriteDateTimeOffsetValue("PlannedStartDate", PlannedStartDate);
+            writer.WriteDoubleValue("ProducedQuantity", ProducedQuantity);
+            writer.WriteIntValue("ProductionLeadDays", ProductionLeadDays);
+            writer.WriteGuidValue("Project", Project);
+            writer.WriteStringValue("ProjectDescription", ProjectDescription);
+            writer.WriteDoubleValue("ReadyToShipQuantity", ReadyToShipQuantity);
+            writer.WriteIntValue("SalesOrderLineCount", SalesOrderLineCount);
+            writer.WriteGuidValue("SelectionCode", SelectionCode);
+            writer.WriteStringValue("SelectionCodeCode", SelectionCodeCode);
+            writer.WriteStringValue("SelectionCodeDescription", SelectionCodeDescription);
+            writer.WriteIntValue("ShopOrderByProductPlanBackflushCount", ShopOrderByProductPlanBackflushCount);
+            writer.WriteIntValue("ShopOrderByProductPlanCount", ShopOrderByProductPlanCount);
+            writer.WriteGuidValue("ShopOrderMain", ShopOrderMain);
+            writer.WriteIntValue("ShopOrderMainNumber", ShopOrderMainNumber);
+            writer.WriteIntValue("ShopOrderMaterialPlanBackflushCount", ShopOrderMaterialPlanBackflushCount);
+            writer.WriteIntValue("ShopOrderMaterialPlanCount", ShopOrderMaterialPlanCount);
+            writer.WriteIntValue("ShopOrderNumber", ShopOrderNumber);
+            writer.WriteStringValue("ShopOrderNumberString", ShopOrderNumberString);
+            writer.WriteGuidValue("ShopOrderParent", ShopOrderParent);
+            writer.WriteIntValue("ShopOrderParentNumber", ShopOrderParentNumber);
+            writer.WriteIntValue("ShopOrderRoutingStepPlanCount", ShopOrderRoutingStepPlanCount);
+            writer.WriteIntValue("Status", Status);
+            writer.WriteIntValue("SubShopOrderCount", SubShopOrderCount);
+            writer.WriteLongValue("Timestamp", Timestamp);
+            writer.WriteIntValue("Type", Type);
+            writer.WriteStringValue("Unit", Unit);
+            writer.WriteStringValue("UnitDescription", UnitDescription);
+            writer.WriteGuidValue("Warehouse", Warehouse);
+            writer.WriteStringValue("YourRef", YourRef);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

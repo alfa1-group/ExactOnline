@@ -12,8 +12,366 @@ namespace ExactOnline.Api.Client.Models
     public partial class FinancialTransactionTransactionLines : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Reference to account</summary>
+        public Guid? Account { get; set; }
+        /// <summary>Code of the Account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountCode { get; set; }
+#nullable restore
+#else
+        public string AccountCode { get; set; }
+#endif
+        /// <summary>Name of the Account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountName { get; set; }
+#nullable restore
+#else
+        public string AccountName { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Amount in the default currency of the company</summary>
+        public double? AmountDC { get; set; }
+        /// <summary>Amount in the currency of the transaction</summary>
+        public double? AmountFC { get; set; }
+        /// <summary>Vat base amount in the currency of the transaction</summary>
+        public double? AmountVATBaseFC { get; set; }
+        /// <summary>Vat amount in the currency of the transaction</summary>
+        public double? AmountVATFC { get; set; }
+        /// <summary>Reference to asset</summary>
+        public Guid? Asset { get; set; }
+        /// <summary>Code of Asset</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssetCode { get; set; }
+#nullable restore
+#else
+        public string AssetCode { get; set; }
+#endif
+        /// <summary>Description of Asset</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssetDescription { get; set; }
+#nullable restore
+#else
+        public string AssetDescription { get; set; }
+#endif
+        /// <summary>Reference to cost center</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CostCenter { get; set; }
+#nullable restore
+#else
+        public string CostCenter { get; set; }
+#endif
+        /// <summary>Description of CostCenter</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CostCenterDescription { get; set; }
+#nullable restore
+#else
+        public string CostCenterDescription { get; set; }
+#endif
+        /// <summary>Reference to cost unit</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CostUnit { get; set; }
+#nullable restore
+#else
+        public string CostUnit { get; set; }
+#endif
+        /// <summary>Description of CostUnit</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CostUnitDescription { get; set; }
+#nullable restore
+#else
+        public string CostUnitDescription { get; set; }
+#endif
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Currency</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>Custom field endpoint</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomField { get; set; }
+#nullable restore
+#else
+        public string CustomField { get; set; }
+#endif
+        /// <summary>Entry date</summary>
+        public DateTimeOffset? Date { get; set; }
+        /// <summary>Description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Reference to document</summary>
+        public Guid? Document { get; set; }
+        /// <summary>Number of the document</summary>
+        public int? DocumentNumber { get; set; }
+        /// <summary>Subject of the document</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DocumentSubject { get; set; }
+#nullable restore
+#else
+        public string DocumentSubject { get; set; }
+#endif
+        /// <summary>Date that payment should be done</summary>
+        public DateTimeOffset? DueDate { get; set; }
+        /// <summary>The transaction lines that make up a financial entry share the same EntryID</summary>
+        public Guid? EntryID { get; set; }
+        /// <summary>Entry number of the header</summary>
+        public int? EntryNumber { get; set; }
+        /// <summary>Exchange rate</summary>
+        public double? ExchangeRate { get; set; }
+        /// <summary>Description of ExternalLink</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalLinkDescription { get; set; }
+#nullable restore
+#else
+        public string ExternalLinkDescription { get; set; }
+#endif
+        /// <summary>External link</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalLinkReference { get; set; }
+#nullable restore
+#else
+        public string ExternalLinkReference { get; set; }
+#endif
+        /// <summary>Extra duty amount</summary>
+        public double? ExtraDutyAmountFC { get; set; }
+        /// <summary>Extra duty percentage</summary>
+        public double? ExtraDutyPercentage { get; set; }
+        /// <summary>Financial period</summary>
+        public int? FinancialPeriod { get; set; }
+        /// <summary>Financial year</summary>
+        public int? FinancialYear { get; set; }
+        /// <summary>General ledger account</summary>
+        public Guid? GLAccount { get; set; }
+        /// <summary>Code of GLAccount</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLAccountCode { get; set; }
+#nullable restore
+#else
+        public string GLAccountCode { get; set; }
+#endif
+        /// <summary>Description of GLAccount</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GLAccountDescription { get; set; }
+#nullable restore
+#else
+        public string GLAccountDescription { get; set; }
+#endif
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Invoice number</summary>
+        public int? InvoiceNumber { get; set; }
+        /// <summary>Reference to item</summary>
+        public Guid? Item { get; set; }
+        /// <summary>Code of Item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of Item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>The journal code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? JournalCode { get; set; }
+#nullable restore
+#else
+        public string JournalCode { get; set; }
+#endif
+        /// <summary>The journal description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? JournalDescription { get; set; }
+#nullable restore
+#else
+        public string JournalDescription { get; set; }
+#endif
+        /// <summary>Line number</summary>
+        public int? LineNumber { get; set; }
+        /// <summary>Line type</summary>
+        public int? LineType { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Extra remarks</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>OffsetID</summary>
+        public Guid? OffsetID { get; set; }
+        /// <summary>Order number</summary>
+        public int? OrderNumber { get; set; }
+        /// <summary>Discount amount when paid in time</summary>
+        public double? PaymentDiscountAmount { get; set; }
+        /// <summary>Payment reference</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaymentReference { get; set; }
+#nullable restore
+#else
+        public string PaymentReference { get; set; }
+#endif
+        /// <summary>Reference to project</summary>
+        public Guid? Project { get; set; }
+        /// <summary>Code of Project</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectCode { get; set; }
+#nullable restore
+#else
+        public string ProjectCode { get; set; }
+#endif
+        /// <summary>Description of Project</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectDescription { get; set; }
+#nullable restore
+#else
+        public string ProjectDescription { get; set; }
+#endif
+        /// <summary>Reference to Project WBS</summary>
+        public Guid? ProjectWBS { get; set; }
+        /// <summary>Description of Project WBS</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectWBSDescription { get; set; }
+#nullable restore
+#else
+        public string ProjectWBSDescription { get; set; }
+#endif
+        /// <summary>Quantity</summary>
+        public double? Quantity { get; set; }
+        /// <summary>Obsolete</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SerialNumber { get; set; }
+#nullable restore
+#else
+        public string SerialNumber { get; set; }
+#endif
+        /// <summary>Reference to shop order</summary>
+        public Guid? ShopOrder { get; set; }
+        /// <summary>20 = Open, 50 = Processed</summary>
+        public int? Status { get; set; }
+        /// <summary>Reference to subscription line (Note: LineNumber greater than 0 is subscription line)</summary>
+        public Guid? Subscription { get; set; }
+        /// <summary>Description of subscription line</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubscriptionDescription { get; set; }
+#nullable restore
+#else
+        public string SubscriptionDescription { get; set; }
+#endif
+        /// <summary>Tracking number of item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TrackingNumber { get; set; }
+#nullable restore
+#else
+        public string TrackingNumber { get; set; }
+#endif
+        /// <summary>Tracking number description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TrackingNumberDescription { get; set; }
+#nullable restore
+#else
+        public string TrackingNumberDescription { get; set; }
+#endif
+        /// <summary>The transaction type.10 = Opening balance142 = Issue to parent20 = Sales entry145 = Shop order time entry21 = Sales credit note146 = Shop order time entry reversal30 = Purchase entry147 = Shop order by-product receipt31 = Purchase credit note148 = Shop order by-product reversal40 = Cash flow150 = Requirement issue50 = VAT return151 = Requirement reversal70 = Asset - Depreciation152 = Returned from parent71 = Asset - Investment155 = Subcontract Issue72 = Asset - Revaluation156 = Subcontract reversal73 = Asset - Transfer158 = Shop order completed74 = Asset - Split162 = Finish assembly75 = Asset - Discontinue170 = Payroll76 = Asset - Sales180 = Stock revaluation80 = Revaluation181 = Financial revaluation82 = Exchange rate difference195 = Stock count83 = Payment difference200 = Trade-in84 = Deferred revenue201 = Trade-in (Purchase)85 = Tracking number:Revaluation290 = Correction entry86 = Deferred cost310 = Period closing87 = VAT on prepayment320 = Year end reflection90 = Other321 = Year end costing95 = Accrued revenue322 = Year end profits to gross profit96 = Accrued costs323 = Year end costs to gross profit120 = Delivery324 = Year end tax121 = Sales return325 = Year end gross profit to net p/l130 = Receipt326 = Year end net p/l to balance sheet131 = Purchase return327 = Year end closing balance140 = Shop order stock receipt328 = Year start opening balance141 = Shop order stock reversal3000 = Budget</summary>
+        public int? Type { get; set; }
+        /// <summary>Vat code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATCode { get; set; }
+#nullable restore
+#else
+        public string VATCode { get; set; }
+#endif
+        /// <summary>Description of VATCode</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATCodeDescription { get; set; }
+#nullable restore
+#else
+        public string VATCodeDescription { get; set; }
+#endif
+        /// <summary>Vat percentage</summary>
+        public double? VATPercentage { get; set; }
+        /// <summary>Vat type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VATType { get; set; }
+#nullable restore
+#else
+        public string VATType { get; set; }
+#endif
+        /// <summary>Your reference (of customer)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? YourRef { get; set; }
+#nullable restore
+#else
+        public string YourRef { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.FinancialTransactionTransactionLines"/> and sets the default values.
         /// </summary>
@@ -39,6 +397,80 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Account", n => { Account = n.GetGuidValue(); } },
+                { "AccountCode", n => { AccountCode = n.GetStringValue(); } },
+                { "AccountName", n => { AccountName = n.GetStringValue(); } },
+                { "AmountDC", n => { AmountDC = n.GetDoubleValue(); } },
+                { "AmountFC", n => { AmountFC = n.GetDoubleValue(); } },
+                { "AmountVATBaseFC", n => { AmountVATBaseFC = n.GetDoubleValue(); } },
+                { "AmountVATFC", n => { AmountVATFC = n.GetDoubleValue(); } },
+                { "Asset", n => { Asset = n.GetGuidValue(); } },
+                { "AssetCode", n => { AssetCode = n.GetStringValue(); } },
+                { "AssetDescription", n => { AssetDescription = n.GetStringValue(); } },
+                { "CostCenter", n => { CostCenter = n.GetStringValue(); } },
+                { "CostCenterDescription", n => { CostCenterDescription = n.GetStringValue(); } },
+                { "CostUnit", n => { CostUnit = n.GetStringValue(); } },
+                { "CostUnitDescription", n => { CostUnitDescription = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Currency", n => { Currency = n.GetStringValue(); } },
+                { "CustomField", n => { CustomField = n.GetStringValue(); } },
+                { "Date", n => { Date = n.GetDateTimeOffsetValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "Document", n => { Document = n.GetGuidValue(); } },
+                { "DocumentNumber", n => { DocumentNumber = n.GetIntValue(); } },
+                { "DocumentSubject", n => { DocumentSubject = n.GetStringValue(); } },
+                { "DueDate", n => { DueDate = n.GetDateTimeOffsetValue(); } },
+                { "EntryID", n => { EntryID = n.GetGuidValue(); } },
+                { "EntryNumber", n => { EntryNumber = n.GetIntValue(); } },
+                { "ExchangeRate", n => { ExchangeRate = n.GetDoubleValue(); } },
+                { "ExternalLinkDescription", n => { ExternalLinkDescription = n.GetStringValue(); } },
+                { "ExternalLinkReference", n => { ExternalLinkReference = n.GetStringValue(); } },
+                { "ExtraDutyAmountFC", n => { ExtraDutyAmountFC = n.GetDoubleValue(); } },
+                { "ExtraDutyPercentage", n => { ExtraDutyPercentage = n.GetDoubleValue(); } },
+                { "FinancialPeriod", n => { FinancialPeriod = n.GetIntValue(); } },
+                { "FinancialYear", n => { FinancialYear = n.GetIntValue(); } },
+                { "GLAccount", n => { GLAccount = n.GetGuidValue(); } },
+                { "GLAccountCode", n => { GLAccountCode = n.GetStringValue(); } },
+                { "GLAccountDescription", n => { GLAccountDescription = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "InvoiceNumber", n => { InvoiceNumber = n.GetIntValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "JournalCode", n => { JournalCode = n.GetStringValue(); } },
+                { "JournalDescription", n => { JournalDescription = n.GetStringValue(); } },
+                { "LineNumber", n => { LineNumber = n.GetIntValue(); } },
+                { "LineType", n => { LineType = n.GetIntValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "OffsetID", n => { OffsetID = n.GetGuidValue(); } },
+                { "OrderNumber", n => { OrderNumber = n.GetIntValue(); } },
+                { "PaymentDiscountAmount", n => { PaymentDiscountAmount = n.GetDoubleValue(); } },
+                { "PaymentReference", n => { PaymentReference = n.GetStringValue(); } },
+                { "Project", n => { Project = n.GetGuidValue(); } },
+                { "ProjectCode", n => { ProjectCode = n.GetStringValue(); } },
+                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
+                { "ProjectWBS", n => { ProjectWBS = n.GetGuidValue(); } },
+                { "ProjectWBSDescription", n => { ProjectWBSDescription = n.GetStringValue(); } },
+                { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
+                { "SerialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                { "ShopOrder", n => { ShopOrder = n.GetGuidValue(); } },
+                { "Status", n => { Status = n.GetIntValue(); } },
+                { "Subscription", n => { Subscription = n.GetGuidValue(); } },
+                { "SubscriptionDescription", n => { SubscriptionDescription = n.GetStringValue(); } },
+                { "TrackingNumber", n => { TrackingNumber = n.GetStringValue(); } },
+                { "TrackingNumberDescription", n => { TrackingNumberDescription = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetIntValue(); } },
+                { "VATCode", n => { VATCode = n.GetStringValue(); } },
+                { "VATCodeDescription", n => { VATCodeDescription = n.GetStringValue(); } },
+                { "VATPercentage", n => { VATPercentage = n.GetDoubleValue(); } },
+                { "VATType", n => { VATType = n.GetStringValue(); } },
+                { "YourRef", n => { YourRef = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +480,80 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("Account", Account);
+            writer.WriteStringValue("AccountCode", AccountCode);
+            writer.WriteStringValue("AccountName", AccountName);
+            writer.WriteDoubleValue("AmountDC", AmountDC);
+            writer.WriteDoubleValue("AmountFC", AmountFC);
+            writer.WriteDoubleValue("AmountVATBaseFC", AmountVATBaseFC);
+            writer.WriteDoubleValue("AmountVATFC", AmountVATFC);
+            writer.WriteGuidValue("Asset", Asset);
+            writer.WriteStringValue("AssetCode", AssetCode);
+            writer.WriteStringValue("AssetDescription", AssetDescription);
+            writer.WriteStringValue("CostCenter", CostCenter);
+            writer.WriteStringValue("CostCenterDescription", CostCenterDescription);
+            writer.WriteStringValue("CostUnit", CostUnit);
+            writer.WriteStringValue("CostUnitDescription", CostUnitDescription);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Currency", Currency);
+            writer.WriteStringValue("CustomField", CustomField);
+            writer.WriteDateTimeOffsetValue("Date", Date);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("Document", Document);
+            writer.WriteIntValue("DocumentNumber", DocumentNumber);
+            writer.WriteStringValue("DocumentSubject", DocumentSubject);
+            writer.WriteDateTimeOffsetValue("DueDate", DueDate);
+            writer.WriteGuidValue("EntryID", EntryID);
+            writer.WriteIntValue("EntryNumber", EntryNumber);
+            writer.WriteDoubleValue("ExchangeRate", ExchangeRate);
+            writer.WriteStringValue("ExternalLinkDescription", ExternalLinkDescription);
+            writer.WriteStringValue("ExternalLinkReference", ExternalLinkReference);
+            writer.WriteDoubleValue("ExtraDutyAmountFC", ExtraDutyAmountFC);
+            writer.WriteDoubleValue("ExtraDutyPercentage", ExtraDutyPercentage);
+            writer.WriteIntValue("FinancialPeriod", FinancialPeriod);
+            writer.WriteIntValue("FinancialYear", FinancialYear);
+            writer.WriteGuidValue("GLAccount", GLAccount);
+            writer.WriteStringValue("GLAccountCode", GLAccountCode);
+            writer.WriteStringValue("GLAccountDescription", GLAccountDescription);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteIntValue("InvoiceNumber", InvoiceNumber);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteStringValue("JournalCode", JournalCode);
+            writer.WriteStringValue("JournalDescription", JournalDescription);
+            writer.WriteIntValue("LineNumber", LineNumber);
+            writer.WriteIntValue("LineType", LineType);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteGuidValue("OffsetID", OffsetID);
+            writer.WriteIntValue("OrderNumber", OrderNumber);
+            writer.WriteDoubleValue("PaymentDiscountAmount", PaymentDiscountAmount);
+            writer.WriteStringValue("PaymentReference", PaymentReference);
+            writer.WriteGuidValue("Project", Project);
+            writer.WriteStringValue("ProjectCode", ProjectCode);
+            writer.WriteStringValue("ProjectDescription", ProjectDescription);
+            writer.WriteGuidValue("ProjectWBS", ProjectWBS);
+            writer.WriteStringValue("ProjectWBSDescription", ProjectWBSDescription);
+            writer.WriteDoubleValue("Quantity", Quantity);
+            writer.WriteStringValue("SerialNumber", SerialNumber);
+            writer.WriteGuidValue("ShopOrder", ShopOrder);
+            writer.WriteIntValue("Status", Status);
+            writer.WriteGuidValue("Subscription", Subscription);
+            writer.WriteStringValue("SubscriptionDescription", SubscriptionDescription);
+            writer.WriteStringValue("TrackingNumber", TrackingNumber);
+            writer.WriteStringValue("TrackingNumberDescription", TrackingNumberDescription);
+            writer.WriteIntValue("Type", Type);
+            writer.WriteStringValue("VATCode", VATCode);
+            writer.WriteStringValue("VATCodeDescription", VATCodeDescription);
+            writer.WriteDoubleValue("VATPercentage", VATPercentage);
+            writer.WriteStringValue("VATType", VATType);
+            writer.WriteStringValue("YourRef", YourRef);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

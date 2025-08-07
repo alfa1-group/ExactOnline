@@ -14,6 +14,148 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The collection of batch numbers that belong to the items included in this planned sales return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>? BatchNumbers { get; set; }
+#nullable restore
+#else
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers> BatchNumbers { get; set; }
+#endif
+        /// <summary>Option to redeliver to replace the goods or to create a credit note for the returned item: 0-Redelivery, 1-Credit Note</summary>
+        public int? CreateCredit { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Goods delivery line of the particular item</summary>
+        public Guid? GoodDeliveryLineID { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Item ID. This item must link to the provided warehouse for POST.</summary>
+        public Guid? Item { get; set; }
+        /// <summary>Code of item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>Line number</summary>
+        public int? LineNumber { get; set; }
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Notes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>Expected quantity to be returned</summary>
+        public double? PlannedReturnQuantity { get; set; }
+        /// <summary>Entry number of the planned sales return</summary>
+        public Guid? PlannedSalesReturnID { get; set; }
+        /// <summary>Actual quantity returned</summary>
+        public double? ReceivedQuantity { get; set; }
+        /// <summary>Code of ReasonCode</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReturnReasonCodeCode { get; set; }
+#nullable restore
+#else
+        public string ReturnReasonCodeCode { get; set; }
+#endif
+        /// <summary>Description of ReasonCode</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReturnReasonCodeDescription { get; set; }
+#nullable restore
+#else
+        public string ReturnReasonCodeDescription { get; set; }
+#endif
+        /// <summary>Indicates the reason why the planned sales was returned</summary>
+        public Guid? ReturnReasonCodeID { get; set; }
+        /// <summary>Sales order line of the particular item</summary>
+        public Guid? SalesOrderLineID { get; set; }
+        /// <summary>Saler order of the particular item</summary>
+        public int? SalesOrderNumber { get; set; }
+        /// <summary>The collection of serial numbers that belong to the items included in this planned sales return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>? SerialNumbers { get; set; }
+#nullable restore
+#else
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers> SerialNumbers { get; set; }
+#endif
+        /// <summary>Entry number of the stock transaction</summary>
+        public Guid? StockTransactionEntryID { get; set; }
+        /// <summary>Storage location</summary>
+        public Guid? StorageLocation { get; set; }
+        /// <summary>Storage location code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StorageLocationCode { get; set; }
+#nullable restore
+#else
+        public string StorageLocationCode { get; set; }
+#endif
+        /// <summary>Storage location description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StorageLocationDescription { get; set; }
+#nullable restore
+#else
+        public string StorageLocationDescription { get; set; }
+#endif
+        /// <summary>Sequence number of planned sales return (Premium Only)</summary>
+        public int? StorageLocationSequenceNumber { get; set; }
+        /// <summary>Code of item&apos;s sales unit</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UnitCode { get; set; }
+#nullable restore
+#else
+        public string UnitCode { get; set; }
+#endif
+        /// <summary>Description of item&apos;s sales unit</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UnitDescription { get; set; }
+#nullable restore
+#else
+        public string UnitDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesOrderPlannedSalesReturnLines"/> and sets the default values.
         /// </summary>
@@ -39,6 +181,38 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "BatchNumbers", n => { BatchNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "CreateCredit", n => { CreateCredit = n.GetIntValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "GoodDeliveryLineID", n => { GoodDeliveryLineID = n.GetGuidValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "LineNumber", n => { LineNumber = n.GetIntValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "PlannedReturnQuantity", n => { PlannedReturnQuantity = n.GetDoubleValue(); } },
+                { "PlannedSalesReturnID", n => { PlannedSalesReturnID = n.GetGuidValue(); } },
+                { "ReceivedQuantity", n => { ReceivedQuantity = n.GetDoubleValue(); } },
+                { "ReturnReasonCodeCode", n => { ReturnReasonCodeCode = n.GetStringValue(); } },
+                { "ReturnReasonCodeDescription", n => { ReturnReasonCodeDescription = n.GetStringValue(); } },
+                { "ReturnReasonCodeID", n => { ReturnReasonCodeID = n.GetGuidValue(); } },
+                { "SalesOrderLineID", n => { SalesOrderLineID = n.GetGuidValue(); } },
+                { "SalesOrderNumber", n => { SalesOrderNumber = n.GetIntValue(); } },
+                { "SerialNumbers", n => { SerialNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "StockTransactionEntryID", n => { StockTransactionEntryID = n.GetGuidValue(); } },
+                { "StorageLocation", n => { StorageLocation = n.GetGuidValue(); } },
+                { "StorageLocationCode", n => { StorageLocationCode = n.GetStringValue(); } },
+                { "StorageLocationDescription", n => { StorageLocationDescription = n.GetStringValue(); } },
+                { "StorageLocationSequenceNumber", n => { StorageLocationSequenceNumber = n.GetIntValue(); } },
+                { "UnitCode", n => { UnitCode = n.GetStringValue(); } },
+                { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +222,38 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>("BatchNumbers", BatchNumbers);
+            writer.WriteIntValue("CreateCredit", CreateCredit);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("GoodDeliveryLineID", GoodDeliveryLineID);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteIntValue("LineNumber", LineNumber);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteDoubleValue("PlannedReturnQuantity", PlannedReturnQuantity);
+            writer.WriteGuidValue("PlannedSalesReturnID", PlannedSalesReturnID);
+            writer.WriteDoubleValue("ReceivedQuantity", ReceivedQuantity);
+            writer.WriteStringValue("ReturnReasonCodeCode", ReturnReasonCodeCode);
+            writer.WriteStringValue("ReturnReasonCodeDescription", ReturnReasonCodeDescription);
+            writer.WriteGuidValue("ReturnReasonCodeID", ReturnReasonCodeID);
+            writer.WriteGuidValue("SalesOrderLineID", SalesOrderLineID);
+            writer.WriteIntValue("SalesOrderNumber", SalesOrderNumber);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>("SerialNumbers", SerialNumbers);
+            writer.WriteGuidValue("StockTransactionEntryID", StockTransactionEntryID);
+            writer.WriteGuidValue("StorageLocation", StorageLocation);
+            writer.WriteStringValue("StorageLocationCode", StorageLocationCode);
+            writer.WriteStringValue("StorageLocationDescription", StorageLocationDescription);
+            writer.WriteIntValue("StorageLocationSequenceNumber", StorageLocationSequenceNumber);
+            writer.WriteStringValue("UnitCode", UnitCode);
+            writer.WriteStringValue("UnitDescription", UnitDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

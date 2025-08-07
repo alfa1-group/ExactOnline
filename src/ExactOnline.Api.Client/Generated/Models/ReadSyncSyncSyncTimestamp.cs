@@ -14,6 +14,18 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Endpoint name of Sync API.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? API { get; set; }
+#nullable restore
+#else
+        public string API { get; set; }
+#endif
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>Timestamp for Sync API</summary>
+        public long? TimeStampAsBigInt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadSyncSyncSyncTimestamp"/> and sets the default values.
         /// </summary>
@@ -39,6 +51,9 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "API", n => { API = n.GetStringValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "TimeStampAsBigInt", n => { TimeStampAsBigInt = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +63,9 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("API", API);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteLongValue("TimeStampAsBigInt", TimeStampAsBigInt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

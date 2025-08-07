@@ -14,6 +14,88 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>CLA code tax office</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CLACodeTaxOffice { get; set; }
+#nullable restore
+#else
+        public string CLACodeTaxOffice { get; set; }
+#endif
+        /// <summary>CLA code tax office description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CLACodeTaxOfficeDescription { get; set; }
+#nullable restore
+#else
+        public string CLACodeTaxOfficeDescription { get; set; }
+#endif
+        /// <summary>Code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
+        /// <summary>Created</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>Creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Creator full name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division</summary>
+        public int? Division { get; set; }
+        /// <summary>End date</summary>
+        public DateTimeOffset? EndDate { get; set; }
+        /// <summary>Hours per week</summary>
+        public double? HoursPerWeek { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Modified</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>Modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Modifier full name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>SBI code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SBICode { get; set; }
+#nullable restore
+#else
+        public string SBICode { get; set; }
+#endif
+        /// <summary>SBI code description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SBICodeDescription { get; set; }
+#nullable restore
+#else
+        public string SBICodeDescription { get; set; }
+#endif
+        /// <summary>Start date</summary>
+        public DateTimeOffset? StartDate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PayrollEmploymentConditionGroups"/> and sets the default values.
         /// </summary>
@@ -39,6 +121,23 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "CLACodeTaxOffice", n => { CLACodeTaxOffice = n.GetStringValue(); } },
+                { "CLACodeTaxOfficeDescription", n => { CLACodeTaxOfficeDescription = n.GetStringValue(); } },
+                { "Code", n => { Code = n.GetStringValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
+                { "HoursPerWeek", n => { HoursPerWeek = n.GetDoubleValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "SBICode", n => { SBICode = n.GetStringValue(); } },
+                { "SBICodeDescription", n => { SBICodeDescription = n.GetStringValue(); } },
+                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +147,23 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("CLACodeTaxOffice", CLACodeTaxOffice);
+            writer.WriteStringValue("CLACodeTaxOfficeDescription", CLACodeTaxOfficeDescription);
+            writer.WriteStringValue("Code", Code);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
+            writer.WriteDoubleValue("HoursPerWeek", HoursPerWeek);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("SBICode", SBICode);
+            writer.WriteStringValue("SBICodeDescription", SBICodeDescription);
+            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,6 +14,326 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The AmountDC property</summary>
+        public double? AmountDC { get; set; }
+        /// <summary>The AmountDiscount property</summary>
+        public double? AmountDiscount { get; set; }
+        /// <summary>The AmountDiscountExclVat property</summary>
+        public double? AmountDiscountExclVat { get; set; }
+        /// <summary>The AmountFC property</summary>
+        public double? AmountFC { get; set; }
+        /// <summary>The CloseDate property</summary>
+        public DateTimeOffset? CloseDate { get; set; }
+        /// <summary>The ClosingDate property</summary>
+        public DateTimeOffset? ClosingDate { get; set; }
+        /// <summary>The Created property</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>The Creator property</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>The CreatorFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>The Currency property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>The DeliveryAccount property</summary>
+        public Guid? DeliveryAccount { get; set; }
+        /// <summary>The DeliveryAccountCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeliveryAccountCode { get; set; }
+#nullable restore
+#else
+        public string DeliveryAccountCode { get; set; }
+#endif
+        /// <summary>The DeliveryAccountContact property</summary>
+        public Guid? DeliveryAccountContact { get; set; }
+        /// <summary>The DeliveryAccountContactFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeliveryAccountContactFullName { get; set; }
+#nullable restore
+#else
+        public string DeliveryAccountContactFullName { get; set; }
+#endif
+        /// <summary>The DeliveryAccountName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeliveryAccountName { get; set; }
+#nullable restore
+#else
+        public string DeliveryAccountName { get; set; }
+#endif
+        /// <summary>The DeliveryAddress property</summary>
+        public Guid? DeliveryAddress { get; set; }
+        /// <summary>The DeliveryDate property</summary>
+        public DateTimeOffset? DeliveryDate { get; set; }
+        /// <summary>The Description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>The Discount property</summary>
+        public double? Discount { get; set; }
+        /// <summary>The Division property</summary>
+        public int? Division { get; set; }
+        /// <summary>The Document property</summary>
+        public Guid? Document { get; set; }
+        /// <summary>The DocumentSubject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DocumentSubject { get; set; }
+#nullable restore
+#else
+        public string DocumentSubject { get; set; }
+#endif
+        /// <summary>The DueDate property</summary>
+        public DateTimeOffset? DueDate { get; set; }
+        /// <summary>The ID property</summary>
+        public Guid? ID { get; set; }
+        /// <summary>The IncotermAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IncotermAddress { get; set; }
+#nullable restore
+#else
+        public string IncotermAddress { get; set; }
+#endif
+        /// <summary>The IncotermCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IncotermCode { get; set; }
+#nullable restore
+#else
+        public string IncotermCode { get; set; }
+#endif
+        /// <summary>The IncotermVersion property</summary>
+        public int? IncotermVersion { get; set; }
+        /// <summary>The InvoiceAccount property</summary>
+        public Guid? InvoiceAccount { get; set; }
+        /// <summary>The InvoiceAccountCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvoiceAccountCode { get; set; }
+#nullable restore
+#else
+        public string InvoiceAccountCode { get; set; }
+#endif
+        /// <summary>The InvoiceAccountContact property</summary>
+        public Guid? InvoiceAccountContact { get; set; }
+        /// <summary>The InvoiceAccountContactFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvoiceAccountContactFullName { get; set; }
+#nullable restore
+#else
+        public string InvoiceAccountContactFullName { get; set; }
+#endif
+        /// <summary>The InvoiceAccountName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvoiceAccountName { get; set; }
+#nullable restore
+#else
+        public string InvoiceAccountName { get; set; }
+#endif
+        /// <summary>The Modified property</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>The Modifier property</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>The ModifierFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>The Notes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>The Opportunity property</summary>
+        public Guid? Opportunity { get; set; }
+        /// <summary>The OpportunityName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OpportunityName { get; set; }
+#nullable restore
+#else
+        public string OpportunityName { get; set; }
+#endif
+        /// <summary>The OrderAccount property</summary>
+        public Guid? OrderAccount { get; set; }
+        /// <summary>The OrderAccountCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrderAccountCode { get; set; }
+#nullable restore
+#else
+        public string OrderAccountCode { get; set; }
+#endif
+        /// <summary>The OrderAccountContact property</summary>
+        public Guid? OrderAccountContact { get; set; }
+        /// <summary>The OrderAccountContactFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrderAccountContactFullName { get; set; }
+#nullable restore
+#else
+        public string OrderAccountContactFullName { get; set; }
+#endif
+        /// <summary>The OrderAccountName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrderAccountName { get; set; }
+#nullable restore
+#else
+        public string OrderAccountName { get; set; }
+#endif
+        /// <summary>The PaymentCondition property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaymentCondition { get; set; }
+#nullable restore
+#else
+        public string PaymentCondition { get; set; }
+#endif
+        /// <summary>The PaymentConditionDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaymentConditionDescription { get; set; }
+#nullable restore
+#else
+        public string PaymentConditionDescription { get; set; }
+#endif
+        /// <summary>The Project property</summary>
+        public Guid? Project { get; set; }
+        /// <summary>The ProjectCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectCode { get; set; }
+#nullable restore
+#else
+        public string ProjectCode { get; set; }
+#endif
+        /// <summary>The ProjectDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectDescription { get; set; }
+#nullable restore
+#else
+        public string ProjectDescription { get; set; }
+#endif
+        /// <summary>The QuotationDate property</summary>
+        public DateTimeOffset? QuotationDate { get; set; }
+        /// <summary>The QuotationID property</summary>
+        public Guid? QuotationID { get; set; }
+        /// <summary>The QuotationNumber property</summary>
+        public int? QuotationNumber { get; set; }
+        /// <summary>The Remarks property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Remarks { get; set; }
+#nullable restore
+#else
+        public string Remarks { get; set; }
+#endif
+        /// <summary>The SalesChannel property</summary>
+        public Guid? SalesChannel { get; set; }
+        /// <summary>The SalesChannelCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SalesChannelCode { get; set; }
+#nullable restore
+#else
+        public string SalesChannelCode { get; set; }
+#endif
+        /// <summary>The SalesChannelDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SalesChannelDescription { get; set; }
+#nullable restore
+#else
+        public string SalesChannelDescription { get; set; }
+#endif
+        /// <summary>The SalesPerson property</summary>
+        public Guid? SalesPerson { get; set; }
+        /// <summary>The SalesPersonFullName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SalesPersonFullName { get; set; }
+#nullable restore
+#else
+        public string SalesPersonFullName { get; set; }
+#endif
+        /// <summary>The SelectionCode property</summary>
+        public Guid? SelectionCode { get; set; }
+        /// <summary>The SelectionCodeCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SelectionCodeCode { get; set; }
+#nullable restore
+#else
+        public string SelectionCodeCode { get; set; }
+#endif
+        /// <summary>The SelectionCodeDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SelectionCodeDescription { get; set; }
+#nullable restore
+#else
+        public string SelectionCodeDescription { get; set; }
+#endif
+        /// <summary>The ShippingMethod property</summary>
+        public Guid? ShippingMethod { get; set; }
+        /// <summary>The ShippingMethodDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ShippingMethodDescription { get; set; }
+#nullable restore
+#else
+        public string ShippingMethodDescription { get; set; }
+#endif
+        /// <summary>The Status property</summary>
+        public int? Status { get; set; }
+        /// <summary>The StatusDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StatusDescription { get; set; }
+#nullable restore
+#else
+        public string StatusDescription { get; set; }
+#endif
+        /// <summary>The Timestamp property</summary>
+        public long? Timestamp { get; set; }
+        /// <summary>The VersionNumber property</summary>
+        public int? VersionNumber { get; set; }
+        /// <summary>The YourRef property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? YourRef { get; set; }
+#nullable restore
+#else
+        public string YourRef { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncCRMQuotationHeaders"/> and sets the default values.
         /// </summary>
@@ -39,6 +359,73 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "AmountDC", n => { AmountDC = n.GetDoubleValue(); } },
+                { "AmountDiscount", n => { AmountDiscount = n.GetDoubleValue(); } },
+                { "AmountDiscountExclVat", n => { AmountDiscountExclVat = n.GetDoubleValue(); } },
+                { "AmountFC", n => { AmountFC = n.GetDoubleValue(); } },
+                { "CloseDate", n => { CloseDate = n.GetDateTimeOffsetValue(); } },
+                { "ClosingDate", n => { ClosingDate = n.GetDateTimeOffsetValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Currency", n => { Currency = n.GetStringValue(); } },
+                { "DeliveryAccount", n => { DeliveryAccount = n.GetGuidValue(); } },
+                { "DeliveryAccountCode", n => { DeliveryAccountCode = n.GetStringValue(); } },
+                { "DeliveryAccountContact", n => { DeliveryAccountContact = n.GetGuidValue(); } },
+                { "DeliveryAccountContactFullName", n => { DeliveryAccountContactFullName = n.GetStringValue(); } },
+                { "DeliveryAccountName", n => { DeliveryAccountName = n.GetStringValue(); } },
+                { "DeliveryAddress", n => { DeliveryAddress = n.GetGuidValue(); } },
+                { "DeliveryDate", n => { DeliveryDate = n.GetDateTimeOffsetValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Discount", n => { Discount = n.GetDoubleValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "Document", n => { Document = n.GetGuidValue(); } },
+                { "DocumentSubject", n => { DocumentSubject = n.GetStringValue(); } },
+                { "DueDate", n => { DueDate = n.GetDateTimeOffsetValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "IncotermAddress", n => { IncotermAddress = n.GetStringValue(); } },
+                { "IncotermCode", n => { IncotermCode = n.GetStringValue(); } },
+                { "IncotermVersion", n => { IncotermVersion = n.GetIntValue(); } },
+                { "InvoiceAccount", n => { InvoiceAccount = n.GetGuidValue(); } },
+                { "InvoiceAccountCode", n => { InvoiceAccountCode = n.GetStringValue(); } },
+                { "InvoiceAccountContact", n => { InvoiceAccountContact = n.GetGuidValue(); } },
+                { "InvoiceAccountContactFullName", n => { InvoiceAccountContactFullName = n.GetStringValue(); } },
+                { "InvoiceAccountName", n => { InvoiceAccountName = n.GetStringValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "Opportunity", n => { Opportunity = n.GetGuidValue(); } },
+                { "OpportunityName", n => { OpportunityName = n.GetStringValue(); } },
+                { "OrderAccount", n => { OrderAccount = n.GetGuidValue(); } },
+                { "OrderAccountCode", n => { OrderAccountCode = n.GetStringValue(); } },
+                { "OrderAccountContact", n => { OrderAccountContact = n.GetGuidValue(); } },
+                { "OrderAccountContactFullName", n => { OrderAccountContactFullName = n.GetStringValue(); } },
+                { "OrderAccountName", n => { OrderAccountName = n.GetStringValue(); } },
+                { "PaymentCondition", n => { PaymentCondition = n.GetStringValue(); } },
+                { "PaymentConditionDescription", n => { PaymentConditionDescription = n.GetStringValue(); } },
+                { "Project", n => { Project = n.GetGuidValue(); } },
+                { "ProjectCode", n => { ProjectCode = n.GetStringValue(); } },
+                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
+                { "QuotationDate", n => { QuotationDate = n.GetDateTimeOffsetValue(); } },
+                { "QuotationID", n => { QuotationID = n.GetGuidValue(); } },
+                { "QuotationNumber", n => { QuotationNumber = n.GetIntValue(); } },
+                { "Remarks", n => { Remarks = n.GetStringValue(); } },
+                { "SalesChannel", n => { SalesChannel = n.GetGuidValue(); } },
+                { "SalesChannelCode", n => { SalesChannelCode = n.GetStringValue(); } },
+                { "SalesChannelDescription", n => { SalesChannelDescription = n.GetStringValue(); } },
+                { "SalesPerson", n => { SalesPerson = n.GetGuidValue(); } },
+                { "SalesPersonFullName", n => { SalesPersonFullName = n.GetStringValue(); } },
+                { "SelectionCode", n => { SelectionCode = n.GetGuidValue(); } },
+                { "SelectionCodeCode", n => { SelectionCodeCode = n.GetStringValue(); } },
+                { "SelectionCodeDescription", n => { SelectionCodeDescription = n.GetStringValue(); } },
+                { "ShippingMethod", n => { ShippingMethod = n.GetGuidValue(); } },
+                { "ShippingMethodDescription", n => { ShippingMethodDescription = n.GetStringValue(); } },
+                { "Status", n => { Status = n.GetIntValue(); } },
+                { "StatusDescription", n => { StatusDescription = n.GetStringValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "VersionNumber", n => { VersionNumber = n.GetIntValue(); } },
+                { "YourRef", n => { YourRef = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +435,73 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("AmountDC", AmountDC);
+            writer.WriteDoubleValue("AmountDiscount", AmountDiscount);
+            writer.WriteDoubleValue("AmountDiscountExclVat", AmountDiscountExclVat);
+            writer.WriteDoubleValue("AmountFC", AmountFC);
+            writer.WriteDateTimeOffsetValue("CloseDate", CloseDate);
+            writer.WriteDateTimeOffsetValue("ClosingDate", ClosingDate);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Currency", Currency);
+            writer.WriteGuidValue("DeliveryAccount", DeliveryAccount);
+            writer.WriteStringValue("DeliveryAccountCode", DeliveryAccountCode);
+            writer.WriteGuidValue("DeliveryAccountContact", DeliveryAccountContact);
+            writer.WriteStringValue("DeliveryAccountContactFullName", DeliveryAccountContactFullName);
+            writer.WriteStringValue("DeliveryAccountName", DeliveryAccountName);
+            writer.WriteGuidValue("DeliveryAddress", DeliveryAddress);
+            writer.WriteDateTimeOffsetValue("DeliveryDate", DeliveryDate);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteDoubleValue("Discount", Discount);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("Document", Document);
+            writer.WriteStringValue("DocumentSubject", DocumentSubject);
+            writer.WriteDateTimeOffsetValue("DueDate", DueDate);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteStringValue("IncotermAddress", IncotermAddress);
+            writer.WriteStringValue("IncotermCode", IncotermCode);
+            writer.WriteIntValue("IncotermVersion", IncotermVersion);
+            writer.WriteGuidValue("InvoiceAccount", InvoiceAccount);
+            writer.WriteStringValue("InvoiceAccountCode", InvoiceAccountCode);
+            writer.WriteGuidValue("InvoiceAccountContact", InvoiceAccountContact);
+            writer.WriteStringValue("InvoiceAccountContactFullName", InvoiceAccountContactFullName);
+            writer.WriteStringValue("InvoiceAccountName", InvoiceAccountName);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteGuidValue("Opportunity", Opportunity);
+            writer.WriteStringValue("OpportunityName", OpportunityName);
+            writer.WriteGuidValue("OrderAccount", OrderAccount);
+            writer.WriteStringValue("OrderAccountCode", OrderAccountCode);
+            writer.WriteGuidValue("OrderAccountContact", OrderAccountContact);
+            writer.WriteStringValue("OrderAccountContactFullName", OrderAccountContactFullName);
+            writer.WriteStringValue("OrderAccountName", OrderAccountName);
+            writer.WriteStringValue("PaymentCondition", PaymentCondition);
+            writer.WriteStringValue("PaymentConditionDescription", PaymentConditionDescription);
+            writer.WriteGuidValue("Project", Project);
+            writer.WriteStringValue("ProjectCode", ProjectCode);
+            writer.WriteStringValue("ProjectDescription", ProjectDescription);
+            writer.WriteDateTimeOffsetValue("QuotationDate", QuotationDate);
+            writer.WriteGuidValue("QuotationID", QuotationID);
+            writer.WriteIntValue("QuotationNumber", QuotationNumber);
+            writer.WriteStringValue("Remarks", Remarks);
+            writer.WriteGuidValue("SalesChannel", SalesChannel);
+            writer.WriteStringValue("SalesChannelCode", SalesChannelCode);
+            writer.WriteStringValue("SalesChannelDescription", SalesChannelDescription);
+            writer.WriteGuidValue("SalesPerson", SalesPerson);
+            writer.WriteStringValue("SalesPersonFullName", SalesPersonFullName);
+            writer.WriteGuidValue("SelectionCode", SelectionCode);
+            writer.WriteStringValue("SelectionCodeCode", SelectionCodeCode);
+            writer.WriteStringValue("SelectionCodeDescription", SelectionCodeDescription);
+            writer.WriteGuidValue("ShippingMethod", ShippingMethod);
+            writer.WriteStringValue("ShippingMethodDescription", ShippingMethodDescription);
+            writer.WriteIntValue("Status", Status);
+            writer.WriteStringValue("StatusDescription", StatusDescription);
+            writer.WriteLongValue("Timestamp", Timestamp);
+            writer.WriteIntValue("VersionNumber", VersionNumber);
+            writer.WriteStringValue("YourRef", YourRef);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

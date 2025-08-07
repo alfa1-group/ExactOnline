@@ -14,6 +14,60 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The Attachment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public byte[]? Attachment { get; set; }
+#nullable restore
+#else
+        public byte[] Attachment { get; set; }
+#endif
+        /// <summary>The AttachmentFileExtension property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AttachmentFileExtension { get; set; }
+#nullable restore
+#else
+        public string AttachmentFileExtension { get; set; }
+#endif
+        /// <summary>The AttachmentFileName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AttachmentFileName { get; set; }
+#nullable restore
+#else
+        public string AttachmentFileName { get; set; }
+#endif
+        /// <summary>The FileSize property</summary>
+        public long? FileSize { get; set; }
+        /// <summary>The ID property</summary>
+        public Guid? ID { get; set; }
+        /// <summary>The MailMessageID property</summary>
+        public Guid? MailMessageID { get; set; }
+        /// <summary>The MailMessageOrigin property</summary>
+        public int? MailMessageOrigin { get; set; }
+        /// <summary>The RecipientAccount property</summary>
+        public Guid? RecipientAccount { get; set; }
+        /// <summary>The SenderAccount property</summary>
+        public Guid? SenderAccount { get; set; }
+        /// <summary>The Type property</summary>
+        public int? Type { get; set; }
+        /// <summary>The TypeDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TypeDescription { get; set; }
+#nullable restore
+#else
+        public string TypeDescription { get; set; }
+#endif
+        /// <summary>The Url property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url { get; set; }
+#nullable restore
+#else
+        public string Url { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachments"/> and sets the default values.
         /// </summary>
@@ -39,6 +93,18 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Attachment", n => { Attachment = n.GetByteArrayValue(); } },
+                { "AttachmentFileExtension", n => { AttachmentFileExtension = n.GetStringValue(); } },
+                { "AttachmentFileName", n => { AttachmentFileName = n.GetStringValue(); } },
+                { "FileSize", n => { FileSize = n.GetLongValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "MailMessageID", n => { MailMessageID = n.GetGuidValue(); } },
+                { "MailMessageOrigin", n => { MailMessageOrigin = n.GetIntValue(); } },
+                { "RecipientAccount", n => { RecipientAccount = n.GetGuidValue(); } },
+                { "SenderAccount", n => { SenderAccount = n.GetGuidValue(); } },
+                { "Type", n => { Type = n.GetIntValue(); } },
+                { "TypeDescription", n => { TypeDescription = n.GetStringValue(); } },
+                { "Url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +114,18 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteByteArrayValue("Attachment", Attachment);
+            writer.WriteStringValue("AttachmentFileExtension", AttachmentFileExtension);
+            writer.WriteStringValue("AttachmentFileName", AttachmentFileName);
+            writer.WriteLongValue("FileSize", FileSize);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteGuidValue("MailMessageID", MailMessageID);
+            writer.WriteIntValue("MailMessageOrigin", MailMessageOrigin);
+            writer.WriteGuidValue("RecipientAccount", RecipientAccount);
+            writer.WriteGuidValue("SenderAccount", SenderAccount);
+            writer.WriteIntValue("Type", Type);
+            writer.WriteStringValue("TypeDescription", TypeDescription);
+            writer.WriteStringValue("Url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,6 +14,28 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Code used to declare the employment end reason to the Dutch Tax Authority</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
+        /// <summary>Employment end reason description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>End date of the employment end reason</summary>
+        public DateTimeOffset? EndDate { get; set; }
+        /// <summary>Primary key</summary>
+        public int? ID { get; set; }
+        /// <summary>Start date of the employment end reason</summary>
+        public DateTimeOffset? StartDate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadPayrollEmploymentEndReasonsOnFocusDate"/> and sets the default values.
         /// </summary>
@@ -39,6 +61,11 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Code", n => { Code = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
+                { "ID", n => { ID = n.GetIntValue(); } },
+                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +75,11 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("Code", Code);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
+            writer.WriteIntValue("ID", ID);
+            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

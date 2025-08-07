@@ -14,6 +14,80 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>ID of item</summary>
+        public Guid? Item { get; set; }
+        /// <summary>Code of item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>Date which quantity in stock is planned to change</summary>
+        public DateTimeOffset? PlannedDate { get; set; }
+        /// <summary>Amount by which quantity in stock is planned to change</summary>
+        public double? PlannedQuantity { get; set; }
+        /// <summary>Human readable description of the PlanningSource (translated to user&apos;s language) - Examples: Purchase Order, Sales Order, Shop Order, etc.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PlanningSourceDescription { get; set; }
+#nullable restore
+#else
+        public string PlanningSourceDescription { get; set; }
+#endif
+        /// <summary>ID of the PlanningSource</summary>
+        public Guid? PlanningSourceID { get; set; }
+        /// <summary>Line number of the PlanningSource if the PlanningSourceType supports line numbers</summary>
+        public int? PlanningSourceLineNumber { get; set; }
+        /// <summary>Human readable number of the PlanningSource - Examples: Shop order number &apos;201600001&apos; or Sales order number &apos;2016020001&apos;</summary>
+        public int? PlanningSourceNumber { get; set; }
+        /// <summary>REST API URL of this specific PlanningSource and PlanningSourceID (Assembly orders and warehouse transfers not supported over REST)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PlanningSourceUrl { get; set; }
+#nullable restore
+#else
+        public string PlanningSourceUrl { get; set; }
+#endif
+        /// <summary>Type of the PlanningSource - 120=GoodsDelivery, 124=WarehouseTransferDelivery, 130=GoodsReceipt, 134=WarehouseTransferReceipt, 140=ShopOrderStockReceipt, 147=ShopOrderByProductReceipt, 150=ShopOrderRequirement, 160=AssemblyOrderReceipt, 161=DisassemblyReturnReceipt, 165=AssemblyOrderIssue, 166=DisassemblyReturnIssue, 200=Trade-in</summary>
+        public int? PlanningType { get; set; }
+        /// <summary>Human readable description of the PlanningSourceType (translated to user&apos;s language) - Examples: &apos;Shop order stock receipt&apos; or &apos;Goods delivery&apos;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PlanningTypeDescription { get; set; }
+#nullable restore
+#else
+        public string PlanningTypeDescription { get; set; }
+#endif
+        /// <summary>ID of warehouse</summary>
+        public Guid? Warehouse { get; set; }
+        /// <summary>Code of warehouse</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseCode { get; set; }
+#nullable restore
+#else
+        public string WarehouseCode { get; set; }
+#endif
+        /// <summary>Description of warehouse</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseDescription { get; set; }
+#nullable restore
+#else
+        public string WarehouseDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryItemWarehousePlanningDetails"/> and sets the default values.
         /// </summary>
@@ -39,6 +113,22 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "PlannedDate", n => { PlannedDate = n.GetDateTimeOffsetValue(); } },
+                { "PlannedQuantity", n => { PlannedQuantity = n.GetDoubleValue(); } },
+                { "PlanningSourceDescription", n => { PlanningSourceDescription = n.GetStringValue(); } },
+                { "PlanningSourceID", n => { PlanningSourceID = n.GetGuidValue(); } },
+                { "PlanningSourceLineNumber", n => { PlanningSourceLineNumber = n.GetIntValue(); } },
+                { "PlanningSourceNumber", n => { PlanningSourceNumber = n.GetIntValue(); } },
+                { "PlanningSourceUrl", n => { PlanningSourceUrl = n.GetStringValue(); } },
+                { "PlanningType", n => { PlanningType = n.GetIntValue(); } },
+                { "PlanningTypeDescription", n => { PlanningTypeDescription = n.GetStringValue(); } },
+                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
+                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
+                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +138,22 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteDateTimeOffsetValue("PlannedDate", PlannedDate);
+            writer.WriteDoubleValue("PlannedQuantity", PlannedQuantity);
+            writer.WriteStringValue("PlanningSourceDescription", PlanningSourceDescription);
+            writer.WriteGuidValue("PlanningSourceID", PlanningSourceID);
+            writer.WriteIntValue("PlanningSourceLineNumber", PlanningSourceLineNumber);
+            writer.WriteIntValue("PlanningSourceNumber", PlanningSourceNumber);
+            writer.WriteStringValue("PlanningSourceUrl", PlanningSourceUrl);
+            writer.WriteIntValue("PlanningType", PlanningType);
+            writer.WriteStringValue("PlanningTypeDescription", PlanningTypeDescription);
+            writer.WriteGuidValue("Warehouse", Warehouse);
+            writer.WriteStringValue("WarehouseCode", WarehouseCode);
+            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

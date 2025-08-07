@@ -14,6 +14,42 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>ID of the defaultItem</summary>
+        public Guid? DefaultItem { get; set; }
+        /// <summary>Item code of the defaultItem</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultItemCode { get; set; }
+#nullable restore
+#else
+        public string DefaultItemCode { get; set; }
+#endif
+        /// <summary>Description of the defaultItem</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultItemDescription { get; set; }
+#nullable restore
+#else
+        public string DefaultItemDescription { get; set; }
+#endif
+        /// <summary>Description of activity or expense</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>ID of activity or expense</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Description of its parent</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentDescription { get; set; }
+#nullable restore
+#else
+        public string ParentDescription { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadProjectCostEntryExpensesByProject"/> and sets the default values.
         /// </summary>
@@ -39,6 +75,12 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "DefaultItem", n => { DefaultItem = n.GetGuidValue(); } },
+                { "DefaultItemCode", n => { DefaultItemCode = n.GetStringValue(); } },
+                { "DefaultItemDescription", n => { DefaultItemDescription = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "ParentDescription", n => { ParentDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +90,12 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("DefaultItem", DefaultItem);
+            writer.WriteStringValue("DefaultItemCode", DefaultItemCode);
+            writer.WriteStringValue("DefaultItemDescription", DefaultItemDescription);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteStringValue("ParentDescription", ParentDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

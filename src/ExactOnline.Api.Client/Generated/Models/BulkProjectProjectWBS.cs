@@ -14,6 +14,94 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A boolean field to indicated if additional invoice is allowed on this WBS. (Obsolete)</summary>
+        public int? AdditionalInvoicing { get; set; }
+        /// <summary>Baseline date of this deliverable</summary>
+        public DateTimeOffset? BaselineDate { get; set; }
+        /// <summary>A boolean field to indicated if time and cost entries is blocked</summary>
+        public bool? BlockEntry { get; set; }
+        /// <summary>A boolean field to indicated if rebilling is blocked</summary>
+        public bool? BlockRebilling { get; set; }
+        /// <summary>BudgetOverrunHours: 10-Allowed, 20-Not Allowed</summary>
+        public int? BudgetOverrunHours { get; set; }
+        /// <summary>A boolean field to indicated if the project WBS is completed</summary>
+        public int? Completed { get; set; }
+        /// <summary>Budget cost of the WBS</summary>
+        public double? Cost { get; set; }
+        /// <summary>Date and time the project was created</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>The Guid ID of user that created the project</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomField { get; set; }
+#nullable restore
+#else
+        public string CustomField { get; set; }
+#endif
+        /// <summary>Default Item to used for timecost entry</summary>
+        public Guid? DefaultItem { get; set; }
+        /// <summary>To indicated if only default item is allowed</summary>
+        public int? DefaultItemIsMandatory { get; set; }
+        /// <summary>Description of the project WBS</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>EndDate of the WBS. If it is a deliverable then EndDate is the lastest EndDate of its children</summary>
+        public DateTimeOffset? EndDate { get; set; }
+        /// <summary>Budget quantity of the WBS</summary>
+        public double? Hours { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>The invoice method of the WBS. For activity: null = According to parent, 2 = Fixed price, 3 = Time and Material, 4 = Non billable, 5 = Prepaid. For expense: null = According to parent, 6 = Fixed, 7 = Rebill, 8 = Non re-billable</summary>
+        public int? InvoiceMethod { get; set; }
+        /// <summary>A boolean field to indicated if this is a baseline</summary>
+        public int? IsBaseline { get; set; }
+        /// <summary>A boolean field to indicated if this is a milestone</summary>
+        public int? Milestone { get; set; }
+        /// <summary>Last modified date and time</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>The Guid ID of the user that modified the records</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>For additional information about wbs</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>ID of the parent WBS</summary>
+        public Guid? Parent { get; set; }
+        /// <summary>ID of the project that linked to WBS</summary>
+        public Guid? Project { get; set; }
+        /// <summary>ID of the invoice term that linked to the WBS</summary>
+        public Guid? ProjectTerm { get; set; }
+        /// <summary>Markup percentage</summary>
+        public double? PurchaseMarkupPercentage { get; set; }
+        /// <summary>Purchase price of the item. Only for expense</summary>
+        public double? PurchasePrice { get; set; }
+        /// <summary>Quantity of the WBS. Only for expense</summary>
+        public double? Quantity { get; set; }
+        /// <summary>Revenue of the WBS</summary>
+        public double? Revenue { get; set; }
+        /// <summary>Sequence Number</summary>
+        public int? SequenceNumber { get; set; }
+        /// <summary>Startdate of the WBS. If it is a deliverable then StartDate is the earliest StartDate of its children</summary>
+        public DateTimeOffset? StartDate { get; set; }
+        /// <summary>Supplier of the item. Only for expense</summary>
+        public Guid? Supplier { get; set; }
+        /// <summary>Alert when exceeding this time quantity</summary>
+        public double? TimeQuantityToAlert { get; set; }
+        /// <summary>The type of project WBS. E.g: 1 = Deliverable, 2 = Activity, 3 = Expense</summary>
+        public int? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.BulkProjectProjectWBS"/> and sets the default values.
         /// </summary>
@@ -39,6 +127,41 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "AdditionalInvoicing", n => { AdditionalInvoicing = n.GetIntValue(); } },
+                { "BaselineDate", n => { BaselineDate = n.GetDateTimeOffsetValue(); } },
+                { "BlockEntry", n => { BlockEntry = n.GetBoolValue(); } },
+                { "BlockRebilling", n => { BlockRebilling = n.GetBoolValue(); } },
+                { "BudgetOverrunHours", n => { BudgetOverrunHours = n.GetIntValue(); } },
+                { "Completed", n => { Completed = n.GetIntValue(); } },
+                { "Cost", n => { Cost = n.GetDoubleValue(); } },
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CustomField", n => { CustomField = n.GetStringValue(); } },
+                { "DefaultItem", n => { DefaultItem = n.GetGuidValue(); } },
+                { "DefaultItemIsMandatory", n => { DefaultItemIsMandatory = n.GetIntValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
+                { "Hours", n => { Hours = n.GetDoubleValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "InvoiceMethod", n => { InvoiceMethod = n.GetIntValue(); } },
+                { "IsBaseline", n => { IsBaseline = n.GetIntValue(); } },
+                { "Milestone", n => { Milestone = n.GetIntValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "Parent", n => { Parent = n.GetGuidValue(); } },
+                { "Project", n => { Project = n.GetGuidValue(); } },
+                { "ProjectTerm", n => { ProjectTerm = n.GetGuidValue(); } },
+                { "PurchaseMarkupPercentage", n => { PurchaseMarkupPercentage = n.GetDoubleValue(); } },
+                { "PurchasePrice", n => { PurchasePrice = n.GetDoubleValue(); } },
+                { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
+                { "Revenue", n => { Revenue = n.GetDoubleValue(); } },
+                { "SequenceNumber", n => { SequenceNumber = n.GetIntValue(); } },
+                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
+                { "Supplier", n => { Supplier = n.GetGuidValue(); } },
+                { "TimeQuantityToAlert", n => { TimeQuantityToAlert = n.GetDoubleValue(); } },
+                { "Type", n => { Type = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +171,41 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("AdditionalInvoicing", AdditionalInvoicing);
+            writer.WriteDateTimeOffsetValue("BaselineDate", BaselineDate);
+            writer.WriteBoolValue("BlockEntry", BlockEntry);
+            writer.WriteBoolValue("BlockRebilling", BlockRebilling);
+            writer.WriteIntValue("BudgetOverrunHours", BudgetOverrunHours);
+            writer.WriteIntValue("Completed", Completed);
+            writer.WriteDoubleValue("Cost", Cost);
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CustomField", CustomField);
+            writer.WriteGuidValue("DefaultItem", DefaultItem);
+            writer.WriteIntValue("DefaultItemIsMandatory", DefaultItemIsMandatory);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
+            writer.WriteDoubleValue("Hours", Hours);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteIntValue("InvoiceMethod", InvoiceMethod);
+            writer.WriteIntValue("IsBaseline", IsBaseline);
+            writer.WriteIntValue("Milestone", Milestone);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteGuidValue("Parent", Parent);
+            writer.WriteGuidValue("Project", Project);
+            writer.WriteGuidValue("ProjectTerm", ProjectTerm);
+            writer.WriteDoubleValue("PurchaseMarkupPercentage", PurchaseMarkupPercentage);
+            writer.WriteDoubleValue("PurchasePrice", PurchasePrice);
+            writer.WriteDoubleValue("Quantity", Quantity);
+            writer.WriteDoubleValue("Revenue", Revenue);
+            writer.WriteIntValue("SequenceNumber", SequenceNumber);
+            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
+            writer.WriteGuidValue("Supplier", Supplier);
+            writer.WriteDoubleValue("TimeQuantityToAlert", TimeQuantityToAlert);
+            writer.WriteIntValue("Type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

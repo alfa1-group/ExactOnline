@@ -14,6 +14,132 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>ID of draft stock transaction storage location associated with this serial or batch number.</summary>
+        public Guid? DraftStockTransactionLocation { get; set; }
+        /// <summary>ID representing a group of serial or batch numbers being reserved for use in a subsequent stock transaction</summary>
+        public Guid? DraftTransactionID { get; set; }
+        /// <summary>Primary Key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Boolean value indicating if this serial or batch number is being reserved</summary>
+        public int? IsDraft { get; set; }
+        /// <summary>Item</summary>
+        public Guid? Item { get; set; }
+        /// <summary>Item code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemCode { get; set; }
+#nullable restore
+#else
+        public string ItemCode { get; set; }
+#endif
+        /// <summary>Description of item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDescription { get; set; }
+#nullable restore
+#else
+        public string ItemDescription { get; set; }
+#endif
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>ID of the main item. Only applicable for assembled item</summary>
+        public Guid? ParentID { get; set; }
+        /// <summary>ID of picking list associated with this serial or batch number.</summary>
+        public Guid? PicklistLine { get; set; }
+        /// <summary>ID of pick order associated with this serial or batch number.</summary>
+        public Guid? PickOrderLine { get; set; }
+        /// <summary>ID of purchase transaction associated with this serial or batch number.</summary>
+        public Guid? PurchaseTransaction { get; set; }
+        /// <summary>Quantity of this serial or batch number entering or leaving inventory</summary>
+        public double? Quantity { get; set; }
+        /// <summary>Remarks</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Remarks { get; set; }
+#nullable restore
+#else
+        public string Remarks { get; set; }
+#endif
+        /// <summary>ID of sales order in which this serial or batch number was reserved. Provided only for the Exact Online Premium users.</summary>
+        public Guid? SalesOrderLine { get; set; }
+        /// <summary>ID of sales return associated with this serial or batch number.</summary>
+        public Guid? SalesReturnLine { get; set; }
+        /// <summary>ID of sales transaction associated with this serial or batch number.</summary>
+        public Guid? SalesTransaction { get; set; }
+        /// <summary>Serial or Batch Number ID</summary>
+        public Guid? SerialBatchNumber { get; set; }
+        /// <summary>ID of stock count entry</summary>
+        public Guid? StockCountLine { get; set; }
+        /// <summary>ID of the stock transaction in which this serial or batch number was used</summary>
+        public Guid? StockTransactionID { get; set; }
+        /// <summary>ID of stock transaction location associated with this serial or batch number.</summary>
+        public Guid? StockTransactionLocation { get; set; }
+        /// <summary>Type of stock transaction associated with this serial or batch number.Available values:10 = Opening balance120 = Goods delivery121 = Sales return122 = Stock out (Drop shipment)123 = Stock in (Drop shipment return)124 = Warehouse transfer delivery125 = Location Transfer Delivery130 = Goods receipt131 = Purchase return132 = Stock in (Drop shipment)133 = Stock out (Drop shipment return)134 = Warehouse transfer receipt135 = Location Transfer Receipt140 = Shop order stock receipt141 = Shop order stock reversal147 = Shop order by-product receipt148 = Shop order by-product reversal150 = Requirement issue151 = Requirement reversal155 = Subcontract issue156 = Subcontract return160 = Receipt (Assembly)161 = Return receipt (Disassembly)165 = Issue (Assembly)166 = Return issue (Disassembly)180 = Stock revaluation181 = Financial revaluation195 = Stock count196 = Adjust stock - out197 = Adjust stock - in200 = Trade-in</summary>
+        public int? StockTransactionType { get; set; }
+        /// <summary>Storage location which this serial or batch number is entering or leaving</summary>
+        public Guid? StorageLocation { get; set; }
+        /// <summary>Code of the storage location which this serial or batch number is entering or leaving</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StorageLocationCode { get; set; }
+#nullable restore
+#else
+        public string StorageLocationCode { get; set; }
+#endif
+        /// <summary>Description of the storage location which this serial or batch number is entering or leaving</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StorageLocationDescription { get; set; }
+#nullable restore
+#else
+        public string StorageLocationDescription { get; set; }
+#endif
+        /// <summary>Timestamp</summary>
+        public long? Timestamp { get; set; }
+        /// <summary>Warehouse which this serial or batch number is entering or leaving</summary>
+        public Guid? Warehouse { get; set; }
+        /// <summary>Code of the warehouse which this serial or batch number is entering or leaving</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseCode { get; set; }
+#nullable restore
+#else
+        public string WarehouseCode { get; set; }
+#endif
+        /// <summary>Description of the warehouse which this serial or batch number is entering or leaving</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarehouseDescription { get; set; }
+#nullable restore
+#else
+        public string WarehouseDescription { get; set; }
+#endif
+        /// <summary>ID of warehouse transfer associated with this serial or batch number.</summary>
+        public Guid? WarehouseTransferLine { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncInventoryStockSerialBatchNumbers"/> and sets the default values.
         /// </summary>
@@ -39,6 +165,42 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "DraftStockTransactionLocation", n => { DraftStockTransactionLocation = n.GetGuidValue(); } },
+                { "DraftTransactionID", n => { DraftTransactionID = n.GetGuidValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "IsDraft", n => { IsDraft = n.GetIntValue(); } },
+                { "Item", n => { Item = n.GetGuidValue(); } },
+                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
+                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "ParentID", n => { ParentID = n.GetGuidValue(); } },
+                { "PickOrderLine", n => { PickOrderLine = n.GetGuidValue(); } },
+                { "PicklistLine", n => { PicklistLine = n.GetGuidValue(); } },
+                { "PurchaseTransaction", n => { PurchaseTransaction = n.GetGuidValue(); } },
+                { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
+                { "Remarks", n => { Remarks = n.GetStringValue(); } },
+                { "SalesOrderLine", n => { SalesOrderLine = n.GetGuidValue(); } },
+                { "SalesReturnLine", n => { SalesReturnLine = n.GetGuidValue(); } },
+                { "SalesTransaction", n => { SalesTransaction = n.GetGuidValue(); } },
+                { "SerialBatchNumber", n => { SerialBatchNumber = n.GetGuidValue(); } },
+                { "StockCountLine", n => { StockCountLine = n.GetGuidValue(); } },
+                { "StockTransactionID", n => { StockTransactionID = n.GetGuidValue(); } },
+                { "StockTransactionLocation", n => { StockTransactionLocation = n.GetGuidValue(); } },
+                { "StockTransactionType", n => { StockTransactionType = n.GetIntValue(); } },
+                { "StorageLocation", n => { StorageLocation = n.GetGuidValue(); } },
+                { "StorageLocationCode", n => { StorageLocationCode = n.GetStringValue(); } },
+                { "StorageLocationDescription", n => { StorageLocationDescription = n.GetStringValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
+                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
+                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
+                { "WarehouseTransferLine", n => { WarehouseTransferLine = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +210,42 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("DraftStockTransactionLocation", DraftStockTransactionLocation);
+            writer.WriteGuidValue("DraftTransactionID", DraftTransactionID);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteIntValue("IsDraft", IsDraft);
+            writer.WriteGuidValue("Item", Item);
+            writer.WriteStringValue("ItemCode", ItemCode);
+            writer.WriteStringValue("ItemDescription", ItemDescription);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteGuidValue("ParentID", ParentID);
+            writer.WriteGuidValue("PicklistLine", PicklistLine);
+            writer.WriteGuidValue("PickOrderLine", PickOrderLine);
+            writer.WriteGuidValue("PurchaseTransaction", PurchaseTransaction);
+            writer.WriteDoubleValue("Quantity", Quantity);
+            writer.WriteStringValue("Remarks", Remarks);
+            writer.WriteGuidValue("SalesOrderLine", SalesOrderLine);
+            writer.WriteGuidValue("SalesReturnLine", SalesReturnLine);
+            writer.WriteGuidValue("SalesTransaction", SalesTransaction);
+            writer.WriteGuidValue("SerialBatchNumber", SerialBatchNumber);
+            writer.WriteGuidValue("StockCountLine", StockCountLine);
+            writer.WriteGuidValue("StockTransactionID", StockTransactionID);
+            writer.WriteGuidValue("StockTransactionLocation", StockTransactionLocation);
+            writer.WriteIntValue("StockTransactionType", StockTransactionType);
+            writer.WriteGuidValue("StorageLocation", StorageLocation);
+            writer.WriteStringValue("StorageLocationCode", StorageLocationCode);
+            writer.WriteStringValue("StorageLocationDescription", StorageLocationDescription);
+            writer.WriteLongValue("Timestamp", Timestamp);
+            writer.WriteGuidValue("Warehouse", Warehouse);
+            writer.WriteStringValue("WarehouseCode", WarehouseCode);
+            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
+            writer.WriteGuidValue("WarehouseTransferLine", WarehouseTransferLine);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

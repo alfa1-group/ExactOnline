@@ -14,6 +14,96 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Creation date</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>User ID of creator</summary>
+        public Guid? Creator { get; set; }
+        /// <summary>Name of creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorFullName { get; set; }
+#nullable restore
+#else
+        public string CreatorFullName { get; set; }
+#endif
+        /// <summary>Description of leave</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Division code</summary>
+        public int? Division { get; set; }
+        /// <summary>Employee linked to the leave registration</summary>
+        public Guid? Employee { get; set; }
+        /// <summary>Employee full name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmployeeFullName { get; set; }
+#nullable restore
+#else
+        public string EmployeeFullName { get; set; }
+#endif
+        /// <summary>Numeric ID of the employee</summary>
+        public int? EmployeeHID { get; set; }
+        /// <summary>End date of leave</summary>
+        public DateTimeOffset? EndDate { get; set; }
+        /// <summary>End time on the last day of leave stored as DateTime, and the date should be ignored</summary>
+        public DateTimeOffset? EndTime { get; set; }
+        /// <summary>Total number of leave hours</summary>
+        public double? Hours { get; set; }
+        /// <summary>Hours of leave on the first day</summary>
+        public double? HoursFirstDay { get; set; }
+        /// <summary>Hours of leave on the last day</summary>
+        public double? HoursLastDay { get; set; }
+        /// <summary>Primary key</summary>
+        public Guid? ID { get; set; }
+        /// <summary>Type of leave</summary>
+        public Guid? LeaveType { get; set; }
+        /// <summary>Code for type of leave</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeaveTypeCode { get; set; }
+#nullable restore
+#else
+        public string LeaveTypeCode { get; set; }
+#endif
+        /// <summary>Description for type of leave</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeaveTypeDescription { get; set; }
+#nullable restore
+#else
+        public string LeaveTypeDescription { get; set; }
+#endif
+        /// <summary>Last modified date</summary>
+        public DateTimeOffset? Modified { get; set; }
+        /// <summary>User ID of modifier</summary>
+        public Guid? Modifier { get; set; }
+        /// <summary>Name of modifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifierFullName { get; set; }
+#nullable restore
+#else
+        public string ModifierFullName { get; set; }
+#endif
+        /// <summary>Extra information for leave</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
+        /// <summary>Start date of leave</summary>
+        public DateTimeOffset? StartDate { get; set; }
+        /// <summary>Start time on the first day of leave stored as DateTime, and the date should be ignored</summary>
+        public DateTimeOffset? StartTime { get; set; }
+        /// <summary>Status of leave, 1 = Submitted, 2 = Approved, 3 = Rejected</summary>
+        public int? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.HRMLeaveRegistrations"/> and sets the default values.
         /// </summary>
@@ -39,6 +129,30 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "Creator", n => { Creator = n.GetGuidValue(); } },
+                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
+                { "Description", n => { Description = n.GetStringValue(); } },
+                { "Division", n => { Division = n.GetIntValue(); } },
+                { "Employee", n => { Employee = n.GetGuidValue(); } },
+                { "EmployeeFullName", n => { EmployeeFullName = n.GetStringValue(); } },
+                { "EmployeeHID", n => { EmployeeHID = n.GetIntValue(); } },
+                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
+                { "EndTime", n => { EndTime = n.GetDateTimeOffsetValue(); } },
+                { "Hours", n => { Hours = n.GetDoubleValue(); } },
+                { "HoursFirstDay", n => { HoursFirstDay = n.GetDoubleValue(); } },
+                { "HoursLastDay", n => { HoursLastDay = n.GetDoubleValue(); } },
+                { "ID", n => { ID = n.GetGuidValue(); } },
+                { "LeaveType", n => { LeaveType = n.GetGuidValue(); } },
+                { "LeaveTypeCode", n => { LeaveTypeCode = n.GetStringValue(); } },
+                { "LeaveTypeDescription", n => { LeaveTypeDescription = n.GetStringValue(); } },
+                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
+                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
+                { "Notes", n => { Notes = n.GetStringValue(); } },
+                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
+                { "StartTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
+                { "Status", n => { Status = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +162,30 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("Created", Created);
+            writer.WriteGuidValue("Creator", Creator);
+            writer.WriteStringValue("CreatorFullName", CreatorFullName);
+            writer.WriteStringValue("Description", Description);
+            writer.WriteIntValue("Division", Division);
+            writer.WriteGuidValue("Employee", Employee);
+            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
+            writer.WriteIntValue("EmployeeHID", EmployeeHID);
+            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
+            writer.WriteDateTimeOffsetValue("EndTime", EndTime);
+            writer.WriteDoubleValue("Hours", Hours);
+            writer.WriteDoubleValue("HoursFirstDay", HoursFirstDay);
+            writer.WriteDoubleValue("HoursLastDay", HoursLastDay);
+            writer.WriteGuidValue("ID", ID);
+            writer.WriteGuidValue("LeaveType", LeaveType);
+            writer.WriteStringValue("LeaveTypeCode", LeaveTypeCode);
+            writer.WriteStringValue("LeaveTypeDescription", LeaveTypeDescription);
+            writer.WriteDateTimeOffsetValue("Modified", Modified);
+            writer.WriteGuidValue("Modifier", Modifier);
+            writer.WriteStringValue("ModifierFullName", ModifierFullName);
+            writer.WriteStringValue("Notes", Notes);
+            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
+            writer.WriteDateTimeOffsetValue("StartTime", StartTime);
+            writer.WriteIntValue("Status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
