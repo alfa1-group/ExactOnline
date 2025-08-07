@@ -3,7 +3,6 @@ using ExactOnline.Api.Client;
 using ExactOnline.Api.Client.Authentication.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Kiota.Serialization;
 
 var builder = Host.CreateDefaultBuilder(args)
     .ConfigureServices((context, services) =>
@@ -30,3 +29,5 @@ var me = await client.Api.V1.Current.Me.GetAsync();
 //await client.Api.V1["abc"].Accountancy.AccountInvolvedAccountsWithId(new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6")).PutAsync(new AccountancyAccountInvolvedAccounts(), r =>
 //{
 //});
+
+int x = 0;

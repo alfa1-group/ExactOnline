@@ -1,4 +1,5 @@
-﻿using ExactOnline.Api.Client.Authentication.Interfaces;
+﻿using Duende.IdentityModel.Client;
+using ExactOnline.Api.Client.Authentication.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
@@ -11,6 +12,7 @@ internal class ExactTokenService(
     IExactTokenClient exactTokenClient) : IExactTokenService
 {
     private const string ExactAccessTokenKey = "ExactAccessToken";
+    private const int InitialRateLimitAccessTokenDelayInSeconds = 30;
 
     // The expiration time to 9 minutes and 30 seconds, which is the maximum time a token is valid.
     private readonly TimeSpan _accessTokenExpirationTime = TimeSpan.FromSeconds(9 * 60 + 30);
@@ -38,7 +40,7 @@ internal class ExactTokenService(
         var refreshToken = await tokenStorageService.RetrieveAsync(cancellationToken);
 
         // The client will issue the refresh request and should get a fresh access + refresh token in response
-        var response = await exactTokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken);
+        var response = await RequestRefreshTokenWithRetryAsync(refreshToken, cancellationToken);
 
         if (string.IsNullOrWhiteSpace(response.RefreshToken) && response.ErrorDescription?.IndexOf("expired", StringComparison.InvariantCultureIgnoreCase) >= 0)
         {
@@ -66,5 +68,31 @@ internal class ExactTokenService(
 
         // Store the access token in memory for reuse
         return memoryCache.Set(ExactAccessTokenKey, response.AccessToken, _accessTokenExpirationTime)!;
+    }
+
+    private async Task<TokenResponse> RequestRefreshTokenWithRetryAsync(string refreshToken, CancellationToken cancellationToken)
+    {
+        var delay = InitialRateLimitAccessTokenDelayInSeconds;
+        var startTime = TimeProvider.System.GetUtcNow();
+
+        while (true)
+        {
+            var response = await exactTokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken);
+
+            if (string.IsNullOrWhiteSpace(response.RefreshToken) && response.ErrorDescription?.IndexOf("Rate limit exceeded: access_token not expired", StringComparison.InvariantCultureIgnoreCase) >= 0)
+            {
+                var elapsedTime = TimeProvider.System.GetUtcNow() - startTime;
+                if (elapsedTime + TimeSpan.FromSeconds(delay) > _accessTokenExpirationTime)
+                {
+                    throw new Exception("AccessToken cannot be retrieved due to rate limiting and timeout exceeded.");
+                }
+
+                await Task.Delay(TimeSpan.FromSeconds(delay), cancellationToken);
+                delay *= 2;
+                continue;
+            }
+
+            return response;
+        }
     }
 }

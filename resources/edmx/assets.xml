@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models.Assets" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="AssetGroup">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="DepreciationMethod" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DepreciationMethodCode" Type="Edm.String" Nullable="true" />
+        <Property Name="DepreciationMethodDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="GLAccountAssets" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountAssetsCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountAssetsDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountDepreciationBS" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountDepreciationBSCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountDepreciationBSDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountDepreciationPL" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountDepreciationPLCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountDepreciationPLDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountRevaluationBS" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountRevaluationBSCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountRevaluationBSDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="Asset">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AlreadyDepreciated" Type="Edm.Byte" Nullable="false" />
+        <Property Name="AssetFrom" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AssetFromDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="AssetGroup" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AssetGroupCode" Type="Edm.String" Nullable="true" />
+        <Property Name="AssetGroupDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CatalogueValue" Type="Edm.Double" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Costcenter" Type="Edm.String" Nullable="true" />
+        <Property Name="CostcenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Costunit" Type="Edm.String" Nullable="true" />
+        <Property Name="CostunitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="DeductionPercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="DepreciatedAmount" Type="Edm.Double" Nullable="true" />
+        <Property Name="DepreciatedPeriods" Type="Edm.Int32" Nullable="true" />
+        <Property Name="DepreciatedStartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EngineEmission" Type="Edm.Int16" Nullable="true" />
+        <Property Name="EngineType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="GLTransactionLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLTransactionLineDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InvestmentAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="InvestmentAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="InvestmentAccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="InvestmentAmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="InvestmentAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="InvestmentCurrency" Type="Edm.String" Nullable="true" />
+        <Property Name="InvestmentCurrencyDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="InvestmentDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="InvestmentDeduction" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Parent" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ParentCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ParentDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Picture" Type="Edm.Binary" Nullable="true" />
+        <Property Name="PictureFileName" Type="Edm.String" Nullable="true" />
+        <Property Name="PrimaryMethod" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PrimaryMethodCode" Type="Edm.String" Nullable="true" />
+        <Property Name="PrimaryMethodDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ResidualValue" Type="Edm.Double" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+        <Property Name="TransactionEntryID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="TransactionEntryNo" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Type" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="CommercialBuildingValues" Relationship="Exact.Web.Api.Models.Asset_CommercialBuildingValues" FromRole="Asset" ToRole="CommercialBuildingValues" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DepreciationMethod">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Amount" Type="Edm.Double" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="DepreciationInterval" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="MaxPercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Percentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="Percentage2" Type="Edm.Double" Nullable="true" />
+        <Property Name="Periods" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="true" />
+        <Property Name="TypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Years" Type="Edm.Int16" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CommercialBuildingValues">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Asset" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="PropertyValue" Type="Edm.Double" Nullable="true" />
+        <Property Name="PropertyValueOption" Type="Edm.Int16" Nullable="true" />
+        <Property Name="MinimumValue" Type="Edm.Double" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <Association Name="Asset_CommercialBuildingValues">
+        <End Role="Asset" Type="Exact.Web.Api.Models.Asset" Multiplicity="*" />
+        <End Role="CommercialBuildingValues" Type="Exact.Web.Api.Models.CommercialBuildingValues" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Assets" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="AssetGroups" EntityType="Exact.Web.Api.Models.Assets.AssetGroup" />
+        <EntitySet Name="Assets" EntityType="Exact.Web.Api.Models.Asset" />
+        <EntitySet Name="DepreciationMethods" EntityType="Exact.Web.Api.Models.DepreciationMethod" />
+        <EntitySet Name="CommercialBuildingValues" EntityType="Exact.Web.Api.Models.CommercialBuildingValues" />
+        <AssociationSet Name="Asset_CommercialBuildingValues" Association="Exact.Web.Api.Models.Asset_CommercialBuildingValues">
+          <End Role="Asset" EntitySet="Assets" />
+          <End Role="CommercialBuildingValues" EntitySet="CommercialBuildingValues" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

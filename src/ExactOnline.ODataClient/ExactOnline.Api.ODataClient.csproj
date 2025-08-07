@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>ExactOnline REST API Client</Description>
+    <TargetFrameworks>netstandard2.1;net8.0</TargetFrameworks>
+    <PackageTags>C#;APIs;Clients;Generated;Kiota</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="kiota-lock.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.19.0" />
+  </ItemGroup>
+
+</Project>

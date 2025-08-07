@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="ShippingMethod">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Active" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Amount" Type="Edm.Double" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="ShippingRatesURL" Type="Edm.String" Nullable="true" />
+        <Property Name="TrackingURL" Type="Edm.String" Nullable="true" />
+        <Property Name="VATCode" Type="Edm.String" Nullable="true" />
+        <Property Name="VATCodeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATPercentage" Type="Edm.Double" Nullable="true" />
+      </EntityType>
+      <EntityType Name="OrderCharge">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Active" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Amount" Type="Edm.Double" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="GLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="VATCode" Type="Edm.String" Nullable="true" />
+        <Property Name="VATDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATPercentage" Type="Edm.Double" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SalesPriceList">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Entity" Type="Edm.Int16" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int16" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SalesPriceListLinkedAccount">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PriceList" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SalesPriceListPeriod">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PriceList" Type="Edm.Guid" Nullable="false" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int16" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SalesPriceListVolumeDiscount">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SalesUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="BasePrice" Type="Edm.Guid" Nullable="true" />
+        <Property Name="BasePriceAmount" Type="Edm.Double" Nullable="false" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Discount" Type="Edm.Double" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EntryMethod" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemGroup" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemGroupCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemGroupDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="NewPrice" Type="Edm.Double" Nullable="true" />
+        <Property Name="NumberOfItemsPerUnit" Type="Edm.Double" Nullable="true" />
+        <Property Name="PriceListCode" Type="Edm.String" Nullable="true" />
+        <Property Name="PriceListDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PriceListPeriod" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Quantity" Type="Edm.Double" Nullable="false" />
+        <Property Name="Unit" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SalesChannel">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Active" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Sales" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="ShippingMethods" EntityType="Exact.Web.Api.Models.ShippingMethod" />
+        <EntitySet Name="OrderCharges" EntityType="Exact.Web.Api.Models.OrderCharge" />
+        <EntitySet Name="SalesPriceLists" EntityType="Exact.Web.Api.Models.SalesPriceList" />
+        <EntitySet Name="SalesPriceListLinkedAccounts" EntityType="Exact.Web.Api.Models.SalesPriceListLinkedAccount" />
+        <EntitySet Name="SalesPriceListPeriods" EntityType="Exact.Web.Api.Models.SalesPriceListPeriod" />
+        <EntitySet Name="SalesPriceListVolumeDiscounts" EntityType="Exact.Web.Api.Models.SalesPriceListVolumeDiscount" />
+        <EntitySet Name="SalesChannels" EntityType="Exact.Web.Api.Models.SalesChannel" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

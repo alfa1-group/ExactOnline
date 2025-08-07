@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="SalesEntry">
+        <Key>
+          <PropertyRef Name="EntryID" />
+        </Key>
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="false" />
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="false" />
+        <Property Name="BatchNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="Customer" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CustomerName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="DocumentSubject" Type="Edm.String" Nullable="true" />
+        <Property Name="DueDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EntryDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EntryID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ExternalLinkDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ExternalLinkReference" Type="Edm.String" Nullable="true" />
+        <Property Name="GAccountAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="InvoiceNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="IsExtraDuty" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Journal" Type="Edm.String" Nullable="true" />
+        <Property Name="JournalDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PaymentCondition" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentConditionDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentConditionPaymentMethod" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentReference" Type="Edm.String" Nullable="true" />
+        <Property Name="ProcessNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Rate" Type="Edm.Double" Nullable="true" />
+        <Property Name="ReportingYear" Type="Edm.Int16" Nullable="true" />
+        <Property Name="ReportingPeriod" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Reversal" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+        <Property Name="StatusDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATAmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="WithholdingTaxAmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="WithholdingTaxBaseAmount" Type="Edm.Double" Nullable="true" />
+        <Property Name="WithholdingTaxPercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="YourRef" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="SalesEntryLines" Relationship="Exact.Web.Api.Models.SalesEntry_SalesEntryLines" FromRole="SalesEntry" ToRole="SalesEntryLines" />
+      </EntityType>
+      <EntityType Name="SalesEntryLine">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="false" />
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="false" />
+        <Property Name="Asset" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AssetDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CostCenter" Type="Edm.String" Nullable="true" />
+        <Property Name="CostCenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CostUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="CostUnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ExtraDutyAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="ExtraDutyPercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="From" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="GLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IntraStatArea" Type="Edm.String" Nullable="true" />
+        <Property Name="IntraStatCountry" Type="Edm.String" Nullable="true" />
+        <Property Name="IntraStatDeliveryTerm" Type="Edm.String" Nullable="true" />
+        <Property Name="IntraStatTransactionA" Type="Edm.String" Nullable="true" />
+        <Property Name="IntraStatTransactionB" Type="Edm.String" Nullable="true" />
+        <Property Name="IntraStatTransportMethod" Type="Edm.String" Nullable="true" />
+        <Property Name="EntryID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectWBS" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectWBSDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="SerialNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="Subscription" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StatisticalNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="StatisticalNetWeight" Type="Edm.Double" Nullable="true" />
+        <Property Name="StatisticalValue" Type="Edm.Double" Nullable="true" />
+        <Property Name="StatisticalQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="SubscriptionDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="TaxSchedule" Type="Edm.Guid" Nullable="true" />
+        <Property Name="To" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="TrackingNumber" Type="Edm.Guid" Nullable="true" />
+        <Property Name="TrackingNumberDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="true" />
+        <Property Name="VATAmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATBaseAmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATBaseAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATCode" Type="Edm.String" Nullable="true" />
+        <Property Name="VATCodeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <Property Name="VATPercentage" Type="Edm.Double" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CreditedSalesInvoice">
+        <Key>
+          <PropertyRef Name="EntryID" />
+        </Key>
+        <Property Name="EntryID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InvoiceDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="FilterOptions" Type="Edm.Int32" Nullable="true" />
+        <Property Name="TargetEntryID" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+      <Association Name="SalesEntry_SalesEntryLines">
+        <End Role="SalesEntry" Type="Exact.Web.Api.Models.SalesEntry" Multiplicity="*" />
+        <End Role="SalesEntryLines" Type="Exact.Web.Api.Models.SalesEntryLine" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.SalesEntry" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="SalesEntries" EntityType="Exact.Web.Api.Models.SalesEntry" />
+        <EntitySet Name="SalesEntryLines" EntityType="Exact.Web.Api.Models.SalesEntryLine" />
+        <EntitySet Name="CreditedSalesInvoices" EntityType="Exact.Web.Api.Models.CreditedSalesInvoice" />
+        <AssociationSet Name="SalesEntry_SalesEntryLines" Association="Exact.Web.Api.Models.SalesEntry_SalesEntryLines">
+          <End Role="SalesEntry" EntitySet="SalesEntries" />
+          <End Role="SalesEntryLines" EntitySet="SalesEntryLines" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models.System" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityType Name="Me">
+        <Key>
+          <PropertyRef Name="UserID" />
+        </Key>
+        <Property Name="CurrentDivision" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DivisionCustomer" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DivisionCustomerCode" Type="Edm.String" Nullable="true" />
+        <Property Name="DivisionCustomerName" Type="Edm.String" Nullable="true" />
+        <Property Name="DivisionCustomerVatNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="DivisionCustomerSiretNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="DossierDivision" Type="Edm.Int32" Nullable="true" />
+        <Property Name="AccountingDivision" Type="Edm.Int32" Nullable="true" />
+        <Property Name="IsEmployeeSelfServiceUser" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsMyFirmLiteUser" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsStarterUser" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsMyFirmPortalUser" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsClientUser" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="FullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PictureUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="ThumbnailPicture" Type="Edm.Binary" Nullable="true" />
+        <Property Name="ThumbnailPictureFormat" Type="Edm.String" Nullable="true" />
+        <Property Name="UserID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="UserName" Type="Edm.String" Nullable="true" />
+        <Property Name="LanguageCode" Type="Edm.String" Nullable="true" />
+        <Property Name="Legislation" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Email" Type="Edm.String" Nullable="true" />
+        <Property Name="Title" Type="Edm.String" Nullable="true" />
+        <Property Name="Initials" Type="Edm.String" Nullable="true" />
+        <Property Name="FirstName" Type="Edm.String" Nullable="true" />
+        <Property Name="MiddleName" Type="Edm.String" Nullable="true" />
+        <Property Name="LastName" Type="Edm.String" Nullable="true" />
+        <Property Name="Gender" Type="Edm.String" Nullable="true" />
+        <Property Name="Nationality" Type="Edm.String" Nullable="true" />
+        <Property Name="Language" Type="Edm.String" Nullable="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" />
+        <Property Name="PhoneExtension" Type="Edm.String" Nullable="true" />
+        <Property Name="Mobile" Type="Edm.String" Nullable="true" />
+        <Property Name="ServerTime" Type="Edm.String" Nullable="true" />
+        <Property Name="ServerUtcOffset" Type="Edm.Double" Nullable="false" />
+        <Property Name="EmployeeID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="CustomerCode" Type="Edm.String" Nullable="true" />
+        <Property Name="PackageCode" Type="Edm.String" Nullable="true" />
+        <Property Name="IsOEIMigrationMandatory" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="UserSettings">
+        <Property Name="DateFormat" Type="Edm.String" Nullable="true" />
+        <Property Name="Language" Type="Edm.String" Nullable="true" />
+        <Property Name="NumberFormat" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.System" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityContainer Name="CurrentDataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Me" EntityType="Exact.Web.Api.Models.System.Me" />
+        <FunctionImport Name="UserSettings" ReturnType="Collection(Exact.Web.Api.Models.System.UserSettings)" m:HttpMethod="GET" />
+        <FunctionImport Name="ClientId" ReturnType="Edm.Guid" m:HttpMethod="GET" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

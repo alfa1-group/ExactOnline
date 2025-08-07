@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="Employee">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ActiveEmployment" Type="Edm.Byte" Nullable="true" />
+        <Property Name="CASONumber" Type="Edm.String" Nullable="true" />
+        <Property Name="Municipality" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="AddressLine2" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressLine3" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressStreet" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressStreetNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressStreetNumberSuffix" Type="Edm.String" Nullable="true" />
+        <Property Name="BirthDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="BirthName" Type="Edm.String" Nullable="true" />
+        <Property Name="BirthNamePrefix" Type="Edm.String" Nullable="true" />
+        <Property Name="BirthPlace" Type="Edm.String" Nullable="true" />
+        <Property Name="BusinessEmail" Type="Edm.String" Nullable="true" />
+        <Property Name="BusinessFax" Type="Edm.String" Nullable="true" />
+        <Property Name="BusinessMobile" Type="Edm.String" Nullable="true" />
+        <Property Name="BusinessPhone" Type="Edm.String" Nullable="true" />
+        <Property Name="BusinessPhoneExtension" Type="Edm.String" Nullable="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Customer" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Email" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="FirstName" Type="Edm.String" Nullable="true" />
+        <Property Name="FullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Gender" Type="Edm.String" Nullable="true" />
+        <Property Name="HID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Initials" Type="Edm.String" Nullable="true" />
+        <Property Name="IsActive" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsAnonymised" Type="Edm.Byte" Nullable="false" />
+        <Property Name="Language" Type="Edm.String" Nullable="true" />
+        <Property Name="LastName" Type="Edm.String" Nullable="true" />
+        <Property Name="LocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Manager" Type="Edm.Guid" Nullable="true" />
+        <Property Name="MaritalDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="MaritalStatus" Type="Edm.Int16" Nullable="true" />
+        <Property Name="MiddleName" Type="Edm.String" Nullable="true" />
+        <Property Name="Mobile" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="NameComposition" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Nationality" Type="Edm.String" Nullable="true" />
+        <Property Name="NickName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="PartnerName" Type="Edm.String" Nullable="true" />
+        <Property Name="PartnerNamePrefix" Type="Edm.String" Nullable="true" />
+        <Property Name="Person" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" />
+        <Property Name="PhoneExtension" Type="Edm.String" Nullable="true" />
+        <Property Name="Picture" Type="Edm.Binary" Nullable="true" />
+        <Property Name="PictureFileName" Type="Edm.String" Nullable="true" />
+        <Property Name="PictureThumbnailUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="PictureUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="Postcode" Type="Edm.String" Nullable="true" />
+        <Property Name="PrivateEmail" Type="Edm.String" Nullable="true" />
+        <Property Name="SocialSecurityNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="State" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Title" Type="Edm.String" Nullable="true" />
+        <Property Name="User" Type="Edm.Guid" Nullable="true" />
+        <Property Name="UserFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.Payroll" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="ActiveEmployment">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AverageDaysPerWeek" Type="Edm.Double" Nullable="true" />
+        <Property Name="AverageHoursPerWeek" Type="Edm.Double" Nullable="true" />
+        <Property Name="Contract" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ContractDocument" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ContractEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ContractProbationEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ContractProbationPeriod" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ContractStartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ContractType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ContractTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Department" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DepartmentCode" Type="Edm.String" Nullable="true" />
+        <Property Name="DepartmentDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmploymentOrganization" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="HID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="HourlyWage" Type="Edm.Double" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InternalRate" Type="Edm.Double" Nullable="true" />
+        <Property Name="Jobtitle" Type="Edm.Guid" Nullable="true" />
+        <Property Name="JobtitleDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="ReasonEnd" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ReasonEndDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ReasonEndFlex" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ReasonEndFlexDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Salary" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Schedule" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ScheduleCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ScheduleDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ScheduleHours" Type="Edm.Double" Nullable="true" />
+        <Property Name="ScheduleDays" Type="Edm.Double" Nullable="true" />
+        <Property Name="ScheduleAverageHours" Type="Edm.Double" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="StartDateOrganization" Type="Edm.DateTime" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Employment">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="HID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="StartDateOrganization" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmploymentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="ReasonEnd" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ReasonEndDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ReasonEndFlex" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ReasonEndFlexDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+      </EntityType>
+      <EntityType Name="EmploymentEndReasonsOnFocusDate" BaseType="Exact.Web.Api.Models.Payroll.EmploymentEndReason">
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="EmploymentEndReason">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="EmploymentContract">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="CreateAutoCorrection" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CreatePredecessorsForLinkedAgencies" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EmploymentHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ContractFlexPhase" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ContractFlexPhaseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EmployeeTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Employment" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmploymentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="ProbationEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ProbationPeriod" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ProbationPeriodDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ReasonContract" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ReasonContractDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Sequence" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="true" />
+        <Property Name="TypeDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="EmploymentContractFlexPhasesOnFocusDate" BaseType="Exact.Web.Api.Models.Payroll.EmploymentContractFlexPhase">
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Code" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="EmploymentContractFlexPhase">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="EmploymentOrganization">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="EmploymentHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="CostCenter" Type="Edm.String" Nullable="true" />
+        <Property Name="CostCenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CostUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="CostUnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Department" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DepartmentCode" Type="Edm.String" Nullable="true" />
+        <Property Name="DepartmentDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Employment" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmploymentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="JobTitle" Type="Edm.Guid" Nullable="true" />
+        <Property Name="JobTitleCode" Type="Edm.String" Nullable="true" />
+        <Property Name="JobTitleDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="EmploymentSalary">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AutoCorrection" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EmploymentHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="AmountType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="AmountTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="AverageDaysPerWeek" Type="Edm.Double" Nullable="true" />
+        <Property Name="AverageHoursPerWeek" Type="Edm.Double" Nullable="true" />
+        <Property Name="BillabilityTarget" Type="Edm.Double" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Employment" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmploymentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EmploymentSalaryType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EmploymentSalaryTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ExternalRate" Type="Edm.Double" Nullable="true" />
+        <Property Name="Frequency" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FrequencyDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="FulltimeAmount" Type="Edm.Double" Nullable="true" />
+        <Property Name="HourlyWage" Type="Edm.Double" Nullable="true" />
+        <Property Name="IntercompanyRate" Type="Edm.Double" Nullable="true" />
+        <Property Name="InternalRate" Type="Edm.Double" Nullable="true" />
+        <Property Name="JobLevel" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="ParttimeAmount" Type="Edm.Double" Nullable="true" />
+        <Property Name="ParttimeFactor" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalaryBasedType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SalaryBasedTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Scale" Type="Edm.String" Nullable="true" />
+        <Property Name="Schedule" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ScheduleCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ScheduleDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="WageScale" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WageScalePeriod" Type="Edm.Int16" Nullable="true" />
+        <Property Name="WageScaleStep" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="TaxEmploymentEndFlexCode">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+      </EntityType>
+      <EntityType Name="VariableMutation">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PayrollYear" Type="Edm.Int16" Nullable="false" />
+        <Property Name="PayrollPeriod" Type="Edm.Int16" Nullable="false" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EmployeeID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PayrollComponent" Type="Edm.String" Nullable="true" />
+        <Property Name="PayrollComponentID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EntryFieldType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Value" Type="Edm.Double" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="EmploymentTaxAuthoritiesGeneral">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmploymentHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employment" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmploymentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="InfluenceInsuranceObligation" Type="Edm.String" Nullable="true" />
+        <Property Name="InfluenceInsuranceObligationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="NatureOfWorkRelationship" Type="Edm.String" Nullable="true" />
+        <Property Name="NatureOfWorkRelationshipDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PayrollTaxesNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="TypeOfIncome" Type="Edm.String" Nullable="true" />
+        <Property Name="TypeOfIncomeDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="NewEmployment">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EmployeeType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EmployeeTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="EmploymentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="StartDateForYearsInService" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ContractDocument" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ContractEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ContractFlexPhase" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ContractFlexPhaseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ContractId" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ContractProbationEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ContractProbationPeriod" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ContractProbationPeriodDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ContractReasonContract" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ContractReasonContractDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ContractSequence" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ContractStartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ContractType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ContractTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Costcenter" Type="Edm.String" Nullable="true" />
+        <Property Name="CostcenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Costunit" Type="Edm.String" Nullable="true" />
+        <Property Name="CostunitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Department" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DepartmentDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="JobTitle" Type="Edm.Guid" Nullable="true" />
+        <Property Name="JobTitleDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CLAHoursWeek" Type="Edm.Double" Nullable="true" />
+        <Property Name="EmploymentConditionGroup" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmploymentConditionGroupDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="LeaveHoursCompensation" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalaryBillabilityTarget" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalaryParttimeFactor" Type="Edm.Double" Nullable="true" />
+        <Property Name="Schedule" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ScheduleAverageHoursPerWeek" Type="Edm.Double" Nullable="true" />
+        <Property Name="ScheduleNumberOfWeeks" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ScheduleStartWeek" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ScheduleType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ScheduleTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="JobLevel" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SalaryAmountType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="SalaryAmountTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="SalaryAverageDaysPerWeek" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalaryAverageHoursPerWeek" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalaryBasedType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SalaryBasedTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="SalaryEmploymentSalaryType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SalaryEmploymentSalaryTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="SalaryExternalRate" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalaryFulltimeAmount" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalaryHourlyWage" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalaryIntercompanyRate" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalaryInternalRate" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalaryParttimeAmount" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalaryPayrollPeriodFrequency" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SalaryPayrollPeriodFrequencyDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Scale" Type="Edm.String" Nullable="true" />
+        <Property Name="WageScale" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WageScaleDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="WageScalePeriod" Type="Edm.Int32" Nullable="true" />
+        <Property Name="WageScaleStep" Type="Edm.String" Nullable="true" />
+        <Property Name="IkvNumber" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="FiscaalGemakEmployment">
+        <Key>
+          <PropertyRef Name="Employment" />
+        </Key>
+        <Property Name="Employment" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmployeeID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="SocialSecurityNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="Gender" Type="Edm.String" Nullable="true" />
+        <Property Name="GenderDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="EmploymentStartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="EmploymentEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ContractType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContractTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ContractStartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ContractEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EmploymentSalaryType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EmploymentSalaryTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PayrollPeriodFrequency" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PayrollPeriodFrequencyDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="AmountType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AmountTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="FulltimeAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="HourlyWage" Type="Edm.Double" Nullable="false" />
+        <Property Name="ParttimeFactor" Type="Edm.Double" Nullable="false" />
+      </EntityType>
+      <EntityType Name="EmploymentCLA">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Employment" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmploymentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PayrollComponentGroup" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PayrollComponentGroupDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+      </EntityType>
+      <EntityType Name="FiscaalGemakPeriodCalculation">
+        <Key>
+          <PropertyRef Name="Employment" />
+        </Key>
+        <Property Name="Employment" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmployeeID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PayrollYear" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Period" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Frequency" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FrequencyDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CalcAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ColorOfTaxTable" Type="Edm.Int16" Nullable="false" />
+        <Property Name="ColorOfTaxTableDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="EndEmployment">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmploymentEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ReasonEnd" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ReasonEndFlex" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="RestoreEmployment">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmploymentEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="IsAnonymized" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="ReasonEnd" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ReasonEndFlex" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="EmploymentComponent">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="BankAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Calculate" Type="Edm.Byte" Nullable="false" />
+        <Property Name="CreateAutoCorrection" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Employment" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmploymentCLA" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmploymentNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentReference" Type="Edm.String" Nullable="true" />
+        <Property Name="PayrollComponent" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Visible" Type="Edm.Byte" Nullable="false" />
+        <Property Name="Amount" Type="Edm.Double" Nullable="true" />
+        <Property Name="BaseValue" Type="Edm.Double" Nullable="true" />
+        <Property Name="Percentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="Percentage2" Type="Edm.Double" Nullable="true" />
+        <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+      </EntityType>
+      <EntityType Name="BankAccount">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Main" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="BankAccountHolderName" Type="Edm.String" Nullable="true" />
+        <Property Name="BICCode" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Number" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="EmploymentOrganizationCostCenter">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="CostCenter" Type="Edm.String" Nullable="true" />
+        <Property Name="CostCenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="false" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employment" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmploymentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EmploymentOrganization" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Percentage" Type="Edm.Double" Nullable="false" />
+      </EntityType>
+      <EntityType Name="WageScale">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="EffectiveFromType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Frequency" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FrequencyDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="PayrollComponentGroup" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Period" Type="Edm.Int16" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StepDeterminationType" Type="Edm.Int16" Nullable="false" />
+        <Property Name="Type" Type="Edm.Int16" Nullable="false" />
+        <NavigationProperty Name="WageScaleDetails" Relationship="Exact.Web.Api.Models.Payroll.WageScale_WageScaleDetails" FromRole="WageScale" ToRole="WageScaleDetails" />
+      </EntityType>
+      <EntityType Name="WageScaleDetail">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Age" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="HourlyAmount" Type="Edm.Double" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PeriodAmount" Type="Edm.Double" Nullable="false" />
+        <Property Name="SequenceNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Step" Type="Edm.String" Nullable="true" />
+        <Property Name="WageScale" Type="Edm.Guid" Nullable="false" />
+        <Property Name="WageScaleCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WageScaleType" Type="Edm.Int16" Nullable="false" />
+        <Property Name="WageScaleTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="YearsInService" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <Association Name="NewEmployment_ScheduleEntries">
+        <End Role="NewEmployment" Type="Exact.Web.Api.Models.Payroll.NewEmployment" Multiplicity="*" />
+        <End Role="ScheduleEntries" Type="Exact.Web.Api.Models.HRM.ScheduleEntry" Multiplicity="*" />
+      </Association>
+      <Association Name="WageScale_WageScaleDetails">
+        <End Role="WageScale" Type="Exact.Web.Api.Models.Payroll.WageScale" Multiplicity="*" />
+        <End Role="WageScaleDetails" Type="Exact.Web.Api.Models.Payroll.WageScaleDetail" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.HRM" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="ScheduleEntry">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Break" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="BreakEndTime" Type="Edm.String" Nullable="true" />
+        <Property Name="BreakStartTime" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Day" Type="Edm.Int32" Nullable="true" />
+        <Property Name="DayIsSelected" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Employment" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmploymentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndTime" Type="Edm.String" Nullable="true" />
+        <Property Name="Hours" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Schedule" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ScheduleType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StartTime" Type="Edm.String" Nullable="true" />
+        <Property Name="WeekNumber" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Payroll" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Employees" EntityType="Exact.Web.Api.Models.Employee" />
+        <EntitySet Name="ActiveEmployments" EntityType="Exact.Web.Api.Models.Payroll.ActiveEmployment" />
+        <EntitySet Name="Employments" EntityType="Exact.Web.Api.Models.Payroll.Employment" />
+        <EntitySet Name="EmploymentEndReasons" EntityType="Exact.Web.Api.Models.Payroll.EmploymentEndReason" />
+        <EntitySet Name="EmploymentContracts" EntityType="Exact.Web.Api.Models.Payroll.EmploymentContract" />
+        <EntitySet Name="EmploymentContractFlexPhases" EntityType="Exact.Web.Api.Models.Payroll.EmploymentContractFlexPhase" />
+        <EntitySet Name="EmploymentOrganizations" EntityType="Exact.Web.Api.Models.Payroll.EmploymentOrganization" />
+        <EntitySet Name="EmploymentSalaries" EntityType="Exact.Web.Api.Models.Payroll.EmploymentSalary" />
+        <EntitySet Name="TaxEmploymentEndFlexCodes" EntityType="Exact.Web.Api.Models.Payroll.TaxEmploymentEndFlexCode" />
+        <EntitySet Name="VariableMutations" EntityType="Exact.Web.Api.Models.Payroll.VariableMutation" />
+        <EntitySet Name="EmploymentTaxAuthoritiesGeneral" EntityType="Exact.Web.Api.Models.Payroll.EmploymentTaxAuthoritiesGeneral" />
+        <EntitySet Name="NewEmployment" EntityType="Exact.Web.Api.Models.Payroll.NewEmployment" />
+        <EntitySet Name="ScheduleEntries" EntityType="Exact.Web.Api.Models.HRM.ScheduleEntry" />
+        <EntitySet Name="FiscaalGemakEmployments" EntityType="Exact.Web.Api.Models.Payroll.FiscaalGemakEmployment" />
+        <EntitySet Name="EmploymentCLAs" EntityType="Exact.Web.Api.Models.Payroll.EmploymentCLA" />
+        <EntitySet Name="FiscaalGemakPeriodCalculations" EntityType="Exact.Web.Api.Models.Payroll.FiscaalGemakPeriodCalculation" />
+        <EntitySet Name="EndEmployment" EntityType="Exact.Web.Api.Models.Payroll.EndEmployment" />
+        <EntitySet Name="RestoreEmployment" EntityType="Exact.Web.Api.Models.Payroll.RestoreEmployment" />
+        <EntitySet Name="EmploymentComponents" EntityType="Exact.Web.Api.Models.Payroll.EmploymentComponent" />
+        <EntitySet Name="BankAccounts" EntityType="Exact.Web.Api.Models.Payroll.BankAccount" />
+        <EntitySet Name="EmploymentOrganizationCostCenters" EntityType="Exact.Web.Api.Models.Payroll.EmploymentOrganizationCostCenter" />
+        <EntitySet Name="WageScales" EntityType="Exact.Web.Api.Models.Payroll.WageScale" />
+        <EntitySet Name="WageScaleDetails" EntityType="Exact.Web.Api.Models.Payroll.WageScaleDetail" />
+        <AssociationSet Name="NewEmployment_ScheduleEntries" Association="Exact.Web.Api.Models.Payroll.NewEmployment_ScheduleEntries">
+          <End Role="NewEmployment" EntitySet="NewEmployment" />
+          <End Role="ScheduleEntries" EntitySet="ScheduleEntries" />
+        </AssociationSet>
+        <AssociationSet Name="WageScale_WageScaleDetails" Association="Exact.Web.Api.Models.Payroll.WageScale_WageScaleDetails">
+          <End Role="WageScale" EntitySet="WageScales" />
+          <End Role="WageScaleDetails" EntitySet="WageScaleDetails" />
+        </AssociationSet>
+        <FunctionImport Name="FiscaalGemakEmployments" EntitySet="FiscaalGemakEmployments" ReturnType="Collection(Exact.Web.Api.Models.Payroll.FiscaalGemakEmployment)" m:HttpMethod="GET">
+          <Parameter Name="payrollYear" Type="Edm.Int32" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="FiscaalGemakPeriodCalculations" EntitySet="FiscaalGemakPeriodCalculations" ReturnType="Collection(Exact.Web.Api.Models.Payroll.FiscaalGemakPeriodCalculation)" m:HttpMethod="GET">
+          <Parameter Name="payrollYear" Type="Edm.Int32" Mode="In" />
+        </FunctionImport>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

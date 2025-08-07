@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+        <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+            <EntityType Name="CostTransaction">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+                <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+                <Property Name="AmountFC" Type="Edm.Double" Nullable="true" />
+                <Property Name="Attachment" Type="Edm.Guid" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Currency" Type="Edm.String" Nullable="true" />
+                <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+                <Property Name="Date" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="DivisionDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+                <Property Name="EntryNumber" Type="Edm.Int32" Nullable="true" />
+                <Property Name="ErrorText" Type="Edm.String" Nullable="true" />
+                <Property Name="Expense" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ExpenseDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="HourStatus" Type="Edm.Int16" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ItemDivisable" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Notes" Type="Edm.String" Nullable="true" />
+                <Property Name="PriceFC" Type="Edm.Double" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectAccount" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectAccountCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectAccountName" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+                <Property Name="Subscription" Type="Edm.Guid" Nullable="true" />
+                <Property Name="SubscriptionAccount" Type="Edm.Guid" Nullable="true" />
+                <Property Name="SubscriptionAccountCode" Type="Edm.String" Nullable="true" />
+                <Property Name="SubscriptionAccountName" Type="Edm.String" Nullable="true" />
+                <Property Name="SubscriptionDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="SubscriptionNumber" Type="Edm.Int32" Nullable="true" />
+                <Property Name="Type" Type="Edm.Int16" Nullable="true" />
+                <Property Name="SkipValidation" Type="Edm.Boolean" Nullable="false" />
+                <Property Name="Amount" Type="Edm.Double" Nullable="true" />
+                <Property Name="Price" Type="Edm.Double" Nullable="true" />
+            </EntityType>
+            <EntityType Name="TimeTransaction">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Amount" Type="Edm.Double" Nullable="true" />
+                <Property Name="Price" Type="Edm.Double" Nullable="true" />
+                <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+                <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+                <Property Name="Activity" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ActivityDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="AmountFC" Type="Edm.Double" Nullable="true" />
+                <Property Name="Attachment" Type="Edm.Guid" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Currency" Type="Edm.String" Nullable="true" />
+                <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+                <Property Name="Date" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="DivisionDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+                <Property Name="EndTime" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="EntryNumber" Type="Edm.Int32" Nullable="true" />
+                <Property Name="ErrorText" Type="Edm.String" Nullable="true" />
+                <Property Name="HourStatus" Type="Edm.Int16" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ItemDivisable" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Notes" Type="Edm.String" Nullable="true" />
+                <Property Name="PriceFC" Type="Edm.Double" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectAccount" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectAccountCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectAccountName" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+                <Property Name="StartTime" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Subscription" Type="Edm.Guid" Nullable="true" />
+                <Property Name="SubscriptionAccount" Type="Edm.Guid" Nullable="true" />
+                <Property Name="SubscriptionAccountCode" Type="Edm.String" Nullable="true" />
+                <Property Name="SubscriptionAccountName" Type="Edm.String" Nullable="true" />
+                <Property Name="SubscriptionDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="SubscriptionNumber" Type="Edm.Int32" Nullable="true" />
+                <Property Name="Type" Type="Edm.Int16" Nullable="true" />
+                <Property Name="SkipValidation" Type="Edm.Boolean" Nullable="false" />
+            </EntityType>
+        </Schema>
+        <Schema Namespace="Exact.Web.Api.Models.Project" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+            <EntityType Name="EmployeeRestrictionItem">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+                <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="false" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="Item" Type="Edm.Guid" Nullable="false" />
+                <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ItemIsTime" Type="Edm.Byte" Nullable="false" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+            </EntityType>
+            <EntityType Name="ProjectTerm">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Amount" Type="Edm.Double" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Deliverable" Type="Edm.String" Nullable="true" />
+                <Property Name="Description" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="ExecutionFromDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="ExecutionToDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="InvoiceDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="InvoiceId" Type="Edm.Guid" Nullable="true" />
+                <Property Name="InvoiceStatus" Type="Edm.Int16" Nullable="true" />
+                <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Notes" Type="Edm.String" Nullable="true" />
+                <Property Name="Percentage" Type="Edm.Double" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="VATCode" Type="Edm.String" Nullable="true" />
+                <Property Name="VATCodeDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="VATPercentage" Type="Edm.Double" Nullable="true" />
+                <Property Name="WBS" Type="Edm.Guid" Nullable="true" />
+            </EntityType>
+            <EntityType Name="ProjectBudgetType">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="ID" Type="Edm.Int16" Nullable="false" />
+                <Property Name="Description" Type="Edm.String" Nullable="true" />
+            </EntityType>
+            <EntityType Name="ProjectHourBudget">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Budget" Type="Edm.Double" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="false" />
+                <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+            </EntityType>
+            <EntityType Name="ProjectRestrictionEmployee" BaseType="Exact.Web.Api.Models.Project.ProjectRestriction">
+                <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+                <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+            </EntityType>
+            <EntityType Name="ProjectRestriction" Abstract="true">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+            </EntityType>
+            <EntityType Name="ProjectRestrictionItem" BaseType="Exact.Web.Api.Models.Project.ProjectRestriction">
+                <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ItemIsTime" Type="Edm.Byte" Nullable="true" />
+            </EntityType>
+            <EntityType Name="ProjectRestrictionRebilling" BaseType="Exact.Web.Api.Models.Project.ProjectRestriction">
+                <Property Name="CostTypeRebill" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CostTypeRebillCode" Type="Edm.String" Nullable="true" />
+                <Property Name="CostTypeRebillDescription" Type="Edm.String" Nullable="true" />
+            </EntityType>
+            <EntityType Name="Project">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+                <Property Name="AccountContact" Type="Edm.Guid" Nullable="true" />
+                <Property Name="AccountCode" Type="Edm.String" Nullable="true" />
+                <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+                <Property Name="AllowAdditionalInvoicing" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="BlockEntry" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="BlockInvoicing" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="BlockPlanning" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="BudgetedAmount" Type="Edm.Double" Nullable="true" />
+                <Property Name="BudgetedCosts" Type="Edm.Double" Nullable="true" />
+                <NavigationProperty Name="BudgetedHoursPerHourType" Relationship="Exact.Web.Api.Models.Project.Project_BudgetedHoursPerHourType" FromRole="Project" ToRole="BudgetedHoursPerHourType" />
+                <Property Name="BudgetedRevenue" Type="Edm.Double" Nullable="true" />
+                <Property Name="BudgetType" Type="Edm.Int16" Nullable="true" />
+                <Property Name="BudgetTypeDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="BlockPurchasing" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="BlockRebilling" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="Classification" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ClassificationDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Code" Type="Edm.String" Nullable="true" />
+                <Property Name="CostsAmountFC" Type="Edm.Double" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="CustomerPOnumber" Type="Edm.String" Nullable="true" />
+                <Property Name="Description" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="DivisionName" Type="Edm.String" Nullable="true" />
+                <Property Name="EnableWorkInProgress" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="FixedPriceItem" Type="Edm.Guid" Nullable="true" />
+                <Property Name="FixedPriceItemDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="HasWBSLines" Type="Edm.Boolean" Nullable="false" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="IncludeInvoiceSpecification" Type="Edm.Int16" Nullable="false" />
+                <Property Name="IncludeSpecificationInInvoicePdf" Type="Edm.Boolean" Nullable="false" />
+                <Property Name="InvoiceAddress" Type="Edm.Guid" Nullable="true" />
+                <Property Name="InvoiceDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="InvoiceAsQuoted" Type="Edm.Boolean" Nullable="false" />
+                <NavigationProperty Name="InvoiceTerms" Relationship="Exact.Web.Api.Models.Project.Project_InvoiceTerms" FromRole="Project" ToRole="InvoiceTerms" />
+                <Property Name="IsWBSRequiredForEntry" Type="Edm.Byte" Nullable="true" />
+                <Property Name="Manager" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ManagerFullname" Type="Edm.String" Nullable="true" />
+                <Property Name="MarkupPercentage" Type="Edm.Double" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Notes" Type="Edm.String" Nullable="true" />
+                <Property Name="InternalNotes" Type="Edm.String" Nullable="true" />
+                <NavigationProperty Name="ProjectRestrictionEmployees" Relationship="Exact.Web.Api.Models.Project.Project_ProjectRestrictionEmployees" FromRole="Project" ToRole="ProjectRestrictionEmployees" />
+                <NavigationProperty Name="ProjectRestrictionItems" Relationship="Exact.Web.Api.Models.Project.Project_ProjectRestrictionItems" FromRole="Project" ToRole="ProjectRestrictionItems" />
+                <NavigationProperty Name="ProjectRestrictionRebillings" Relationship="Exact.Web.Api.Models.Project.Project_ProjectRestrictionRebillings" FromRole="Project" ToRole="ProjectRestrictionRebillings" />
+                <Property Name="SalesTimeQuantity" Type="Edm.Double" Nullable="true" />
+                <Property Name="SourceQuotation" Type="Edm.Guid" Nullable="true" />
+                <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="TimeQuantityToAlert" Type="Edm.Double" Nullable="true" />
+                <Property Name="Type" Type="Edm.Int32" Nullable="true" />
+                <Property Name="TypeDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="PaymentCondition" Type="Edm.String" Nullable="true" />
+                <Property Name="PrepaidItem" Type="Edm.Guid" Nullable="true" />
+                <Property Name="PrepaidItemDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="PrepaidType" Type="Edm.Int16" Nullable="true" />
+                <Property Name="PrepaidTypeDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="UseBillingMilestones" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="BudgetOverrunHours" Type="Edm.Byte" Nullable="true" />
+                <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+                <Property Name="AllowMemberEntryOnly" Type="Edm.Boolean" Nullable="true" />
+            </EntityType>
+            <EntityType Name="TimeCorrection">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="OriginalEntryId" Type="Edm.Guid" Nullable="true" />
+                <Property Name="Notes" Type="Edm.String" Nullable="true" />
+                <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+            </EntityType>
+            <EntityType Name="ProjectPlanning">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+                <Property Name="AccountCode" Type="Edm.String" Nullable="true" />
+                <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+                <Property Name="BGTStatus" Type="Edm.Int16" Nullable="true" />
+                <Property Name="CommunicationErrorStatus" Type="Edm.Int16" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Description" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+                <Property Name="EmployeeCode" Type="Edm.String" Nullable="true" />
+                <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+                <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Hours" Type="Edm.Double" Nullable="true" />
+                <Property Name="HourType" Type="Edm.Guid" Nullable="true" />
+                <Property Name="HourTypeCode" Type="Edm.String" Nullable="true" />
+                <Property Name="HourTypeDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="IsBrokenRecurrence" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Notes" Type="Edm.String" Nullable="true" />
+                <Property Name="OverAllocate" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectPlanningRecurring" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectWBS" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectWBSDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+                <Property Name="Type" Type="Edm.Int16" Nullable="true" />
+            </EntityType>
+            <EntityType Name="ProjectPlanningRecurring">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+                <Property Name="AccountCode" Type="Edm.String" Nullable="true" />
+                <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+                <Property Name="BGTStatus" Type="Edm.Int16" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+                <Property Name="DayOrThe" Type="Edm.Int32" Nullable="true" />
+                <Property Name="Description" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+                <Property Name="EmployeeCode" Type="Edm.String" Nullable="true" />
+                <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+                <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="EndDateOrAfter" Type="Edm.Int32" Nullable="true" />
+                <Property Name="EndTime" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Hours" Type="Edm.Double" Nullable="true" />
+                <Property Name="HourType" Type="Edm.Guid" Nullable="true" />
+                <Property Name="HourTypeCode" Type="Edm.String" Nullable="true" />
+                <Property Name="HourTypeDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="MonthPatternDay" Type="Edm.Byte" Nullable="true" />
+                <Property Name="MonthPatternOrdinalDay" Type="Edm.Byte" Nullable="true" />
+                <Property Name="MonthPatternOrdinalWeek" Type="Edm.Byte" Nullable="true" />
+                <Property Name="Notes" Type="Edm.String" Nullable="true" />
+                <Property Name="NumberOfRecurrences" Type="Edm.Int16" Nullable="true" />
+                <Property Name="OverAllocate" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="PatternFrequency" Type="Edm.Byte" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectPlanningRecurringType" Type="Edm.Byte" Nullable="true" />
+                <Property Name="ProjectWBS" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectWBSDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="StartTime" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+                <Property Name="WeekPatternDay" Type="Edm.Byte" Nullable="true" />
+                <Property Name="WeekPatternFriday" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="WeekPatternMonday" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="WeekPatternSaturday" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="WeekPatternSunday" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="WeekPatternThursday" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="WeekPatternTuesday" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="WeekPatternWednesday" Type="Edm.Boolean" Nullable="true" />
+            </EntityType>
+            <EntityType Name="EmploymentInternalRate">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+                <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+                <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="false" />
+                <Property Name="Employment" Type="Edm.Guid" Nullable="false" />
+                <Property Name="EmploymentHID" Type="Edm.Int32" Nullable="false" />
+                <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="InternalRate" Type="Edm.Double" Nullable="true" />
+                <Property Name="IntercompanyRate" Type="Edm.Double" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" />
+            </EntityType>
+            <EntityType Name="ProjectAccountMutation">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Account" Type="Edm.Guid" Nullable="false" />
+                <Property Name="AccountCode" Type="Edm.String" Nullable="true" />
+                <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="DivisionName" Type="Edm.String" Nullable="true" />
+                <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Notes" Type="Edm.String" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="false" />
+                <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+            </EntityType>
+            <EntityType Name="WBSActivity">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="AutoCreateInvoiceTerm" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="BlockEntry" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="BudgetOverrunHours" Type="Edm.Byte" Nullable="true" />
+                <Property Name="BudgetedCost" Type="Edm.Double" Nullable="true" />
+                <Property Name="BudgetedHours" Type="Edm.Double" Nullable="true" />
+                <Property Name="BudgetedRevenue" Type="Edm.Double" Nullable="true" />
+                <Property Name="Completed" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+                <Property Name="DefaultItem" Type="Edm.Guid" Nullable="true" />
+                <Property Name="DefaultItemIsMandatory" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="Description" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="InvoiceDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="InvoiceMethod" Type="Edm.Int16" Nullable="true" />
+                <Property Name="InvoiceSeparately" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="InvoiceTerm" Type="Edm.Guid" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Notes" Type="Edm.String" Nullable="true" />
+                <Property Name="PartOf" Type="Edm.Guid" Nullable="true" />
+                <Property Name="PartOfDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="false" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectTermAction" Type="Edm.Int16" Nullable="true" />
+                <Property Name="ReleaseInvoiceTerm" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="ReleaseInvoiceTermDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="ReleaseInvoiceTermHasSpecifyDate" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="SequenceNumber" Type="Edm.Int32" Nullable="true" />
+                <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="TimeQuantityToAlert" Type="Edm.Double" Nullable="true" />
+                <Property Name="Type" Type="Edm.Int16" Nullable="true" />
+                <Property Name="UpdateAction" Type="Edm.Int16" Nullable="true" />
+            </EntityType>
+            <EntityType Name="WBSDeliverable">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Completed" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+                <Property Name="Description" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="Milestone" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Notes" Type="Edm.String" Nullable="true" />
+                <Property Name="PartOf" Type="Edm.Guid" Nullable="true" />
+                <Property Name="PartOfDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="false" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectTerm" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectTermDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ReleaseInvoiceTerm" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="ReleaseInvoiceTermDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="SequenceNumber" Type="Edm.Int32" Nullable="true" />
+                <Property Name="Type" Type="Edm.Int16" Nullable="true" />
+                <Property Name="ReleaseInvoiceTermHasSpecifyDate" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="UpdateAction" Type="Edm.Int16" Nullable="true" />
+            </EntityType>
+            <EntityType Name="WBSExpense">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="AutoCreateInvoiceTerm" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="BlockEntry" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="BlockRebilling" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="BudgetedCost" Type="Edm.Double" Nullable="true" />
+                <Property Name="BudgetedRevenue" Type="Edm.Double" Nullable="true" />
+                <Property Name="Completed" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+                <Property Name="Description" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="InvoiceDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="InvoiceMethod" Type="Edm.Int16" Nullable="true" />
+                <Property Name="InvoiceSeparately" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="InvoiceTerm" Type="Edm.Guid" Nullable="true" />
+                <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+                <Property Name="MarkupPercentage" Type="Edm.Double" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Notes" Type="Edm.String" Nullable="true" />
+                <Property Name="PartOf" Type="Edm.Guid" Nullable="true" />
+                <Property Name="PartOfDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="false" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectTermAction" Type="Edm.Int16" Nullable="true" />
+                <Property Name="ReleaseInvoiceTerm" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="ReleaseInvoiceTermDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="ReleaseInvoiceTermHasSpecifyDate" Type="Edm.Boolean" Nullable="true" />
+                <Property Name="PurchasePrice" Type="Edm.Double" Nullable="true" />
+                <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+                <Property Name="SequenceNumber" Type="Edm.Int32" Nullable="true" />
+                <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Supplier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="Type" Type="Edm.Int16" Nullable="true" />
+                <Property Name="UpdateAction" Type="Edm.Int16" Nullable="true" />
+            </EntityType>
+            <EntityType Name="ProjectRestrictionEmployeeItem" BaseType="Exact.Web.Api.Models.Project.ProjectRestriction">
+                <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+                <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+                <Property Name="Item" Type="Edm.Guid" Nullable="false" />
+                <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ItemIsTime" Type="Edm.Byte" Nullable="true" />
+            </EntityType>
+            <EntityType Name="ProjectClassification">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Code" Type="Edm.String" Nullable="true" />
+                <Property Name="CostCenter" Type="Edm.String" Nullable="true" />
+                <Property Name="CostCenterDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="CostUnit" Type="Edm.String" Nullable="true" />
+                <Property Name="CostUnitDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Description" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="DivisionName" Type="Edm.String" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="UseEmployeeCostCenter" Type="Edm.Boolean" Nullable="false" />
+            </EntityType>
+            <EntityType Name="TimeEntryAttachment">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+                <Property Name="AccountCode" Type="Edm.String" Nullable="true" />
+                <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+                <Property Name="Attachment" Type="Edm.Binary" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+                <Property Name="DocumentDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="FileName" Type="Edm.String" Nullable="true" />
+                <Property Name="FileSize" Type="Edm.Double" Nullable="false" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Subject" Type="Edm.String" Nullable="true" />
+                <Property Name="Type" Type="Edm.Int32" Nullable="true" />
+                <Property Name="Url" Type="Edm.String" Nullable="true" />
+            </EntityType>
+            <EntityType Name="TimeCostEntryFavorite">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+                <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+                <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="IsTime" Type="Edm.Byte" Nullable="false" />
+                <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectWBS" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ProjectWBSDescription" Type="Edm.String" Nullable="true" />
+            </EntityType>
+            <EntityType Name="ProjectProgressReport">
+                <Key>
+                    <PropertyRef Name="ID" />
+                </Key>
+                <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+                <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+                <Property Name="Description" Type="Edm.String" Nullable="true" />
+                <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+                <Property Name="EstimatedProjectEndDate" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="EstimatedPercentageCompleted" Type="Edm.Double" Nullable="true" />
+                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+                <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+                <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+                <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+                <Property Name="Project" Type="Edm.Guid" Nullable="false" />
+                <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+                <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+                <Property Name="ReferenceDate" Type="Edm.DateTime" Nullable="false" />
+                <Property Name="Report" Type="Edm.String" Nullable="true" />
+            </EntityType>
+            <Association Name="Project_BudgetedHoursPerHourType">
+                <End Role="Project" Type="Exact.Web.Api.Models.Project.Project" Multiplicity="*" />
+                <End Role="BudgetedHoursPerHourType" Type="Exact.Web.Api.Models.Project.ProjectHourBudget" Multiplicity="*" />
+            </Association>
+            <Association Name="Project_InvoiceTerms">
+                <End Role="Project" Type="Exact.Web.Api.Models.Project.Project" Multiplicity="*" />
+                <End Role="InvoiceTerms" Type="Exact.Web.Api.Models.Project.ProjectTerm" Multiplicity="*" />
+            </Association>
+            <Association Name="Project_ProjectRestrictionEmployees">
+                <End Role="Project" Type="Exact.Web.Api.Models.Project.Project" Multiplicity="*" />
+                <End Role="ProjectRestrictionEmployees" Type="Exact.Web.Api.Models.Project.ProjectRestrictionEmployee" Multiplicity="*" />
+            </Association>
+            <Association Name="Project_ProjectRestrictionItems">
+                <End Role="Project" Type="Exact.Web.Api.Models.Project.Project" Multiplicity="*" />
+                <End Role="ProjectRestrictionItems" Type="Exact.Web.Api.Models.Project.ProjectRestrictionItem" Multiplicity="*" />
+            </Association>
+            <Association Name="Project_ProjectRestrictionRebillings">
+                <End Role="Project" Type="Exact.Web.Api.Models.Project.Project" Multiplicity="*" />
+                <End Role="ProjectRestrictionRebillings" Type="Exact.Web.Api.Models.Project.ProjectRestrictionRebilling" Multiplicity="*" />
+            </Association>
+        </Schema>
+        <Schema Namespace="Exact.Web.Api.Entity.Project" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+            <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="CostTransactions" EntityType="Exact.Web.Api.Models.CostTransaction" />
+                <EntitySet Name="EmployeeRestrictionItems" EntityType="Exact.Web.Api.Models.Project.EmployeeRestrictionItem" />
+                <EntitySet Name="InvoiceTerms" EntityType="Exact.Web.Api.Models.Project.ProjectTerm" />
+                <EntitySet Name="ProjectBudgetTypes" EntityType="Exact.Web.Api.Models.Project.ProjectBudgetType" />
+                <EntitySet Name="ProjectHourBudgets" EntityType="Exact.Web.Api.Models.Project.ProjectHourBudget" />
+                <EntitySet Name="ProjectRestrictionEmployees" EntityType="Exact.Web.Api.Models.Project.ProjectRestrictionEmployee" />
+                <EntitySet Name="ProjectRestrictionItems" EntityType="Exact.Web.Api.Models.Project.ProjectRestrictionItem" />
+                <EntitySet Name="ProjectRestrictionRebillings" EntityType="Exact.Web.Api.Models.Project.ProjectRestrictionRebilling" />
+                <EntitySet Name="Projects" EntityType="Exact.Web.Api.Models.Project.Project" />
+                <EntitySet Name="TimeTransactions" EntityType="Exact.Web.Api.Models.TimeTransaction" />
+                <EntitySet Name="TimeCorrections" EntityType="Exact.Web.Api.Models.Project.TimeCorrection" />
+                <EntitySet Name="ProjectPlanning" EntityType="Exact.Web.Api.Models.Project.ProjectPlanning" />
+                <EntitySet Name="ProjectPlanningRecurring" EntityType="Exact.Web.Api.Models.Project.ProjectPlanningRecurring" />
+                <EntitySet Name="EmploymentInternalRates" EntityType="Exact.Web.Api.Models.Project.EmploymentInternalRate" />
+                <EntitySet Name="ProjectAccountMutations" EntityType="Exact.Web.Api.Models.Project.ProjectAccountMutation" />
+                <EntitySet Name="WBSActivities" EntityType="Exact.Web.Api.Models.Project.WBSActivity" />
+                <EntitySet Name="WBSDeliverables" EntityType="Exact.Web.Api.Models.Project.WBSDeliverable" />
+                <EntitySet Name="WBSExpenses" EntityType="Exact.Web.Api.Models.Project.WBSExpense" />
+                <EntitySet Name="ProjectRestrictionEmployeeItems" EntityType="Exact.Web.Api.Models.Project.ProjectRestrictionEmployeeItem" />
+                <EntitySet Name="ProjectClassifications" EntityType="Exact.Web.Api.Models.Project.ProjectClassification" />
+                <EntitySet Name="TimeEntryAttachments" EntityType="Exact.Web.Api.Models.Project.TimeEntryAttachment" />
+                <EntitySet Name="TimeCostEntryFavorites" EntityType="Exact.Web.Api.Models.Project.TimeCostEntryFavorite" />
+                <EntitySet Name="ProjectProgressReports" EntityType="Exact.Web.Api.Models.Project.ProjectProgressReport" />
+                <AssociationSet Name="Project_BudgetedHoursPerHourType" Association="Exact.Web.Api.Models.Project.Project_BudgetedHoursPerHourType">
+                    <End Role="Project" EntitySet="Projects" />
+                    <End Role="BudgetedHoursPerHourType" EntitySet="ProjectHourBudgets" />
+                </AssociationSet>
+                <AssociationSet Name="Project_InvoiceTerms" Association="Exact.Web.Api.Models.Project.Project_InvoiceTerms">
+                    <End Role="Project" EntitySet="Projects" />
+                    <End Role="InvoiceTerms" EntitySet="InvoiceTerms" />
+                </AssociationSet>
+                <AssociationSet Name="Project_ProjectRestrictionEmployees" Association="Exact.Web.Api.Models.Project.Project_ProjectRestrictionEmployees">
+                    <End Role="Project" EntitySet="Projects" />
+                    <End Role="ProjectRestrictionEmployees" EntitySet="ProjectRestrictionEmployees" />
+                </AssociationSet>
+                <AssociationSet Name="Project_ProjectRestrictionItems" Association="Exact.Web.Api.Models.Project.Project_ProjectRestrictionItems">
+                    <End Role="Project" EntitySet="Projects" />
+                    <End Role="ProjectRestrictionItems" EntitySet="ProjectRestrictionItems" />
+                </AssociationSet>
+                <AssociationSet Name="Project_ProjectRestrictionRebillings" Association="Exact.Web.Api.Models.Project.Project_ProjectRestrictionRebillings">
+                    <End Role="Project" EntitySet="Projects" />
+                    <End Role="ProjectRestrictionRebillings" EntitySet="ProjectRestrictionRebillings" />
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

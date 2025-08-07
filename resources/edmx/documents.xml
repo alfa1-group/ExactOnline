@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityType Name="Document">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="Body" Type="Edm.String" Nullable="true" />
+        <Property Name="Category" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CategoryDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Contact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ContactFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DocumentDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="DocumentFolder" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentFolderCode" Type="Edm.String" Nullable="true" />
+        <Property Name="DocumentFolderDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="DocumentViewUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="ExpiryDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="FinancialTransactionEntryID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="HasEmptyBody" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Language" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="ShopOrderNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Subject" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="true" />
+        <Property Name="TypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Opportunity" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ProposedEntryStatus" Type="Edm.Int16" Nullable="true" />
+        <Property Name="SalesInvoiceNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SalesOrderNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SendMethod" Type="Edm.Int32" Nullable="true" />
+        <Property Name="InheritShare" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="TeamsMeetingId" Type="Edm.String" Nullable="true" />
+        <Property Name="ContractNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="ContractID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ScanServiceStatus" Type="Edm.Int16" Nullable="true" />
+        <Property Name="EntryStatusDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DocumentCategory">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DocumentType">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="TypeCategory" Type="Edm.Int32" Nullable="true" />
+        <Property Name="DocumentIsCreatable" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DocumentIsUpdatable" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DocumentIsDeletable" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DocumentIsViewable" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityType Name="DocumentTypeCategory">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DocumentAttachment">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Attachment" Type="Edm.Binary" Nullable="true" />
+        <Property Name="FileName" Type="Edm.String" Nullable="true" />
+        <Property Name="FileSize" Type="Edm.Double" Nullable="false" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="DocumentFolder">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="ParentFolder" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Share" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="DocumentTypeFolder">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DocumentFolder" Type="Edm.Guid" Nullable="false" />
+        <Property Name="DocumentType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Documents" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Documents" EntityType="Exact.Web.Api.Models.Document" />
+        <EntitySet Name="DocumentCategories" EntityType="Exact.Web.Api.Models.DocumentCategory" />
+        <EntitySet Name="DocumentTypes" EntityType="Exact.Web.Api.Models.DocumentType" />
+        <EntitySet Name="DocumentTypeCategories" EntityType="Exact.Web.Api.Models.DocumentTypeCategory" />
+        <EntitySet Name="DocumentAttachments" EntityType="Exact.Web.Api.Models.DocumentAttachment" />
+        <EntitySet Name="DocumentFolders" EntityType="Exact.Web.Api.Models.DocumentFolder" />
+        <EntitySet Name="DocumentTypeFolders" EntityType="Exact.Web.Api.Models.DocumentTypeFolder" />
+        <FunctionImport Name="CanDeleteDocument" ReturnType="Edm.Boolean" m:HttpMethod="GET">
+          <Parameter Name="documentId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="CanShareDocumentWithClient" ReturnType="Edm.Boolean" m:HttpMethod="GET">
+          <Parameter Name="documentId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="ShareWithClient" ReturnType="Edm.Boolean" m:HttpMethod="POST">
+          <Parameter Name="documentId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="StopShareWithClient" ReturnType="Edm.Boolean" m:HttpMethod="POST">
+          <Parameter Name="documentId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="ShareWithClientDocumentFolder" ReturnType="Edm.Boolean" m:HttpMethod="POST">
+          <Parameter Name="documentFolderId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="StopShareWithClientDocumentFolder" ReturnType="Edm.Boolean" m:HttpMethod="POST">
+          <Parameter Name="documentFolderId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

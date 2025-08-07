@@ -8,7 +8,7 @@ internal class ExactRefreshTokenFileStorageService : IExactRefreshTokenStorageSe
 
     public Task StoreAsync(string refreshToken, CancellationToken cancellationToken = default)
     {
-        return File.AppendAllTextAsync(_filePath, refreshToken, cancellationToken);
+        return File.WriteAllTextAsync(_filePath, refreshToken, cancellationToken);
     }
 
     public Task<string> RetrieveAsync(CancellationToken cancellationToken = default)

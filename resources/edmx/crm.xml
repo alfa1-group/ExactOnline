@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="Account">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Accountant" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountManager" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountManagerFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountManagerHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ActivitySector" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ActivitySubSector" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AddressLine1" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressLine2" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressLine3" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="BankAccounts" Relationship="Exact.Web.Api.Models.Account_BankAccounts" FromRole="Account" ToRole="BankAccounts" />
+        <Property Name="Blocked" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="BRIN" Type="Edm.Guid" Nullable="true" />
+        <Property Name="BSN" Type="Edm.String" Nullable="true" />
+        <Property Name="BusinessType" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CanDropShip" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="ChamberOfCommerce" Type="Edm.String" Nullable="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" />
+        <Property Name="Classification" Type="Edm.String" Nullable="true" />
+        <Property Name="Classification1" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Classification2" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Classification3" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Classification4" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Classification5" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Classification6" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Classification7" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Classification8" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ClassificationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="CodeAtSupplier" Type="Edm.String" Nullable="true" />
+        <Property Name="CompanySize" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ConsolidationScenario" Type="Edm.Byte" Nullable="true" />
+        <Property Name="ControlledDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Costcenter" Type="Edm.String" Nullable="true" />
+        <Property Name="CostcenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CostPaid" Type="Edm.Byte" Nullable="false" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" />
+        <Property Name="CountryName" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="CreditLinePurchase" Type="Edm.Double" Nullable="true" />
+        <Property Name="CreditLineSales" Type="Edm.Double" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomerSince" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="DatevCreditorCode" Type="Edm.String" Nullable="true" />
+        <Property Name="DatevDebtorCode" Type="Edm.String" Nullable="true" />
+        <Property Name="DeliveryAdvice" Type="Edm.Byte" Nullable="true" />
+        <Property Name="DiscountPurchase" Type="Edm.Double" Nullable="true" />
+        <Property Name="DiscountSales" Type="Edm.Double" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DunsNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="Email" Type="Edm.String" Nullable="true" />
+        <Property Name="EnableSalesPaymentLink" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EstablishedDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Fax" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountPurchase" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountSales" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAP" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAR" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GlnNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="HasWithholdingTaxSales" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="IgnoreDatevWarningMessage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IncotermAddressPurchase" Type="Edm.String" Nullable="true" />
+        <Property Name="IncotermCodePurchase" Type="Edm.String" Nullable="true" />
+        <Property Name="IncotermVersionPurchase" Type="Edm.Int16" Nullable="true" />
+        <Property Name="IncotermAddressSales" Type="Edm.String" Nullable="true" />
+        <Property Name="IncotermCodeSales" Type="Edm.String" Nullable="true" />
+        <Property Name="IncotermVersionSales" Type="Edm.Int16" Nullable="true" />
+        <Property Name="IntraStatArea" Type="Edm.String" Nullable="true" />
+        <Property Name="IntraStatDeliveryTerm" Type="Edm.String" Nullable="true" />
+        <Property Name="IntraStatSystem" Type="Edm.String" Nullable="true" />
+        <Property Name="IntraStatTransactionA" Type="Edm.String" Nullable="true" />
+        <Property Name="IntraStatTransactionB" Type="Edm.String" Nullable="true" />
+        <Property Name="IntraStatTransportMethod" Type="Edm.String" Nullable="true" />
+        <Property Name="InvoiceAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="InvoiceAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="InvoiceAccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="InvoiceAttachmentType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="InvoicingMethod" Type="Edm.Int32" Nullable="true" />
+        <Property Name="AutomaticProcessProposedEntry" Type="Edm.Byte" Nullable="false" />
+        <Property Name="IsAccountant" Type="Edm.Byte" Nullable="false" />
+        <Property Name="IsAgency" Type="Edm.Byte" Nullable="false" />
+        <Property Name="IsAnonymised" Type="Edm.Byte" Nullable="false" />
+        <Property Name="IsBank" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="IsCompetitor" Type="Edm.Byte" Nullable="false" />
+        <Property Name="IsExtraDuty" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="IsMailing" Type="Edm.Byte" Nullable="false" />
+        <Property Name="IsMember" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="IsPilot" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="IsPurchase" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="IsReseller" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="IsSales" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="IsSupplier" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Language" Type="Edm.String" Nullable="true" />
+        <Property Name="LanguageDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Latitude" Type="Edm.Double" Nullable="true" />
+        <Property Name="LeadSource" Type="Edm.Guid" Nullable="true" />
+        <Property Name="LeadPurpose" Type="Edm.Guid" Nullable="true" />
+        <Property Name="LogoFileName" Type="Edm.String" Nullable="true" />
+        <Property Name="LogoThumbnailUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="LogoUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="Logo" Type="Edm.Binary" Nullable="true" />
+        <Property Name="Longitude" Type="Edm.Double" Nullable="true" />
+        <Property Name="MainContact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="OINNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="Parent" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PaymentConditionPurchase" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentConditionPurchaseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentConditionSales" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentConditionSalesDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PayAsYouEarn" Type="Edm.String" Nullable="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" />
+        <Property Name="PhoneExtension" Type="Edm.String" Nullable="true" />
+        <Property Name="Postcode" Type="Edm.String" Nullable="true" />
+        <Property Name="PriceList" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PurchaseCurrency" Type="Edm.String" Nullable="true" />
+        <Property Name="PurchaseCurrencyDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PurchaseLeadDays" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PurchaseVATCode" Type="Edm.String" Nullable="true" />
+        <Property Name="PurchaseVATCodeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+        <Property Name="RecepientOfCommissions" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Reseller" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ResellerCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ResellerName" Type="Edm.String" Nullable="true" />
+        <Property Name="RSIN" Type="Edm.String" Nullable="true" />
+        <Property Name="SalesCurrency" Type="Edm.String" Nullable="true" />
+        <Property Name="SalesCurrencyDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="SalesVATCode" Type="Edm.String" Nullable="true" />
+        <Property Name="SalesVATCodeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="SearchCode" Type="Edm.String" Nullable="true" />
+        <Property Name="SecurityLevel" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SeparateInvPerProject" Type="Edm.Byte" Nullable="false" />
+        <Property Name="SeparateInvPerSubscription" Type="Edm.Byte" Nullable="false" />
+        <Property Name="ShippingLeadDays" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ShippingMethod" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ShowRemarkForSales" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="State" Type="Edm.String" Nullable="true" />
+        <Property Name="StateName" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.String" Nullable="true" />
+        <Property Name="StatusSince" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="SalesTaxSchedule" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesTaxScheduleCode" Type="Edm.String" Nullable="true" />
+        <Property Name="SalesTaxScheduleDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="TradeName" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.String" Nullable="true" />
+        <Property Name="UniqueTaxpayerReference" Type="Edm.String" Nullable="true" />
+        <Property Name="VATLiability" Type="Edm.String" Nullable="true" />
+        <Property Name="VATNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="Website" Type="Edm.String" Nullable="true" />
+        <Property Name="EORINumber" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressSource" Type="Edm.Byte" Nullable="true" />
+        <Property Name="Source" Type="Edm.Byte" Nullable="true" />
+        <Property Name="PeppolIdentifierType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PeppolIdentifier" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="AccountClass">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="CreditManagementScenario" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="AccountClassification">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AccountClassificationName" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountClassificationNameDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="AccountClassificationName">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="SequenceNumber" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="BankAccount">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="Bank" Type="Edm.Guid" Nullable="true" />
+        <Property Name="BankAccount" Type="Edm.String" Nullable="true" />
+        <Property Name="BankAccountHolderName" Type="Edm.String" Nullable="true" />
+        <Property Name="BankDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="BankName" Type="Edm.String" Nullable="true" />
+        <Property Name="BICCode" Type="Edm.String" Nullable="true" />
+        <Property Name="Blocked" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Format" Type="Edm.String" Nullable="true" />
+        <Property Name="IBAN" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Main" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentServiceAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Type" Type="Edm.String" Nullable="true" />
+        <Property Name="TypeDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Contact">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountIsCustomer" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AccountIsSupplier" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="AccountMainContact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressLine2" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressStreet" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressStreetNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressStreetNumberSuffix" Type="Edm.String" Nullable="true" />
+        <Property Name="BirthDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="BirthName" Type="Edm.String" Nullable="true" />
+        <Property Name="BirthNamePrefix" Type="Edm.String" Nullable="true" />
+        <Property Name="BirthPlace" Type="Edm.String" Nullable="true" />
+        <Property Name="BusinessEmail" Type="Edm.String" Nullable="true" />
+        <Property Name="BusinessFax" Type="Edm.String" Nullable="true" />
+        <Property Name="BusinessMobile" Type="Edm.String" Nullable="true" />
+        <Property Name="BusinessPhone" Type="Edm.String" Nullable="true" />
+        <Property Name="BusinessPhoneExtension" Type="Edm.String" Nullable="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Email" Type="Edm.String" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="FirstName" Type="Edm.String" Nullable="true" />
+        <Property Name="FullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Gender" Type="Edm.String" Nullable="true" />
+        <Property Name="HID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="IdentificationDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="IdentificationUser" Type="Edm.Guid" Nullable="true" />
+        <Property Name="IdentificationDocument" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Initials" Type="Edm.String" Nullable="true" />
+        <Property Name="IsAnonymised" Type="Edm.Byte" Nullable="false" />
+        <Property Name="IsMailingExcluded" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="IsMainContact" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="JobTitleDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Language" Type="Edm.String" Nullable="true" />
+        <Property Name="LastName" Type="Edm.String" Nullable="true" />
+        <Property Name="MarketingNotes" Type="Edm.String" Nullable="true" />
+        <Property Name="MiddleName" Type="Edm.String" Nullable="true" />
+        <Property Name="Mobile" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Nationality" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="PartnerName" Type="Edm.String" Nullable="true" />
+        <Property Name="PartnerNamePrefix" Type="Edm.String" Nullable="true" />
+        <Property Name="Person" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" />
+        <Property Name="PhoneExtension" Type="Edm.String" Nullable="true" />
+        <Property Name="Picture" Type="Edm.Binary" Nullable="true" />
+        <Property Name="PictureName" Type="Edm.String" Nullable="true" />
+        <Property Name="PictureUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="PictureThumbnailUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="Postcode" Type="Edm.String" Nullable="true" />
+        <Property Name="SocialSecurityNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="State" Type="Edm.String" Nullable="true" />
+        <Property Name="Title" Type="Edm.String" Nullable="true" />
+        <Property Name="TitleDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="TitleAbbreviation" Type="Edm.String" Nullable="true" />
+        <Property Name="LeadPurpose" Type="Edm.Guid" Nullable="true" />
+        <Property Name="LeadSource" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AllowMailing" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Opportunity">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ActionDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="NextAction" Type="Edm.String" Nullable="true" />
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="CloseDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Number" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OpportunityStage" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OpportunityStageDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="OpportunityStatus" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Probability" Type="Edm.Double" Nullable="true" />
+        <Property Name="Owner" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OwnerFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="RateFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalesType" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ReasonCode" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ReasonCodeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Campaign" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CampaignDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="LeadSource" Type="Edm.Guid" Nullable="true" />
+        <Property Name="LeadSourceDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="OpportunityType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="OpportunityTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Channel" Type="Edm.Int16" Nullable="true" />
+        <Property Name="ChannelDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Accountant" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountantCode" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountantName" Type="Edm.String" Nullable="true" />
+        <Property Name="Reseller" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ResellerCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ResellerName" Type="Edm.String" Nullable="true" />
+        <Property Name="OpportunityDepartmentCode" Type="Edm.Int16" Nullable="true" />
+        <Property Name="OpportunityDepartmentDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <Property Name="Contact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ContactFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="HostingOpportunity">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ActionDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="NextAction" Type="Edm.String" Nullable="true" />
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="CloseDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Number" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OpportunityStage" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OpportunityStageDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="OpportunityStatus" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Probability" Type="Edm.Double" Nullable="true" />
+        <Property Name="Owner" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OwnerFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="RateFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalesType" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ReasonCode" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ReasonCodeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Campaign" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CampaignDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="LeadSource" Type="Edm.Guid" Nullable="true" />
+        <Property Name="LeadSourceDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="OpportunityType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="OpportunityTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Channel" Type="Edm.Int16" Nullable="true" />
+        <Property Name="ChannelDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Accountant" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountantCode" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountantName" Type="Edm.String" Nullable="true" />
+        <Property Name="Reseller" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ResellerCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ResellerName" Type="Edm.String" Nullable="true" />
+        <Property Name="OpportunityDepartmentCode" Type="Edm.Int16" Nullable="true" />
+        <Property Name="OpportunityDepartmentDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="LeadDeveloper" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DispatchToSales" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ReasonBack" Type="Edm.String" Nullable="true" />
+        <Property Name="BackToLeadDevelopment" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="CustomerDemandsDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="DecisionTimeframe" Type="Edm.String" Nullable="true" />
+        <Property Name="DecisionMakingUnitName" Type="Edm.String" Nullable="true" />
+        <Property Name="DecisionMakingUnitRole" Type="Edm.String" Nullable="true" />
+        <Property Name="IsAssociatedPrice" Type="Edm.Byte" Nullable="true" />
+        <Property Name="IsCustomerDemandsMeet" Type="Edm.Byte" Nullable="true" />
+      </EntityType>
+      <EntityType Name="OpportunityStage">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Active" Type="Edm.Byte" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="OpportunityStatus" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Probability" Type="Edm.Double" Nullable="false" />
+        <Property Name="SortOrder" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <Association Name="Account_BankAccounts">
+        <End Role="Account" Type="Exact.Web.Api.Models.Account" Multiplicity="*" />
+        <End Role="BankAccounts" Type="Exact.Web.Api.Models.BankAccount" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.CRM" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="BusinessType">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ShortDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="AddressState">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Country" Type="Edm.String" Nullable="true" />
+        <Property Name="DisplayValue" Type="Edm.String" Nullable="true" />
+        <Property Name="Latitude" Type="Edm.Double" Nullable="true" />
+        <Property Name="Longitude" Type="Edm.Double" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="State" Type="Edm.String" Nullable="true" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Address">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountIsSupplier" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressLine1" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressLine2" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressLine3" Type="Edm.String" Nullable="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" />
+        <Property Name="Contact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ContactName" Type="Edm.String" Nullable="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" />
+        <Property Name="CountryName" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Fax" Type="Edm.String" Nullable="true" />
+        <Property Name="FreeBoolField_01" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="FreeBoolField_02" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="FreeBoolField_03" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="FreeBoolField_04" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="FreeBoolField_05" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="FreeDateField_01" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="FreeDateField_02" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="FreeDateField_03" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="FreeDateField_04" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="FreeDateField_05" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="FreeNumberField_01" Type="Edm.Double" Nullable="true" />
+        <Property Name="FreeNumberField_02" Type="Edm.Double" Nullable="true" />
+        <Property Name="FreeNumberField_03" Type="Edm.Double" Nullable="true" />
+        <Property Name="FreeNumberField_04" Type="Edm.Double" Nullable="true" />
+        <Property Name="FreeNumberField_05" Type="Edm.Double" Nullable="true" />
+        <Property Name="FreeTextField_01" Type="Edm.String" Nullable="true" />
+        <Property Name="FreeTextField_02" Type="Edm.String" Nullable="true" />
+        <Property Name="FreeTextField_03" Type="Edm.String" Nullable="true" />
+        <Property Name="FreeTextField_04" Type="Edm.String" Nullable="true" />
+        <Property Name="FreeTextField_05" Type="Edm.String" Nullable="true" />
+        <Property Name="Mailbox" Type="Edm.String" Nullable="true" />
+        <Property Name="Main" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="NicNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" />
+        <Property Name="PhoneExtension" Type="Edm.String" Nullable="true" />
+        <Property Name="Postcode" Type="Edm.String" Nullable="true" />
+        <Property Name="State" Type="Edm.String" Nullable="true" />
+        <Property Name="StateDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Source" Type="Edm.Byte" Nullable="true" />
+      </EntityType>
+      <EntityType Name="QuotationLine">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="false" />
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="false" />
+        <Property Name="CostCenter" Type="Edm.String" Nullable="true" />
+        <Property Name="CostCenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CostUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="CostUnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomerItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Discount" Type="Edm.Double" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="NetPrice" Type="Edm.Double" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Optional" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="QuotationID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="QuotationNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="UnitCode" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitPrice" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATCode" Type="Edm.String" Nullable="true" />
+        <Property Name="VATDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATPercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="VersionNumber" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="QuotationOrderChargeLine">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountFCExclVAT" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountFCInclVAT" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountVATFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IsShippingCost" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="OrderCharge" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OrderChargeCode" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderChargeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderChargesLineDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="QuotationID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="VATCode" Type="Edm.String" Nullable="true" />
+        <Property Name="VATDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATPercentage" Type="Edm.Double" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Quotation">
+        <Key>
+          <PropertyRef Name="QuotationID" />
+        </Key>
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="false" />
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="false" />
+        <Property Name="AmountDiscount" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountDiscountExclVat" Type="Edm.Double" Nullable="true" />
+        <Property Name="CloseDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ClosingDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="DeliveryAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DeliveryAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="DeliveryAccountContact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DeliveryAccountContactFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="DeliveryAccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="DeliveryAddress" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DeliveryDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentSubject" Type="Edm.String" Nullable="true" />
+        <Property Name="DueDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="IncotermAddress" Type="Edm.String" Nullable="true" />
+        <Property Name="IncotermCode" Type="Edm.String" Nullable="true" />
+        <Property Name="IncotermVersion" Type="Edm.Int16" Nullable="true" />
+        <Property Name="InvoiceAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="InvoiceAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="InvoiceAccountContact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="InvoiceAccountContactFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="InvoiceAccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Opportunity" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OpportunityName" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OrderAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderAccountContact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OrderAccountContactFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderAccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentCondition" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentConditionDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="QuotationDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="QuotationID" Type="Edm.Guid" Nullable="false" />
+        <NavigationProperty Name="QuotationLines" Relationship="Exact.Web.Api.Models.CRM.Quotation_QuotationLines" FromRole="Quotation" ToRole="QuotationLines" />
+        <Property Name="QuotationNumber" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="QuotationOrderChargeLines" Relationship="Exact.Web.Api.Models.CRM.Quotation_QuotationOrderChargeLines" FromRole="Quotation" ToRole="QuotationOrderChargeLines" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+        <Property Name="SalesChannel" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesChannelCode" Type="Edm.String" Nullable="true" />
+        <Property Name="SalesChannelDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="SalesPerson" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesPersonFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="SelectionCode" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SelectionCodeCode" Type="Edm.String" Nullable="true" />
+        <Property Name="SelectionCodeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ShippingMethod" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ShippingMethodDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+        <Property Name="StatusDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="VersionNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="YourRef" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="PrintedQuotation">
+        <Key>
+          <PropertyRef Name="QuotationID" />
+        </Key>
+        <Property Name="QuotationID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ExtraText" Type="Edm.String" Nullable="true" />
+        <Property Name="QuotationDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentCreationError" Type="Edm.String" Nullable="true" />
+        <Property Name="DocumentCreationSuccess" Type="Edm.String" Nullable="true" />
+        <Property Name="DocumentLayout" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmailLayout" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmailCreationError" Type="Edm.String" Nullable="true" />
+        <Property Name="SenderEmailAddress" Type="Edm.String" Nullable="true" />
+        <Property Name="SendEmailToCustomer" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityType Name="AcceptedQuotation">
+        <Key>
+          <PropertyRef Name="QuotationID" />
+        </Key>
+        <Property Name="QuotationID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Action" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ReasonCode" Type="Edm.Guid" Nullable="true" />
+        <Property Name="InvoiceJournal" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectClassification" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ProjectPriceAgreement" Type="Edm.Double" Nullable="true" />
+        <Property Name="ProjectBudgetType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ProjectInvoicingAction" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ProjectInvoiceDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ProjectPrepaindTypes" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ProjectID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectWBSPartOf" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreateProjectWBS" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="CreateItemPriceAgreement" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="UpdateProjectBudgetAndPriceAgreement" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="YourRef" Type="Edm.String" Nullable="true" />
+        <Property Name="NotificationLayout" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SubscriptionType" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SubscriptionStartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="SubscriptionDescription" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="OptionalQuotationLineIDs" Relationship="Exact.Web.Api.Models.CRM.AcceptedQuotation_OptionalQuotationLineIDs" FromRole="AcceptedQuotation" ToRole="OptionalQuotationLineIDs" />
+        <Property Name="SalesOrderSuccess" Type="Edm.String" Nullable="true" />
+        <Property Name="SalesInvoiceSuccess" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectSuccess" Type="Edm.String" Nullable="true" />
+        <Property Name="AddToExistingProjectSuccess" Type="Edm.String" Nullable="true" />
+        <Property Name="SubscriptionSuccess" Type="Edm.String" Nullable="true" />
+        <Property Name="SuccessMessage" Type="Edm.String" Nullable="true" />
+        <Property Name="ErrorMessage" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="RejectedQuotation">
+        <Key>
+          <PropertyRef Name="QuotationID" />
+        </Key>
+        <Property Name="QuotationID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ReasonCode" Type="Edm.Guid" Nullable="true" />
+        <Property Name="NotificationLayout" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SuccessMessage" Type="Edm.String" Nullable="true" />
+        <Property Name="ErrorMessage" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ReopenedQuotation">
+        <Key>
+          <PropertyRef Name="QuotationID" />
+        </Key>
+        <Property Name="QuotationID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SuccessMessage" Type="Edm.String" Nullable="true" />
+        <Property Name="ErrorMessage" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ReviewedQuotation">
+        <Key>
+          <PropertyRef Name="QuotationID" />
+        </Key>
+        <Property Name="QuotationID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OrderAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OrderAccountContact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="QuotationDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PaymentCondition" Type="Edm.String" Nullable="true" />
+        <Property Name="CopyItemPrices" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="SuccessMessage" Type="Edm.String" Nullable="true" />
+        <Property Name="ErrorMessage" Type="Edm.String" Nullable="true" />
+        <Property Name="NewQuotationID" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ReasonCode">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Active" Type="Edm.Byte" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int16" Nullable="true" />
+        <Property Name="TypeDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="LeadSource">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="LeadPurpose">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="OptionalQuotationLineID">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="EmailWithSignedOffQuotation">
+        <Key>
+          <PropertyRef Name="QuotationID" />
+        </Key>
+        <Property Name="QuotationID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="AcceptOpportunityStage" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Action" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowProvideYourRef" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CreateItemPriceAgreement" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="CreateProjectWBS" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DocumentLayout" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ErrorMessage" Type="Edm.String" Nullable="true" />
+        <Property Name="ExtraText" Type="Edm.String" Nullable="true" />
+        <Property Name="InvoiceJournal" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectBudgetType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ProjectClassification" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectInvoiceDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ProjectInvoicingAction" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ProjectPrepaidTypes" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ProjectPriceAgreement" Type="Edm.Double" Nullable="true" />
+        <Property Name="ProjectType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ProjectWBSPartOf" Type="Edm.Guid" Nullable="true" />
+        <Property Name="QuotationDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="RejectOpportunityStage" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SubscriptionDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="SubscriptionDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="SubscriptionType" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SuccessMessage" Type="Edm.String" Nullable="true" />
+        <Property Name="UpdateProjectBudgetAndPriceAgreement" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="YourRef" Type="Edm.String" Nullable="true" />
+        <Property Name="AcceptEmailLayout" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmailLayout" Type="Edm.Guid" Nullable="false" />
+        <Property Name="RejectEmailLayout" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SenderEmailAddress" Type="Edm.String" Nullable="true" />
+        <Property Name="Subject" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SalesType">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Active" Type="Edm.Byte" Nullable="false" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <Association Name="Quotation_QuotationLines">
+        <End Role="Quotation" Type="Exact.Web.Api.Models.CRM.Quotation" Multiplicity="*" />
+        <End Role="QuotationLines" Type="Exact.Web.Api.Models.CRM.QuotationLine" Multiplicity="*" />
+      </Association>
+      <Association Name="Quotation_QuotationOrderChargeLines">
+        <End Role="Quotation" Type="Exact.Web.Api.Models.CRM.Quotation" Multiplicity="*" />
+        <End Role="QuotationOrderChargeLines" Type="Exact.Web.Api.Models.CRM.QuotationOrderChargeLine" Multiplicity="*" />
+      </Association>
+      <Association Name="AcceptedQuotation_OptionalQuotationLineIDs">
+        <End Role="AcceptedQuotation" Type="Exact.Web.Api.Models.CRM.AcceptedQuotation" Multiplicity="*" />
+        <End Role="OptionalQuotationLineIDs" Type="Exact.Web.Api.Models.CRM.OptionalQuotationLineID" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.CRM" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Accounts" EntityType="Exact.Web.Api.Models.Account" />
+        <EntitySet Name="AccountClasses" EntityType="Exact.Web.Api.Models.AccountClass" />
+        <EntitySet Name="AccountClassifications" EntityType="Exact.Web.Api.Models.AccountClassification" />
+        <EntitySet Name="AccountClassificationNames" EntityType="Exact.Web.Api.Models.AccountClassificationName" />
+        <EntitySet Name="BankAccounts" EntityType="Exact.Web.Api.Models.BankAccount" />
+        <EntitySet Name="BusinessTypes" EntityType="Exact.Web.Api.Models.CRM.BusinessType" />
+        <EntitySet Name="Contacts" EntityType="Exact.Web.Api.Models.Contact" />
+        <EntitySet Name="Opportunities" EntityType="Exact.Web.Api.Models.Opportunity" />
+        <EntitySet Name="HostingOpportunities" EntityType="Exact.Web.Api.Models.HostingOpportunity" />
+        <EntitySet Name="OpportunityStages" EntityType="Exact.Web.Api.Models.OpportunityStage" />
+        <EntitySet Name="AddressStates" EntityType="Exact.Web.Api.Models.CRM.AddressState" />
+        <EntitySet Name="Addresses" EntityType="Exact.Web.Api.Models.CRM.Address" />
+        <EntitySet Name="QuotationLines" EntityType="Exact.Web.Api.Models.CRM.QuotationLine" />
+        <EntitySet Name="QuotationOrderChargeLines" EntityType="Exact.Web.Api.Models.CRM.QuotationOrderChargeLine" />
+        <EntitySet Name="Quotations" EntityType="Exact.Web.Api.Models.CRM.Quotation" />
+        <EntitySet Name="PrintQuotation" EntityType="Exact.Web.Api.Models.CRM.PrintedQuotation" />
+        <EntitySet Name="AcceptQuotation" EntityType="Exact.Web.Api.Models.CRM.AcceptedQuotation" />
+        <EntitySet Name="RejectQuotation" EntityType="Exact.Web.Api.Models.CRM.RejectedQuotation" />
+        <EntitySet Name="ReopenQuotation" EntityType="Exact.Web.Api.Models.CRM.ReopenedQuotation" />
+        <EntitySet Name="ReviewQuotation" EntityType="Exact.Web.Api.Models.CRM.ReviewedQuotation" />
+        <EntitySet Name="ReasonCodes" EntityType="Exact.Web.Api.Models.CRM.ReasonCode" />
+        <EntitySet Name="LeadSources" EntityType="Exact.Web.Api.Models.CRM.LeadSource" />
+        <EntitySet Name="LeadPurposes" EntityType="Exact.Web.Api.Models.CRM.LeadPurpose" />
+        <EntitySet Name="OptionalQuotationLineID" EntityType="Exact.Web.Api.Models.CRM.OptionalQuotationLineID" />
+        <EntitySet Name="EmailWithSignOffQuotation" EntityType="Exact.Web.Api.Models.CRM.EmailWithSignedOffQuotation" />
+        <EntitySet Name="SalesTypes" EntityType="Exact.Web.Api.Models.CRM.SalesType" />
+        <AssociationSet Name="Account_BankAccounts" Association="Exact.Web.Api.Models.Account_BankAccounts">
+          <End Role="Account" EntitySet="Accounts" />
+          <End Role="BankAccounts" EntitySet="BankAccounts" />
+        </AssociationSet>
+        <AssociationSet Name="Quotation_QuotationLines" Association="Exact.Web.Api.Models.CRM.Quotation_QuotationLines">
+          <End Role="Quotation" EntitySet="Quotations" />
+          <End Role="QuotationLines" EntitySet="QuotationLines" />
+        </AssociationSet>
+        <AssociationSet Name="Quotation_QuotationOrderChargeLines" Association="Exact.Web.Api.Models.CRM.Quotation_QuotationOrderChargeLines">
+          <End Role="Quotation" EntitySet="Quotations" />
+          <End Role="QuotationOrderChargeLines" EntitySet="QuotationOrderChargeLines" />
+        </AssociationSet>
+        <AssociationSet Name="AcceptedQuotation_OptionalQuotationLineIDs" Association="Exact.Web.Api.Models.CRM.AcceptedQuotation_OptionalQuotationLineIDs">
+          <End Role="AcceptedQuotation" EntitySet="AcceptQuotation" />
+          <End Role="OptionalQuotationLineIDs" EntitySet="OptionalQuotationLineID" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models.Sync.Deleted" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="DeletedEntity">
+        <Key>
+          <PropertyRef Name="Timestamp" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Timestamp" Type="Edm.Int64" Nullable="false" />
+        <Property Name="EntityKey" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EntityType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DeletedDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DeletedBy" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Sync" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Deleted" EntityType="Exact.Web.Api.Models.Sync.Deleted.DeletedEntity" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
