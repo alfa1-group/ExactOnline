@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollTransactionsByP
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayrollTransactionsByPayrollYearRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollTransactionsByPayrollYear{?%24filter*,%24select*}", pathParameters)
+        public PayrollTransactionsByPayrollYearRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollTransactionsByPayrollYear?payrollYear={payrollYear}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollTransactionsByP
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayrollTransactionsByPayrollYearRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollTransactionsByPayrollYear{?%24filter*,%24select*}", rawUrl)
+        public PayrollTransactionsByPayrollYearRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollTransactionsByPayrollYear?payrollYear={payrollYear}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -95,6 +95,9 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollTransactionsByP
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
+            /// <summary>Query parameter of type Edm.Int32</summary>
+            [QueryParameter("payrollYear")]
+            public int? PayrollYear { get; set; }
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

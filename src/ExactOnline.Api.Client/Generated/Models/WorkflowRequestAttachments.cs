@@ -14,30 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The division</summary>
-        public int? Division { get; set; }
-        /// <summary>To get the file in its original format (xml, jpg, pdf, etc.) append &amp;Download=1 to the url.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DownloadUrl { get; set; }
-#nullable restore
-#else
-        public string DownloadUrl { get; set; }
-#endif
-        /// <summary>Filename of the attachment</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FileName { get; set; }
-#nullable restore
-#else
-        public string FileName { get; set; }
-#endif
-        /// <summary>File size of the attachment</summary>
-        public double? FileSize { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>The request this attachment is linked to</summary>
-        public Guid? Request { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.WorkflowRequestAttachments"/> and sets the default values.
         /// </summary>
@@ -63,12 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "DownloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
-                { "FileName", n => { FileName = n.GetStringValue(); } },
-                { "FileSize", n => { FileSize = n.GetDoubleValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Request", n => { Request = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -78,12 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Division", Division);
-            writer.WriteStringValue("DownloadUrl", DownloadUrl);
-            writer.WriteStringValue("FileName", FileName);
-            writer.WriteDoubleValue("FileSize", FileSize);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Request", Request);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

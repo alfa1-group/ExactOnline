@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListByA
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AgingPayablesListByAgeGroupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/AgingPayablesListByAgeGroup{?%24filter*,%24select*}", pathParameters)
+        public AgingPayablesListByAgeGroupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/AgingPayablesListByAgeGroup?ageGroup={ageGroup}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListByA
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AgingPayablesListByAgeGroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/AgingPayablesListByAgeGroup{?%24filter*,%24select*}", rawUrl)
+        public AgingPayablesListByAgeGroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/AgingPayablesListByAgeGroup?ageGroup={ageGroup}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,6 +85,9 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListByA
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AgingPayablesListByAgeGroupRequestBuilderGetQueryParameters 
         {
+            /// <summary>Query parameter of type Edm.Int32</summary>
+            [QueryParameter("ageGroup")]
+            public int? AgeGroup { get; set; }
             /// <summary>OData filter, e.g., `ID eq guid&apos;00000000-0000-0000-0000-000000000000&apos;`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

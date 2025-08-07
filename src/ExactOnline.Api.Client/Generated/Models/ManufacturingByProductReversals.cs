@@ -14,126 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>ID of creating user</summary>
-        public Guid? CreatedBy { get; set; }
-        /// <summary>Name of the creating user</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatedByFullName { get; set; }
-#nullable restore
-#else
-        public string CreatedByFullName { get; set; }
-#endif
-        /// <summary>Date of this reversal</summary>
-        public DateTimeOffset? CreatedDate { get; set; }
-        /// <summary>Boolean indicating if this reversal was the result of shop order backflushing, processed during a ShopOrderReversal</summary>
-        public bool? IsBackflush { get; set; }
-        /// <summary>Does the ByProductReversal&apos;s item use batch numbers</summary>
-        public int? IsBatch { get; set; }
-        /// <summary>Indicates if fractions (for example 0.35) are allowed for quantities of the ByProductReversal&apos;s item</summary>
-        public int? IsFractionAllowedItem { get; set; }
-        /// <summary>Does the ByProductReversal&apos;s item use serial numbers</summary>
-        public int? IsSerial { get; set; }
-        /// <summary>Item reversed</summary>
-        public Guid? Item { get; set; }
-        /// <summary>Code of item reversed</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemCode { get; set; }
-#nullable restore
-#else
-        public string ItemCode { get; set; }
-#endif
-        /// <summary>Description of item reversed</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemDescription { get; set; }
-#nullable restore
-#else
-        public string ItemDescription { get; set; }
-#endif
-        /// <summary>Picture url of by-product item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemPictureUrl { get; set; }
-#nullable restore
-#else
-        public string ItemPictureUrl { get; set; }
-#endif
-        /// <summary>Notes associated with this reversal</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Note { get; set; }
-#nullable restore
-#else
-        public string Note { get; set; }
-#endif
-        /// <summary>ID of the original stock transaction, which was reversed</summary>
-        public Guid? OriginalStockTransactionId { get; set; }
-        /// <summary>Quantity reversed</summary>
-        public double? Quantity { get; set; }
-        /// <summary>ID of stock transaction related to this ByProductReversal</summary>
-        public Guid? ReversalStockTransactionId { get; set; }
-        /// <summary>Shop order being reversed to</summary>
-        public Guid? ShopOrder { get; set; }
-        /// <summary>ID of shop order material plan</summary>
-        public Guid? ShopOrderMaterialPlan { get; set; }
-        /// <summary>Number of shop order being reversed to</summary>
-        public int? ShopOrderNumber { get; set; }
-        /// <summary>ID of storage location reversed from</summary>
-        public Guid? StorageLocation { get; set; }
-        /// <summary>Code of storage location reversed from</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StorageLocationCode { get; set; }
-#nullable restore
-#else
-        public string StorageLocationCode { get; set; }
-#endif
-        /// <summary>Description of storage location reversed from</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StorageLocationDescription { get; set; }
-#nullable restore
-#else
-        public string StorageLocationDescription { get; set; }
-#endif
-        /// <summary>Effective date of this ByProductReversal</summary>
-        public DateTimeOffset? TransactionDate { get; set; }
-        /// <summary>Unit of measurement abbreviation of item reversed</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Unit { get; set; }
-#nullable restore
-#else
-        public string Unit { get; set; }
-#endif
-        /// <summary>Unit of measurement of item reversed</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UnitDescription { get; set; }
-#nullable restore
-#else
-        public string UnitDescription { get; set; }
-#endif
-        /// <summary>ID of warehouse reversed from</summary>
-        public Guid? Warehouse { get; set; }
-        /// <summary>Code of warehouse reversed from</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WarehouseCode { get; set; }
-#nullable restore
-#else
-        public string WarehouseCode { get; set; }
-#endif
-        /// <summary>Description of warehouse reversed from</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WarehouseDescription { get; set; }
-#nullable restore
-#else
-        public string WarehouseDescription { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingByProductReversals"/> and sets the default values.
         /// </summary>
@@ -159,33 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CreatedBy", n => { CreatedBy = n.GetGuidValue(); } },
-                { "CreatedByFullName", n => { CreatedByFullName = n.GetStringValue(); } },
-                { "CreatedDate", n => { CreatedDate = n.GetDateTimeOffsetValue(); } },
-                { "IsBackflush", n => { IsBackflush = n.GetBoolValue(); } },
-                { "IsBatch", n => { IsBatch = n.GetIntValue(); } },
-                { "IsFractionAllowedItem", n => { IsFractionAllowedItem = n.GetIntValue(); } },
-                { "IsSerial", n => { IsSerial = n.GetIntValue(); } },
-                { "Item", n => { Item = n.GetGuidValue(); } },
-                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
-                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
-                { "ItemPictureUrl", n => { ItemPictureUrl = n.GetStringValue(); } },
-                { "Note", n => { Note = n.GetStringValue(); } },
-                { "OriginalStockTransactionId", n => { OriginalStockTransactionId = n.GetGuidValue(); } },
-                { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
-                { "ReversalStockTransactionId", n => { ReversalStockTransactionId = n.GetGuidValue(); } },
-                { "ShopOrder", n => { ShopOrder = n.GetGuidValue(); } },
-                { "ShopOrderMaterialPlan", n => { ShopOrderMaterialPlan = n.GetGuidValue(); } },
-                { "ShopOrderNumber", n => { ShopOrderNumber = n.GetIntValue(); } },
-                { "StorageLocation", n => { StorageLocation = n.GetGuidValue(); } },
-                { "StorageLocationCode", n => { StorageLocationCode = n.GetStringValue(); } },
-                { "StorageLocationDescription", n => { StorageLocationDescription = n.GetStringValue(); } },
-                { "TransactionDate", n => { TransactionDate = n.GetDateTimeOffsetValue(); } },
-                { "Unit", n => { Unit = n.GetStringValue(); } },
-                { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
-                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
-                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
-                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -195,33 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("CreatedBy", CreatedBy);
-            writer.WriteStringValue("CreatedByFullName", CreatedByFullName);
-            writer.WriteDateTimeOffsetValue("CreatedDate", CreatedDate);
-            writer.WriteBoolValue("IsBackflush", IsBackflush);
-            writer.WriteIntValue("IsBatch", IsBatch);
-            writer.WriteIntValue("IsFractionAllowedItem", IsFractionAllowedItem);
-            writer.WriteIntValue("IsSerial", IsSerial);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteStringValue("ItemPictureUrl", ItemPictureUrl);
-            writer.WriteStringValue("Note", Note);
-            writer.WriteGuidValue("OriginalStockTransactionId", OriginalStockTransactionId);
-            writer.WriteDoubleValue("Quantity", Quantity);
-            writer.WriteGuidValue("ReversalStockTransactionId", ReversalStockTransactionId);
-            writer.WriteGuidValue("ShopOrder", ShopOrder);
-            writer.WriteGuidValue("ShopOrderMaterialPlan", ShopOrderMaterialPlan);
-            writer.WriteIntValue("ShopOrderNumber", ShopOrderNumber);
-            writer.WriteGuidValue("StorageLocation", StorageLocation);
-            writer.WriteStringValue("StorageLocationCode", StorageLocationCode);
-            writer.WriteStringValue("StorageLocationDescription", StorageLocationDescription);
-            writer.WriteDateTimeOffsetValue("TransactionDate", TransactionDate);
-            writer.WriteStringValue("Unit", Unit);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

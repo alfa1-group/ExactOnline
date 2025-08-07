@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturns
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Create a new planned sales return.&amp;emsp;&amp;#149; Retrieve an existing planned sales return.&amp;emsp;&amp;#149; Update the draft planned sales return&apos;s description and planned return date&amp;emsp;&amp;#149; Delete a draft planned sales return.A planned sales return allows a more efficient handling of legitimate returns from your customer.For more information about the planned sales return functionality in Exact Online, see Sales Return.
+    /// Use this endpoint to : • Create a new planned sales return. • Retrieve an existing planned sales return. • Update the draft planned sales return&apos;s description and planned return date • Delete a draft planned sales return.A planned sales return allows a more efficient handling of legitimate returns from your customer.For more information about the planned sales return functionality in Exact Online, see Sales Return.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PlannedSalesReturnsRequestBuilder : BaseRequestBuilder

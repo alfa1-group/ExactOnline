@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Read.Sync.Sync.SyncTimestamp
 {
     /// <summary>
-    /// The sync APIs have the goal to keep the data between Exact Online and a 3rd party application the same. When you use the Sync APIs for the first time, you might not want to sync all data, but you want to start syncing on a particular date. Via the Modified date filter, you can retrieve a single timestamp and use it in the Sync APIs. You must provide datetime as &apos;modified&apos; and name of the endpoint as &apos;endpoint&apos; to filter on property &apos;Modified&apos; of each sync endpoint. The first record found will be return based on the greater than or equal to logical operator.  You can provide the endPoint value based on the following supported endPoints: &amp;nbsp &amp;nbsp &amp;#8226; sync/CRM/QuotationHeaders use QuotationHeaders as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/CRM/QuotationLines use QuotationLines as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Financial/TransactionLines use TransactionLines as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Inventory/ItemStorageLocations use ItemStorageLocations as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Manufacturing/ShopOrders use ShopOrders as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Manufacturing/ShopOrderMaterialPlans use ShopOrderMaterialPlans as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Manufacturing/ShopOrderRoutingStepPlans use ShopOrderRoutingStepPlans as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Manufacturing/ShopOrderPurchasePlanning use ShopOrderPurchasePlanning as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Manufacturing/ShopOrderSubOrders use ShopOrderSubOrders as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Manufacturing/MaterialIssues use MaterialIssues as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Manufacturing/BillOfMaterialVersions use BillOfMaterialVersions as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Manufacturing/BillOfMaterialMaterials use BillOfMaterialMaterials as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/PurchaseOrder/PurchaseOrders use PurchaseOrders as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Project/Projects use Projects as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Project/ProjectPlanning use ProjectPlanning as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Project/ProjectWBS use ProjectWBS as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Project/TimeCostTransactions use TimeCostTransactions as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/SalesInvoice/SalesInvoices use SalesInvoices as as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/SalesOrder/GoodsDeliveries use GoodsDeliveries as as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/SalesOrder/GoodsDeliveryLines use GoodsDeliveryLines as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/SalesOrder/SalesOrderHeaders use SalesOrderHeaders as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/SalesOrder/SalesOrderLines use SalesOrderLines as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Subscription/Subscriptions use Subscriptions as endPoint value. &amp;nbsp &amp;nbsp &amp;#8226; sync/Subscription/SubscriptionLines use SubscriptionLines as endPoint value.  For example : modified=datetime&apos;2022-01-01&apos;&amp;endPoint=&apos;QuotationHeaders&apos; For this function to work correctly, you must supply all parameters.
+    /// The sync APIs have the goal to keep the data between Exact Online and a 3rd party application the same. When you use the Sync APIs for the first time, you might not want to sync all data, but you want to start syncing on a particular date. Via the Modified date filter, you can retrieve a single timestamp and use it in the Sync APIs. You must provide datetime as &apos;modified&apos; and name of the endpoint as &apos;endpoint&apos; to filter on property &apos;Modified&apos; of each sync endpoint. The first record found will be return based on the greater than or equal to logical operator.  You can provide the endPoint value based on the following supported endPoints: &amp;nbsp; &amp;nbsp; • sync/CRM/QuotationHeaders use QuotationHeaders as endPoint value. &amp;nbsp; &amp;nbsp; • sync/CRM/QuotationLines use QuotationLines as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Financial/TransactionLines use TransactionLines as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Inventory/ItemStorageLocations use ItemStorageLocations as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Manufacturing/ShopOrders use ShopOrders as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Manufacturing/ShopOrderMaterialPlans use ShopOrderMaterialPlans as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Manufacturing/ShopOrderRoutingStepPlans use ShopOrderRoutingStepPlans as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Manufacturing/ShopOrderPurchasePlanning use ShopOrderPurchasePlanning as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Manufacturing/ShopOrderSubOrders use ShopOrderSubOrders as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Manufacturing/MaterialIssues use MaterialIssues as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Manufacturing/BillOfMaterialVersions use BillOfMaterialVersions as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Manufacturing/BillOfMaterialMaterials use BillOfMaterialMaterials as endPoint value. &amp;nbsp; &amp;nbsp; • sync/PurchaseOrder/PurchaseOrders use PurchaseOrders as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Project/Projects use Projects as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Project/ProjectPlanning use ProjectPlanning as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Project/ProjectWBS use ProjectWBS as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Project/TimeCostTransactions use TimeCostTransactions as endPoint value. &amp;nbsp; &amp;nbsp; • sync/SalesInvoice/SalesInvoices use SalesInvoices as as endPoint value. &amp;nbsp; &amp;nbsp; • sync/SalesOrder/GoodsDeliveries use GoodsDeliveries as as endPoint value. &amp;nbsp; &amp;nbsp; • sync/SalesOrder/GoodsDeliveryLines use GoodsDeliveryLines as endPoint value. &amp;nbsp; &amp;nbsp; • sync/SalesOrder/SalesOrderHeaders use SalesOrderHeaders as endPoint value. &amp;nbsp; &amp;nbsp; • sync/SalesOrder/SalesOrderLines use SalesOrderLines as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Subscription/Subscriptions use Subscriptions as endPoint value. &amp;nbsp; &amp;nbsp; • sync/Subscription/SubscriptionLines use SubscriptionLines as endPoint value.  For example : modified=datetime&apos;2022-01-01&apos;&amp;amp;endPoint=&apos;QuotationHeaders&apos; For this function to work correctly, you must supply all parameters.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SyncTimestampRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Sync.Sync.SyncTimestamp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SyncTimestampRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/sync/Sync/SyncTimestamp{?%24filter*,%24select*}", pathParameters)
+        public SyncTimestampRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/sync/Sync/SyncTimestamp?endPoint={endPoint}&modified={modified}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Sync.Sync.SyncTimestamp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SyncTimestampRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/sync/Sync/SyncTimestamp{?%24filter*,%24select*}", rawUrl)
+        public SyncTimestampRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/sync/Sync/SyncTimestamp?endPoint={endPoint}&modified={modified}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,6 +85,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Sync.Sync.SyncTimestamp
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SyncTimestampRequestBuilderGetQueryParameters 
         {
+            /// <summary>Query parameter of type Edm.String</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("endPoint")]
+            public string? EndPoint { get; set; }
+#nullable restore
+#else
+            [QueryParameter("endPoint")]
+            public string EndPoint { get; set; }
+#endif
             /// <summary>OData filter, e.g., `ID eq guid&apos;00000000-0000-0000-0000-000000000000&apos;`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +104,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Sync.Sync.SyncTimestamp
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.DateTime</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("modified")]
+            public string? Modified { get; set; }
+#nullable restore
+#else
+            [QueryParameter("modified")]
+            public string Modified { get; set; }
 #endif
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

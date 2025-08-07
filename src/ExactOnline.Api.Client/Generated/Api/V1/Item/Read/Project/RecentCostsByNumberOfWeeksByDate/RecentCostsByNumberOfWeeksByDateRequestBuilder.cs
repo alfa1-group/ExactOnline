@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfW
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecentCostsByNumberOfWeeksByDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/RecentCostsByNumberOfWeeksByDate{?%24filter*,%24select*}", pathParameters)
+        public RecentCostsByNumberOfWeeksByDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/RecentCostsByNumberOfWeeksByDate?numberOfWeeks={numberOfWeeks}&referenceDate={referenceDate}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfW
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecentCostsByNumberOfWeeksByDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/RecentCostsByNumberOfWeeksByDate{?%24filter*,%24select*}", rawUrl)
+        public RecentCostsByNumberOfWeeksByDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/RecentCostsByNumberOfWeeksByDate?numberOfWeeks={numberOfWeeks}&referenceDate={referenceDate}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -94,6 +94,19 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfW
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.Int32</summary>
+            [QueryParameter("numberOfWeeks")]
+            public int? NumberOfWeeks { get; set; }
+            /// <summary>Query parameter of type Edm.DateTime</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("referenceDate")]
+            public string? ReferenceDate { get; set; }
+#nullable restore
+#else
+            [QueryParameter("referenceDate")]
+            public string ReferenceDate { get; set; }
 #endif
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

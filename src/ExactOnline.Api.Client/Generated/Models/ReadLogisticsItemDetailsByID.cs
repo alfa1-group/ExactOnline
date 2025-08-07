@@ -14,38 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Item code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Code { get; set; }
-#nullable restore
-#else
-        public string Code { get; set; }
-#endif
-        /// <summary>Description of the item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>A guid that is the unique identifier of the item</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Indicates if fractions (for example 0.35) are allowed for quantities of this item</summary>
-        public bool? IsFractionAllowedItem { get; set; }
-        /// <summary>Indicates if the item can be sold</summary>
-        public bool? IsSalesItem { get; set; }
-        /// <summary>Currency of the sales price</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SalesCurrency { get; set; }
-#nullable restore
-#else
-        public string SalesCurrency { get; set; }
-#endif
-        /// <summary>Sales price of the item</summary>
-        public double? SalesPrice { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadLogisticsItemDetailsByID"/> and sets the default values.
         /// </summary>
@@ -71,13 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Code", n => { Code = n.GetStringValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "IsFractionAllowedItem", n => { IsFractionAllowedItem = n.GetBoolValue(); } },
-                { "IsSalesItem", n => { IsSalesItem = n.GetBoolValue(); } },
-                { "SalesCurrency", n => { SalesCurrency = n.GetStringValue(); } },
-                { "SalesPrice", n => { SalesPrice = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -87,13 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Code", Code);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteBoolValue("IsFractionAllowedItem", IsFractionAllowedItem);
-            writer.WriteBoolValue("IsSalesItem", IsSalesItem);
-            writer.WriteStringValue("SalesCurrency", SalesCurrency);
-            writer.WriteDoubleValue("SalesPrice", SalesPrice);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

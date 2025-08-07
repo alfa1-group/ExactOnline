@@ -14,52 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of the creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of the creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Description</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Indicates the date and time when te role becomes inactive for the user</summary>
-        public DateTimeOffset? EndDate { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of the last modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of the last modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>The role that the user is linked to</summary>
-        public int? Role { get; set; }
-        /// <summary>Rolelevel sets the level on which a role for a user is active. This can be: 1 = Database, 2 = Customer, 3 = Division, 100 = Transferred to accountant</summary>
-        public int? RoleLevel { get; set; }
-        /// <summary>Indicates the date when the role becomes active for the user</summary>
-        public DateTimeOffset? StartDate { get; set; }
-        /// <summary>The user that is linked to the role</summary>
-        public Guid? UserID { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.UsersUserRolesPerDivision"/> and sets the default values.
         /// </summary>
@@ -85,20 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Role", n => { Role = n.GetIntValue(); } },
-                { "RoleLevel", n => { RoleLevel = n.GetIntValue(); } },
-                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "UserID", n => { UserID = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -108,20 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteIntValue("Role", Role);
-            writer.WriteIntValue("RoleLevel", RoleLevel);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteGuidValue("UserID", UserID);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

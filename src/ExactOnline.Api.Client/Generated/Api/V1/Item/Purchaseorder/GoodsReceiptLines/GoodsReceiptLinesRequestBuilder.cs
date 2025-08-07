@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptLines
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Create new goods receipt lines.&amp;emsp;&amp;#149; Read existing goods receipt lines. Note: Goods receipt lines should not be posted individually. They should be part of the GoodsReceipts Post. For creating goods receipt lines, it is mandatory to supply PurchaseOrderLineID. If QuantityReceived is not supplied, then the count of the remaining quantity will be used. The received quantity cannot be greater than quantity to be received unless the company enables &apos;Receipt of more than ordered is allowed&apos; setting.For more information about the  functionality in Exact Online, see Goods receipts.
+    /// Use this endpoint to : • Create new goods receipt lines. • Read existing goods receipt lines. Note: Goods receipt lines should not be posted individually. They should be part of the GoodsReceipts Post. For creating goods receipt lines, it is mandatory to supply PurchaseOrderLineID. If QuantityReceived is not supplied, then the count of the remaining quantity will be used. The received quantity cannot be greater than quantity to be received unless the company enables &apos;Receipt of more than ordered is allowed&apos; setting.For more information about the  functionality in Exact Online, see Goods receipts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GoodsReceiptLinesRequestBuilder : BaseRequestBuilder

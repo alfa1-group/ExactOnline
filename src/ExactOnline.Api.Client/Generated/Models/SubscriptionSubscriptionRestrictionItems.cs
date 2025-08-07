@@ -14,64 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Date and time when the subscription restriction was created</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>ID of user that created the subscription restriction</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Full name of user that created the subscription restriction</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Id of item linked to the subscription restriction</summary>
-        public Guid? Item { get; set; }
-        /// <summary>Code of item that linked to the subscription restriction</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemCode { get; set; }
-#nullable restore
-#else
-        public string ItemCode { get; set; }
-#endif
-        /// <summary>Description of item that linked to the subscription restriction</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemDescription { get; set; }
-#nullable restore
-#else
-        public string ItemDescription { get; set; }
-#endif
-        /// <summary>Last modified date of subscription restriction</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>ID of last user that modified the subscription restriction</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Full name of last user that modified the subscription restriction</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Subscription ID that the restriction is referenced to</summary>
-        public Guid? Subscription { get; set; }
-        /// <summary>Subscription description that the restriction is referenced to</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SubscriptionDescription { get; set; }
-#nullable restore
-#else
-        public string SubscriptionDescription { get; set; }
-#endif
-        /// <summary>Subscription number that the restriction is referenced to</summary>
-        public int? SubscriptionNumber { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionItems"/> and sets the default values.
         /// </summary>
@@ -97,20 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Item", n => { Item = n.GetGuidValue(); } },
-                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
-                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Subscription", n => { Subscription = n.GetGuidValue(); } },
-                { "SubscriptionDescription", n => { SubscriptionDescription = n.GetStringValue(); } },
-                { "SubscriptionNumber", n => { SubscriptionNumber = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -120,20 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteGuidValue("Subscription", Subscription);
-            writer.WriteStringValue("SubscriptionDescription", SubscriptionDescription);
-            writer.WriteIntValue("SubscriptionNumber", SubscriptionNumber);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

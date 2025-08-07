@@ -14,78 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>End date of effective period for serial or batch number</summary>
-        public DateTimeOffset? EndDate { get; set; }
-        /// <summary>A guid that is the unique identifier of the serial or batch number</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Boolean value indicating whether or not the serial or batch number is blocked</summary>
-        public int? IsBlocked { get; set; }
-        /// <summary>Item</summary>
-        public Guid? Item { get; set; }
-        /// <summary>Item code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemCode { get; set; }
-#nullable restore
-#else
-        public string ItemCode { get; set; }
-#endif
-        /// <summary>Description of item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemDescription { get; set; }
-#nullable restore
-#else
-        public string ItemDescription { get; set; }
-#endif
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Remarks</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Remarks { get; set; }
-#nullable restore
-#else
-        public string Remarks { get; set; }
-#endif
-        /// <summary>Human readable serial or batch number</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SerialBatchNumber { get; set; }
-#nullable restore
-#else
-        public string SerialBatchNumber { get; set; }
-#endif
-        /// <summary>Start date of effective period for serial number</summary>
-        public DateTimeOffset? StartDate { get; set; }
-        /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
-        /// <summary>Type of number (serial or batch) Available values:1 = Serial number2 = Batch number</summary>
-        public int? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncInventorySerialBatchNumbers"/> and sets the default values.
         /// </summary>
@@ -111,24 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "IsBlocked", n => { IsBlocked = n.GetIntValue(); } },
-                { "Item", n => { Item = n.GetGuidValue(); } },
-                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
-                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Remarks", n => { Remarks = n.GetStringValue(); } },
-                { "SerialBatchNumber", n => { SerialBatchNumber = n.GetStringValue(); } },
-                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
-                { "Type", n => { Type = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -138,24 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("IsBlocked", IsBlocked);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Remarks", Remarks);
-            writer.WriteStringValue("SerialBatchNumber", SerialBatchNumber);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteIntValue("Type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponents
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayrollComponentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollComponents{?%24filter*,%24select*}", pathParameters)
+        public PayrollComponentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollComponents?employmentConditionGroupCode={employmentConditionGroupCode}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponents
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayrollComponentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollComponents{?%24filter*,%24select*}", rawUrl)
+        public PayrollComponentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollComponents?employmentConditionGroupCode={employmentConditionGroupCode}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -86,6 +86,16 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponents
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PayrollComponentsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Query parameter of type Edm.String</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("employmentConditionGroupCode")]
+            public string? EmploymentConditionGroupCode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("employmentConditionGroupCode")]
+            public string EmploymentConditionGroupCode { get; set; }
+#endif
             /// <summary>OData filter, e.g., `ID eq guid&apos;00000000-0000-0000-0000-000000000000&apos;`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

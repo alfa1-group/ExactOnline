@@ -25,32 +25,32 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PurchaseorderRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Use this endpoint to :&amp;emsp;&amp;#149; Create new goods receipt lines.&amp;emsp;&amp;#149; Read existing goods receipt lines. Note: Goods receipt lines should not be posted individually. They should be part of the GoodsReceipts Post. For creating goods receipt lines, it is mandatory to supply PurchaseOrderLineID. If QuantityReceived is not supplied, then the count of the remaining quantity will be used. The received quantity cannot be greater than quantity to be received unless the company enables &apos;Receipt of more than ordered is allowed&apos; setting.For more information about the  functionality in Exact Online, see Goods receipts.</summary>
+        /// <summary>Use this endpoint to : • Create new goods receipt lines. • Read existing goods receipt lines. Note: Goods receipt lines should not be posted individually. They should be part of the GoodsReceipts Post. For creating goods receipt lines, it is mandatory to supply PurchaseOrderLineID. If QuantityReceived is not supplied, then the count of the remaining quantity will be used. The received quantity cannot be greater than quantity to be received unless the company enables &apos;Receipt of more than ordered is allowed&apos; setting.For more information about the  functionality in Exact Online, see Goods receipts.</summary>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptLines.GoodsReceiptLinesRequestBuilder GoodsReceiptLines
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptLines.GoodsReceiptLinesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Use this endpoint to :&amp;emsp;&amp;#149; Create new goods receipts.&amp;emsp;&amp;#149; Read existing goods receipts.&amp;emsp;&amp;#149; Update existing goods receipts. Note: For creating a GoodsReceipts, it is mandatory to supply one or more GoodReceiptLines and ReceiptDate.For more information about the  functionality in Exact Online, see Goods receipts.</summary>
+        /// <summary>Use this endpoint to : • Create new goods receipts. • Read existing goods receipts. • Update existing goods receipts. Note: For creating a GoodsReceipts, it is mandatory to supply one or more GoodReceiptLines and ReceiptDate.For more information about the  functionality in Exact Online, see Goods receipts.</summary>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceipts.GoodsReceiptsRequestBuilder GoodsReceipts
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceipts.GoodsReceiptsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Use this endpoint to :&amp;emsp;&amp;#149; Create a new purchase order line.&amp;emsp;&amp;#149; Read existing purchase order lines.&amp;emsp;&amp;#149; Update an existing purchase order line&amp;emsp;&amp;#149; Remove an existing purchase order line. Purchase order lines may not be posted individually. They should be part of the PurchaseOrder Post. When using the POST method of this endpoint to create a purchase order line it is mandatory to provide an Item and Quantity. When deleting a purchase order line, a purchase order must have at least one line. If necessary delete the complete purchase order.For more information about the  functionality in Exact Online, see Overview | Purchase orders.</summary>
+        /// <summary>Use this endpoint to : • Create a new purchase order line. • Read existing purchase order lines. • Update an existing purchase order line • Remove an existing purchase order line. Purchase order lines may not be posted individually. They should be part of the PurchaseOrder Post. When using the POST method of this endpoint to create a purchase order line it is mandatory to provide an Item and Quantity. When deleting a purchase order line, a purchase order must have at least one line. If necessary delete the complete purchase order.For more information about the  functionality in Exact Online, see Overview | Purchase orders.</summary>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrderLines.PurchaseOrderLinesRequestBuilder PurchaseOrderLines
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrderLines.PurchaseOrderLinesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Use this endpoint to :&amp;emsp;&amp;#149; Create a new purchase order.&amp;emsp;&amp;#149; Read existing purchase orders.&amp;emsp;&amp;#149; Update existing purchase orders.&amp;emsp;&amp;#149; Remove an existing purchase order. When using the POST method of this endpoint to create a purchase order, it is mandatory to provide a valid supplier and purchase order lines. The purchase order lines is not necessary when you PUT to this endpoint.For more information about the  functionality in Exact Online, see Overview | Purchase orders.</summary>
+        /// <summary>Use this endpoint to : • Create a new purchase order. • Read existing purchase orders. • Update existing purchase orders. • Remove an existing purchase order. When using the POST method of this endpoint to create a purchase order, it is mandatory to provide a valid supplier and purchase order lines. The purchase order lines is not necessary when you PUT to this endpoint.For more information about the  functionality in Exact Online, see Overview | Purchase orders.</summary>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders.PurchaseOrdersRequestBuilder PurchaseOrders
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders.PurchaseOrdersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Use this endpoint to :&amp;emsp;&amp;#149; Create a new purchase return line.(Adding a new line to existing purchase return is not allowed)&amp;emsp;&amp;#149; Retrieve an existing purchase return line.&amp;emsp;&amp;#149; Update an existing purchase return line Note: Purchase return lines should not be posted individually. They should be part of the PurchaseReturn Post. For creating purchase return lines, it is mandatory to supply PurchaseOrderLineID,ReturnQuantity and GoodsReceiptLineID. The returned quantity cannot be greater than quantity received</summary>
+        /// <summary>Use this endpoint to : • Create a new purchase return line.(Adding a new line to existing purchase return is not allowed) • Retrieve an existing purchase return line. • Update an existing purchase return line Note: Purchase return lines should not be posted individually. They should be part of the PurchaseReturn Post. For creating purchase return lines, it is mandatory to supply PurchaseOrderLineID,ReturnQuantity and GoodsReceiptLineID. The returned quantity cannot be greater than quantity received</summary>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLines.PurchaseReturnLinesRequestBuilder PurchaseReturnLines
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLines.PurchaseReturnLinesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Use this endpoint to :&amp;emsp;&amp;#149; Create a new purchase return.&amp;emsp;&amp;#149; Retrieve an existing purchase return.&amp;emsp;&amp;#149; Update an existing purchase return. Note: For creating a PurchaseReturn, it is mandatory to supply one or more PurchaseReturnLines and ReturnDate.</summary>
+        /// <summary>Use this endpoint to : • Create a new purchase return. • Retrieve an existing purchase return. • Update an existing purchase return. Note: For creating a PurchaseReturn, it is mandatory to supply one or more PurchaseReturnLines and ReturnDate.</summary>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturns.PurchaseReturnsRequestBuilder PurchaseReturns
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturns.PurchaseReturnsRequestBuilder(PathParameters, RequestAdapter);
@@ -72,7 +72,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
         {
         }
         /// <summary>
-        /// Use this endpoint to :&amp;emsp;&amp;#149; Create new goods receipts.&amp;emsp;&amp;#149; Read existing goods receipts.&amp;emsp;&amp;#149; Update existing goods receipts. Note: For creating a GoodsReceipts, it is mandatory to supply one or more GoodReceiptLines and ReceiptDate.For more information about the  functionality in Exact Online, see Goods receipts.
+        /// Use this endpoint to : • Create new goods receipts. • Read existing goods receipts. • Update existing goods receipts. Note: For creating a GoodsReceipts, it is mandatory to supply one or more GoodReceiptLines and ReceiptDate.For more information about the  functionality in Exact Online, see Goods receipts.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptsWithId.GoodsReceiptsWithIdRequestBuilder"/></returns>
         /// <param name="id">Unique identifier (GUID) of the PurchaseOrderGoodsReceipts</param>
@@ -82,7 +82,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptsWithId.GoodsReceiptsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
-        /// Use this endpoint to :&amp;emsp;&amp;#149; Create a new purchase order line.&amp;emsp;&amp;#149; Read existing purchase order lines.&amp;emsp;&amp;#149; Update an existing purchase order line&amp;emsp;&amp;#149; Remove an existing purchase order line. Purchase order lines may not be posted individually. They should be part of the PurchaseOrder Post. When using the POST method of this endpoint to create a purchase order line it is mandatory to provide an Item and Quantity. When deleting a purchase order line, a purchase order must have at least one line. If necessary delete the complete purchase order.For more information about the  functionality in Exact Online, see Overview | Purchase orders.
+        /// Use this endpoint to : • Create a new purchase order line. • Read existing purchase order lines. • Update an existing purchase order line • Remove an existing purchase order line. Purchase order lines may not be posted individually. They should be part of the PurchaseOrder Post. When using the POST method of this endpoint to create a purchase order line it is mandatory to provide an Item and Quantity. When deleting a purchase order line, a purchase order must have at least one line. If necessary delete the complete purchase order.For more information about the  functionality in Exact Online, see Overview | Purchase orders.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrderLinesWithId.PurchaseOrderLinesWithIdRequestBuilder"/></returns>
         /// <param name="id">Unique identifier (GUID) of the PurchaseOrderPurchaseOrderLines</param>
@@ -92,7 +92,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrderLinesWithId.PurchaseOrderLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
-        /// Use this endpoint to :&amp;emsp;&amp;#149; Create a new purchase order.&amp;emsp;&amp;#149; Read existing purchase orders.&amp;emsp;&amp;#149; Update existing purchase orders.&amp;emsp;&amp;#149; Remove an existing purchase order. When using the POST method of this endpoint to create a purchase order, it is mandatory to provide a valid supplier and purchase order lines. The purchase order lines is not necessary when you PUT to this endpoint.For more information about the  functionality in Exact Online, see Overview | Purchase orders.
+        /// Use this endpoint to : • Create a new purchase order. • Read existing purchase orders. • Update existing purchase orders. • Remove an existing purchase order. When using the POST method of this endpoint to create a purchase order, it is mandatory to provide a valid supplier and purchase order lines. The purchase order lines is not necessary when you PUT to this endpoint.For more information about the  functionality in Exact Online, see Overview | Purchase orders.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithId.PurchaseOrdersWithIdRequestBuilder"/></returns>
         /// <param name="id">Unique identifier (GUID) of the PurchaseOrderPurchaseOrders</param>
@@ -102,7 +102,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithId.PurchaseOrdersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
-        /// Use this endpoint to :&amp;emsp;&amp;#149; Create a new purchase return line.(Adding a new line to existing purchase return is not allowed)&amp;emsp;&amp;#149; Retrieve an existing purchase return line.&amp;emsp;&amp;#149; Update an existing purchase return line Note: Purchase return lines should not be posted individually. They should be part of the PurchaseReturn Post. For creating purchase return lines, it is mandatory to supply PurchaseOrderLineID,ReturnQuantity and GoodsReceiptLineID. The returned quantity cannot be greater than quantity received
+        /// Use this endpoint to : • Create a new purchase return line.(Adding a new line to existing purchase return is not allowed) • Retrieve an existing purchase return line. • Update an existing purchase return line Note: Purchase return lines should not be posted individually. They should be part of the PurchaseReturn Post. For creating purchase return lines, it is mandatory to supply PurchaseOrderLineID,ReturnQuantity and GoodsReceiptLineID. The returned quantity cannot be greater than quantity received
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLinesWithId.PurchaseReturnLinesWithIdRequestBuilder"/></returns>
         /// <param name="id">Unique identifier (GUID) of the PurchaseOrderPurchaseReturnLines</param>
@@ -112,7 +112,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLinesWithId.PurchaseReturnLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
-        /// Use this endpoint to :&amp;emsp;&amp;#149; Create a new purchase return.&amp;emsp;&amp;#149; Retrieve an existing purchase return.&amp;emsp;&amp;#149; Update an existing purchase return. Note: For creating a PurchaseReturn, it is mandatory to supply one or more PurchaseReturnLines and ReturnDate.
+        /// Use this endpoint to : • Create a new purchase return. • Retrieve an existing purchase return. • Update an existing purchase return. Note: For creating a PurchaseReturn, it is mandatory to supply one or more PurchaseReturnLines and ReturnDate.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnsWithId.PurchaseReturnsWithIdRequestBuilder"/></returns>
         /// <param name="id">Unique identifier (GUID) of the PurchaseOrderPurchaseReturns</param>

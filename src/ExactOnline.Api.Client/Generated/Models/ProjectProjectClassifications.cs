@@ -14,92 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Code { get; set; }
-#nullable restore
-#else
-        public string Code { get; set; }
-#endif
-        /// <summary>Cost Center linked to the project classification</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CostCenter { get; set; }
-#nullable restore
-#else
-        public string CostCenter { get; set; }
-#endif
-        /// <summary>Description of Costcenter</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CostCenterDescription { get; set; }
-#nullable restore
-#else
-        public string CostCenterDescription { get; set; }
-#endif
-        /// <summary>Cost unit linked to the project classification</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CostUnit { get; set; }
-#nullable restore
-#else
-        public string CostUnit { get; set; }
-#endif
-        /// <summary>Description of Costunit</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CostUnitDescription { get; set; }
-#nullable restore
-#else
-        public string CostUnitDescription { get; set; }
-#endif
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Description of the project classification</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Name of Division</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DivisionName { get; set; }
-#nullable restore
-#else
-        public string DivisionName { get; set; }
-#endif
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Indicates whether to use employee cost center and cost unit</summary>
-        public bool? UseEmployeeCostCenter { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ProjectProjectClassifications"/> and sets the default values.
         /// </summary>
@@ -125,22 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Code", n => { Code = n.GetStringValue(); } },
-                { "CostCenter", n => { CostCenter = n.GetStringValue(); } },
-                { "CostCenterDescription", n => { CostCenterDescription = n.GetStringValue(); } },
-                { "CostUnit", n => { CostUnit = n.GetStringValue(); } },
-                { "CostUnitDescription", n => { CostUnitDescription = n.GetStringValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "DivisionName", n => { DivisionName = n.GetStringValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "UseEmployeeCostCenter", n => { UseEmployeeCostCenter = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -150,22 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Code", Code);
-            writer.WriteStringValue("CostCenter", CostCenter);
-            writer.WriteStringValue("CostCenterDescription", CostCenterDescription);
-            writer.WriteStringValue("CostUnit", CostUnit);
-            writer.WriteStringValue("CostUnitDescription", CostUnitDescription);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteStringValue("DivisionName", DivisionName);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteBoolValue("UseEmployeeCostCenter", UseEmployeeCostCenter);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

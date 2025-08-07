@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContractFlexPhases
 {
     /// <summary>
-    /// Use this endpoint to read employment contract flex phases.An employment contract flex phase is used for flexworkers to indicate the phase   in which the income ratio is, in context of the &apos;Wet Flexibiliteit en Zekerheid&apos;.  With the tax authority this phase is known as &apos;Code fase indeling F&amp;Z&apos;.  The phase is set in the employment contract, that can be read using the EmploymentContracts endpoint.  This API has been deprecated and only returns the employment contract flex phases that were active before 2022.  Please Use the EmploymentContractFlexPhasesOnFocusDate for payroll year 2022 and onwards.
+    /// Use this endpoint to read employment contract flex phases.An employment contract flex phase is used for flexworkers to indicate the phase   in which the income ratio is, in context of the &apos;Wet Flexibiliteit en Zekerheid&apos;.  With the tax authority this phase is known as &apos;Code fase indeling F&amp;amp;Z&apos;.  The phase is set in the employment contract, that can be read using the EmploymentContracts endpoint.  This API has been deprecated and only returns the employment contract flex phases that were active before 2022.  Please Use the EmploymentContractFlexPhasesOnFocusDate for payroll year 2022 and onwards.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmploymentContractFlexPhasesRequestBuilder : BaseRequestBuilder

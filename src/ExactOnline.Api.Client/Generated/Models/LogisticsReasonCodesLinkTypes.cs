@@ -14,20 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>The reason linked to the type</summary>
-        public Guid? Reason { get; set; }
-        /// <summary>Type of the reason code.</summary>
-        public int? Type { get; set; }
-        /// <summary>Description of the type of the reason code.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TypeDescription { get; set; }
-#nullable restore
-#else
-        public string TypeDescription { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.LogisticsReasonCodesLinkTypes"/> and sets the default values.
         /// </summary>
@@ -53,10 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Reason", n => { Reason = n.GetGuidValue(); } },
-                { "Type", n => { Type = n.GetIntValue(); } },
-                { "TypeDescription", n => { TypeDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,10 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Reason", Reason);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteStringValue("TypeDescription", TypeDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

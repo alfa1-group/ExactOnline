@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndD
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HourTypesByProjectAndDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/HourTypesByProjectAndDate{?%24filter*,%24select*}", pathParameters)
+        public HourTypesByProjectAndDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/HourTypesByProjectAndDate?checkDate={checkDate}&employeeId={employeeId}&projectId={projectId}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndD
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HourTypesByProjectAndDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/HourTypesByProjectAndDate{?%24filter*,%24select*}", rawUrl)
+        public HourTypesByProjectAndDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/HourTypesByProjectAndDate?checkDate={checkDate}&employeeId={employeeId}&projectId={projectId}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,6 +85,26 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndD
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HourTypesByProjectAndDateRequestBuilderGetQueryParameters 
         {
+            /// <summary>Query parameter of type Edm.DateTime</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("checkDate")]
+            public string? CheckDate { get; set; }
+#nullable restore
+#else
+            [QueryParameter("checkDate")]
+            public string CheckDate { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("employeeId")]
+            public string? EmployeeId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("employeeId")]
+            public string EmployeeId { get; set; }
+#endif
             /// <summary>OData filter, e.g., `ID eq guid&apos;00000000-0000-0000-0000-000000000000&apos;`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +114,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndD
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("projectId")]
+            public string? ProjectId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("projectId")]
+            public string ProjectId { get; set; }
 #endif
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

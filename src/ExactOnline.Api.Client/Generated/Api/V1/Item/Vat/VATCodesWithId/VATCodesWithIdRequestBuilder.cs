@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Vat.VATCodesWithId
 {
     /// <summary>
-    /// Use this endpoint to create, update, view and delete VAT codes. VAT codes can only be deleted, when they are not yet used in financial entries.In order to fill percentages, you need to add one ore more VATPercentage lines to the VAT code. This is only possible when you POST a VAT code.Below is an example of the body request to POST VatCode with VatPercentages.{&amp;emsp;Code : value,&amp;emsp;Description : value,&amp;emsp;Type : value,&amp;emsp;GLToClaim : value,&amp;emsp;GLToPay : value,&amp;emsp;VATPercentages: [&amp;emsp;{&amp;emsp;&amp;emsp;Percentage : value,&amp;emsp;&amp;emsp;Type : value&amp;emsp;&amp;emsp;}&amp;emsp;]}
+    /// Use this endpoint to create, update, view and delete VAT codes. VAT codes can only be deleted, when they are not yet used in financial entries.In order to fill percentages, you need to add one ore more VATPercentage lines to the VAT code. This is only possible when you POST a VAT code.Below is an example of the body request to POST VatCode with VatPercentages.{ Code : value, Description : value, Type : value, GLToClaim : value, GLToPay : value, VATPercentages: [ {  Percentage : value,  Type : value  } ]}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VATCodesWithIdRequestBuilder : BaseRequestBuilder

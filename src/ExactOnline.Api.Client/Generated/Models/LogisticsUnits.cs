@@ -12,48 +12,8 @@ namespace ExactOnline.Api.Client.Models
     public partial class LogisticsUnits : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether a unit is in use</summary>
-        public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Unique code for the unit</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Code { get; set; }
-#nullable restore
-#else
-        public string Code { get; set; }
-#endif
-        /// <summary>Description</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Indicates the main unit per division. Will be used when creating new item</summary>
-        public int? Main { get; set; }
-        /// <summary>If Type = &apos;T&apos; (time) then this fields indicates the type of time frame. yy = Year, mm = Month, wk = Week, dd = Day, hh = Hour, mi = Minute, ss = Second</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TimeUnit { get; set; }
-#nullable restore
-#else
-        public string TimeUnit { get; set; }
-#endif
-        /// <summary>Type of unit. Type &apos;Time&apos; is especially important for contracts.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.LogisticsUnits"/> and sets the default values.
         /// </summary>
@@ -79,14 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Active", n => { Active = n.GetBoolValue(); } },
-                { "Code", n => { Code = n.GetStringValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Main", n => { Main = n.GetIntValue(); } },
-                { "TimeUnit", n => { TimeUnit = n.GetStringValue(); } },
-                { "Type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -96,14 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("Active", Active);
-            writer.WriteStringValue("Code", Code);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("Main", Main);
-            writer.WriteStringValue("TimeUnit", TimeUnit);
-            writer.WriteStringValue("Type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

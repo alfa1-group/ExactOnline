@@ -14,26 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The datetime the hour entries have been entered on the project</summary>
-        public DateTimeOffset? DateLastUsed { get; set; }
-        /// <summary>The code of the project that the hour entries have been entered on</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectCode { get; set; }
-#nullable restore
-#else
-        public string ProjectCode { get; set; }
-#endif
-        /// <summary>The description of the project that the hour entries have been entered on</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectDescription { get; set; }
-#nullable restore
-#else
-        public string ProjectDescription { get; set; }
-#endif
-        /// <summary>The Id of the project that hours entries are entered</summary>
-        public Guid? ProjectId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentProjects"/> and sets the default values.
         /// </summary>
@@ -59,10 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "DateLastUsed", n => { DateLastUsed = n.GetDateTimeOffsetValue(); } },
-                { "ProjectCode", n => { ProjectCode = n.GetStringValue(); } },
-                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
-                { "ProjectId", n => { ProjectId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -72,10 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("DateLastUsed", DateLastUsed);
-            writer.WriteStringValue("ProjectCode", ProjectCode);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteGuidValue("ProjectId", ProjectId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,86 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Class_01 property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses? Class01 { get; set; }
-#nullable restore
-#else
-        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses Class01 { get; set; }
-#endif
-        /// <summary>First classification ID</summary>
-        public Guid? Class01ID { get; set; }
-        /// <summary>The Class_02 property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses? Class02 { get; set; }
-#nullable restore
-#else
-        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses Class02 { get; set; }
-#endif
-        /// <summary>Second classification ID</summary>
-        public Guid? Class02ID { get; set; }
-        /// <summary>The Class_03 property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses? Class03 { get; set; }
-#nullable restore
-#else
-        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses Class03 { get; set; }
-#endif
-        /// <summary>Third classification ID</summary>
-        public Guid? Class03ID { get; set; }
-        /// <summary>The Class_04 property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses? Class04 { get; set; }
-#nullable restore
-#else
-        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses Class04 { get; set; }
-#endif
-        /// <summary>Fourth classification ID</summary>
-        public Guid? Class04ID { get; set; }
-        /// <summary>The Class_05 property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses? Class05 { get; set; }
-#nullable restore
-#else
-        public global::ExactOnline.Api.Client.Models.HRMDivisionClasses Class05 { get; set; }
-#endif
-        /// <summary>Fifth classification ID</summary>
-        public Guid? Class05ID { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>ID of customer</summary>
-        public Guid? Customer { get; set; }
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.HRMDivisionClassValues"/> and sets the default values.
         /// </summary>
@@ -119,25 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Class_01", n => { Class01 = n.GetObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>(global::ExactOnline.Api.Client.Models.HRMDivisionClasses.CreateFromDiscriminatorValue); } },
-                { "Class_01_ID", n => { Class01ID = n.GetGuidValue(); } },
-                { "Class_02", n => { Class02 = n.GetObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>(global::ExactOnline.Api.Client.Models.HRMDivisionClasses.CreateFromDiscriminatorValue); } },
-                { "Class_02_ID", n => { Class02ID = n.GetGuidValue(); } },
-                { "Class_03", n => { Class03 = n.GetObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>(global::ExactOnline.Api.Client.Models.HRMDivisionClasses.CreateFromDiscriminatorValue); } },
-                { "Class_03_ID", n => { Class03ID = n.GetGuidValue(); } },
-                { "Class_04", n => { Class04 = n.GetObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>(global::ExactOnline.Api.Client.Models.HRMDivisionClasses.CreateFromDiscriminatorValue); } },
-                { "Class_04_ID", n => { Class04ID = n.GetGuidValue(); } },
-                { "Class_05", n => { Class05 = n.GetObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>(global::ExactOnline.Api.Client.Models.HRMDivisionClasses.CreateFromDiscriminatorValue); } },
-                { "Class_05_ID", n => { Class05ID = n.GetGuidValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Customer", n => { Customer = n.GetGuidValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -147,25 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_01", Class01);
-            writer.WriteGuidValue("Class_01_ID", Class01ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_02", Class02);
-            writer.WriteGuidValue("Class_02_ID", Class02ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_03", Class03);
-            writer.WriteGuidValue("Class_03_ID", Class03ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_04", Class04);
-            writer.WriteGuidValue("Class_04_ID", Class04ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_05", Class05);
-            writer.WriteGuidValue("Class_05_ID", Class05ID);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteGuidValue("Customer", Customer);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

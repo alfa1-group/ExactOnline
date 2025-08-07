@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectAnd
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectWBSByProjectAndWBSRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/ProjectWBSByProjectAndWBS{?%24filter*,%24select*}", pathParameters)
+        public ProjectWBSByProjectAndWBSRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/ProjectWBSByProjectAndWBS?projectId={projectId}&projectWBSId={projectWBSId}&wbsType={wbsType}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectAnd
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectWBSByProjectAndWBSRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/ProjectWBSByProjectAndWBS{?%24filter*,%24select*}", rawUrl)
+        public ProjectWBSByProjectAndWBSRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/ProjectWBSByProjectAndWBS?projectId={projectId}&projectWBSId={projectWBSId}&wbsType={wbsType}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -95,6 +95,26 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectAnd
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
+            /// <summary>Query parameter of type Edm.Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("projectId")]
+            public string? ProjectId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("projectId")]
+            public string ProjectId { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("projectWBSId")]
+            public string? ProjectWBSId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("projectWBSId")]
+            public string ProjectWBSId { get; set; }
+#endif
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +125,9 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectAnd
             [QueryParameter("%24select")]
             public string Select { get; set; }
 #endif
+            /// <summary>Query parameter of type Edm.Int16</summary>
+            [QueryParameter("wbsType")]
+            public int? WbsType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

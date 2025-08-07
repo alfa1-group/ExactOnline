@@ -14,60 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The CurrencyCode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CurrencyCode { get; set; }
-#nullable restore
-#else
-        public string CurrencyCode { get; set; }
-#endif
-        /// <summary>Code of Item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemCode { get; set; }
-#nullable restore
-#else
-        public string ItemCode { get; set; }
-#endif
-        /// <summary>Description of Item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemDescription { get; set; }
-#nullable restore
-#else
-        public string ItemDescription { get; set; }
-#endif
-        /// <summary>The ItemId property</summary>
-        public Guid? ItemId { get; set; }
-        /// <summary>The PriceExcludingVAT property</summary>
-        public double? PriceExcludingVAT { get; set; }
-        /// <summary>The PriceIncludingVAT property</summary>
-        public double? PriceIncludingVAT { get; set; }
-        /// <summary>The UnitCode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UnitCode { get; set; }
-#nullable restore
-#else
-        public string UnitCode { get; set; }
-#endif
-        /// <summary>Description of the price unit</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UnitDescription { get; set; }
-#nullable restore
-#else
-        public string UnitDescription { get; set; }
-#endif
-        /// <summary>The VATCode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VATCode { get; set; }
-#nullable restore
-#else
-        public string VATCode { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadLogisticsSalesItemPrice"/> and sets the default values.
         /// </summary>
@@ -93,15 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CurrencyCode", n => { CurrencyCode = n.GetStringValue(); } },
-                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
-                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
-                { "ItemId", n => { ItemId = n.GetGuidValue(); } },
-                { "PriceExcludingVAT", n => { PriceExcludingVAT = n.GetDoubleValue(); } },
-                { "PriceIncludingVAT", n => { PriceIncludingVAT = n.GetDoubleValue(); } },
-                { "UnitCode", n => { UnitCode = n.GetStringValue(); } },
-                { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
-                { "VATCode", n => { VATCode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -111,15 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("CurrencyCode", CurrencyCode);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteGuidValue("ItemId", ItemId);
-            writer.WriteDoubleValue("PriceExcludingVAT", PriceExcludingVAT);
-            writer.WriteDoubleValue("PriceIncludingVAT", PriceIncludingVAT);
-            writer.WriteStringValue("UnitCode", UnitCode);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
-            writer.WriteStringValue("VATCode", VATCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

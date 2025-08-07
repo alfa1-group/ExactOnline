@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderOrderChargeLines
 {
     /// <summary>
-    /// Use this endpoint to create, read, update and delete sales order shipping cost and order charge lines. Note: &amp;emsp;&amp;#149; If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa. &amp;emsp;&amp;#149; If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.To view an example of the business use of this endpoint, see Rest API - Business example API sales order.
+    /// Use this endpoint to create, read, update and delete sales order shipping cost and order charge lines. Note:  • If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa.  • If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.To view an example of the business use of this endpoint, see Rest API - Business example API sales order.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SalesOrderOrderChargeLinesRequestBuilder : BaseRequestBuilder

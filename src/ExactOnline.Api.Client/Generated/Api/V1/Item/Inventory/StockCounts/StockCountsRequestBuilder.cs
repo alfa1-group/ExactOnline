@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.StockCounts
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Create a new stock count.&amp;emsp;&amp;#149; Retrieve an existing stock count.&amp;emsp;&amp;#149; Update the Description, GLaccount, Date of an existing draft stock count.&amp;emsp;&amp;#149; Delete a draft stock count.You can create the stock count either as a draft or as processed, by defining the status as 12 - Open or 21-Processed.  If the user doesn&apos;t have the right to process stock count, they can only use status 12 - OpenA stock count is used in the warehouse to record counted quantities. For more information about the stock counts functionality in Exact Online, see Stock Count - New.
+    /// Use this endpoint to : • Create a new stock count. • Retrieve an existing stock count. • Update the Description, GLaccount, Date of an existing draft stock count. • Delete a draft stock count.You can create the stock count either as a draft or as processed, by defining the status as 12 - Open or 21-Processed.  If the user doesn&apos;t have the right to process stock count, they can only use status 12 - OpenA stock count is used in the warehouse to record counted quantities. For more information about the stock counts functionality in Exact Online, see Stock Count - New.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StockCountsRequestBuilder : BaseRequestBuilder

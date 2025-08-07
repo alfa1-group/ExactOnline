@@ -14,126 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>ID of the base price.  If base price = use the standard sales price, it shows null.  If base price = set sales price, it shows ID of the sales price within this volume discount.</summary>
-        public Guid? BasePrice { get; set; }
-        /// <summary>Amount of the base price.  If base price = use the standard sales price, it shows the latest item sales price. If base price = set sales price, it shows the base price which defined in price list.</summary>
-        public double? BasePriceAmount { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Discount</summary>
-        public double? Discount { get; set; }
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Indicates whether discount or the new price is leading : 1-Discount, 2-New price.  Scenario  1. When entry method is Discount and use base price, Discounted price = (1 - SalesPriceListVolumeDiscounts.Discount) * SalesPriceListVolumeDiscounts.BasePriceAmount  2. When entry method is Discount and use Item&apos;s standard sales price, Discounted price = (1 - SalesPriceListVolumeDiscounts.Discount) * SalesItemPrices.Price  3. When entry method is New price, Discounted price = SalesPriceListVolumeDiscounts.NewPrice</summary>
-        public int? EntryMethod { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Item ID</summary>
-        public Guid? Item { get; set; }
-        /// <summary>Item code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemCode { get; set; }
-#nullable restore
-#else
-        public string ItemCode { get; set; }
-#endif
-        /// <summary>Description of the item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemDescription { get; set; }
-#nullable restore
-#else
-        public string ItemDescription { get; set; }
-#endif
-        /// <summary>Item group ID</summary>
-        public Guid? ItemGroup { get; set; }
-        /// <summary>Item group code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemGroupCode { get; set; }
-#nullable restore
-#else
-        public string ItemGroupCode { get; set; }
-#endif
-        /// <summary>Item group description</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemGroupDescription { get; set; }
-#nullable restore
-#else
-        public string ItemGroupDescription { get; set; }
-#endif
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>New price after discount</summary>
-        public double? NewPrice { get; set; }
-        /// <summary>Number of the item per unit</summary>
-        public double? NumberOfItemsPerUnit { get; set; }
-        /// <summary>Code of the PriceList</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PriceListCode { get; set; }
-#nullable restore
-#else
-        public string PriceListCode { get; set; }
-#endif
-        /// <summary>Description of the PriceList</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PriceListDescription { get; set; }
-#nullable restore
-#else
-        public string PriceListDescription { get; set; }
-#endif
-        /// <summary>Price list period ID</summary>
-        public Guid? PriceListPeriod { get; set; }
-        /// <summary>Quantity</summary>
-        public double? Quantity { get; set; }
-        /// <summary>Default sales unit of the item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SalesUnit { get; set; }
-#nullable restore
-#else
-        public string SalesUnit { get; set; }
-#endif
-        /// <summary>Unit</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Unit { get; set; }
-#nullable restore
-#else
-        public string Unit { get; set; }
-#endif
-        /// <summary>Description of the unit</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UnitDescription { get; set; }
-#nullable restore
-#else
-        public string UnitDescription { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesSalesPriceListVolumeDiscounts"/> and sets the default values.
         /// </summary>
@@ -159,33 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "BasePrice", n => { BasePrice = n.GetGuidValue(); } },
-                { "BasePriceAmount", n => { BasePriceAmount = n.GetDoubleValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Discount", n => { Discount = n.GetDoubleValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "EntryMethod", n => { EntryMethod = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Item", n => { Item = n.GetGuidValue(); } },
-                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
-                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
-                { "ItemGroup", n => { ItemGroup = n.GetGuidValue(); } },
-                { "ItemGroupCode", n => { ItemGroupCode = n.GetStringValue(); } },
-                { "ItemGroupDescription", n => { ItemGroupDescription = n.GetStringValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "NewPrice", n => { NewPrice = n.GetDoubleValue(); } },
-                { "NumberOfItemsPerUnit", n => { NumberOfItemsPerUnit = n.GetDoubleValue(); } },
-                { "PriceListCode", n => { PriceListCode = n.GetStringValue(); } },
-                { "PriceListDescription", n => { PriceListDescription = n.GetStringValue(); } },
-                { "PriceListPeriod", n => { PriceListPeriod = n.GetGuidValue(); } },
-                { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
-                { "SalesUnit", n => { SalesUnit = n.GetStringValue(); } },
-                { "Unit", n => { Unit = n.GetStringValue(); } },
-                { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -195,33 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("BasePrice", BasePrice);
-            writer.WriteDoubleValue("BasePriceAmount", BasePriceAmount);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteDoubleValue("Discount", Discount);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteIntValue("EntryMethod", EntryMethod);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteGuidValue("ItemGroup", ItemGroup);
-            writer.WriteStringValue("ItemGroupCode", ItemGroupCode);
-            writer.WriteStringValue("ItemGroupDescription", ItemGroupDescription);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteDoubleValue("NewPrice", NewPrice);
-            writer.WriteDoubleValue("NumberOfItemsPerUnit", NumberOfItemsPerUnit);
-            writer.WriteStringValue("PriceListCode", PriceListCode);
-            writer.WriteStringValue("PriceListDescription", PriceListDescription);
-            writer.WriteGuidValue("PriceListPeriod", PriceListPeriod);
-            writer.WriteDoubleValue("Quantity", Quantity);
-            writer.WriteStringValue("SalesUnit", SalesUnit);
-            writer.WriteStringValue("Unit", Unit);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

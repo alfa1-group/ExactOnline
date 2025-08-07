@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDeta
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeAndBillingItemDetailsByIDRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/TimeAndBillingItemDetailsByID{?%24filter*,%24select*}", pathParameters)
+        public TimeAndBillingItemDetailsByIDRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/TimeAndBillingItemDetailsByID?itemId={itemId}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDeta
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeAndBillingItemDetailsByIDRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/TimeAndBillingItemDetailsByID{?%24filter*,%24select*}", rawUrl)
+        public TimeAndBillingItemDetailsByIDRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/TimeAndBillingItemDetailsByID?itemId={itemId}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -94,6 +94,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDeta
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("itemId")]
+            public string? ItemId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("itemId")]
+            public string ItemId { get; set; }
 #endif
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

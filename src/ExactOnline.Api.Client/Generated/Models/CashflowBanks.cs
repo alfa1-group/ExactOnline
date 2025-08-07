@@ -14,68 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The name of the bank</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BankName { get; set; }
-#nullable restore
-#else
-        public string BankName { get; set; }
-#endif
-        /// <summary>The bank identification code of the bank</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BICCode { get; set; }
-#nullable restore
-#else
-        public string BICCode { get; set; }
-#endif
-        /// <summary>The country in which the bank is based</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Country { get; set; }
-#nullable restore
-#else
-        public string Country { get; set; }
-#endif
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>The extended description of the bank</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>The account format used by the bank</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Format { get; set; }
-#nullable restore
-#else
-        public string Format { get; set; }
-#endif
-        /// <summary>The website of the bank</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? HomePageAddress { get; set; }
-#nullable restore
-#else
-        public string HomePageAddress { get; set; }
-#endif
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>The status of the bank. A = Active, P = Passive</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CashflowBanks"/> and sets the default values.
         /// </summary>
@@ -101,16 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "BICCode", n => { BICCode = n.GetStringValue(); } },
-                { "BankName", n => { BankName = n.GetStringValue(); } },
-                { "Country", n => { Country = n.GetStringValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "Format", n => { Format = n.GetStringValue(); } },
-                { "HomePageAddress", n => { HomePageAddress = n.GetStringValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -120,16 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("BankName", BankName);
-            writer.WriteStringValue("BICCode", BICCode);
-            writer.WriteStringValue("Country", Country);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteStringValue("Format", Format);
-            writer.WriteStringValue("HomePageAddress", HomePageAddress);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteStringValue("Status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

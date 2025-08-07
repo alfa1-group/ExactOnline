@@ -12,20 +12,8 @@ namespace ExactOnline.Api.Client.Models
     public partial class ReadProjectTimeAndBillingEntryRecentAccounts : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Guid ID of the account used for hour entries</summary>
-        public Guid? AccountId { get; set; }
-        /// <summary>Name of account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountName { get; set; }
-#nullable restore
-#else
-        public string AccountName { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The last date that the account has been used for hour entry</summary>
-        public DateTimeOffset? DateLastUsed { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingEntryRecentAccounts"/> and sets the default values.
         /// </summary>
@@ -51,9 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AccountId", n => { AccountId = n.GetGuidValue(); } },
-                { "AccountName", n => { AccountName = n.GetStringValue(); } },
-                { "DateLastUsed", n => { DateLastUsed = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -63,9 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("AccountId", AccountId);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteDateTimeOffsetValue("DateLastUsed", DateLastUsed);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

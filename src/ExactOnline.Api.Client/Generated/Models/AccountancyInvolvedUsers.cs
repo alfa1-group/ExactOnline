@@ -12,134 +12,8 @@ namespace ExactOnline.Api.Client.Models
     public partial class AccountancyInvolvedUsers : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>ID of the account the user is involved with</summary>
-        public Guid? Account { get; set; }
-        /// <summary>City of the account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountCity { get; set; }
-#nullable restore
-#else
-        public string AccountCity { get; set; }
-#endif
-        /// <summary>Code of the account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountCode { get; set; }
-#nullable restore
-#else
-        public string AccountCode { get; set; }
-#endif
-        /// <summary>Supplier flag of the account</summary>
-        public bool? AccountIsSupplier { get; set; }
-        /// <summary>Logo thumbnail url of the account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountLogoThumbnailUrl { get; set; }
-#nullable restore
-#else
-        public string AccountLogoThumbnailUrl { get; set; }
-#endif
-        /// <summary>Name of the account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountName { get; set; }
-#nullable restore
-#else
-        public string AccountName { get; set; }
-#endif
-        /// <summary>Status of the account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountStatus { get; set; }
-#nullable restore
-#else
-        public string AccountStatus { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>ID of the user role</summary>
-        public Guid? InvolvedUserRole { get; set; }
-        /// <summary>Description of the user role</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InvolvedUserRoleDescription { get; set; }
-#nullable restore
-#else
-        public string InvolvedUserRoleDescription { get; set; }
-#endif
-        /// <summary>Main contact flag of the involved user</summary>
-        public bool? IsMainContact { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Email of a person</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PersonEmail { get; set; }
-#nullable restore
-#else
-        public string PersonEmail { get; set; }
-#endif
-        /// <summary>Phone of a person</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PersonPhone { get; set; }
-#nullable restore
-#else
-        public string PersonPhone { get; set; }
-#endif
-        /// <summary>Phone extension of a person</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PersonPhoneExtension { get; set; }
-#nullable restore
-#else
-        public string PersonPhoneExtension { get; set; }
-#endif
-        /// <summary>Picture thumbnail url of a person</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PersonPictureThumbnailUrl { get; set; }
-#nullable restore
-#else
-        public string PersonPictureThumbnailUrl { get; set; }
-#endif
-        /// <summary>ID of the involved user</summary>
-        public Guid? User { get; set; }
-        /// <summary>User name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserFullName { get; set; }
-#nullable restore
-#else
-        public string UserFullName { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.AccountancyInvolvedUsers"/> and sets the default values.
         /// </summary>
@@ -165,30 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Account", n => { Account = n.GetGuidValue(); } },
-                { "AccountCity", n => { AccountCity = n.GetStringValue(); } },
-                { "AccountCode", n => { AccountCode = n.GetStringValue(); } },
-                { "AccountIsSupplier", n => { AccountIsSupplier = n.GetBoolValue(); } },
-                { "AccountLogoThumbnailUrl", n => { AccountLogoThumbnailUrl = n.GetStringValue(); } },
-                { "AccountName", n => { AccountName = n.GetStringValue(); } },
-                { "AccountStatus", n => { AccountStatus = n.GetStringValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "InvolvedUserRole", n => { InvolvedUserRole = n.GetGuidValue(); } },
-                { "InvolvedUserRoleDescription", n => { InvolvedUserRoleDescription = n.GetStringValue(); } },
-                { "IsMainContact", n => { IsMainContact = n.GetBoolValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "PersonEmail", n => { PersonEmail = n.GetStringValue(); } },
-                { "PersonPhone", n => { PersonPhone = n.GetStringValue(); } },
-                { "PersonPhoneExtension", n => { PersonPhoneExtension = n.GetStringValue(); } },
-                { "PersonPictureThumbnailUrl", n => { PersonPictureThumbnailUrl = n.GetStringValue(); } },
-                { "User", n => { User = n.GetGuidValue(); } },
-                { "UserFullName", n => { UserFullName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -198,30 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Account", Account);
-            writer.WriteStringValue("AccountCity", AccountCity);
-            writer.WriteStringValue("AccountCode", AccountCode);
-            writer.WriteBoolValue("AccountIsSupplier", AccountIsSupplier);
-            writer.WriteStringValue("AccountLogoThumbnailUrl", AccountLogoThumbnailUrl);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteStringValue("AccountStatus", AccountStatus);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("InvolvedUserRole", InvolvedUserRole);
-            writer.WriteStringValue("InvolvedUserRoleDescription", InvolvedUserRoleDescription);
-            writer.WriteBoolValue("IsMainContact", IsMainContact);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("PersonEmail", PersonEmail);
-            writer.WriteStringValue("PersonPhone", PersonPhone);
-            writer.WriteStringValue("PersonPhoneExtension", PersonPhoneExtension);
-            writer.WriteStringValue("PersonPictureThumbnailUrl", PersonPictureThumbnailUrl);
-            writer.WriteGuidValue("User", User);
-            writer.WriteStringValue("UserFullName", UserFullName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,70 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>The exchange rate is stored as 1 TARGET CURRENCY = 1/x SOURCE CURRENCY</summary>
-        public double? Rate { get; set; }
-        /// <summary>The foreign currency</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceCurrency { get; set; }
-#nullable restore
-#else
-        public string SourceCurrency { get; set; }
-#endif
-        /// <summary>Description of the foreign currency</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceCurrencyDescription { get; set; }
-#nullable restore
-#else
-        public string SourceCurrencyDescription { get; set; }
-#endif
-        /// <summary>The date as of which the rate is valid. The rate is valid until a next rate is defined</summary>
-        public DateTimeOffset? StartDate { get; set; }
-        /// <summary>The default currency of the division</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TargetCurrency { get; set; }
-#nullable restore
-#else
-        public string TargetCurrency { get; set; }
-#endif
-        /// <summary>Description of the default currency</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TargetCurrencyDescription { get; set; }
-#nullable restore
-#else
-        public string TargetCurrencyDescription { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.FinancialExchangeRates"/> and sets the default values.
         /// </summary>
@@ -103,20 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Rate", n => { Rate = n.GetDoubleValue(); } },
-                { "SourceCurrency", n => { SourceCurrency = n.GetStringValue(); } },
-                { "SourceCurrencyDescription", n => { SourceCurrencyDescription = n.GetStringValue(); } },
-                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "TargetCurrency", n => { TargetCurrency = n.GetStringValue(); } },
-                { "TargetCurrencyDescription", n => { TargetCurrencyDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -126,20 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteDoubleValue("Rate", Rate);
-            writer.WriteStringValue("SourceCurrency", SourceCurrency);
-            writer.WriteStringValue("SourceCurrencyDescription", SourceCurrencyDescription);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteStringValue("TargetCurrency", TargetCurrency);
-            writer.WriteStringValue("TargetCurrencyDescription", TargetCurrencyDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

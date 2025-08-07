@@ -12,106 +12,8 @@ namespace ExactOnline.Api.Client.Models
     public partial class SyncFinancialGLClassifications : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Abstract elements are only used in presentation linkbases to group other elements. They are not supposed to be used in instance documents</summary>
-        public bool? Abstract { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Only used for amount concepts: in that case either &apos;debit&apos; or &apos;credit&apos;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Balance { get; set; }
-#nullable restore
-#else
-        public string Balance { get; set; }
-#endif
-        /// <summary>The Code is unique</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Code { get; set; }
-#nullable restore
-#else
-        public string Code { get; set; }
-#endif
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Description of the element. Note that this description is only used for division-specific taxonomies (or reporting schemes).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>Division is optional. For taxonomies of Taxonomies.Type = 0 (general taxonomies), the Division is empty. For division specific taxonomies it is mandatory</summary>
-        public int? Division { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Obsolete</summary>
-        public bool? IsTupleSubElement { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>The Name is unique in the namespace</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>Determines whether usage of the element is mandatory in an instance document</summary>
-        public bool? Nillable { get; set; }
-        /// <summary>Parent element for reporting schemes. In a reporting scheme, an element can have only one parent. This column is only used for reporting schemes. Note that in a real taxonomy, elements can have multiple parents.</summary>
-        public Guid? Parent { get; set; }
-        /// <summary>Only used for item concepts: either &apos;instant&apos; or &apos;duration&apos;. &apos;instant&apos; is used for balance types of concepts, &apos;duration&apos; is used for P&amp;L types of concepts</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PeriodType { get; set; }
-#nullable restore
-#else
-        public string PeriodType { get; set; }
-#endif
-        /// <summary>Mostly import sutstitutiongroup is xbrli:tuple, which makes the element a tuple concept. The default substitutiongroup for item concepts is xbrli:item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SubstitutionGroup { get; set; }
-#nullable restore
-#else
-        public string SubstitutionGroup { get; set; }
-#endif
-        /// <summary>Namespace of the element</summary>
-        public Guid? TaxonomyNamespace { get; set; }
-        /// <summary>Description of TaxonomyNamespace</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TaxonomyNamespaceDescription { get; set; }
-#nullable restore
-#else
-        public string TaxonomyNamespaceDescription { get; set; }
-#endif
-        /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
-        /// <summary>Type of the element</summary>
-        public Guid? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncFinancialGLClassifications"/> and sets the default values.
         /// </summary>
@@ -137,28 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Abstract", n => { Abstract = n.GetBoolValue(); } },
-                { "Balance", n => { Balance = n.GetStringValue(); } },
-                { "Code", n => { Code = n.GetStringValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "IsTupleSubElement", n => { IsTupleSubElement = n.GetBoolValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Name", n => { Name = n.GetStringValue(); } },
-                { "Nillable", n => { Nillable = n.GetBoolValue(); } },
-                { "Parent", n => { Parent = n.GetGuidValue(); } },
-                { "PeriodType", n => { PeriodType = n.GetStringValue(); } },
-                { "SubstitutionGroup", n => { SubstitutionGroup = n.GetStringValue(); } },
-                { "TaxonomyNamespace", n => { TaxonomyNamespace = n.GetGuidValue(); } },
-                { "TaxonomyNamespaceDescription", n => { TaxonomyNamespaceDescription = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
-                { "Type", n => { Type = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -168,28 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("Abstract", Abstract);
-            writer.WriteStringValue("Balance", Balance);
-            writer.WriteStringValue("Code", Code);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteBoolValue("IsTupleSubElement", IsTupleSubElement);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Name", Name);
-            writer.WriteBoolValue("Nillable", Nillable);
-            writer.WriteGuidValue("Parent", Parent);
-            writer.WriteStringValue("PeriodType", PeriodType);
-            writer.WriteStringValue("SubstitutionGroup", SubstitutionGroup);
-            writer.WriteGuidValue("TaxonomyNamespace", TaxonomyNamespace);
-            writer.WriteStringValue("TaxonomyNamespaceDescription", TaxonomyNamespaceDescription);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteGuidValue("Type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,112 +12,8 @@ namespace ExactOnline.Api.Client.Models
     public partial class ReadProjectCostsByDate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Code of account linked to the project that hours are being entered to</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountCode { get; set; }
-#nullable restore
-#else
-        public string AccountCode { get; set; }
-#endif
-        /// <summary>ID of account linked to the project that hours are being entered to</summary>
-        public Guid? AccountId { get; set; }
-        /// <summary>Name of account linked to the project that hours are being entered to</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountName { get; set; }
-#nullable restore
-#else
-        public string AccountName { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The total amount of (Quantity * Sales price of cost item) that has been approved</summary>
-        public double? AmountApproved { get; set; }
-        /// <summary>The total amount of (Quantity * Sales price of cost item) that has been saved as draft</summary>
-        public double? AmountDraft { get; set; }
-        /// <summary>The total amount of (Quantity * Sales price of cost item) that has been rejected</summary>
-        public double? AmountRejected { get; set; }
-        /// <summary>The total amount of (Quantity * Sales price of cost item) that has been submitted</summary>
-        public double? AmountSubmitted { get; set; }
-        /// <summary>Code of sales currency which is used in the cost item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CurrencyCode { get; set; }
-#nullable restore
-#else
-        public string CurrencyCode { get; set; }
-#endif
-        /// <summary>Date of entry</summary>
-        public DateTimeOffset? Date { get; set; }
-        /// <summary>Entry ID of record</summary>
-        public Guid? EntryId { get; set; }
-        /// <summary>The ID of the Expense that is linked to the project</summary>
-        public Guid? Expense { get; set; }
-        /// <summary>The description of the Expense that is linked to the project</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExpenseDescription { get; set; }
-#nullable restore
-#else
-        public string ExpenseDescription { get; set; }
-#endif
-        /// <summary>Primary key</summary>
-        public int? Id { get; set; }
-        /// <summary>Code of the item used for cost entry</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemCode { get; set; }
-#nullable restore
-#else
-        public string ItemCode { get; set; }
-#endif
-        /// <summary>Description of the item used for cost entry</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemDescription { get; set; }
-#nullable restore
-#else
-        public string ItemDescription { get; set; }
-#endif
-        /// <summary>ID of the item used for cost entry</summary>
-        public Guid? ItemId { get; set; }
-        /// <summary>Notes entered regarding the information of the cost entered</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Notes { get; set; }
-#nullable restore
-#else
-        public string Notes { get; set; }
-#endif
-        /// <summary>Code of project that the costs are entered on</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectCode { get; set; }
-#nullable restore
-#else
-        public string ProjectCode { get; set; }
-#endif
-        /// <summary>Description of project that the costs are entered on</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectDescription { get; set; }
-#nullable restore
-#else
-        public string ProjectDescription { get; set; }
-#endif
-        /// <summary>ID of project that the costs are entered on</summary>
-        public Guid? ProjectId { get; set; }
-        /// <summary>Quantity of items that is used in cost entry that are approved</summary>
-        public double? QuantityApproved { get; set; }
-        /// <summary>Quantity of items that is used in cost entry that are saved as draft</summary>
-        public double? QuantityDraft { get; set; }
-        /// <summary>Quantity of items that is used in cost entry that are rejected</summary>
-        public double? QuantityRejected { get; set; }
-        /// <summary>Quantity of items that is used in cost entry that are submitted</summary>
-        public double? QuantitySubmitted { get; set; }
-        /// <summary>The week number that the cost entries have been entered on</summary>
-        public int? WeekNumber { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadProjectCostsByDate"/> and sets the default values.
         /// </summary>
@@ -143,31 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AccountCode", n => { AccountCode = n.GetStringValue(); } },
-                { "AccountId", n => { AccountId = n.GetGuidValue(); } },
-                { "AccountName", n => { AccountName = n.GetStringValue(); } },
-                { "AmountApproved", n => { AmountApproved = n.GetDoubleValue(); } },
-                { "AmountDraft", n => { AmountDraft = n.GetDoubleValue(); } },
-                { "AmountRejected", n => { AmountRejected = n.GetDoubleValue(); } },
-                { "AmountSubmitted", n => { AmountSubmitted = n.GetDoubleValue(); } },
-                { "CurrencyCode", n => { CurrencyCode = n.GetStringValue(); } },
-                { "Date", n => { Date = n.GetDateTimeOffsetValue(); } },
-                { "EntryId", n => { EntryId = n.GetGuidValue(); } },
-                { "Expense", n => { Expense = n.GetGuidValue(); } },
-                { "ExpenseDescription", n => { ExpenseDescription = n.GetStringValue(); } },
-                { "Id", n => { Id = n.GetIntValue(); } },
-                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
-                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
-                { "ItemId", n => { ItemId = n.GetGuidValue(); } },
-                { "Notes", n => { Notes = n.GetStringValue(); } },
-                { "ProjectCode", n => { ProjectCode = n.GetStringValue(); } },
-                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
-                { "ProjectId", n => { ProjectId = n.GetGuidValue(); } },
-                { "QuantityApproved", n => { QuantityApproved = n.GetDoubleValue(); } },
-                { "QuantityDraft", n => { QuantityDraft = n.GetDoubleValue(); } },
-                { "QuantityRejected", n => { QuantityRejected = n.GetDoubleValue(); } },
-                { "QuantitySubmitted", n => { QuantitySubmitted = n.GetDoubleValue(); } },
-                { "WeekNumber", n => { WeekNumber = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -177,31 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("AccountCode", AccountCode);
-            writer.WriteGuidValue("AccountId", AccountId);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteDoubleValue("AmountApproved", AmountApproved);
-            writer.WriteDoubleValue("AmountDraft", AmountDraft);
-            writer.WriteDoubleValue("AmountRejected", AmountRejected);
-            writer.WriteDoubleValue("AmountSubmitted", AmountSubmitted);
-            writer.WriteStringValue("CurrencyCode", CurrencyCode);
-            writer.WriteDateTimeOffsetValue("Date", Date);
-            writer.WriteGuidValue("EntryId", EntryId);
-            writer.WriteGuidValue("Expense", Expense);
-            writer.WriteStringValue("ExpenseDescription", ExpenseDescription);
-            writer.WriteIntValue("Id", Id);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteGuidValue("ItemId", ItemId);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteStringValue("ProjectCode", ProjectCode);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteGuidValue("ProjectId", ProjectId);
-            writer.WriteDoubleValue("QuantityApproved", QuantityApproved);
-            writer.WriteDoubleValue("QuantityDraft", QuantityDraft);
-            writer.WriteDoubleValue("QuantityRejected", QuantityRejected);
-            writer.WriteDoubleValue("QuantitySubmitted", QuantitySubmitted);
-            writer.WriteIntValue("WeekNumber", WeekNumber);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

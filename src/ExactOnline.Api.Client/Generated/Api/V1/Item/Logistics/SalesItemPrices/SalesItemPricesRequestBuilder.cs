@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Logistics.SalesItemPrices
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Create a new sales item price. It will be treated as &apos;Price Agreement&apos; when an account is provided. If is not provided,it will be treated as the usual sales price.&amp;emsp;&amp;#149; Retrieve an existing sales item price.&amp;emsp;&amp;#149; Update an existing sales item price.&amp;emsp;&amp;#149; Delete an existing sales item price.There are several ways of defining sales price of an item. You can manage prices according to different items and customers.You can also create for seasonal offers within a specified period.For more information about the sales price management functionality in Exact Online, see Sales price management.
+    /// Use this endpoint to : • Create a new sales item price. It will be treated as &apos;Price Agreement&apos; when an account is provided. If is not provided,it will be treated as the usual sales price. • Retrieve an existing sales item price. • Update an existing sales item price. • Delete an existing sales item price.There are several ways of defining sales price of an item. You can manage prices according to different items and customers.You can also create for seasonal offers within a specified period.For more information about the sales price management functionality in Exact Online, see Sales price management.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SalesItemPricesRequestBuilder : BaseRequestBuilder

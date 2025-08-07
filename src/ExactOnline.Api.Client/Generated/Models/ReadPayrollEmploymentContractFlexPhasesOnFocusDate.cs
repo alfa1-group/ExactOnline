@@ -14,22 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Code used to declare employment contract flex phase code to the Dutch Tax Authority</summary>
-        public int? Code { get; set; }
-        /// <summary>Flexible employment contract phase description</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>End date of the employment contract flex phase</summary>
-        public DateTimeOffset? EndDate { get; set; }
-        /// <summary>Primary key</summary>
-        public int? ID { get; set; }
-        /// <summary>Start date of the employment contract flex phase</summary>
-        public DateTimeOffset? StartDate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadPayrollEmploymentContractFlexPhasesOnFocusDate"/> and sets the default values.
         /// </summary>
@@ -55,11 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Code", n => { Code = n.GetIntValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
-                { "ID", n => { ID = n.GetIntValue(); } },
-                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -69,11 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Code", Code);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteIntValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

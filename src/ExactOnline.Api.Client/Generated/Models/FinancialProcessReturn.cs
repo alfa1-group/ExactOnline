@@ -14,12 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates if the status change was processed</summary>
-        public bool? Processed { get; set; }
-        /// <summary>Reference to request.</summary>
-        public Guid? Request { get; set; }
-        /// <summary>The status of the request : 5 - Rejected, 50 - Processed</summary>
-        public int? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.FinancialProcessReturn"/> and sets the default values.
         /// </summary>
@@ -45,9 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Processed", n => { Processed = n.GetBoolValue(); } },
-                { "Request", n => { Request = n.GetGuidValue(); } },
-                { "Status", n => { Status = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -57,9 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("Processed", Processed);
-            writer.WriteGuidValue("Request", Request);
-            writer.WriteIntValue("Status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

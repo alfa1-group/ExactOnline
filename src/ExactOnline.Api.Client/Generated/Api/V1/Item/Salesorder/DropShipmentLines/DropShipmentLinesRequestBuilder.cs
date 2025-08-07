@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLines
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Create new drop shipment lines.&amp;emsp;&amp;#149; Read existing drop shipment lines.&amp;emsp;&amp;#149; Update existing drop shipment lines.Delivery lines support trade-in lines. For more details, please refer description under properties QuantityDelivered. Note: DropShipmentLines may not be posted individually. They should be part of the DropShipments Post. For creating drop shipment lines, it is mandatory to supply SalesOrderLineID, PurchaseOrderId and QuantityDelivered.For more information about the  functionality in Exact Online, see Drop Shipments - New.
+    /// Use this endpoint to : • Create new drop shipment lines. • Read existing drop shipment lines. • Update existing drop shipment lines.Delivery lines support trade-in lines. For more details, please refer description under properties QuantityDelivered. Note: DropShipmentLines may not be posted individually. They should be part of the DropShipments Post. For creating drop shipment lines, it is mandatory to supply SalesOrderLineID, PurchaseOrderId and QuantityDelivered.For more information about the  functionality in Exact Online, see Drop Shipments - New.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DropShipmentLinesRequestBuilder : BaseRequestBuilder

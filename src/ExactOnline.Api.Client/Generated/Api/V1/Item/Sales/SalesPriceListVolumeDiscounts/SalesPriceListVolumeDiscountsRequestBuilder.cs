@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListVolumeDiscounts
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Get discountsPrice lists allow you to manage prices for different items and customers. You can link several customers to a price list, but each customer can only be linked to one price list at a time.Use the following related endpoints to retrieve details of prices lists :&amp;emsp;&amp;#149; SalesPriceLists&amp;emsp;&amp;#149; SalesPriceListPeriods&amp;emsp;&amp;#149; SalesPriceListLinkedAccounts For more information about the  functionality in Exact Online, see Sales price management.
+    /// Use this endpoint to : • Get discountsPrice lists allow you to manage prices for different items and customers. You can link several customers to a price list, but each customer can only be linked to one price list at a time.Use the following related endpoints to retrieve details of prices lists : • SalesPriceLists • SalesPriceListPeriods • SalesPriceListLinkedAccounts For more information about the  functionality in Exact Online, see Sales price management.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SalesPriceListVolumeDiscountsRequestBuilder : BaseRequestBuilder

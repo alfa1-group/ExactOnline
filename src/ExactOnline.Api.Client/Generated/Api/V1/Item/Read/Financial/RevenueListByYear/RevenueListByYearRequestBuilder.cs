@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYear
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RevenueListByYearRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/RevenueListByYear{?%24filter*,%24select*}", pathParameters)
+        public RevenueListByYearRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/RevenueListByYear?year={year}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYear
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RevenueListByYearRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/RevenueListByYear{?%24filter*,%24select*}", rawUrl)
+        public RevenueListByYearRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/RevenueListByYear?year={year}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -105,6 +105,9 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYear
             [QueryParameter("%24select")]
             public string Select { get; set; }
 #endif
+            /// <summary>Query parameter of type Edm.Int32</summary>
+            [QueryParameter("year")]
+            public int? Year { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

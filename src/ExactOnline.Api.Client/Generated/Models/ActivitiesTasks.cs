@@ -12,148 +12,8 @@ namespace ExactOnline.Api.Client.Models
     public partial class ActivitiesTasks : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account that is related to the task</summary>
-        public Guid? Account { get; set; }
-        /// <summary>The name of the account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountName { get; set; }
-#nullable restore
-#else
-        public string AccountName { get; set; }
-#endif
-        /// <summary>The end date by which the task has to be realized</summary>
-        public DateTimeOffset? ActionDate { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Attachments property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::ExactOnline.Api.Client.Models.WorkflowRequestAttachments? Attachments { get; set; }
-#nullable restore
-#else
-        public global::ExactOnline.Api.Client.Models.WorkflowRequestAttachments Attachments { get; set; }
-#endif
-        /// <summary>The contact person that is related to the task</summary>
-        public Guid? Contact { get; set; }
-        /// <summary>The name of the contact person</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ContactFullName { get; set; }
-#nullable restore
-#else
-        public string ContactFullName { get; set; }
-#endif
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of the creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of the creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Custom type of the task. If both TaskType and CustomTaskType are specified then TaskType is preferred. This value is write-only.</summary>
-        public Guid? CustomTaskType { get; set; }
-        /// <summary>The description of the task</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>The division of the task</summary>
-        public int? Division { get; set; }
-        /// <summary>The document that is linked to the task</summary>
-        public Guid? Document { get; set; }
-        /// <summary>The subject of the document</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DocumentSubject { get; set; }
-#nullable restore
-#else
-        public string DocumentSubject { get; set; }
-#endif
-        /// <summary>The employee that is linked to the task.Note:For POST/PUT: This field value is only used when the &quot;Employees&quot; featureset is enabled. For GET: To see the field value required &quot;Employee&quot; featureset. Otherwise, the field always return NULL value.</summary>
-        public Guid? Employee { get; set; }
-        /// <summary>The human readable key</summary>
-        public int? HID { get; set; }
-        /// <summary>The Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of the last modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of the last modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>The notes of the task</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Notes { get; set; }
-#nullable restore
-#else
-        public string Notes { get; set; }
-#endif
-        /// <summary>The opportunity linked to the task</summary>
-        public Guid? Opportunity { get; set; }
-        /// <summary>The name of the opportunity</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OpportunityName { get; set; }
-#nullable restore
-#else
-        public string OpportunityName { get; set; }
-#endif
-        /// <summary>The project linked to the task</summary>
-        public Guid? Project { get; set; }
-        /// <summary>The description of the project</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectDescription { get; set; }
-#nullable restore
-#else
-        public string ProjectDescription { get; set; }
-#endif
-        /// <summary>Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed</summary>
-        public int? Status { get; set; }
-        /// <summary>The description of the status</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StatusDescription { get; set; }
-#nullable restore
-#else
-        public string StatusDescription { get; set; }
-#endif
-        /// <summary>The type of the task. This value is write-only.0 = Other (default), 1 = Call, 2 = Request for information, 3 = Investigate, 4 = Correspondence, 5 = Create an appointment, 6 = Create a quotation</summary>
-        public int? TaskType { get; set; }
-        /// <summary>The description of the type of the task</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TaskTypeDescription { get; set; }
-#nullable restore
-#else
-        public string TaskTypeDescription { get; set; }
-#endif
-        /// <summary>The user that has to realize the task</summary>
-        public Guid? User { get; set; }
-        /// <summary>The user name</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserFullName { get; set; }
-#nullable restore
-#else
-        public string UserFullName { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ActivitiesTasks"/> and sets the default values.
         /// </summary>
@@ -179,37 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Account", n => { Account = n.GetGuidValue(); } },
-                { "AccountName", n => { AccountName = n.GetStringValue(); } },
-                { "ActionDate", n => { ActionDate = n.GetDateTimeOffsetValue(); } },
-                { "Attachments", n => { Attachments = n.GetObjectValue<global::ExactOnline.Api.Client.Models.WorkflowRequestAttachments>(global::ExactOnline.Api.Client.Models.WorkflowRequestAttachments.CreateFromDiscriminatorValue); } },
-                { "Contact", n => { Contact = n.GetGuidValue(); } },
-                { "ContactFullName", n => { ContactFullName = n.GetStringValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "CustomTaskType", n => { CustomTaskType = n.GetGuidValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "Document", n => { Document = n.GetGuidValue(); } },
-                { "DocumentSubject", n => { DocumentSubject = n.GetStringValue(); } },
-                { "Employee", n => { Employee = n.GetGuidValue(); } },
-                { "HID", n => { HID = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Notes", n => { Notes = n.GetStringValue(); } },
-                { "Opportunity", n => { Opportunity = n.GetGuidValue(); } },
-                { "OpportunityName", n => { OpportunityName = n.GetStringValue(); } },
-                { "Project", n => { Project = n.GetGuidValue(); } },
-                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
-                { "Status", n => { Status = n.GetIntValue(); } },
-                { "StatusDescription", n => { StatusDescription = n.GetStringValue(); } },
-                { "TaskType", n => { TaskType = n.GetIntValue(); } },
-                { "TaskTypeDescription", n => { TaskTypeDescription = n.GetStringValue(); } },
-                { "User", n => { User = n.GetGuidValue(); } },
-                { "UserFullName", n => { UserFullName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -219,37 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Account", Account);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteDateTimeOffsetValue("ActionDate", ActionDate);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.WorkflowRequestAttachments>("Attachments", Attachments);
-            writer.WriteGuidValue("Contact", Contact);
-            writer.WriteStringValue("ContactFullName", ContactFullName);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteGuidValue("CustomTaskType", CustomTaskType);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Document", Document);
-            writer.WriteStringValue("DocumentSubject", DocumentSubject);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteIntValue("HID", HID);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteGuidValue("Opportunity", Opportunity);
-            writer.WriteStringValue("OpportunityName", OpportunityName);
-            writer.WriteGuidValue("Project", Project);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteStringValue("StatusDescription", StatusDescription);
-            writer.WriteIntValue("TaskType", TaskType);
-            writer.WriteStringValue("TaskTypeDescription", TaskTypeDescription);
-            writer.WriteGuidValue("User", User);
-            writer.WriteStringValue("UserFullName", UserFullName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

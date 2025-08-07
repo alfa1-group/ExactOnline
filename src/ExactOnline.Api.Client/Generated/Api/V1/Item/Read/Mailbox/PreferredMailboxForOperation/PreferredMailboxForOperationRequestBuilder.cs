@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxForOpe
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreferredMailboxForOperationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/mailbox/PreferredMailboxForOperation{?%24filter*,%24select*}", pathParameters)
+        public PreferredMailboxForOperationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/mailbox/PreferredMailboxForOperation?operation={operation}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxForOpe
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreferredMailboxForOperationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/mailbox/PreferredMailboxForOperation{?%24filter*,%24select*}", rawUrl)
+        public PreferredMailboxForOperationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/mailbox/PreferredMailboxForOperation?operation={operation}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -95,6 +95,9 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxForOpe
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
+            /// <summary>Query parameter of type Edm.Int32</summary>
+            [QueryParameter("operation")]
+            public int? Operation { get; set; }
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

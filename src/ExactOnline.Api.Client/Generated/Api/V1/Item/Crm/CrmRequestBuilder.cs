@@ -124,7 +124,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationLines.QuotationLinesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Use this endpoint to create, read, update and delete quotation&apos;s order charge lines.  Note:  &amp;emsp;&amp;#149; If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa.&amp;emsp;&amp;#149; If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.</summary>
+        /// <summary>Use this endpoint to create, read, update and delete quotation&apos;s order charge lines.  Note:   • If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa. • If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.</summary>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationOrderChargeLines.QuotationOrderChargeLinesRequestBuilder QuotationOrderChargeLines
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationOrderChargeLines.QuotationOrderChargeLinesRequestBuilder(PathParameters, RequestAdapter);
@@ -231,7 +231,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationLinesWithId.QuotationLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
-        /// Use this endpoint to create, read, update and delete quotation&apos;s order charge lines.  Note:  &amp;emsp;&amp;#149; If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa.&amp;emsp;&amp;#149; If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.
+        /// Use this endpoint to create, read, update and delete quotation&apos;s order charge lines.  Note:   • If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa. • If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationOrderChargeLinesWithId.QuotationOrderChargeLinesWithIdRequestBuilder"/></returns>
         /// <param name="id">Unique identifier (GUID) of the CRMQuotationOrderChargeLines</param>

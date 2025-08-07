@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipments
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Create new drop shipments.&amp;emsp;&amp;#149; Read existing drop shipments.&amp;emsp;&amp;#149; Update existing drop shipments.Delivery lines support trade-in lines. For more details, please refer description under properties DropShipmentLines &gt; QuantityDelivered Note: For creating a DropShipments, it is mandatory to supply one or more DropShipmentLines and DeliveryDate.For more information about the  functionality in Exact Online, see Drop Shipment - New.
+    /// Use this endpoint to : • Create new drop shipments. • Read existing drop shipments. • Update existing drop shipments.Delivery lines support trade-in lines. For more details, please refer description under properties DropShipmentLines &amp;gt; QuantityDelivered Note: For creating a DropShipments, it is mandatory to supply one or more DropShipmentLines and DeliveryDate.For more information about the  functionality in Exact Online, see Drop Shipment - New.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DropShipmentsRequestBuilder : BaseRequestBuilder

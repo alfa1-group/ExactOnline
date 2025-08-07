@@ -14,128 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Budget amount (always in the default currency of the company)</summary>
-        public double? AmountDC { get; set; }
-        /// <summary>Budget scenario</summary>
-        public Guid? BudgetScenario { get; set; }
-        /// <summary>Code of BudgetScenario</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BudgetScenarioCode { get; set; }
-#nullable restore
-#else
-        public string BudgetScenarioCode { get; set; }
-#endif
-        /// <summary>Description of BudgetScenario</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BudgetScenarioDescription { get; set; }
-#nullable restore
-#else
-        public string BudgetScenarioDescription { get; set; }
-#endif
-        /// <summary>Used for cost center-specific budgets - NULL otherwise</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Costcenter { get; set; }
-#nullable restore
-#else
-        public string Costcenter { get; set; }
-#endif
-        /// <summary>Description of Costcenter</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CostcenterDescription { get; set; }
-#nullable restore
-#else
-        public string CostcenterDescription { get; set; }
-#endif
-        /// <summary>Used for cost unit-specific budgets - NULL otherwise</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Costunit { get; set; }
-#nullable restore
-#else
-        public string Costunit { get; set; }
-#endif
-        /// <summary>Description of Costunit</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CostunitDescription { get; set; }
-#nullable restore
-#else
-        public string CostunitDescription { get; set; }
-#endif
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>G/L account</summary>
-        public Guid? GLAccount { get; set; }
-        /// <summary>Code of GLAccount</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLAccountCode { get; set; }
-#nullable restore
-#else
-        public string GLAccountCode { get; set; }
-#endif
-        /// <summary>Description of GLAccount</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLAccountDescription { get; set; }
-#nullable restore
-#else
-        public string GLAccountDescription { get; set; }
-#endif
-        /// <summary>Numerical ID. Never displayed to the user, but it may have its use for performance reasons</summary>
-        public long? HID { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Used for item-specific budgets - NULL otherwise</summary>
-        public Guid? Item { get; set; }
-        /// <summary>Code of Item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemCode { get; set; }
-#nullable restore
-#else
-        public string ItemCode { get; set; }
-#endif
-        /// <summary>Description of Item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemDescription { get; set; }
-#nullable restore
-#else
-        public string ItemDescription { get; set; }
-#endif
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Period (combined with financial year)</summary>
-        public int? ReportingPeriod { get; set; }
-        /// <summary>Financial year</summary>
-        public int? ReportingYear { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.BudgetBudgets"/> and sets the default values.
         /// </summary>
@@ -161,31 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AmountDC", n => { AmountDC = n.GetDoubleValue(); } },
-                { "BudgetScenario", n => { BudgetScenario = n.GetGuidValue(); } },
-                { "BudgetScenarioCode", n => { BudgetScenarioCode = n.GetStringValue(); } },
-                { "BudgetScenarioDescription", n => { BudgetScenarioDescription = n.GetStringValue(); } },
-                { "Costcenter", n => { Costcenter = n.GetStringValue(); } },
-                { "CostcenterDescription", n => { CostcenterDescription = n.GetStringValue(); } },
-                { "Costunit", n => { Costunit = n.GetStringValue(); } },
-                { "CostunitDescription", n => { CostunitDescription = n.GetStringValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "GLAccount", n => { GLAccount = n.GetGuidValue(); } },
-                { "GLAccountCode", n => { GLAccountCode = n.GetStringValue(); } },
-                { "GLAccountDescription", n => { GLAccountDescription = n.GetStringValue(); } },
-                { "HID", n => { HID = n.GetLongValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Item", n => { Item = n.GetGuidValue(); } },
-                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
-                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "ReportingPeriod", n => { ReportingPeriod = n.GetIntValue(); } },
-                { "ReportingYear", n => { ReportingYear = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -195,31 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("AmountDC", AmountDC);
-            writer.WriteGuidValue("BudgetScenario", BudgetScenario);
-            writer.WriteStringValue("BudgetScenarioCode", BudgetScenarioCode);
-            writer.WriteStringValue("BudgetScenarioDescription", BudgetScenarioDescription);
-            writer.WriteStringValue("Costcenter", Costcenter);
-            writer.WriteStringValue("CostcenterDescription", CostcenterDescription);
-            writer.WriteStringValue("Costunit", Costunit);
-            writer.WriteStringValue("CostunitDescription", CostunitDescription);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("GLAccount", GLAccount);
-            writer.WriteStringValue("GLAccountCode", GLAccountCode);
-            writer.WriteStringValue("GLAccountDescription", GLAccountDescription);
-            writer.WriteLongValue("HID", HID);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteIntValue("ReportingPeriod", ReportingPeriod);
-            writer.WriteIntValue("ReportingYear", ReportingYear);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,110 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates the number of days for next cycle count.</summary>
-        public int? CountingCycle { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>This is a default storage location</summary>
-        public Guid? DefaultStorageLocation { get; set; }
-        /// <summary>Default storage location&apos;s code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DefaultStorageLocationCode { get; set; }
-#nullable restore
-#else
-        public string DefaultStorageLocationCode { get; set; }
-#endif
-        /// <summary>Default storage location&apos;s description</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DefaultStorageLocationDescription { get; set; }
-#nullable restore
-#else
-        public string DefaultStorageLocationDescription { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>A guid that is the unique identifier of the linkage between item and warehouse</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Item ID</summary>
-        public Guid? Item { get; set; }
-        /// <summary>Code of item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemCode { get; set; }
-#nullable restore
-#else
-        public string ItemCode { get; set; }
-#endif
-        /// <summary>Description of item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemDescription { get; set; }
-#nullable restore
-#else
-        public string ItemDescription { get; set; }
-#endif
-        /// <summary>Maximum quantity of items that you want in warehouse</summary>
-        public double? MaximumStock { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Order Policy options: 1-Lot for lot, 2-Fixed order quantity, 3-Min / Max, 4-Order</summary>
-        public int? OrderPolicy { get; set; }
-        /// <summary>Period that work together with replenishment in MRP</summary>
-        public int? Period { get; set; }
-        /// <summary>Quantity of items as an indication of when you need to reorder more stock for the warehouse</summary>
-        public double? ReorderPoint { get; set; }
-        /// <summary>Reorder quantity that work together with replenishment in MRP</summary>
-        public double? ReorderQuantity { get; set; }
-        /// <summary>Replenishment options: 1-Purchase, 2-Assemble, 3-Make, 4-Transfer, 5-No replenishment advice</summary>
-        public int? ReplenishmentType { get; set; }
-        /// <summary>The quantity in a back to back order process which is already received from the purchase order, but not yet delivered for the sales order.</summary>
-        public double? ReservedStock { get; set; }
-        /// <summary>Minimum quantity of items you must have in stock</summary>
-        public double? SafetyStock { get; set; }
-        /// <summary>Sequence number of the item (Premium Only)</summary>
-        public int? StorageLocationSequenceNumber { get; set; }
-        /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
-        /// <summary>Warehouse ID</summary>
-        public Guid? Warehouse { get; set; }
-        /// <summary>Code of warehouse</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WarehouseCode { get; set; }
-#nullable restore
-#else
-        public string WarehouseCode { get; set; }
-#endif
-        /// <summary>Description of warehouse</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WarehouseDescription { get; set; }
-#nullable restore
-#else
-        public string WarehouseDescription { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncInventoryItemWarehouses"/> and sets the default values.
         /// </summary>
@@ -143,34 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CountingCycle", n => { CountingCycle = n.GetIntValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "DefaultStorageLocation", n => { DefaultStorageLocation = n.GetGuidValue(); } },
-                { "DefaultStorageLocationCode", n => { DefaultStorageLocationCode = n.GetStringValue(); } },
-                { "DefaultStorageLocationDescription", n => { DefaultStorageLocationDescription = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Item", n => { Item = n.GetGuidValue(); } },
-                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
-                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
-                { "MaximumStock", n => { MaximumStock = n.GetDoubleValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "OrderPolicy", n => { OrderPolicy = n.GetIntValue(); } },
-                { "Period", n => { Period = n.GetIntValue(); } },
-                { "ReorderPoint", n => { ReorderPoint = n.GetDoubleValue(); } },
-                { "ReorderQuantity", n => { ReorderQuantity = n.GetDoubleValue(); } },
-                { "ReplenishmentType", n => { ReplenishmentType = n.GetIntValue(); } },
-                { "ReservedStock", n => { ReservedStock = n.GetDoubleValue(); } },
-                { "SafetyStock", n => { SafetyStock = n.GetDoubleValue(); } },
-                { "StorageLocationSequenceNumber", n => { StorageLocationSequenceNumber = n.GetIntValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
-                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
-                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
-                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -180,34 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("CountingCycle", CountingCycle);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteGuidValue("DefaultStorageLocation", DefaultStorageLocation);
-            writer.WriteStringValue("DefaultStorageLocationCode", DefaultStorageLocationCode);
-            writer.WriteStringValue("DefaultStorageLocationDescription", DefaultStorageLocationDescription);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteDoubleValue("MaximumStock", MaximumStock);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteIntValue("OrderPolicy", OrderPolicy);
-            writer.WriteIntValue("Period", Period);
-            writer.WriteDoubleValue("ReorderPoint", ReorderPoint);
-            writer.WriteDoubleValue("ReorderQuantity", ReorderQuantity);
-            writer.WriteIntValue("ReplenishmentType", ReplenishmentType);
-            writer.WriteDoubleValue("ReservedStock", ReservedStock);
-            writer.WriteDoubleValue("SafetyStock", SafetyStock);
-            writer.WriteIntValue("StorageLocationSequenceNumber", StorageLocationSequenceNumber);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

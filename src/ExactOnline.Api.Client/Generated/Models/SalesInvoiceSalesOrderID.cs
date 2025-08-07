@@ -14,8 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Use this ID to pass sales order IDs in a POST to InvoiceSalesOrders</summary>
-        public Guid? ID { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesInvoiceSalesOrderID"/> and sets the default values.
         /// </summary>
@@ -41,7 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ID", n => { ID = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("ID", ID);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

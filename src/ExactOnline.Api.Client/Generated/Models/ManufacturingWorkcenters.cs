@@ -14,118 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Capacity of the work center</summary>
-        public int? Capacity { get; set; }
-        /// <summary>Code of the work center</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Code { get; set; }
-#nullable restore
-#else
-        public string Code { get; set; }
-#endif
-        /// <summary>Reference to CostCenters</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Costcenter { get; set; }
-#nullable restore
-#else
-        public string Costcenter { get; set; }
-#endif
-        /// <summary>Description of Costcenter</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CostcenterDescription { get; set; }
-#nullable restore
-#else
-        public string CostcenterDescription { get; set; }
-#endif
-        /// <summary>Reference to CostUnits</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Costunit { get; set; }
-#nullable restore
-#else
-        public string Costunit { get; set; }
-#endif
-        /// <summary>Description of Costunit</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CostunitDescription { get; set; }
-#nullable restore
-#else
-        public string CostunitDescription { get; set; }
-#endif
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Description of the work center</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>General burden rate</summary>
-        public double? GeneralBurdenRate { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Indicates if labor burden is calculated as a percentage or amount</summary>
-        public int? IsLaborBurdenPercent { get; set; }
-        /// <summary>Labor burden rate</summary>
-        public double? LaborBurdenRate { get; set; }
-        /// <summary>Machine burden rate</summary>
-        public double? MachineBurdenRate { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Remarks</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Notes { get; set; }
-#nullable restore
-#else
-        public string Notes { get; set; }
-#endif
-        /// <summary>Area to which the work center belongs.</summary>
-        public Guid? ProductionArea { get; set; }
-        /// <summary>Run labor rate</summary>
-        public double? RunLaborRate { get; set; }
-        /// <summary>Search code of the work center</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SearchCode { get; set; }
-#nullable restore
-#else
-        public string SearchCode { get; set; }
-#endif
-        /// <summary>Setup labor rate</summary>
-        public double? SetupLaborRate { get; set; }
-        /// <summary>Reference to WorkcenterStatus</summary>
-        public int? Status { get; set; }
-        /// <summary>Reference to WorkcenterTypes</summary>
-        public int? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingWorkcenters"/> and sets the default values.
         /// </summary>
@@ -151,32 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Capacity", n => { Capacity = n.GetIntValue(); } },
-                { "Code", n => { Code = n.GetStringValue(); } },
-                { "Costcenter", n => { Costcenter = n.GetStringValue(); } },
-                { "CostcenterDescription", n => { CostcenterDescription = n.GetStringValue(); } },
-                { "Costunit", n => { Costunit = n.GetStringValue(); } },
-                { "CostunitDescription", n => { CostunitDescription = n.GetStringValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "GeneralBurdenRate", n => { GeneralBurdenRate = n.GetDoubleValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "IsLaborBurdenPercent", n => { IsLaborBurdenPercent = n.GetIntValue(); } },
-                { "LaborBurdenRate", n => { LaborBurdenRate = n.GetDoubleValue(); } },
-                { "MachineBurdenRate", n => { MachineBurdenRate = n.GetDoubleValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Notes", n => { Notes = n.GetStringValue(); } },
-                { "ProductionArea", n => { ProductionArea = n.GetGuidValue(); } },
-                { "RunLaborRate", n => { RunLaborRate = n.GetDoubleValue(); } },
-                { "SearchCode", n => { SearchCode = n.GetStringValue(); } },
-                { "SetupLaborRate", n => { SetupLaborRate = n.GetDoubleValue(); } },
-                { "Status", n => { Status = n.GetIntValue(); } },
-                { "Type", n => { Type = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -186,32 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Capacity", Capacity);
-            writer.WriteStringValue("Code", Code);
-            writer.WriteStringValue("Costcenter", Costcenter);
-            writer.WriteStringValue("CostcenterDescription", CostcenterDescription);
-            writer.WriteStringValue("Costunit", Costunit);
-            writer.WriteStringValue("CostunitDescription", CostunitDescription);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDoubleValue("GeneralBurdenRate", GeneralBurdenRate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("IsLaborBurdenPercent", IsLaborBurdenPercent);
-            writer.WriteDoubleValue("LaborBurdenRate", LaborBurdenRate);
-            writer.WriteDoubleValue("MachineBurdenRate", MachineBurdenRate);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteGuidValue("ProductionArea", ProductionArea);
-            writer.WriteDoubleValue("RunLaborRate", RunLaborRate);
-            writer.WriteStringValue("SearchCode", SearchCode);
-            writer.WriteDoubleValue("SetupLaborRate", SetupLaborRate);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteIntValue("Type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

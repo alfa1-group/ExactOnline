@@ -14,66 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Employee ID</summary>
-        public Guid? Employee { get; set; }
-        /// <summary>Employee full name</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EmployeeFullName { get; set; }
-#nullable restore
-#else
-        public string EmployeeFullName { get; set; }
-#endif
-        /// <summary>Employee number</summary>
-        public int? EmployeeHID { get; set; }
-        /// <summary>Employment ID</summary>
-        public Guid? Employment { get; set; }
-        /// <summary>Employment number</summary>
-        public int? EmploymentNumber { get; set; }
-        /// <summary>EmploymentCLA end date</summary>
-        public DateTimeOffset? EndDate { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Employment conditions group ID</summary>
-        public Guid? PayrollComponentGroup { get; set; }
-        /// <summary>Employment conditions group description</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PayrollComponentGroupDescription { get; set; }
-#nullable restore
-#else
-        public string PayrollComponentGroupDescription { get; set; }
-#endif
-        /// <summary>Employment CLA start date. By default the value of this property will be the first day of next month ofprevious Employment CLA start date</summary>
-        public DateTimeOffset? StartDate { get; set; }
-        /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncPayrollEmploymentCLAs"/> and sets the default values.
         /// </summary>
@@ -99,24 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "Employee", n => { Employee = n.GetGuidValue(); } },
-                { "EmployeeFullName", n => { EmployeeFullName = n.GetStringValue(); } },
-                { "EmployeeHID", n => { EmployeeHID = n.GetIntValue(); } },
-                { "Employment", n => { Employment = n.GetGuidValue(); } },
-                { "EmploymentNumber", n => { EmploymentNumber = n.GetIntValue(); } },
-                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "PayrollComponentGroup", n => { PayrollComponentGroup = n.GetGuidValue(); } },
-                { "PayrollComponentGroupDescription", n => { PayrollComponentGroupDescription = n.GetStringValue(); } },
-                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -126,24 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
-            writer.WriteIntValue("EmployeeHID", EmployeeHID);
-            writer.WriteGuidValue("Employment", Employment);
-            writer.WriteIntValue("EmploymentNumber", EmploymentNumber);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteGuidValue("PayrollComponentGroup", PayrollComponentGroup);
-            writer.WriteStringValue("PayrollComponentGroupDescription", PayrollComponentGroupDescription);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteLongValue("Timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -25,7 +25,7 @@ public class OpenApiBuilderService
         Console.WriteLine("By Stef Heyenrath");
         Console.WriteLine();
 
-        var pages = (await MainPageCrawler.ExtractEndpointUrlsAsync(MainPage)).Where(x => x.Contains("ReadSyncSyncSyncTimestamp")).ToList();
+        var pages = (await MainPageCrawler.ExtractEndpointUrlsAsync(MainPage)).ToList();
 
         var options = new ProgressBarOptions
         {
@@ -44,7 +44,7 @@ public class OpenApiBuilderService
             });
         }
 
-        using var outputStream = File.CreateText(destination);
+        await using var outputStream = File.CreateText(destination);
         var writer = new OpenApiJsonWriter(outputStream);
         openApiDoc.SerializeAsV3(writer);
 

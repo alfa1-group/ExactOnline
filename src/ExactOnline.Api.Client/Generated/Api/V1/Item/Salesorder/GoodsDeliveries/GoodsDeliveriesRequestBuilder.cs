@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveries
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Create new goods deliveries.&amp;emsp;&amp;#149; Read existing goods deliveries.&amp;emsp;&amp;#149; Update existing goods deliveries.Delivery lines support trade-in lines. For more details, please refer description under properties GoodsDeliveryLines &gt; QuantityDelivered Note: For creating a GoodsDeliveries, it is mandatory to supply one or more GoodsDeliveryLines and DeliveryDate.Business example API goods deliveryFor more information about the  functionality in Exact Online, see Goods delivery - New.
+    /// Use this endpoint to : • Create new goods deliveries. • Read existing goods deliveries. • Update existing goods deliveries.Delivery lines support trade-in lines. For more details, please refer description under properties GoodsDeliveryLines &amp;gt; QuantityDelivered Note: For creating a GoodsDeliveries, it is mandatory to supply one or more GoodsDeliveryLines and DeliveryDate.Business example API goods deliveryFor more information about the  functionality in Exact Online, see Goods delivery - New.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GoodsDeliveriesRequestBuilder : BaseRequestBuilder

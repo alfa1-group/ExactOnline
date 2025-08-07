@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnsWithId
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Create a new purchase return.&amp;emsp;&amp;#149; Retrieve an existing purchase return.&amp;emsp;&amp;#149; Update an existing purchase return. Note: For creating a PurchaseReturn, it is mandatory to supply one or more PurchaseReturnLines and ReturnDate.
+    /// Use this endpoint to : • Create a new purchase return. • Retrieve an existing purchase return. • Update an existing purchase return. Note: For creating a PurchaseReturn, it is mandatory to supply one or more PurchaseReturnLines and ReturnDate.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PurchaseReturnsWithIdRequestBuilder : BaseRequestBuilder

@@ -14,48 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Description for the payroll component entry</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>Numeric number of Employee</summary>
-        public int? EmployeeHID { get; set; }
-        /// <summary>Employee ID</summary>
-        public Guid? EmployeeID { get; set; }
-        /// <summary>Entry field types: 1 = Quantity, 2 = Amount, 3 = Percentage</summary>
-        public int? EntryFieldType { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Notes for the payroll component entry</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Notes { get; set; }
-#nullable restore
-#else
-        public string Notes { get; set; }
-#endif
-        /// <summary>Payroll component code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PayrollComponent { get; set; }
-#nullable restore
-#else
-        public string PayrollComponent { get; set; }
-#endif
-        /// <summary>Payroll component ID</summary>
-        public Guid? PayrollComponentID { get; set; }
-        /// <summary>Payroll period</summary>
-        public int? PayrollPeriod { get; set; }
-        /// <summary>Payroll year</summary>
-        public int? PayrollYear { get; set; }
-        /// <summary>Type of the entry:1 = Days worked, 2 = Hours worked, 3 = Days ill, 4 = Hours ill, 5 = Days leave, 6 = Hours leave, 7 = Payroll component, 8 = Days care leave, 9 = Hours care leave, 10 = Days extended partner leave, 11 = Hours extended partner leave, 12 = Days Unpaid Leave, 13 = Hours Unpaid Leave, 14 = Days Paid Parental Leave, 15 = Hours Paid Parental Leave</summary>
-        public int? Type { get; set; }
-        /// <summary>Value of the entry</summary>
-        public double? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PayrollVariableMutations"/> and sets the default values.
         /// </summary>
@@ -81,18 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "EmployeeHID", n => { EmployeeHID = n.GetIntValue(); } },
-                { "EmployeeID", n => { EmployeeID = n.GetGuidValue(); } },
-                { "EntryFieldType", n => { EntryFieldType = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Notes", n => { Notes = n.GetStringValue(); } },
-                { "PayrollComponent", n => { PayrollComponent = n.GetStringValue(); } },
-                { "PayrollComponentID", n => { PayrollComponentID = n.GetGuidValue(); } },
-                { "PayrollPeriod", n => { PayrollPeriod = n.GetIntValue(); } },
-                { "PayrollYear", n => { PayrollYear = n.GetIntValue(); } },
-                { "Type", n => { Type = n.GetIntValue(); } },
-                { "Value", n => { Value = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -102,18 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("EmployeeHID", EmployeeHID);
-            writer.WriteGuidValue("EmployeeID", EmployeeID);
-            writer.WriteIntValue("EntryFieldType", EntryFieldType);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteStringValue("PayrollComponent", PayrollComponent);
-            writer.WriteGuidValue("PayrollComponentID", PayrollComponentID);
-            writer.WriteIntValue("PayrollPeriod", PayrollPeriod);
-            writer.WriteIntValue("PayrollYear", PayrollYear);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteDoubleValue("Value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

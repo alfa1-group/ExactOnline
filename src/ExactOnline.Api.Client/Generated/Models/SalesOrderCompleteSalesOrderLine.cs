@@ -14,30 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Complete the remaining goods delivery. Values: true or false. Default = false</summary>
-        public bool? CompleteDelivery { get; set; }
-        /// <summary>Complete the outstanding invoice amount. Values:true or false. Default = false</summary>
-        public bool? CompleteInvoice { get; set; }
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Contains the error message if an error occurred during the completing of the sales order line.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ErrorMessage { get; set; }
-#nullable restore
-#else
-        public string ErrorMessage { get; set; }
-#endif
-        /// <summary>Primary key; sales order line ID</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Contains information if the sales order line was successfully completed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SuccessMessage { get; set; }
-#nullable restore
-#else
-        public string SuccessMessage { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesOrderCompleteSalesOrderLine"/> and sets the default values.
         /// </summary>
@@ -63,12 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CompleteDelivery", n => { CompleteDelivery = n.GetBoolValue(); } },
-                { "CompleteInvoice", n => { CompleteInvoice = n.GetBoolValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ErrorMessage", n => { ErrorMessage = n.GetStringValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "SuccessMessage", n => { SuccessMessage = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,12 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("CompleteDelivery", CompleteDelivery);
-            writer.WriteBoolValue("CompleteInvoice", CompleteInvoice);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteStringValue("ErrorMessage", ErrorMessage);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteStringValue("SuccessMessage", SuccessMessage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

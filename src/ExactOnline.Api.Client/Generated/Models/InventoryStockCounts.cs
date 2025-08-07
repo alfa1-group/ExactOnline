@@ -14,98 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Stock count user</summary>
-        public Guid? CountedBy { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Description of the stock count</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Entry number of the stock transaction</summary>
-        public int? EntryNumber { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Offset GL account of inventory</summary>
-        public Guid? OffsetGLInventory { get; set; }
-        /// <summary>GLAccount code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OffsetGLInventoryCode { get; set; }
-#nullable restore
-#else
-        public string OffsetGLInventoryCode { get; set; }
-#endif
-        /// <summary>GLAccount description</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OffsetGLInventoryDescription { get; set; }
-#nullable restore
-#else
-        public string OffsetGLInventoryDescription { get; set; }
-#endif
-        /// <summary>Source of stock count entry: 1-Manual entry, 2-Import, 3-Stock count, 4-Web service</summary>
-        public int? Source { get; set; }
-        /// <summary>Stock count status: 12-Draft, 21-Processed</summary>
-        public int? Status { get; set; }
-        /// <summary>Stock count date</summary>
-        public DateTimeOffset? StockCountDate { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? StockCountID { get; set; }
-        /// <summary>Collection of stock count lines</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::ExactOnline.Api.Client.Models.InventoryStockCountLines>? StockCountLines { get; set; }
-#nullable restore
-#else
-        public List<global::ExactOnline.Api.Client.Models.InventoryStockCountLines> StockCountLines { get; set; }
-#endif
-        /// <summary>Human readable id of the stock count</summary>
-        public int? StockCountNumber { get; set; }
-        /// <summary>Warehouse</summary>
-        public Guid? Warehouse { get; set; }
-        /// <summary>Code of Warehouse</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WarehouseCode { get; set; }
-#nullable restore
-#else
-        public string WarehouseCode { get; set; }
-#endif
-        /// <summary>Description of Warehouse</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WarehouseDescription { get; set; }
-#nullable restore
-#else
-        public string WarehouseDescription { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryStockCounts"/> and sets the default values.
         /// </summary>
@@ -131,28 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CountedBy", n => { CountedBy = n.GetGuidValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "EntryNumber", n => { EntryNumber = n.GetIntValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "OffsetGLInventory", n => { OffsetGLInventory = n.GetGuidValue(); } },
-                { "OffsetGLInventoryCode", n => { OffsetGLInventoryCode = n.GetStringValue(); } },
-                { "OffsetGLInventoryDescription", n => { OffsetGLInventoryDescription = n.GetStringValue(); } },
-                { "Source", n => { Source = n.GetIntValue(); } },
-                { "Status", n => { Status = n.GetIntValue(); } },
-                { "StockCountDate", n => { StockCountDate = n.GetDateTimeOffsetValue(); } },
-                { "StockCountID", n => { StockCountID = n.GetGuidValue(); } },
-                { "StockCountLines", n => { StockCountLines = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockCountLines>(global::ExactOnline.Api.Client.Models.InventoryStockCountLines.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "StockCountNumber", n => { StockCountNumber = n.GetIntValue(); } },
-                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
-                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
-                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -162,28 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("CountedBy", CountedBy);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteIntValue("EntryNumber", EntryNumber);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteGuidValue("OffsetGLInventory", OffsetGLInventory);
-            writer.WriteStringValue("OffsetGLInventoryCode", OffsetGLInventoryCode);
-            writer.WriteStringValue("OffsetGLInventoryDescription", OffsetGLInventoryDescription);
-            writer.WriteIntValue("Source", Source);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteDateTimeOffsetValue("StockCountDate", StockCountDate);
-            writer.WriteGuidValue("StockCountID", StockCountID);
-            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockCountLines>("StockCountLines", StockCountLines);
-            writer.WriteIntValue("StockCountNumber", StockCountNumber);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

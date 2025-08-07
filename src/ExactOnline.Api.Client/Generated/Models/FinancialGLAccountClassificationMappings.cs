@@ -14,64 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>ID of the classification</summary>
-        public Guid? Classification { get; set; }
-        /// <summary>Code of the classification</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ClassificationCode { get; set; }
-#nullable restore
-#else
-        public string ClassificationCode { get; set; }
-#endif
-        /// <summary>Description of the classification</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ClassificationDescription { get; set; }
-#nullable restore
-#else
-        public string ClassificationDescription { get; set; }
-#endif
-        /// <summary>Division of the classification mapping</summary>
-        public int? Division { get; set; }
-        /// <summary>ID of the general ledger account</summary>
-        public Guid? GLAccount { get; set; }
-        /// <summary>Code of the general ledger account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLAccountCode { get; set; }
-#nullable restore
-#else
-        public string GLAccountCode { get; set; }
-#endif
-        /// <summary>Description of the general ledger account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLAccountDescription { get; set; }
-#nullable restore
-#else
-        public string GLAccountDescription { get; set; }
-#endif
-        /// <summary>Code of the general ledger scheme</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLSchemeCode { get; set; }
-#nullable restore
-#else
-        public string GLSchemeCode { get; set; }
-#endif
-        /// <summary>Description of the general ledger scheme</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLSchemeDescription { get; set; }
-#nullable restore
-#else
-        public string GLSchemeDescription { get; set; }
-#endif
-        /// <summary>General ledger scheme ID of the element</summary>
-        public Guid? GLSchemeID { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.FinancialGLAccountClassificationMappings"/> and sets the default values.
         /// </summary>
@@ -97,17 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Classification", n => { Classification = n.GetGuidValue(); } },
-                { "ClassificationCode", n => { ClassificationCode = n.GetStringValue(); } },
-                { "ClassificationDescription", n => { ClassificationDescription = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "GLAccount", n => { GLAccount = n.GetGuidValue(); } },
-                { "GLAccountCode", n => { GLAccountCode = n.GetStringValue(); } },
-                { "GLAccountDescription", n => { GLAccountDescription = n.GetStringValue(); } },
-                { "GLSchemeCode", n => { GLSchemeCode = n.GetStringValue(); } },
-                { "GLSchemeDescription", n => { GLSchemeDescription = n.GetStringValue(); } },
-                { "GLSchemeID", n => { GLSchemeID = n.GetGuidValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -117,17 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Classification", Classification);
-            writer.WriteStringValue("ClassificationCode", ClassificationCode);
-            writer.WriteStringValue("ClassificationDescription", ClassificationDescription);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("GLAccount", GLAccount);
-            writer.WriteStringValue("GLAccountCode", GLAccountCode);
-            writer.WriteStringValue("GLAccountDescription", GLAccountDescription);
-            writer.WriteStringValue("GLSchemeCode", GLSchemeCode);
-            writer.WriteStringValue("GLSchemeDescription", GLSchemeDescription);
-            writer.WriteGuidValue("GLSchemeID", GLSchemeID);
-            writer.WriteGuidValue("ID", ID);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,124 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Cost center code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CostCenter { get; set; }
-#nullable restore
-#else
-        public string CostCenter { get; set; }
-#endif
-        /// <summary>Description of cost center</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CostCenterDescription { get; set; }
-#nullable restore
-#else
-        public string CostCenterDescription { get; set; }
-#endif
-        /// <summary>Cost unit code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CostUnit { get; set; }
-#nullable restore
-#else
-        public string CostUnit { get; set; }
-#endif
-        /// <summary>Description of cost unit</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CostUnitDescription { get; set; }
-#nullable restore
-#else
-        public string CostUnitDescription { get; set; }
-#endif
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>ID of department</summary>
-        public Guid? Department { get; set; }
-        /// <summary>Department code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DepartmentCode { get; set; }
-#nullable restore
-#else
-        public string DepartmentCode { get; set; }
-#endif
-        /// <summary>Department description for organization</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DepartmentDescription { get; set; }
-#nullable restore
-#else
-        public string DepartmentDescription { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>ID of employee</summary>
-        public Guid? Employee { get; set; }
-        /// <summary>Name of employee</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EmployeeFullName { get; set; }
-#nullable restore
-#else
-        public string EmployeeFullName { get; set; }
-#endif
-        /// <summary>Numeric ID of the employee</summary>
-        public int? EmployeeHID { get; set; }
-        /// <summary>Employment ID</summary>
-        public Guid? Employment { get; set; }
-        /// <summary>Employment number</summary>
-        public int? EmploymentNumber { get; set; }
-        /// <summary>Organization end date</summary>
-        public DateTimeOffset? EndDate { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>ID of job title</summary>
-        public Guid? JobTitle { get; set; }
-        /// <summary>Job title code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? JobTitleCode { get; set; }
-#nullable restore
-#else
-        public string JobTitleCode { get; set; }
-#endif
-        /// <summary>Job title description</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? JobTitleDescription { get; set; }
-#nullable restore
-#else
-        public string JobTitleDescription { get; set; }
-#endif
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Organization start date</summary>
-        public DateTimeOffset? StartDate { get; set; }
-        /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncPayrollEmploymentOrganizations"/> and sets the default values.
         /// </summary>
@@ -157,32 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CostCenter", n => { CostCenter = n.GetStringValue(); } },
-                { "CostCenterDescription", n => { CostCenterDescription = n.GetStringValue(); } },
-                { "CostUnit", n => { CostUnit = n.GetStringValue(); } },
-                { "CostUnitDescription", n => { CostUnitDescription = n.GetStringValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Department", n => { Department = n.GetGuidValue(); } },
-                { "DepartmentCode", n => { DepartmentCode = n.GetStringValue(); } },
-                { "DepartmentDescription", n => { DepartmentDescription = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "Employee", n => { Employee = n.GetGuidValue(); } },
-                { "EmployeeFullName", n => { EmployeeFullName = n.GetStringValue(); } },
-                { "EmployeeHID", n => { EmployeeHID = n.GetIntValue(); } },
-                { "Employment", n => { Employment = n.GetGuidValue(); } },
-                { "EmploymentNumber", n => { EmploymentNumber = n.GetIntValue(); } },
-                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "JobTitle", n => { JobTitle = n.GetGuidValue(); } },
-                { "JobTitleCode", n => { JobTitleCode = n.GetStringValue(); } },
-                { "JobTitleDescription", n => { JobTitleDescription = n.GetStringValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -192,32 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("CostCenter", CostCenter);
-            writer.WriteStringValue("CostCenterDescription", CostCenterDescription);
-            writer.WriteStringValue("CostUnit", CostUnit);
-            writer.WriteStringValue("CostUnitDescription", CostUnitDescription);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteGuidValue("Department", Department);
-            writer.WriteStringValue("DepartmentCode", DepartmentCode);
-            writer.WriteStringValue("DepartmentDescription", DepartmentDescription);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
-            writer.WriteIntValue("EmployeeHID", EmployeeHID);
-            writer.WriteGuidValue("Employment", Employment);
-            writer.WriteIntValue("EmploymentNumber", EmploymentNumber);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("JobTitle", JobTitle);
-            writer.WriteStringValue("JobTitleCode", JobTitleCode);
-            writer.WriteStringValue("JobTitleDescription", JobTitleDescription);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteLongValue("Timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

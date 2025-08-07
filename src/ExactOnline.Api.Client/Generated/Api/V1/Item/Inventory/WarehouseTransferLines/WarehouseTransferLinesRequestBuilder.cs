@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehouseTransferLines
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Create a new line for an item that is already existing in a draft transfer.&amp;emsp;&amp;#149; Retrieve an existing transfer line.&amp;emsp;&amp;#149; Update the line information of an existing draft transfer.&amp;emsp;&amp;#149; Delete a line from a draft transfer.For more information about the warehouse or location transfer lines functionality in Exact Online, see Warehouse transfer.
+    /// Use this endpoint to : • Create a new line for an item that is already existing in a draft transfer. • Retrieve an existing transfer line. • Update the line information of an existing draft transfer. • Delete a line from a draft transfer.For more information about the warehouse or location transfer lines functionality in Exact Online, see Warehouse transfer.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WarehouseTransferLinesRequestBuilder : BaseRequestBuilder

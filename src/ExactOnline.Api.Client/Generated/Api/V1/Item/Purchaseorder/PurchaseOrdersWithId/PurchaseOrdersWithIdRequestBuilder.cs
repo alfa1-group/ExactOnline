@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithId
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Create a new purchase order.&amp;emsp;&amp;#149; Read existing purchase orders.&amp;emsp;&amp;#149; Update existing purchase orders.&amp;emsp;&amp;#149; Remove an existing purchase order. When using the POST method of this endpoint to create a purchase order, it is mandatory to provide a valid supplier and purchase order lines. The purchase order lines is not necessary when you PUT to this endpoint.For more information about the  functionality in Exact Online, see Overview | Purchase orders.
+    /// Use this endpoint to : • Create a new purchase order. • Read existing purchase orders. • Update existing purchase orders. • Remove an existing purchase order. When using the POST method of this endpoint to create a purchase order, it is mandatory to provide a valid supplier and purchase order lines. The purchase order lines is not necessary when you PUT to this endpoint.For more information about the  functionality in Exact Online, see Overview | Purchase orders.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PurchaseOrdersWithIdRequestBuilder : BaseRequestBuilder

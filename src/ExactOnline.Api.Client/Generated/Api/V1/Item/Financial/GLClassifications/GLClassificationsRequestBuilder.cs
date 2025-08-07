@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Financial.GLClassifications
 {
     /// <summary>
-    /// G/L Classifications are used to group G/L account balances in p&amp;l and balance sheet. Use this endpoint to retrieve information about the G/L classifications available.Add CustomDescriptionLanguage=&apos;[ NL | FR-BE | NL-BE | ... ]&apos; to the header to retrieve language sensitive properties such as descriptions in a specific language.Code example API G/L account
+    /// G/L Classifications are used to group G/L account balances in p&amp;amp;l and balance sheet. Use this endpoint to retrieve information about the G/L classifications available.Add CustomDescriptionLanguage=&apos;[ NL | FR-BE | NL-BE | ... ]&apos; to the header to retrieve language sensitive properties such as descriptions in a specific language.Code example API G/L account
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GLClassificationsRequestBuilder : BaseRequestBuilder

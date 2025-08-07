@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptsWithId
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Create new goods receipts.&amp;emsp;&amp;#149; Read existing goods receipts.&amp;emsp;&amp;#149; Update existing goods receipts. Note: For creating a GoodsReceipts, it is mandatory to supply one or more GoodReceiptLines and ReceiptDate.For more information about the  functionality in Exact Online, see Goods receipts.
+    /// Use this endpoint to : • Create new goods receipts. • Read existing goods receipts. • Update existing goods receipts. Note: For creating a GoodsReceipts, it is mandatory to supply one or more GoodReceiptLines and ReceiptDate.For more information about the  functionality in Exact Online, see Goods receipts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GoodsReceiptsWithIdRequestBuilder : BaseRequestBuilder

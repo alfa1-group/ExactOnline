@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesItemPriceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/logistics/SalesItemPrice{?%24filter*,%24select*}", pathParameters)
+        public SalesItemPriceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/logistics/SalesItemPrice?accountId={accountId}&currencyCode={currencyCode}&date={date}&employeeId={employeeId}&itemId={itemId}&projectId={projectId}&quantity={quantity}&unitCode={unitCode}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesItemPriceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/logistics/SalesItemPrice{?%24filter*,%24select*}", rawUrl)
+        public SalesItemPriceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/logistics/SalesItemPrice?accountId={accountId}&currencyCode={currencyCode}&date={date}&employeeId={employeeId}&itemId={itemId}&projectId={projectId}&quantity={quantity}&unitCode={unitCode}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,6 +85,46 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SalesItemPriceRequestBuilderGetQueryParameters 
         {
+            /// <summary>Query parameter of type Edm.Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("accountId")]
+            public string? AccountId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("accountId")]
+            public string AccountId { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.String</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("currencyCode")]
+            public string? CurrencyCode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("currencyCode")]
+            public string CurrencyCode { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.DateTime</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("date")]
+            public string? Date { get; set; }
+#nullable restore
+#else
+            [QueryParameter("date")]
+            public string Date { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("employeeId")]
+            public string? EmployeeId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("employeeId")]
+            public string EmployeeId { get; set; }
+#endif
             /// <summary>OData filter, e.g., `ID eq guid&apos;00000000-0000-0000-0000-000000000000&apos;`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +135,29 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
+            /// <summary>Query parameter of type Edm.Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("itemId")]
+            public string? ItemId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("itemId")]
+            public string ItemId { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("projectId")]
+            public string? ProjectId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("projectId")]
+            public string ProjectId { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.Double</summary>
+            [QueryParameter("quantity")]
+            public double? Quantity { get; set; }
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,6 +167,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
 #else
             [QueryParameter("%24select")]
             public string Select { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.String</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("unitCode")]
+            public string? UnitCode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("unitCode")]
+            public string UnitCode { get; set; }
 #endif
         }
         /// <summary>

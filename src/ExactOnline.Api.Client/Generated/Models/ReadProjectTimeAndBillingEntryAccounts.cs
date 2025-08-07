@@ -12,16 +12,6 @@ namespace ExactOnline.Api.Client.Models
     public partial class ReadProjectTimeAndBillingEntryAccounts : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>ID of account used for entries</summary>
-        public Guid? AccountId { get; set; }
-        /// <summary>Name of account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountName { get; set; }
-#nullable restore
-#else
-        public string AccountName { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
@@ -49,8 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AccountId", n => { AccountId = n.GetGuidValue(); } },
-                { "AccountName", n => { AccountName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -60,8 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("AccountId", AccountId);
-            writer.WriteStringValue("AccountName", AccountName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

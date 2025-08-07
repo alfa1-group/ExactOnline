@@ -14,86 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The BankEntryLines property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::ExactOnline.Api.Client.Models.FinancialTransactionBankEntryLines? BankEntryLines { get; set; }
-#nullable restore
-#else
-        public global::ExactOnline.Api.Client.Models.FinancialTransactionBankEntryLines BankEntryLines { get; set; }
-#endif
-        /// <summary>The BankStatementDocument property</summary>
-        public Guid? BankStatementDocument { get; set; }
-        /// <summary>The BankStatementDocumentNumber property</summary>
-        public int? BankStatementDocumentNumber { get; set; }
-        /// <summary>The BankStatementDocumentSubject property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BankStatementDocumentSubject { get; set; }
-#nullable restore
-#else
-        public string BankStatementDocumentSubject { get; set; }
-#endif
-        /// <summary>The ClosingBalanceFC property</summary>
-        public double? ClosingBalanceFC { get; set; }
-        /// <summary>The Created property</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>The Currency property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Currency { get; set; }
-#nullable restore
-#else
-        public string Currency { get; set; }
-#endif
-        /// <summary>The CustomField property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CustomField { get; set; }
-#nullable restore
-#else
-        public string CustomField { get; set; }
-#endif
-        /// <summary>The Division property</summary>
-        public int? Division { get; set; }
-        /// <summary>The EntryID property</summary>
-        public Guid? EntryID { get; set; }
-        /// <summary>The EntryNumber property</summary>
-        public int? EntryNumber { get; set; }
-        /// <summary>The FinancialPeriod property</summary>
-        public int? FinancialPeriod { get; set; }
-        /// <summary>The FinancialYear property</summary>
-        public int? FinancialYear { get; set; }
-        /// <summary>The JournalCode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? JournalCode { get; set; }
-#nullable restore
-#else
-        public string JournalCode { get; set; }
-#endif
-        /// <summary>The JournalDescription property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? JournalDescription { get; set; }
-#nullable restore
-#else
-        public string JournalDescription { get; set; }
-#endif
-        /// <summary>The Modified property</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>The OpeningBalanceFC property</summary>
-        public double? OpeningBalanceFC { get; set; }
-        /// <summary>The Status property</summary>
-        public int? Status { get; set; }
-        /// <summary>The StatusDescription property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StatusDescription { get; set; }
-#nullable restore
-#else
-        public string StatusDescription { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.FinancialTransactionBankEntries"/> and sets the default values.
         /// </summary>
@@ -119,25 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "BankEntryLines", n => { BankEntryLines = n.GetObjectValue<global::ExactOnline.Api.Client.Models.FinancialTransactionBankEntryLines>(global::ExactOnline.Api.Client.Models.FinancialTransactionBankEntryLines.CreateFromDiscriminatorValue); } },
-                { "BankStatementDocument", n => { BankStatementDocument = n.GetGuidValue(); } },
-                { "BankStatementDocumentNumber", n => { BankStatementDocumentNumber = n.GetIntValue(); } },
-                { "BankStatementDocumentSubject", n => { BankStatementDocumentSubject = n.GetStringValue(); } },
-                { "ClosingBalanceFC", n => { ClosingBalanceFC = n.GetDoubleValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Currency", n => { Currency = n.GetStringValue(); } },
-                { "CustomField", n => { CustomField = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "EntryID", n => { EntryID = n.GetGuidValue(); } },
-                { "EntryNumber", n => { EntryNumber = n.GetIntValue(); } },
-                { "FinancialPeriod", n => { FinancialPeriod = n.GetIntValue(); } },
-                { "FinancialYear", n => { FinancialYear = n.GetIntValue(); } },
-                { "JournalCode", n => { JournalCode = n.GetStringValue(); } },
-                { "JournalDescription", n => { JournalDescription = n.GetStringValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "OpeningBalanceFC", n => { OpeningBalanceFC = n.GetDoubleValue(); } },
-                { "Status", n => { Status = n.GetIntValue(); } },
-                { "StatusDescription", n => { StatusDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -147,25 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.FinancialTransactionBankEntryLines>("BankEntryLines", BankEntryLines);
-            writer.WriteGuidValue("BankStatementDocument", BankStatementDocument);
-            writer.WriteIntValue("BankStatementDocumentNumber", BankStatementDocumentNumber);
-            writer.WriteStringValue("BankStatementDocumentSubject", BankStatementDocumentSubject);
-            writer.WriteDoubleValue("ClosingBalanceFC", ClosingBalanceFC);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteStringValue("Currency", Currency);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("EntryID", EntryID);
-            writer.WriteIntValue("EntryNumber", EntryNumber);
-            writer.WriteIntValue("FinancialPeriod", FinancialPeriod);
-            writer.WriteIntValue("FinancialYear", FinancialYear);
-            writer.WriteStringValue("JournalCode", JournalCode);
-            writer.WriteStringValue("JournalDescription", JournalDescription);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteDoubleValue("OpeningBalanceFC", OpeningBalanceFC);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteStringValue("StatusDescription", StatusDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

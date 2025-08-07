@@ -14,76 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Main item assembly lead days</summary>
-        public int? AssembledLeadDays { get; set; }
-        /// <summary>Collection of materials</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialMaterials>? AssemblyBillOfMaterialMaterials { get; set; }
-#nullable restore
-#else
-        public List<global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialMaterials> AssemblyBillOfMaterialMaterials { get; set; }
-#endif
-        /// <summary>Quantity of the material needed to produce the batch</summary>
-        public double? BatchQuantity { get; set; }
-        /// <summary>Item code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Code { get; set; }
-#nullable restore
-#else
-        public string Code { get; set; }
-#endif
-        /// <summary>Cost price of the item</summary>
-        public double? CostPrice { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Description of the item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>Division</summary>
-        public int? Division { get; set; }
-        /// <summary>Primary key, it is an item ID</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Notes</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Notes { get; set; }
-#nullable restore
-#else
-        public string Notes { get; set; }
-#endif
-        /// <summary>Indicates if cost price is updated</summary>
-        public bool? UpdateCostPrice { get; set; }
-        /// <summary>Indicates if main item assemble at delivery is used</summary>
-        public int? UseExplosion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialHeader"/> and sets the default values.
         /// </summary>
@@ -109,23 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AssembledLeadDays", n => { AssembledLeadDays = n.GetIntValue(); } },
-                { "AssemblyBillOfMaterialMaterials", n => { AssemblyBillOfMaterialMaterials = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialMaterials>(global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialMaterials.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "BatchQuantity", n => { BatchQuantity = n.GetDoubleValue(); } },
-                { "Code", n => { Code = n.GetStringValue(); } },
-                { "CostPrice", n => { CostPrice = n.GetDoubleValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Notes", n => { Notes = n.GetStringValue(); } },
-                { "UpdateCostPrice", n => { UpdateCostPrice = n.GetBoolValue(); } },
-                { "UseExplosion", n => { UseExplosion = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -135,23 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("AssembledLeadDays", AssembledLeadDays);
-            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialMaterials>("AssemblyBillOfMaterialMaterials", AssemblyBillOfMaterialMaterials);
-            writer.WriteDoubleValue("BatchQuantity", BatchQuantity);
-            writer.WriteStringValue("Code", Code);
-            writer.WriteDoubleValue("CostPrice", CostPrice);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteBoolValue("UpdateCostPrice", UpdateCostPrice);
-            writer.WriteIntValue("UseExplosion", UseExplosion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

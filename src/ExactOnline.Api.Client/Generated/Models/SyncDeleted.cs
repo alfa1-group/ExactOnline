@@ -14,20 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>UserID of person who deleted record</summary>
-        public Guid? DeletedBy { get; set; }
-        /// <summary>Deleted date</summary>
-        public DateTimeOffset? DeletedDate { get; set; }
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Entity key</summary>
-        public Guid? EntityKey { get; set; }
-        /// <summary>Entity Types:1= TransactionLines2= Accounts3= Addresses4= Attachments5= Contacts6= Documents7= GLAccounts8= ItemPrices9= Items10= PaymentTerms12= SalesOrders (This entity is going to be removed. Please refer to the new entity SalesOrderHeaders, SalesOrderLines.)13= SalesInvoices14= TimeCostTransactions15= StockPositions16= GoodsDeliveries17= GoodsDeliveryLines18= GLClassifications19= ItemWarehouses20= StorageLocationStockPositions21= Projects22= PurchaseOrders23= Subscriptions24= SubscriptionLines25= ProjectWBS26= ProjectPlanning27= LeaveAbsenceHoursByDay28= SerialBatchNumbers29= StockSerialBatchNumbers30= ItemAccounts31= DiscountTables32= SalesOrderHeaders33= SalesOrderLines34= QuotationHeaders35= QuotationLines36= ShopOrders37= ShopOrderMaterialPlans38= ShopOrderRoutingStepPlans39= Schedules40= ScheduleEntries41= ItemStorageLocations42= Employees43= Employments44= EmploymentContracts45= EmploymentOrganizations46= EmploymentCLAs47= EmploymentSalaries48= BankAccounts49= EmploymentTaxAuthoritiesGeneral50= ShopOrderPurchasePlanning51= ShopOrderSubOrders53= RequirementIssues54= BillOfMaterialMaterials55= BillOfMaterialVersions56= LeaveRegistrations57= LeaveBuildUpRegistrations58= AbsenceRegistrationTransactions59= AbsenceRegistrations</summary>
-        public int? EntityType { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncDeleted"/> and sets the default values.
         /// </summary>
@@ -53,13 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "DeletedBy", n => { DeletedBy = n.GetGuidValue(); } },
-                { "DeletedDate", n => { DeletedDate = n.GetDateTimeOffsetValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "EntityKey", n => { EntityKey = n.GetGuidValue(); } },
-                { "EntityType", n => { EntityType = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -69,13 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("DeletedBy", DeletedBy);
-            writer.WriteDateTimeOffsetValue("DeletedDate", DeletedDate);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("EntityKey", EntityKey);
-            writer.WriteIntValue("EntityType", EntityType);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteLongValue("Timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,120 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Availability of this serial number</summary>
-        public int? Available { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CustomField { get; set; }
-#nullable restore
-#else
-        public string CustomField { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>End date of effective period for serial number</summary>
-        public DateTimeOffset? EndDate { get; set; }
-        /// <summary>A guid that is the unique identifier of the serial number</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Boolean value indicating whether or not the serial number is blocked</summary>
-        public int? IsBlocked { get; set; }
-        /// <summary>Item</summary>
-        public Guid? Item { get; set; }
-        /// <summary>Item code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemCode { get; set; }
-#nullable restore
-#else
-        public string ItemCode { get; set; }
-#endif
-        /// <summary>Description of item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemDescription { get; set; }
-#nullable restore
-#else
-        public string ItemDescription { get; set; }
-#endif
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Remarks</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Remarks { get; set; }
-#nullable restore
-#else
-        public string Remarks { get; set; }
-#endif
-        /// <summary>Human readable serial number</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SerialNumber { get; set; }
-#nullable restore
-#else
-        public string SerialNumber { get; set; }
-#endif
-        /// <summary>Start date of effective period for serial number</summary>
-        public DateTimeOffset? StartDate { get; set; }
-        /// <summary>ID of storage location where serial number is available</summary>
-        public Guid? StorageLocation { get; set; }
-        /// <summary>Code of storage location where serial number is available</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StorageLocationCode { get; set; }
-#nullable restore
-#else
-        public string StorageLocationCode { get; set; }
-#endif
-        /// <summary>Description of storage location where serial number is available</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StorageLocationDescription { get; set; }
-#nullable restore
-#else
-        public string StorageLocationDescription { get; set; }
-#endif
-        /// <summary>ID of warehouse where serial number is available</summary>
-        public Guid? Warehouse { get; set; }
-        /// <summary>Code of warehouse where serial number is available</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WarehouseCode { get; set; }
-#nullable restore
-#else
-        public string WarehouseCode { get; set; }
-#endif
-        /// <summary>Description of warehouse where serial number is available</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WarehouseDescription { get; set; }
-#nullable restore
-#else
-        public string WarehouseDescription { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventorySerialNumbers"/> and sets the default values.
         /// </summary>
@@ -153,30 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Available", n => { Available = n.GetIntValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "CustomField", n => { CustomField = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "IsBlocked", n => { IsBlocked = n.GetIntValue(); } },
-                { "Item", n => { Item = n.GetGuidValue(); } },
-                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
-                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Remarks", n => { Remarks = n.GetStringValue(); } },
-                { "SerialNumber", n => { SerialNumber = n.GetStringValue(); } },
-                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "StorageLocation", n => { StorageLocation = n.GetGuidValue(); } },
-                { "StorageLocationCode", n => { StorageLocationCode = n.GetStringValue(); } },
-                { "StorageLocationDescription", n => { StorageLocationDescription = n.GetStringValue(); } },
-                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
-                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
-                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -186,30 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Available", Available);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("IsBlocked", IsBlocked);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Remarks", Remarks);
-            writer.WriteStringValue("SerialNumber", SerialNumber);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteGuidValue("StorageLocation", StorageLocation);
-            writer.WriteStringValue("StorageLocationCode", StorageLocationCode);
-            writer.WriteStringValue("StorageLocationDescription", StorageLocationDescription);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

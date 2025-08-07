@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsCount
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OpportunityDocumentsCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/crm/OpportunityDocumentsCount{?%24filter*,%24select*}", pathParameters)
+        public OpportunityDocumentsCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/crm/OpportunityDocumentsCount?opportunityId={opportunityId}&searchText={searchText}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsCount
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OpportunityDocumentsCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/crm/OpportunityDocumentsCount{?%24filter*,%24select*}", rawUrl)
+        public OpportunityDocumentsCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/crm/OpportunityDocumentsCount?opportunityId={opportunityId}&searchText={searchText}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -94,6 +94,26 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsCount
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("opportunityId")]
+            public string? OpportunityId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("opportunityId")]
+            public string OpportunityId { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.String</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("searchText")]
+            public string? SearchText { get; set; }
+#nullable restore
+#else
+            [QueryParameter("searchText")]
+            public string SearchText { get; set; }
 #endif
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

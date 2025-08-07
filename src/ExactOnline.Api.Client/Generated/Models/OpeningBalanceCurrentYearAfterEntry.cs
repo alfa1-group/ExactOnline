@@ -14,38 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The opening balance amount of the G/L account.</summary>
-        public double? Amount { get; set; }
-        /// <summary>Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BalanceSide { get; set; }
-#nullable restore
-#else
-        public string BalanceSide { get; set; }
-#endif
-        /// <summary>Division code.</summary>
-        public int? Division { get; set; }
-        /// <summary>The balance sheet account.</summary>
-        public Guid? GLAccount { get; set; }
-        /// <summary>The code of the G/L account.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLAccountCode { get; set; }
-#nullable restore
-#else
-        public string GLAccountCode { get; set; }
-#endif
-        /// <summary>The description of the G/L account.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLAccountDescription { get; set; }
-#nullable restore
-#else
-        public string GLAccountDescription { get; set; }
-#endif
-        /// <summary>The reporting year of the opening balance.</summary>
-        public int? ReportingYear { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.OpeningBalanceCurrentYearAfterEntry"/> and sets the default values.
         /// </summary>
@@ -71,13 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Amount", n => { Amount = n.GetDoubleValue(); } },
-                { "BalanceSide", n => { BalanceSide = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "GLAccount", n => { GLAccount = n.GetGuidValue(); } },
-                { "GLAccountCode", n => { GLAccountCode = n.GetStringValue(); } },
-                { "GLAccountDescription", n => { GLAccountDescription = n.GetStringValue(); } },
-                { "ReportingYear", n => { ReportingYear = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -87,13 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("Amount", Amount);
-            writer.WriteStringValue("BalanceSide", BalanceSide);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("GLAccount", GLAccount);
-            writer.WriteStringValue("GLAccountCode", GLAccountCode);
-            writer.WriteStringValue("GLAccountDescription", GLAccountDescription);
-            writer.WriteIntValue("ReportingYear", ReportingYear);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

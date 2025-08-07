@@ -14,28 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Filename of the attachment</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AttachmentFileName { get; set; }
-#nullable restore
-#else
-        public string AttachmentFileName { get; set; }
-#endif
-        /// <summary>File size of the attachment</summary>
-        public double? AttachmentFileSize { get; set; }
-        /// <summary>Url for downloading the attachment. To get the file in its original format (xml, jpg, pdf, etc.) append &amp;Download=1 to the url.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AttachmentUrl { get; set; }
-#nullable restore
-#else
-        public string AttachmentUrl { get; set; }
-#endif
-        /// <summary>The CanShowInWebView property</summary>
-        public bool? CanShowInWebView { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadCRMDocumentsAttachments"/> and sets the default values.
         /// </summary>
@@ -61,11 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AttachmentFileName", n => { AttachmentFileName = n.GetStringValue(); } },
-                { "AttachmentFileSize", n => { AttachmentFileSize = n.GetDoubleValue(); } },
-                { "AttachmentUrl", n => { AttachmentUrl = n.GetStringValue(); } },
-                { "CanShowInWebView", n => { CanShowInWebView = n.GetBoolValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -75,11 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("AttachmentFileName", AttachmentFileName);
-            writer.WriteDoubleValue("AttachmentFileSize", AttachmentFileSize);
-            writer.WriteStringValue("AttachmentUrl", AttachmentUrl);
-            writer.WriteBoolValue("CanShowInWebView", CanShowInWebView);
-            writer.WriteGuidValue("ID", ID);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

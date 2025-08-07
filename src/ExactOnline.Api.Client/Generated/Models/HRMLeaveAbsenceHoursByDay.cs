@@ -14,46 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>Date of leave or absence</summary>
-        public DateTimeOffset? Date { get; set; }
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>ID of employee linked to the leave or absence</summary>
-        public Guid? Employee { get; set; }
-        /// <summary>Employee full name</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EmployeeFullName { get; set; }
-#nullable restore
-#else
-        public string EmployeeFullName { get; set; }
-#endif
-        /// <summary>Numeric ID of the employee</summary>
-        public int? EmployeeHID { get; set; }
-        /// <summary>Employment ID</summary>
-        public Guid? Employment { get; set; }
-        /// <summary>Numeric ID of the employment</summary>
-        public int? EmploymentHID { get; set; }
-        /// <summary>End time of leave or absence</summary>
-        public DateTimeOffset? EndTime { get; set; }
-        /// <summary>Unique ID from external source. Eg. Exact Online HR</summary>
-        public long? ExternalIDInt { get; set; }
-        /// <summary>Unique leave or absence type from external source. Eg. Exact Online HR</summary>
-        public long? ExternalLeaveAbsenceType { get; set; }
-        /// <summary>Hours of leave or absence</summary>
-        public double? Hours { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>Start time of leave or absence</summary>
-        public DateTimeOffset? StartTime { get; set; }
-        /// <summary>Status, 1 = Submitted, 2 = ApprovedNote: Submitted status is only applicable for Type = Leave</summary>
-        public int? Status { get; set; }
-        /// <summary>Type, 0 = Leave, 1 = AbsenceNote: Absence type is only allow for Status = Approved</summary>
-        public int? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.HRMLeaveAbsenceHoursByDay"/> and sets the default values.
         /// </summary>
@@ -79,23 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Date", n => { Date = n.GetDateTimeOffsetValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "Employee", n => { Employee = n.GetGuidValue(); } },
-                { "EmployeeFullName", n => { EmployeeFullName = n.GetStringValue(); } },
-                { "EmployeeHID", n => { EmployeeHID = n.GetIntValue(); } },
-                { "Employment", n => { Employment = n.GetGuidValue(); } },
-                { "EmploymentHID", n => { EmploymentHID = n.GetIntValue(); } },
-                { "EndTime", n => { EndTime = n.GetDateTimeOffsetValue(); } },
-                { "ExternalIDInt", n => { ExternalIDInt = n.GetLongValue(); } },
-                { "ExternalLeaveAbsenceType", n => { ExternalLeaveAbsenceType = n.GetLongValue(); } },
-                { "Hours", n => { Hours = n.GetDoubleValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "StartTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
-                { "Status", n => { Status = n.GetIntValue(); } },
-                { "Type", n => { Type = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -105,23 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteDateTimeOffsetValue("Date", Date);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
-            writer.WriteIntValue("EmployeeHID", EmployeeHID);
-            writer.WriteGuidValue("Employment", Employment);
-            writer.WriteIntValue("EmploymentHID", EmploymentHID);
-            writer.WriteDateTimeOffsetValue("EndTime", EndTime);
-            writer.WriteLongValue("ExternalIDInt", ExternalIDInt);
-            writer.WriteLongValue("ExternalLeaveAbsenceType", ExternalLeaveAbsenceType);
-            writer.WriteDoubleValue("Hours", Hours);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteDateTimeOffsetValue("StartTime", StartTime);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteIntValue("Type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

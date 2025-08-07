@@ -12,74 +12,8 @@ namespace ExactOnline.Api.Client.Models
     public partial class AccountancyAccountOwners : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>ID of the account that is owned</summary>
-        public Guid? Account { get; set; }
-        /// <summary>Code of the account that is owned</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountCode { get; set; }
-#nullable restore
-#else
-        public string AccountCode { get; set; }
-#endif
-        /// <summary>Name of the account that is owned</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountName { get; set; }
-#nullable restore
-#else
-        public string AccountName { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of the creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of the creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of the modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of the modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>ID of the account who owns specified account</summary>
-        public Guid? OwnerAccount { get; set; }
-        /// <summary>Code of the account who owns specified account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OwnerAccountCode { get; set; }
-#nullable restore
-#else
-        public string OwnerAccountCode { get; set; }
-#endif
-        /// <summary>Name of the account who owns specified account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OwnerAccountName { get; set; }
-#nullable restore
-#else
-        public string OwnerAccountName { get; set; }
-#endif
-        /// <summary>Percentage of shares that is owned. 1 is 100%, 0.5 is 50%</summary>
-        public double? Shares { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.AccountancyAccountOwners"/> and sets the default values.
         /// </summary>
@@ -105,21 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Account", n => { Account = n.GetGuidValue(); } },
-                { "AccountCode", n => { AccountCode = n.GetStringValue(); } },
-                { "AccountName", n => { AccountName = n.GetStringValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "OwnerAccount", n => { OwnerAccount = n.GetGuidValue(); } },
-                { "OwnerAccountCode", n => { OwnerAccountCode = n.GetStringValue(); } },
-                { "OwnerAccountName", n => { OwnerAccountName = n.GetStringValue(); } },
-                { "Shares", n => { Shares = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -129,21 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Account", Account);
-            writer.WriteStringValue("AccountCode", AccountCode);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteGuidValue("OwnerAccount", OwnerAccount);
-            writer.WriteStringValue("OwnerAccountCode", OwnerAccountCode);
-            writer.WriteStringValue("OwnerAccountName", OwnerAccountName);
-            writer.WriteDoubleValue("Shares", Shares);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderLine
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Complete a sales order line for - Goods delivery and/or - Sales invoiceYou can no longer perform the remaining delivery and invoice the outstanding amount for the sales order line.Once completed, this action cannot be undone.
+    /// Use this endpoint to : • Complete a sales order line for - Goods delivery and/or - Sales invoiceYou can no longer perform the remaining delivery and invoice the outstanding amount for the sales order line.Once completed, this action cannot be undone.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompleteSalesOrderLineRequestBuilder : BaseRequestBuilder

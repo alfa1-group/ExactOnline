@@ -52,7 +52,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProjectRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Use this endpoint to create, read, update and delete cost transaction of the user.Note: For creating a cost transaction, it is mandatory to supply one of the following properties &amp;emsp; &amp;#x2022; Account &amp;emsp; &amp;#x2022; Project &amp;emsp; &amp;#x2022; Subscription &amp;nbsp; And always supply &amp;emsp; &amp;#x2022; Item &amp;emsp; &amp;#x2022; Quantity</summary>
+        /// <summary>Use this endpoint to create, read, update and delete cost transaction of the user.Note: For creating a cost transaction, it is mandatory to supply one of the following properties   • Account   • Project   • Subscription &amp;nbsp; And always supply   • Item   • Quantity</summary>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.CostTransactions.CostTransactionsRequestBuilder CostTransactions
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Project.CostTransactions.CostTransactionsRequestBuilder(PathParameters, RequestAdapter);
@@ -132,7 +132,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeCorrections.TimeCorrectionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Use this endpoint to create, read, update and delete time transaction of the user.Note: For creating a time transaction, it is mandatory to supply one of the following properties &amp;emsp; &amp;#x2022; Account &amp;emsp; &amp;#x2022; Project &amp;emsp; &amp;#x2022; Subscription &amp;nbsp; And always supply &amp;emsp; &amp;#x2022; Item &amp;emsp; &amp;#x2022; Quantity</summary>
+        /// <summary>Use this endpoint to create, read, update and delete time transaction of the user.Note: For creating a time transaction, it is mandatory to supply one of the following properties   • Account   • Project   • Subscription &amp;nbsp; And always supply   • Item   • Quantity</summary>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeTransactions.TimeTransactionsRequestBuilder TimeTransactions
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeTransactions.TimeTransactionsRequestBuilder(PathParameters, RequestAdapter);
@@ -169,7 +169,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         {
         }
         /// <summary>
-        /// Use this endpoint to create, read, update and delete cost transaction of the user.Note: For creating a cost transaction, it is mandatory to supply one of the following properties &amp;emsp; &amp;#x2022; Account &amp;emsp; &amp;#x2022; Project &amp;emsp; &amp;#x2022; Subscription &amp;nbsp; And always supply &amp;emsp; &amp;#x2022; Item &amp;emsp; &amp;#x2022; Quantity
+        /// Use this endpoint to create, read, update and delete cost transaction of the user.Note: For creating a cost transaction, it is mandatory to supply one of the following properties   • Account   • Project   • Subscription &amp;nbsp; And always supply   • Item   • Quantity
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.CostTransactionsWithId.CostTransactionsWithIdRequestBuilder"/></returns>
         /// <param name="id">Unique identifier (GUID) of the ProjectCostTransactions</param>
@@ -309,7 +309,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeCorrectionsWithId.TimeCorrectionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
-        /// Use this endpoint to create, read, update and delete time transaction of the user.Note: For creating a time transaction, it is mandatory to supply one of the following properties &amp;emsp; &amp;#x2022; Account &amp;emsp; &amp;#x2022; Project &amp;emsp; &amp;#x2022; Subscription &amp;nbsp; And always supply &amp;emsp; &amp;#x2022; Item &amp;emsp; &amp;#x2022; Quantity
+        /// Use this endpoint to create, read, update and delete time transaction of the user.Note: For creating a time transaction, it is mandatory to supply one of the following properties   • Account   • Project   • Subscription &amp;nbsp; And always supply   • Item   • Quantity
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeTransactionsWithId.TimeTransactionsWithIdRequestBuilder"/></returns>
         /// <param name="id">Unique identifier (GUID) of the ProjectTimeTransactions</param>

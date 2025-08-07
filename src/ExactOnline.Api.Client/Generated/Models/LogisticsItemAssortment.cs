@@ -14,28 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Code of ItemAssortment</summary>
-        public int? Code { get; set; }
-        /// <summary>Description of ItemAssortment</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>Division</summary>
-        public int? Division { get; set; }
-        /// <summary>ID of ItemAssortment</summary>
-        public Guid? ID { get; set; }
-        /// <summary>The Properties property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::ExactOnline.Api.Client.Models.LogisticsItemAssortmentProperty? Properties { get; set; }
-#nullable restore
-#else
-        public global::ExactOnline.Api.Client.Models.LogisticsItemAssortmentProperty Properties { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.LogisticsItemAssortment"/> and sets the default values.
         /// </summary>
@@ -61,11 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Code", n => { Code = n.GetIntValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Properties", n => { Properties = n.GetObjectValue<global::ExactOnline.Api.Client.Models.LogisticsItemAssortmentProperty>(global::ExactOnline.Api.Client.Models.LogisticsItemAssortmentProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,11 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Code", Code);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.LogisticsItemAssortmentProperty>("Properties", Properties);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

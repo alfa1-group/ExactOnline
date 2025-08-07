@@ -14,26 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Code of Incoterm</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Code { get; set; }
-#nullable restore
-#else
-        public string Code { get; set; }
-#endif
-        /// <summary>Description of Incoterm</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>ID of Property</summary>
-        public int? ID { get; set; }
-        /// <summary>Version of Incoterm</summary>
-        public int? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.LogisticsIncoterms"/> and sets the default values.
         /// </summary>
@@ -59,10 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Code", n => { Code = n.GetStringValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "ID", n => { ID = n.GetIntValue(); } },
-                { "Version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -72,10 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Code", Code);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("ID", ID);
-            writer.WriteIntValue("Version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

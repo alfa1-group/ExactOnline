@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLinesWithId
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; Create a new purchase return line.(Adding a new line to existing purchase return is not allowed)&amp;emsp;&amp;#149; Retrieve an existing purchase return line.&amp;emsp;&amp;#149; Update an existing purchase return line Note: Purchase return lines should not be posted individually. They should be part of the PurchaseReturn Post. For creating purchase return lines, it is mandatory to supply PurchaseOrderLineID,ReturnQuantity and GoodsReceiptLineID. The returned quantity cannot be greater than quantity received
+    /// Use this endpoint to : • Create a new purchase return line.(Adding a new line to existing purchase return is not allowed) • Retrieve an existing purchase return line. • Update an existing purchase return line Note: Purchase return lines should not be posted individually. They should be part of the PurchaseReturn Post. For creating purchase return lines, it is mandatory to supply PurchaseOrderLineID,ReturnQuantity and GoodsReceiptLineID. The returned quantity cannot be greater than quantity received
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PurchaseReturnLinesWithIdRequestBuilder : BaseRequestBuilder

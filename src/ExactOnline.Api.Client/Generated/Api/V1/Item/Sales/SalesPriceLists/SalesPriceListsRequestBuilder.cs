@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceLists
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; read basic information in price lists. Price lists allow you to manage prices  for different items and customers. Once created, these prices take effect for sales orders, and sales invoices, sales quotations.  Use the following related endpoints to retrieve details of prices lists :&amp;emsp;&amp;#149; SalesPriceListLinkedAccounts&amp;emsp;&amp;#149; SalesPriceListPeriods&amp;emsp;&amp;#149; SalesPriceListVolumeDiscounts API relationships: For more information about the  functionality in Exact Online, see Sales price management.
+    /// Use this endpoint to : • read basic information in price lists. Price lists allow you to manage prices  for different items and customers. Once created, these prices take effect for sales orders, and sales invoices, sales quotations.  Use the following related endpoints to retrieve details of prices lists : • SalesPriceListLinkedAccounts • SalesPriceListPeriods • SalesPriceListVolumeDiscounts API relationships: For more information about the  functionality in Exact Online, see Sales price management.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SalesPriceListsRequestBuilder : BaseRequestBuilder

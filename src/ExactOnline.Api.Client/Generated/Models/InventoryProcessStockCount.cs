@@ -14,26 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Contains the error message if an error occurred during the processing of the stock count.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ErrorMessage { get; set; }
-#nullable restore
-#else
-        public string ErrorMessage { get; set; }
-#endif
-        /// <summary>A guid that is the unique identifier of the stock count.</summary>
-        public Guid? StockCountID { get; set; }
-        /// <summary>Contains information if the stock count was successfully processed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SuccessMessage { get; set; }
-#nullable restore
-#else
-        public string SuccessMessage { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryProcessStockCount"/> and sets the default values.
         /// </summary>
@@ -59,10 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ErrorMessage", n => { ErrorMessage = n.GetStringValue(); } },
-                { "StockCountID", n => { StockCountID = n.GetGuidValue(); } },
-                { "SuccessMessage", n => { SuccessMessage = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -72,10 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Division", Division);
-            writer.WriteStringValue("ErrorMessage", ErrorMessage);
-            writer.WriteGuidValue("StockCountID", StockCountID);
-            writer.WriteStringValue("SuccessMessage", SuccessMessage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

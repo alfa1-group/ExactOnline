@@ -14,46 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Journal property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Journal { get; set; }
-#nullable restore
-#else
-        public string Journal { get; set; }
-#endif
-        /// <summary>The JournalDescription property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? JournalDescription { get; set; }
-#nullable restore
-#else
-        public string JournalDescription { get; set; }
-#endif
-        /// <summary>The JournalType property</summary>
-        public int? JournalType { get; set; }
-        /// <summary>The JournalTypeDescription property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? JournalTypeDescription { get; set; }
-#nullable restore
-#else
-        public string JournalTypeDescription { get; set; }
-#endif
-        /// <summary>The Period property</summary>
-        public int? Period { get; set; }
-        /// <summary>The Status property</summary>
-        public int? Status { get; set; }
-        /// <summary>The StatusDescription property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StatusDescription { get; set; }
-#nullable restore
-#else
-        public string StatusDescription { get; set; }
-#endif
-        /// <summary>The Year property</summary>
-        public int? Year { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialJournalStatusByFinancialPeriod"/> and sets the default values.
         /// </summary>
@@ -79,14 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Journal", n => { Journal = n.GetStringValue(); } },
-                { "JournalDescription", n => { JournalDescription = n.GetStringValue(); } },
-                { "JournalType", n => { JournalType = n.GetIntValue(); } },
-                { "JournalTypeDescription", n => { JournalTypeDescription = n.GetStringValue(); } },
-                { "Period", n => { Period = n.GetIntValue(); } },
-                { "Status", n => { Status = n.GetIntValue(); } },
-                { "StatusDescription", n => { StatusDescription = n.GetStringValue(); } },
-                { "Year", n => { Year = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -96,14 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Journal", Journal);
-            writer.WriteStringValue("JournalDescription", JournalDescription);
-            writer.WriteIntValue("JournalType", JournalType);
-            writer.WriteStringValue("JournalTypeDescription", JournalTypeDescription);
-            writer.WriteIntValue("Period", Period);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteStringValue("StatusDescription", StatusDescription);
-            writer.WriteIntValue("Year", Year);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

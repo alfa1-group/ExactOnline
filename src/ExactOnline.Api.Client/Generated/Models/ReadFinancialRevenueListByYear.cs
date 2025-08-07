@@ -14,12 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Total amount in the default currency of the company</summary>
-        public double? Amount { get; set; }
-        /// <summary>Reporting period</summary>
-        public int? Period { get; set; }
-        /// <summary>Current Reporting year</summary>
-        public int? Year { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialRevenueListByYear"/> and sets the default values.
         /// </summary>
@@ -45,9 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Amount", n => { Amount = n.GetDoubleValue(); } },
-                { "Period", n => { Period = n.GetIntValue(); } },
-                { "Year", n => { Year = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -57,9 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("Amount", Amount);
-            writer.WriteIntValue("Period", Period);
-            writer.WriteIntValue("Year", Year);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

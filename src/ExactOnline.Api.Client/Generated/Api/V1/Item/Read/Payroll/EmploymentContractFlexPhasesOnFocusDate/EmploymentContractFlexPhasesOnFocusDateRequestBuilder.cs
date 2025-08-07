@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentContractFlex
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmploymentContractFlexPhasesOnFocusDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/payroll/EmploymentContractFlexPhasesOnFocusDate{?%24filter*,%24select*}", pathParameters)
+        public EmploymentContractFlexPhasesOnFocusDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/payroll/EmploymentContractFlexPhasesOnFocusDate?focusDate={focusDate}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentContractFlex
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmploymentContractFlexPhasesOnFocusDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/payroll/EmploymentContractFlexPhasesOnFocusDate{?%24filter*,%24select*}", rawUrl)
+        public EmploymentContractFlexPhasesOnFocusDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/payroll/EmploymentContractFlexPhasesOnFocusDate?focusDate={focusDate}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -94,6 +94,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentContractFlex
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.DateTime</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("focusDate")]
+            public string? FocusDate { get; set; }
+#nullable restore
+#else
+            [QueryParameter("focusDate")]
+            public string FocusDate { get; set; }
 #endif
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

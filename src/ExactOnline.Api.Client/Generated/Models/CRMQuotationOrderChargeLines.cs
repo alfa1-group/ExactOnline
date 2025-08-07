@@ -14,68 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Amount excluded VAT in reporting currency for shipping cost or order charges</summary>
-        public double? AmountDC { get; set; }
-        /// <summary>Amount excluded VAT in trading currency for shipping cost or order charges</summary>
-        public double? AmountFCExclVAT { get; set; }
-        /// <summary>Amount included VAT in trading currency for shipping cost or order charges</summary>
-        public double? AmountFCInclVAT { get; set; }
-        /// <summary>VAT amount in trading currency for shipping cost or order charges</summary>
-        public double? AmountVATFC { get; set; }
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Line ID of shipping method or order charges</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Indicates whether the order charge line is shipping cost</summary>
-        public bool? IsShippingCost { get; set; }
-        /// <summary>Line number of shipping cost and order charges</summary>
-        public int? LineNumber { get; set; }
-        /// <summary>ID of order charges is mandatory for order charge. However, it is not required for shipping cost</summary>
-        public Guid? OrderCharge { get; set; }
-        /// <summary>Code of shipping method or order charges</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OrderChargeCode { get; set; }
-#nullable restore
-#else
-        public string OrderChargeCode { get; set; }
-#endif
-        /// <summary>Description from shipping method or order charges master</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OrderChargeDescription { get; set; }
-#nullable restore
-#else
-        public string OrderChargeDescription { get; set; }
-#endif
-        /// <summary>Line description of shipping cost or order charges (only available in WD Premium packages)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OrderChargesLineDescription { get; set; }
-#nullable restore
-#else
-        public string OrderChargesLineDescription { get; set; }
-#endif
-        /// <summary>The OrderID identifies the quotation. All the lines of aquotation have the same QuotationID</summary>
-        public Guid? QuotationID { get; set; }
-        /// <summary>VAT code that is used for shipping cost or order charges</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VATCode { get; set; }
-#nullable restore
-#else
-        public string VATCode { get; set; }
-#endif
-        /// <summary>VAT description for shipping cost or order charges</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VATDescription { get; set; }
-#nullable restore
-#else
-        public string VATDescription { get; set; }
-#endif
-        /// <summary>The vat percentage of the VAT code. This is the percentage at the moment the invoice is created. It&apos;s also used for the default calculation of VAT amounts and VAT base amounts</summary>
-        public double? VATPercentage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CRMQuotationOrderChargeLines"/> and sets the default values.
         /// </summary>
@@ -101,22 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AmountDC", n => { AmountDC = n.GetDoubleValue(); } },
-                { "AmountFCExclVAT", n => { AmountFCExclVAT = n.GetDoubleValue(); } },
-                { "AmountFCInclVAT", n => { AmountFCInclVAT = n.GetDoubleValue(); } },
-                { "AmountVATFC", n => { AmountVATFC = n.GetDoubleValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "IsShippingCost", n => { IsShippingCost = n.GetBoolValue(); } },
-                { "LineNumber", n => { LineNumber = n.GetIntValue(); } },
-                { "OrderCharge", n => { OrderCharge = n.GetGuidValue(); } },
-                { "OrderChargeCode", n => { OrderChargeCode = n.GetStringValue(); } },
-                { "OrderChargeDescription", n => { OrderChargeDescription = n.GetStringValue(); } },
-                { "OrderChargesLineDescription", n => { OrderChargesLineDescription = n.GetStringValue(); } },
-                { "QuotationID", n => { QuotationID = n.GetGuidValue(); } },
-                { "VATCode", n => { VATCode = n.GetStringValue(); } },
-                { "VATDescription", n => { VATDescription = n.GetStringValue(); } },
-                { "VATPercentage", n => { VATPercentage = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -126,22 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("AmountDC", AmountDC);
-            writer.WriteDoubleValue("AmountFCExclVAT", AmountFCExclVAT);
-            writer.WriteDoubleValue("AmountFCInclVAT", AmountFCInclVAT);
-            writer.WriteDoubleValue("AmountVATFC", AmountVATFC);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteBoolValue("IsShippingCost", IsShippingCost);
-            writer.WriteIntValue("LineNumber", LineNumber);
-            writer.WriteGuidValue("OrderCharge", OrderCharge);
-            writer.WriteStringValue("OrderChargeCode", OrderChargeCode);
-            writer.WriteStringValue("OrderChargeDescription", OrderChargeDescription);
-            writer.WriteStringValue("OrderChargesLineDescription", OrderChargesLineDescription);
-            writer.WriteGuidValue("QuotationID", QuotationID);
-            writer.WriteStringValue("VATCode", VATCode);
-            writer.WriteStringValue("VATDescription", VATDescription);
-            writer.WriteDoubleValue("VATPercentage", VATPercentage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

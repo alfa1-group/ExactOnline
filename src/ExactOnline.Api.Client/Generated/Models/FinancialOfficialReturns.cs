@@ -14,110 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Total liquidation amount of the official return</summary>
-        public double? Amount { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>CreatorFullName</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Description of the official return</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Document linked to the official return.</summary>
-        public Guid? Document { get; set; }
-        /// <summary>DocumentSubject</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DocumentSubject { get; set; }
-#nullable restore
-#else
-        public string DocumentSubject { get; set; }
-#endif
-        /// <summary>Frequency Monthly = 10,TwoMonthly = 20, Quarterly = 30, Yearly = 40,FinancialYearQuarter = 100</summary>
-        public int? Frequency { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>IsCorrection</summary>
-        public int? IsCorrection { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Financial period (for annual returns = 0)</summary>
-        public int? Period { get; set; }
-        /// <summary>Registration data of the presenting proof document, JSON serialized dictionarySpanish legislation Keys:registrationEntryNumberRegistration entry numbersafeCodeVerificationTax authorities CSVvatPresenterVAT number of the presentersurnameNameCompanyNameName of the presentercapacityOfCOLABORADORreceiptNumberReceipt number</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PresentationData { get; set; }
-#nullable restore
-#else
-        public string PresentationData { get; set; }
-#endif
-        /// <summary>Presentation date of the official return to the tax authorities</summary>
-        public DateTimeOffset? PresentationDate { get; set; }
-        /// <summary>For performance reasons presentation attachment is Write-Only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public byte[]? PresentationFile { get; set; }
-#nullable restore
-#else
-        public byte[] PresentationFile { get; set; }
-#endif
-        /// <summary>File name of presentation attachment.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PresentationFileName { get; set; }
-#nullable restore
-#else
-        public string PresentationFileName { get; set; }
-#endif
-        /// <summary>Reference of the official return</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Reference { get; set; }
-#nullable restore
-#else
-        public string Reference { get; set; }
-#endif
-        /// <summary>Source of the official return : 1 - EOL, 2 - RestAPI</summary>
-        public int? Source { get; set; }
-        /// <summary>Status of the official return</summary>
-        public int? Status { get; set; }
-        /// <summary>Type of the official return</summary>
-        public int? Type { get; set; }
-        /// <summary>Official return type description</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TypeDescription { get; set; }
-#nullable restore
-#else
-        public string TypeDescription { get; set; }
-#endif
-        /// <summary>Financial year of the official return</summary>
-        public int? Year { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.FinancialOfficialReturns"/> and sets the default values.
         /// </summary>
@@ -143,31 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Amount", n => { Amount = n.GetDoubleValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "Document", n => { Document = n.GetGuidValue(); } },
-                { "DocumentSubject", n => { DocumentSubject = n.GetStringValue(); } },
-                { "Frequency", n => { Frequency = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "IsCorrection", n => { IsCorrection = n.GetIntValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Period", n => { Period = n.GetIntValue(); } },
-                { "PresentationData", n => { PresentationData = n.GetStringValue(); } },
-                { "PresentationDate", n => { PresentationDate = n.GetDateTimeOffsetValue(); } },
-                { "PresentationFile", n => { PresentationFile = n.GetByteArrayValue(); } },
-                { "PresentationFileName", n => { PresentationFileName = n.GetStringValue(); } },
-                { "Reference", n => { Reference = n.GetStringValue(); } },
-                { "Source", n => { Source = n.GetIntValue(); } },
-                { "Status", n => { Status = n.GetIntValue(); } },
-                { "Type", n => { Type = n.GetIntValue(); } },
-                { "TypeDescription", n => { TypeDescription = n.GetStringValue(); } },
-                { "Year", n => { Year = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -177,31 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("Amount", Amount);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Document", Document);
-            writer.WriteStringValue("DocumentSubject", DocumentSubject);
-            writer.WriteIntValue("Frequency", Frequency);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("IsCorrection", IsCorrection);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteIntValue("Period", Period);
-            writer.WriteStringValue("PresentationData", PresentationData);
-            writer.WriteDateTimeOffsetValue("PresentationDate", PresentationDate);
-            writer.WriteByteArrayValue("PresentationFile", PresentationFile);
-            writer.WriteStringValue("PresentationFileName", PresentationFileName);
-            writer.WriteStringValue("Reference", Reference);
-            writer.WriteIntValue("Source", Source);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteStringValue("TypeDescription", TypeDescription);
-            writer.WriteIntValue("Year", Year);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

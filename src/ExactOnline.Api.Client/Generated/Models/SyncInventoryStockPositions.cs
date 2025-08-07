@@ -14,78 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Number of items in stock</summary>
-        public double? CurrentStock { get; set; }
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Quantity of available stock</summary>
-        public double? FreeStock { get; set; }
-        /// <summary>Primary Key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Code of the item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemCode { get; set; }
-#nullable restore
-#else
-        public string ItemCode { get; set; }
-#endif
-        /// <summary>Description of the item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemDescription { get; set; }
-#nullable restore
-#else
-        public string ItemDescription { get; set; }
-#endif
-        /// <summary>A guid that is the unique identifier of the item</summary>
-        public Guid? ItemId { get; set; }
-        /// <summary>Number of items that are planned to come in</summary>
-        public double? PlanningIn { get; set; }
-        /// <summary>Number of items that are planned to go out</summary>
-        public double? PlanningOut { get; set; }
-        /// <summary>The quantity of stock projected given all planned future stock changes</summary>
-        public double? ProjectedStock { get; set; }
-        /// <summary>Quantity of items as an indication of when you need to reorder more stock for the warehouse</summary>
-        public double? ReorderPoint { get; set; }
-        /// <summary>Stock stored in the warehouse that is already reserved</summary>
-        public double? ReservedStock { get; set; }
-        /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
-        /// <summary>Code of item unit</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UnitCode { get; set; }
-#nullable restore
-#else
-        public string UnitCode { get; set; }
-#endif
-        /// <summary>Description of the item unit</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UnitDescription { get; set; }
-#nullable restore
-#else
-        public string UnitDescription { get; set; }
-#endif
-        /// <summary>A guid that is the unique identifier of the warehouse</summary>
-        public Guid? Warehouse { get; set; }
-        /// <summary>Code of warehouse</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WarehouseCode { get; set; }
-#nullable restore
-#else
-        public string WarehouseCode { get; set; }
-#endif
-        /// <summary>Description of warehouse</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WarehouseDescription { get; set; }
-#nullable restore
-#else
-        public string WarehouseDescription { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncInventoryStockPositions"/> and sets the default values.
         /// </summary>
@@ -111,24 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CurrentStock", n => { CurrentStock = n.GetDoubleValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "FreeStock", n => { FreeStock = n.GetDoubleValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
-                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
-                { "ItemId", n => { ItemId = n.GetGuidValue(); } },
-                { "PlanningIn", n => { PlanningIn = n.GetDoubleValue(); } },
-                { "PlanningOut", n => { PlanningOut = n.GetDoubleValue(); } },
-                { "ProjectedStock", n => { ProjectedStock = n.GetDoubleValue(); } },
-                { "ReorderPoint", n => { ReorderPoint = n.GetDoubleValue(); } },
-                { "ReservedStock", n => { ReservedStock = n.GetDoubleValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
-                { "UnitCode", n => { UnitCode = n.GetStringValue(); } },
-                { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
-                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
-                { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
-                { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -138,24 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("CurrentStock", CurrentStock);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDoubleValue("FreeStock", FreeStock);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteGuidValue("ItemId", ItemId);
-            writer.WriteDoubleValue("PlanningIn", PlanningIn);
-            writer.WriteDoubleValue("PlanningOut", PlanningOut);
-            writer.WriteDoubleValue("ProjectedStock", ProjectedStock);
-            writer.WriteDoubleValue("ReorderPoint", ReorderPoint);
-            writer.WriteDoubleValue("ReservedStock", ReservedStock);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteStringValue("UnitCode", UnitCode);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

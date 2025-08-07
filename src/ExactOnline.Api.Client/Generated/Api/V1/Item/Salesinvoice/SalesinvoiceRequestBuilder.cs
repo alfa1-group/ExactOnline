@@ -44,7 +44,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceLines.SalesInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Use this endpoint to create, read, update and delete sales invoice shipping cost and order charge lines. Note: &amp;emsp;&amp;#149; If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa. &amp;emsp;&amp;#149; If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.To view an example of the business use of this endpoint, see Rest API - Business example API sales invoice.</summary>
+        /// <summary>Use this endpoint to create, read, update and delete sales invoice shipping cost and order charge lines. Note:  • If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa.  • If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.To view an example of the business use of this endpoint, see Rest API - Business example API sales invoice.</summary>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceOrderChargeLines.SalesInvoiceOrderChargeLinesRequestBuilder SalesInvoiceOrderChargeLines
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceOrderChargeLines.SalesInvoiceOrderChargeLinesRequestBuilder(PathParameters, RequestAdapter);
@@ -86,7 +86,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceLinesWithId.SalesInvoiceLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
-        /// Use this endpoint to create, read, update and delete sales invoice shipping cost and order charge lines. Note: &amp;emsp;&amp;#149; If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa. &amp;emsp;&amp;#149; If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.To view an example of the business use of this endpoint, see Rest API - Business example API sales invoice.
+        /// Use this endpoint to create, read, update and delete sales invoice shipping cost and order charge lines. Note:  • If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa.  • If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.To view an example of the business use of this endpoint, see Rest API - Business example API sales invoice.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceOrderChargeLinesWithId.SalesInvoiceOrderChargeLinesWithIdRequestBuilder"/></returns>
         /// <param name="id">Unique identifier (GUID) of the SalesInvoiceSalesInvoiceOrderChargeLines</param>

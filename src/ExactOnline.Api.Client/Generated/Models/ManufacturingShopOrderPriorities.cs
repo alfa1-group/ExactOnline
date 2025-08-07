@@ -14,16 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Division property</summary>
-        public int? Division { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>10 : Automatic, 20:Manual, 30:Expedited</summary>
-        public int? Mode { get; set; }
-        /// <summary>Priority of the shop order</summary>
-        public int? Priority { get; set; }
-        /// <summary>The ShopOrder property</summary>
-        public Guid? ShopOrder { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingShopOrderPriorities"/> and sets the default values.
         /// </summary>
@@ -49,11 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Mode", n => { Mode = n.GetIntValue(); } },
-                { "Priority", n => { Priority = n.GetIntValue(); } },
-                { "ShopOrder", n => { ShopOrder = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -63,11 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("Mode", Mode);
-            writer.WriteIntValue("Priority", Priority);
-            writer.WriteGuidValue("ShopOrder", ShopOrder);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

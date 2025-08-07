@@ -14,104 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>To indicated if the WBS deliverable is completed. WBS deliverable can only be set to completed when an invoice term is linked</summary>
-        public bool? Completed { get; set; }
-        /// <summary>The date and time when the WBS deliverable was created</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>The ID of the user that created the WBS deliverable</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>The full name of the user that created the WBS deliverable</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CustomField { get; set; }
-#nullable restore
-#else
-        public string CustomField { get; set; }
-#endif
-        /// <summary>Description of the WBS deliverable</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>To indicated if this is a milestone</summary>
-        public bool? Milestone { get; set; }
-        /// <summary>The date when the WBS deliverable was modified</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>The ID of the user that modified the WBS deliverable</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>The full name of the user that modified the WBS deliverable</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>For additional information</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Notes { get; set; }
-#nullable restore
-#else
-        public string Notes { get; set; }
-#endif
-        /// <summary>ID of the WBS deliverable part of</summary>
-        public Guid? PartOf { get; set; }
-        /// <summary>Description of part of</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PartOfDescription { get; set; }
-#nullable restore
-#else
-        public string PartOfDescription { get; set; }
-#endif
-        /// <summary>ID of the project that linked to WBS deliverable</summary>
-        public Guid? Project { get; set; }
-        /// <summary>Project description that is linked to WBS deliverable</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectDescription { get; set; }
-#nullable restore
-#else
-        public string ProjectDescription { get; set; }
-#endif
-        /// <summary>ID of invoice term that linked to the WBS deliverable. Invoice term can only be linked when the project is using billing milestones and the deliverable is set as a milestone</summary>
-        public Guid? ProjectTerm { get; set; }
-        /// <summary>Description of invoice term that linked to the WBS deliverable</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectTermDescription { get; set; }
-#nullable restore
-#else
-        public string ProjectTermDescription { get; set; }
-#endif
-        /// <summary>Action to release the invoice term. You can only release a WBS deliverable&apos;s invoice term once and it cannot be undo</summary>
-        public bool? ReleaseInvoiceTerm { get; set; }
-        /// <summary>Release invoice term date. The linked invoice term date can be updated by using this property. The update will only happen when releasing a WBS deliverable&apos;s invoice term</summary>
-        public DateTimeOffset? ReleaseInvoiceTermDate { get; set; }
-        /// <summary>Release invoice term has specify date</summary>
-        public bool? ReleaseInvoiceTermHasSpecifyDate { get; set; }
-        /// <summary>Sequence number of the WBS deliverable. Last sequence will be selected if not specified</summary>
-        public int? SequenceNumber { get; set; }
-        /// <summary>The type of project WBS. E.g: 1 = Deliverable, 2 = Activity, 3 = Expense</summary>
-        public int? Type { get; set; }
-        /// <summary>Update action</summary>
-        public int? UpdateAction { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ProjectWBSDeliverables"/> and sets the default values.
         /// </summary>
@@ -137,31 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Completed", n => { Completed = n.GetBoolValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "CustomField", n => { CustomField = n.GetStringValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Milestone", n => { Milestone = n.GetBoolValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Notes", n => { Notes = n.GetStringValue(); } },
-                { "PartOf", n => { PartOf = n.GetGuidValue(); } },
-                { "PartOfDescription", n => { PartOfDescription = n.GetStringValue(); } },
-                { "Project", n => { Project = n.GetGuidValue(); } },
-                { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
-                { "ProjectTerm", n => { ProjectTerm = n.GetGuidValue(); } },
-                { "ProjectTermDescription", n => { ProjectTermDescription = n.GetStringValue(); } },
-                { "ReleaseInvoiceTerm", n => { ReleaseInvoiceTerm = n.GetBoolValue(); } },
-                { "ReleaseInvoiceTermDate", n => { ReleaseInvoiceTermDate = n.GetDateTimeOffsetValue(); } },
-                { "ReleaseInvoiceTermHasSpecifyDate", n => { ReleaseInvoiceTermHasSpecifyDate = n.GetBoolValue(); } },
-                { "SequenceNumber", n => { SequenceNumber = n.GetIntValue(); } },
-                { "Type", n => { Type = n.GetIntValue(); } },
-                { "UpdateAction", n => { UpdateAction = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -171,31 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("Completed", Completed);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteBoolValue("Milestone", Milestone);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteGuidValue("PartOf", PartOf);
-            writer.WriteStringValue("PartOfDescription", PartOfDescription);
-            writer.WriteGuidValue("Project", Project);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteGuidValue("ProjectTerm", ProjectTerm);
-            writer.WriteStringValue("ProjectTermDescription", ProjectTermDescription);
-            writer.WriteBoolValue("ReleaseInvoiceTerm", ReleaseInvoiceTerm);
-            writer.WriteDateTimeOffsetValue("ReleaseInvoiceTermDate", ReleaseInvoiceTermDate);
-            writer.WriteBoolValue("ReleaseInvoiceTermHasSpecifyDate", ReleaseInvoiceTermHasSpecifyDate);
-            writer.WriteIntValue("SequenceNumber", SequenceNumber);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteIntValue("UpdateAction", UpdateAction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

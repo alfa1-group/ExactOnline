@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Project.CostTransactionsWithId
 {
     /// <summary>
-    /// Use this endpoint to create, read, update and delete cost transaction of the user.Note: For creating a cost transaction, it is mandatory to supply one of the following properties &amp;emsp; &amp;#x2022; Account &amp;emsp; &amp;#x2022; Project &amp;emsp; &amp;#x2022; Subscription &amp;nbsp; And always supply &amp;emsp; &amp;#x2022; Item &amp;emsp; &amp;#x2022; Quantity
+    /// Use this endpoint to create, read, update and delete cost transaction of the user.Note: For creating a cost transaction, it is mandatory to supply one of the following properties   • Account   • Project   • Subscription &amp;nbsp; And always supply   • Item   • Quantity
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CostTransactionsWithIdRequestBuilder : BaseRequestBuilder

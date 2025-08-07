@@ -14,98 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Available quantity of this batch number. If available quantity is empty, the batch number is available quantity is 0</summary>
-        public double? AvailableQuantity { get; set; }
-        /// <summary>Human readable batch number</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BatchNumber { get; set; }
-#nullable restore
-#else
-        public string BatchNumber { get; set; }
-#endif
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CustomField { get; set; }
-#nullable restore
-#else
-        public string CustomField { get; set; }
-#endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Expiry date of effective period for batch number</summary>
-        public DateTimeOffset? ExpiryDate { get; set; }
-        /// <summary>A guid that is the unique identifier of the batch number</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Boolean value indicating whether or not the batch number is blocked</summary>
-        public int? IsBlocked { get; set; }
-        /// <summary>Item</summary>
-        public Guid? Item { get; set; }
-        /// <summary>Item code</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemCode { get; set; }
-#nullable restore
-#else
-        public string ItemCode { get; set; }
-#endif
-        /// <summary>Description of item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemDescription { get; set; }
-#nullable restore
-#else
-        public string ItemDescription { get; set; }
-#endif
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Remarks</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Remarks { get; set; }
-#nullable restore
-#else
-        public string Remarks { get; set; }
-#endif
-        /// <summary>Total quantity available per location</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::ExactOnline.Api.Client.Models.InventoryBatchNumbers_StorageLocations? StorageLocations { get; set; }
-#nullable restore
-#else
-        public global::ExactOnline.Api.Client.Models.InventoryBatchNumbers_StorageLocations StorageLocations { get; set; }
-#endif
-        /// <summary>Total quantity available per warehouse</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::ExactOnline.Api.Client.Models.InventoryBatchNumbers_Warehouses? Warehouses { get; set; }
-#nullable restore
-#else
-        public global::ExactOnline.Api.Client.Models.InventoryBatchNumbers_Warehouses Warehouses { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryBatchNumbers"/> and sets the default values.
         /// </summary>
@@ -131,25 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AvailableQuantity", n => { AvailableQuantity = n.GetDoubleValue(); } },
-                { "BatchNumber", n => { BatchNumber = n.GetStringValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "CustomField", n => { CustomField = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ExpiryDate", n => { ExpiryDate = n.GetDateTimeOffsetValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "IsBlocked", n => { IsBlocked = n.GetIntValue(); } },
-                { "Item", n => { Item = n.GetGuidValue(); } },
-                { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
-                { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Remarks", n => { Remarks = n.GetStringValue(); } },
-                { "StorageLocations", n => { StorageLocations = n.GetObjectValue<global::ExactOnline.Api.Client.Models.InventoryBatchNumbers_StorageLocations>(global::ExactOnline.Api.Client.Models.InventoryBatchNumbers_StorageLocations.CreateFromDiscriminatorValue); } },
-                { "Warehouses", n => { Warehouses = n.GetObjectValue<global::ExactOnline.Api.Client.Models.InventoryBatchNumbers_Warehouses>(global::ExactOnline.Api.Client.Models.InventoryBatchNumbers_Warehouses.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -159,25 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("AvailableQuantity", AvailableQuantity);
-            writer.WriteStringValue("BatchNumber", BatchNumber);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDateTimeOffsetValue("ExpiryDate", ExpiryDate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("IsBlocked", IsBlocked);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Remarks", Remarks);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.InventoryBatchNumbers_StorageLocations>("StorageLocations", StorageLocations);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.InventoryBatchNumbers_Warehouses>("Warehouses", Warehouses);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,70 +12,8 @@ namespace ExactOnline.Api.Client.Models
     public partial class ManufacturingTimeTransactions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Manufacturing time type: Setup = 10, Run = 20</summary>
-        public int? Activity { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>Date</summary>
-        public DateTimeOffset? Date { get; set; }
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Employee linked to the transaction</summary>
-        public Guid? Employee { get; set; }
-        /// <summary>Machine hours</summary>
-        public double? Hours { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Is the operation finished?</summary>
-        public int? IsOperationFinished { get; set; }
-        /// <summary>Labor Hours on the operation</summary>
-        public double? LaborHours { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Notes linked to the time transaction</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Notes { get; set; }
-#nullable restore
-#else
-        public string Notes { get; set; }
-#endif
-        /// <summary>Percentage of the operation that is complete</summary>
-        public double? PercentComplete { get; set; }
-        /// <summary>Quantity</summary>
-        public double? Quantity { get; set; }
-        /// <summary>Routing step linked to the transaction</summary>
-        public Guid? RoutingStepPlan { get; set; }
-        /// <summary>Shop order linked to the transaction</summary>
-        public Guid? ShopOrder { get; set; }
-        /// <summary>Status of the transaction: Draft = 1, Rejected = 2, Submitted = 10, Final = 20</summary>
-        public int? Status { get; set; }
-        /// <summary>Timed time transaction linked to the transaction</summary>
-        public Guid? TimedTimeTransaction { get; set; }
-        /// <summary>Workcenter linked to the transaction</summary>
-        public Guid? WorkCenter { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingTimeTransactions"/> and sets the default values.
         /// </summary>
@@ -101,28 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Activity", n => { Activity = n.GetIntValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "Date", n => { Date = n.GetDateTimeOffsetValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "Employee", n => { Employee = n.GetGuidValue(); } },
-                { "Hours", n => { Hours = n.GetDoubleValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "IsOperationFinished", n => { IsOperationFinished = n.GetIntValue(); } },
-                { "LaborHours", n => { LaborHours = n.GetDoubleValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Notes", n => { Notes = n.GetStringValue(); } },
-                { "PercentComplete", n => { PercentComplete = n.GetDoubleValue(); } },
-                { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
-                { "RoutingStepPlan", n => { RoutingStepPlan = n.GetGuidValue(); } },
-                { "ShopOrder", n => { ShopOrder = n.GetGuidValue(); } },
-                { "Status", n => { Status = n.GetIntValue(); } },
-                { "TimedTimeTransaction", n => { TimedTimeTransaction = n.GetGuidValue(); } },
-                { "WorkCenter", n => { WorkCenter = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -132,28 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Activity", Activity);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteDateTimeOffsetValue("Date", Date);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteDoubleValue("Hours", Hours);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("IsOperationFinished", IsOperationFinished);
-            writer.WriteDoubleValue("LaborHours", LaborHours);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteDoubleValue("PercentComplete", PercentComplete);
-            writer.WriteDoubleValue("Quantity", Quantity);
-            writer.WriteGuidValue("RoutingStepPlan", RoutingStepPlan);
-            writer.WriteGuidValue("ShopOrder", ShopOrder);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteGuidValue("TimedTimeTransaction", TimedTimeTransaction);
-            writer.WriteGuidValue("WorkCenter", WorkCenter);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

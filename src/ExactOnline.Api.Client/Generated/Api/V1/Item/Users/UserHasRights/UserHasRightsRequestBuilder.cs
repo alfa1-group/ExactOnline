@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Users.UserHasRights
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserHasRightsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/users/UserHasRights{?%24filter*,%24select*}", pathParameters)
+        public UserHasRightsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/users/UserHasRights?action={action}&endpoint={endpoint}{&%24filter*,%24select*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Users.UserHasRights
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserHasRightsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/users/UserHasRights{?%24filter*,%24select*}", rawUrl)
+        public UserHasRightsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/users/UserHasRights?action={action}&endpoint={endpoint}{&%24filter*,%24select*}", rawUrl)
         {
         }
         /// <summary>
@@ -86,6 +86,26 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Users.UserHasRights
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserHasRightsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Query parameter of type Edm.String</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("action")]
+            public string? Action { get; set; }
+#nullable restore
+#else
+            [QueryParameter("action")]
+            public string Action { get; set; }
+#endif
+            /// <summary>Query parameter of type Edm.String</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("endpoint")]
+            public string? Endpoint { get; set; }
+#nullable restore
+#else
+            [QueryParameter("endpoint")]
+            public string Endpoint { get; set; }
+#endif
             /// <summary>OData filter, e.g., `ID eq guid&apos;00000000-0000-0000-0000-000000000000&apos;`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

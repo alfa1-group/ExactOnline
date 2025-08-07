@@ -14,66 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Category of the layout. Supported values are:0 = SalesInvoice1 = Reminder3 = Quotation5 = SalesOrder7 = Subscription9 = DeliveryNote11 = SalesReturnNote13 = PurchaseOrder15 = ItemLabel17 = PurchaseReceipt19 = PurchaseReturnNote20 = SalesInvoiceSpecification21 = ShopPaper22 = DebtorStatement23 = AssemblyOrder24 = ChequeRemittanceAdvice25 = PickingList26 = ShopOrderStockReceiptSlip27 = StockCount28 = RemittanceAdvice29 = ClusterPickingList30 = WarehouseTransferDeliveryNote31 = DebtorStatementOutstanding32 = Timesheet33 = AccountMail34 = Deposit35 = ProcessedStockCount36 = OfficialReturnAnnualAccounts37 = IssueSlip38 = ManufacturingPickingList39 = ManufacturingClusterPickingList40 = PlannedSalesReturn41 = BackOfficeContract42 = PaymentAgreement43 = TimeCostEntryRejection45 = WarehouseTransfer</summary>
-        public int? Category { get; set; }
-        /// <summary>Name of the category.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CategoryName { get; set; }
-#nullable restore
-#else
-        public string CategoryName { get; set; }
-#endif
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>User ID of the creator</summary>
-        public Guid? Creator { get; set; }
-        /// <summary>Name of the creator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatorFullName { get; set; }
-#nullable restore
-#else
-        public string CreatorFullName { get; set; }
-#endif
-        /// <summary>The DDView property</summary>
-        public Guid? DDView { get; set; }
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
-        /// <summary>Language of the layout.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Language { get; set; }
-#nullable restore
-#else
-        public string Language { get; set; }
-#endif
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>User ID of the last modifier</summary>
-        public Guid? Modifier { get; set; }
-        /// <summary>Name of the last modifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifierFullName { get; set; }
-#nullable restore
-#else
-        public string ModifierFullName { get; set; }
-#endif
-        /// <summary>Status of the layout. 1 = Inactive, 2 = Active</summary>
-        public int? Status { get; set; }
-        /// <summary>Layout name</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Subject { get; set; }
-#nullable restore
-#else
-        public string Subject { get; set; }
-#endif
-        /// <summary>Type: 1=Layout, 2=E-mail text layout</summary>
-        public int? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.GeneralLayouts"/> and sets the default values.
         /// </summary>
@@ -99,21 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Category", n => { Category = n.GetIntValue(); } },
-                { "CategoryName", n => { CategoryName = n.GetStringValue(); } },
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Creator", n => { Creator = n.GetGuidValue(); } },
-                { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "DDView", n => { DDView = n.GetGuidValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
-                { "Language", n => { Language = n.GetStringValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "Modifier", n => { Modifier = n.GetGuidValue(); } },
-                { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Status", n => { Status = n.GetIntValue(); } },
-                { "Subject", n => { Subject = n.GetStringValue(); } },
-                { "Type", n => { Type = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -123,21 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Category", Category);
-            writer.WriteStringValue("CategoryName", CategoryName);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteGuidValue("DDView", DDView);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteStringValue("Language", Language);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteStringValue("Subject", Subject);
-            writer.WriteIntValue("Type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

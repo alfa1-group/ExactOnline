@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListPeriods
 {
     /// <summary>
-    /// Use this endpoint to :&amp;emsp;&amp;#149; retrieve the validity periods in price listsPrice lists allow you to manage price in different periods, with for each period different items or discounts.Use the following related endpoints to retrieve details of prices lists :&amp;emsp;&amp;#149; SalesPriceLists&amp;emsp;&amp;#149; SalesPriceListLinkedAccounts&amp;emsp;&amp;#149; SalesPriceListVolumeDiscountsFor more information about the  functionality in Exact Online, see Sales price management.
+    /// Use this endpoint to : • retrieve the validity periods in price listsPrice lists allow you to manage price in different periods, with for each period different items or discounts.Use the following related endpoints to retrieve details of prices lists : • SalesPriceLists • SalesPriceListLinkedAccounts • SalesPriceListVolumeDiscountsFor more information about the  functionality in Exact Online, see Sales price management.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SalesPriceListPeriodsRequestBuilder : BaseRequestBuilder

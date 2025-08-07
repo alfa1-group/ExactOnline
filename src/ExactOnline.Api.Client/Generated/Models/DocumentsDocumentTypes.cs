@@ -14,30 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>Document type description</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>Indicates if documents of this type can be created</summary>
-        public bool? DocumentIsCreatable { get; set; }
-        /// <summary>Indicates if documents of this type can be deleted</summary>
-        public bool? DocumentIsDeletable { get; set; }
-        /// <summary>Indicates if documents of this type can be updated</summary>
-        public bool? DocumentIsUpdatable { get; set; }
-        /// <summary>Indicates if documents of this type can be retrieved</summary>
-        public bool? DocumentIsViewable { get; set; }
-        /// <summary>Primary key</summary>
-        public int? ID { get; set; }
-        /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
-        /// <summary>ID of the document type category</summary>
-        public int? TypeCategory { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.DocumentsDocumentTypes"/> and sets the default values.
         /// </summary>
@@ -63,15 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "Description", n => { Description = n.GetStringValue(); } },
-                { "DocumentIsCreatable", n => { DocumentIsCreatable = n.GetBoolValue(); } },
-                { "DocumentIsDeletable", n => { DocumentIsDeletable = n.GetBoolValue(); } },
-                { "DocumentIsUpdatable", n => { DocumentIsUpdatable = n.GetBoolValue(); } },
-                { "DocumentIsViewable", n => { DocumentIsViewable = n.GetBoolValue(); } },
-                { "ID", n => { ID = n.GetIntValue(); } },
-                { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "TypeCategory", n => { TypeCategory = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -81,15 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteBoolValue("DocumentIsCreatable", DocumentIsCreatable);
-            writer.WriteBoolValue("DocumentIsDeletable", DocumentIsDeletable);
-            writer.WriteBoolValue("DocumentIsUpdatable", DocumentIsUpdatable);
-            writer.WriteBoolValue("DocumentIsViewable", DocumentIsViewable);
-            writer.WriteIntValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteIntValue("TypeCategory", TypeCategory);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

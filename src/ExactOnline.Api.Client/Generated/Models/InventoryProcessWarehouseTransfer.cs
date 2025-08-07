@@ -14,12 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
-        /// <summary>Transfer Date</summary>
-        public DateTimeOffset? TransferDate { get; set; }
-        /// <summary>A guid that is the unique identifier of the warehouse transfer</summary>
-        public Guid? TransferID { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryProcessWarehouseTransfer"/> and sets the default values.
         /// </summary>
@@ -45,9 +39,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Division", n => { Division = n.GetIntValue(); } },
-                { "TransferDate", n => { TransferDate = n.GetDateTimeOffsetValue(); } },
-                { "TransferID", n => { TransferID = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -57,9 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDateTimeOffsetValue("TransferDate", TransferDate);
-            writer.WriteGuidValue("TransferID", TransferID);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
