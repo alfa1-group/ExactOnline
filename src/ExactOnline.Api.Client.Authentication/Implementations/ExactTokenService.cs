@@ -1,0 +1,73 @@
+﻿using Duende.IdentityModel.Client;
+using ExactOnline.Api.Client.Authentication.Interfaces;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
+
+namespace ExactOnline.Api.Client.Authentication.Implementations;
+
+internal class ExactTokenService(
+    ILogger<ExactTokenService> logger,
+    IExactRefreshTokenStorageService blobStorageService,
+    IMemoryCache memoryCache,
+    IExactTokenClient exactTokenClient) : IExactTokenService
+{
+    private const string ExactAccessTokenKey = "ExactAccessToken";
+
+    // The expiration time to 9 minutes and 30 seconds, which is the maximum time a token is valid.
+    private readonly TimeSpan _accessTokenExpirationTime = TimeSpan.FromSeconds(9 * 60 + 30);
+
+    public async Task<string> GetAccessTokenAsync(CancellationToken cancellationToken = default)
+    {
+        // First we check if we have a token in memory.
+        if (memoryCache.TryGetValue(ExactAccessTokenKey, out string? accessToken))
+        {
+            // The memory cache entry is valid for 9 minutes and 30 seconds, which means that after this time we won't get a cached token returned and we should refresh the token using the refresh token.
+            // Checking the validity of the token itself is not possible, because the token is encrypted and we don't have the private key to decrypt it.
+            if (!string.IsNullOrWhiteSpace(accessToken))
+            {
+                return accessToken;
+            }
+        }
+
+        // If expired, refresh the AccessToken and fetch the token from storage.
+        return await RefreshTokenAsync(cancellationToken);
+    }
+
+    public async Task<string> RefreshTokenAsync(CancellationToken cancellationToken = default)
+    {
+        // For refreshing the token we first need to fetch the current refresh token from storage
+        var refreshToken = await blobStorageService.GetRefreshTokenAsync(cancellationToken);
+
+        // The client will issue the refresh request and should get a fresh access + refresh token in response
+        var response = await exactTokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken);
+
+        if (string.IsNullOrWhiteSpace(response.RefreshToken) && response.ErrorDescription?.IndexOf("expired", StringComparison.InvariantCultureIgnoreCase) >= 0)
+        {
+            logger.LogError("The Exact refresh token has expired. You need to update the refresh token stored in the storage with a fresh token from Exact.");
+            throw new Exception("The Exact refresh token has expired.");
+        }
+
+        if (string.IsNullOrWhiteSpace(response.RefreshToken))
+        {
+            logger.LogError($"There was a problem fetching a new auth token from Exact. Exact responded with: {response.ErrorDescription}.");
+            throw new Exception("Exact did not return a new auth token.");
+        }
+
+        // Store the new refresh token back in storage as the previous one is now invalid.
+        try
+        {
+            await blobStorageService.SaveRefreshTokenAsync(response.RefreshToken, cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            // This is a bit nasty because it leaves the RefreshToken in the logs. But that way we can at least
+            // track it down where otherwise we need to generate a complete new token from Exact again (which requires Wendy)
+            throw new Exception($"Uploading the new RefreshToken failed. Here is the token: {response.RefreshToken}", ex);
+        }
+
+        // Store the access token in memory for reuse
+        memoryCache.Set(ExactAccessTokenKey, response.AccessToken, _accessTokenExpirationTime);
+
+        return response.AccessToken!;
+    }
+}

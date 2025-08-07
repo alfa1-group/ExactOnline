@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.OpenApiGenerator", "src\ExactOnline.OpenApiGenerator\ExactOnline.OpenApiGenerator.csproj", "{D4DBA69A-6739-D278-E2D9-C4DCBDB8C07D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.Props = src\Directory.Build.Props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{089100B1-113F-4E66-888A-E83F3999EAFD}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\BuildAndTest.yml = .github\workflows\BuildAndTest.yml
+		.github\workflows\CreateRelease.yml = .github\workflows\CreateRelease.yml
+		Generate-IBuilders.ps1 = Generate-IBuilders.ps1
+		kiota-generate.ps1 = kiota-generate.ps1
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client", "src\ExactOnline.Api.Client\ExactOnline.Api.Client.csproj", "{9A9A2B20-2A22-6427-B064-2A546945437A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "resources", "resources", "{7F74F24B-7313-8368-FB46-4872DBD77787}"
+	ProjectSection(SolutionItems) = preProject
+		resources\exactonline-openapi.json = resources\exactonline-openapi.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "examples\ConsoleApp\ConsoleApp.csproj", "{6593AF44-A596-CCF5-3363-0C2E74DFEE34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Interfaces", "src\ExactOnline.Api.Client.Interfaces\ExactOnline.Api.Client.Interfaces.csproj", "{2B29DB37-3B87-7616-4D0E-1C66958B5214}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Authentication", "src\ExactOnline.Api.Client.Authentication\ExactOnline.Api.Client.Authentication.csproj", "{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4DBA69A-6739-D278-E2D9-C4DCBDB8C07D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4DBA69A-6739-D278-E2D9-C4DCBDB8C07D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4DBA69A-6739-D278-E2D9-C4DCBDB8C07D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4DBA69A-6739-D278-E2D9-C4DCBDB8C07D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A9A2B20-2A22-6427-B064-2A546945437A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A9A2B20-2A22-6427-B064-2A546945437A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A9A2B20-2A22-6427-B064-2A546945437A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A9A2B20-2A22-6427-B064-2A546945437A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6593AF44-A596-CCF5-3363-0C2E74DFEE34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6593AF44-A596-CCF5-3363-0C2E74DFEE34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6593AF44-A596-CCF5-3363-0C2E74DFEE34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6593AF44-A596-CCF5-3363-0C2E74DFEE34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B29DB37-3B87-7616-4D0E-1C66958B5214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B29DB37-3B87-7616-4D0E-1C66958B5214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B29DB37-3B87-7616-4D0E-1C66958B5214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B29DB37-3B87-7616-4D0E-1C66958B5214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4DBA69A-6739-D278-E2D9-C4DCBDB8C07D} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{9A9A2B20-2A22-6427-B064-2A546945437A} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{6593AF44-A596-CCF5-3363-0C2E74DFEE34} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{2B29DB37-3B87-7616-4D0E-1C66958B5214} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0828E0B1-F03B-47AB-B2E4-963753F033A3}
+	EndGlobalSection
+EndGlobal
