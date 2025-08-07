@@ -46,8 +46,13 @@ internal class EndpointCrawler
     {
         var htmlLoader = new PuppeteerHtmlDocumentLoader();
 
-        await Parallel.ForEachAsync(_urls, cancellationToken, async (url, ct) =>
+        foreach (var url in _urls)
         {
+            if (cancellationToken.IsCancellationRequested)
+            {
+                break;
+            }
+
             onEndpointCrawling(url);
 
             var retries = 0;
@@ -55,7 +60,7 @@ internal class EndpointCrawler
             {
                 try
                 {
-                    var doc = await htmlLoader.LoadAsync(url, ct);
+                    var doc = await htmlLoader.LoadAsync(url, cancellationToken);
                     Process(url, doc, _openApiDoc);
                     break;
                 }
@@ -68,12 +73,12 @@ internal class EndpointCrawler
                         throw;
                     }
 
-                    await Task.Delay((int)Math.Pow(2, retries) * 1000, ct);
+                    await Task.Delay((int)Math.Pow(2, retries) * 1000, cancellationToken);
                 }
 
                 retries++;
             }
-        });
+        }
 
         return _openApiDoc;
     }

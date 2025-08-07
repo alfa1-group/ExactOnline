@@ -25,7 +25,7 @@ public class OpenApiBuilderService
         Console.WriteLine("By Stef Heyenrath");
         Console.WriteLine();
 
-        var pages = (await MainPageCrawler.ExtractEndpointUrlsAsync(MainPage)).ToList();
+        var pages = (await MainPageCrawler.ExtractEndpointUrlsAsync(MainPage)).Take(999).ToList();
 
         var options = new ProgressBarOptions
         {
