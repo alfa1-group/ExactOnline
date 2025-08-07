@@ -9,7 +9,8 @@
 
     <IsPackable>true</IsPackable>
     <PackAsTool>true</PackAsTool>
-    <PublishSingleFile>true</PublishSingleFile>
+    <PublishSingleFile>false</PublishSingleFile>
+    <SelfContained>true</SelfContained>
     <PublishTrimmed>false</PublishTrimmed>
   </PropertyGroup>
 
