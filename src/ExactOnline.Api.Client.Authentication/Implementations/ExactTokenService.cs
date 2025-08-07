@@ -6,7 +6,7 @@ namespace ExactOnline.Api.Client.Authentication.Implementations;
 
 internal class ExactTokenService(
     ILogger<ExactTokenService> logger,
-    IExactRefreshTokenStorageService blobStorageService,
+    IExactRefreshTokenStorageService tokenStorageService,
     IMemoryCache memoryCache,
     IExactTokenClient exactTokenClient) : IExactTokenService
 {
@@ -35,7 +35,7 @@ internal class ExactTokenService(
     public async Task<string> RefreshTokenAsync(CancellationToken cancellationToken = default)
     {
         // For refreshing the token we first need to fetch the current refresh token from storage
-        var refreshToken = await blobStorageService.RetrieveAsync(cancellationToken);
+        var refreshToken = await tokenStorageService.RetrieveAsync(cancellationToken);
 
         // The client will issue the refresh request and should get a fresh access + refresh token in response
         var response = await exactTokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken);
@@ -55,7 +55,7 @@ internal class ExactTokenService(
         // Store the new refresh token back in storage as the previous one is now invalid.
         try
         {
-            await blobStorageService.StoreAsync(response.RefreshToken, cancellationToken);
+            await tokenStorageService.StoreAsync(response.RefreshToken, cancellationToken);
         }
         catch (Exception ex)
         {
