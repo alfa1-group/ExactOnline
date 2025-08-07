@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 using ExactOnline.OpenApiGenerator.HtmlDocumentLoaders;
 using HtmlAgilityPack;
@@ -9,6 +10,7 @@ internal class EndpointCrawler
 {
     private const int MaxRetries = 3;
     private static readonly Regex EndpointUriRegex = new(@"\{(\w+)\}", RegexOptions.Compiled);
+    private static readonly Regex EndpointUriEdmTypeRegex = new(@"(\w+)=\{([^}]+)\}", RegexOptions.Compiled);
 
     private readonly OpenApiDocument _openApiDoc;
     private readonly IReadOnlyList<string> _urls;
@@ -42,7 +44,7 @@ internal class EndpointCrawler
 
     internal async Task<OpenApiDocument> CrawlAsync(Action<string> onEndpointCrawling, CancellationToken cancellationToken = default)
     {
-        var htmlLoader = new HtmlAgilityDcoumentLoader();
+        var htmlLoader = new PuppeteerHtmlDocumentLoader();
 
         foreach (var url in _urls)
         {
@@ -58,7 +60,7 @@ internal class EndpointCrawler
             {
                 try
                 {
-                    var doc = await htmlLoader.LoadDocumentAsync(url, cancellationToken);
+                    var doc = await htmlLoader.LoadAsync(url, cancellationToken);
                     Process(url, doc, _openApiDoc);
                     break;
                 }
@@ -86,7 +88,7 @@ internal class EndpointCrawler
         var schemaName = pageUrl.Split("?name=").Last().Trim();
         var endpointDescription = doc.DocumentNode.SelectSingleNode("//p[@id='goodToKnow']")?.InnerText.Trim() ?? string.Empty;
         var schemaIsCollection = IsCollection(schemaName, endpointDescription);
-        var baseEndpointUri = doc.DocumentNode.SelectSingleNode("//p[@id='serviceUri']").InnerText.Trim();
+        var (baseEndpointUri, queryParameters) = GetEndpointUriDetails(doc);
 
         var methods = doc.DocumentNode
             .SelectNodes("//input[@name='supportedmethods']")
@@ -124,103 +126,47 @@ internal class EndpointCrawler
                         continue;
                     }
 
-                    var property = new OpenApiSchema
+                    if (!TryParseAsEdmType(type, description, out var property))
                     {
-                        Description = description
-                    };
-                    OpenApiSchemaReference? propertyReference = null;
-
-                    switch (type)
-                    {
-                        case "Edm.Binary":
-                            property.Type = JsonSchemaType.String;
-                            property.Format = "byte";
-                            break;
-
-                        case "Edm.Byte":
-                            property.Type = JsonSchemaType.Integer;
-                            property.Format = "int32";
-                            property.Minimum = "0";
-                            property.Maximum = "255";
-                            break;
-
-                        case "Edm.Boolean":
-                            property.Type = JsonSchemaType.Boolean;
-                            break;
-
-                        case "Edm.DateTime":
-                            property.Type = JsonSchemaType.String;
-                            property.Format = "date-time";
-                            break;
-
-                        case "Edm.Decimal":
-                            property.Type = JsonSchemaType.Number;
-                            property.Format = "decimal";
-                            break;
-
-                        case "Edm.Double":
-                            property.Type = JsonSchemaType.Number;
-                            property.Format = "double";
-                            break;
-
-                        case "Edm.Float":
-                            property.Type = JsonSchemaType.Number;
-                            property.Format = "float";
-                            break;
-
-                        case "Edm.Guid":
-                            property.Type = JsonSchemaType.String;
-                            property.Format = "uuid";
-                            break;
-
-                        case "Edm.Int16":
-                            property.Type = JsonSchemaType.Integer;
-                            property.Format = "int16";
-                            break;
-
-                        case "Edm.Int32":
-                            property.Type = JsonSchemaType.Integer;
-                            property.Format = "int32";
-                            break;
-
-                        case "Edm.Int64":
-                            property.Type = JsonSchemaType.Integer;
-                            property.Format = "int64";
-                            break;
-
-                        case "Edm.String":
-                            property.Type = JsonSchemaType.String;
-                            break;
-
-                        default:
-                            if (!string.IsNullOrEmpty(linkedSchemaName))
+                        if (!string.IsNullOrEmpty(linkedSchemaName))
+                        {
+                            if (isCollection)
                             {
-                                if (isCollection)
+                                property = new OpenApiSchema
                                 {
-                                    property.Type = JsonSchemaType.Array;
-                                    property.Items = new OpenApiSchemaReference(linkedSchemaName);
-                                }
-                                else
-                                {
-                                    propertyReference = new OpenApiSchemaReference(linkedSchemaName);
-                                }
+                                    Type = JsonSchemaType.Array,
+                                    Description = description,
+                                    Items = new OpenApiSchemaReference(linkedSchemaName)
+                                };
                             }
                             else
                             {
-                                if (isCollection)
+                                property = new OpenApiSchemaReference(linkedSchemaName);
+                            }
+                        }
+                        else
+                        {
+                            if (isCollection)
+                            {
+                                property = new OpenApiSchema
                                 {
-                                    property.Type = JsonSchemaType.Array;
-                                    property.Items = new OpenApiSchema
+                                    Type = JsonSchemaType.Array,
+                                    Description = description,
+                                    Items = new OpenApiSchema
                                     {
                                         Type = JsonSchemaType.Object
-                                    };
-                                }
-                                else
-                                {
-                                    property.Type = JsonSchemaType.Object;
-                                }
+                                    }
+                                };
                             }
-                            break;
+                            else
+                            {
+                                property = new OpenApiSchema
+                                {
+                                    Type = JsonSchemaType.Object,
+                                    Description = description
+                                };
+                            }
+                        }
                     }
 
                     if (isRequired)
@@ -228,14 +174,7 @@ internal class EndpointCrawler
                         requiredProperties.Add(name);
                     }
 
-                    if (propertyReference != null)
-                    {
-                        properties.Add(name, propertyReference);
-                    }
-                    else
-                    {
-                        properties.Add(name, property);
-                    }
+                    properties.Add(name, property);
                 }
             }
         }
@@ -275,29 +214,40 @@ internal class EndpointCrawler
 
             if (method == HttpMethod.Get)
             {
-                operation.Parameters.Add(new OpenApiParameter
+                foreach (var queryParameter in queryParameters)
                 {
-                    Name = "$filter",
-                    In = ParameterLocation.Query,
-                    Required = false,
-                    Schema = new OpenApiSchema
-                    {
-                        Type = JsonSchemaType.String
-                    },
-                    Description = "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`"
-                });
+                    operation.Parameters.Add(queryParameter);
+                }
 
-                operation.Parameters.Add(new OpenApiParameter
+                if (operation.Parameters.All(p => p.Name != "$filter"))
                 {
-                    Name = "$select",
-                    In = ParameterLocation.Query,
-                    Required = false,
-                    Schema = new OpenApiSchema
+                    operation.Parameters.Add(new OpenApiParameter
                     {
-                        Type = JsonSchemaType.String
-                    },
-                    Description = "Comma-separated list of fields to return, e.g., `ID`"
-                });
+                        Name = "$filter",
+                        In = ParameterLocation.Query,
+                        Required = false,
+                        Schema = new OpenApiSchema
+                        {
+                            Type = JsonSchemaType.String
+                        },
+                        Description = "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`"
+                    });
+                }
+
+                if (operation.Parameters.All(p => p.Name != "$select"))
+                {
+                    operation.Parameters.Add(new OpenApiParameter
+                    {
+                        Name = "$select",
+                        In = ParameterLocation.Query,
+                        Required = false,
+                        Schema = new OpenApiSchema
+                        {
+                            Type = JsonSchemaType.String
+                        },
+                        Description = "Comma-separated list of fields to return, e.g., `ID`"
+                    });
+                }
 
                 //pathAndUriParams.Add(new JsonObject
                 //{
@@ -443,5 +393,155 @@ internal class EndpointCrawler
         return schemaName.EndsWith("s") ||
                schemaName.EndsWith("List") ||
                endpointDescription.Contains("returns a list");
+    }
+
+    private static (string ServiceUri, HashSet<OpenApiParameter> QueryParameters) GetEndpointUriDetails(HtmlDocument doc)
+    {
+        var parameters = new HashSet<OpenApiParameter>();
+        var serviceUriNode = doc.DocumentNode.SelectSingleNode("//p[@id='serviceUri']");
+
+        // Use regex to find parameter patterns like: paramName={EdmType}
+        var matches = EndpointUriEdmTypeRegex.Matches(serviceUriNode.InnerText);
+
+        // Get all strong tags to determine which parameters are required
+        var strongNodes = serviceUriNode.SelectNodes(".//strong");
+        var requiredParamNames = new HashSet<string>();
+
+        // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
+        if (strongNodes != null)
+        {
+            foreach (var strongNode in strongNodes)
+            {
+                var paramName = strongNode.InnerText.Trim();
+                if (!string.IsNullOrEmpty(paramName))
+                {
+                    requiredParamNames.Add(paramName);
+                }
+            }
+        }
+
+        foreach (Match match in matches)
+        {
+            var paramName = match.Groups[1].Value.Trim();
+            var edmType = match.Groups[2].Value.Trim();
+
+            if (string.IsNullOrEmpty(paramName))
+            {
+                continue;
+            }
+
+            TryParseAsEdmType(edmType, null, out var schema);
+
+            var description = paramName switch
+            {
+                "$filter" => "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+                "$select" => "Comma-separated list of fields to return, e.g., `ID`",
+                _ => $"Query parameter of type {edmType}"
+            };
+
+            var parameter = new OpenApiParameter
+            {
+                Name = paramName,
+                In = ParameterLocation.Query,
+                Required = requiredParamNames.Contains(paramName),
+                Schema = new OpenApiSchema
+                {
+                    Type = schema?.Type ?? JsonSchemaType.String
+                },
+                Description = description
+            };
+
+            parameters.Add(parameter);
+        }
+
+        var serviceUri = serviceUriNode.InnerText.Trim();
+        return (serviceUri.Contains('?') ? serviceUri.Split('?')[0] : serviceUri, parameters);
+    }
+
+    private static bool TryParseAsEdmType(string type, string? description, [NotNullWhen(true)] out IOpenApiSchema? schema)
+    {
+        var property = new OpenApiSchema
+        {
+            Description = description
+        };
+
+        switch (type)
+        {
+            case "Edm.Binary":
+                property.Type = JsonSchemaType.String;
+                property.Format = "byte";
+                schema = property;
+                return true;
+
+            case "Edm.Byte":
+                property.Type = JsonSchemaType.Integer;
+                property.Format = "int32";
+                property.Minimum = "0";
+                property.Maximum = "255";
+                schema = property;
+                return true;
+
+            case "Edm.Boolean":
+                property.Type = JsonSchemaType.Boolean;
+                schema = property;
+                return true;
+
+            case "Edm.DateTime":
+                property.Type = JsonSchemaType.String;
+                property.Format = "date-time";
+                schema = property;
+                return true;
+
+            case "Edm.Decimal":
+                property.Type = JsonSchemaType.Number;
+                property.Format = "decimal";
+                schema = property;
+                return true;
+
+            case "Edm.Double":
+                property.Type = JsonSchemaType.Number;
+                property.Format = "double";
+                schema = property;
+                return true;
+
+            case "Edm.Float":
+                property.Type = JsonSchemaType.Number;
+                property.Format = "float";
+                schema = property;
+                return true;
+
+            case "Edm.Guid":
+                property.Type = JsonSchemaType.String;
+                property.Format = "uuid";
+                schema = property;
+                return true;
+
+            case "Edm.Int16":
+                property.Type = JsonSchemaType.Integer;
+                property.Format = "int16";
+                schema = property;
+                return true;
+
+            case "Edm.Int32":
+                property.Type = JsonSchemaType.Integer;
+                property.Format = "int32";
+                schema = property;
+                return true;
+
+            case "Edm.Int64":
+                property.Type = JsonSchemaType.Integer;
+                property.Format = "int64";
+                schema = property;
+                return true;
+
+            case "Edm.String":
+                property.Type = JsonSchemaType.String;
+                schema = property;
+                return true;
+
+            default:
+                schema = null;
+                return false;
+        }
     }
 }

@@ -2,11 +2,11 @@
 
 namespace ExactOnline.OpenApiGenerator.HtmlDocumentLoaders;
 
-internal class HtmlAgilityDcoumentLoader()
+internal class HtmlAgilityDocumentLoader : IHtmlDocumentLoader
 {
     private readonly HtmlWeb _web = new();
 
-    public Task<HtmlDocument> LoadDocumentAsync(string url, CancellationToken cancellationToken)
+    public Task<HtmlDocument> LoadAsync(string url, CancellationToken cancellationToken)
     {
         return _web.LoadFromWebAsync(url, cancellationToken);
     }

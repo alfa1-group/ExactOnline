@@ -17,7 +17,7 @@ internal class PuppeteerHtmlDocumentLoader : IHtmlDocumentLoader
         var browser = await _browserAsLazy.Value;
 
         // Load the HTML document from the web page
-        using var page = await browser.NewPageAsync();
+        await using var page = await browser.NewPageAsync();
         await page.GoToAsync(url);
         var content = await page.GetContentAsync();
 
