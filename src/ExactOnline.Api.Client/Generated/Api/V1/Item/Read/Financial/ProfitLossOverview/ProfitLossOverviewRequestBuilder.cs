@@ -36,21 +36,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ProfitLossOverview
         /// <summary>
         /// GET ReadFinancialProfitLossOverview
         /// </summary>
-        /// <returns>A List&lt;global::ExactOnline.Api.Client.Models.ReadFinancialProfitLossOverview&gt;</returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialProfitLossOverview"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::ExactOnline.Api.Client.Models.ReadFinancialProfitLossOverview>?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ProfitLossOverview.ProfitLossOverviewRequestBuilder.ProfitLossOverviewRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ReadFinancialProfitLossOverview?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ProfitLossOverview.ProfitLossOverviewRequestBuilder.ProfitLossOverviewRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::ExactOnline.Api.Client.Models.ReadFinancialProfitLossOverview>> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ProfitLossOverview.ProfitLossOverviewRequestBuilder.ProfitLossOverviewRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ReadFinancialProfitLossOverview> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ProfitLossOverview.ProfitLossOverviewRequestBuilder.ProfitLossOverviewRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::ExactOnline.Api.Client.Models.ReadFinancialProfitLossOverview>(requestInfo, global::ExactOnline.Api.Client.Models.ReadFinancialProfitLossOverview.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ReadFinancialProfitLossOverview>(requestInfo, global::ExactOnline.Api.Client.Models.ReadFinancialProfitLossOverview.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// GET ReadFinancialProfitLossOverview

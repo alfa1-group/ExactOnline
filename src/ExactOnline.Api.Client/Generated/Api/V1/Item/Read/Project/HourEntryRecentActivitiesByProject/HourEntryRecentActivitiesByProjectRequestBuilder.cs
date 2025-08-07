@@ -36,21 +36,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentActivit
         /// <summary>
         /// GET ReadProjectHourEntryRecentActivitiesByProject
         /// </summary>
-        /// <returns>A List&lt;global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentActivitiesByProject&gt;</returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentActivitiesByProject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentActivitiesByProject>?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentActivitiesByProject.HourEntryRecentActivitiesByProjectRequestBuilder.HourEntryRecentActivitiesByProjectRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentActivitiesByProject?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentActivitiesByProject.HourEntryRecentActivitiesByProjectRequestBuilder.HourEntryRecentActivitiesByProjectRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentActivitiesByProject>> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentActivitiesByProject.HourEntryRecentActivitiesByProjectRequestBuilder.HourEntryRecentActivitiesByProjectRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentActivitiesByProject> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentActivitiesByProject.HourEntryRecentActivitiesByProjectRequestBuilder.HourEntryRecentActivitiesByProjectRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentActivitiesByProject>(requestInfo, global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentActivitiesByProject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentActivitiesByProject>(requestInfo, global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentActivitiesByProject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// GET ReadProjectHourEntryRecentActivitiesByProject

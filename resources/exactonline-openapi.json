@@ -888,6 +888,7 @@
       }
     },
     "/api/v1/{division}/activities/CommunicationNotes": {
+      "description": "",
       "get": {
         "summary": "GET ActivitiesCommunicationNotes",
         "parameters": [
@@ -963,6 +964,7 @@
       }
     },
     "/api/v1/{division}/activities/Complaints": {
+      "description": "",
       "get": {
         "summary": "GET ActivitiesComplaints",
         "parameters": [
@@ -1038,6 +1040,7 @@
       }
     },
     "/api/v1/{division}/activities/Events": {
+      "description": "",
       "get": {
         "summary": "GET ActivitiesEvents",
         "parameters": [
@@ -1113,6 +1116,7 @@
       }
     },
     "/api/v1/{division}/activities/ServiceRequests": {
+      "description": "",
       "get": {
         "summary": "GET ActivitiesServiceRequests",
         "parameters": [
@@ -1188,6 +1192,7 @@
       }
     },
     "/api/v1/{division}/activities/Tasks": {
+      "description": "",
       "get": {
         "summary": "GET ActivitiesTasks",
         "parameters": [
@@ -1597,6 +1602,7 @@
       }
     },
     "/api/v1/beta/{division}/budget/BudgetScenarios": {
+      "description": "",
       "get": {
         "summary": "GET BudgetBudgetScenarios",
         "parameters": [
@@ -2332,14 +2338,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of BulkProjectProjectWBS entities.",
+            "description": "The BulkProjectProjectWBS entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BulkProjectProjectWBS"
-                  }
+                  "$ref": "#/components/schemas/BulkProjectProjectWBS"
                 }
               }
             }
@@ -2630,6 +2633,7 @@
       }
     },
     "/api/v1/beta/{division}/cashflow/AllocationRule": {
+      "description": "",
       "get": {
         "summary": "GET CashflowAllocationRule",
         "parameters": [
@@ -2660,14 +2664,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of CashflowAllocationRule entities.",
+            "description": "The CashflowAllocationRule entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CashflowAllocationRule"
-                  }
+                  "$ref": "#/components/schemas/CashflowAllocationRule"
                 }
               }
             }
@@ -2705,6 +2706,7 @@
       }
     },
     "/api/v1/beta/{division}/cashflow/AllocationRule({id})": {
+      "description": "",
       "put": {
         "summary": "PUT CashflowAllocationRule",
         "parameters": [
@@ -3285,6 +3287,7 @@
       }
     },
     "/api/v1/{division}/crm/AccountClasses": {
+      "description": "",
       "get": {
         "summary": "GET CRMAccountClasses",
         "parameters": [
@@ -3331,6 +3334,7 @@
       }
     },
     "/api/v1/{division}/crm/AccountClassificationNames": {
+      "description": "",
       "get": {
         "summary": "GET CRMAccountClassificationNames",
         "parameters": [
@@ -3377,6 +3381,7 @@
       }
     },
     "/api/v1/{division}/crm/AccountClassifications": {
+      "description": "",
       "get": {
         "summary": "GET CRMAccountClassifications",
         "parameters": [
@@ -3423,6 +3428,7 @@
       }
     },
     "/api/v1/{division}/crm/Accounts": {
+      "description": "",
       "get": {
         "summary": "GET CRMAccounts",
         "parameters": [
@@ -3498,6 +3504,7 @@
       }
     },
     "/api/v1/{division}/crm/Accounts({id})": {
+      "description": "",
       "put": {
         "summary": "PUT CRMAccounts",
         "parameters": [
@@ -3713,6 +3720,7 @@
       }
     },
     "/api/v1/{division}/crm/AddressStates": {
+      "description": "",
       "get": {
         "summary": "GET CRMAddressStates",
         "parameters": [
@@ -3759,6 +3767,7 @@
       }
     },
     "/api/v1/{division}/crm/BankAccounts": {
+      "description": "",
       "get": {
         "summary": "GET CRMBankAccounts",
         "parameters": [
@@ -3834,6 +3843,7 @@
       }
     },
     "/api/v1/{division}/crm/BankAccounts({id})": {
+      "description": "",
       "put": {
         "summary": "PUT CRMBankAccounts",
         "parameters": [
@@ -3903,6 +3913,7 @@
       }
     },
     "/api/v1/{division}/crm/Contacts": {
+      "description": "",
       "get": {
         "summary": "GET CRMContacts",
         "parameters": [
@@ -3978,6 +3989,7 @@
       }
     },
     "/api/v1/{division}/crm/Contacts({id})": {
+      "description": "",
       "put": {
         "summary": "PUT CRMContacts",
         "parameters": [
@@ -4173,6 +4185,7 @@
       }
     },
     "/api/v1/{division}/crm/Opportunities": {
+      "description": "",
       "get": {
         "summary": "GET CRMOpportunities",
         "parameters": [
@@ -4248,6 +4261,7 @@
       }
     },
     "/api/v1/{division}/crm/Opportunities({id})": {
+      "description": "",
       "put": {
         "summary": "PUT CRMOpportunities",
         "parameters": [
@@ -4381,6 +4395,7 @@
       }
     },
     "/api/v1/{division}/crm/QuotationLines": {
+      "description": "",
       "get": {
         "summary": "GET CRMQuotationLines",
         "parameters": [
@@ -4456,6 +4471,7 @@
       }
     },
     "/api/v1/{division}/crm/QuotationLines({id})": {
+      "description": "",
       "put": {
         "summary": "PUT CRMQuotationLines",
         "parameters": [
@@ -4671,6 +4687,7 @@
       }
     },
     "/api/v1/{division}/crm/Quotations": {
+      "description": "",
       "get": {
         "summary": "GET CRMQuotations",
         "parameters": [
@@ -4746,6 +4763,7 @@
       }
     },
     "/api/v1/{division}/crm/Quotations({id})": {
+      "description": "",
       "put": {
         "summary": "PUT CRMQuotations",
         "parameters": [
@@ -4815,6 +4833,7 @@
       }
     },
     "/api/v1/{division}/crm/ReasonCodes": {
+      "description": "",
       "get": {
         "summary": "GET CRMReasonCodes",
         "parameters": [
@@ -5962,6 +5981,7 @@
       }
     },
     "/api/v1/{division}/financial/GLAccountClassificationMappings": {
+      "description": "",
       "get": {
         "summary": "GET FinancialGLAccountClassificationMappings",
         "parameters": [
@@ -6037,6 +6057,7 @@
       }
     },
     "/api/v1/{division}/financial/GLAccountClassificationMappings({id})": {
+      "description": "",
       "put": {
         "summary": "PUT FinancialGLAccountClassificationMappings",
         "parameters": [
@@ -6725,14 +6746,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of FinancialReportingBalance entities.",
+            "description": "The FinancialReportingBalance entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/FinancialReportingBalance"
-                  }
+                  "$ref": "#/components/schemas/FinancialReportingBalance"
                 }
               }
             }
@@ -8177,14 +8195,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of HRMLeaveAbsenceHoursByDay entities.",
+            "description": "The HRMLeaveAbsenceHoursByDay entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/HRMLeaveAbsenceHoursByDay"
-                  }
+                  "$ref": "#/components/schemas/HRMLeaveAbsenceHoursByDay"
                 }
               }
             }
@@ -8365,14 +8380,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of InventoryAssemblyBillOfMaterialHeader entities.",
+            "description": "The InventoryAssemblyBillOfMaterialHeader entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/InventoryAssemblyBillOfMaterialHeader"
-                  }
+                  "$ref": "#/components/schemas/InventoryAssemblyBillOfMaterialHeader"
                 }
               }
             }
@@ -10396,14 +10408,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of LogisticsItemAssortment entities.",
+            "description": "The LogisticsItemAssortment entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogisticsItemAssortment"
-                  }
+                  "$ref": "#/components/schemas/LogisticsItemAssortment"
                 }
               }
             }
@@ -10443,14 +10452,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of LogisticsItemAssortmentProperty entities.",
+            "description": "The LogisticsItemAssortmentProperty entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogisticsItemAssortmentProperty"
-                  }
+                  "$ref": "#/components/schemas/LogisticsItemAssortmentProperty"
                 }
               }
             }
@@ -10490,14 +10496,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of LogisticsItemChargeRelation entities.",
+            "description": "The LogisticsItemChargeRelation entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogisticsItemChargeRelation"
-                  }
+                  "$ref": "#/components/schemas/LogisticsItemChargeRelation"
                 }
               }
             }
@@ -11064,14 +11067,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of LogisticsSupplierItem entities.",
+            "description": "The LogisticsSupplierItem entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogisticsSupplierItem"
-                  }
+                  "$ref": "#/components/schemas/LogisticsSupplierItem"
                 }
               }
             }
@@ -11479,14 +11479,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of MailboxMailMessagesSent entities.",
+            "description": "The MailboxMailMessagesSent entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/MailboxMailMessagesSent"
-                  }
+                  "$ref": "#/components/schemas/MailboxMailMessagesSent"
                 }
               }
             }
@@ -11816,6 +11813,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/BillOfMaterialVersions": {
+      "description": "",
       "get": {
         "summary": "GET ManufacturingBillOfMaterialVersions",
         "parameters": [
@@ -11891,6 +11889,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/BillOfMaterialVersions({id})": {
+      "description": "",
       "put": {
         "summary": "PUT ManufacturingBillOfMaterialVersions",
         "parameters": [
@@ -12112,6 +12111,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/ManufacturingSettings": {
+      "description": "",
       "get": {
         "summary": "GET ManufacturingManufacturingSettings",
         "parameters": [
@@ -12310,6 +12310,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/OperationResources": {
+      "description": "",
       "get": {
         "summary": "GET ManufacturingOperationResources",
         "parameters": [
@@ -12385,6 +12386,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/OperationResources({id})": {
+      "description": "",
       "put": {
         "summary": "PUT ManufacturingOperationResources",
         "parameters": [
@@ -12454,6 +12456,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/Operations": {
+      "description": "",
       "get": {
         "summary": "GET ManufacturingOperations",
         "parameters": [
@@ -12529,6 +12532,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/Operations({id})": {
+      "description": "",
       "put": {
         "summary": "PUT ManufacturingOperations",
         "parameters": [
@@ -12598,6 +12602,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/ProductionAreas": {
+      "description": "",
       "get": {
         "summary": "GET ManufacturingProductionAreas",
         "parameters": [
@@ -12673,6 +12678,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/ProductionAreas({id})": {
+      "description": "",
       "put": {
         "summary": "PUT ManufacturingProductionAreas",
         "parameters": [
@@ -12742,6 +12748,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/ShopOrderMaterialPlanDetails": {
+      "description": "",
       "get": {
         "summary": "GET ManufacturingShopOrderMaterialPlanDetails",
         "parameters": [
@@ -12934,6 +12941,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/ShopOrderPriorities": {
+      "description": "",
       "get": {
         "summary": "GET ManufacturingShopOrderPriorities",
         "parameters": [
@@ -12980,6 +12988,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/ShopOrderPriorities({id})": {
+      "description": "",
       "put": {
         "summary": "PUT ManufacturingShopOrderPriorities",
         "parameters": [
@@ -13173,6 +13182,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/ShopOrderRoutingStepPlans": {
+      "description": "",
       "get": {
         "summary": "GET ManufacturingShopOrderRoutingStepPlans",
         "parameters": [
@@ -13248,6 +13258,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/ShopOrderRoutingStepPlans({id})": {
+      "description": "",
       "put": {
         "summary": "PUT ManufacturingShopOrderRoutingStepPlans",
         "parameters": [
@@ -13463,6 +13474,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/StageForDeliveryReceipts": {
+      "description": "",
       "get": {
         "summary": "GET ManufacturingStageForDeliveryReceipts",
         "parameters": [
@@ -13538,6 +13550,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/StageForDeliveryReversals": {
+      "description": "",
       "get": {
         "summary": "GET ManufacturingStageForDeliveryReversals",
         "parameters": [
@@ -14057,6 +14070,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/Workcenters": {
+      "description": "",
       "get": {
         "summary": "GET ManufacturingWorkcenters",
         "parameters": [
@@ -14132,6 +14146,7 @@
       }
     },
     "/api/v1/{division}/manufacturing/Workcenters({id})": {
+      "description": "",
       "put": {
         "summary": "PUT ManufacturingWorkcenters",
         "parameters": [
@@ -14232,14 +14247,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of OpeningBalanceCurrentYearAfterEntry entities.",
+            "description": "The OpeningBalanceCurrentYearAfterEntry entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/OpeningBalanceCurrentYearAfterEntry"
-                  }
+                  "$ref": "#/components/schemas/OpeningBalanceCurrentYearAfterEntry"
                 }
               }
             }
@@ -14279,14 +14291,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of OpeningBalanceCurrentYearProcessed entities.",
+            "description": "The OpeningBalanceCurrentYearProcessed entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/OpeningBalanceCurrentYearProcessed"
-                  }
+                  "$ref": "#/components/schemas/OpeningBalanceCurrentYearProcessed"
                 }
               }
             }
@@ -14326,14 +14335,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of OpeningBalancePreviousYearAfterEntry entities.",
+            "description": "The OpeningBalancePreviousYearAfterEntry entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/OpeningBalancePreviousYearAfterEntry"
-                  }
+                  "$ref": "#/components/schemas/OpeningBalancePreviousYearAfterEntry"
                 }
               }
             }
@@ -14373,14 +14379,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of OpeningBalancePreviousYearProcessed entities.",
+            "description": "The OpeningBalancePreviousYearProcessed entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/OpeningBalancePreviousYearProcessed"
-                  }
+                  "$ref": "#/components/schemas/OpeningBalancePreviousYearProcessed"
                 }
               }
             }
@@ -14843,14 +14846,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of PayrollEmploymentTaxAuthoritiesGeneral entities.",
+            "description": "The PayrollEmploymentTaxAuthoritiesGeneral entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayrollEmploymentTaxAuthoritiesGeneral"
-                  }
+                  "$ref": "#/components/schemas/PayrollEmploymentTaxAuthoritiesGeneral"
                 }
               }
             }
@@ -14937,14 +14937,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of PayrollPayrollTransactionsByPayrollYear entities.",
+            "description": "The PayrollPayrollTransactionsByPayrollYear entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayrollPayrollTransactionsByPayrollYear"
-                  }
+                  "$ref": "#/components/schemas/PayrollPayrollTransactionsByPayrollYear"
                 }
               }
             }
@@ -16119,14 +16116,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ProjectProjectPlanning entities.",
+            "description": "The ProjectProjectPlanning entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ProjectProjectPlanning"
-                  }
+                  "$ref": "#/components/schemas/ProjectProjectPlanning"
                 }
               }
             }
@@ -16265,14 +16259,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ProjectProjectPlanningRecurring entities.",
+            "description": "The ProjectProjectPlanningRecurring entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ProjectProjectPlanningRecurring"
-                  }
+                  "$ref": "#/components/schemas/ProjectProjectPlanningRecurring"
                 }
               }
             }
@@ -19201,14 +19192,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadCRMAccountDocumentsCount entities.",
+            "description": "The ReadCRMAccountDocumentsCount entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadCRMAccountDocumentsCount"
-                  }
+                  "$ref": "#/components/schemas/ReadCRMAccountDocumentsCount"
                 }
               }
             }
@@ -19248,14 +19236,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadCRMDefaultAddressForAccount entities.",
+            "description": "The ReadCRMDefaultAddressForAccount entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadCRMDefaultAddressForAccount"
-                  }
+                  "$ref": "#/components/schemas/ReadCRMDefaultAddressForAccount"
                 }
               }
             }
@@ -19264,6 +19249,7 @@
       }
     },
     "/api/v1/{division}/read/crm/Documents": {
+      "description": "",
       "get": {
         "summary": "GET ReadCRMDocuments",
         "parameters": [
@@ -19310,6 +19296,7 @@
       }
     },
     "/api/v1/{division}/read/crm/DocumentsAttachments": {
+      "description": "",
       "get": {
         "summary": "GET ReadCRMDocumentsAttachments",
         "parameters": [
@@ -19356,6 +19343,7 @@
       }
     },
     "/api/v1/{division}/read/crm/OpportunityContacts": {
+      "description": "",
       "get": {
         "summary": "GET ReadCRMOpportunityContacts",
         "parameters": [
@@ -19480,14 +19468,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadCRMOpportunityDocumentsCount entities.",
+            "description": "The ReadCRMOpportunityDocumentsCount entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadCRMOpportunityDocumentsCount"
-                  }
+                  "$ref": "#/components/schemas/ReadCRMOpportunityDocumentsCount"
                 }
               }
             }
@@ -19527,14 +19512,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialAgingOverview entities.",
+            "description": "The ReadFinancialAgingOverview entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialAgingOverview"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialAgingOverview"
                 }
               }
             }
@@ -19574,14 +19556,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialAgingOverviewByAccount entities.",
+            "description": "The ReadFinancialAgingOverviewByAccount entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialAgingOverviewByAccount"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialAgingOverviewByAccount"
                 }
               }
             }
@@ -19668,14 +19647,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialAgingPayablesListByAgeGroup entities.",
+            "description": "The ReadFinancialAgingPayablesListByAgeGroup entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialAgingPayablesListByAgeGroup"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialAgingPayablesListByAgeGroup"
                 }
               }
             }
@@ -19762,14 +19738,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialAgingReceivablesListByAgeGroup entities.",
+            "description": "The ReadFinancialAgingReceivablesListByAgeGroup entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialAgingReceivablesListByAgeGroup"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialAgingReceivablesListByAgeGroup"
                 }
               }
             }
@@ -19809,14 +19782,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialJournalStatusByFinancialPeriod entities.",
+            "description": "The ReadFinancialJournalStatusByFinancialPeriod entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialJournalStatusByFinancialPeriod"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialJournalStatusByFinancialPeriod"
                 }
               }
             }
@@ -19903,14 +19873,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialOutstandingInvoicesOverview entities.",
+            "description": "The ReadFinancialOutstandingInvoicesOverview entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialOutstandingInvoicesOverview"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialOutstandingInvoicesOverview"
                 }
               }
             }
@@ -19997,14 +19964,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialPayablesListByAccount entities.",
+            "description": "The ReadFinancialPayablesListByAccount entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialPayablesListByAccount"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialPayablesListByAccount"
                 }
               }
             }
@@ -20044,14 +20008,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialPayablesListByAccountAndAgeGroup entities.",
+            "description": "The ReadFinancialPayablesListByAccountAndAgeGroup entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialPayablesListByAccountAndAgeGroup"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialPayablesListByAccountAndAgeGroup"
                 }
               }
             }
@@ -20091,14 +20052,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialPayablesListByAgeGroup entities.",
+            "description": "The ReadFinancialPayablesListByAgeGroup entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialPayablesListByAgeGroup"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialPayablesListByAgeGroup"
                 }
               }
             }
@@ -20138,14 +20096,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialProfitLossOverview entities.",
+            "description": "The ReadFinancialProfitLossOverview entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialProfitLossOverview"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialProfitLossOverview"
                 }
               }
             }
@@ -20232,14 +20187,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialReceivablesListByAccount entities.",
+            "description": "The ReadFinancialReceivablesListByAccount entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialReceivablesListByAccount"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialReceivablesListByAccount"
                 }
               }
             }
@@ -20279,14 +20231,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialReceivablesListByAccountAndAgeGroup entities.",
+            "description": "The ReadFinancialReceivablesListByAccountAndAgeGroup entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialReceivablesListByAccountAndAgeGroup"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialReceivablesListByAccountAndAgeGroup"
                 }
               }
             }
@@ -20326,14 +20275,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialReceivablesListByAgeGroup entities.",
+            "description": "The ReadFinancialReceivablesListByAgeGroup entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialReceivablesListByAgeGroup"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialReceivablesListByAgeGroup"
                 }
               }
             }
@@ -20373,14 +20319,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialReportingBalanceByClassification entities.",
+            "description": "The ReadFinancialReportingBalanceByClassification entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialReportingBalanceByClassification"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialReportingBalanceByClassification"
                 }
               }
             }
@@ -20514,14 +20457,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadFinancialRevenueListByYear entities.",
+            "description": "The ReadFinancialRevenueListByYear entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadFinancialRevenueListByYear"
-                  }
+                  "$ref": "#/components/schemas/ReadFinancialRevenueListByYear"
                 }
               }
             }
@@ -20655,14 +20595,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadLogisticsItemDetailsByID entities.",
+            "description": "The ReadLogisticsItemDetailsByID entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadLogisticsItemDetailsByID"
-                  }
+                  "$ref": "#/components/schemas/ReadLogisticsItemDetailsByID"
                 }
               }
             }
@@ -20702,14 +20639,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadLogisticsItemExtraField entities.",
+            "description": "The ReadLogisticsItemExtraField entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadLogisticsItemExtraField"
-                  }
+                  "$ref": "#/components/schemas/ReadLogisticsItemExtraField"
                 }
               }
             }
@@ -20749,14 +20683,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadLogisticsSalesItemPrice entities.",
+            "description": "The ReadLogisticsSalesItemPrice entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadLogisticsSalesItemPrice"
-                  }
+                  "$ref": "#/components/schemas/ReadLogisticsSalesItemPrice"
                 }
               }
             }
@@ -20796,14 +20727,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadLogisticsStockPosition entities.",
+            "description": "The ReadLogisticsStockPosition entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadLogisticsStockPosition"
-                  }
+                  "$ref": "#/components/schemas/ReadLogisticsStockPosition"
                 }
               }
             }
@@ -20843,14 +20771,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadMailboxDefaultMailbox entities.",
+            "description": "The ReadMailboxDefaultMailbox entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadMailboxDefaultMailbox"
-                  }
+                  "$ref": "#/components/schemas/ReadMailboxDefaultMailbox"
                 }
               }
             }
@@ -20890,14 +20815,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadMailboxPreferredMailbox entities.",
+            "description": "The ReadMailboxPreferredMailbox entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadMailboxPreferredMailbox"
-                  }
+                  "$ref": "#/components/schemas/ReadMailboxPreferredMailbox"
                 }
               }
             }
@@ -20937,14 +20859,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadMailboxPreferredMailboxForOperation entities.",
+            "description": "The ReadMailboxPreferredMailboxForOperation entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadMailboxPreferredMailboxForOperation"
-                  }
+                  "$ref": "#/components/schemas/ReadMailboxPreferredMailboxForOperation"
                 }
               }
             }
@@ -20953,6 +20872,7 @@
       }
     },
     "/api/v1/{division}/read/manufacturing/RecentTimeTransactions": {
+      "description": "",
       "get": {
         "summary": "GET ReadManufacturingRecentTimeTransactions",
         "parameters": [
@@ -20999,6 +20919,7 @@
       }
     },
     "/api/v1/{division}/read/manufacturing/ShopOrderRoutingStepPlansAvailableToWork": {
+      "description": "",
       "get": {
         "summary": "GET ReadManufacturingShopOrderRoutingStepPlansAvailableToWork",
         "parameters": [
@@ -21029,14 +20950,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadManufacturingShopOrderRoutingStepPlansAvailableToWork entities.",
+            "description": "The ReadManufacturingShopOrderRoutingStepPlansAvailableToWork entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadManufacturingShopOrderRoutingStepPlansAvailableToWork"
-                  }
+                  "$ref": "#/components/schemas/ReadManufacturingShopOrderRoutingStepPlansAvailableToWork"
                 }
               }
             }
@@ -21045,6 +20963,7 @@
       }
     },
     "/api/v1/{division}/read/manufacturing/StartedTimedTimeTransactions": {
+      "description": "",
       "get": {
         "summary": "GET ReadManufacturingStartedTimedTimeTransactions",
         "parameters": [
@@ -21122,14 +21041,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadPayrollEmploymentContractFlexPhasesOnFocusDate entities.",
+            "description": "The ReadPayrollEmploymentContractFlexPhasesOnFocusDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadPayrollEmploymentContractFlexPhasesOnFocusDate"
-                  }
+                  "$ref": "#/components/schemas/ReadPayrollEmploymentContractFlexPhasesOnFocusDate"
                 }
               }
             }
@@ -21169,14 +21085,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadPayrollEmploymentEndReasonsOnFocusDate entities.",
+            "description": "The ReadPayrollEmploymentEndReasonsOnFocusDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadPayrollEmploymentEndReasonsOnFocusDate"
-                  }
+                  "$ref": "#/components/schemas/ReadPayrollEmploymentEndReasonsOnFocusDate"
                 }
               }
             }
@@ -21216,14 +21129,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectCostEntryExpensesByProject entities.",
+            "description": "The ReadProjectCostEntryExpensesByProject entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectCostEntryExpensesByProject"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectCostEntryExpensesByProject"
                 }
               }
             }
@@ -21310,14 +21220,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectCostEntryRecentAccountsByProject entities.",
+            "description": "The ReadProjectCostEntryRecentAccountsByProject entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectCostEntryRecentAccountsByProject"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectCostEntryRecentAccountsByProject"
                 }
               }
             }
@@ -21404,14 +21311,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectCostEntryRecentCostTypesByProject entities.",
+            "description": "The ReadProjectCostEntryRecentCostTypesByProject entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectCostEntryRecentCostTypesByProject"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectCostEntryRecentCostTypesByProject"
                 }
               }
             }
@@ -21451,14 +21355,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectCostEntryRecentExpensesByProject entities.",
+            "description": "The ReadProjectCostEntryRecentExpensesByProject entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectCostEntryRecentExpensesByProject"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectCostEntryRecentExpensesByProject"
                 }
               }
             }
@@ -21545,14 +21446,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectCostsByDate entities.",
+            "description": "The ReadProjectCostsByDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectCostsByDate"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectCostsByDate"
                 }
               }
             }
@@ -21592,14 +21490,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectCostsById entities.",
+            "description": "The ReadProjectCostsById entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectCostsById"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectCostsById"
                 }
               }
             }
@@ -21686,14 +21581,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectCostTypesByDate entities.",
+            "description": "The ReadProjectCostTypesByDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectCostTypesByDate"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectCostTypesByDate"
                 }
               }
             }
@@ -21733,14 +21625,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectCostTypesByProjectAndDate entities.",
+            "description": "The ReadProjectCostTypesByProjectAndDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectCostTypesByProjectAndDate"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectCostTypesByProjectAndDate"
                 }
               }
             }
@@ -21827,14 +21716,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectHourEntryActivitiesByProject entities.",
+            "description": "The ReadProjectHourEntryActivitiesByProject entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectHourEntryActivitiesByProject"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectHourEntryActivitiesByProject"
                 }
               }
             }
@@ -21921,14 +21807,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectHourEntryRecentAccountsByProject entities.",
+            "description": "The ReadProjectHourEntryRecentAccountsByProject entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectHourEntryRecentAccountsByProject"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectHourEntryRecentAccountsByProject"
                 }
               }
             }
@@ -21968,14 +21851,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectHourEntryRecentActivitiesByProject entities.",
+            "description": "The ReadProjectHourEntryRecentActivitiesByProject entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectHourEntryRecentActivitiesByProject"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectHourEntryRecentActivitiesByProject"
                 }
               }
             }
@@ -22062,14 +21942,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectHourEntryRecentHourTypesByProject entities.",
+            "description": "The ReadProjectHourEntryRecentHourTypesByProject entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectHourEntryRecentHourTypesByProject"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectHourEntryRecentHourTypesByProject"
                 }
               }
             }
@@ -22156,14 +22033,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectHoursByDate entities.",
+            "description": "The ReadProjectHoursByDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectHoursByDate"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectHoursByDate"
                 }
               }
             }
@@ -22203,14 +22077,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectHoursById entities.",
+            "description": "The ReadProjectHoursById entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectHoursById"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectHoursById"
                 }
               }
             }
@@ -22297,14 +22168,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectHourTypesByDate entities.",
+            "description": "The ReadProjectHourTypesByDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectHourTypesByDate"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectHourTypesByDate"
                 }
               }
             }
@@ -22344,14 +22212,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectHourTypesByProjectAndDate entities.",
+            "description": "The ReadProjectHourTypesByProjectAndDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectHourTypesByProjectAndDate"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectHourTypesByProjectAndDate"
                 }
               }
             }
@@ -22391,14 +22256,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectProjectWBSByProject entities.",
+            "description": "The ReadProjectProjectWBSByProject entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectProjectWBSByProject"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectProjectWBSByProject"
                 }
               }
             }
@@ -22438,14 +22300,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectProjectWBSByProjectAndWBS entities.",
+            "description": "The ReadProjectProjectWBSByProjectAndWBS entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectProjectWBSByProjectAndWBS"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectProjectWBSByProjectAndWBS"
                 }
               }
             }
@@ -22454,6 +22313,7 @@
       }
     },
     "/api/v1/{division}/read/project/RecentCosts": {
+      "description": "",
       "get": {
         "summary": "GET ReadProjectRecentCosts",
         "parameters": [
@@ -22578,14 +22438,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectRecentCostsByNumberOfWeeksByDate entities.",
+            "description": "The ReadProjectRecentCostsByNumberOfWeeksByDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectRecentCostsByNumberOfWeeksByDate"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectRecentCostsByNumberOfWeeksByDate"
                 }
               }
             }
@@ -22719,14 +22576,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectRecentHoursByNumberOfWeeksByDate entities.",
+            "description": "The ReadProjectRecentHoursByNumberOfWeeksByDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectRecentHoursByNumberOfWeeksByDate"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectRecentHoursByNumberOfWeeksByDate"
                 }
               }
             }
@@ -22813,14 +22667,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectTimeAndBillingAccountDetailsByID entities.",
+            "description": "The ReadProjectTimeAndBillingAccountDetailsByID entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectTimeAndBillingAccountDetailsByID"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectTimeAndBillingAccountDetailsByID"
                 }
               }
             }
@@ -22954,14 +22805,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectTimeAndBillingEntryAccountsByDate entities.",
+            "description": "The ReadProjectTimeAndBillingEntryAccountsByDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryAccountsByDate"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryAccountsByDate"
                 }
               }
             }
@@ -23001,14 +22849,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectTimeAndBillingEntryAccountsByProjectAndDate entities.",
+            "description": "The ReadProjectTimeAndBillingEntryAccountsByProjectAndDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryAccountsByProjectAndDate"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryAccountsByProjectAndDate"
                 }
               }
             }
@@ -23095,14 +22940,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectTimeAndBillingEntryProjectsByAccountAndDate entities.",
+            "description": "The ReadProjectTimeAndBillingEntryProjectsByAccountAndDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryProjectsByAccountAndDate"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryProjectsByAccountAndDate"
                 }
               }
             }
@@ -23142,14 +22984,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectTimeAndBillingEntryProjectsByDate entities.",
+            "description": "The ReadProjectTimeAndBillingEntryProjectsByDate entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryProjectsByDate"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryProjectsByDate"
                 }
               }
             }
@@ -23424,14 +23263,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectTimeAndBillingItemDetailsByID entities.",
+            "description": "The ReadProjectTimeAndBillingItemDetailsByID entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectTimeAndBillingItemDetailsByID"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectTimeAndBillingItemDetailsByID"
                 }
               }
             }
@@ -23518,14 +23354,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadProjectTimeAndBillingProjectDetailsByID entities.",
+            "description": "The ReadProjectTimeAndBillingProjectDetailsByID entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadProjectTimeAndBillingProjectDetailsByID"
-                  }
+                  "$ref": "#/components/schemas/ReadProjectTimeAndBillingProjectDetailsByID"
                 }
               }
             }
@@ -23612,14 +23445,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of ReadSyncSyncSyncTimestamp entities.",
+            "description": "The ReadSyncSyncSyncTimestamp entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ReadSyncSyncSyncTimestamp"
-                  }
+                  "$ref": "#/components/schemas/ReadSyncSyncSyncTimestamp"
                 }
               }
             }
@@ -27187,14 +27017,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of SyncDeleted entities.",
+            "description": "The SyncDeleted entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SyncDeleted"
-                  }
+                  "$ref": "#/components/schemas/SyncDeleted"
                 }
               }
             }
@@ -27563,14 +27390,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of SyncHRMLeaveAbsenceHoursByDay entities.",
+            "description": "The SyncHRMLeaveAbsenceHoursByDay entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SyncHRMLeaveAbsenceHoursByDay"
-                  }
+                  "$ref": "#/components/schemas/SyncHRMLeaveAbsenceHoursByDay"
                 }
               }
             }
@@ -28221,14 +28045,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of SyncLogisticsSupplierItem entities.",
+            "description": "The SyncLogisticsSupplierItem entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SyncLogisticsSupplierItem"
-                  }
+                  "$ref": "#/components/schemas/SyncLogisticsSupplierItem"
                 }
               }
             }
@@ -28456,14 +28277,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of SyncManufacturingShopOrderPurchasePlanning entities.",
+            "description": "The SyncManufacturingShopOrderPurchasePlanning entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SyncManufacturingShopOrderPurchasePlanning"
-                  }
+                  "$ref": "#/components/schemas/SyncManufacturingShopOrderPurchasePlanning"
                 }
               }
             }
@@ -28973,14 +28791,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of SyncPayrollEmploymentTaxAuthoritiesGeneral entities.",
+            "description": "The SyncPayrollEmploymentTaxAuthoritiesGeneral entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SyncPayrollEmploymentTaxAuthoritiesGeneral"
-                  }
+                  "$ref": "#/components/schemas/SyncPayrollEmploymentTaxAuthoritiesGeneral"
                 }
               }
             }
@@ -29020,14 +28835,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of SyncProjectProjectPlanning entities.",
+            "description": "The SyncProjectProjectPlanning entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SyncProjectProjectPlanning"
-                  }
+                  "$ref": "#/components/schemas/SyncProjectProjectPlanning"
                 }
               }
             }
@@ -29114,14 +28926,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of SyncProjectProjectWBS entities.",
+            "description": "The SyncProjectProjectWBS entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SyncProjectProjectWBS"
-                  }
+                  "$ref": "#/components/schemas/SyncProjectProjectWBS"
                 }
               }
             }
@@ -29631,14 +29440,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of SystemSystemAccountantInfo entities.",
+            "description": "The SystemSystemAccountantInfo entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SystemSystemAccountantInfo"
-                  }
+                  "$ref": "#/components/schemas/SystemSystemAccountantInfo"
                 }
               }
             }
@@ -29889,14 +29695,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of SystemSystemMe entities.",
+            "description": "The SystemSystemMe entity.",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SystemSystemMe"
-                  }
+                  "$ref": "#/components/schemas/SystemSystemMe"
                 }
               }
             }
@@ -30385,6 +30188,7 @@
       }
     },
     "/api/v1/beta/{division}/workflow/RequestAttachments": {
+      "description": "",
       "get": {
         "summary": "GET WorkflowRequestAttachments",
         "parameters": [

@@ -8,7 +8,7 @@ namespace ExactOnline.OpenApiGenerator.Crawlers;
 internal class EndpointCrawler
 {
     private const int MaxRetries = 3;
-    private static readonly Regex endpointUriRegex = new(@"\{(\w+)\}", RegexOptions.Compiled);
+    private static readonly Regex EndpointUriRegex = new(@"\{(\w+)\}", RegexOptions.Compiled);
 
     private readonly OpenApiDocument _openApiDoc;
     private readonly IReadOnlyList<string> _urls;
@@ -26,7 +26,7 @@ internal class EndpointCrawler
             },
             Servers = new List<OpenApiServer>
             {
-                new OpenApiServer
+                new()
                 {
                     Url = "https://start.exactonline.nl",
                     Description = "Exact Online REST API Endpoint"
@@ -62,7 +62,7 @@ internal class EndpointCrawler
                     Process(url, doc, _openApiDoc);
                     break;
                 }
-                catch (Exception ex) when (ex is HttpRequestException || ex is TaskCanceledException)
+                catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException)
                 {
                     retries++;
                     if (retries >= MaxRetries)
@@ -71,7 +71,7 @@ internal class EndpointCrawler
                         throw;
                     }
 
-                    await Task.Delay(((int)Math.Pow(2, retries)) * 1000, cancellationToken);
+                    await Task.Delay((int)Math.Pow(2, retries) * 1000, cancellationToken);
                 }
 
                 retries++;
@@ -81,10 +81,11 @@ internal class EndpointCrawler
         return _openApiDoc;
     }
 
-    private void Process(string pageUrl, HtmlDocument doc, OpenApiDocument openApiDoc)
+    private static void Process(string pageUrl, HtmlDocument doc, OpenApiDocument openApiDoc)
     {
         var schemaName = pageUrl.Split("?name=").Last().Trim();
-        var endpointDescription = doc.DocumentNode.SelectSingleNode("//p[@id='goodToKnow']")?.InnerText.Trim();
+        var endpointDescription = doc.DocumentNode.SelectSingleNode("//p[@id='goodToKnow']")?.InnerText.Trim() ?? string.Empty;
+        var schemaIsCollection = IsCollection(schemaName, endpointDescription);
         var baseEndpointUri = doc.DocumentNode.SelectSingleNode("//p[@id='serviceUri']").InnerText.Trim();
 
         var methods = doc.DocumentNode
@@ -116,7 +117,7 @@ internal class EndpointCrawler
                         description = columns[8].InnerText.Trim();
                     }
                     var isCollection = description.Contains("collection of", StringComparison.OrdinalIgnoreCase);
-                    var isMandatory = bool.TryParse(columns[2].InnerText.Trim(), out var isMandatoryValue) ? isMandatoryValue : false;
+                    var isRequired = bool.TryParse(columns[2].InnerText.Trim(), out var isMandatoryValue) && isMandatoryValue;
 
                     if (string.IsNullOrEmpty(name))
                     {
@@ -222,7 +223,7 @@ internal class EndpointCrawler
                             break;
                     }
 
-                    if (isMandatory)
+                    if (isRequired)
                     {
                         requiredProperties.Add(name);
                     }
@@ -257,7 +258,7 @@ internal class EndpointCrawler
                 Responses = new OpenApiResponses()
             };
 
-            var matches = endpointUriRegex.Matches(baseEndpointUri);
+            var matches = EndpointUriRegex.Matches(baseEndpointUri);
             foreach (Match match in matches)
             {
                 operation.Parameters.Add(new OpenApiParameter
@@ -373,23 +374,42 @@ internal class EndpointCrawler
 
             if (method == HttpMethod.Get)
             {
-                operation.Responses.Add("200", new OpenApiResponse
+                if (schemaIsCollection)
                 {
-                    Description = $"A collection of {schemaName} entities.",
-                    Content = new Dictionary<string, OpenApiMediaType>
+                    operation.Responses.Add("200", new OpenApiResponse
                     {
+                        Description = $"A collection of {schemaName} entities.",
+                        Content = new Dictionary<string, OpenApiMediaType>
                         {
-                            "application/json", new OpenApiMediaType
                             {
-                                Schema = new OpenApiSchema
+                                "application/json", new OpenApiMediaType
                                 {
-                                    Type = JsonSchemaType.Array,
-                                    Items = new OpenApiSchemaReference(schemaName)
+                                    Schema = new OpenApiSchema
+                                    {
+                                        Type = JsonSchemaType.Array,
+                                        Items = new OpenApiSchemaReference(schemaName)
+                                    }
                                 }
                             }
                         }
-                    }
-                });
+                    });
+                }
+                else
+                {
+                    operation.Responses.Add("200", new OpenApiResponse
+                    {
+                        Description = $"The {schemaName} entity.",
+                        Content = new Dictionary<string, OpenApiMediaType>
+                        {
+                            {
+                                "application/json", new OpenApiMediaType
+                                {
+                                    Schema = new OpenApiSchemaReference(schemaName)
+                                }
+                            }
+                        }
+                    });
+                }
             }
             else
             {
@@ -416,5 +436,12 @@ internal class EndpointCrawler
                 openApiDoc.Paths.Add(endpointUri, pathItem);
             }
         }
+    }
+
+    private static bool IsCollection(string schemaName, string endpointDescription)
+    {
+        return schemaName.EndsWith("s") ||
+               schemaName.EndsWith("List") ||
+               endpointDescription.Contains("returns a list");
     }
 }
