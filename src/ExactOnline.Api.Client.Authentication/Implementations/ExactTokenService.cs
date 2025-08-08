@@ -39,19 +39,21 @@ internal class ExactTokenService(
         // For refreshing the token we first need to fetch the current refresh token from storage
         var refreshToken = await tokenStorageService.RetrieveAsync(cancellationToken);
 
-        // The client will issue the refresh request and should get a fresh access + refresh token in response
+        // The client will issue the refresh request and should get a fresh refresh token + access token in response
         var response = await RequestRefreshTokenWithRetryAsync(refreshToken, cancellationToken);
 
         if (string.IsNullOrWhiteSpace(response.RefreshToken) && response.ErrorDescription?.IndexOf("expired", StringComparison.InvariantCultureIgnoreCase) >= 0)
         {
-            logger.LogError("The Exact refresh token has expired. You need to update the refresh token stored in the storage with a fresh token from Exact.");
+            logger.LogError("The Exact refresh token has expired ({ErrorType} {Error} {ErrorDescription}). You need to update the refresh token stored in the storage with a fresh token from Exact.",
+                response.ErrorType, response.Error, response.ErrorDescription);
             throw new Exception("The Exact refresh token has expired.");
         }
 
         if (string.IsNullOrWhiteSpace(response.RefreshToken))
         {
-            logger.LogError("There was a problem fetching a new auth token from Exact. Exact responded with: {ErrorDescription}.", response.ErrorDescription);
-            throw new Exception("Exact did not return a new auth token.");
+            logger.LogError("There was a problem fetching a new auth token from Exact. ({ErrorType} {Error} {ErrorDescription}).",
+                response.ErrorType, response.Error, response.ErrorDescription);
+            throw new Exception("Exact did not return a new auth token.", response.Exception);
         }
 
         // Store the new refresh token back in storage as the previous one is now invalid.
@@ -72,7 +74,7 @@ internal class ExactTokenService(
 
     private async Task<TokenResponse> RequestRefreshTokenWithRetryAsync(string refreshToken, CancellationToken cancellationToken)
     {
-        var delayinMinutes = InitialRateLimitAccessTokenDelayInMinutes;
+        var delayInMinutes = InitialRateLimitAccessTokenDelayInMinutes;
         var startTime = TimeProvider.System.GetUtcNow();
 
         while (true)
@@ -87,10 +89,10 @@ internal class ExactTokenService(
                     throw new Exception($"AccessToken cannot be retrieved due to rate limiting and timeout exceeded ({_accessTokenExpirationTime}).");
                 }
 
-                logger.LogInformation("Rate limit exceeded for access token. Retrying in {Delay} minute(s).", delayinMinutes);
-                await Task.Delay(TimeSpan.FromMinutes(delayinMinutes), cancellationToken);
+                logger.LogInformation("Rate limit exceeded for access token. Retrying in {Delay} minute(s).", delayInMinutes);
+                await Task.Delay(TimeSpan.FromMinutes(delayInMinutes), cancellationToken);
 
-                delayinMinutes *= 2;
+                delayInMinutes *= 2;
 
                 continue;
             }
