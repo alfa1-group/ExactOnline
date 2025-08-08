@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SalesSalesPriceListPeriods_ResponseExtensions
 {
-    public static List<SalesSalesPriceListPeriods> AsResults(this SalesSalesPriceListPeriods_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<SalesSalesPriceListPeriods>> AsResults(this Task<SalesSalesPriceListPeriods_Response?> task) => (await task)?.D?.Results ?? [];
 }

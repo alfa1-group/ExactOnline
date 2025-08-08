@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadManufacturingShopOrderRoutingStepPlansAvailableToWork_ResponseExtensions
 {
-    public static ReadManufacturingShopOrderRoutingStepPlansAvailableToWork? AsItem(this ReadManufacturingShopOrderRoutingStepPlansAvailableToWork_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<ReadManufacturingShopOrderRoutingStepPlansAvailableToWork?> AsItem(this Task<ReadManufacturingShopOrderRoutingStepPlansAvailableToWork_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

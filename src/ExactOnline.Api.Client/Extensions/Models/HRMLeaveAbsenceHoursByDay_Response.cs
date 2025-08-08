@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class HRMLeaveAbsenceHoursByDay_ResponseExtensions
 {
-    public static HRMLeaveAbsenceHoursByDay? AsItem(this HRMLeaveAbsenceHoursByDay_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<HRMLeaveAbsenceHoursByDay?> AsItem(this Task<HRMLeaveAbsenceHoursByDay_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

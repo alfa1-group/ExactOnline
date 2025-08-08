@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class FinancialDeductibilityPercentages_ResponseExtensions
 {
-    public static List<FinancialDeductibilityPercentages> AsResults(this FinancialDeductibilityPercentages_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<FinancialDeductibilityPercentages>> AsResults(this Task<FinancialDeductibilityPercentages_Response?> task) => (await task)?.D?.Results ?? [];
 }

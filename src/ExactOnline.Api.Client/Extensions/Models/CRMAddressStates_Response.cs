@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class CRMAddressStates_ResponseExtensions
 {
-    public static List<CRMAddressStates> AsResults(this CRMAddressStates_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<CRMAddressStates>> AsResults(this Task<CRMAddressStates_Response?> task) => (await task)?.D?.Results ?? [];
 }

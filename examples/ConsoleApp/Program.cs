@@ -20,20 +20,19 @@ var host = builder.Build();
 using var scope = host.Services.CreateScope();
 var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>();
 
-var meResponse = await client.Api.V1.Current.Me.GetAsync(a =>
+var me = await client.Api.V1.Current.Me.GetAsync(a =>
 {
     // a.QueryParameters.Select = "ID,Email,FirstName,LastName";
-});
-var me = meResponse.AsItem()!;
-var division = me.CurrentDivision!.Value;
+}).AsItem();
+var division = me!.CurrentDivision!.Value;
 Console.WriteLine($"{division} {me.Email}");
 
-var subscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync();
-if (!subscriptions.AsResults().Any())
+var subscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync().AsResults();
+if (!subscriptions.Any())
 {
     Console.WriteLine("No WebhookSubscriptions found.");
 }
-foreach (var subscription in subscriptions.AsResults())
+foreach (var subscription in subscriptions)
 {
     Console.WriteLine($"Subscription ID: {subscription.ID}, Webhook URL: {subscription.CallbackURL}");
 }

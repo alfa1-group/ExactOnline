@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ProjectEmploymentInternalRates_ResponseExtensions
 {
-    public static List<ProjectEmploymentInternalRates> AsResults(this ProjectEmploymentInternalRates_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<ProjectEmploymentInternalRates>> AsResults(this Task<ProjectEmploymentInternalRates_Response?> task) => (await task)?.D?.Results ?? [];
 }

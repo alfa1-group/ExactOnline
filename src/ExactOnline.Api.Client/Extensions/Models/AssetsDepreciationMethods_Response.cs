@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class AssetsDepreciationMethods_ResponseExtensions
 {
-    public static List<AssetsDepreciationMethods> AsResults(this AssetsDepreciationMethods_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<AssetsDepreciationMethods>> AsResults(this Task<AssetsDepreciationMethods_Response?> task) => (await task)?.D?.Results ?? [];
 }

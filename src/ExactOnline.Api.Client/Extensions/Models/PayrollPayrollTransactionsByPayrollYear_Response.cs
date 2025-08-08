@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class PayrollPayrollTransactionsByPayrollYear_ResponseExtensions
 {
-    public static PayrollPayrollTransactionsByPayrollYear? AsItem(this PayrollPayrollTransactionsByPayrollYear_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<PayrollPayrollTransactionsByPayrollYear?> AsItem(this Task<PayrollPayrollTransactionsByPayrollYear_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

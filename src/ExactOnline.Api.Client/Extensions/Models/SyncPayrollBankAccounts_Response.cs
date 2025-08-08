@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncPayrollBankAccounts_ResponseExtensions
 {
-    public static List<SyncPayrollBankAccounts> AsResults(this SyncPayrollBankAccounts_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<SyncPayrollBankAccounts>> AsResults(this Task<SyncPayrollBankAccounts_Response?> task) => (await task)?.D?.Results ?? [];
 }

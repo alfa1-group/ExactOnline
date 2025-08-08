@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class BulkCRMAddresses_ResponseExtensions
 {
-    public static List<BulkCRMAddresses> AsResults(this BulkCRMAddresses_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<BulkCRMAddresses>> AsResults(this Task<BulkCRMAddresses_Response?> task) => (await task)?.D?.Results ?? [];
 }

@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SystemSystemGetMostRecentlyUsedDivisions_ResponseExtensions
 {
-    public static List<SystemSystemGetMostRecentlyUsedDivisions> AsResults(this SystemSystemGetMostRecentlyUsedDivisions_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<SystemSystemGetMostRecentlyUsedDivisions>> AsResults(this Task<SystemSystemGetMostRecentlyUsedDivisions_Response?> task) => (await task)?.D?.Results ?? [];
 }

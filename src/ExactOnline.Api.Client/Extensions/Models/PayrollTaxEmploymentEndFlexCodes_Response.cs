@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class PayrollTaxEmploymentEndFlexCodes_ResponseExtensions
 {
-    public static List<PayrollTaxEmploymentEndFlexCodes> AsResults(this PayrollTaxEmploymentEndFlexCodes_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<PayrollTaxEmploymentEndFlexCodes>> AsResults(this Task<PayrollTaxEmploymentEndFlexCodes_Response?> task) => (await task)?.D?.Results ?? [];
 }

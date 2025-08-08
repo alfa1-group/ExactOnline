@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class BulkCashflowPayments_ResponseExtensions
 {
-    public static List<BulkCashflowPayments> AsResults(this BulkCashflowPayments_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<BulkCashflowPayments>> AsResults(this Task<BulkCashflowPayments_Response?> task) => (await task)?.D?.Results ?? [];
 }

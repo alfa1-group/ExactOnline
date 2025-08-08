@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class VATVATCodes_ResponseExtensions
 {
-    public static List<VATVATCodes> AsResults(this VATVATCodes_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<VATVATCodes>> AsResults(this Task<VATVATCodes_Response?> task) => (await task)?.D?.Results ?? [];
 }

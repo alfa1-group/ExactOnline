@@ -47,9 +47,11 @@ foreach ($file in $modelFiles) {
         $sourceResponseContent = Get-Content -Path $sourceResponseModelPath -Raw
         
         if ($sourceResponseContent -match "/// A collection of") {
-            $methodsContent = "    public static List<${className}> AsResults(this ${responseClassName}? response) => response?.D?.Results ?? [];"
+            # $methodsContent = "    public static List<${className}> AsResults(this ${responseClassName}? response) => response?.D?.Results ?? [];"
+            $methodsContent = "    public static async Task<List<${className}>> AsResults(this Task<${responseClassName}?> task) => (await task)?.D?.Results ?? [];"
         } else {
-            $methodsContent = "    public static ${className}? AsItem(this ${responseClassName}? response) => response?.D?.Results?.FirstOrDefault();"
+            # $methodsContent = "    public static ${className}? AsItem(this ${responseClassName}? response) => response?.D?.Results?.FirstOrDefault();"
+            $methodsContent = "    public static async Task<${className}?> AsItem(this Task<${responseClassName}?> task) => (await task)?.D?.Results?.FirstOrDefault();"
         }
     }
 

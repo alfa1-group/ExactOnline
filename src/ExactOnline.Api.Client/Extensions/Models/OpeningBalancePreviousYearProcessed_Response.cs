@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class OpeningBalancePreviousYearProcessed_ResponseExtensions
 {
-    public static OpeningBalancePreviousYearProcessed? AsItem(this OpeningBalancePreviousYearProcessed_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<OpeningBalancePreviousYearProcessed?> AsItem(this Task<OpeningBalancePreviousYearProcessed_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

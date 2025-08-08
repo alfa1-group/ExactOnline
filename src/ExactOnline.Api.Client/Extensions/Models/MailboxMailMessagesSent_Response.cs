@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class MailboxMailMessagesSent_ResponseExtensions
 {
-    public static MailboxMailMessagesSent? AsItem(this MailboxMailMessagesSent_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<MailboxMailMessagesSent?> AsItem(this Task<MailboxMailMessagesSent_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

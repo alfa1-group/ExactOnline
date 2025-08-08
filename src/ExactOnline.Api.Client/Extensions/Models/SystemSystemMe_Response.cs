@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SystemSystemMe_ResponseExtensions
 {
-    public static SystemSystemMe? AsItem(this SystemSystemMe_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<SystemSystemMe?> AsItem(this Task<SystemSystemMe_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

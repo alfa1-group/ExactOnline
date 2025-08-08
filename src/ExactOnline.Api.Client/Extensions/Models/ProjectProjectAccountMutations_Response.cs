@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ProjectProjectAccountMutations_ResponseExtensions
 {
-    public static List<ProjectProjectAccountMutations> AsResults(this ProjectProjectAccountMutations_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<ProjectProjectAccountMutations>> AsResults(this Task<ProjectProjectAccountMutations_Response?> task) => (await task)?.D?.Results ?? [];
 }

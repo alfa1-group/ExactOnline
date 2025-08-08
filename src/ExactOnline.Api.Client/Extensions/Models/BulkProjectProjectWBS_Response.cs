@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class BulkProjectProjectWBS_ResponseExtensions
 {
-    public static BulkProjectProjectWBS? AsItem(this BulkProjectProjectWBS_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<BulkProjectProjectWBS?> AsItem(this Task<BulkProjectProjectWBS_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

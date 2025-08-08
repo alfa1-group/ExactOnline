@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadProjectHourEntryActivitiesByProject_ResponseExtensions
 {
-    public static ReadProjectHourEntryActivitiesByProject? AsItem(this ReadProjectHourEntryActivitiesByProject_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<ReadProjectHourEntryActivitiesByProject?> AsItem(this Task<ReadProjectHourEntryActivitiesByProject_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ProjectWBSActivities_ResponseExtensions
 {
-    public static List<ProjectWBSActivities> AsResults(this ProjectWBSActivities_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<ProjectWBSActivities>> AsResults(this Task<ProjectWBSActivities_Response?> task) => (await task)?.D?.Results ?? [];
 }

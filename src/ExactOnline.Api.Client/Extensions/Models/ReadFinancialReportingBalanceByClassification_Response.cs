@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadFinancialReportingBalanceByClassification_ResponseExtensions
 {
-    public static ReadFinancialReportingBalanceByClassification? AsItem(this ReadFinancialReportingBalanceByClassification_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<ReadFinancialReportingBalanceByClassification?> AsItem(this Task<ReadFinancialReportingBalanceByClassification_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

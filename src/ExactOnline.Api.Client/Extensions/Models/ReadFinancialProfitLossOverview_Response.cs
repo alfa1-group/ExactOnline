@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadFinancialProfitLossOverview_ResponseExtensions
 {
-    public static ReadFinancialProfitLossOverview? AsItem(this ReadFinancialProfitLossOverview_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<ReadFinancialProfitLossOverview?> AsItem(this Task<ReadFinancialProfitLossOverview_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

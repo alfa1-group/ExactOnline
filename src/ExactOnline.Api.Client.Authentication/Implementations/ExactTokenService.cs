@@ -12,7 +12,7 @@ internal class ExactTokenService(
     IExactTokenClient exactTokenClient) : IExactTokenService
 {
     private const string ExactAccessTokenKey = "ExactAccessToken";
-    private const int InitialRateLimitAccessTokenDelayInSeconds = 30;
+    private const int InitialRateLimitAccessTokenDelayInMinutes = 1;
 
     // The expiration time to 9 minutes and 30 seconds, which is the maximum time a token is valid.
     private readonly TimeSpan _accessTokenExpirationTime = TimeSpan.FromSeconds(9 * 60 + 30);
@@ -50,7 +50,7 @@ internal class ExactTokenService(
 
         if (string.IsNullOrWhiteSpace(response.RefreshToken))
         {
-            logger.LogError($"There was a problem fetching a new auth token from Exact. Exact responded with: {response.ErrorDescription}.");
+            logger.LogError("There was a problem fetching a new auth token from Exact. Exact responded with: {ErrorDescription}.", response.ErrorDescription);
             throw new Exception("Exact did not return a new auth token.");
         }
 
@@ -72,7 +72,7 @@ internal class ExactTokenService(
 
     private async Task<TokenResponse> RequestRefreshTokenWithRetryAsync(string refreshToken, CancellationToken cancellationToken)
     {
-        var delay = InitialRateLimitAccessTokenDelayInSeconds;
+        var delayinMinutes = InitialRateLimitAccessTokenDelayInMinutes;
         var startTime = TimeProvider.System.GetUtcNow();
 
         while (true)
@@ -87,10 +87,10 @@ internal class ExactTokenService(
                     throw new Exception($"AccessToken cannot be retrieved due to rate limiting and timeout exceeded ({_accessTokenExpirationTime}).");
                 }
 
-                logger.LogInformation("Rate limit exceeded for access token. Retrying in {Delay} seconds...", delay);
-                await Task.Delay(TimeSpan.FromSeconds(delay), cancellationToken);
+                logger.LogInformation("Rate limit exceeded for access token. Retrying in {Delay} minute(s).", delayinMinutes);
+                await Task.Delay(TimeSpan.FromMinutes(delayinMinutes), cancellationToken);
 
-                delay *= 2;
+                delayinMinutes *= 2;
 
                 continue;
             }

@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadProjectProjectWBSByProjectAndWBS_ResponseExtensions
 {
-    public static ReadProjectProjectWBSByProjectAndWBS? AsItem(this ReadProjectProjectWBSByProjectAndWBS_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<ReadProjectProjectWBSByProjectAndWBS?> AsItem(this Task<ReadProjectProjectWBSByProjectAndWBS_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

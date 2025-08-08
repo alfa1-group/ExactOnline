@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SalesInvoiceSalesInvoices_ResponseExtensions
 {
-    public static List<SalesInvoiceSalesInvoices> AsResults(this SalesInvoiceSalesInvoices_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<SalesInvoiceSalesInvoices>> AsResults(this Task<SalesInvoiceSalesInvoices_Response?> task) => (await task)?.D?.Results ?? [];
 }

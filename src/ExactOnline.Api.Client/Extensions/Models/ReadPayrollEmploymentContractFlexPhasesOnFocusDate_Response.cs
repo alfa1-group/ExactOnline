@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadPayrollEmploymentContractFlexPhasesOnFocusDate_ResponseExtensions
 {
-    public static ReadPayrollEmploymentContractFlexPhasesOnFocusDate? AsItem(this ReadPayrollEmploymentContractFlexPhasesOnFocusDate_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<ReadPayrollEmploymentContractFlexPhasesOnFocusDate?> AsItem(this Task<ReadPayrollEmploymentContractFlexPhasesOnFocusDate_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

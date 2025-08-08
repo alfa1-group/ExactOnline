@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class CRMAccountClassificationNames_ResponseExtensions
 {
-    public static List<CRMAccountClassificationNames> AsResults(this CRMAccountClassificationNames_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<CRMAccountClassificationNames>> AsResults(this Task<CRMAccountClassificationNames_Response?> task) => (await task)?.D?.Results ?? [];
 }

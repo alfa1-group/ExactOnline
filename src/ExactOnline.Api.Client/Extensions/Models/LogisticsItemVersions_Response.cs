@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class LogisticsItemVersions_ResponseExtensions
 {
-    public static List<LogisticsItemVersions> AsResults(this LogisticsItemVersions_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<LogisticsItemVersions>> AsResults(this Task<LogisticsItemVersions_Response?> task) => (await task)?.D?.Results ?? [];
 }

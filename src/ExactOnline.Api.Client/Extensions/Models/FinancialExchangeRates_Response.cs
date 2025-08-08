@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class FinancialExchangeRates_ResponseExtensions
 {
-    public static List<FinancialExchangeRates> AsResults(this FinancialExchangeRates_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<FinancialExchangeRates>> AsResults(this Task<FinancialExchangeRates_Response?> task) => (await task)?.D?.Results ?? [];
 }

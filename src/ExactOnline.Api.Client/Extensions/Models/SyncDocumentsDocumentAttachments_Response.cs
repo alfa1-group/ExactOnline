@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncDocumentsDocumentAttachments_ResponseExtensions
 {
-    public static List<SyncDocumentsDocumentAttachments> AsResults(this SyncDocumentsDocumentAttachments_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<SyncDocumentsDocumentAttachments>> AsResults(this Task<SyncDocumentsDocumentAttachments_Response?> task) => (await task)?.D?.Results ?? [];
 }

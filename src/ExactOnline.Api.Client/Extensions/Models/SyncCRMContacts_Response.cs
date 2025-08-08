@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncCRMContacts_ResponseExtensions
 {
-    public static List<SyncCRMContacts> AsResults(this SyncCRMContacts_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<SyncCRMContacts>> AsResults(this Task<SyncCRMContacts_Response?> task) => (await task)?.D?.Results ?? [];
 }

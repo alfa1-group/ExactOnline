@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class GeneralCurrencies_ResponseExtensions
 {
-    public static List<GeneralCurrencies> AsResults(this GeneralCurrencies_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<GeneralCurrencies>> AsResults(this Task<GeneralCurrencies_Response?> task) => (await task)?.D?.Results ?? [];
 }

@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class UsersUserRolesPerDivision_ResponseExtensions
 {
-    public static List<UsersUserRolesPerDivision> AsResults(this UsersUserRolesPerDivision_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<UsersUserRolesPerDivision>> AsResults(this Task<UsersUserRolesPerDivision_Response?> task) => (await task)?.D?.Results ?? [];
 }

@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class HRMSchedules_ResponseExtensions
 {
-    public static List<HRMSchedules> AsResults(this HRMSchedules_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<HRMSchedules>> AsResults(this Task<HRMSchedules_Response?> task) => (await task)?.D?.Results ?? [];
 }

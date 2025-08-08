@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncInventoryItemStorageLocations_ResponseExtensions
 {
-    public static List<SyncInventoryItemStorageLocations> AsResults(this SyncInventoryItemStorageLocations_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<SyncInventoryItemStorageLocations>> AsResults(this Task<SyncInventoryItemStorageLocations_Response?> task) => (await task)?.D?.Results ?? [];
 }

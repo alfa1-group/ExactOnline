@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadCRMAccountDocumentFolders_ResponseExtensions
 {
-    public static List<ReadCRMAccountDocumentFolders> AsResults(this ReadCRMAccountDocumentFolders_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<ReadCRMAccountDocumentFolders>> AsResults(this Task<ReadCRMAccountDocumentFolders_Response?> task) => (await task)?.D?.Results ?? [];
 }

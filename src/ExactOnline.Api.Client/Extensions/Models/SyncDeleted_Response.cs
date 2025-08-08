@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncDeleted_ResponseExtensions
 {
-    public static SyncDeleted? AsItem(this SyncDeleted_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<SyncDeleted?> AsItem(this Task<SyncDeleted_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

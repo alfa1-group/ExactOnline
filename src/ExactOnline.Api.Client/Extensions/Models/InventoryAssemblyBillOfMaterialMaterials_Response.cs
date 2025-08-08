@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class InventoryAssemblyBillOfMaterialMaterials_ResponseExtensions
 {
-    public static List<InventoryAssemblyBillOfMaterialMaterials> AsResults(this InventoryAssemblyBillOfMaterialMaterials_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<InventoryAssemblyBillOfMaterialMaterials>> AsResults(this Task<InventoryAssemblyBillOfMaterialMaterials_Response?> task) => (await task)?.D?.Results ?? [];
 }

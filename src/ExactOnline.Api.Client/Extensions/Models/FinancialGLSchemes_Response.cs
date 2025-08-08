@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class FinancialGLSchemes_ResponseExtensions
 {
-    public static List<FinancialGLSchemes> AsResults(this FinancialGLSchemes_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<FinancialGLSchemes>> AsResults(this Task<FinancialGLSchemes_Response?> task) => (await task)?.D?.Results ?? [];
 }

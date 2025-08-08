@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class PayrollEmploymentSalaries_ResponseExtensions
 {
-    public static List<PayrollEmploymentSalaries> AsResults(this PayrollEmploymentSalaries_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<PayrollEmploymentSalaries>> AsResults(this Task<PayrollEmploymentSalaries_Response?> task) => (await task)?.D?.Results ?? [];
 }

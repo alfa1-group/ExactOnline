@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadMailboxDefaultMailbox_ResponseExtensions
 {
-    public static ReadMailboxDefaultMailbox? AsItem(this ReadMailboxDefaultMailbox_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<ReadMailboxDefaultMailbox?> AsItem(this Task<ReadMailboxDefaultMailbox_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

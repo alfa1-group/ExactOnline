@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ProjectWBSExpenses_ResponseExtensions
 {
-    public static List<ProjectWBSExpenses> AsResults(this ProjectWBSExpenses_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<ProjectWBSExpenses>> AsResults(this Task<ProjectWBSExpenses_Response?> task) => (await task)?.D?.Results ?? [];
 }

@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadCRMOpportunityDocumentsCount_ResponseExtensions
 {
-    public static ReadCRMOpportunityDocumentsCount? AsItem(this ReadCRMOpportunityDocumentsCount_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<ReadCRMOpportunityDocumentsCount?> AsItem(this Task<ReadCRMOpportunityDocumentsCount_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

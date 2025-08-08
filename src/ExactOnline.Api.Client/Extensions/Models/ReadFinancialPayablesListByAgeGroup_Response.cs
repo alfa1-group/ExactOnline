@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadFinancialPayablesListByAgeGroup_ResponseExtensions
 {
-    public static ReadFinancialPayablesListByAgeGroup? AsItem(this ReadFinancialPayablesListByAgeGroup_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<ReadFinancialPayablesListByAgeGroup?> AsItem(this Task<ReadFinancialPayablesListByAgeGroup_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadProjectCostsByDate_ResponseExtensions
 {
-    public static ReadProjectCostsByDate? AsItem(this ReadProjectCostsByDate_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<ReadProjectCostsByDate?> AsItem(this Task<ReadProjectCostsByDate_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }

@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadProjectTimeAndBillingEntryRecentHourCostTypes_ResponseExtensions
 {
-    public static List<ReadProjectTimeAndBillingEntryRecentHourCostTypes> AsResults(this ReadProjectTimeAndBillingEntryRecentHourCostTypes_Response? response) => response?.D?.Results ?? [];
+    public static async Task<List<ReadProjectTimeAndBillingEntryRecentHourCostTypes>> AsResults(this Task<ReadProjectTimeAndBillingEntryRecentHourCostTypes_Response?> task) => (await task)?.D?.Results ?? [];
 }

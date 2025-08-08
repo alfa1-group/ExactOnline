@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SystemSystemAccountantInfo_ResponseExtensions
 {
-    public static SystemSystemAccountantInfo? AsItem(this SystemSystemAccountantInfo_Response? response) => response?.D?.Results?.FirstOrDefault();
+    public static async Task<SystemSystemAccountantInfo?> AsItem(this Task<SystemSystemAccountantInfo_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
 }
