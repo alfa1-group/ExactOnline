@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContracts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmploymentContractsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/payroll/EmploymentContracts{?%24filter*,%24select*}", pathParameters)
+        public EmploymentContractsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/payroll/EmploymentContracts{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContracts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmploymentContractsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/payroll/EmploymentContracts{?%24filter*,%24select*}", rawUrl)
+        public EmploymentContractsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/payroll/EmploymentContracts{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,6 +85,19 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContracts
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmploymentContractsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Include count of items, e.g., `true`</summary>
+            [QueryParameter("%24count")]
+            public bool? Count { get; set; }
+            /// <summary>Expand related entities, e.g., `ParentEntity`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string Expand { get; set; }
+#endif
             /// <summary>OData filter, e.g., `ID eq guid&apos;00000000-0000-0000-0000-000000000000&apos;`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +107,26 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContracts
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
+#endif
+            /// <summary>Include inline count, e.g., `allpages`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24inlinecount")]
+            public string? Inlinecount { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24inlinecount")]
+            public string Inlinecount { get; set; }
+#endif
+            /// <summary>Order by field, e.g., `ID desc`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24orderby")]
+            public string? Orderby { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24orderby")]
+            public string Orderby { get; set; }
 #endif
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,6 +138,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContracts
             [QueryParameter("%24select")]
             public string Select { get; set; }
 #endif
+            /// <summary>Number of records to skip, e.g., `10`</summary>
+            [QueryParameter("%24skip")]
+            public int? Skip { get; set; }
+            /// <summary>Number of records to return, e.g., `100`</summary>
+            [QueryParameter("%24top")]
+            public int? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

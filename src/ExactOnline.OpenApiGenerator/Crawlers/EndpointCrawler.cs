@@ -428,6 +428,51 @@ internal class EndpointCrawler
                 Description = "Order by field, e.g., `ID desc`"
             });
         }
+
+        if (parameters.All(p => p.Name != "$count"))
+        {
+            parameters.Add(new OpenApiParameter
+            {
+                Name = "$count",
+                In = ParameterLocation.Query,
+                Required = false,
+                Schema = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.Boolean
+                },
+                Description = "Include count of items, e.g., `true`"
+            });
+        }
+
+        if (parameters.All(p => p.Name != "$inlinecount"))
+        {
+            parameters.Add(new OpenApiParameter
+            {
+                Name = "$inlinecount",
+                In = ParameterLocation.Query,
+                Required = false,
+                Schema = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.String
+                },
+                Description = "Include inline count, e.g., `allpages`"
+            });
+        }
+
+        if (parameters.All(p => p.Name != "$expand"))
+        {
+            parameters.Add(new OpenApiParameter
+            {
+                Name = "$expand",
+                In = ParameterLocation.Query,
+                Required = false,
+                Schema = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.String
+                },
+                Description = "Expand related entities, e.g., `ParentEntity`"
+            });
+        }
     }
 
     private static bool IsCollection(string schemaName, string endpointDescription)
