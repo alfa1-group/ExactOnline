@@ -16,13 +16,15 @@ var builder = Host.CreateDefaultBuilder(args)
 
 var host = builder.Build();
 
-
 using var scope = host.Services.CreateScope();
 var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>();
 
+var x1 = Utils.Select<SystemSystemMe>(s => s.UserID, s => s.CurrentDivision, s => s.Email);
+var x2 = Utils.Select<SystemSystemMe>(s => new { s.UserID, s.CurrentDivision, s.Email });
+
 var me = await client.Api.V1.Current.Me.GetAsync(a =>
 {
-    a.QueryParameters.Select = "ID,Email,CurrentDivision";
+    a.QueryParameters.Select = Utils.Select<SystemSystemMe>(s => s.UserID, s => s.CurrentDivision, s => s.Email);
 }).AsItem();
 var division = me!.CurrentDivision!.Value;
 Console.WriteLine($"{division} {me.Email}");
@@ -33,14 +35,20 @@ await Task.Delay(TimeSpan.FromSeconds(3));
 var me2 = await client.Api.V1.Current.Me.GetAsync().AsItem();
 Console.WriteLine($"After waiting: {me2?.Email}");
 
-var subscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync().AsItems();
-if (!subscriptions.Any())
+var webhookSubscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync(w =>
+{
+    w.QueryParameters.Top = 100;
+    w.QueryParameters.Orderby = $"{nameof(WebhooksWebhookSubscriptions.ID)} desc";
+    w.QueryParameters.Select = Utils.Select<WebhooksWebhookSubscriptions>(t => new { t.UserID, t.CallbackURL, t.Description });
+})
+.AsItems();
+if (!webhookSubscriptions.Any())
 {
     Console.WriteLine("No WebhookSubscriptions found.");
 }
-foreach (var subscription in subscriptions)
+foreach (var webhookSubscription in webhookSubscriptions)
 {
-    Console.WriteLine($"Subscription ID: {subscription.ID}, CallbackURL: {subscription.CallbackURL}");
+    Console.WriteLine($"Subscription ID: {webhookSubscription.ID}, CallbackURL: {webhookSubscription.CallbackURL}");
 }
 
 Console.WriteLine("{0} Waiting for 10 minutes to check token refresh", DateTime.Now);
