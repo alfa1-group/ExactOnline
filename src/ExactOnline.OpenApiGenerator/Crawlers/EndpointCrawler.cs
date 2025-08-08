@@ -19,6 +19,16 @@ internal class EndpointCrawler
     {
         _urls = urls;
 
+        var metadata = new OpenApiSchema
+        {
+            Type = JsonSchemaType.Object,
+            Properties = new Dictionary<string, IOpenApiSchema>
+            {
+                { "uri", new OpenApiSchema { Type = JsonSchemaType.String } },
+                { "type", new OpenApiSchema { Type = JsonSchemaType.String } }
+            }
+        };
+
         _openApiDoc = new OpenApiDocument
         {
             Info = new OpenApiInfo
@@ -37,7 +47,10 @@ internal class EndpointCrawler
             Paths = new OpenApiPaths(),
             Components = new OpenApiComponents
             {
-                Schemas = new Dictionary<string, IOpenApiSchema>()
+                Schemas = new Dictionary<string, IOpenApiSchema>
+                {
+                    { "ExactOnlineMetadata", metadata }
+                }
             }
         };
     }
@@ -88,6 +101,7 @@ internal class EndpointCrawler
         var schemaName = pageUrl.Split("?name=").Last().Trim();
         var endpointDescription = doc.DocumentNode.SelectSingleNode("//p[@id='goodToKnow']")?.InnerText.Trim() ?? string.Empty;
         var schemaIsCollection = IsCollection(schemaName, endpointDescription);
+        var responseDescription = schemaIsCollection ? $"A collection of {schemaName} entities." : $"The {schemaName} entity.";
         var (baseEndpointUri, queryParameters) = GetEndpointUriDetails(doc);
 
         var methods = doc.DocumentNode
@@ -95,7 +109,11 @@ internal class EndpointCrawler
             .Select(n => HttpMethod.Parse(n.Attributes["value"].Value))
             .ToArray();
 
-        var properties = new Dictionary<string, IOpenApiSchema>();
+        var properties = new Dictionary<string, IOpenApiSchema>
+        {
+            { "__metadata", new OpenApiSchemaReference("ExactOnlineMetadata") }
+        };
+
         var requiredProperties = new HashSet<string>();
 
         var propertyRows = doc.DocumentNode.SelectNodes("//table[@id='referencetable']//tr[not(@class='header')]");
@@ -182,12 +200,41 @@ internal class EndpointCrawler
             }
         }
 
-        openApiDoc.Components!.Schemas!.Add(schemaName, new OpenApiSchema
+        var result = new OpenApiSchema
         {
             Type = JsonSchemaType.Object,
             Properties = properties,
             Required = requiredProperties
-        });
+        };
+        openApiDoc.Components!.Schemas!.Add(schemaName, result);
+
+        var results = new OpenApiSchema
+        {
+            Type = JsonSchemaType.Object,
+            Properties = new Dictionary<string, IOpenApiSchema>
+            {
+                { "results", new OpenApiSchema
+                    {
+                        Type = JsonSchemaType.Array,
+                        Items = new OpenApiSchemaReference(schemaName)
+                    }
+                }
+            },
+            Required = new HashSet<string> { "results" }
+
+        };
+
+        var response = new OpenApiSchema
+        {
+            Description = responseDescription,
+            Type = JsonSchemaType.Object,
+            Properties = new Dictionary<string, IOpenApiSchema>
+            {
+                { "d", results }
+            },
+            Required = new HashSet<string> { "d" }
+        };
+        openApiDoc.Components!.Schemas!.Add(schemaName + "_Response", response);
 
         foreach (var method in methods)
         {
@@ -327,42 +374,19 @@ internal class EndpointCrawler
 
             if (method == HttpMethod.Get)
             {
-                if (schemaIsCollection)
+                operation.Responses.Add("200", new OpenApiResponse
                 {
-                    operation.Responses.Add("200", new OpenApiResponse
+                    Description = responseDescription,
+                    Content = new Dictionary<string, OpenApiMediaType>
                     {
-                        Description = $"A collection of {schemaName} entities.",
-                        Content = new Dictionary<string, OpenApiMediaType>
                         {
+                            "application/json", new OpenApiMediaType
                             {
-                                "application/json", new OpenApiMediaType
-                                {
-                                    Schema = new OpenApiSchema
-                                    {
-                                        Type = JsonSchemaType.Array,
-                                        Items = new OpenApiSchemaReference(schemaName)
-                                    }
-                                }
+                                Schema = new OpenApiSchemaReference(schemaName + "_Response")
                             }
                         }
-                    });
-                }
-                else
-                {
-                    operation.Responses.Add("200", new OpenApiResponse
-                    {
-                        Description = $"The {schemaName} entity.",
-                        Content = new Dictionary<string, OpenApiMediaType>
-                        {
-                            {
-                                "application/json", new OpenApiMediaType
-                                {
-                                    Schema = new OpenApiSchemaReference(schemaName)
-                                }
-                            }
-                        }
-                    });
-                }
+                    }
+                });
             }
             else
             {

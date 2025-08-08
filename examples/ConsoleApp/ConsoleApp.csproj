@@ -13,10 +13,11 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.1" />
+    <PackageReference Include="Simple.OData.Client" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ExactOnline.Api.Client.Authentication\ExactOnline.Api.Client.Authentication.csproj" />
+    <ProjectReference Include="..\..\src\ExactOnline.Api.Client.Authentication.Kiota\ExactOnline.Api.Client.Authentication.Kiota.csproj" />
     <ProjectReference Include="..\..\src\ExactOnline.Api.Client\ExactOnline.Api.Client.csproj" />
   </ItemGroup>
 

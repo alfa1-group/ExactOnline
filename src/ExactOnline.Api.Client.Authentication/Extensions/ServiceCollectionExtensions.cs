@@ -1,10 +1,7 @@
-﻿using ExactOnline.Api.Client;
-using ExactOnline.Api.Client.Authentication;
-using ExactOnline.Api.Client.Authentication.Implementations;
+﻿using ExactOnline.Api.Client.Authentication.Implementations;
 using ExactOnline.Api.Client.Authentication.Interfaces;
 using ExactOnline.Api.Client.Authentication.Options;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection;
@@ -14,7 +11,7 @@ namespace Microsoft.Extensions.DependencyInjection;
 /// </summary>
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddExactOnlineAuthenticatedClient(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddExactOnlineAuthentication(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddOptions<ExactOnlineOptions>()
             .Bind(configuration.GetSection(nameof(ExactOnlineOptions)))
@@ -30,25 +27,18 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
-        services.AddSingleton<ExactOnlineAuthenticationProvider>();
         services.AddSingleton<IExactTokenClient, ExactTokenClient>();
         services.AddSingleton<IExactTokenService, ExactTokenService>();
-
-        return services.AddScoped(sp =>
+        
+        try
         {
-            try
-            {
-                _ = sp.GetRequiredService<IExactRefreshTokenStorageService>();
-            }
-            catch (Exception ex)
-            {
-                throw new InvalidOperationException($"The {nameof(IExactRefreshTokenStorageService)} is required for {nameof(ExactOnlineServiceClient)}. Please register it in the service collection.", ex);
-            }
+            _ = services.BuildServiceProvider().GetRequiredService<IExactRefreshTokenStorageService>();
+        }
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException($"An implementation for {nameof(IExactRefreshTokenStorageService)} is required. Please register it in the service collection.", ex);
+        }
 
-            var authenticationProvider = sp.GetRequiredService<ExactOnlineAuthenticationProvider>();
-            var options = sp.GetRequiredService<IOptions<ExactOnlineOptions>>();
-
-            return new ExactOnlineServiceClient(authenticationProvider, options.Value.BaseUrl);
-        });
+        return services;
     }
 }

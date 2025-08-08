@@ -54,6 +54,14 @@ namespace ExactOnline.Api.Client.Models
         public int? InvolvedAccountRelationTypeDescriptionTermId { get; set; }
         /// <summary>ID of relation type</summary>
         public int? InvolvedAccountRelationTypeId { get; set; }
+        /// <summary>The __metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+#nullable restore
+#else
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+#endif
         /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
         /// <summary>User ID of modifier</summary>
@@ -110,6 +118,7 @@ namespace ExactOnline.Api.Client.Models
                 { "InvolvedAccountRelationTypeDescription", n => { InvolvedAccountRelationTypeDescription = n.GetStringValue(); } },
                 { "InvolvedAccountRelationTypeDescriptionTermId", n => { InvolvedAccountRelationTypeDescriptionTermId = n.GetIntValue(); } },
                 { "InvolvedAccountRelationTypeId", n => { InvolvedAccountRelationTypeId = n.GetIntValue(); } },
+                { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
                 { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "Modifier", n => { Modifier = n.GetGuidValue(); } },
                 { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
@@ -134,6 +143,7 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("InvolvedAccountRelationTypeDescription", InvolvedAccountRelationTypeDescription);
             writer.WriteIntValue("InvolvedAccountRelationTypeDescriptionTermId", InvolvedAccountRelationTypeDescriptionTermId);
             writer.WriteIntValue("InvolvedAccountRelationTypeId", InvolvedAccountRelationTypeId);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);

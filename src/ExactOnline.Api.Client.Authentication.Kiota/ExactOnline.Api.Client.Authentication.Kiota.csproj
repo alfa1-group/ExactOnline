@@ -15,9 +15,10 @@
     <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" Version="8.0.0" />
   </ItemGroup>
 
-  <!--<ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExactOnline.Api.Client.Authentication\ExactOnline.Api.Client.Authentication.csproj" />
     <ProjectReference Include="..\ExactOnline.Api.Client\ExactOnline.Api.Client.csproj" />
-  </ItemGroup>-->
+  </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
