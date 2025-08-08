@@ -50,14 +50,6 @@ foreach ($file in $modelFiles) {
         } else {
             $methodsContent = "    public ${className}? ToItem() => D?.Results?.FirstOrDefault();"
         }
-    } else {
-        # Fallback for models that don't have a dedicated _Response file.
-        $fallbackMethods = @(
-            "    public ${className}? ToItem() => D?.Results?.FirstOrDefault();",
-            "",
-            "    public List<${className}> ToResults() => D?.Results ?? [];"
-        )
-        $methodsContent = $fallbackMethods -join "`r`n"
     }
 
     $contentLines = @(

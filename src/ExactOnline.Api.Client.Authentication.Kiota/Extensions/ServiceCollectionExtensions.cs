@@ -16,11 +16,12 @@ public static class ServiceCollectionExtensions
     {
         services.AddExactOnlineAuthentication(configuration);
         services.AddSingleton<ExactOnlineAuthenticationProvider>();
+        services.AddServices();
 
         return services;
     }
 
-    public static IServiceCollection AddServices(this IServiceCollection services)
+    private static IServiceCollection AddServices(this IServiceCollection services)
     {
         return services.AddScoped(sp =>
         {

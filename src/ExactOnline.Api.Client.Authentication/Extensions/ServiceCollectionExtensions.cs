@@ -17,7 +17,6 @@ public static class ServiceCollectionExtensions
             .Bind(configuration.GetSection(nameof(ExactOnlineOptions)))
             .ValidateDataAnnotations()
             .ValidateOnStart();
-        services.AddOptionsWithValidateOnStart<ExactOnlineOptions>();
         services.AddHttpClient();
         services.AddMemoryCache();
         services.AddServices();
@@ -25,7 +24,7 @@ public static class ServiceCollectionExtensions
         return services;
     }
 
-    public static IServiceCollection AddServices(this IServiceCollection services)
+    private static IServiceCollection AddServices(this IServiceCollection services)
     {
         services.AddSingleton<IExactTokenClient, ExactTokenClient>();
         services.AddSingleton<IExactTokenService, ExactTokenService>();
