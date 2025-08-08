@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadFinancialJournalStatusByFinancialPeriod_Response
+public static class ReadFinancialJournalStatusByFinancialPeriod_ResponseExtensions
 {
-    public ReadFinancialJournalStatusByFinancialPeriod? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadFinancialJournalStatusByFinancialPeriod? AsItem(this ReadFinancialJournalStatusByFinancialPeriod_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

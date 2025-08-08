@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class CashflowProcessPayments_Response
+public static class CashflowProcessPayments_ResponseExtensions
 {
 
 }

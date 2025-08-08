@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadFinancialProfitLossOverview_Response
+public static class ReadFinancialProfitLossOverview_ResponseExtensions
 {
-    public ReadFinancialProfitLossOverview? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadFinancialProfitLossOverview? AsItem(this ReadFinancialProfitLossOverview_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

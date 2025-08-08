@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ProjectWBSExpenses_Response
+public static class ProjectWBSExpenses_ResponseExtensions
 {
-    public List<ProjectWBSExpenses> ToResults() => D?.Results ?? [];
+    public static List<ProjectWBSExpenses> AsResults(this ProjectWBSExpenses_Response? response) => response?.D?.Results ?? [];
 }

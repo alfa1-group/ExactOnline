@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadProjectProjectWBSByProject_Response
+public static class ReadProjectProjectWBSByProject_ResponseExtensions
 {
-    public ReadProjectProjectWBSByProject? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadProjectProjectWBSByProject? AsItem(this ReadProjectProjectWBSByProject_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

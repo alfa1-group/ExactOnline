@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class BudgetBudgets_Response
+public static class BudgetBudgets_ResponseExtensions
 {
-    public List<BudgetBudgets> ToResults() => D?.Results ?? [];
+    public static List<BudgetBudgets> AsResults(this BudgetBudgets_Response? response) => response?.D?.Results ?? [];
 }

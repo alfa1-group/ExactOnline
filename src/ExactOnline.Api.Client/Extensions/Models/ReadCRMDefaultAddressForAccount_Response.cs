@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadCRMDefaultAddressForAccount_Response
+public static class ReadCRMDefaultAddressForAccount_ResponseExtensions
 {
-    public ReadCRMDefaultAddressForAccount? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadCRMDefaultAddressForAccount? AsItem(this ReadCRMDefaultAddressForAccount_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

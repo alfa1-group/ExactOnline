@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class CashflowReceivables_Response
+public static class CashflowReceivables_ResponseExtensions
 {
-    public List<CashflowReceivables> ToResults() => D?.Results ?? [];
+    public static List<CashflowReceivables> AsResults(this CashflowReceivables_Response? response) => response?.D?.Results ?? [];
 }

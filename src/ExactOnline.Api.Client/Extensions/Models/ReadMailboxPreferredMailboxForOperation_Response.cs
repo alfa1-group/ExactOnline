@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadMailboxPreferredMailboxForOperation_Response
+public static class ReadMailboxPreferredMailboxForOperation_ResponseExtensions
 {
-    public ReadMailboxPreferredMailboxForOperation? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadMailboxPreferredMailboxForOperation? AsItem(this ReadMailboxPreferredMailboxForOperation_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

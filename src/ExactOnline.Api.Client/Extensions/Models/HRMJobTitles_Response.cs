@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class HRMJobTitles_Response
+public static class HRMJobTitles_ResponseExtensions
 {
-    public List<HRMJobTitles> ToResults() => D?.Results ?? [];
+    public static List<HRMJobTitles> AsResults(this HRMJobTitles_Response? response) => response?.D?.Results ?? [];
 }

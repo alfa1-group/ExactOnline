@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class FinancialGLClassifications_Response
+public static class FinancialGLClassifications_ResponseExtensions
 {
-    public List<FinancialGLClassifications> ToResults() => D?.Results ?? [];
+    public static List<FinancialGLClassifications> AsResults(this FinancialGLClassifications_Response? response) => response?.D?.Results ?? [];
 }

@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class VATVatPercentages_Response
+public static class VATVatPercentages_ResponseExtensions
 {
-    public List<VATVatPercentages> ToResults() => D?.Results ?? [];
+    public static List<VATVatPercentages> AsResults(this VATVatPercentages_Response? response) => response?.D?.Results ?? [];
 }

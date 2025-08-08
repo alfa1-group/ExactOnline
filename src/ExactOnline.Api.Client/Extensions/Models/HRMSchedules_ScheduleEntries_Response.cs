@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class HRMSchedules_ScheduleEntries_Response
+public static class HRMSchedules_ScheduleEntries_ResponseExtensions
 {
 
 }

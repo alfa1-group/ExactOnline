@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class GeneralLayouts_Response
+public static class GeneralLayouts_ResponseExtensions
 {
-    public List<GeneralLayouts> ToResults() => D?.Results ?? [];
+    public static List<GeneralLayouts> AsResults(this GeneralLayouts_Response? response) => response?.D?.Results ?? [];
 }

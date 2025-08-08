@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class PayrollPayrollTransactionsByPayrollYear_Response
+public static class PayrollPayrollTransactionsByPayrollYear_ResponseExtensions
 {
-    public PayrollPayrollTransactionsByPayrollYear? ToItem() => D?.Results?.FirstOrDefault();
+    public static PayrollPayrollTransactionsByPayrollYear? AsItem(this PayrollPayrollTransactionsByPayrollYear_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

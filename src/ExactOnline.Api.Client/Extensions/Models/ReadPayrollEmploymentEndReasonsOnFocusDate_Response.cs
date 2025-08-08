@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadPayrollEmploymentEndReasonsOnFocusDate_Response
+public static class ReadPayrollEmploymentEndReasonsOnFocusDate_ResponseExtensions
 {
-    public ReadPayrollEmploymentEndReasonsOnFocusDate? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadPayrollEmploymentEndReasonsOnFocusDate? AsItem(this ReadPayrollEmploymentEndReasonsOnFocusDate_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SyncFinancialGLAccounts_Response
+public static class SyncFinancialGLAccounts_ResponseExtensions
 {
-    public List<SyncFinancialGLAccounts> ToResults() => D?.Results ?? [];
+    public static List<SyncFinancialGLAccounts> AsResults(this SyncFinancialGLAccounts_Response? response) => response?.D?.Results ?? [];
 }

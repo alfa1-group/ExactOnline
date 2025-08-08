@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class FinancialExchangeRates_Response
+public static class FinancialExchangeRates_ResponseExtensions
 {
-    public List<FinancialExchangeRates> ToResults() => D?.Results ?? [];
+    public static List<FinancialExchangeRates> AsResults(this FinancialExchangeRates_Response? response) => response?.D?.Results ?? [];
 }

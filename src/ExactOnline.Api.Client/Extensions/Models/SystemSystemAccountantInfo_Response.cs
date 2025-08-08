@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SystemSystemAccountantInfo_Response
+public static class SystemSystemAccountantInfo_ResponseExtensions
 {
-    public SystemSystemAccountantInfo? ToItem() => D?.Results?.FirstOrDefault();
+    public static SystemSystemAccountantInfo? AsItem(this SystemSystemAccountantInfo_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

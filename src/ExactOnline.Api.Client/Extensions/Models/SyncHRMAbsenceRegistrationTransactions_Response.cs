@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SyncHRMAbsenceRegistrationTransactions_Response
+public static class SyncHRMAbsenceRegistrationTransactions_ResponseExtensions
 {
-    public List<SyncHRMAbsenceRegistrationTransactions> ToResults() => D?.Results ?? [];
+    public static List<SyncHRMAbsenceRegistrationTransactions> AsResults(this SyncHRMAbsenceRegistrationTransactions_Response? response) => response?.D?.Results ?? [];
 }

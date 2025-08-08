@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ActivitiesEvents_Response
+public static class ActivitiesEvents_ResponseExtensions
 {
-    public List<ActivitiesEvents> ToResults() => D?.Results ?? [];
+    public static List<ActivitiesEvents> AsResults(this ActivitiesEvents_Response? response) => response?.D?.Results ?? [];
 }

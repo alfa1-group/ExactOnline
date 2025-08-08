@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class GeneralCurrencies_Response
+public static class GeneralCurrencies_ResponseExtensions
 {
-    public List<GeneralCurrencies> ToResults() => D?.Results ?? [];
+    public static List<GeneralCurrencies> AsResults(this GeneralCurrencies_Response? response) => response?.D?.Results ?? [];
 }

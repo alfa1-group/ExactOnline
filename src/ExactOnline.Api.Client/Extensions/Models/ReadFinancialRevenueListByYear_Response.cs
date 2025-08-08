@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadFinancialRevenueListByYear_Response
+public static class ReadFinancialRevenueListByYear_ResponseExtensions
 {
-    public ReadFinancialRevenueListByYear? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadFinancialRevenueListByYear? AsItem(this ReadFinancialRevenueListByYear_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

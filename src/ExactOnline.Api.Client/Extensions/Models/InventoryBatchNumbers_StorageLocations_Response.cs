@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class InventoryBatchNumbers_StorageLocations_Response
+public static class InventoryBatchNumbers_StorageLocations_ResponseExtensions
 {
 
 }

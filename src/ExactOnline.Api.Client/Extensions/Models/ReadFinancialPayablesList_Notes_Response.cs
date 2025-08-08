@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadFinancialPayablesList_Notes_Response
+public static class ReadFinancialPayablesList_Notes_ResponseExtensions
 {
 
 }

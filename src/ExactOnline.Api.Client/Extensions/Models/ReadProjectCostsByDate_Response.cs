@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadProjectCostsByDate_Response
+public static class ReadProjectCostsByDate_ResponseExtensions
 {
-    public ReadProjectCostsByDate? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadProjectCostsByDate? AsItem(this ReadProjectCostsByDate_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

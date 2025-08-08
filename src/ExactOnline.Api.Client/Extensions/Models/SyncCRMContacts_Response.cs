@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SyncCRMContacts_Response
+public static class SyncCRMContacts_ResponseExtensions
 {
-    public List<SyncCRMContacts> ToResults() => D?.Results ?? [];
+    public static List<SyncCRMContacts> AsResults(this SyncCRMContacts_Response? response) => response?.D?.Results ?? [];
 }

@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class UsersUserRoles_Response
+public static class UsersUserRoles_ResponseExtensions
 {
-    public List<UsersUserRoles> ToResults() => D?.Results ?? [];
+    public static List<UsersUserRoles> AsResults(this UsersUserRoles_Response? response) => response?.D?.Results ?? [];
 }

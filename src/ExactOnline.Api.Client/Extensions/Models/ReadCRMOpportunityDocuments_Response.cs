@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadCRMOpportunityDocuments_Response
+public static class ReadCRMOpportunityDocuments_ResponseExtensions
 {
-    public List<ReadCRMOpportunityDocuments> ToResults() => D?.Results ?? [];
+    public static List<ReadCRMOpportunityDocuments> AsResults(this ReadCRMOpportunityDocuments_Response? response) => response?.D?.Results ?? [];
 }

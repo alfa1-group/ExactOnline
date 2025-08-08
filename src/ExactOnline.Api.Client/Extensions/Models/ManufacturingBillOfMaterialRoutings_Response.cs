@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ManufacturingBillOfMaterialRoutings_Response
+public static class ManufacturingBillOfMaterialRoutings_ResponseExtensions
 {
-    public List<ManufacturingBillOfMaterialRoutings> ToResults() => D?.Results ?? [];
+    public static List<ManufacturingBillOfMaterialRoutings> AsResults(this ManufacturingBillOfMaterialRoutings_Response? response) => response?.D?.Results ?? [];
 }

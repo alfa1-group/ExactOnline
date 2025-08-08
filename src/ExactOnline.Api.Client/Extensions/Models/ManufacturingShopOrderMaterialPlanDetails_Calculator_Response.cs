@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ManufacturingShopOrderMaterialPlanDetails_Calculator_Response
+public static class ManufacturingShopOrderMaterialPlanDetails_Calculator_ResponseExtensions
 {
 
 }

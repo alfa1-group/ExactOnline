@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadProjectHourEntryRecentProjects_Response
+public static class ReadProjectHourEntryRecentProjects_ResponseExtensions
 {
-    public List<ReadProjectHourEntryRecentProjects> ToResults() => D?.Results ?? [];
+    public static List<ReadProjectHourEntryRecentProjects> AsResults(this ReadProjectHourEntryRecentProjects_Response? response) => response?.D?.Results ?? [];
 }

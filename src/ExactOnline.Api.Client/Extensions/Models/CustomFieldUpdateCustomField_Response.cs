@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class CustomFieldUpdateCustomField_Response
+public static class CustomFieldUpdateCustomField_ResponseExtensions
 {
 
 }

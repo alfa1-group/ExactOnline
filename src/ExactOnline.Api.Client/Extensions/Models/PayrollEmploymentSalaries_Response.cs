@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class PayrollEmploymentSalaries_Response
+public static class PayrollEmploymentSalaries_ResponseExtensions
 {
-    public List<PayrollEmploymentSalaries> ToResults() => D?.Results ?? [];
+    public static List<PayrollEmploymentSalaries> AsResults(this PayrollEmploymentSalaries_Response? response) => response?.D?.Results ?? [];
 }

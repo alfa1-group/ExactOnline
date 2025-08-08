@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class FinancialProcessReturn_Response
+public static class FinancialProcessReturn_ResponseExtensions
 {
 
 }

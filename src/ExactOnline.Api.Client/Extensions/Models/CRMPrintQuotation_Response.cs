@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class CRMPrintQuotation_Response
+public static class CRMPrintQuotation_ResponseExtensions
 {
 
 }

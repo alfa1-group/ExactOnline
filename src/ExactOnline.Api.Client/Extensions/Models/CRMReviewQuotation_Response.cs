@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class CRMReviewQuotation_Response
+public static class CRMReviewQuotation_ResponseExtensions
 {
 
 }

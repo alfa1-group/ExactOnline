@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SystemSystemMe_Response
+public static class SystemSystemMe_ResponseExtensions
 {
-    public SystemSystemMe? ToItem() => D?.Results?.FirstOrDefault();
+    public static SystemSystemMe? AsItem(this SystemSystemMe_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

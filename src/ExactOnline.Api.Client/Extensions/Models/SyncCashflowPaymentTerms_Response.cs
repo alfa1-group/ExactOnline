@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SyncCashflowPaymentTerms_Response
+public static class SyncCashflowPaymentTerms_ResponseExtensions
 {
-    public List<SyncCashflowPaymentTerms> ToResults() => D?.Results ?? [];
+    public static List<SyncCashflowPaymentTerms> AsResults(this SyncCashflowPaymentTerms_Response? response) => response?.D?.Results ?? [];
 }

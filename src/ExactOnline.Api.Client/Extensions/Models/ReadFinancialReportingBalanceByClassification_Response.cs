@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadFinancialReportingBalanceByClassification_Response
+public static class ReadFinancialReportingBalanceByClassification_ResponseExtensions
 {
-    public ReadFinancialReportingBalanceByClassification? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadFinancialReportingBalanceByClassification? AsItem(this ReadFinancialReportingBalanceByClassification_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

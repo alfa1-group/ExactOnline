@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadFinancialOutstandingInvoicesOverview_Response
+public static class ReadFinancialOutstandingInvoicesOverview_ResponseExtensions
 {
-    public ReadFinancialOutstandingInvoicesOverview? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadFinancialOutstandingInvoicesOverview? AsItem(this ReadFinancialOutstandingInvoicesOverview_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

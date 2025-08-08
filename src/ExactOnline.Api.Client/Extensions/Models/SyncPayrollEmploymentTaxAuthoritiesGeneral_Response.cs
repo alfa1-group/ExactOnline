@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SyncPayrollEmploymentTaxAuthoritiesGeneral_Response
+public static class SyncPayrollEmploymentTaxAuthoritiesGeneral_ResponseExtensions
 {
-    public SyncPayrollEmploymentTaxAuthoritiesGeneral? ToItem() => D?.Results?.FirstOrDefault();
+    public static SyncPayrollEmploymentTaxAuthoritiesGeneral? AsItem(this SyncPayrollEmploymentTaxAuthoritiesGeneral_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

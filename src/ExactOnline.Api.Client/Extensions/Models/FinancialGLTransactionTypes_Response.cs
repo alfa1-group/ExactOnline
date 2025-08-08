@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class FinancialGLTransactionTypes_Response
+public static class FinancialGLTransactionTypes_ResponseExtensions
 {
-    public List<FinancialGLTransactionTypes> ToResults() => D?.Results ?? [];
+    public static List<FinancialGLTransactionTypes> AsResults(this FinancialGLTransactionTypes_Response? response) => response?.D?.Results ?? [];
 }

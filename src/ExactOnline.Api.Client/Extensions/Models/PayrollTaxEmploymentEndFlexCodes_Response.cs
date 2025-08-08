@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class PayrollTaxEmploymentEndFlexCodes_Response
+public static class PayrollTaxEmploymentEndFlexCodes_ResponseExtensions
 {
-    public List<PayrollTaxEmploymentEndFlexCodes> ToResults() => D?.Results ?? [];
+    public static List<PayrollTaxEmploymentEndFlexCodes> AsResults(this PayrollTaxEmploymentEndFlexCodes_Response? response) => response?.D?.Results ?? [];
 }

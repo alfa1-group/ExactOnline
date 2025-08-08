@@ -32,7 +32,7 @@ $modelFiles = Get-ChildItem -Path $modelsPath -Filter "*.cs" | Where-Object {
     $_.Name -notlike "*_Response.cs" -and $_.Name -notlike "*_Response_d.cs" -and $_.Name -ne "ExactOnlineMetadata.cs"
 }
 
-Write-Output "🔄 Generating response classes..."
+Write-Output "🔄 Generating response extension classes..."
 
 foreach ($file in $modelFiles) {
     $className = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
@@ -41,14 +41,15 @@ foreach ($file in $modelFiles) {
     
     $sourceResponseModelPath = Join-Path $modelsPath $responseFileName
     $methodsContent = ""
+    $responseClassName = "${className}_Response"
 
     if (Test-Path $sourceResponseModelPath) {
         $sourceResponseContent = Get-Content -Path $sourceResponseModelPath -Raw
         
         if ($sourceResponseContent -match "/// A collection of") {
-            $methodsContent = "    public List<${className}> ToResults() => D?.Results ?? [];"
+            $methodsContent = "    public static List<${className}> AsResults(this ${responseClassName}? response) => response?.D?.Results ?? [];"
         } else {
-            $methodsContent = "    public ${className}? ToItem() => D?.Results?.FirstOrDefault();"
+            $methodsContent = "    public static ${className}? AsItem(this ${responseClassName}? response) => response?.D?.Results?.FirstOrDefault();"
         }
     }
 
@@ -57,7 +58,7 @@ foreach ($file in $modelFiles) {
         "#nullable enable",
         "namespace ExactOnline.Api.Client.Models;",
         "",
-        "public partial class ${className}_Response",
+        "public static class ${responseClassName}Extensions",
         "{",
         $methodsContent,
         "}"

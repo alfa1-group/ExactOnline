@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class InventoryProcessStockCount_Response
+public static class InventoryProcessStockCount_ResponseExtensions
 {
 
 }

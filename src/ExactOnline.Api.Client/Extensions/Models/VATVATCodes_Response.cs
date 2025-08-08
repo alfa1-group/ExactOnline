@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class VATVATCodes_Response
+public static class VATVATCodes_ResponseExtensions
 {
-    public List<VATVATCodes> ToResults() => D?.Results ?? [];
+    public static List<VATVATCodes> AsResults(this VATVATCodes_Response? response) => response?.D?.Results ?? [];
 }

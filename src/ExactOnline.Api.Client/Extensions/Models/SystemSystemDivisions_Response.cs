@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SystemSystemDivisions_Response
+public static class SystemSystemDivisions_ResponseExtensions
 {
-    public List<SystemSystemDivisions> ToResults() => D?.Results ?? [];
+    public static List<SystemSystemDivisions> AsResults(this SystemSystemDivisions_Response? response) => response?.D?.Results ?? [];
 }

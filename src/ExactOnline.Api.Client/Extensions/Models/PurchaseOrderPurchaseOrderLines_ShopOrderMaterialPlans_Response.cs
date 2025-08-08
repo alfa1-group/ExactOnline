@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class PurchaseOrderPurchaseOrderLines_ShopOrderMaterialPlans_Response
+public static class PurchaseOrderPurchaseOrderLines_ShopOrderMaterialPlans_ResponseExtensions
 {
 
 }

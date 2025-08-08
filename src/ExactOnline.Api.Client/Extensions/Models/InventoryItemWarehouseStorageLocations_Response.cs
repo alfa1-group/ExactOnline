@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class InventoryItemWarehouseStorageLocations_Response
+public static class InventoryItemWarehouseStorageLocations_ResponseExtensions
 {
-    public List<InventoryItemWarehouseStorageLocations> ToResults() => D?.Results ?? [];
+    public static List<InventoryItemWarehouseStorageLocations> AsResults(this InventoryItemWarehouseStorageLocations_Response? response) => response?.D?.Results ?? [];
 }

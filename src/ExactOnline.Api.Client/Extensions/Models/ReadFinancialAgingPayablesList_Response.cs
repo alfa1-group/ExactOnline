@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadFinancialAgingPayablesList_Response
+public static class ReadFinancialAgingPayablesList_ResponseExtensions
 {
-    public List<ReadFinancialAgingPayablesList> ToResults() => D?.Results ?? [];
+    public static List<ReadFinancialAgingPayablesList> AsResults(this ReadFinancialAgingPayablesList_Response? response) => response?.D?.Results ?? [];
 }

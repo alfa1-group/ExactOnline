@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class InventoryAssemblyOrders_PartItems_Response
+public static class InventoryAssemblyOrders_PartItems_ResponseExtensions
 {
 
 }

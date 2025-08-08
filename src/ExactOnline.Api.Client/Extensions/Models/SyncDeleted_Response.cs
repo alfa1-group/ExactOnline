@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SyncDeleted_Response
+public static class SyncDeleted_ResponseExtensions
 {
-    public SyncDeleted? ToItem() => D?.Results?.FirstOrDefault();
+    public static SyncDeleted? AsItem(this SyncDeleted_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

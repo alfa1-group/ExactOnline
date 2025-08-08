@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class InventoryProcessWarehouseTransfer_Response
+public static class InventoryProcessWarehouseTransfer_ResponseExtensions
 {
 
 }

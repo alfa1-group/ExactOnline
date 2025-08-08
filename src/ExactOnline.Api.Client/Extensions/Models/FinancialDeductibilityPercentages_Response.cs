@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class FinancialDeductibilityPercentages_Response
+public static class FinancialDeductibilityPercentages_ResponseExtensions
 {
-    public List<FinancialDeductibilityPercentages> ToResults() => D?.Results ?? [];
+    public static List<FinancialDeductibilityPercentages> AsResults(this FinancialDeductibilityPercentages_Response? response) => response?.D?.Results ?? [];
 }

@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class DocumentsDocumentTypeFolders_Response
+public static class DocumentsDocumentTypeFolders_ResponseExtensions
 {
-    public List<DocumentsDocumentTypeFolders> ToResults() => D?.Results ?? [];
+    public static List<DocumentsDocumentTypeFolders> AsResults(this DocumentsDocumentTypeFolders_Response? response) => response?.D?.Results ?? [];
 }

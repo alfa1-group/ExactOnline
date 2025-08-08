@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class AssetsAssets_Response
+public static class AssetsAssets_ResponseExtensions
 {
-    public List<AssetsAssets> ToResults() => D?.Results ?? [];
+    public static List<AssetsAssets> AsResults(this AssetsAssets_Response? response) => response?.D?.Results ?? [];
 }

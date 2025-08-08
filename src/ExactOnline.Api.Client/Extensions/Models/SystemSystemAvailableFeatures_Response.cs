@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SystemSystemAvailableFeatures_Response
+public static class SystemSystemAvailableFeatures_ResponseExtensions
 {
-    public List<SystemSystemAvailableFeatures> ToResults() => D?.Results ?? [];
+    public static List<SystemSystemAvailableFeatures> AsResults(this SystemSystemAvailableFeatures_Response? response) => response?.D?.Results ?? [];
 }

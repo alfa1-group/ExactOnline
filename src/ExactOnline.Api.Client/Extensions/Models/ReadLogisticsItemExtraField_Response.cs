@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadLogisticsItemExtraField_Response
+public static class ReadLogisticsItemExtraField_ResponseExtensions
 {
-    public ReadLogisticsItemExtraField? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadLogisticsItemExtraField? AsItem(this ReadLogisticsItemExtraField_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

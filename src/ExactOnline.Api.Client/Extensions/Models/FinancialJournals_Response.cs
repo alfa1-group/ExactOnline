@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class FinancialJournals_Response
+public static class FinancialJournals_ResponseExtensions
 {
-    public List<FinancialJournals> ToResults() => D?.Results ?? [];
+    public static List<FinancialJournals> AsResults(this FinancialJournals_Response? response) => response?.D?.Results ?? [];
 }

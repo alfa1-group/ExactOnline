@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class FinancialTransactionBankEntryLines_Response
+public static class FinancialTransactionBankEntryLines_ResponseExtensions
 {
-    public List<FinancialTransactionBankEntryLines> ToResults() => D?.Results ?? [];
+    public static List<FinancialTransactionBankEntryLines> AsResults(this FinancialTransactionBankEntryLines_Response? response) => response?.D?.Results ?? [];
 }

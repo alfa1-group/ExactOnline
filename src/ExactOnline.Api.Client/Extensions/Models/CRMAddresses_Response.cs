@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class CRMAddresses_Response
+public static class CRMAddresses_ResponseExtensions
 {
-    public List<CRMAddresses> ToResults() => D?.Results ?? [];
+    public static List<CRMAddresses> AsResults(this CRMAddresses_Response? response) => response?.D?.Results ?? [];
 }

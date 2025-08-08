@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class BulkCRMQuotations_Response
+public static class BulkCRMQuotations_ResponseExtensions
 {
-    public List<BulkCRMQuotations> ToResults() => D?.Results ?? [];
+    public static List<BulkCRMQuotations> AsResults(this BulkCRMQuotations_Response? response) => response?.D?.Results ?? [];
 }

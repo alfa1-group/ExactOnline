@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class MailboxMailMessagesSent_Response
+public static class MailboxMailMessagesSent_ResponseExtensions
 {
-    public MailboxMailMessagesSent? ToItem() => D?.Results?.FirstOrDefault();
+    public static MailboxMailMessagesSent? AsItem(this MailboxMailMessagesSent_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SalesOrderSalesOrderOrderChargeLines_Response
+public static class SalesOrderSalesOrderOrderChargeLines_ResponseExtensions
 {
-    public List<SalesOrderSalesOrderOrderChargeLines> ToResults() => D?.Results ?? [];
+    public static List<SalesOrderSalesOrderOrderChargeLines> AsResults(this SalesOrderSalesOrderOrderChargeLines_Response? response) => response?.D?.Results ?? [];
 }

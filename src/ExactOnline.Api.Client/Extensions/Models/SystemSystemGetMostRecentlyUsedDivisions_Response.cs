@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SystemSystemGetMostRecentlyUsedDivisions_Response
+public static class SystemSystemGetMostRecentlyUsedDivisions_ResponseExtensions
 {
-    public List<SystemSystemGetMostRecentlyUsedDivisions> ToResults() => D?.Results ?? [];
+    public static List<SystemSystemGetMostRecentlyUsedDivisions> AsResults(this SystemSystemGetMostRecentlyUsedDivisions_Response? response) => response?.D?.Results ?? [];
 }

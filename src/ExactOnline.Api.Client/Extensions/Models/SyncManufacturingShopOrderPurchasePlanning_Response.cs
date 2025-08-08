@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class SyncManufacturingShopOrderPurchasePlanning_Response
+public static class SyncManufacturingShopOrderPurchasePlanning_ResponseExtensions
 {
-    public SyncManufacturingShopOrderPurchasePlanning? ToItem() => D?.Results?.FirstOrDefault();
+    public static SyncManufacturingShopOrderPurchasePlanning? AsItem(this SyncManufacturingShopOrderPurchasePlanning_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

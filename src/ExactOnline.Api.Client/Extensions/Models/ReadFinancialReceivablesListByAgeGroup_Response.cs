@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadFinancialReceivablesListByAgeGroup_Response
+public static class ReadFinancialReceivablesListByAgeGroup_ResponseExtensions
 {
-    public ReadFinancialReceivablesListByAgeGroup? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadFinancialReceivablesListByAgeGroup? AsItem(this ReadFinancialReceivablesListByAgeGroup_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

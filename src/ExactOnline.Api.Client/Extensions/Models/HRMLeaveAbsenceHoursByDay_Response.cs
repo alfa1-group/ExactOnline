@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class HRMLeaveAbsenceHoursByDay_Response
+public static class HRMLeaveAbsenceHoursByDay_ResponseExtensions
 {
-    public HRMLeaveAbsenceHoursByDay? ToItem() => D?.Results?.FirstOrDefault();
+    public static HRMLeaveAbsenceHoursByDay? AsItem(this HRMLeaveAbsenceHoursByDay_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

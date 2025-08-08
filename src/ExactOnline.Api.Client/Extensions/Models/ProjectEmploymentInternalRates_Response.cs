@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ProjectEmploymentInternalRates_Response
+public static class ProjectEmploymentInternalRates_ResponseExtensions
 {
-    public List<ProjectEmploymentInternalRates> ToResults() => D?.Results ?? [];
+    public static List<ProjectEmploymentInternalRates> AsResults(this ProjectEmploymentInternalRates_Response? response) => response?.D?.Results ?? [];
 }

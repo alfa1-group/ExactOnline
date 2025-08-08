@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ManufacturingTimeTransactions_Response
+public static class ManufacturingTimeTransactions_ResponseExtensions
 {
-    public List<ManufacturingTimeTransactions> ToResults() => D?.Results ?? [];
+    public static List<ManufacturingTimeTransactions> AsResults(this ManufacturingTimeTransactions_Response? response) => response?.D?.Results ?? [];
 }

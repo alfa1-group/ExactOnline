@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ProjectProjectPlanningRecurring_Response
+public static class ProjectProjectPlanningRecurring_ResponseExtensions
 {
-    public ProjectProjectPlanningRecurring? ToItem() => D?.Results?.FirstOrDefault();
+    public static ProjectProjectPlanningRecurring? AsItem(this ProjectProjectPlanningRecurring_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

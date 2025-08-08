@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadPayrollEmploymentContractFlexPhasesOnFocusDate_Response
+public static class ReadPayrollEmploymentContractFlexPhasesOnFocusDate_ResponseExtensions
 {
-    public ReadPayrollEmploymentContractFlexPhasesOnFocusDate? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadPayrollEmploymentContractFlexPhasesOnFocusDate? AsItem(this ReadPayrollEmploymentContractFlexPhasesOnFocusDate_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

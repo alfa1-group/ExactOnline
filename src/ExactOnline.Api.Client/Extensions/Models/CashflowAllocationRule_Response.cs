@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class CashflowAllocationRule_Response
+public static class CashflowAllocationRule_ResponseExtensions
 {
-    public CashflowAllocationRule? ToItem() => D?.Results?.FirstOrDefault();
+    public static CashflowAllocationRule? AsItem(this CashflowAllocationRule_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

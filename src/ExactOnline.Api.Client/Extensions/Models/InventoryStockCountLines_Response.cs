@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class InventoryStockCountLines_Response
+public static class InventoryStockCountLines_ResponseExtensions
 {
-    public List<InventoryStockCountLines> ToResults() => D?.Results ?? [];
+    public static List<InventoryStockCountLines> AsResults(this InventoryStockCountLines_Response? response) => response?.D?.Results ?? [];
 }

@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadMailboxDefaultMailbox_Response
+public static class ReadMailboxDefaultMailbox_ResponseExtensions
 {
-    public ReadMailboxDefaultMailbox? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadMailboxDefaultMailbox? AsItem(this ReadMailboxDefaultMailbox_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

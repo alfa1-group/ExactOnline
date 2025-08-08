@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadManufacturingShopOrderRoutingStepPlansAvailableToWork_Response
+public static class ReadManufacturingShopOrderRoutingStepPlansAvailableToWork_ResponseExtensions
 {
-    public ReadManufacturingShopOrderRoutingStepPlansAvailableToWork? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadManufacturingShopOrderRoutingStepPlansAvailableToWork? AsItem(this ReadManufacturingShopOrderRoutingStepPlansAvailableToWork_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

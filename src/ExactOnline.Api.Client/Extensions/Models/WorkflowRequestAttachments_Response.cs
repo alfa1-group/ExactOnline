@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class WorkflowRequestAttachments_Response
+public static class WorkflowRequestAttachments_ResponseExtensions
 {
-    public List<WorkflowRequestAttachments> ToResults() => D?.Results ?? [];
+    public static List<WorkflowRequestAttachments> AsResults(this WorkflowRequestAttachments_Response? response) => response?.D?.Results ?? [];
 }

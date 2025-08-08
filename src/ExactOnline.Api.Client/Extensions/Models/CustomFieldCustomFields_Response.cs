@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class CustomFieldCustomFields_Response
+public static class CustomFieldCustomFields_ResponseExtensions
 {
-    public List<CustomFieldCustomFields> ToResults() => D?.Results ?? [];
+    public static List<CustomFieldCustomFields> AsResults(this CustomFieldCustomFields_Response? response) => response?.D?.Results ?? [];
 }

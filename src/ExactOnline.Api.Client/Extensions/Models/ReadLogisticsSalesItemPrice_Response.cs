@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadLogisticsSalesItemPrice_Response
+public static class ReadLogisticsSalesItemPrice_ResponseExtensions
 {
-    public ReadLogisticsSalesItemPrice? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadLogisticsSalesItemPrice? AsItem(this ReadLogisticsSalesItemPrice_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

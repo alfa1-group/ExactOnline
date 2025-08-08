@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class OpeningBalanceCurrentYearAfterEntry_Response
+public static class OpeningBalanceCurrentYearAfterEntry_ResponseExtensions
 {
-    public OpeningBalanceCurrentYearAfterEntry? ToItem() => D?.Results?.FirstOrDefault();
+    public static OpeningBalanceCurrentYearAfterEntry? AsItem(this OpeningBalanceCurrentYearAfterEntry_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class InventoryBatchNumbers_Response
+public static class InventoryBatchNumbers_ResponseExtensions
 {
-    public List<InventoryBatchNumbers> ToResults() => D?.Results ?? [];
+    public static List<InventoryBatchNumbers> AsResults(this InventoryBatchNumbers_Response? response) => response?.D?.Results ?? [];
 }

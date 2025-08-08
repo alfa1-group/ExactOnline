@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class ReadSyncSyncSyncTimestamp_Response
+public static class ReadSyncSyncSyncTimestamp_ResponseExtensions
 {
-    public ReadSyncSyncSyncTimestamp? ToItem() => D?.Results?.FirstOrDefault();
+    public static ReadSyncSyncSyncTimestamp? AsItem(this ReadSyncSyncSyncTimestamp_Response? response) => response?.D?.Results?.FirstOrDefault();
 }

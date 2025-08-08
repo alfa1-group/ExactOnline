@@ -2,7 +2,7 @@
 #nullable enable
 namespace ExactOnline.Api.Client.Models;
 
-public partial class GeneralJournalEntryGeneralJournalEntryLines_Response
+public static class GeneralJournalEntryGeneralJournalEntryLines_ResponseExtensions
 {
-    public List<GeneralJournalEntryGeneralJournalEntryLines> ToResults() => D?.Results ?? [];
+    public static List<GeneralJournalEntryGeneralJournalEntryLines> AsResults(this GeneralJournalEntryGeneralJournalEntryLines_Response? response) => response?.D?.Results ?? [];
 }
