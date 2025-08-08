@@ -82,13 +82,16 @@ internal class ExactTokenService(
             if (string.IsNullOrWhiteSpace(response.RefreshToken) && response.ErrorDescription?.IndexOf("Rate limit exceeded: access_token not expired", StringComparison.InvariantCultureIgnoreCase) >= 0)
             {
                 var elapsedTime = TimeProvider.System.GetUtcNow() - startTime;
-                if (elapsedTime + TimeSpan.FromSeconds(delay) > _accessTokenExpirationTime)
+                if (elapsedTime > _accessTokenExpirationTime)
                 {
-                    throw new Exception("AccessToken cannot be retrieved due to rate limiting and timeout exceeded.");
+                    throw new Exception($"AccessToken cannot be retrieved due to rate limiting and timeout exceeded ({_accessTokenExpirationTime}).");
                 }
 
+                logger.LogInformation("Rate limit exceeded for access token. Retrying in {Delay} seconds...", delay);
                 await Task.Delay(TimeSpan.FromSeconds(delay), cancellationToken);
+
                 delay *= 2;
+
                 continue;
             }
 
