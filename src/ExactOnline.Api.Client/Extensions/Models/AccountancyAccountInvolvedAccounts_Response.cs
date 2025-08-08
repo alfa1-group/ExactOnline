@@ -4,7 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public partial class AccountancyAccountInvolvedAccounts_Response
 {
-    public AccountancyAccountInvolvedAccounts? ToItem() => D?.Results?.FirstOrDefault();
-
     public List<AccountancyAccountInvolvedAccounts> ToResults() => D?.Results ?? [];
 }
