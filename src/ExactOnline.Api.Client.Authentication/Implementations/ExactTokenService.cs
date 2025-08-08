@@ -45,7 +45,7 @@ internal class ExactTokenService(
         // Store the new refresh token back in storage as the previous one is now invalid.
         try
         {
-            await tokenStorageService.StoreAsync(response.RefreshToken, cancellationToken);
+            await tokenStorageService.StoreAsync(response.RefreshToken!, cancellationToken);
         }
         catch (Exception ex)
         {
