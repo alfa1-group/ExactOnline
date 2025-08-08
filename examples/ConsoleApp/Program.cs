@@ -27,6 +27,12 @@ var me = await client.Api.V1.Current.Me.GetAsync(a =>
 var division = me!.CurrentDivision!.Value;
 Console.WriteLine($"{division} {me.Email}");
 
+Console.WriteLine("Waiting 3 seconds");
+await Task.Delay(TimeSpan.FromSeconds(3));
+
+var me2 = await client.Api.V1.Current.Me.GetAsync().AsItem();
+Console.WriteLine($"After waiting: {me2?.Email}");
+
 var subscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync().AsResults();
 if (!subscriptions.Any())
 {
@@ -34,5 +40,10 @@ if (!subscriptions.Any())
 }
 foreach (var subscription in subscriptions)
 {
-    Console.WriteLine($"Subscription ID: {subscription.ID}, Webhook URL: {subscription.CallbackURL}");
+    Console.WriteLine($"Subscription ID: {subscription.ID}, CallbackURL: {subscription.CallbackURL}");
 }
+
+Console.WriteLine("{0} Waiting for 11 minutes to check token refresh", DateTime.Now);
+await Task.Delay(TimeSpan.FromMinutes(11));
+var me3 = await client.Api.V1.Current.Me.GetAsync().AsItem();
+Console.WriteLine($"After waiting: {me3?.Email}");

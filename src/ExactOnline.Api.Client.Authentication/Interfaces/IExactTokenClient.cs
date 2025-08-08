@@ -1,4 +1,4 @@
-﻿using Duende.IdentityModel.Client;
+﻿using IdentityModel.Client;
 
 namespace ExactOnline.Api.Client.Authentication.Interfaces;
 

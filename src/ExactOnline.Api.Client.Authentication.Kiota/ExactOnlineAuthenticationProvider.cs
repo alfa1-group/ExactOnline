@@ -10,11 +10,8 @@ internal class ExactOnlineAuthenticationProvider(IExactTokenService tokenService
 
     public async Task AuthenticateRequestAsync(RequestInformation request, Dictionary<string, object>? additionalAuthenticationContext = null, CancellationToken cancellationToken = default)
     {
-        if (!request.Headers.ContainsKey(AuthorizationHeaderKey))
-        {
-            var accessToken = await tokenService.GetAccessTokenAsync(cancellationToken);
+        var accessToken = await tokenService.GetAccessTokenAsync(cancellationToken);
 
-            request.Headers.Add(AuthorizationHeaderKey, $"Bearer {accessToken}");
-        }
+        request.Headers.Add(AuthorizationHeaderKey, $"Bearer {accessToken}");
     }
 }

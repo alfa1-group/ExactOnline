@@ -1,5 +1,5 @@
-﻿using Duende.IdentityModel.Client;
-using ExactOnline.Api.Client.Authentication.Interfaces;
+﻿using ExactOnline.Api.Client.Authentication.Interfaces;
+using IdentityModel.Client;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
@@ -12,7 +12,7 @@ internal class ExactTokenService(
     IExactTokenClient exactTokenClient) : IExactTokenService
 {
     private const string ExactAccessTokenKey = "ExactAccessToken";
-    private const int InitialRateLimitAccessTokenDelayInMinutes = 1;
+    private const int RateLimitDelayInMinutes = 1;
 
     // The expiration time to 9 minutes and 30 seconds, which is the maximum time a token is valid.
     private readonly TimeSpan _accessTokenExpirationTime = TimeSpan.FromSeconds(9 * 60 + 30);
@@ -40,21 +40,7 @@ internal class ExactTokenService(
         var refreshToken = await tokenStorageService.RetrieveAsync(cancellationToken);
 
         // The client will issue the refresh request and should get a fresh refresh token + access token in response
-        var response = await RequestRefreshTokenWithRetryAsync(refreshToken, cancellationToken);
-
-        if (string.IsNullOrWhiteSpace(response.RefreshToken) && response.ErrorDescription?.IndexOf("expired", StringComparison.InvariantCultureIgnoreCase) >= 0)
-        {
-            logger.LogError("The Exact refresh token has expired ({ErrorType} {Error} {ErrorDescription}). You need to update the refresh token stored in the storage with a fresh token from Exact.",
-                response.ErrorType, response.Error, response.ErrorDescription);
-            throw new Exception("The Exact refresh token has expired.");
-        }
-
-        if (string.IsNullOrWhiteSpace(response.RefreshToken))
-        {
-            logger.LogError("There was a problem fetching a new auth token from Exact. ({ErrorType} {Error} {ErrorDescription}).",
-                response.ErrorType, response.Error, response.ErrorDescription);
-            throw new Exception("Exact did not return a new auth token.", response.Exception);
-        }
+        var response = await RequestRefreshTokenWithRetryAndErrorHandlingAsync(refreshToken, cancellationToken);
 
         // Store the new refresh token back in storage as the previous one is now invalid.
         try
@@ -68,20 +54,24 @@ internal class ExactTokenService(
             throw new Exception($"Uploading the new RefreshToken failed. Here is the token: {response.RefreshToken}", ex);
         }
 
+        if (string.IsNullOrWhiteSpace(response.AccessToken))
+        {
+            logger.LogError("The access token is null or empty. ({ErrorType} {Error} {ErrorDescription}).", response.ErrorType, response.Error, response.ErrorDescription);
+        }
+
         // Store the access token in memory for reuse
         return memoryCache.Set(ExactAccessTokenKey, response.AccessToken, _accessTokenExpirationTime)!;
     }
 
-    private async Task<TokenResponse> RequestRefreshTokenWithRetryAsync(string refreshToken, CancellationToken cancellationToken)
+    private async Task<TokenResponse> RequestRefreshTokenWithRetryAndErrorHandlingAsync(string refreshToken, CancellationToken cancellationToken)
     {
-        var delayInMinutes = InitialRateLimitAccessTokenDelayInMinutes;
         var startTime = TimeProvider.System.GetUtcNow();
 
         while (true)
         {
             var response = await exactTokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken);
 
-            if (string.IsNullOrWhiteSpace(response.RefreshToken) && response.ErrorDescription?.IndexOf("Rate limit exceeded: access_token not expired", StringComparison.InvariantCultureIgnoreCase) >= 0)
+            if (string.IsNullOrWhiteSpace(response.RefreshToken) && (IsRateLimitExceeded(response) || IsHttpFault(response)))
             {
                 var elapsedTime = TimeProvider.System.GetUtcNow() - startTime;
                 if (elapsedTime > _accessTokenExpirationTime)
@@ -89,15 +79,44 @@ internal class ExactTokenService(
                     throw new Exception($"AccessToken cannot be retrieved due to rate limiting and timeout exceeded ({_accessTokenExpirationTime}).");
                 }
 
-                logger.LogInformation("Rate limit exceeded for access token. Retrying in {Delay} minute(s).", delayInMinutes);
-                await Task.Delay(TimeSpan.FromMinutes(delayInMinutes), cancellationToken);
-
-                delayInMinutes *= 2;
+                logger.LogInformation("Rate limit exceeded for access token. Retrying in {Delay} seconds.", RateLimitDelayInMinutes);
+                await Task.Delay(TimeSpan.FromSeconds(RateLimitDelayInMinutes), cancellationToken);
 
                 continue;
             }
 
+            if (string.IsNullOrWhiteSpace(response.RefreshToken) && response.ErrorDescription?.IndexOf("expired", StringComparison.InvariantCultureIgnoreCase) >= 0)
+            {
+                logger.LogError("The Exact refresh token has expired ({ErrorType} {Error} {ErrorDescription}). You need to update the refresh token stored in the storage with a fresh token from Exact.",
+                    response.ErrorType, response.Error, response.ErrorDescription);
+                throw new Exception("The Exact refresh token has expired.");
+            }
+
+            if (string.IsNullOrWhiteSpace(response.RefreshToken))
+            {
+                logger.LogError("There was a problem fetching a new auth token from Exact. ({ErrorType} {Error} {ErrorDescription}).",
+                    response.ErrorType, response.Error, response.ErrorDescription);
+                throw new Exception("Exact did not return a new auth token.", response.Exception);
+            }
+
             return response;
         }
+    }
+
+    private static bool IsRateLimitExceeded(TokenResponse response)
+    {
+        return response.ErrorDescription?.IndexOf("Rate limit exceeded: access_token not expired", StringComparison.InvariantCultureIgnoreCase) >= 0;
+    }
+
+    private static bool IsHttpFault(TokenResponse response)
+    {
+        if (response.ErrorType == ResponseErrorType.Http)
+        {
+            var fault = response.TryGet("fault");
+            // { "faultstring":"Unable to identify proxy for host: start.exactonline.nl:443 and url: \/api\/oauth2\/token","detail":{ "errorcode":"messaging.adaptors.http.flow.ApplicationNotFound"} }
+            return !string.IsNullOrWhiteSpace(fault) && fault.Contains(@"Unable to identify proxy for host: start.exactonline.nl:443 and url: \/api\/oauth2\/token");
+        }
+
+        return false;
     }
 }
