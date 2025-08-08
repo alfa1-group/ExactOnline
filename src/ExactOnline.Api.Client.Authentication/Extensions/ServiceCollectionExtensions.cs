@@ -26,8 +26,8 @@ public static class ServiceCollectionExtensions
 
     private static IServiceCollection AddServices(this IServiceCollection services)
     {
-        services.AddTransient<IExactTokenClient, ExactTokenClient>();
-        services.AddTransient<IExactTokenService, ExactTokenService>();
+        services.AddSingleton<IExactTokenClient, ExactTokenClient>();
+        services.AddSingleton<IExactTokenService, ExactTokenService>();
         
         try
         {

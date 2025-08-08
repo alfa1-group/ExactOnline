@@ -1,6 +1,6 @@
-﻿using ExactOnline.Api.Client.Authentication.Interfaces;
+﻿using Duende.IdentityModel.Client;
+using ExactOnline.Api.Client.Authentication.Interfaces;
 using ExactOnline.Api.Client.Authentication.Options;
-using IdentityModel.Client;
 using Microsoft.Extensions.Options;
 
 namespace ExactOnline.Api.Client.Authentication.Implementations;

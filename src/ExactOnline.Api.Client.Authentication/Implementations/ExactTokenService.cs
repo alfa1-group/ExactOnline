@@ -1,5 +1,5 @@
-﻿using ExactOnline.Api.Client.Authentication.Interfaces;
-using IdentityModel.Client;
+﻿using Duende.IdentityModel.Client;
+using ExactOnline.Api.Client.Authentication.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
