@@ -29,6 +29,10 @@ var division = me.CurrentDivision!.Value;
 Console.WriteLine($"{division} {me.Email}");
 
 var subscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync();
+if (!subscriptions.AsResults().Any())
+{
+    Console.WriteLine("No WebhookSubscriptions found.");
+}
 foreach (var subscription in subscriptions.AsResults())
 {
     Console.WriteLine($"Subscription ID: {subscription.ID}, Webhook URL: {subscription.CallbackURL}");

@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndD
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CostTypesByProjectAndDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/CostTypesByProjectAndDate?checkDate={checkDate}&projectId={projectId}{&%24filter*,%24select*}", pathParameters)
+        public CostTypesByProjectAndDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/CostTypesByProjectAndDate?checkDate={checkDate}&projectId={projectId}{&%24filter*,%24orderby*,%24select*,%24skip*,%24top*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndD
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CostTypesByProjectAndDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/CostTypesByProjectAndDate?checkDate={checkDate}&projectId={projectId}{&%24filter*,%24select*}", rawUrl)
+        public CostTypesByProjectAndDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/CostTypesByProjectAndDate?checkDate={checkDate}&projectId={projectId}{&%24filter*,%24orderby*,%24select*,%24skip*,%24top*}", rawUrl)
         {
         }
         /// <summary>
@@ -105,6 +105,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndD
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
+            /// <summary>Order by field, e.g., `ID desc`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24orderby")]
+            public string? Orderby { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24orderby")]
+            public string Orderby { get; set; }
+#endif
             /// <summary>Query parameter of type Edm.Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,6 +135,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndD
             [QueryParameter("%24select")]
             public string Select { get; set; }
 #endif
+            /// <summary>Number of records to skip, e.g., `10`</summary>
+            [QueryParameter("%24skip")]
+            public int? Skip { get; set; }
+            /// <summary>Number of records to return, e.g., `100`</summary>
+            [QueryParameter("%24top")]
+            public int? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -5,7 +5,7 @@ namespace ExactOnline.OpenApiGenerator.HtmlDocumentLoaders;
 
 internal class PuppeteerHtmlDocumentLoader : IHtmlDocumentLoader
 {
-    private readonly Lazy<Task<IBrowser>> _browserAsLazy = new Lazy<Task<IBrowser>>(async () =>
+    private readonly Lazy<Task<IBrowser>> _browserAsLazy = new(async () =>
     {
         var browserFetcher = new BrowserFetcher();
         await browserFetcher.DownloadAsync();
@@ -26,5 +26,10 @@ internal class PuppeteerHtmlDocumentLoader : IHtmlDocumentLoader
         doc.LoadHtml(content);
 
         return doc;
+    }
+
+    public void Dispose()
+    {
+        // TODO release managed resources here
     }
 }

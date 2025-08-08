@@ -270,71 +270,7 @@ internal class EndpointCrawler
                     operation.Parameters.Add(queryParameter);
                 }
 
-                if (operation.Parameters.All(p => p.Name != "$filter"))
-                {
-                    operation.Parameters.Add(new OpenApiParameter
-                    {
-                        Name = "$filter",
-                        In = ParameterLocation.Query,
-                        Required = false,
-                        Schema = new OpenApiSchema
-                        {
-                            Type = JsonSchemaType.String
-                        },
-                        Description = "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`"
-                    });
-                }
-
-                if (operation.Parameters.All(p => p.Name != "$select"))
-                {
-                    operation.Parameters.Add(new OpenApiParameter
-                    {
-                        Name = "$select",
-                        In = ParameterLocation.Query,
-                        Required = false,
-                        Schema = new OpenApiSchema
-                        {
-                            Type = JsonSchemaType.String
-                        },
-                        Description = "Comma-separated list of fields to return, e.g., `ID`"
-                    });
-                }
-
-                //pathAndUriParams.Add(new JsonObject
-                //{
-                //    { "name", "$top" },
-                //    { "in", "query" },
-                //    { "required", false },
-                //    { "schema", new JsonObject { { "type", "integer" } } },
-                //    { "description", "Number of records to return, e.g., `100`" }
-                //});
-
-                //pathAndUriParams.Add(new JsonObject
-                //{
-                //    { "name", "$skip" },
-                //    { "in", "query" },
-                //    { "required", false },
-                //    { "schema", new JsonObject { { "type", "integer" } } },
-                //    { "description", "Number of records to skip, e.g., `0`" }
-                //});
-
-                //pathAndUriParams.Add(new JsonObject
-                //{
-                //    { "name", "$orderby" },
-                //    { "in", "query" },
-                //    { "required", false },
-                //    { "schema", new JsonObject { { "type", "string" } } },
-                //    { "description", "Order by field, e.g., `ID desc`" }
-                //});
-
-                //pathAndUriParams.Add(new JsonObject
-                //{
-                //    { "name", "$expand" },
-                //    { "in", "query" },
-                //    { "required", false },
-                //    { "schema", new JsonObject { { "type", "string" } } },
-                //    { "description", "Expand related entities, e.g., `Account`" }
-                //});
+                AddODataQueryParameters(operation.Parameters);
             }
 
             if (method == HttpMethod.Put || method == HttpMethod.Delete)
@@ -413,6 +349,84 @@ internal class EndpointCrawler
                 };
                 openApiDoc.Paths.Add(endpointUri, pathItem);
             }
+        }
+    }
+
+    private static void AddODataQueryParameters(IList<IOpenApiParameter> parameters)
+    {
+        if (parameters.All(p => p.Name != "$filter"))
+        {
+            parameters.Add(new OpenApiParameter
+            {
+                Name = "$filter",
+                In = ParameterLocation.Query,
+                Required = false,
+                Schema = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.String
+                },
+                Description = "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`"
+            });
+        }
+
+        if (parameters.All(p => p.Name != "$select"))
+        {
+            parameters.Add(new OpenApiParameter
+            {
+                Name = "$select",
+                In = ParameterLocation.Query,
+                Required = false,
+                Schema = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.String
+                },
+                Description = "Comma-separated list of fields to return, e.g., `ID`"
+            });
+        }
+
+        if (parameters.All(p => p.Name != "$top"))
+        {
+            parameters.Add(new OpenApiParameter
+            {
+                Name = "$top",
+                In = ParameterLocation.Query,
+                Required = false,
+                Schema = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.Integer
+                },
+                Description = "Number of records to return, e.g., `100`"
+            });
+        }
+
+        if (parameters.All(p => p.Name != "$skip"))
+        {
+            parameters.Add(new OpenApiParameter
+            {
+                Name = "$skip",
+                In = ParameterLocation.Query,
+                Required = false,
+                Schema = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.Integer
+                },
+                Description = "Number of records to skip, e.g., `10`"
+            });
+        }
+
+        if (parameters.All(p => p.Name != "$orderby"))
+        {
+            parameters.Add(new OpenApiParameter
+            {
+                Name = "$orderby",
+                In = ParameterLocation.Query,
+                Required = false,
+                Schema = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.String
+                },
+                Description = "Order by field, e.g., `ID desc`"
+            });
         }
     }
 
