@@ -34,8 +34,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Inte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Authentication", "src\ExactOnline.Api.Client.Authentication\ExactOnline.Api.Client.Authentication.csproj", "{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.ODataClient", "src\ExactOnline.ODataClient\ExactOnline.Api.ODataClient.csproj", "{11ED2F59-787D-CCFF-6EE5-8B248BA62668}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Authentication.Kiota", "src\ExactOnline.Api.Client.Authentication.Kiota\ExactOnline.Api.Client.Authentication.Kiota.csproj", "{98F2A25F-3868-D8DF-3866-D0F1027DCFEC}"
 EndProject
 Global
@@ -64,10 +62,6 @@ Global
 		{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11ED2F59-787D-CCFF-6EE5-8B248BA62668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11ED2F59-787D-CCFF-6EE5-8B248BA62668}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11ED2F59-787D-CCFF-6EE5-8B248BA62668}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11ED2F59-787D-CCFF-6EE5-8B248BA62668}.Release|Any CPU.Build.0 = Release|Any CPU
 		{98F2A25F-3868-D8DF-3866-D0F1027DCFEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{98F2A25F-3868-D8DF-3866-D0F1027DCFEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98F2A25F-3868-D8DF-3866-D0F1027DCFEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -82,7 +76,6 @@ Global
 		{6593AF44-A596-CCF5-3363-0C2E74DFEE34} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{2B29DB37-3B87-7616-4D0E-1C66958B5214} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
-		{11ED2F59-787D-CCFF-6EE5-8B248BA62668} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{98F2A25F-3868-D8DF-3866-D0F1027DCFEC} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

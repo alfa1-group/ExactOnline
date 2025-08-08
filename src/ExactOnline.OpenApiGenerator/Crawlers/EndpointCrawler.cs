@@ -250,14 +250,15 @@ internal class EndpointCrawler
             var matches = EndpointUriRegex.Matches(baseEndpointUri);
             foreach (Match match in matches)
             {
+                var name = match.Groups[1].Value;
                 operation.Parameters.Add(new OpenApiParameter
                 {
-                    Name = match.Groups[1].Value,
+                    Name = name,
                     In = ParameterLocation.Path,
                     Required = true,
                     Schema = new OpenApiSchema
                     {
-                        Type = JsonSchemaType.String
+                        Type = name == "division" ? JsonSchemaType.Integer : JsonSchemaType.String
                     }
                 });
             }
