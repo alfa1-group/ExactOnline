@@ -1,6 +1,7 @@
 ﻿using ConsoleApp;
 using ExactOnline.Api.Client;
 using ExactOnline.Api.Client.Authentication.Interfaces;
+using ExactOnline.Api.Client.Builders;
 using ExactOnline.Api.Client.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,12 +20,12 @@ var host = builder.Build();
 using var scope = host.Services.CreateScope();
 var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>();
 
-var x1 = Utils.Select<SystemSystemMe>(s => s.UserID, s => s.CurrentDivision, s => s.Email);
-var x2 = Utils.Select<SystemSystemMe>(s => new { s.UserID, s.CurrentDivision, s.Email });
+var x1 = SelectBuilder.Build<SystemSystemMe>(s => s.UserID, s => s.CurrentDivision, s => s.Email);
+var x2 = SelectBuilder.Build<SystemSystemMe>(s => new { s.UserID, s.CurrentDivision, s.Email });
 
 var me = await client.Api.V1.Current.Me.GetAsync(a =>
 {
-    a.QueryParameters.Select = Utils.Select<SystemSystemMe>(s => s.UserID, s => s.CurrentDivision, s => s.Email);
+    a.QueryParameters.Select = SelectBuilder.Build<SystemSystemMe>(s => s.UserID, s => s.CurrentDivision, s => s.Email);
 }).AsItem();
 var division = me!.CurrentDivision!.Value;
 Console.WriteLine($"{division} {me.Email}");
@@ -39,7 +40,7 @@ var webhookSubscriptions = await client.Api.V1[division].Webhooks.WebhookSubscri
 {
     w.QueryParameters.Top = 100;
     w.QueryParameters.Orderby = $"{nameof(WebhooksWebhookSubscriptions.ID)} desc";
-    w.QueryParameters.Select = Utils.Select<WebhooksWebhookSubscriptions>(t => new { t.UserID, t.CallbackURL, t.Description });
+    w.QueryParameters.Select = SelectBuilder.Build<WebhooksWebhookSubscriptions>(t => new { t.UserID, t.CallbackURL, t.Description });
 })
 .AsItems();
 if (!webhookSubscriptions.Any())
