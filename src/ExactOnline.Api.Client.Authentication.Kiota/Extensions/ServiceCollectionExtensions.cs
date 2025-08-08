@@ -8,11 +8,11 @@ using Microsoft.Extensions.Options;
 namespace Microsoft.Extensions.DependencyInjection;
 
 /// <summary>
-/// Extension methods for setting up Exact Online services in an <see cref="IServiceCollection" />.
+/// Setup Dependency Injection for the <see cref="ExactOnlineServiceClient"/>.
 /// </summary>
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddExactOnlineKiotaAuthenticated(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddExactOnlineKiotaAuthentication(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddExactOnlineAuthentication(configuration);
         services.AddSingleton<ExactOnlineAuthenticationProvider>();

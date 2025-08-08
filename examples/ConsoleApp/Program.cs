@@ -11,7 +11,7 @@ var builder = Host.CreateDefaultBuilder(args)
         services
             .AddLogging()
             .AddSingleton<IExactRefreshTokenStorageService, ExactRefreshTokenFileStorageService>()
-            .AddExactOnlineKiotaAuthenticated(context.Configuration);
+            .AddExactOnlineKiotaAuthentication(context.Configuration);
     });
 
 var host = builder.Build();
