@@ -10,7 +10,7 @@ kiota generate `
     --namespace-name "ExactOnline.Api.Client" `
     --class-name "ExactOnlineServiceClient" `
 
-Write-Output "✅ C# client code generated"
+Write-Output "⚙️ C# client code generated"
 
 # Generate response classes for all model files
 $modelsPath = "./src/ExactOnline.Api.Client/Generated/Models"
@@ -48,7 +48,7 @@ foreach ($file in $modelFiles) {
         
         if ($sourceResponseContent -match "/// A collection of") {
             # $methodsContent = "    public static List<${className}> AsResults(this ${responseClassName}? response) => response?.D?.Results ?? [];"
-            $methodsContent = "    public static async Task<List<${className}>> AsResults(this Task<${responseClassName}?> task) => (await task)?.D?.Results ?? [];"
+            $methodsContent = "    public static async Task<List<${className}>> AsItems(this Task<${responseClassName}?> task) => (await task)?.D?.Results ?? [];"
         } else {
             # $methodsContent = "    public static ${className}? AsItem(this ${responseClassName}? response) => response?.D?.Results?.FirstOrDefault();"
             $methodsContent = "    public static async Task<${className}?> AsItem(this Task<${responseClassName}?> task) => (await task)?.D?.Results?.FirstOrDefault();"

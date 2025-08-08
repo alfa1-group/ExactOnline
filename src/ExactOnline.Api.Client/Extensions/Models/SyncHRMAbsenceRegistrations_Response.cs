@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncHRMAbsenceRegistrations_ResponseExtensions
 {
-    public static async Task<List<SyncHRMAbsenceRegistrations>> AsResults(this Task<SyncHRMAbsenceRegistrations_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<SyncHRMAbsenceRegistrations>> AsItems(this Task<SyncHRMAbsenceRegistrations_Response?> task) => (await task)?.D?.Results ?? [];
 }

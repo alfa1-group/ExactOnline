@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class BudgetBudgets_ResponseExtensions
 {
-    public static async Task<List<BudgetBudgets>> AsResults(this Task<BudgetBudgets_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<BudgetBudgets>> AsItems(this Task<BudgetBudgets_Response?> task) => (await task)?.D?.Results ?? [];
 }

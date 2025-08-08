@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncCRMAccounts_ResponseExtensions
 {
-    public static async Task<List<SyncCRMAccounts>> AsResults(this Task<SyncCRMAccounts_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<SyncCRMAccounts>> AsItems(this Task<SyncCRMAccounts_Response?> task) => (await task)?.D?.Results ?? [];
 }

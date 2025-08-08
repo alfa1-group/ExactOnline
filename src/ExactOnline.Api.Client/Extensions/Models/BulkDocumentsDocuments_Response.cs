@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class BulkDocumentsDocuments_ResponseExtensions
 {
-    public static async Task<List<BulkDocumentsDocuments>> AsResults(this Task<BulkDocumentsDocuments_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<BulkDocumentsDocuments>> AsItems(this Task<BulkDocumentsDocuments_Response?> task) => (await task)?.D?.Results ?? [];
 }

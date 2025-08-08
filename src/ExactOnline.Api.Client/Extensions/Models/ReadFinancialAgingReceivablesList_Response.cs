@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadFinancialAgingReceivablesList_ResponseExtensions
 {
-    public static async Task<List<ReadFinancialAgingReceivablesList>> AsResults(this Task<ReadFinancialAgingReceivablesList_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<ReadFinancialAgingReceivablesList>> AsItems(this Task<ReadFinancialAgingReceivablesList_Response?> task) => (await task)?.D?.Results ?? [];
 }

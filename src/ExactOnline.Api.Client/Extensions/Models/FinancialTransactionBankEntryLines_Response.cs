@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class FinancialTransactionBankEntryLines_ResponseExtensions
 {
-    public static async Task<List<FinancialTransactionBankEntryLines>> AsResults(this Task<FinancialTransactionBankEntryLines_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<FinancialTransactionBankEntryLines>> AsItems(this Task<FinancialTransactionBankEntryLines_Response?> task) => (await task)?.D?.Results ?? [];
 }

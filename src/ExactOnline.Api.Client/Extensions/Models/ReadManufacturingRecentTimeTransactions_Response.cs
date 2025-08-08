@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadManufacturingRecentTimeTransactions_ResponseExtensions
 {
-    public static async Task<List<ReadManufacturingRecentTimeTransactions>> AsResults(this Task<ReadManufacturingRecentTimeTransactions_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<ReadManufacturingRecentTimeTransactions>> AsItems(this Task<ReadManufacturingRecentTimeTransactions_Response?> task) => (await task)?.D?.Results ?? [];
 }

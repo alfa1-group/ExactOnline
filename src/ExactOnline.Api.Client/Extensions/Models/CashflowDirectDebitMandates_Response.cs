@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class CashflowDirectDebitMandates_ResponseExtensions
 {
-    public static async Task<List<CashflowDirectDebitMandates>> AsResults(this Task<CashflowDirectDebitMandates_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<CashflowDirectDebitMandates>> AsItems(this Task<CashflowDirectDebitMandates_Response?> task) => (await task)?.D?.Results ?? [];
 }

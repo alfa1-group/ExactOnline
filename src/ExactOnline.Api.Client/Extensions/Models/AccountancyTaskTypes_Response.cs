@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class AccountancyTaskTypes_ResponseExtensions
 {
-    public static async Task<List<AccountancyTaskTypes>> AsResults(this Task<AccountancyTaskTypes_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<AccountancyTaskTypes>> AsItems(this Task<AccountancyTaskTypes_Response?> task) => (await task)?.D?.Results ?? [];
 }

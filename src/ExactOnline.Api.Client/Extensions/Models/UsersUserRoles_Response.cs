@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class UsersUserRoles_ResponseExtensions
 {
-    public static async Task<List<UsersUserRoles>> AsResults(this Task<UsersUserRoles_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<UsersUserRoles>> AsItems(this Task<UsersUserRoles_Response?> task) => (await task)?.D?.Results ?? [];
 }

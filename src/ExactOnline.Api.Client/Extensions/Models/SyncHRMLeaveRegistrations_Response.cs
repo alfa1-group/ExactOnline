@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncHRMLeaveRegistrations_ResponseExtensions
 {
-    public static async Task<List<SyncHRMLeaveRegistrations>> AsResults(this Task<SyncHRMLeaveRegistrations_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<SyncHRMLeaveRegistrations>> AsItems(this Task<SyncHRMLeaveRegistrations_Response?> task) => (await task)?.D?.Results ?? [];
 }

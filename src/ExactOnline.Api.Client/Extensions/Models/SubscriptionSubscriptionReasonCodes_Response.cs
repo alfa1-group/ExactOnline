@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SubscriptionSubscriptionReasonCodes_ResponseExtensions
 {
-    public static async Task<List<SubscriptionSubscriptionReasonCodes>> AsResults(this Task<SubscriptionSubscriptionReasonCodes_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<SubscriptionSubscriptionReasonCodes>> AsItems(this Task<SubscriptionSubscriptionReasonCodes_Response?> task) => (await task)?.D?.Results ?? [];
 }

@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class CustomFieldCustomFields_ResponseExtensions
 {
-    public static async Task<List<CustomFieldCustomFields>> AsResults(this Task<CustomFieldCustomFields_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<CustomFieldCustomFields>> AsItems(this Task<CustomFieldCustomFields_Response?> task) => (await task)?.D?.Results ?? [];
 }

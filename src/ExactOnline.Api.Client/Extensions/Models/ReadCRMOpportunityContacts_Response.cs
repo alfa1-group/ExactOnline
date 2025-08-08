@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadCRMOpportunityContacts_ResponseExtensions
 {
-    public static async Task<List<ReadCRMOpportunityContacts>> AsResults(this Task<ReadCRMOpportunityContacts_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<ReadCRMOpportunityContacts>> AsItems(this Task<ReadCRMOpportunityContacts_Response?> task) => (await task)?.D?.Results ?? [];
 }

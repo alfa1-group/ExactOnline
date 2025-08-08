@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class MailboxMailMessageAttachments_ResponseExtensions
 {
-    public static async Task<List<MailboxMailMessageAttachments>> AsResults(this Task<MailboxMailMessageAttachments_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<MailboxMailMessageAttachments>> AsItems(this Task<MailboxMailMessageAttachments_Response?> task) => (await task)?.D?.Results ?? [];
 }

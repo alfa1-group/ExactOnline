@@ -22,7 +22,7 @@ var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>(
 
 var me = await client.Api.V1.Current.Me.GetAsync(a =>
 {
-    // a.QueryParameters.Select = "ID,Email,FirstName,LastName";
+    a.QueryParameters.Select = "ID,Email,CurrentDivision";
 }).AsItem();
 var division = me!.CurrentDivision!.Value;
 Console.WriteLine($"{division} {me.Email}");
@@ -33,7 +33,7 @@ await Task.Delay(TimeSpan.FromSeconds(3));
 var me2 = await client.Api.V1.Current.Me.GetAsync().AsItem();
 Console.WriteLine($"After waiting: {me2?.Email}");
 
-var subscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync().AsResults();
+var subscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync().AsItems();
 if (!subscriptions.Any())
 {
     Console.WriteLine("No WebhookSubscriptions found.");
@@ -43,7 +43,7 @@ foreach (var subscription in subscriptions)
     Console.WriteLine($"Subscription ID: {subscription.ID}, CallbackURL: {subscription.CallbackURL}");
 }
 
-Console.WriteLine("{0} Waiting for 11 minutes to check token refresh", DateTime.Now);
-await Task.Delay(TimeSpan.FromMinutes(11));
+Console.WriteLine("{0} Waiting for 10 minutes to check token refresh", DateTime.Now);
+await Task.Delay(TimeSpan.FromMinutes(10));
 var me3 = await client.Api.V1.Current.Me.GetAsync().AsItem();
 Console.WriteLine($"After waiting: {me3?.Email}");

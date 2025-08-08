@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadCRMDocumentsAttachments_ResponseExtensions
 {
-    public static async Task<List<ReadCRMDocumentsAttachments>> AsResults(this Task<ReadCRMDocumentsAttachments_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<ReadCRMDocumentsAttachments>> AsItems(this Task<ReadCRMDocumentsAttachments_Response?> task) => (await task)?.D?.Results ?? [];
 }

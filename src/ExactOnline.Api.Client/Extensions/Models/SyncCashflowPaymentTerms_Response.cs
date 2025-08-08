@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncCashflowPaymentTerms_ResponseExtensions
 {
-    public static async Task<List<SyncCashflowPaymentTerms>> AsResults(this Task<SyncCashflowPaymentTerms_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<SyncCashflowPaymentTerms>> AsItems(this Task<SyncCashflowPaymentTerms_Response?> task) => (await task)?.D?.Results ?? [];
 }

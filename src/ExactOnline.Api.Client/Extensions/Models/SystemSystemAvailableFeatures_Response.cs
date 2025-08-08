@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SystemSystemAvailableFeatures_ResponseExtensions
 {
-    public static async Task<List<SystemSystemAvailableFeatures>> AsResults(this Task<SystemSystemAvailableFeatures_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<SystemSystemAvailableFeatures>> AsItems(this Task<SystemSystemAvailableFeatures_Response?> task) => (await task)?.D?.Results ?? [];
 }

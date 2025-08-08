@@ -4,5 +4,5 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class WebhooksWebhookSubscriptions_ResponseExtensions
 {
-    public static async Task<List<WebhooksWebhookSubscriptions>> AsResults(this Task<WebhooksWebhookSubscriptions_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<WebhooksWebhookSubscriptions>> AsItems(this Task<WebhooksWebhookSubscriptions_Response?> task) => (await task)?.D?.Results ?? [];
 }
