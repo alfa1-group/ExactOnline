@@ -55,9 +55,9 @@ internal class EndpointCrawler
         };
     }
 
-    internal async Task<OpenApiDocument> CrawlAsync(Action<string> onEndpointCrawling, CancellationToken cancellationToken = default)
+    internal async Task<OpenApiDocument> CrawlAsync(Action<string> onEndpointCrawling, CancellationToken cancellationToken)
     {
-        var htmlLoader = new PuppeteerHtmlDocumentLoader();
+        await using var htmlLoader = new PuppeteerHtmlDocumentLoader();
 
         foreach (var url in _urls)
         {
@@ -384,50 +384,50 @@ internal class EndpointCrawler
             });
         }
 
-        if (parameters.All(p => p.Name != "$top"))
-        {
-            parameters.Add(new OpenApiParameter
-            {
-                Name = "$top",
-                In = ParameterLocation.Query,
-                Required = false,
-                Schema = new OpenApiSchema
-                {
-                    Type = JsonSchemaType.Integer
-                },
-                Description = "Number of records to return, e.g., `100`"
-            });
-        }
+        //if (parameters.All(p => p.Name != "$top"))
+        //{
+        //    parameters.Add(new OpenApiParameter
+        //    {
+        //        Name = "$top",
+        //        In = ParameterLocation.Query,
+        //        Required = false,
+        //        Schema = new OpenApiSchema
+        //        {
+        //            Type = JsonSchemaType.Integer
+        //        },
+        //        Description = "Number of records to return, e.g., `100`"
+        //    });
+        //}
 
-        if (parameters.All(p => p.Name != "$skip"))
-        {
-            parameters.Add(new OpenApiParameter
-            {
-                Name = "$skip",
-                In = ParameterLocation.Query,
-                Required = false,
-                Schema = new OpenApiSchema
-                {
-                    Type = JsonSchemaType.Integer
-                },
-                Description = "Number of records to skip, e.g., `10`"
-            });
-        }
+        //if (parameters.All(p => p.Name != "$skip"))
+        //{
+        //    parameters.Add(new OpenApiParameter
+        //    {
+        //        Name = "$skip",
+        //        In = ParameterLocation.Query,
+        //        Required = false,
+        //        Schema = new OpenApiSchema
+        //        {
+        //            Type = JsonSchemaType.Integer
+        //        },
+        //        Description = "Number of records to skip, e.g., `10`"
+        //    });
+        //}
 
-        if (parameters.All(p => p.Name != "$orderby"))
-        {
-            parameters.Add(new OpenApiParameter
-            {
-                Name = "$orderby",
-                In = ParameterLocation.Query,
-                Required = false,
-                Schema = new OpenApiSchema
-                {
-                    Type = JsonSchemaType.String
-                },
-                Description = "Order by field, e.g., `ID desc`"
-            });
-        }
+        //if (parameters.All(p => p.Name != "$orderby"))
+        //{
+        //    parameters.Add(new OpenApiParameter
+        //    {
+        //        Name = "$orderby",
+        //        In = ParameterLocation.Query,
+        //        Required = false,
+        //        Schema = new OpenApiSchema
+        //        {
+        //            Type = JsonSchemaType.String
+        //        },
+        //        Description = "Order by field, e.g., `ID desc`"
+        //    });
+        //}
     }
 
     private static bool IsCollection(string schemaName, string endpointDescription)

@@ -28,8 +28,11 @@ internal class PuppeteerHtmlDocumentLoader : IHtmlDocumentLoader
         return doc;
     }
 
-    public void Dispose()
+    public async ValueTask DisposeAsync()
     {
-        // TODO release managed resources here
+        var browser = await _browserAsLazy.Value;
+
+        await browser.CloseAsync();
+        await browser.DisposeAsync();
     }
 }

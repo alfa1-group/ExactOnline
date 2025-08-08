@@ -2,7 +2,7 @@
 
 namespace ExactOnline.OpenApiGenerator.HtmlDocumentLoaders;
 
-internal interface IHtmlDocumentLoader : IDisposable
+internal interface IHtmlDocumentLoader : IAsyncDisposable
 {
     Task<HtmlDocument> LoadAsync(string url, CancellationToken cancellationToken);
 }

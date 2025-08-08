@@ -10,7 +10,7 @@ public class OpenApiBuilderService
     private const string DetailsPage = "https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx";
     private readonly int _detailsPageStringLength = DetailsPage.Length + 6;
 
-    public async Task<int> InvokeAsync(string[] args)
+    public async Task<int> InvokeAsync(string[] args, CancellationToken cancellationToken)
     {
         var destination = "exactonline-openapi.json";
         for (int i = 0; i < args.Length; i++)
@@ -41,7 +41,13 @@ public class OpenApiBuilderService
             openApiDoc = await crawler.CrawlAsync(endpoint =>
             {
                 progressBar.Tick($"Processing {endpoint.Substring(_detailsPageStringLength)}");
-            });
+            }, cancellationToken);
+        }
+
+        if (cancellationToken.IsCancellationRequested)
+        {
+            Console.WriteLine("Operation cancelled by user.");
+            return 1;
         }
 
         await using var outputStream = File.CreateText(destination);
