@@ -32,7 +32,7 @@ internal class ExactTokenService(
             }
         }
 
-        // If expired, refresh the AccessToken and fetch the token from storage.
+        // If expired or not present, refresh the AccessToken by contacting the authentication server using the refresh token from storage.
         return await RefreshTokenAsync(cancellationToken);
     }
 
