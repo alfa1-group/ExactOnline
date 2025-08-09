@@ -28,14 +28,10 @@ public static class ServiceCollectionExtensions
     {
         services.AddSingleton<IExactTokenClient, ExactTokenClient>();
         services.AddSingleton<IExactTokenService, ExactTokenService>();
-        
-        try
+
+        if (services.All(s => s.ServiceType != typeof(IExactRefreshTokenStorageService)))
         {
-            _ = services.BuildServiceProvider().GetRequiredService<IExactRefreshTokenStorageService>();
-        }
-        catch (Exception ex)
-        {
-            throw new InvalidOperationException($"An implementation for {nameof(IExactRefreshTokenStorageService)} is required. Please register it in the service collection.", ex);
+            throw new InvalidOperationException($"An implementation for {nameof(IExactRefreshTokenStorageService)} is required. Please register it in the service collection.");
         }
 
         return services;
