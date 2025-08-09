@@ -1,7 +1,8 @@
 ﻿using ConsoleApp;
 using ExactOnline.Api.Client;
 using ExactOnline.Api.Client.Authentication.Interfaces;
-using ExactOnline.Api.Client.Builders;
+using ExactOnline.Api.Client.Builders.OrderBy;
+using ExactOnline.Api.Client.Builders.Select;
 using ExactOnline.Api.Client.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,8 +21,8 @@ var host = builder.Build();
 using var scope = host.Services.CreateScope();
 var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>();
 
-var x1 = SelectBuilder<SystemSystemMe>.Build(s => s.UserID, s => s.CurrentDivision, s => s.Email);
-var x2 = SelectBuilder<SystemSystemMe>.Build(s => new { s.UserID, s.CurrentDivision, s.Email });
+var s1 = SelectBuilder<SystemSystemMe>.Build(s => s.UserID, s => s.CurrentDivision, s => s.Email);
+var s2 = SelectBuilder<SystemSystemMe>.Build(s => new { s.UserID, s.CurrentDivision, s.Email });
 var orderBy = OrderByBuilder<WebhooksWebhookSubscriptions>
     .OrderBy(w => w.ID)
     .ThenByDescending(w => w.CallbackURL)

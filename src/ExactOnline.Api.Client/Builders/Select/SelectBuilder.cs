@@ -1,6 +1,6 @@
 using System.Linq.Expressions;
 
-namespace ExactOnline.Api.Client.Builders;
+namespace ExactOnline.Api.Client.Builders.Select;
 
 public static class SelectBuilder<T>
 {
@@ -67,7 +67,7 @@ public static class SelectBuilder<T>
         return string.Join(", ", propertyNames);
     }
 
-    private static string GetPropertyName<T>(Expression<Func<T, object?>> expression)
+    internal static string GetPropertyName(Expression<Func<T, object?>> expression)
     {
         return expression.Body switch
         {
