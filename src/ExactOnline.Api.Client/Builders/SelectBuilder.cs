@@ -2,7 +2,7 @@ using System.Linq.Expressions;
 
 namespace ExactOnline.Api.Client.Builders;
 
-public static class SelectBuilder
+public static class SelectBuilder<T>
 {
     /// <summary>
     /// Creates a CSV string of property names from the provided lambda expressions.
@@ -10,7 +10,7 @@ public static class SelectBuilder
     /// <typeparam name="T">The type to extract property names from</typeparam>
     /// <param name="expressions">Lambda expressions pointing to properties</param>
     /// <returns>A comma-separated string of property names</returns>
-    public static string Build<T>(params Expression<Func<T, object?>>[] expressions)
+    public static string Build(params Expression<Func<T, object?>>[] expressions)
     {
         if (expressions.Length == 0)
         {
@@ -37,7 +37,7 @@ public static class SelectBuilder
     /// <typeparam name="T">The source type</typeparam>
     /// <param name="expression">Lambda expression that returns an anonymous object with the desired properties</param>
     /// <returns>A comma-separated string of property names</returns>
-    public static string Build<T>(Expression<Func<T, object>> expression)
+    public static string Build(Expression<Func<T, object>> expression)
     {
         return expression.Body switch
         {

@@ -20,14 +20,18 @@ var host = builder.Build();
 using var scope = host.Services.CreateScope();
 var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>();
 
-var x1 = SelectBuilder.Build<SystemSystemMe>(s => s.UserID, s => s.CurrentDivision, s => s.Email);
-var x2 = SelectBuilder.Build<SystemSystemMe>(s => new { s.UserID, s.CurrentDivision, s.Email });
+var x1 = SelectBuilder<SystemSystemMe>.Build(s => s.UserID, s => s.CurrentDivision, s => s.Email);
+var x2 = SelectBuilder<SystemSystemMe>.Build(s => new { s.UserID, s.CurrentDivision, s.Email });
+var orderBy = OrderByBuilder<WebhooksWebhookSubscriptions>
+    .OrderBy(w => w.ID)
+    .ThenByDescending(w => w.CallbackURL)
+    .Build();
 
 var me = await RunAsync(async () =>
 {
     var me = await client.Api.V1.Current.Me.GetAsync(a =>
     {
-        a.QueryParameters.Select = SelectBuilder.Build<SystemSystemMe>(s => s.UserID, s => s.CurrentDivision, s => s.Email);
+        a.QueryParameters.Select = SelectBuilder<SystemSystemMe>.Build(s => s.UserID, s => s.CurrentDivision, s => s.Email);
     }).AsItem();
 
     Console.WriteLine($"{me!.CurrentDivision} {me!.Email}");
@@ -57,13 +61,12 @@ await RunAsync(async () =>
 {
 
     var webhookSubscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync(w =>
-        {
-            w.QueryParameters.Top = 100;
-            w.QueryParameters.Orderby = $"{nameof(WebhooksWebhookSubscriptions.ID)} desc";
-            w.QueryParameters.Select =
-                SelectBuilder.Build<WebhooksWebhookSubscriptions>(t => new { t.UserID, t.CallbackURL, t.Description });
-        })
-        .AsItems();
+    {
+        w.QueryParameters.Top = 100;
+        w.QueryParameters.Orderby = orderBy;
+        w.QueryParameters.Select = SelectBuilder<WebhooksWebhookSubscriptions>.Build(t => new { t.UserID, t.CallbackURL, t.Description });
+    })
+    .AsItems();
     if (!webhookSubscriptions.Any())
     {
         Console.WriteLine("No WebhookSubscriptions found.");
