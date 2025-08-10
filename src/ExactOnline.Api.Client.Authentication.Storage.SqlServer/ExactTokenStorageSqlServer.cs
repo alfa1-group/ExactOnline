@@ -14,8 +14,7 @@ internal class ExactTokenStorageSqlServer(
 {
     public async Task StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
     {
-        await using var dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken);
-        await dbContext.Database.EnsureCreatedAsync(cancellationToken);
+        var dbContext = await GetContextAsync(cancellationToken);
         dbContext.RefreshTokens.RemoveRange(dbContext.RefreshTokens);
         dbContext.RefreshTokens.Add(new ExactOnlineToken { RefreshToken = refreshToken, RefreshTokenUpdatedAt = TimeProvider.System.GetUtcNow() });
 
@@ -24,8 +23,7 @@ internal class ExactTokenStorageSqlServer(
 
     public async Task<string> RetrieveRefreshTokenAsync(CancellationToken cancellationToken = default)
     {
-        await using var dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken);
-        await dbContext.Database.EnsureCreatedAsync(cancellationToken);
+        var dbContext = await GetContextAsync(cancellationToken);
 
         var refreshToken = await dbContext.RefreshTokens.SingleOrDefaultAsync(cancellationToken);
         if (refreshToken == null)
@@ -41,5 +39,11 @@ internal class ExactTokenStorageSqlServer(
         }
 
         return refreshToken.RefreshToken;
+    }
+
+    private async Task<ExactOnlineTokenDbContext> GetContextAsync(CancellationToken cancellationToken)
+    {
+        await using var dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken);
+        await dbContext.Database.EnsureCreatedAsync(cancellationToken);
     }
 }
