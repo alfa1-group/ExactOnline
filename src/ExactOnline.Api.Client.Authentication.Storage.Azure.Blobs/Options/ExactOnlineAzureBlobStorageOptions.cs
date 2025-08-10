@@ -8,7 +8,7 @@ public class ExactOnlineAzureBlobStorageOptions
     public string ConnectionString { get; set; } = null!;
 
     [Required]
-    public string BlobContainerName { get; set; } = null!;
+    public string ContainerName { get; set; } = null!;
 
     [Required] 
     public string FilePath { get; set; } = "Exact/refreshtoken.txt";
