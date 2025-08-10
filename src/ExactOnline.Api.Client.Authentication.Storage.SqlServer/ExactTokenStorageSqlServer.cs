@@ -14,26 +14,26 @@ internal class ExactTokenStorageSqlServer(
 {
     public async Task StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
     {
-        dbContext.RefreshTokens.RemoveRange(dbContext.RefreshTokens);
-        dbContext.RefreshTokens.Add(new() { RefreshToken = refreshToken, RefreshTokenUpdatedAt = TimeProvider.System.GetUtcNow() });
+        var existingToken = await dbContext.RefreshTokens.SingleOrDefaultAsync(cancellationToken);
+        if (existingToken != null)
+        {
+            existingToken.RefreshToken = refreshToken;
+            existingToken.RefreshTokenUpdatedAt = TimeProvider.System.GetUtcNow();
+        }
+        else
+        {
+            dbContext.RefreshTokens.Add(new() { RefreshToken = refreshToken, RefreshTokenUpdatedAt = TimeProvider.System.GetUtcNow() });
+        }
 
         await dbContext.SaveChangesAsync(cancellationToken);
     }
 
     public async Task<string> RetrieveRefreshTokenAsync(CancellationToken cancellationToken = default)
     {
-        await dbContext.Database.EnsureCreatedAsync(cancellationToken);
-
         var refreshToken = await dbContext.RefreshTokens.SingleOrDefaultAsync(cancellationToken);
         if (refreshToken == null)
         {
             logger.LogInformation("RefreshToken entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
-            return string.Empty;
-        }
-
-        if (string.IsNullOrEmpty(refreshToken.RefreshToken))
-        {
-            logger.LogInformation("RefreshToken in table {Table} with column {Column} is null or empty. Returning empty string.", options.Value.TableName, options.Value.ColumnName);
             return string.Empty;
         }
 

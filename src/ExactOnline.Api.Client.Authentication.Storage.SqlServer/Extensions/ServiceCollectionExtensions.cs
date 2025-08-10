@@ -24,6 +24,15 @@ public static class ServiceCollectionExtensions
             options.UseSqlServer(storageOptions.ConnectionString);
         });
 
+        using (var serviceProvider = services.BuildServiceProvider())
+        {
+            using (var scope = serviceProvider.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<ExactOnlineTokenDbContext>();
+                dbContext.Database.EnsureCreated();
+            }
+        }
+
         return services.AddScoped<IExactTokenStorageService, ExactTokenStorageSqlServer>();
     }
 }
