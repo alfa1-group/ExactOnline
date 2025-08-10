@@ -6,18 +6,16 @@ using Microsoft.Extensions.Options;
 
 namespace ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs;
 
-internal class ExactTokenServiceAzureBlobs(
-    ILogger<ExactTokenServiceAzureBlobs> logger, 
-    IOptions<ExactOnlineAzureBlobStorageOptions> options) : IExactTokenStorageService
+internal class ExactTokenServiceAzureBlobs(ILogger<ExactTokenServiceAzureBlobs> logger, IOptions<ExactOnlineAzureBlobStorageOptions> options) : IExactTokenStorageService
 {
     public async Task<string> RetrieveRefreshTokenAsync(CancellationToken cancellationToken = default)
     {
         var container = await GetBlobContainerAsync(cancellationToken);
-        var blobClient = container.GetBlobClient(options.Value.FilePath);
+        var blobClient = container.GetBlobClient(options.Value.RefreshTokenFilePath);
 
         if (!await blobClient.ExistsAsync(cancellationToken))
         {
-            logger.LogInformation("RefreshToken blob does not exist in container {Container} at path: {FilePath}. Returning empty string value.", options.Value.ConnectionString, options.Value.FilePath);
+            logger.LogInformation("RefreshToken blob does not exist in container {Container} at path: {FilePath}. Returning empty string value.", options.Value.ConnectionString, options.Value.RefreshTokenFilePath);
             return string.Empty;
         }
 
@@ -28,7 +26,7 @@ internal class ExactTokenServiceAzureBlobs(
     public async Task StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
     {
         var container = await GetBlobContainerAsync(cancellationToken);
-        var blobClient = container.GetBlobClient(options.Value.FilePath);
+        var blobClient = container.GetBlobClient(options.Value.RefreshTokenFilePath);
 
         await blobClient.UploadAsync(BinaryData.FromString(refreshToken), overwrite: true, cancellationToken);
     }

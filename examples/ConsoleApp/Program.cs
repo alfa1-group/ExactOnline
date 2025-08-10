@@ -11,7 +11,6 @@ var builder = Host.CreateDefaultBuilder(args)
         services
             .AddLogging()
             .AddExactOnlineTokenStorageAzureBlobs(context.Configuration)
-            //.AddSingleton<IExactRefreshTokenStorageService, ExactRefreshTokenFileStorageService>()
             .AddExactOnlineKiotaAuthentication(context.Configuration);
     });
 
@@ -86,7 +85,7 @@ await RunAsync(async () =>
     Console.WriteLine("{0} Waiting for 10 minutes to check token refresh", DateTime.Now);
     await Task.Delay(TimeSpan.FromMinutes(10));
     var me3 = await client.Api.V1.Current.Me.GetAsync().AsItem();
-    Console.WriteLine($"After waiting: {me3?.Email}");
+    Console.WriteLine($"After waiting 10 minutes: {me3?.Email}");
     return true;
 });
 
