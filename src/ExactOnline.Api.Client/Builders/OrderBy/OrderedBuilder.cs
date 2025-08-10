@@ -1,5 +1,6 @@
 using System.Linq.Expressions;
 using System.Text;
+using ExactOnline.Api.Client.Builders.Select;
 
 namespace ExactOnline.Api.Client.Builders.OrderBy;
 
@@ -27,19 +28,9 @@ internal class OrderedBuilder<T> : IOrderedBuilder<T>
     private void AddOrderBy(Expression<Func<T, object?>> expression, string direction)
     {
         _builder.Append(", ");
-        var propertyName = GetPropertyName(expression);
+        var propertyName = SelectBuilder<T>.GetPropertyName(expression);
         _builder.Append($"{propertyName} {direction}");
     }
 
     public string Build() => _builder.ToString();
-
-    private static string GetPropertyName(Expression<Func<T, object?>> expression)
-    {
-        return expression.Body switch
-        {
-            MemberExpression memberExpression => memberExpression.Member.Name,
-            UnaryExpression { Operand: MemberExpression memberExpr } => memberExpr.Member.Name,
-            _ => throw new ArgumentException($"Expression must be a property access. Found {expression.Body.GetType().Name} instead. Example: x => x.PropertyName", nameof(expression))
-        };
-    }
 }
