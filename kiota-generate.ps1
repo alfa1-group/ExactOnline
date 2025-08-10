@@ -37,7 +37,7 @@ Write-Output "🔄 Generating response extension classes..."
 foreach ($file in $modelFiles) {
     $className = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
     $responseFileName = "${className}_Response.cs"
-    $responseFilePath = Join-Path $extensionsPath $responseFileName
+    $responseFilePath = Join-Path $extensionsPath "${className}_ResponseExtensions.cs"
     
     $sourceResponseModelPath = Join-Path $modelsPath $responseFileName
     $methodsContent = ""
