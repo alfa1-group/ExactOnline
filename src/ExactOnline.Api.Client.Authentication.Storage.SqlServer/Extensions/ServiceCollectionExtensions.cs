@@ -1,6 +1,6 @@
 ﻿using ExactOnline.Api.Client.Authentication.Abstractions;
-using ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs;
-using ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs.Options;
+using ExactOnline.Api.Client.Authentication.Storage.SqlServer;
+using ExactOnline.Api.Client.Authentication.Storage.SqlServer.Options;
 using Microsoft.Extensions.Configuration;
 
 // ReSharper disable once CheckNamespace
@@ -10,10 +10,11 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddExactOnlineTokenStorageAzureBlobs(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddOptions<ExactOnlineAzureBlobStorageOptions>()
-            .Bind(configuration.GetSection(nameof(ExactOnlineAzureBlobStorageOptions)))
+        services.AddOptions<ExactOnlineSqlServerStorageOptions>()
+            .Bind(configuration.GetSection(nameof(ExactOnlineSqlServerStorageOptions)))
             .ValidateDataAnnotations()
             .ValidateOnStart();
-        return services.AddSingleton<IExactTokenStorageService, ExactTokenServiceAzureBlobs>();
+
+        return services.AddSingleton<IExactTokenStorageService, ExactTokenStorageSqlServer>();
     }
 }
