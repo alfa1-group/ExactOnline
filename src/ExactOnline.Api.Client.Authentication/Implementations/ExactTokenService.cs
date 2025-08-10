@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Text.Json;
 using Duende.IdentityModel.Client;
+using ExactOnline.Api.Client.Authentication.Abstractions;
 using ExactOnline.Api.Client.Authentication.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
@@ -9,7 +10,7 @@ namespace ExactOnline.Api.Client.Authentication.Implementations;
 
 internal class ExactTokenService(
     ILogger<ExactTokenService> logger,
-    IExactRefreshTokenStorageService tokenStorageService,
+    IExactTokenStorageService tokenStorageService,
     IMemoryCache memoryCache,
     IExactTokenClient exactTokenClient) : IExactTokenService
 {
@@ -39,7 +40,7 @@ internal class ExactTokenService(
     public async Task<string> RefreshTokenAsync(CancellationToken cancellationToken = default)
     {
         // For refreshing the token we first need to fetch the current refresh token from storage
-        var refreshToken = await tokenStorageService.RetrieveAsync(cancellationToken);
+        var refreshToken = await tokenStorageService.RetrieveRefreshTokenAsync(cancellationToken);
 
         // The client will issue the refresh request and should get a fresh refresh token + access token in response
         var response = await RequestRefreshTokenWithRetryAndErrorHandlingAsync(refreshToken, cancellationToken);
@@ -47,7 +48,7 @@ internal class ExactTokenService(
         // Store the new refresh token back in storage as the previous one is now invalid.
         try
         {
-            await tokenStorageService.StoreAsync(response.RefreshToken!, cancellationToken);
+            await tokenStorageService.StoreRefreshTokenAsync(response.RefreshToken!, cancellationToken);
         }
         catch (Exception ex)
         {

@@ -1,4 +1,5 @@
-﻿using ExactOnline.Api.Client.Authentication.Implementations;
+﻿using ExactOnline.Api.Client.Authentication.Abstractions;
+using ExactOnline.Api.Client.Authentication.Implementations;
 using ExactOnline.Api.Client.Authentication.Interfaces;
 using ExactOnline.Api.Client.Authentication.Options;
 using Microsoft.Extensions.Configuration;
@@ -29,9 +30,9 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IExactTokenClient, ExactTokenClient>();
         services.AddSingleton<IExactTokenService, ExactTokenService>();
 
-        if (services.All(s => s.ServiceType != typeof(IExactRefreshTokenStorageService)))
+        if (services.All(s => s.ServiceType != typeof(IExactTokenStorageService)))
         {
-            throw new InvalidOperationException($"An implementation for {nameof(IExactRefreshTokenStorageService)} is required. Please register it in the service collection.");
+            throw new InvalidOperationException($"An implementation for {nameof(IExactTokenStorageService)} is required. Please register it in the service collection.");
         }
 
         return services;

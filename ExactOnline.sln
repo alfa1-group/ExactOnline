@@ -38,6 +38,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Auth
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Interfaces.Authentication.Kiota", "src\ExactOnline.Api.Client.Interfaces.Authentication.Kiota\ExactOnline.Api.Client.Interfaces.Authentication.Kiota.csproj", "{37EE6026-CA58-8BE9-A36F-8598A1B3916C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Authentication.Abstractions", "src\ExactOnline.Api.Client.Authentication.Abstractions\ExactOnline.Api.Client.Authentication.Abstractions.csproj", "{476D0FB7-3FDF-325D-0CF7-1110AA17B62E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs", "src\ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs\ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs.csproj", "{45AB7FA6-1807-D495-5B2F-54DEDB2939BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +76,14 @@ Global
 		{37EE6026-CA58-8BE9-A36F-8598A1B3916C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37EE6026-CA58-8BE9-A36F-8598A1B3916C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37EE6026-CA58-8BE9-A36F-8598A1B3916C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{476D0FB7-3FDF-325D-0CF7-1110AA17B62E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{476D0FB7-3FDF-325D-0CF7-1110AA17B62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{476D0FB7-3FDF-325D-0CF7-1110AA17B62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{476D0FB7-3FDF-325D-0CF7-1110AA17B62E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45AB7FA6-1807-D495-5B2F-54DEDB2939BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45AB7FA6-1807-D495-5B2F-54DEDB2939BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45AB7FA6-1807-D495-5B2F-54DEDB2939BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45AB7FA6-1807-D495-5B2F-54DEDB2939BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +96,8 @@ Global
 		{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{98F2A25F-3868-D8DF-3866-D0F1027DCFEC} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{37EE6026-CA58-8BE9-A36F-8598A1B3916C} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{476D0FB7-3FDF-325D-0CF7-1110AA17B62E} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{45AB7FA6-1807-D495-5B2F-54DEDB2939BA} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0828E0B1-F03B-47AB-B2E4-963753F033A3}
