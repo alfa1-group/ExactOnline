@@ -13,7 +13,7 @@ public class OpenApiBuilderService
     public async Task<int> InvokeAsync(string[] args, CancellationToken cancellationToken)
     {
         var destination = "exactonline-openapi.json";
-        for (int i = 0; i < args.Length; i++)
+        for (var i = 0; i < args.Length; i++)
         {
             if ((args[i] == "--destination" || args[i] == "-d") && i + 1 < args.Length)
             {
