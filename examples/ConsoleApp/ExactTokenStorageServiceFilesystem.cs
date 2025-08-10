@@ -2,7 +2,7 @@
 
 namespace ConsoleApp;
 
-internal class ExactRefreshTokenFileStorageService : IExactTokenStorageService
+internal class ExactTokenStorageServiceFilesystem : IExactTokenStorageService
 {
     private readonly string _filePath = Path.Combine("c:", "temp", "Exact", "refreshtoken.txt");
 
