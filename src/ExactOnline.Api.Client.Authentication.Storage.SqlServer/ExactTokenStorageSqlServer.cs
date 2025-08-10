@@ -10,20 +10,19 @@ namespace ExactOnline.Api.Client.Authentication.Storage.SqlServer;
 internal class ExactTokenStorageSqlServer(
     ILogger<ExactTokenStorageSqlServer> logger,
     IOptions<ExactOnlineSqlServerStorageOptions> options,
-    IDbContextFactory<ExactOnlineTokenDbContext> dbContextFactory) : IExactTokenStorageService
+    ExactOnlineTokenDbContext dbContext) : IExactTokenStorageService
 {
     public async Task StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
     {
-        var dbContext = await GetContextAsync(cancellationToken);
         dbContext.RefreshTokens.RemoveRange(dbContext.RefreshTokens);
-        dbContext.RefreshTokens.Add(new ExactOnlineToken { RefreshToken = refreshToken, RefreshTokenUpdatedAt = TimeProvider.System.GetUtcNow() });
+        dbContext.RefreshTokens.Add(new() { RefreshToken = refreshToken, RefreshTokenUpdatedAt = TimeProvider.System.GetUtcNow() });
 
         await dbContext.SaveChangesAsync(cancellationToken);
     }
 
     public async Task<string> RetrieveRefreshTokenAsync(CancellationToken cancellationToken = default)
     {
-        var dbContext = await GetContextAsync(cancellationToken);
+        await dbContext.Database.EnsureCreatedAsync(cancellationToken);
 
         var refreshToken = await dbContext.RefreshTokens.SingleOrDefaultAsync(cancellationToken);
         if (refreshToken == null)
@@ -39,11 +38,5 @@ internal class ExactTokenStorageSqlServer(
         }
 
         return refreshToken.RefreshToken;
-    }
-
-    private async Task<ExactOnlineTokenDbContext> GetContextAsync(CancellationToken cancellationToken)
-    {
-        await using var dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken);
-        await dbContext.Database.EnsureCreatedAsync(cancellationToken);
     }
 }

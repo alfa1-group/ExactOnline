@@ -24,6 +24,6 @@ public static class ServiceCollectionExtensions
             options.UseSqlServer(storageOptions.ConnectionString);
         });
 
-        return services.AddSingleton<IExactTokenStorageService, ExactTokenStorageSqlServer>();
+        return services.AddScoped<IExactTokenStorageService, ExactTokenStorageSqlServer>();
     }
 }
