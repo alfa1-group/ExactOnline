@@ -58,7 +58,6 @@ await RunAsync(async () =>
 
 await RunAsync(async () =>
 {
-
     var webhookSubscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync(w =>
     {
         w.QueryParameters.Top = 100;
@@ -79,6 +78,17 @@ await RunAsync(async () =>
     return true;
 });
 
+await RunAsync(async () =>
+{
+    Console.WriteLine("Testing Api limits per minute");
+    for (var i = 0; i < 100; i++)
+    {
+        _ = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync().AsItems();
+        await Task.Delay(TimeSpan.FromMilliseconds(100));
+    }
+
+    return true;
+});
 
 await RunAsync(async () =>
 {

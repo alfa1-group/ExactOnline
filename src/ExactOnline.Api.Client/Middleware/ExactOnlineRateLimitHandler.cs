@@ -1,0 +1,120 @@
+﻿using System.Collections.Concurrent;
+using System.Net.Http.Headers;
+using Microsoft.Extensions.Logging;
+
+namespace ExactOnline.Api.Client.Middleware;
+
+public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> logger) : DelegatingHandler
+{
+    private const int RequestsPerMinute = 60;
+
+    // Track limits per company code
+    private readonly ConcurrentDictionary<int, RateLimitState> _companyLimits = new();
+
+    protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+    {
+        if (!TryExtractCompanyCode(request.RequestUri, out var companyCode))
+        {
+            // If we can't extract the company code, no need to apply rate limits.
+            return await base.SendAsync(request, cancellationToken);
+        }
+
+        var now = TimeProvider.System.GetUtcNow();
+        var state = _companyLimits.GetOrAdd(companyCode, _ => new RateLimitState
+        {
+            MinuteWindowStartUtc = now
+        });
+
+        // Check daily block
+        if (state.DailyLimitReached && state.DailyResetUtc.HasValue && now < state.DailyResetUtc.Value)
+        {
+            throw new InvalidOperationException($"Daily limit reached for company {companyCode} until {state.DailyResetUtc}");
+        }
+
+        // Enforce 60/min proactive limit
+        lock (state)
+        {
+            if (now - state.MinuteWindowStartUtc >= TimeSpan.FromMinutes(1))
+            {
+                state.RequestsThisMinute = 0;
+                state.MinuteWindowStartUtc = now;
+            }
+
+            if (state.RequestsThisMinute >= RequestsPerMinute)
+            {
+                var waitMs = (int)(state.MinuteWindowStartUtc.AddMinutes(1) - now).TotalMilliseconds;
+                if (waitMs > 0)
+                {
+                    logger.LogDebug("Rate limit reached for company {CompanyCode}. Waiting {WaitMs} ms before next request.", companyCode, waitMs);
+                    Task.Delay(waitMs, cancellationToken).Wait(cancellationToken);
+
+                    state.RequestsThisMinute = 0;
+                    state.MinuteWindowStartUtc = TimeProvider.System.GetUtcNow();
+                }
+            }
+
+            state.RequestsThisMinute++;
+        }
+
+        var response = await base.SendAsync(request, cancellationToken);
+
+        // Read rate-limit headers (minutely)
+        if (response.Headers.TryGetFirstAsLong("X-RateLimit-Minutely-Remaining", out var minutelyRemaining))
+        {
+            if (minutelyRemaining <= 0)
+            {
+                var waitUntil = state.MinuteWindowStartUtc.AddMinutes(1);
+                var delay = waitUntil - TimeProvider.System.GetUtcNow();
+                if (delay > TimeSpan.Zero)
+                {
+                    logger.LogDebug("Rate limit reached for company {CompanyCode}. Waiting {Delay} before next request.", companyCode, delay);
+                    await Task.Delay(delay, cancellationToken);
+                }
+            }
+        }
+
+        // Read rate-limit headers (daily)
+        if (response.Headers.TryGetFirstAsLong("X-RateLimit-Remaining", out var dailyRemaining))
+        {
+            if (dailyRemaining <= 0)
+            {
+                state.DailyLimitReached = true;
+                logger.LogDebug("Daily limit reached for company {CompanyCode}. No more requests allowed until reset.", companyCode);
+
+                if (response.Headers.TryGetFirstAsLong("X-RateLimit-Reset", out var resetEpochMs))
+                {
+                    state.DailyResetUtc = DateTimeOffset.FromUnixTimeMilliseconds(resetEpochMs);
+                    logger.LogDebug("Daily limit for company {CompanyCode} will reset at {ResetTime}.", companyCode, state.DailyResetUtc);
+                }
+            }
+        }
+
+        return response;
+    }
+
+    /// <summary>
+    /// Try to extract the company code from the request URI ("https://start.exactonline.nl/api/v1/{companyCode}/...").
+    /// </summary>
+    private static bool TryExtractCompanyCode(Uri uri, out int companyCode)
+    {
+        var segments = uri.Segments;
+        if (segments.Length > 3)
+        {
+            return int.TryParse(segments[3].TrimEnd('/'), out companyCode);
+        }
+
+        companyCode = default;
+        return false;
+    }
+
+    private class RateLimitState
+    {
+        public int RequestsThisMinute;
+
+        public DateTimeOffset MinuteWindowStartUtc;
+
+        public bool DailyLimitReached;
+
+        public DateTimeOffset? DailyResetUtc;
+    }
+}
