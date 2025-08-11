@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using System.Net;
 using System.Net.Http.Headers;
 using Microsoft.Extensions.Logging;
 
@@ -7,6 +8,7 @@ namespace ExactOnline.Api.Client.Middleware;
 public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> logger) : DelegatingHandler
 {
     private const int RequestsPerMinute = 60;
+    private const double OneRequestsInMs = 1000.0 / 60;
 
     // Track limits per company code
     private readonly ConcurrentDictionary<int, RateLimitState> _companyLimits = new();
@@ -59,7 +61,7 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
         var response = await base.SendAsync(request, cancellationToken);
 
         // Read rate-limit headers (minutely)
-        if (response.Headers.TryGetFirstAsLong("X-RateLimit-Minutely-Remaining", out var minutelyRemaining))
+        if (response.StatusCode == HttpStatusCode.TooManyRequests && response.Headers.TryGetFirstAsLong("X-RateLimit-Minutely-Remaining", out var minutelyRemaining))
         {
             if (minutelyRemaining <= 0)
             {
@@ -67,14 +69,14 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
                 var delay = waitUntil - TimeProvider.System.GetUtcNow();
                 if (delay > TimeSpan.Zero)
                 {
-                    logger.LogDebug("Rate limit reached for company {CompanyCode}. Waiting {Delay} before next request.", companyCode, delay);
+                    logger.LogDebug("Rate limit reached for company {CompanyCode}. Waiting {Delay} ms before next request.", companyCode, delay.TotalMilliseconds);
                     await Task.Delay(delay, cancellationToken);
                 }
             }
         }
 
         // Read rate-limit headers (daily)
-        if (response.Headers.TryGetFirstAsLong("X-RateLimit-Remaining", out var dailyRemaining))
+        if (response.StatusCode == HttpStatusCode.TooManyRequests && response.Headers.TryGetFirstAsLong("X-RateLimit-Remaining", out var dailyRemaining))
         {
             if (dailyRemaining <= 0)
             {
