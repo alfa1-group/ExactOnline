@@ -47,7 +47,7 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
                 var waitMs = (int)(state.MinuteWindowStartUtc.AddMinutes(1) - now).TotalMilliseconds;
                 if (waitMs > 0)
                 {
-                    logger.LogDebug("Rate limit reached for company {CompanyCode}. Waiting {WaitMs} ms before next request.", companyCode, waitMs);
+                    logger.LogDebug("Rate limit reached for company {CompanyCode}. Waiting {WaitMs:F0} ms before next request.", companyCode, waitMs);
                     Task.Delay(waitMs, cancellationToken).Wait(cancellationToken);
 
                     state.RequestsThisMinute = 0;
@@ -69,7 +69,7 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
                 var delay = waitUntil - TimeProvider.System.GetUtcNow();
                 if (delay > TimeSpan.Zero)
                 {
-                    logger.LogDebug("Rate limit reached for company {CompanyCode}. Waiting {Delay} ms before next request.", companyCode, delay.TotalMilliseconds);
+                    logger.LogDebug("Rate limit reached for company {CompanyCode}. Waiting {Delay:F0} ms before next request.", companyCode, delay.TotalMilliseconds);
                     await Task.Delay(delay, cancellationToken);
                 }
             }
