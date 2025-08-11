@@ -1,6 +1,7 @@
 ﻿using ExactOnline.Api.Client;
 using ExactOnline.Api.Client.Authentication.Kiota;
 using ExactOnline.Api.Client.Authentication.Options;
+using ExactOnline.Api.Client.Middleware;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
@@ -16,6 +17,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddExactOnlineAuthentication(configuration);
         services.AddSingleton<ExactOnlineAuthenticationProvider>();
+        services.AddSingleton<ExactOnlineRateLimitHandler>();
         services.AddServices();
 
         return services;
@@ -27,8 +29,9 @@ public static class ServiceCollectionExtensions
         {
             var authenticationProvider = sp.GetRequiredService<ExactOnlineAuthenticationProvider>();
             var options = sp.GetRequiredService<IOptions<ExactOnlineOptions>>();
+            var exactOnlineRateLimitHandler = sp.GetRequiredService<ExactOnlineRateLimitHandler>();
 
-            return new ExactOnlineServiceClient(authenticationProvider, options.Value.BaseUrl);
+            return new ExactOnlineServiceClient(authenticationProvider, exactOnlineRateLimitHandler, options.Value.BaseUrl);
         });
     }
 }
