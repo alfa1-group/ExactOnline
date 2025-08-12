@@ -80,9 +80,10 @@ await RunAsync(async () =>
 
 await RunAsync(async () =>
 {
-    Console.WriteLine("Testing Api limits per minute");
-    for (var i = 0; i < 100; i++)
+    Console.WriteLine("Testing API limits per minute");
+    for (var i = 0; i < 130; i++)
     {
+        Console.WriteLine(i);
         _ = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync().AsItems();
         await Task.Delay(TimeSpan.FromMilliseconds(100));
     }

@@ -3,9 +3,9 @@ namespace System.Net.Http.Headers;
 
 internal static class HttpResponseHeadersExtensions
 {
-    internal static bool TryGetFirstAsLong(this HttpResponseHeaders headers, string name, out long value)
+    internal static bool TryGetFirstValueAsLong(this HttpResponseHeaders headers, string headerName, out long value)
     {
-        if (headers.TryGetValues(name, out var values))
+        if (headers.TryGetValues(headerName, out var values))
         {
             using var enumerator = values.GetEnumerator();
             if (enumerator.MoveNext())
@@ -14,7 +14,7 @@ internal static class HttpResponseHeadersExtensions
                 return long.TryParse(valueAsString, out value);
             }
 
-            throw new InvalidOperationException($"{name} header is empty.");
+            throw new InvalidOperationException($"The {headerName} header is empty.");
         }
 
         value = default;

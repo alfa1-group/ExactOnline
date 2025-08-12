@@ -7,8 +7,7 @@ namespace ExactOnline.Api.Client.Middleware;
 
 public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> logger) : DelegatingHandler
 {
-    private const int RequestsPerMinute = 60;
-    private const double OneRequestsInMs = 1000.0 / 60;
+    private const int MaxRequestsPerMinute = 60;
 
     // Track limits per company code
     private readonly ConcurrentDictionary<int, RateLimitState> _companyLimits = new();
@@ -28,9 +27,9 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
         });
 
         // Check daily block
-        if (state.DailyLimitReached && state.DailyResetUtc.HasValue && now < state.DailyResetUtc.Value)
+        if (state is { DailyLimitReached: true, DailyResetUtc: not null } && now < state.DailyResetUtc.Value)
         {
-            throw new InvalidOperationException($"Daily limit reached for company {companyCode} until {state.DailyResetUtc}");
+            throw new InvalidOperationException($"Daily rate limit reached for company {companyCode} until {state.DailyResetUtc}");
         }
 
         // Enforce 60/min proactive limit
@@ -42,12 +41,12 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
                 state.MinuteWindowStartUtc = now;
             }
 
-            if (state.RequestsThisMinute >= RequestsPerMinute)
+            if (state.RequestsThisMinute >= MaxRequestsPerMinute)
             {
                 var waitMs = (int)(state.MinuteWindowStartUtc.AddMinutes(1) - now).TotalMilliseconds;
                 if (waitMs > 0)
                 {
-                    logger.LogDebug("Rate limit reached for company {CompanyCode}. Waiting {WaitMs:F0} ms before next request.", companyCode, waitMs);
+                    logger.LogDebug("Minutely rate limit reached for company {CompanyCode}. Waiting {WaitMs:F0} ms before next request.", companyCode, waitMs);
                     Task.Delay(waitMs, cancellationToken).Wait(cancellationToken);
 
                     state.RequestsThisMinute = 0;
@@ -61,32 +60,33 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
         var response = await base.SendAsync(request, cancellationToken);
 
         // Read rate-limit headers (minutely)
-        if (response.StatusCode == HttpStatusCode.TooManyRequests && response.Headers.TryGetFirstAsLong("X-RateLimit-Minutely-Remaining", out var minutelyRemaining))
+        if (response.StatusCode == HttpStatusCode.TooManyRequests && response.Headers.TryGetFirstValueAsLong("X-RateLimit-Minutely-Remaining", out var minutelyRemaining))
         {
+            logger.LogDebug("Remaining per minute {Remaining}", minutelyRemaining);
             if (minutelyRemaining <= 0)
             {
                 var waitUntil = state.MinuteWindowStartUtc.AddMinutes(1);
                 var delay = waitUntil - TimeProvider.System.GetUtcNow();
                 if (delay > TimeSpan.Zero)
                 {
-                    logger.LogDebug("Rate limit reached for company {CompanyCode}. Waiting {Delay:F0} ms before next request.", companyCode, delay.TotalMilliseconds);
+                    logger.LogDebug("Minutely rate limit reached for company {CompanyCode}. Waiting {Delay:F0} ms before next request.", companyCode, delay.TotalMilliseconds);
                     await Task.Delay(delay, cancellationToken);
                 }
             }
         }
 
         // Read rate-limit headers (daily)
-        if (response.StatusCode == HttpStatusCode.TooManyRequests && response.Headers.TryGetFirstAsLong("X-RateLimit-Remaining", out var dailyRemaining))
+        if (response.StatusCode == HttpStatusCode.TooManyRequests && response.Headers.TryGetFirstValueAsLong("X-RateLimit-Remaining", out var dailyRemaining))
         {
             if (dailyRemaining <= 0)
             {
                 state.DailyLimitReached = true;
-                logger.LogDebug("Daily limit reached for company {CompanyCode}. No more requests allowed until reset.", companyCode);
+                logger.LogDebug("Daily rate limit reached for company {CompanyCode}. No more requests allowed until reset.", companyCode);
 
-                if (response.Headers.TryGetFirstAsLong("X-RateLimit-Reset", out var resetEpochMs))
+                if (response.Headers.TryGetFirstValueAsLong("X-RateLimit-Reset", out var resetEpochMs))
                 {
                     state.DailyResetUtc = DateTimeOffset.FromUnixTimeMilliseconds(resetEpochMs);
-                    logger.LogDebug("Daily limit for company {CompanyCode} will reset at {ResetTime}.", companyCode, state.DailyResetUtc);
+                    logger.LogDebug("Daily rate limit for company {CompanyCode} will reset at {ResetTime}.", companyCode, state.DailyResetUtc);
                 }
             }
         }
@@ -97,9 +97,9 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
     /// <summary>
     /// Try to extract the company code from the request URI ("https://start.exactonline.nl/api/v1/{companyCode}/...").
     /// </summary>
-    private static bool TryExtractCompanyCode(Uri uri, out int companyCode)
+    private static bool TryExtractCompanyCode(Uri? uri, out int companyCode)
     {
-        var segments = uri.Segments;
+        var segments = uri?.Segments ?? [];
         if (segments.Length > 3)
         {
             return int.TryParse(segments[3].TrimEnd('/'), out companyCode);
@@ -109,7 +109,7 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
         return false;
     }
 
-    private class RateLimitState
+    private record RateLimitState
     {
         public int RequestsThisMinute;
 
