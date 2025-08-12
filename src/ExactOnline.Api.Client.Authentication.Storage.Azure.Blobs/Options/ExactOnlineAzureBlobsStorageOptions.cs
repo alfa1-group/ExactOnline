@@ -2,7 +2,7 @@
 
 namespace ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs.Options;
 
-public class ExactOnlineAzureBlobStorageOptions
+public class ExactOnlineAzureBlobsStorageOptions
 {
     [Required]
     public string ConnectionString { get; set; } = null!;

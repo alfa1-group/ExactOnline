@@ -10,8 +10,8 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddExactOnlineTokenStorageAzureBlobs(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddOptions<ExactOnlineAzureBlobStorageOptions>()
-            .Bind(configuration.GetSection(nameof(ExactOnlineAzureBlobStorageOptions)))
+        services.AddOptions<ExactOnlineAzureBlobsStorageOptions>()
+            .Bind(configuration.GetSection(nameof(ExactOnlineAzureBlobsStorageOptions)))
             .ValidateDataAnnotations()
             .ValidateOnStart();
         return services.AddSingleton<IExactTokenStorageService, ExactTokenServiceAzureBlobs>();

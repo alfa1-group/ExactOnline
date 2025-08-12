@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 
 namespace ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs;
 
-internal class ExactTokenServiceAzureBlobs(ILogger<ExactTokenServiceAzureBlobs> logger, IOptions<ExactOnlineAzureBlobStorageOptions> options) : IExactTokenStorageService
+internal class ExactTokenServiceAzureBlobs(ILogger<ExactTokenServiceAzureBlobs> logger, IOptions<ExactOnlineAzureBlobsStorageOptions> options) : IExactTokenStorageService
 {
     public async Task<string> RetrieveRefreshTokenAsync(CancellationToken cancellationToken = default)
     {
