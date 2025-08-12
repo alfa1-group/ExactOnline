@@ -12,8 +12,25 @@ kiota generate `
 
 Write-Output "⚙️ C# client code generated"
 
-# Generate response classes for all model files
+
 $modelsPath = "./src/ExactOnline.Api.Client/Generated/Models"
+
+# Patch response models to handle "results" property correctly
+Write-Output "🔧 Patching response models for 'results' property..."
+$responseModelFiles = Get-ChildItem -Path $modelsPath -Filter "*_Response.cs"
+
+foreach ($file in $responseModelFiles) {
+    $content = Get-Content -Path $file.FullName -Raw
+    $oldString = 'var mappingValue = parseNode.GetChildNode("results")?.GetStringValue();'
+    $newString = 'var mappingValue = parseNode.GetChildNode("results") != null ? "_Results" : null;'
+    
+    if ($content -match [regex]::Escape($oldString)) {
+        $newContent = $content.Replace($oldString, $newString)
+        Set-Content -Path $file.FullName -Value $newContent -Encoding UTF8
+    }
+}
+
+# Generate response classes for all model files
 $extensionsPath = "./src/ExactOnline.Api.Client/Extensions/Models"
 
 # Clean the extensions directory if it exists
@@ -27,9 +44,9 @@ if (!(Test-Path $extensionsPath)) {
     New-Item -ItemType Directory -Path $extensionsPath -Force
 }
 
-# Find all .cs files in the Generated/Models folder that don't end with "_Response.cs"
+# Find all .cs files in the Generated/Models folder that don't end with "_Response.cs" or "_Results.cs"
 $modelFiles = Get-ChildItem -Path $modelsPath -Filter "*.cs" | Where-Object { 
-    $_.Name -notlike "*_Response.cs" -and $_.Name -notlike "*_Response_d.cs" -and $_.Name -ne "ExactOnlineMetadata.cs"
+    $_.Name -notlike "*_Response.cs" -and $_.Name -notlike "*_Results.cs" -and $_.Name -ne "ExactOnlineMetadata.cs"
 }
 
 Write-Output "🔄 Generating response extension classes..."
@@ -47,11 +64,18 @@ foreach ($file in $modelFiles) {
         $sourceResponseContent = Get-Content -Path $sourceResponseModelPath -Raw
         
         if ($sourceResponseContent -match "/// A collection of") {
-            # $methodsContent = "    public static List<${className}> AsResults(this ${responseClassName}? response) => response?.D?.Results ?? [];"
-            $methodsContent = "    public static async Task<List<${className}>> AsItems(this Task<${responseClassName}?> task) => (await task)?.D?.Results ?? [];"
+            $methodsContent = $methodsContent + "    public static async Task<List<${className}>> AsItems(this Task<${responseClassName}?> task)`r`n"
+            $methodsContent = $methodsContent + "    {`r`n"
+            $methodsContent = $methodsContent + "        var d = (await task)?.D;`r`n"
+            $methodsContent = $methodsContent + "        return d == null ? [] : d.${className} ?? d.${className}Results?.Results ?? [];`r`n"
+            $methodsContent = $methodsContent + "    }`r`n"
         } else {
-            # $methodsContent = "    public static ${className}? AsItem(this ${responseClassName}? response) => response?.D?.Results?.FirstOrDefault();"
-            $methodsContent = "    public static async Task<${className}?> AsItem(this Task<${responseClassName}?> task) => (await task)?.D?.Results?.FirstOrDefault();"
+            $methodsContent = $methodsContent + "    public static async Task<${className}?> AsItem(this Task<${responseClassName}?> task)`r`n"
+            $methodsContent = $methodsContent + "    {`r`n"
+            $methodsContent = $methodsContent + "        var d = (await task)?.D;`r`n"
+            $methodsContent = $methodsContent + "        return d == null ? null : (d.${className} ?? d.${className}Results?.Results ?? []).FirstOrDefault();`r`n"
+            $methodsContent = $methodsContent + "    }`r`n"
+
         }
     }
 

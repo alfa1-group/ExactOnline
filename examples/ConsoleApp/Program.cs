@@ -2,7 +2,6 @@
 using ExactOnline.Api.Client.Builders.Filter;
 using ExactOnline.Api.Client.Builders.OrderBy;
 using ExactOnline.Api.Client.Builders.Select;
-using ExactOnline.Api.Client.Constants;
 using ExactOnline.Api.Client.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -30,8 +29,6 @@ var orderBy = OrderByBuilder<WebhooksWebhookSubscriptions>
 var filter = FilterBuilder<WebhooksWebhookSubscriptions>.Build(a => a.CallbackURL!.Equals("abc") && (a.Division > 100 || a.Created < DateTime.Now));
 var syncFilter = SyncFilterBuilder.Build(t => t.Timestamp >= 1);
 
-
-
 await RunAsync(async () =>
 {
     _ = await client.Api.V1[123456].Webhooks.WebhookSubscriptionsWithId(new Guid("AE0253AA-67AB-480B-9321-F27C50AF22B7")).DeleteAsync();
@@ -52,18 +49,13 @@ var me = await RunAsync(async () =>
 
 var division = me!.CurrentDivision!.Value;
 
-await RunAsync(async () =>
-{
-    Console.WriteLine("Waiting 3 seconds");
-    await Task.Delay(TimeSpan.FromSeconds(3));
-
-    return true;
-});
+Console.WriteLine("Waiting 3 seconds");
+await Task.Delay(TimeSpan.FromSeconds(3));
 
 await RunAsync(async () =>
 {
-    var me2 = await client.Api.V1.Current.Me.GetAsync().AsItem();
-    Console.WriteLine($"After waiting: {me2?.Email}");
+    var meTop = await client.Api.V1.Current.Me.GetAsync(m => m.QueryParameters.Top = 1).AsItem();
+    Console.WriteLine($"After waiting: {meTop?.Email}");
 
     return true;
 });
@@ -89,11 +81,9 @@ await RunAsync(async () =>
     Console.WriteLine("Getting Sync.Project.TimeCostTransactions");
     var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAsync(p =>
     {
-        p.QueryParameters.Top = 1; // Must be 1
+        p.QueryParameters.Top = 1; // Must be 1 !
         p.QueryParameters.Filter = syncFilter;
     }).AsItems();
-
-    // SyncProjectTimeCostTransactions
 
     foreach (var tt in list)
     {

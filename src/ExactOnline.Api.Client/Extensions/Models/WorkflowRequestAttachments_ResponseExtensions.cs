@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class WorkflowRequestAttachments_ResponseExtensions
 {
-    public static async Task<List<WorkflowRequestAttachments>> AsItems(this Task<WorkflowRequestAttachments_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<WorkflowRequestAttachments>> AsItems(this Task<WorkflowRequestAttachments_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.WorkflowRequestAttachments ?? d.WorkflowRequestAttachmentsResults?.Results ?? [];
+    }
+
 }

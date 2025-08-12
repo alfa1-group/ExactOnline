@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class PayrollEmploymentTaxAuthoritiesGeneral_ResponseExtensions
 {
-    public static async Task<PayrollEmploymentTaxAuthoritiesGeneral?> AsItem(this Task<PayrollEmploymentTaxAuthoritiesGeneral_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
+    public static async Task<PayrollEmploymentTaxAuthoritiesGeneral?> AsItem(this Task<PayrollEmploymentTaxAuthoritiesGeneral_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? null : (d.PayrollEmploymentTaxAuthoritiesGeneral ?? d.PayrollEmploymentTaxAuthoritiesGeneralResults?.Results ?? []).FirstOrDefault();
+    }
+
 }

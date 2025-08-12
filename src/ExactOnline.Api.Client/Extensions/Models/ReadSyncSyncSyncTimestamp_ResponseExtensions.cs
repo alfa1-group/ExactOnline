@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadSyncSyncSyncTimestamp_ResponseExtensions
 {
-    public static async Task<ReadSyncSyncSyncTimestamp?> AsItem(this Task<ReadSyncSyncSyncTimestamp_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
+    public static async Task<ReadSyncSyncSyncTimestamp?> AsItem(this Task<ReadSyncSyncSyncTimestamp_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? null : (d.ReadSyncSyncSyncTimestamp ?? d.ReadSyncSyncSyncTimestampResults?.Results ?? []).FirstOrDefault();
+    }
+
 }

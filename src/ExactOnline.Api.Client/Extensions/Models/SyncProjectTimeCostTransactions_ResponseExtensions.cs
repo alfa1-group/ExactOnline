@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncProjectTimeCostTransactions_ResponseExtensions
 {
-    public static async Task<List<SyncProjectTimeCostTransactions>> AsItems(this Task<SyncProjectTimeCostTransactions_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<SyncProjectTimeCostTransactions>> AsItems(this Task<SyncProjectTimeCostTransactions_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.SyncProjectTimeCostTransactions ?? d.SyncProjectTimeCostTransactionsResults?.Results ?? [];
+    }
+
 }

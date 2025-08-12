@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class HRMDepartments_ResponseExtensions
 {
-    public static async Task<List<HRMDepartments>> AsItems(this Task<HRMDepartments_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<HRMDepartments>> AsItems(this Task<HRMDepartments_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.HRMDepartments ?? d.HRMDepartmentsResults?.Results ?? [];
+    }
+
 }

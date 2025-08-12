@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class InventoryItemWarehouses_ResponseExtensions
 {
-    public static async Task<List<InventoryItemWarehouses>> AsItems(this Task<InventoryItemWarehouses_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<InventoryItemWarehouses>> AsItems(this Task<InventoryItemWarehouses_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.InventoryItemWarehouses ?? d.InventoryItemWarehousesResults?.Results ?? [];
+    }
+
 }

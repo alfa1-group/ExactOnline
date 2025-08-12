@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class DocumentsDocumentTypes_ResponseExtensions
 {
-    public static async Task<List<DocumentsDocumentTypes>> AsItems(this Task<DocumentsDocumentTypes_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<DocumentsDocumentTypes>> AsItems(this Task<DocumentsDocumentTypes_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.DocumentsDocumentTypes ?? d.DocumentsDocumentTypesResults?.Results ?? [];
+    }
+
 }

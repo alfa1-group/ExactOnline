@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class GeneralLayouts_ResponseExtensions
 {
-    public static async Task<List<GeneralLayouts>> AsItems(this Task<GeneralLayouts_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<GeneralLayouts>> AsItems(this Task<GeneralLayouts_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.GeneralLayouts ?? d.GeneralLayoutsResults?.Results ?? [];
+    }
+
 }

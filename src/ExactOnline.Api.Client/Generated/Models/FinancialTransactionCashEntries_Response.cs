@@ -18,10 +18,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The d property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response_d? D { get; set; }
+        public global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response.FinancialTransactionCashEntries_Response_d? D { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response_d D { get; set; }
+        public global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response.FinancialTransactionCashEntries_Response_d D { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "d", n => { D = n.GetObjectValue<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response_d>(global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response_d.CreateFromDiscriminatorValue); } },
+                { "d", n => { D = n.GetObjectValue<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response.FinancialTransactionCashEntries_Response_d>(global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response.FinancialTransactionCashEntries_Response_d.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,9 +58,81 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response_d>("d", D);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response.FinancialTransactionCashEntries_Response_d>("d", D);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Results"/>, List&lt;global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class FinancialTransactionCashEntries_Response_d : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type List&lt;global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries>? FinancialTransactionCashEntries { get; set; }
+#nullable restore
+#else
+            public List<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries> FinancialTransactionCashEntries { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Results"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Results? FinancialTransactionCashEntriesResults { get; set; }
+#nullable restore
+#else
+            public global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Results FinancialTransactionCashEntriesResults { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response.FinancialTransactionCashEntries_Response_d"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response.FinancialTransactionCashEntries_Response_d CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("results") != null ? "_Results" : null;
+                var result = new global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Response.FinancialTransactionCashEntries_Response_d();
+                if("_Results".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.FinancialTransactionCashEntriesResults = new global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Results();
+                }
+                else if(parseNode.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries>(global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries.CreateFromDiscriminatorValue)?.AsList() is List<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries> financialTransactionCashEntriesValue)
+                {
+                    result.FinancialTransactionCashEntries = financialTransactionCashEntriesValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(FinancialTransactionCashEntriesResults != null)
+                {
+                    return FinancialTransactionCashEntriesResults.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(FinancialTransactionCashEntriesResults != null)
+                {
+                    writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries_Results>(null, FinancialTransactionCashEntriesResults);
+                }
+                else if(FinancialTransactionCashEntries != null)
+                {
+                    writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntries>(null, FinancialTransactionCashEntries);
+                }
+            }
         }
     }
 }
 #pragma warning restore CS0618
+

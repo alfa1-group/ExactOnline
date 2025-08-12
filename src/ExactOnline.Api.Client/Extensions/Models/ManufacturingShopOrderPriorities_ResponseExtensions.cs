@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ManufacturingShopOrderPriorities_ResponseExtensions
 {
-    public static async Task<List<ManufacturingShopOrderPriorities>> AsItems(this Task<ManufacturingShopOrderPriorities_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<ManufacturingShopOrderPriorities>> AsItems(this Task<ManufacturingShopOrderPriorities_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.ManufacturingShopOrderPriorities ?? d.ManufacturingShopOrderPrioritiesResults?.Results ?? [];
+    }
+
 }

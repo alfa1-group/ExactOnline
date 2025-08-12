@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadProjectTimeAndBillingProjectDetailsByID_ResponseExtensions
 {
-    public static async Task<ReadProjectTimeAndBillingProjectDetailsByID?> AsItem(this Task<ReadProjectTimeAndBillingProjectDetailsByID_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
+    public static async Task<ReadProjectTimeAndBillingProjectDetailsByID?> AsItem(this Task<ReadProjectTimeAndBillingProjectDetailsByID_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? null : (d.ReadProjectTimeAndBillingProjectDetailsByID ?? d.ReadProjectTimeAndBillingProjectDetailsByIDResults?.Results ?? []).FirstOrDefault();
+    }
+
 }

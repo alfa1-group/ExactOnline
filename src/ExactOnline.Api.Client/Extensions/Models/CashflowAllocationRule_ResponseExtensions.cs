@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class CashflowAllocationRule_ResponseExtensions
 {
-    public static async Task<CashflowAllocationRule?> AsItem(this Task<CashflowAllocationRule_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
+    public static async Task<CashflowAllocationRule?> AsItem(this Task<CashflowAllocationRule_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? null : (d.CashflowAllocationRule ?? d.CashflowAllocationRuleResults?.Results ?? []).FirstOrDefault();
+    }
+
 }

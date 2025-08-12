@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncLogisticsSupplierItem_ResponseExtensions
 {
-    public static async Task<SyncLogisticsSupplierItem?> AsItem(this Task<SyncLogisticsSupplierItem_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
+    public static async Task<SyncLogisticsSupplierItem?> AsItem(this Task<SyncLogisticsSupplierItem_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? null : (d.SyncLogisticsSupplierItem ?? d.SyncLogisticsSupplierItemResults?.Results ?? []).FirstOrDefault();
+    }
+
 }

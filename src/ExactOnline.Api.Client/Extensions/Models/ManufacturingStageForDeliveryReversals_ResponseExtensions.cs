@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ManufacturingStageForDeliveryReversals_ResponseExtensions
 {
-    public static async Task<List<ManufacturingStageForDeliveryReversals>> AsItems(this Task<ManufacturingStageForDeliveryReversals_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<ManufacturingStageForDeliveryReversals>> AsItems(this Task<ManufacturingStageForDeliveryReversals_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.ManufacturingStageForDeliveryReversals ?? d.ManufacturingStageForDeliveryReversalsResults?.Results ?? [];
+    }
+
 }

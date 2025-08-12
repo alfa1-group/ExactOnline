@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SystemSystemDivisions_ResponseExtensions
 {
-    public static async Task<List<SystemSystemDivisions>> AsItems(this Task<SystemSystemDivisions_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<SystemSystemDivisions>> AsItems(this Task<SystemSystemDivisions_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.SystemSystemDivisions ?? d.SystemSystemDivisionsResults?.Results ?? [];
+    }
+
 }

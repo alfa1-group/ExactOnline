@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ProjectProjectPlanningRecurring_ResponseExtensions
 {
-    public static async Task<ProjectProjectPlanningRecurring?> AsItem(this Task<ProjectProjectPlanningRecurring_Response?> task) => (await task)?.D?.Results?.FirstOrDefault();
+    public static async Task<ProjectProjectPlanningRecurring?> AsItem(this Task<ProjectProjectPlanningRecurring_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? null : (d.ProjectProjectPlanningRecurring ?? d.ProjectProjectPlanningRecurringResults?.Results ?? []).FirstOrDefault();
+    }
+
 }

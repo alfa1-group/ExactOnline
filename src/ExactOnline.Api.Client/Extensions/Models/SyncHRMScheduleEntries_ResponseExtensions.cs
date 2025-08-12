@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncHRMScheduleEntries_ResponseExtensions
 {
-    public static async Task<List<SyncHRMScheduleEntries>> AsItems(this Task<SyncHRMScheduleEntries_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<SyncHRMScheduleEntries>> AsItems(this Task<SyncHRMScheduleEntries_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.SyncHRMScheduleEntries ?? d.SyncHRMScheduleEntriesResults?.Results ?? [];
+    }
+
 }

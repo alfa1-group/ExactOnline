@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class PayrollEmploymentEndReasons_ResponseExtensions
 {
-    public static async Task<List<PayrollEmploymentEndReasons>> AsItems(this Task<PayrollEmploymentEndReasons_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<PayrollEmploymentEndReasons>> AsItems(this Task<PayrollEmploymentEndReasons_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.PayrollEmploymentEndReasons ?? d.PayrollEmploymentEndReasonsResults?.Results ?? [];
+    }
+
 }

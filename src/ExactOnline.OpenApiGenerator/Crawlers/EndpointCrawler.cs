@@ -200,29 +200,35 @@ internal class EndpointCrawler
             }
         }
 
-        var result = new OpenApiSchema
+        var entityComponent = new OpenApiSchema
         {
             Type = JsonSchemaType.Object,
             Properties = properties,
             Required = requiredProperties
         };
-        openApiDoc.Components!.Schemas!.Add(schemaName, result);
+        openApiDoc.Components!.Schemas!.Add(schemaName, entityComponent);
+
+        var array = new OpenApiSchema
+        {
+            Type = JsonSchemaType.Array,
+            Items = new OpenApiSchemaReference(schemaName),
+        };
+        openApiDoc.Components!.Schemas!.Add(schemaName + "_Array", array);
+
+        var arrayReference = new OpenApiSchemaReference(schemaName + "_Array");
 
         var results = new OpenApiSchema
         {
             Type = JsonSchemaType.Object,
             Properties = new Dictionary<string, IOpenApiSchema>
             {
-                { "results", new OpenApiSchema
-                    {
-                        Type = JsonSchemaType.Array,
-                        Items = new OpenApiSchemaReference(schemaName)
-                    }
-                }
+                { "results", arrayReference }
             },
             Required = new HashSet<string> { "results" }
-
         };
+        openApiDoc.Components!.Schemas!.Add(schemaName + "_Results", results);
+
+        var resultsReference = new OpenApiSchemaReference(schemaName + "_Results");
 
         var response = new OpenApiSchema
         {
@@ -230,7 +236,23 @@ internal class EndpointCrawler
             Type = JsonSchemaType.Object,
             Properties = new Dictionary<string, IOpenApiSchema>
             {
-                { "d", results }
+                { "d", new OpenApiSchema
+                    {
+                        OneOf =
+                        [
+                            arrayReference,
+                            resultsReference
+                        ],
+                        Discriminator = new OpenApiDiscriminator
+                        {
+                            PropertyName = "results",
+                            Mapping = new Dictionary<string, OpenApiSchemaReference>
+                            {
+                                { "_Results", resultsReference }
+                            }
+                        }
+                    }
+                }
             },
             Required = new HashSet<string> { "d" }
         };
@@ -320,6 +342,14 @@ internal class EndpointCrawler
                             "application/json", new OpenApiMediaType
                             {
                                 Schema = new OpenApiSchemaReference(schemaName + "_Response")
+                                //Schema = new OpenApiSchema
+                                //{
+                                //    OneOf = [
+
+                                //        new OpenApiSchemaReference(schemaName + "_Array"),
+                                //        new OpenApiSchemaReference(schemaName + "_Results"),
+                                //    ]
+                                //}
                             }
                         }
                     }
@@ -350,6 +380,80 @@ internal class EndpointCrawler
                 openApiDoc.Paths.Add(endpointUri, pathItem);
             }
         }
+    }
+
+    private static OpenApiSchema GetResponseSchema(string schemaName, string description)
+    {
+        //var array = new OpenApiSchema
+        //{
+        //    Type = JsonSchemaType.Array,
+        //    Items = new OpenApiSchemaReference(schemaName)
+        //};
+
+        //if (schemaName.StartsWith("Sync"))
+        //{
+        //    return new OpenApiSchema
+        //    {
+        //        Description = description,
+        //        Type = JsonSchemaType.Object,
+        //        Properties = new Dictionary<string, IOpenApiSchema>
+        //        {
+        //            { "d", array }
+        //        },
+        //        Required = new HashSet<string> { "d" }
+        //    };
+        //}
+
+        //var results = new OpenApiSchema
+        //{
+        //    Type = JsonSchemaType.Object,
+        //    Properties = new Dictionary<string, IOpenApiSchema>
+        //    {
+        //        { "results", new OpenApiSchema
+        //            {
+        //                Type = JsonSchemaType.Array,
+        //                Items = new OpenApiSchemaReference(schemaName)
+        //            }
+        //        }
+        //    },
+        //    Required = new HashSet<string> { "results" }
+        //};
+
+        return new OpenApiSchema
+        {
+            // Description = description,
+            Type = JsonSchemaType.Object,
+            Properties = new Dictionary<string, IOpenApiSchema>
+            {
+                { "d", new OpenApiSchema
+                    {
+                        OneOf =
+                        [
+                            new OpenApiSchema
+                            {
+                                Type = JsonSchemaType.Array,
+                                Items = new OpenApiSchemaReference(schemaName)
+                            },
+                            new OpenApiSchema
+                            {
+                                Type = JsonSchemaType.Object,
+                                Properties = new Dictionary<string, IOpenApiSchema>
+                                {
+                                    { "results", new OpenApiSchema
+                                        {
+                                            Type = JsonSchemaType.Array,
+                                            Items = new OpenApiSchemaReference(schemaName)
+                                        }
+                                    }
+                                },
+                                Required = new HashSet<string> { "results" }
+                            }
+                        ]
+                    }
+                }
+            },
+            Required = new HashSet<string> { "d" }
+        };
     }
 
     private static void AddODataQueryParameters(IList<IOpenApiParameter> parameters)

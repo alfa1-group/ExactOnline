@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class CRMReasonCodes_ResponseExtensions
 {
-    public static async Task<List<CRMReasonCodes>> AsItems(this Task<CRMReasonCodes_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<CRMReasonCodes>> AsItems(this Task<CRMReasonCodes_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.CRMReasonCodes ?? d.CRMReasonCodesResults?.Results ?? [];
+    }
+
 }

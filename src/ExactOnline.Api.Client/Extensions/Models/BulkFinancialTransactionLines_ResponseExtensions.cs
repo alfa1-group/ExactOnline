@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class BulkFinancialTransactionLines_ResponseExtensions
 {
-    public static async Task<List<BulkFinancialTransactionLines>> AsItems(this Task<BulkFinancialTransactionLines_Response?> task) => (await task)?.D?.Results ?? [];
+    public static async Task<List<BulkFinancialTransactionLines>> AsItems(this Task<BulkFinancialTransactionLines_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? [] : d.BulkFinancialTransactionLines ?? d.BulkFinancialTransactionLinesResults?.Results ?? [];
+    }
+
 }
