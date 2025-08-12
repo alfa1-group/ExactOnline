@@ -70,7 +70,7 @@ await RunAsync(async () =>
 
     foreach (var tt in list)
     {
-        Console.WriteLine($"TimeTransaction ID: {tt.ID}, Date: {tt.Date}, StartTime: {tt.StartTime}");
+        Console.WriteLine($"TimeTransaction ID: {tt.ID}, Created: {tt.Created}");
     }
 
     return list;
@@ -87,7 +87,7 @@ await RunAsync(async () =>
 
     foreach (var tt in list)
     {
-        Console.WriteLine($"Sync.Project.TimeCostTransactions ID: {tt.ID}, Type: {tt.Type}, Date: {tt.Date}, StartTime: {tt.StartTime}");
+        Console.WriteLine($"Sync.Project.TimeCostTransactions ID: {tt.ID}, Type: {tt.Type}, Created: {tt.Created}");
     }
 
     return list;
