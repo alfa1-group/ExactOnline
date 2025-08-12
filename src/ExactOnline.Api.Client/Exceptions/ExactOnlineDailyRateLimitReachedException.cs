@@ -6,12 +6,12 @@ namespace ExactOnline.Api.Client.Exceptions;
 public class ExactOnlineDailyRateLimitReachedException : Exception
 {
     /// <summary>
-    /// Gets the company code for which the rate limit was reached.
+    /// Gets the company code for which the daily rate limit was reached.
     /// </summary>
     public int CompanyCode { get; }
 
     /// <summary>
-    /// Gets the Coordinated Universal Time (UTC) at which the rate limit will reset.
+    /// Gets the Coordinated Universal Time (UTC) at which the daily rate limit will reset.
     /// </summary>
     public DateTimeOffset ResetTimeUtc { get; }
 
@@ -47,8 +47,8 @@ public class ExactOnlineDailyRateLimitReachedException : Exception
     /// <summary>
     /// Initializes a new instance of the <see cref="ExactOnlineDailyRateLimitReachedException"/> class with the company code and reset time.
     /// </summary>
-    /// <param name="companyCode">The company code for which the rate limit was reached.</param>
-    /// <param name="resetTimeUtc">The Coordinated Universal Time (UTC) at which the rate limit will reset.</param>
+    /// <param name="companyCode">The company code for which the daily rate limit was reached.</param>
+    /// <param name="resetTimeUtc">The Coordinated Universal Time (UTC) at which the daily rate limit will reset.</param>
     public ExactOnlineDailyRateLimitReachedException(int companyCode, DateTimeOffset resetTimeUtc)
         : base($"Daily rate limit of 5000 requests reached for company {companyCode} until {resetTimeUtc}.")
     {
