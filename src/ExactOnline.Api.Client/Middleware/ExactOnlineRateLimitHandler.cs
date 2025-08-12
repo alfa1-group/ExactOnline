@@ -1,16 +1,28 @@
 ﻿using System.Collections.Concurrent;
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Net.Http.Headers;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 
 namespace ExactOnline.Api.Client.Middleware;
 
-public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> logger) : DelegatingHandler
+[SuppressMessage("ReSharper", "InconsistentlySynchronizedField")]
+public class ExactOnlineRateLimitHandler : DelegatingHandler
 {
     private const int MaxRequestsPerMinute = 60;
+    private readonly ConcurrentDictionary<int, RateLimitState> _companyLimits = new(); // Track limits per company code
 
-    // Track limits per company code
-    private readonly ConcurrentDictionary<int, RateLimitState> _companyLimits = new();
+    private readonly ILogger<ExactOnlineRateLimitHandler> _logger;
+
+    public ExactOnlineRateLimitHandler() : this(NullLogger<ExactOnlineRateLimitHandler>.Instance)
+    {
+    }
+
+    public ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> logger)
+    {
+        _logger = logger;
+    }
 
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
@@ -26,7 +38,7 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
             MinuteWindowStartUtc = now
         });
 
-        // Check daily block
+        // Check daily rate limit
         if (state is { DailyLimitReached: true, DailyResetUtc: not null } && now < state.DailyResetUtc.Value)
         {
             throw new InvalidOperationException($"Daily rate limit reached for company {companyCode} until {state.DailyResetUtc}");
@@ -46,7 +58,7 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
                 var waitMs = (int)(state.MinuteWindowStartUtc.AddMinutes(1) - now).TotalMilliseconds;
                 if (waitMs > 0)
                 {
-                    logger.LogDebug("Minutely rate limit reached for company {CompanyCode}. Waiting {WaitMs:F0} ms before next request.", companyCode, waitMs);
+                    _logger.LogDebug("Minutely rate limit reached for company {CompanyCode}. Waiting {WaitMs:F0} ms before next request.", companyCode, waitMs);
                     Task.Delay(waitMs, cancellationToken).Wait(cancellationToken);
 
                     state.RequestsThisMinute = 0;
@@ -62,14 +74,13 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
         // Read rate-limit headers (minutely)
         if (response.StatusCode == HttpStatusCode.TooManyRequests && response.Headers.TryGetFirstValueAsLong("X-RateLimit-Minutely-Remaining", out var minutelyRemaining))
         {
-            logger.LogDebug("Remaining per minute {Remaining}", minutelyRemaining);
             if (minutelyRemaining <= 0)
             {
                 var waitUntil = state.MinuteWindowStartUtc.AddMinutes(1);
                 var delay = waitUntil - TimeProvider.System.GetUtcNow();
                 if (delay > TimeSpan.Zero)
                 {
-                    logger.LogDebug("Minutely rate limit reached for company {CompanyCode}. Waiting {Delay:F0} ms before next request.", companyCode, delay.TotalMilliseconds);
+                    _logger.LogDebug("Minutely rate limit reached for company {CompanyCode}. Waiting {Delay:F0} ms before next request.", companyCode, delay.TotalMilliseconds);
                     await Task.Delay(delay, cancellationToken);
                 }
             }
@@ -81,12 +92,12 @@ public class ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> lo
             if (dailyRemaining <= 0)
             {
                 state.DailyLimitReached = true;
-                logger.LogDebug("Daily rate limit reached for company {CompanyCode}. No more requests allowed until reset.", companyCode);
+                _logger.LogDebug("Daily rate limit reached for company {CompanyCode}. No more requests allowed until reset.", companyCode);
 
                 if (response.Headers.TryGetFirstValueAsLong("X-RateLimit-Reset", out var resetEpochMs))
                 {
                     state.DailyResetUtc = DateTimeOffset.FromUnixTimeMilliseconds(resetEpochMs);
-                    logger.LogDebug("Daily rate limit for company {CompanyCode} will reset at {ResetTime}.", companyCode, state.DailyResetUtc);
+                    _logger.LogDebug("Daily rate limit for company {CompanyCode} will reset at {ResetTime}.", companyCode, state.DailyResetUtc);
                 }
             }
         }

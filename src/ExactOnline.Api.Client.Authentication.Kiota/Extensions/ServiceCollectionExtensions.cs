@@ -31,7 +31,7 @@ public static class ServiceCollectionExtensions
             var options = sp.GetRequiredService<IOptions<ExactOnlineOptions>>();
             var exactOnlineRateLimitHandler = sp.GetRequiredService<ExactOnlineRateLimitHandler>();
 
-            return new ExactOnlineServiceClient(authenticationProvider, exactOnlineRateLimitHandler, options.Value.BaseUrl);
+            return new ExactOnlineServiceClient(authenticationProvider, options.Value.BaseUrl, exactOnlineRateLimitHandler);
         });
     }
 }

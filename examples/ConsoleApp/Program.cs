@@ -26,6 +26,13 @@ var orderBy = OrderByBuilder<WebhooksWebhookSubscriptions>
     .ThenByDescending(w => w.CallbackURL)
     .Build();
 
+await RunAsync(async () =>
+{
+    _ = await client.Api.V1[123456].Webhooks.WebhookSubscriptionsWithId(new Guid("AE0253AA-67AB-480B-9321-F27C50AF22B7")).DeleteAsync();
+
+    return true;
+});
+
 var me = await RunAsync(async () =>
 {
     var me = await client.Api.V1.Current.Me.GetAsync(a =>
