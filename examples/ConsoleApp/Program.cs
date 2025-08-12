@@ -1,4 +1,5 @@
 ﻿using ExactOnline.Api.Client;
+using ExactOnline.Api.Client.Builders.Filter;
 using ExactOnline.Api.Client.Builders.OrderBy;
 using ExactOnline.Api.Client.Builders.Select;
 using ExactOnline.Api.Client.Models;
@@ -25,6 +26,7 @@ var orderBy = OrderByBuilder<WebhooksWebhookSubscriptions>
     .OrderBy(w => w.ID)
     .ThenByDescending(w => w.CallbackURL)
     .Build();
+var filter = FilterBuilder<WebhooksWebhookSubscriptions>.Build(a => a.CallbackURL!.Equals("abc") && (a.Division > 100 || a.Created < DateTime.Now));
 
 await RunAsync(async () =>
 {
