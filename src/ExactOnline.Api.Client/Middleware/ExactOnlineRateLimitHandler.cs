@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Net.Http.Headers;
+using ExactOnline.Api.Client.Exceptions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
@@ -41,7 +42,7 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
         // Check daily rate limit
         if (state is { DailyLimitReached: true, DailyResetUtc: not null } && now < state.DailyResetUtc.Value)
         {
-            throw new InvalidOperationException($"Daily rate limit reached for company {companyCode} until {state.DailyResetUtc}");
+            throw new ExactOnlineDailyRateLimitReachedException(companyCode, state.DailyResetUtc.Value);
         }
 
         // Enforce 60/min proactive limit
