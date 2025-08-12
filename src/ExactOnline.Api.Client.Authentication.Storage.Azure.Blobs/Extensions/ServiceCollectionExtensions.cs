@@ -1,7 +1,9 @@
-﻿using ExactOnline.Api.Client.Authentication.Abstractions;
+﻿using Azure.Storage.Blobs;
+using ExactOnline.Api.Client.Authentication.Abstractions;
 using ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs;
 using ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs.Options;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection;
@@ -14,6 +16,14 @@ public static class ServiceCollectionExtensions
             .Bind(configuration.GetSection(nameof(ExactOnlineAzureBlobsStorageOptions)))
             .ValidateDataAnnotations()
             .ValidateOnStart();
+
+        services.AddSingleton(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<ExactOnlineAzureBlobsStorageOptions>>();
+            var container = new BlobContainerClient(options.Value.ConnectionString, options.Value.ContainerName);
+            return container.GetBlobClient(options.Value.RefreshTokenFilePath);
+        });
+
         return services.AddSingleton<IExactTokenStorageService, ExactTokenServiceAzureBlobs>();
     }
 }
