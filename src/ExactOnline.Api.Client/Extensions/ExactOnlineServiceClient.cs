@@ -1,8 +1,11 @@
-﻿using ExactOnline.Api.Client.Middleware;
+﻿using System.Text.Json;
+using ExactOnline.Api.Client.JsonConverters;
+using ExactOnline.Api.Client.Middleware;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 using Microsoft.Kiota.Http.HttpClientLibrary.Middleware;
 using Microsoft.Kiota.Http.HttpClientLibrary.Middleware.Options;
+using Microsoft.Kiota.Serialization.Json;
 
 // ReSharper disable once CheckNamespace
 namespace ExactOnline.Api.Client;
@@ -33,7 +36,23 @@ public partial class ExactOnlineServiceClient
             handlers.Insert(retryHandlerPosition, exactOnlineRateLimitHandler);
         }
 
-        return new HttpClientRequestAdapter(authenticationProvider, httpClient: KiotaClientFactory.Create(handlers))
+        // 1. Create JsonSerializerOptions and add the custom Legacy DateTime converters.
+        var customOptions = new JsonSerializerOptions
+        {
+            Converters =
+            {
+                new LegacyDateTimeOffsetConverter(),
+                new LegacyDateTimeConverter()
+            }
+        };
+
+        // 2. Create the Kiota JSON Parse Node Factory with the custom options.
+        var kiotaJsonSerializationContext = new KiotaJsonSerializationContext(customOptions);
+
+        // 3. Create the JsonParseNodeFactory with the KiotaJsonSerializationContext.
+        var jsonParseNodeFactory = new JsonParseNodeFactory(kiotaJsonSerializationContext);
+
+        return new HttpClientRequestAdapter(authenticationProvider, jsonParseNodeFactory, httpClient: KiotaClientFactory.Create(handlers))
         {
             BaseUrl = DefaultBaseUrl
         };

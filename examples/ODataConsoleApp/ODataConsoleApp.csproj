@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExactOnline.Client.Sdk.Sync" Version="4.0.0-preview28" />
+    <PackageReference Include="ExactOnline.Client.Sdk.vNext" Version="4.0.0-preview28" />
+    <PackageReference Include="Microsoft.OpenApi.OData" Version="2.0.0" />
+  </ItemGroup>
+
+</Project>

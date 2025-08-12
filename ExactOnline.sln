@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Auth
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Authentication.Storage.FileSystem", "src\ExactOnline.Api.Client.Authentication.Storage.FileSystem\ExactOnline.Api.Client.Authentication.Storage.FileSystem.csproj", "{EC6FCC6D-6DA9-9861-4FD3-00359424C005}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataConsoleApp", "examples\ODataConsoleApp\ODataConsoleApp.csproj", "{2E887DAB-144A-4326-8A3E-1A65E400AFB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,10 @@ Global
 		{EC6FCC6D-6DA9-9861-4FD3-00359424C005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC6FCC6D-6DA9-9861-4FD3-00359424C005}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC6FCC6D-6DA9-9861-4FD3-00359424C005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E887DAB-144A-4326-8A3E-1A65E400AFB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E887DAB-144A-4326-8A3E-1A65E400AFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E887DAB-144A-4326-8A3E-1A65E400AFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E887DAB-144A-4326-8A3E-1A65E400AFB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{45AB7FA6-1807-D495-5B2F-54DEDB2939BA} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{2EB5D207-88E6-2812-04C5-F663CEC315DC} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{EC6FCC6D-6DA9-9861-4FD3-00359424C005} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{2E887DAB-144A-4326-8A3E-1A65E400AFB2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0828E0B1-F03B-47AB-B2E4-963753F033A3}
