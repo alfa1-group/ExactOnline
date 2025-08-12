@@ -29,7 +29,6 @@ var orderBy = OrderByBuilder<WebhooksWebhookSubscriptions>
 await RunAsync(async () =>
 {
     _ = await client.Api.V1[123456].Webhooks.WebhookSubscriptionsWithId(new Guid("AE0253AA-67AB-480B-9321-F27C50AF22B7")).DeleteAsync();
-
     return true;
 });
 
@@ -65,6 +64,22 @@ await RunAsync(async () =>
 
 await RunAsync(async () =>
 {
+    Console.WriteLine("Getting ProjectTimeTransactions");
+    var list = await client.Api.V1[division].Project.TimeTransactions.GetAsync(p =>
+    {
+        p.QueryParameters.Top = 10;
+    }).AsItems();
+
+    foreach (var timeTransactions in list)
+    {
+        Console.WriteLine($"TimeTransaction ID: {timeTransactions.ID}, Date: {timeTransactions.Date}, UserID: {timeTransactions.StartTime}");
+    }
+
+    return list;
+});
+
+await RunAsync(async () =>
+{
     var webhookSubscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync(w =>
     {
         w.QueryParameters.Top = 100;
@@ -90,7 +105,6 @@ await RunAsync(async () =>
     Console.WriteLine("Testing API limits per minute");
     for (var i = 0; i < 130; i++)
     {
-        Console.WriteLine(i);
         _ = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync().AsItems();
         await Task.Delay(TimeSpan.FromMilliseconds(100));
     }
