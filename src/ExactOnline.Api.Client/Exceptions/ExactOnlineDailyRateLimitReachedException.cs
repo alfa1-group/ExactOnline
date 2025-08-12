@@ -16,6 +16,11 @@ public class ExactOnlineDailyRateLimitReachedException : Exception
     public DateTimeOffset ResetTimeUtc { get; }
 
     /// <summary>
+    /// Gets the number of hours to wait until the rate limit resets.
+    /// </summary>
+    public double HoursToWait => (ResetTimeUtc - TimeProvider.System.GetUtcNow()).TotalHours;
+
+    /// <summary>
     /// Initializes a new instance of the <see cref="ExactOnlineDailyRateLimitReachedException"/> class.
     /// </summary>
     public ExactOnlineDailyRateLimitReachedException()
