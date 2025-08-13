@@ -7,8 +7,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Kiota.Abstractions;
 
-var someTimeAgo = TimeProvider.System.GetUtcNow().AddDays(-30);
-
 var builder = Host.CreateDefaultBuilder(args)
     .ConfigureServices((context, services) =>
     {
@@ -29,7 +27,7 @@ var orderBy = OrderByBuilder<WebhooksWebhookSubscriptions>
     .OrderBy(w => w.ID)
     .ThenByDescending(w => w.CallbackURL)
     .Build();
-var filter = FilterBuilder<WebhooksWebhookSubscriptions>.Build(a => a.CallbackURL!.Equals("abc") && (a.Division > 100 || a.Created > someTimeAgo));
+var filter = FilterBuilder<WebhooksWebhookSubscriptions>.Build(a => a.CallbackURL!.Equals("abc") && (a.Division > 100 || a.Created > TimeProvider.System.GetUtcNow().AddDays(-30)));
 var syncFilter = SyncFilterBuilder.Build(t => t.Timestamp >= 1);
 
 await RunAsync(async () =>
@@ -80,7 +78,7 @@ await RunAsync(async () =>
     var list = await client.Api.V1[division].Project.TimeTransactions.GetAsync(p =>
     {
         p.QueryParameters.Top = 10;
-        p.QueryParameters.Filter = FilterBuilder<ProjectTimeTransactions>.Build(t => t.Created >= someTimeAgo);
+        p.QueryParameters.Filter = FilterBuilder<ProjectTimeTransactions>.Build(t => t.Created >= TimeProvider.System.GetUtcNow().AddDays(-30));
     }).AsItems();
 
     foreach (var tt in list)

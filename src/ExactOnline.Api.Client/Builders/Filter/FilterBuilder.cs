@@ -26,7 +26,17 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
             return node;
         }
 
-        throw new NotSupportedException($"Method '{node.Method.Name}' not supported");
+        // Try to evaluate the method call and convert to constant
+        try
+        {
+            var result = Expression.Lambda(node).Compile().DynamicInvoke();
+            var constantExpression = Expression.Constant(result, node.Type);
+            return Visit(constantExpression);
+        }
+        catch
+        {
+            throw new NotSupportedException($"Method '{node.Method.Name}' could not be evaluated");
+        }
     }
 
     protected override Expression VisitBinary(BinaryExpression node)
