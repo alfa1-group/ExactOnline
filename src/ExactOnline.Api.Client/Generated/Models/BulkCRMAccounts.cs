@@ -56,8 +56,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AddressLine3 { get; set; }
 #endif
-        /// <summary>CRM creation source</summary>
-        public int? AddressSource { get; set; }
         /// <summary>Automatically create entries for complete entry proposals</summary>
         public int? AutomaticProcessProposedEntry { get; set; }
         /// <summary>Collection of Bank accounts</summary>
@@ -238,8 +236,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string DatevDebtorCode { get; set; }
 #endif
-        /// <summary>Allows a customer to do goods delivery based on setting complete, partial or partial no back order. Values:0 = Partial,1 = Complete,2 = PartialNoBackOrder</summary>
-        public int? DeliveryAdvice { get; set; }
         /// <summary>Default discount percentage for purchase. This is stored as a fraction. ie 5.5% is stored as .055</summary>
         public double? DiscountPurchase { get; set; }
         /// <summary>Default discount percentage for sales. This is stored as a fraction. ie 5.5% is stored as .055</summary>
@@ -742,8 +738,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>Security level (0 - 100)</summary>
         public int? SecurityLevel { get; set; }
-        /// <summary>Separate invoice per project (Time &amp;amp; Billing)</summary>
-        public int? SeparateInvPerProject { get; set; }
         /// <summary>Indicates how invoices are generated from subscriptions. 0 = subscriptions belonging to the same customer are combined in a single invoice. 1 = each subscription results in one invoice. In both cases, each individual subscription line results in one invoice line</summary>
         public int? SeparateInvPerSubscription { get; set; }
         /// <summary>Indicates the number of days it takes to send goods to the customer. Acts as a default</summary>
@@ -752,8 +746,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? ShippingMethod { get; set; }
         /// <summary>Indicates whether to display Ordered by account&apos;s remarks when creating a new sales order</summary>
         public bool? ShowRemarkForSales { get; set; }
-        /// <summary>CRM creation source</summary>
-        public int? Source { get; set; }
         /// <summary>Indicates in combination with the end date if the account is active</summary>
         public DateTimeOffset? StartDate { get; set; }
         /// <summary>State/Province/County code When changing the Country and the State is filled, the State must be assigned with a valid value from the selected country or set to empty</summary>
@@ -864,7 +856,6 @@ namespace ExactOnline.Api.Client.Models
                 { "AddressLine1", n => { AddressLine1 = n.GetStringValue(); } },
                 { "AddressLine2", n => { AddressLine2 = n.GetStringValue(); } },
                 { "AddressLine3", n => { AddressLine3 = n.GetStringValue(); } },
-                { "AddressSource", n => { AddressSource = n.GetIntValue(); } },
                 { "AutomaticProcessProposedEntry", n => { AutomaticProcessProposedEntry = n.GetIntValue(); } },
                 { "BRIN", n => { BRIN = n.GetGuidValue(); } },
                 { "BSN", n => { BSN = n.GetStringValue(); } },
@@ -904,7 +895,6 @@ namespace ExactOnline.Api.Client.Models
                 { "CustomerSince", n => { CustomerSince = n.GetDateTimeOffsetValue(); } },
                 { "DatevCreditorCode", n => { DatevCreditorCode = n.GetStringValue(); } },
                 { "DatevDebtorCode", n => { DatevDebtorCode = n.GetStringValue(); } },
-                { "DeliveryAdvice", n => { DeliveryAdvice = n.GetIntValue(); } },
                 { "DiscountPurchase", n => { DiscountPurchase = n.GetDoubleValue(); } },
                 { "DiscountSales", n => { DiscountSales = n.GetDoubleValue(); } },
                 { "Division", n => { Division = n.GetIntValue(); } },
@@ -1003,12 +993,10 @@ namespace ExactOnline.Api.Client.Models
                 { "SalesVATCodeDescription", n => { SalesVATCodeDescription = n.GetStringValue(); } },
                 { "SearchCode", n => { SearchCode = n.GetStringValue(); } },
                 { "SecurityLevel", n => { SecurityLevel = n.GetIntValue(); } },
-                { "SeparateInvPerProject", n => { SeparateInvPerProject = n.GetIntValue(); } },
                 { "SeparateInvPerSubscription", n => { SeparateInvPerSubscription = n.GetIntValue(); } },
                 { "ShippingLeadDays", n => { ShippingLeadDays = n.GetIntValue(); } },
                 { "ShippingMethod", n => { ShippingMethod = n.GetGuidValue(); } },
                 { "ShowRemarkForSales", n => { ShowRemarkForSales = n.GetBoolValue(); } },
-                { "Source", n => { Source = n.GetIntValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "State", n => { State = n.GetStringValue(); } },
                 { "StateName", n => { StateName = n.GetStringValue(); } },
@@ -1038,7 +1026,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("AddressLine1", AddressLine1);
             writer.WriteStringValue("AddressLine2", AddressLine2);
             writer.WriteStringValue("AddressLine3", AddressLine3);
-            writer.WriteIntValue("AddressSource", AddressSource);
             writer.WriteIntValue("AutomaticProcessProposedEntry", AutomaticProcessProposedEntry);
             writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.CRMBankAccounts>("BankAccounts", BankAccounts);
             writer.WriteBoolValue("Blocked", Blocked);
@@ -1078,7 +1065,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("CustomField", CustomField);
             writer.WriteStringValue("DatevCreditorCode", DatevCreditorCode);
             writer.WriteStringValue("DatevDebtorCode", DatevDebtorCode);
-            writer.WriteIntValue("DeliveryAdvice", DeliveryAdvice);
             writer.WriteDoubleValue("DiscountPurchase", DiscountPurchase);
             writer.WriteDoubleValue("DiscountSales", DiscountSales);
             writer.WriteIntValue("Division", Division);
@@ -1177,12 +1163,10 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("SalesVATCodeDescription", SalesVATCodeDescription);
             writer.WriteStringValue("SearchCode", SearchCode);
             writer.WriteIntValue("SecurityLevel", SecurityLevel);
-            writer.WriteIntValue("SeparateInvPerProject", SeparateInvPerProject);
             writer.WriteIntValue("SeparateInvPerSubscription", SeparateInvPerSubscription);
             writer.WriteIntValue("ShippingLeadDays", ShippingLeadDays);
             writer.WriteGuidValue("ShippingMethod", ShippingMethod);
             writer.WriteBoolValue("ShowRemarkForSales", ShowRemarkForSales);
-            writer.WriteIntValue("Source", Source);
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteStringValue("State", State);
             writer.WriteStringValue("StateName", StateName);

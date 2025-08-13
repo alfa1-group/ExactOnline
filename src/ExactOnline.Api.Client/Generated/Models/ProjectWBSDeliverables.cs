@@ -112,14 +112,8 @@ namespace ExactOnline.Api.Client.Models
         public bool? ReleaseInvoiceTerm { get; set; }
         /// <summary>Release invoice term date. The linked invoice term date can be updated by using this property. The update will only happen when releasing a WBS deliverable&apos;s invoice term</summary>
         public DateTimeOffset? ReleaseInvoiceTermDate { get; set; }
-        /// <summary>Release invoice term has specify date</summary>
-        public bool? ReleaseInvoiceTermHasSpecifyDate { get; set; }
         /// <summary>Sequence number of the WBS deliverable. Last sequence will be selected if not specified</summary>
         public int? SequenceNumber { get; set; }
-        /// <summary>The type of project WBS. E.g: 1 = Deliverable, 2 = Activity, 3 = Expense</summary>
-        public int? Type { get; set; }
-        /// <summary>Update action</summary>
-        public int? UpdateAction { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ProjectWBSDeliverables"/> and sets the default values.
         /// </summary>
@@ -167,10 +161,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ProjectTermDescription", n => { ProjectTermDescription = n.GetStringValue(); } },
                 { "ReleaseInvoiceTerm", n => { ReleaseInvoiceTerm = n.GetBoolValue(); } },
                 { "ReleaseInvoiceTermDate", n => { ReleaseInvoiceTermDate = n.GetDateTimeOffsetValue(); } },
-                { "ReleaseInvoiceTermHasSpecifyDate", n => { ReleaseInvoiceTermHasSpecifyDate = n.GetBoolValue(); } },
                 { "SequenceNumber", n => { SequenceNumber = n.GetIntValue(); } },
-                { "Type", n => { Type = n.GetIntValue(); } },
-                { "UpdateAction", n => { UpdateAction = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -202,10 +193,7 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ProjectTermDescription", ProjectTermDescription);
             writer.WriteBoolValue("ReleaseInvoiceTerm", ReleaseInvoiceTerm);
             writer.WriteDateTimeOffsetValue("ReleaseInvoiceTermDate", ReleaseInvoiceTermDate);
-            writer.WriteBoolValue("ReleaseInvoiceTermHasSpecifyDate", ReleaseInvoiceTermHasSpecifyDate);
             writer.WriteIntValue("SequenceNumber", SequenceNumber);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteIntValue("UpdateAction", UpdateAction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

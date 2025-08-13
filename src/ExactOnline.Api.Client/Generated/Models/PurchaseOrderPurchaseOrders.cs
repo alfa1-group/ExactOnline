@@ -16,14 +16,8 @@ namespace ExactOnline.Api.Client.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AmountDC property</summary>
         public double? AmountDC { get; set; }
-        /// <summary>The AmountDiscount property</summary>
-        public double? AmountDiscount { get; set; }
-        /// <summary>The AmountDiscountExclVat property</summary>
-        public double? AmountDiscountExclVat { get; set; }
         /// <summary>The AmountFC property</summary>
         public double? AmountFC { get; set; }
-        /// <summary>The AmountFCExclVat property</summary>
-        public double? AmountFCExclVat { get; set; }
         /// <summary>The ApprovalStatus property</summary>
         public int? ApprovalStatus { get; set; }
         /// <summary>The ApprovalStatusDescription property</summary>
@@ -104,8 +98,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Discount property</summary>
-        public double? Discount { get; set; }
         /// <summary>The Division property</summary>
         public int? Division { get; set; }
         /// <summary>The Document property</summary>
@@ -342,10 +334,7 @@ namespace ExactOnline.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "AmountDC", n => { AmountDC = n.GetDoubleValue(); } },
-                { "AmountDiscount", n => { AmountDiscount = n.GetDoubleValue(); } },
-                { "AmountDiscountExclVat", n => { AmountDiscountExclVat = n.GetDoubleValue(); } },
                 { "AmountFC", n => { AmountFC = n.GetDoubleValue(); } },
-                { "AmountFCExclVat", n => { AmountFCExclVat = n.GetDoubleValue(); } },
                 { "ApprovalStatus", n => { ApprovalStatus = n.GetIntValue(); } },
                 { "ApprovalStatusDescription", n => { ApprovalStatusDescription = n.GetStringValue(); } },
                 { "Approved", n => { Approved = n.GetDateTimeOffsetValue(); } },
@@ -362,7 +351,6 @@ namespace ExactOnline.Api.Client.Models
                 { "DeliveryContact", n => { DeliveryContact = n.GetGuidValue(); } },
                 { "DeliveryContactPersonFullName", n => { DeliveryContactPersonFullName = n.GetStringValue(); } },
                 { "Description", n => { Description = n.GetStringValue(); } },
-                { "Discount", n => { Discount = n.GetDoubleValue(); } },
                 { "Division", n => { Division = n.GetIntValue(); } },
                 { "Document", n => { Document = n.GetGuidValue(); } },
                 { "DocumentSubject", n => { DocumentSubject = n.GetStringValue(); } },
@@ -418,10 +406,7 @@ namespace ExactOnline.Api.Client.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("AmountDC", AmountDC);
-            writer.WriteDoubleValue("AmountDiscount", AmountDiscount);
-            writer.WriteDoubleValue("AmountDiscountExclVat", AmountDiscountExclVat);
             writer.WriteDoubleValue("AmountFC", AmountFC);
-            writer.WriteDoubleValue("AmountFCExclVat", AmountFCExclVat);
             writer.WriteIntValue("ApprovalStatus", ApprovalStatus);
             writer.WriteStringValue("ApprovalStatusDescription", ApprovalStatusDescription);
             writer.WriteDateTimeOffsetValue("Approved", Approved);
@@ -438,7 +423,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("DeliveryContact", DeliveryContact);
             writer.WriteStringValue("DeliveryContactPersonFullName", DeliveryContactPersonFullName);
             writer.WriteStringValue("Description", Description);
-            writer.WriteDoubleValue("Discount", Discount);
             writer.WriteIntValue("Division", Division);
             writer.WriteGuidValue("Document", Document);
             writer.WriteStringValue("DocumentSubject", DocumentSubject);

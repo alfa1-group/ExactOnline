@@ -62,24 +62,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string GLCostsDescription { get; set; }
 #endif
-        /// <summary>GL account on which the work in progress project costs of items of this group will be booked</summary>
-        public Guid? GLCostsWorkInProgress { get; set; }
-        /// <summary>Code of GLCosts Work In Progress</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLCostsWorkInProgressCode { get; set; }
-#nullable restore
-#else
-        public string GLCostsWorkInProgressCode { get; set; }
-#endif
-        /// <summary>Description of GLCosts  Work In Progress</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLCostsWorkInProgressDescription { get; set; }
-#nullable restore
-#else
-        public string GLCostsWorkInProgressDescription { get; set; }
-#endif
         /// <summary>GL Purchase account for purchase invoicing according to (non-) perpetual inventory method</summary>
         public Guid? GLPurchaseAccount { get; set; }
         /// <summary>Code of GLPurchase</summary>
@@ -133,24 +115,6 @@ namespace ExactOnline.Api.Client.Models
 #nullable restore
 #else
         public string GLRevenueDescription { get; set; }
-#endif
-        /// <summary>GL account on which the work in progress project revenue of items of this group will be booked</summary>
-        public Guid? GLRevenueWorkInProgress { get; set; }
-        /// <summary>Code of GLRevenue WorkInProgress</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLRevenueWorkInProgressCode { get; set; }
-#nullable restore
-#else
-        public string GLRevenueWorkInProgressCode { get; set; }
-#endif
-        /// <summary>Description of GLRevenue WorkInProgress</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLRevenueWorkInProgressDescription { get; set; }
-#nullable restore
-#else
-        public string GLRevenueWorkInProgressDescription { get; set; }
 #endif
         /// <summary>GL account on which stock entries will be booked for items of this group</summary>
         public Guid? GLStock { get; set; }
@@ -254,9 +218,6 @@ namespace ExactOnline.Api.Client.Models
                 { "GLCosts", n => { GLCosts = n.GetGuidValue(); } },
                 { "GLCostsCode", n => { GLCostsCode = n.GetStringValue(); } },
                 { "GLCostsDescription", n => { GLCostsDescription = n.GetStringValue(); } },
-                { "GLCostsWorkInProgress", n => { GLCostsWorkInProgress = n.GetGuidValue(); } },
-                { "GLCostsWorkInProgressCode", n => { GLCostsWorkInProgressCode = n.GetStringValue(); } },
-                { "GLCostsWorkInProgressDescription", n => { GLCostsWorkInProgressDescription = n.GetStringValue(); } },
                 { "GLPurchaseAccount", n => { GLPurchaseAccount = n.GetGuidValue(); } },
                 { "GLPurchaseAccountCode", n => { GLPurchaseAccountCode = n.GetStringValue(); } },
                 { "GLPurchaseAccountDescription", n => { GLPurchaseAccountDescription = n.GetStringValue(); } },
@@ -266,9 +227,6 @@ namespace ExactOnline.Api.Client.Models
                 { "GLRevenue", n => { GLRevenue = n.GetGuidValue(); } },
                 { "GLRevenueCode", n => { GLRevenueCode = n.GetStringValue(); } },
                 { "GLRevenueDescription", n => { GLRevenueDescription = n.GetStringValue(); } },
-                { "GLRevenueWorkInProgress", n => { GLRevenueWorkInProgress = n.GetGuidValue(); } },
-                { "GLRevenueWorkInProgressCode", n => { GLRevenueWorkInProgressCode = n.GetStringValue(); } },
-                { "GLRevenueWorkInProgressDescription", n => { GLRevenueWorkInProgressDescription = n.GetStringValue(); } },
                 { "GLStock", n => { GLStock = n.GetGuidValue(); } },
                 { "GLStockCode", n => { GLStockCode = n.GetStringValue(); } },
                 { "GLStockDescription", n => { GLStockDescription = n.GetStringValue(); } },
@@ -300,9 +258,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("GLCosts", GLCosts);
             writer.WriteStringValue("GLCostsCode", GLCostsCode);
             writer.WriteStringValue("GLCostsDescription", GLCostsDescription);
-            writer.WriteGuidValue("GLCostsWorkInProgress", GLCostsWorkInProgress);
-            writer.WriteStringValue("GLCostsWorkInProgressCode", GLCostsWorkInProgressCode);
-            writer.WriteStringValue("GLCostsWorkInProgressDescription", GLCostsWorkInProgressDescription);
             writer.WriteGuidValue("GLPurchaseAccount", GLPurchaseAccount);
             writer.WriteStringValue("GLPurchaseAccountCode", GLPurchaseAccountCode);
             writer.WriteStringValue("GLPurchaseAccountDescription", GLPurchaseAccountDescription);
@@ -312,9 +267,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("GLRevenue", GLRevenue);
             writer.WriteStringValue("GLRevenueCode", GLRevenueCode);
             writer.WriteStringValue("GLRevenueDescription", GLRevenueDescription);
-            writer.WriteGuidValue("GLRevenueWorkInProgress", GLRevenueWorkInProgress);
-            writer.WriteStringValue("GLRevenueWorkInProgressCode", GLRevenueWorkInProgressCode);
-            writer.WriteStringValue("GLRevenueWorkInProgressDescription", GLRevenueWorkInProgressDescription);
             writer.WriteGuidValue("GLStock", GLStock);
             writer.WriteStringValue("GLStockCode", GLStockCode);
             writer.WriteStringValue("GLStockDescription", GLStockDescription);

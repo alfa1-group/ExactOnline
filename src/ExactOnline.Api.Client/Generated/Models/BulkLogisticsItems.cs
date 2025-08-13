@@ -14,8 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Assembly lead days</summary>
-        public int? AssembledLeadDays { get; set; }
         /// <summary>The current average cost price</summary>
         public double? AverageCost { get; set; }
         /// <summary>Barcode of the item (numeric string)</summary>
@@ -26,8 +24,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Barcode { get; set; }
 #endif
-        /// <summary>Batch quantity</summary>
-        public double? BatchQuantity { get; set; }
         /// <summary>Item class code referring to ItemClasses with ClassID 1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -304,24 +300,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string GLCostsDescription { get; set; }
 #endif
-        /// <summary>GL account the work in progress project cost entries will be booked on. This overrules the GL account from the item group.</summary>
-        public Guid? GLCostsWorkInProgress { get; set; }
-        /// <summary>Code of GL account for costs Work In Progress</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLCostsWorkInProgressCode { get; set; }
-#nullable restore
-#else
-        public string GLCostsWorkInProgressCode { get; set; }
-#endif
-        /// <summary>Description of GLCosts Work In Progress</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLCostsWorkInProgressDescription { get; set; }
-#nullable restore
-#else
-        public string GLCostsWorkInProgressDescription { get; set; }
-#endif
         /// <summary>GL account the revenue will be booked on. This overrules the GL account from the item group. If the license contains &apos;Intuit integration&apos; this property overrides the value in Settings, not the item group.</summary>
         public Guid? GLRevenue { get; set; }
         /// <summary>Code of GLRevenue</summary>
@@ -339,24 +317,6 @@ namespace ExactOnline.Api.Client.Models
 #nullable restore
 #else
         public string GLRevenueDescription { get; set; }
-#endif
-        /// <summary>GL account the work in progress project revenue entries will be booked on. This overrules the GL account from the item group.</summary>
-        public Guid? GLRevenueWorkInProgress { get; set; }
-        /// <summary>Code of GLRevenue Work In Progress</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLRevenueWorkInProgressCode { get; set; }
-#nullable restore
-#else
-        public string GLRevenueWorkInProgressCode { get; set; }
-#endif
-        /// <summary>Description of GLRevenue Work In Progress</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GLRevenueWorkInProgressDescription { get; set; }
-#nullable restore
-#else
-        public string GLRevenueWorkInProgressDescription { get; set; }
 #endif
         /// <summary>GL account the stock entries will be booked on. This overrules the GL account from the item group. If the license contains &apos;Intuit integration&apos; this property overrides the value in Settings, not the item group.</summary>
         public Guid? GLStock { get; set; }
@@ -382,8 +342,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? ID { get; set; }
         /// <summary>Indicates if batches are used for this item</summary>
         public int? IsBatchItem { get; set; }
-        /// <summary>This property is obsolete. Use property &apos;IsBatchItem&apos; instead.</summary>
-        public int? IsBatchNumberItem { get; set; }
         /// <summary>Indicates if fractions (for example 0.35) are allowed for quantities of this item</summary>
         public bool? IsFractionAllowedItem { get; set; }
         /// <summary>Indicates that an Item is produced to Inventory, not purchased</summary>
@@ -396,14 +354,10 @@ namespace ExactOnline.Api.Client.Models
         public bool? IsPackageItem { get; set; }
         /// <summary>Indicates if the item can be purchased</summary>
         public bool? IsPurchaseItem { get; set; }
-        /// <summary>Indicated if the item is used in voucher functionality</summary>
-        public int? IsRegistrationCodeItem { get; set; }
         /// <summary>Indicates if the item can be sold</summary>
         public bool? IsSalesItem { get; set; }
         /// <summary>Indicates that serial numbers are used for this item</summary>
         public bool? IsSerialItem { get; set; }
-        /// <summary>This property is obsolete. Use property &apos;IsSerialItem&apos; instead.</summary>
-        public bool? IsSerialNumberItem { get; set; }
         /// <summary>If you have the Trade or Manufacturing license and you check this property the item will be shown in the stock positions overview, stock counts and transaction lists. If you have the Invoice module and you check this property you will get a general journal entry based on the Stock and Costs G/L accounts of the item group. If you don’t want the general journal entry to be created you should change the Stock/Costs G/L account on the Item group page to the type Costs instead of Inventory. If you have the CRM Standalone license, the item will not be available.</summary>
         public bool? IsStockItem { get; set; }
         /// <summary>Indicates if the item is provided by an outside supplier</summary>
@@ -572,8 +526,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string UnitType { get; set; }
 #endif
-        /// <summary>Assemble at delivery</summary>
-        public int? UseExplosion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.BulkLogisticsItems"/> and sets the default values.
         /// </summary>
@@ -599,10 +551,8 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AssembledLeadDays", n => { AssembledLeadDays = n.GetIntValue(); } },
                 { "AverageCost", n => { AverageCost = n.GetDoubleValue(); } },
                 { "Barcode", n => { Barcode = n.GetStringValue(); } },
-                { "BatchQuantity", n => { BatchQuantity = n.GetDoubleValue(); } },
                 { "Class_01", n => { Class01 = n.GetStringValue(); } },
                 { "Class_02", n => { Class02 = n.GetStringValue(); } },
                 { "Class_03", n => { Class03 = n.GetStringValue(); } },
@@ -657,32 +607,23 @@ namespace ExactOnline.Api.Client.Models
                 { "GLCosts", n => { GLCosts = n.GetGuidValue(); } },
                 { "GLCostsCode", n => { GLCostsCode = n.GetStringValue(); } },
                 { "GLCostsDescription", n => { GLCostsDescription = n.GetStringValue(); } },
-                { "GLCostsWorkInProgress", n => { GLCostsWorkInProgress = n.GetGuidValue(); } },
-                { "GLCostsWorkInProgressCode", n => { GLCostsWorkInProgressCode = n.GetStringValue(); } },
-                { "GLCostsWorkInProgressDescription", n => { GLCostsWorkInProgressDescription = n.GetStringValue(); } },
                 { "GLRevenue", n => { GLRevenue = n.GetGuidValue(); } },
                 { "GLRevenueCode", n => { GLRevenueCode = n.GetStringValue(); } },
                 { "GLRevenueDescription", n => { GLRevenueDescription = n.GetStringValue(); } },
-                { "GLRevenueWorkInProgress", n => { GLRevenueWorkInProgress = n.GetGuidValue(); } },
-                { "GLRevenueWorkInProgressCode", n => { GLRevenueWorkInProgressCode = n.GetStringValue(); } },
-                { "GLRevenueWorkInProgressDescription", n => { GLRevenueWorkInProgressDescription = n.GetStringValue(); } },
                 { "GLStock", n => { GLStock = n.GetGuidValue(); } },
                 { "GLStockCode", n => { GLStockCode = n.GetStringValue(); } },
                 { "GLStockDescription", n => { GLStockDescription = n.GetStringValue(); } },
                 { "GrossWeight", n => { GrossWeight = n.GetDoubleValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
                 { "IsBatchItem", n => { IsBatchItem = n.GetIntValue(); } },
-                { "IsBatchNumberItem", n => { IsBatchNumberItem = n.GetIntValue(); } },
                 { "IsFractionAllowedItem", n => { IsFractionAllowedItem = n.GetBoolValue(); } },
                 { "IsMakeItem", n => { IsMakeItem = n.GetIntValue(); } },
                 { "IsNewContract", n => { IsNewContract = n.GetIntValue(); } },
                 { "IsOnDemandItem", n => { IsOnDemandItem = n.GetIntValue(); } },
                 { "IsPackageItem", n => { IsPackageItem = n.GetBoolValue(); } },
                 { "IsPurchaseItem", n => { IsPurchaseItem = n.GetBoolValue(); } },
-                { "IsRegistrationCodeItem", n => { IsRegistrationCodeItem = n.GetIntValue(); } },
                 { "IsSalesItem", n => { IsSalesItem = n.GetBoolValue(); } },
                 { "IsSerialItem", n => { IsSerialItem = n.GetBoolValue(); } },
-                { "IsSerialNumberItem", n => { IsSerialNumberItem = n.GetBoolValue(); } },
                 { "IsStockItem", n => { IsStockItem = n.GetBoolValue(); } },
                 { "IsSubcontractedItem", n => { IsSubcontractedItem = n.GetBoolValue(); } },
                 { "IsTaxableItem", n => { IsTaxableItem = n.GetIntValue(); } },
@@ -716,7 +657,6 @@ namespace ExactOnline.Api.Client.Models
                 { "Unit", n => { Unit = n.GetStringValue(); } },
                 { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
                 { "UnitType", n => { UnitType = n.GetStringValue(); } },
-                { "UseExplosion", n => { UseExplosion = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -726,10 +666,8 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("AssembledLeadDays", AssembledLeadDays);
             writer.WriteDoubleValue("AverageCost", AverageCost);
             writer.WriteStringValue("Barcode", Barcode);
-            writer.WriteDoubleValue("BatchQuantity", BatchQuantity);
             writer.WriteStringValue("Class_01", Class01);
             writer.WriteStringValue("Class_02", Class02);
             writer.WriteStringValue("Class_03", Class03);
@@ -784,32 +722,23 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("GLCosts", GLCosts);
             writer.WriteStringValue("GLCostsCode", GLCostsCode);
             writer.WriteStringValue("GLCostsDescription", GLCostsDescription);
-            writer.WriteGuidValue("GLCostsWorkInProgress", GLCostsWorkInProgress);
-            writer.WriteStringValue("GLCostsWorkInProgressCode", GLCostsWorkInProgressCode);
-            writer.WriteStringValue("GLCostsWorkInProgressDescription", GLCostsWorkInProgressDescription);
             writer.WriteGuidValue("GLRevenue", GLRevenue);
             writer.WriteStringValue("GLRevenueCode", GLRevenueCode);
             writer.WriteStringValue("GLRevenueDescription", GLRevenueDescription);
-            writer.WriteGuidValue("GLRevenueWorkInProgress", GLRevenueWorkInProgress);
-            writer.WriteStringValue("GLRevenueWorkInProgressCode", GLRevenueWorkInProgressCode);
-            writer.WriteStringValue("GLRevenueWorkInProgressDescription", GLRevenueWorkInProgressDescription);
             writer.WriteGuidValue("GLStock", GLStock);
             writer.WriteStringValue("GLStockCode", GLStockCode);
             writer.WriteStringValue("GLStockDescription", GLStockDescription);
             writer.WriteDoubleValue("GrossWeight", GrossWeight);
             writer.WriteGuidValue("ID", ID);
             writer.WriteIntValue("IsBatchItem", IsBatchItem);
-            writer.WriteIntValue("IsBatchNumberItem", IsBatchNumberItem);
             writer.WriteBoolValue("IsFractionAllowedItem", IsFractionAllowedItem);
             writer.WriteIntValue("IsMakeItem", IsMakeItem);
             writer.WriteIntValue("IsNewContract", IsNewContract);
             writer.WriteIntValue("IsOnDemandItem", IsOnDemandItem);
             writer.WriteBoolValue("IsPackageItem", IsPackageItem);
             writer.WriteBoolValue("IsPurchaseItem", IsPurchaseItem);
-            writer.WriteIntValue("IsRegistrationCodeItem", IsRegistrationCodeItem);
             writer.WriteBoolValue("IsSalesItem", IsSalesItem);
             writer.WriteBoolValue("IsSerialItem", IsSerialItem);
-            writer.WriteBoolValue("IsSerialNumberItem", IsSerialNumberItem);
             writer.WriteBoolValue("IsStockItem", IsStockItem);
             writer.WriteBoolValue("IsSubcontractedItem", IsSubcontractedItem);
             writer.WriteIntValue("IsTaxableItem", IsTaxableItem);
@@ -843,7 +772,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("Unit", Unit);
             writer.WriteStringValue("UnitDescription", UnitDescription);
             writer.WriteStringValue("UnitType", UnitType);
-            writer.WriteIntValue("UseExplosion", UseExplosion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

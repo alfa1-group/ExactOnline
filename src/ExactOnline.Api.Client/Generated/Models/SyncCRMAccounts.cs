@@ -56,8 +56,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AddressLine3 { get; set; }
 #endif
-        /// <summary>The AddressSource property</summary>
-        public int? AddressSource { get; set; }
         /// <summary>The AutomaticProcessProposedEntry property</summary>
         public int? AutomaticProcessProposedEntry { get; set; }
         /// <summary>The BankAccounts property</summary>
@@ -238,8 +236,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string DatevDebtorCode { get; set; }
 #endif
-        /// <summary>The DeliveryAdvice property</summary>
-        public int? DeliveryAdvice { get; set; }
         /// <summary>The DiscountPurchase property</summary>
         public double? DiscountPurchase { get; set; }
         /// <summary>The DiscountSales property</summary>
@@ -742,8 +738,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>The SecurityLevel property</summary>
         public int? SecurityLevel { get; set; }
-        /// <summary>The SeparateInvPerProject property</summary>
-        public int? SeparateInvPerProject { get; set; }
         /// <summary>The SeparateInvPerSubscription property</summary>
         public int? SeparateInvPerSubscription { get; set; }
         /// <summary>The ShippingLeadDays property</summary>
@@ -752,8 +746,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? ShippingMethod { get; set; }
         /// <summary>The ShowRemarkForSales property</summary>
         public bool? ShowRemarkForSales { get; set; }
-        /// <summary>The Source property</summary>
-        public int? Source { get; set; }
         /// <summary>The StartDate property</summary>
         public DateTimeOffset? StartDate { get; set; }
         /// <summary>The State property</summary>
@@ -866,7 +858,6 @@ namespace ExactOnline.Api.Client.Models
                 { "AddressLine1", n => { AddressLine1 = n.GetStringValue(); } },
                 { "AddressLine2", n => { AddressLine2 = n.GetStringValue(); } },
                 { "AddressLine3", n => { AddressLine3 = n.GetStringValue(); } },
-                { "AddressSource", n => { AddressSource = n.GetIntValue(); } },
                 { "AutomaticProcessProposedEntry", n => { AutomaticProcessProposedEntry = n.GetIntValue(); } },
                 { "BRIN", n => { BRIN = n.GetGuidValue(); } },
                 { "BSN", n => { BSN = n.GetStringValue(); } },
@@ -906,7 +897,6 @@ namespace ExactOnline.Api.Client.Models
                 { "CustomerSince", n => { CustomerSince = n.GetDateTimeOffsetValue(); } },
                 { "DatevCreditorCode", n => { DatevCreditorCode = n.GetStringValue(); } },
                 { "DatevDebtorCode", n => { DatevDebtorCode = n.GetStringValue(); } },
-                { "DeliveryAdvice", n => { DeliveryAdvice = n.GetIntValue(); } },
                 { "DiscountPurchase", n => { DiscountPurchase = n.GetDoubleValue(); } },
                 { "DiscountSales", n => { DiscountSales = n.GetDoubleValue(); } },
                 { "Division", n => { Division = n.GetIntValue(); } },
@@ -1005,12 +995,10 @@ namespace ExactOnline.Api.Client.Models
                 { "SalesVATCodeDescription", n => { SalesVATCodeDescription = n.GetStringValue(); } },
                 { "SearchCode", n => { SearchCode = n.GetStringValue(); } },
                 { "SecurityLevel", n => { SecurityLevel = n.GetIntValue(); } },
-                { "SeparateInvPerProject", n => { SeparateInvPerProject = n.GetIntValue(); } },
                 { "SeparateInvPerSubscription", n => { SeparateInvPerSubscription = n.GetIntValue(); } },
                 { "ShippingLeadDays", n => { ShippingLeadDays = n.GetIntValue(); } },
                 { "ShippingMethod", n => { ShippingMethod = n.GetGuidValue(); } },
                 { "ShowRemarkForSales", n => { ShowRemarkForSales = n.GetBoolValue(); } },
-                { "Source", n => { Source = n.GetIntValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "State", n => { State = n.GetStringValue(); } },
                 { "StateName", n => { StateName = n.GetStringValue(); } },
@@ -1041,7 +1029,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("AddressLine1", AddressLine1);
             writer.WriteStringValue("AddressLine2", AddressLine2);
             writer.WriteStringValue("AddressLine3", AddressLine3);
-            writer.WriteIntValue("AddressSource", AddressSource);
             writer.WriteIntValue("AutomaticProcessProposedEntry", AutomaticProcessProposedEntry);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.CRMBankAccounts>("BankAccounts", BankAccounts);
             writer.WriteBoolValue("Blocked", Blocked);
@@ -1081,7 +1068,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("CustomField", CustomField);
             writer.WriteStringValue("DatevCreditorCode", DatevCreditorCode);
             writer.WriteStringValue("DatevDebtorCode", DatevDebtorCode);
-            writer.WriteIntValue("DeliveryAdvice", DeliveryAdvice);
             writer.WriteDoubleValue("DiscountPurchase", DiscountPurchase);
             writer.WriteDoubleValue("DiscountSales", DiscountSales);
             writer.WriteIntValue("Division", Division);
@@ -1180,12 +1166,10 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("SalesVATCodeDescription", SalesVATCodeDescription);
             writer.WriteStringValue("SearchCode", SearchCode);
             writer.WriteIntValue("SecurityLevel", SecurityLevel);
-            writer.WriteIntValue("SeparateInvPerProject", SeparateInvPerProject);
             writer.WriteIntValue("SeparateInvPerSubscription", SeparateInvPerSubscription);
             writer.WriteIntValue("ShippingLeadDays", ShippingLeadDays);
             writer.WriteGuidValue("ShippingMethod", ShippingMethod);
             writer.WriteBoolValue("ShowRemarkForSales", ShowRemarkForSales);
-            writer.WriteIntValue("Source", Source);
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteStringValue("State", State);
             writer.WriteStringValue("StateName", StateName);

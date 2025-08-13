@@ -80,16 +80,6 @@ namespace ExactOnline.Api.Client.Models
         public int? Division { get; set; }
         /// <summary>The EntryID property</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The Expense property</summary>
-        public Guid? Expense { get; set; }
-        /// <summary>The ExpenseDescription property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExpenseDescription { get; set; }
-#nullable restore
-#else
-        public string ExpenseDescription { get; set; }
-#endif
         /// <summary>The From property</summary>
         public DateTimeOffset? From { get; set; }
         /// <summary>The GLAccount property</summary>
@@ -313,8 +303,6 @@ namespace ExactOnline.Api.Client.Models
                 { "Description", n => { Description = n.GetStringValue(); } },
                 { "Division", n => { Division = n.GetIntValue(); } },
                 { "EntryID", n => { EntryID = n.GetGuidValue(); } },
-                { "Expense", n => { Expense = n.GetGuidValue(); } },
-                { "ExpenseDescription", n => { ExpenseDescription = n.GetStringValue(); } },
                 { "From", n => { From = n.GetDateTimeOffsetValue(); } },
                 { "GLAccount", n => { GLAccount = n.GetGuidValue(); } },
                 { "GLAccountCode", n => { GLAccountCode = n.GetStringValue(); } },
@@ -375,8 +363,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("Description", Description);
             writer.WriteIntValue("Division", Division);
             writer.WriteGuidValue("EntryID", EntryID);
-            writer.WriteGuidValue("Expense", Expense);
-            writer.WriteStringValue("ExpenseDescription", ExpenseDescription);
             writer.WriteDateTimeOffsetValue("From", From);
             writer.WriteGuidValue("GLAccount", GLAccount);
             writer.WriteStringValue("GLAccountCode", GLAccountCode);

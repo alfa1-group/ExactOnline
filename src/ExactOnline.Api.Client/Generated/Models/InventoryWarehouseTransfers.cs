@@ -58,8 +58,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; set; }
 #endif
-        /// <summary>Warehouse pick/Location pick user</summary>
-        public Guid? PickedBy { get; set; }
         /// <summary>Planned delivery date / Planned transfer date It shows the date the items will be sent for transfer delivery.</summary>
         public DateTimeOffset? PlannedDeliveryDate { get; set; }
         /// <summary>Planned receipt date It shows the date the items will arrive at the warehouse location.</summary>
@@ -82,8 +80,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? TransferID { get; set; }
         /// <summary>Transfer Number</summary>
         public int? TransferNumber { get; set; }
-        /// <summary>Warehouse transfer/Location transfer user</summary>
-        public Guid? TransferredBy { get; set; }
         /// <summary>ID of warehouse to transfer item from</summary>
         public Guid? WarehouseFrom { get; set; }
         /// <summary>Code of warehouse to transfer item from</summary>
@@ -163,7 +159,6 @@ namespace ExactOnline.Api.Client.Models
                 { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "Modifier", n => { Modifier = n.GetGuidValue(); } },
                 { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "PickedBy", n => { PickedBy = n.GetGuidValue(); } },
                 { "PlannedDeliveryDate", n => { PlannedDeliveryDate = n.GetDateTimeOffsetValue(); } },
                 { "PlannedReceiptDate", n => { PlannedReceiptDate = n.GetDateTimeOffsetValue(); } },
                 { "Remarks", n => { Remarks = n.GetStringValue(); } },
@@ -172,7 +167,6 @@ namespace ExactOnline.Api.Client.Models
                 { "TransferDate", n => { TransferDate = n.GetDateTimeOffsetValue(); } },
                 { "TransferID", n => { TransferID = n.GetGuidValue(); } },
                 { "TransferNumber", n => { TransferNumber = n.GetIntValue(); } },
-                { "TransferredBy", n => { TransferredBy = n.GetGuidValue(); } },
                 { "WarehouseFrom", n => { WarehouseFrom = n.GetGuidValue(); } },
                 { "WarehouseFromCode", n => { WarehouseFromCode = n.GetStringValue(); } },
                 { "WarehouseFromDescription", n => { WarehouseFromDescription = n.GetStringValue(); } },
@@ -199,7 +193,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteGuidValue("PickedBy", PickedBy);
             writer.WriteDateTimeOffsetValue("PlannedDeliveryDate", PlannedDeliveryDate);
             writer.WriteDateTimeOffsetValue("PlannedReceiptDate", PlannedReceiptDate);
             writer.WriteStringValue("Remarks", Remarks);
@@ -208,7 +201,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDateTimeOffsetValue("TransferDate", TransferDate);
             writer.WriteGuidValue("TransferID", TransferID);
             writer.WriteIntValue("TransferNumber", TransferNumber);
-            writer.WriteGuidValue("TransferredBy", TransferredBy);
             writer.WriteGuidValue("WarehouseFrom", WarehouseFrom);
             writer.WriteStringValue("WarehouseFromCode", WarehouseFromCode);
             writer.WriteStringValue("WarehouseFromDescription", WarehouseFromDescription);

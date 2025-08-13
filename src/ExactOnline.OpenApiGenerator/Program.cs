@@ -2,18 +2,18 @@ using ExactOnline.OpenApiGenerator;
 
 var cts = new CancellationTokenSource();
 
-AppDomain.CurrentDomain.ProcessExit += (s, e) =>
+AppDomain.CurrentDomain.ProcessExit += (_, _) =>
 {
     cts.Cancel();
 };
 
-Console.CancelKeyPress += (s, e) =>
+Console.CancelKeyPress += (_, e) =>
 {
     e.Cancel = true;
     cts.Cancel();
 };
 
-AppDomain.CurrentDomain.UnhandledException += (s, e) =>
+AppDomain.CurrentDomain.UnhandledException += (_, _) =>
 {
     cts.Cancel();
 };

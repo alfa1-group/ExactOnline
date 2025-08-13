@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SalesOrderCompleteSalesOrderLine_ResponseExtensions
 {
+    public static async Task<SalesOrderCompleteSalesOrderLine?> AsItem(this Task<SalesOrderCompleteSalesOrderLine_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? null : (d.SalesOrderCompleteSalesOrderLine ?? d.SalesOrderCompleteSalesOrderLineResults?.Results ?? []).FirstOrDefault();
+    }
 
 }

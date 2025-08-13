@@ -140,8 +140,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string DivisionName { get; set; }
 #endif
-        /// <summary>Work in progress: To be invoiced</summary>
-        public bool? EnableWorkInProgress { get; set; }
         /// <summary>End date of the project. In combination with the start date the status is determined</summary>
         public DateTimeOffset? EndDate { get; set; }
         /// <summary>Item used for fixed price invoicing. To be defined per project. If empty the functionality relies on the setting</summary>
@@ -359,7 +357,6 @@ namespace ExactOnline.Api.Client.Models
                 { "Description", n => { Description = n.GetStringValue(); } },
                 { "Division", n => { Division = n.GetIntValue(); } },
                 { "DivisionName", n => { DivisionName = n.GetStringValue(); } },
-                { "EnableWorkInProgress", n => { EnableWorkInProgress = n.GetBoolValue(); } },
                 { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
                 { "FixedPriceItem", n => { FixedPriceItem = n.GetGuidValue(); } },
                 { "FixedPriceItemDescription", n => { FixedPriceItemDescription = n.GetStringValue(); } },
@@ -435,7 +432,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("Description", Description);
             writer.WriteIntValue("Division", Division);
             writer.WriteStringValue("DivisionName", DivisionName);
-            writer.WriteBoolValue("EnableWorkInProgress", EnableWorkInProgress);
             writer.WriteDateTimeOffsetValue("EndDate", EndDate);
             writer.WriteGuidValue("FixedPriceItem", FixedPriceItem);
             writer.WriteStringValue("FixedPriceItemDescription", FixedPriceItemDescription);

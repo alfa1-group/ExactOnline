@@ -48,8 +48,6 @@ namespace ExactOnline.Api.Client.Models
         public DateTimeOffset? EndDate { get; set; }
         /// <summary>ID of internal rate</summary>
         public Guid? ID { get; set; }
-        /// <summary>Amount of intercompany rate</summary>
-        public double? IntercompanyRate { get; set; }
         /// <summary>Amount of internal rate</summary>
         public double? InternalRate { get; set; }
         /// <summary>The __metadata property</summary>
@@ -110,7 +108,6 @@ namespace ExactOnline.Api.Client.Models
                 { "EmploymentHID", n => { EmploymentHID = n.GetIntValue(); } },
                 { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
-                { "IntercompanyRate", n => { IntercompanyRate = n.GetDoubleValue(); } },
                 { "InternalRate", n => { InternalRate = n.GetDoubleValue(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
                 { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
@@ -137,7 +134,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("EmploymentHID", EmploymentHID);
             writer.WriteDateTimeOffsetValue("EndDate", EndDate);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteDoubleValue("IntercompanyRate", IntercompanyRate);
             writer.WriteDoubleValue("InternalRate", InternalRate);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);

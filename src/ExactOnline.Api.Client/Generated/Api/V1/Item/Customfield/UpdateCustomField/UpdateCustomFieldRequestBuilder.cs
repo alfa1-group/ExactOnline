@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdateCustomFieldRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/customfield/UpdateCustomField", pathParameters)
+        public UpdateCustomFieldRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/customfield/UpdateCustomField{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,8 +30,31 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdateCustomFieldRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/customfield/UpdateCustomField", rawUrl)
+        public UpdateCustomFieldRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/customfield/UpdateCustomField{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// GET CustomFieldUpdateCustomField
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomField_Response"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomField_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField.UpdateCustomFieldRequestBuilder.UpdateCustomFieldRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomField_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField.UpdateCustomFieldRequestBuilder.UpdateCustomFieldRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomField_Response>(requestInfo, global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomField_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// POST CustomFieldUpdateCustomField
@@ -43,11 +66,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomField body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomFieldPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomField body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomFieldPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -59,6 +82,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// GET CustomFieldUpdateCustomField
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField.UpdateCustomFieldRequestBuilder.UpdateCustomFieldRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField.UpdateCustomFieldRequestBuilder.UpdateCustomFieldRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
         /// POST CustomFieldUpdateCustomField
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -66,11 +108,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomField body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomFieldPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomField body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.CustomFieldUpdateCustomFieldPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -88,6 +130,80 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField
         public global::ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField.UpdateCustomFieldRequestBuilder WithUrl(string rawUrl)
         {
             return new global::ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField.UpdateCustomFieldRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// GET CustomFieldUpdateCustomField
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UpdateCustomFieldRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Include count of items, e.g., `true`</summary>
+            [QueryParameter("%24count")]
+            public bool? Count { get; set; }
+            /// <summary>Expand related entities, e.g., `ParentEntity`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string Expand { get; set; }
+#endif
+            /// <summary>OData filter, e.g., `ID eq guid&apos;00000000-0000-0000-0000-000000000000&apos;`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24filter")]
+            public string? Filter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24filter")]
+            public string Filter { get; set; }
+#endif
+            /// <summary>Include inline count, e.g., `allpages`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24inlinecount")]
+            public string? Inlinecount { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24inlinecount")]
+            public string Inlinecount { get; set; }
+#endif
+            /// <summary>Order by field, e.g., `ID desc`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24orderby")]
+            public string? Orderby { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24orderby")]
+            public string Orderby { get; set; }
+#endif
+            /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24select")]
+            public string? Select { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24select")]
+            public string Select { get; set; }
+#endif
+            /// <summary>Number of records to skip, e.g., `10`</summary>
+            [QueryParameter("%24skip")]
+            public int? Skip { get; set; }
+            /// <summary>Number of records to return, e.g., `100`</summary>
+            [QueryParameter("%24top")]
+            public int? Top { get; set; }
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UpdateCustomFieldRequestBuilderGetRequestConfiguration : RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomField.UpdateCustomFieldRequestBuilder.UpdateCustomFieldRequestBuilderGetQueryParameters>
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

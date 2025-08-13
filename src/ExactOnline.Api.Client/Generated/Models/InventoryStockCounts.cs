@@ -14,8 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Stock count user</summary>
-        public Guid? CountedBy { get; set; }
         /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>User ID of creator</summary>
@@ -139,7 +137,6 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CountedBy", n => { CountedBy = n.GetGuidValue(); } },
                 { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "Creator", n => { Creator = n.GetGuidValue(); } },
                 { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
@@ -171,7 +168,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("CountedBy", CountedBy);
             writer.WriteDateTimeOffsetValue("Created", Created);
             writer.WriteGuidValue("Creator", Creator);
             writer.WriteStringValue("CreatorFullName", CreatorFullName);

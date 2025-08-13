@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class InventoryProcessWarehouseTransfer_ResponseExtensions
 {
+    public static async Task<InventoryProcessWarehouseTransfer?> AsItem(this Task<InventoryProcessWarehouseTransfer_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? null : (d.InventoryProcessWarehouseTransfer ?? d.InventoryProcessWarehouseTransferResults?.Results ?? []).FirstOrDefault();
+    }
 
 }

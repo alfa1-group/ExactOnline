@@ -22,14 +22,6 @@ namespace ExactOnline.Api.Client.Models
         public int? IsStockItem { get; set; }
         /// <summary>Item</summary>
         public Guid? Item { get; set; }
-        /// <summary>Barcode of the item of this stock quantity</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemBarcode { get; set; }
-#nullable restore
-#else
-        public string ItemBarcode { get; set; }
-#endif
         /// <summary>Code of the item of this stock quantity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,7 +135,6 @@ namespace ExactOnline.Api.Client.Models
                 { "IsFractionAllowedItem", n => { IsFractionAllowedItem = n.GetIntValue(); } },
                 { "IsStockItem", n => { IsStockItem = n.GetIntValue(); } },
                 { "Item", n => { Item = n.GetGuidValue(); } },
-                { "ItemBarcode", n => { ItemBarcode = n.GetStringValue(); } },
                 { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
                 { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
                 { "ItemEndDate", n => { ItemEndDate = n.GetDateTimeOffsetValue(); } },
@@ -172,7 +163,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("IsFractionAllowedItem", IsFractionAllowedItem);
             writer.WriteIntValue("IsStockItem", IsStockItem);
             writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemBarcode", ItemBarcode);
             writer.WriteStringValue("ItemCode", ItemCode);
             writer.WriteStringValue("ItemDescription", ItemDescription);
             writer.WriteDateTimeOffsetValue("ItemEndDate", ItemEndDate);

@@ -24,8 +24,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>Cost price of the item that is used to create the stock count</summary>
         public double? CostPrice { get; set; }
-        /// <summary>Counted by</summary>
-        public Guid? CountedBy { get; set; }
         /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>User ID of creator</summary>
@@ -44,14 +42,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? ID { get; set; }
         /// <summary>Reference to the item for which the stock is counted</summary>
         public Guid? Item { get; set; }
-        /// <summary>Item Barcode</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemBarcode { get; set; }
-#nullable restore
-#else
-        public string ItemBarcode { get; set; }
-#endif
         /// <summary>Item code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,10 +116,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public List<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers> SerialNumbers { get; set; }
 #endif
-        /// <summary>Source of stock count entry: 1-Manual entry, 2-Import, 3-Stock count, 4-Web service</summary>
-        public int? Source { get; set; }
-        /// <summary>Stock count status: 12-Draft, 21-Processed</summary>
-        public int? Status { get; set; }
         /// <summary>Identifies the stock count. All the lines of a stock count have the same StockCountID</summary>
         public Guid? StockCountID { get; set; }
         /// <summary>Stock item&apos;s unit description</summary>
@@ -160,8 +146,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>Sequence number for stock count (Premium Only)</summary>
         public int? StorageLocationSequenceNumber { get; set; }
-        /// <summary>Warehouse</summary>
-        public Guid? Warehouse { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryStockCountLines"/> and sets the default values.
         /// </summary>
@@ -189,14 +173,12 @@ namespace ExactOnline.Api.Client.Models
             {
                 { "BatchNumbers", n => { BatchNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "CostPrice", n => { CostPrice = n.GetDoubleValue(); } },
-                { "CountedBy", n => { CountedBy = n.GetGuidValue(); } },
                 { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "Creator", n => { Creator = n.GetGuidValue(); } },
                 { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
                 { "Division", n => { Division = n.GetIntValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
                 { "Item", n => { Item = n.GetGuidValue(); } },
-                { "ItemBarcode", n => { ItemBarcode = n.GetStringValue(); } },
                 { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
                 { "ItemCostPrice", n => { ItemCostPrice = n.GetDoubleValue(); } },
                 { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
@@ -213,15 +195,12 @@ namespace ExactOnline.Api.Client.Models
                 { "ReasonCodeDescription", n => { ReasonCodeDescription = n.GetStringValue(); } },
                 { "ReasonCodeID", n => { ReasonCodeID = n.GetGuidValue(); } },
                 { "SerialNumbers", n => { SerialNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "Source", n => { Source = n.GetIntValue(); } },
-                { "Status", n => { Status = n.GetIntValue(); } },
                 { "StockCountID", n => { StockCountID = n.GetGuidValue(); } },
                 { "StockKeepingUnit", n => { StockKeepingUnit = n.GetStringValue(); } },
                 { "StorageLocation", n => { StorageLocation = n.GetGuidValue(); } },
                 { "StorageLocationCode", n => { StorageLocationCode = n.GetStringValue(); } },
                 { "StorageLocationDescription", n => { StorageLocationDescription = n.GetStringValue(); } },
                 { "StorageLocationSequenceNumber", n => { StorageLocationSequenceNumber = n.GetIntValue(); } },
-                { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -233,14 +212,12 @@ namespace ExactOnline.Api.Client.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>("BatchNumbers", BatchNumbers);
             writer.WriteDoubleValue("CostPrice", CostPrice);
-            writer.WriteGuidValue("CountedBy", CountedBy);
             writer.WriteDateTimeOffsetValue("Created", Created);
             writer.WriteGuidValue("Creator", Creator);
             writer.WriteStringValue("CreatorFullName", CreatorFullName);
             writer.WriteIntValue("Division", Division);
             writer.WriteGuidValue("ID", ID);
             writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemBarcode", ItemBarcode);
             writer.WriteStringValue("ItemCode", ItemCode);
             writer.WriteDoubleValue("ItemCostPrice", ItemCostPrice);
             writer.WriteStringValue("ItemDescription", ItemDescription);
@@ -257,15 +234,12 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ReasonCodeDescription", ReasonCodeDescription);
             writer.WriteGuidValue("ReasonCodeID", ReasonCodeID);
             writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>("SerialNumbers", SerialNumbers);
-            writer.WriteIntValue("Source", Source);
-            writer.WriteIntValue("Status", Status);
             writer.WriteGuidValue("StockCountID", StockCountID);
             writer.WriteStringValue("StockKeepingUnit", StockKeepingUnit);
             writer.WriteGuidValue("StorageLocation", StorageLocation);
             writer.WriteStringValue("StorageLocationCode", StorageLocationCode);
             writer.WriteStringValue("StorageLocationDescription", StorageLocationDescription);
             writer.WriteIntValue("StorageLocationSequenceNumber", StorageLocationSequenceNumber);
-            writer.WriteGuidValue("Warehouse", Warehouse);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

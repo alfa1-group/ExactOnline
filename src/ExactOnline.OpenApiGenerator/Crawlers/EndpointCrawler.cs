@@ -1,6 +1,7 @@
-using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
+using ExactOnline.OpenApiGenerator.Extensions;
 using ExactOnline.OpenApiGenerator.HtmlDocumentLoaders;
+using ExactOnline.OpenApiGenerator.Parsers;
 using HtmlAgilityPack;
 using Microsoft.OpenApi;
 
@@ -115,8 +116,8 @@ internal class EndpointCrawler
             {
                 try
                 {
-                    var doc = await htmlLoader.LoadAsync(url, cancellationToken);
-                    Process(url, doc, _openApiDoc);
+                    var docs = await htmlLoader.LoadAsync(url, cancellationToken);
+                    Process(url, docs, _openApiDoc);
                     break;
                 }
                 catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException)
@@ -138,175 +139,180 @@ internal class EndpointCrawler
         return _openApiDoc;
     }
 
-    private static void Process(string pageUrl, HtmlDocument doc, OpenApiDocument openApiDoc)
+    private static void Process(string pageUrl, IDictionary<HttpMethod, HtmlDocument> docs, OpenApiDocument openApiDoc)
     {
-        var schemaName = pageUrl.Split("?name=").Last().Trim();
-        var endpointDescription = doc.DocumentNode.SelectSingleNode("//p[@id='goodToKnow']")?.InnerText.Trim() ?? string.Empty;
-        var schemaIsCollection = IsCollection(schemaName, endpointDescription);
-        var responseDescription = schemaIsCollection ? $"A collection of {schemaName} entities." : $"The {schemaName} entity.";
-        var (baseEndpointUri, queryParameters) = GetEndpointUriDetails(doc);
+        var docGet = docs[HttpMethod.Get];
 
-        var methods = doc.DocumentNode
-            .SelectNodes("//input[@name='supportedmethods']")
-            .Select(n => HttpMethod.Parse(n.Attributes["value"].Value))
-            .ToArray();
+        var baseSchemaName = pageUrl.Split("?name=").Last().Trim();
+        var endpointDescription = docGet.DocumentNode.SelectSingleNode("//p[@id='goodToKnow']")?.InnerText.Trim() ?? string.Empty;
+        var schemaIsCollection = IsCollection(baseSchemaName, endpointDescription);
+        var responseDescription = schemaIsCollection ? $"A collection of {baseSchemaName} entities." : $"The {baseSchemaName} entity.";
+        var (baseEndpointUri, queryParameters) = GetEndpointUriDetails(docGet);
 
-        var properties = new Dictionary<string, IOpenApiSchema>
+        foreach (var (httpMethod, document) in docs)
         {
-            { "__metadata", new OpenApiSchemaReference("ExactOnlineMetadata") }
-        };
-
-        var requiredProperties = new HashSet<string>();
-
-        var propertyRows = doc.DocumentNode.SelectNodes("//table[@id='referencetable']//tr[not(@class='header')]");
-        // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
-        if (propertyRows != null)
-        {
-            foreach (var row in propertyRows)
+            var properties = new Dictionary<string, IOpenApiSchema>
             {
-                var rowIsKey = row.GetClasses().Contains("key");
+                { "__metadata", new OpenApiSchemaReference("ExactOnlineMetadata") }
+            };
 
-                var columns = row.SelectNodes("td");
-                if (columns is { Count: >= 7 })
+            var requiredProperties = new HashSet<string>();
+
+            // Rows from the tabel which:
+            // - are not headers (no class='header')
+            // - are not hidden (no style='display: none')
+            var propertyRows = document.DocumentNode.SelectNodes("//table[@id='referencetable']//tr[not(@class='header') and not(contains(@style, 'display: none'))]");
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
+            if (propertyRows != null)
+            {
+                foreach (var row in propertyRows)
                 {
-                    var nameColumn = columns[1];
-                    var name = nameColumn.InnerText.Trim();
-                    var linkNode = nameColumn.SelectSingleNode(".//a");
-                    var href = linkNode?.Attributes["href"]?.Value;
-                    var linkedSchemaName = href?.Split("?name=").Last().Trim();
+                    var rowIsKey = row.GetClasses().Contains("key");
 
-                    var type = columns[5].InnerText.Trim().Split(' ')[0].Trim();
-                    var description = columns[6].InnerText.Trim();
-                    if (string.IsNullOrEmpty(description) && columns.Count >= 9)
+                    var columns = row.SelectNodes("td");
+                    if (columns is { Count: >= 7 })
                     {
-                        description = columns[8].InnerText.Trim();
-                    }
-                    var isCollection = description.Contains("collection of", StringComparison.OrdinalIgnoreCase);
-                    var isRequired = rowIsKey || bool.TryParse(columns[2].InnerText.Trim(), out var isMandatoryValue) && isMandatoryValue;
+                        var nameColumn = columns[1];
+                        var name = nameColumn.InnerText.Trim();
+                        var linkNode = nameColumn.SelectSingleNode(".//a");
+                        var href = linkNode?.Attributes["href"]?.Value;
+                        var linkedSchemaName = href?.Split("?name=").Last().Trim();
 
-                    if (string.IsNullOrEmpty(name))
-                    {
-                        continue;
-                    }
-
-                    if (!TryParseAsEdmType(type, description, out var property))
-                    {
-                        if (!string.IsNullOrEmpty(linkedSchemaName))
+                        var type = columns[5].InnerText.Trim().Split(' ')[0].Trim();
+                        var description = columns[6].InnerText.Trim();
+                        if (string.IsNullOrEmpty(description) && columns.Count >= 9)
                         {
-                            if (isCollection)
-                            {
-                                property = new OpenApiSchema
-                                {
-                                    Type = JsonSchemaType.Array,
-                                    Description = description,
-                                    Items = new OpenApiSchemaReference(linkedSchemaName)
-                                };
-                            }
-                            else
-                            {
-                                property = new OpenApiSchemaReference(linkedSchemaName);
-                            }
+                            description = columns[8].InnerText.Trim();
                         }
-                        else
+                        var isCollection = description.Contains("collection of", StringComparison.OrdinalIgnoreCase);
+                        var isRequired = rowIsKey || bool.TryParse(columns[2].InnerText.Trim(), out var isMandatoryValue) && isMandatoryValue;
+
+                        if (string.IsNullOrEmpty(name))
                         {
-                            if (isCollection)
+                            continue;
+                        }
+
+                        if (!EdmTypeParser.TryParse(type, description, out var property))
+                        {
+                            if (!string.IsNullOrEmpty(linkedSchemaName))
                             {
-                                property = new OpenApiSchema
+                                if (isCollection)
                                 {
-                                    Type = JsonSchemaType.Array,
-                                    Description = description,
-                                    Items = new OpenApiSchema
+                                    property = new OpenApiSchema
                                     {
-                                        Type = JsonSchemaType.Object
-                                    }
-                                };
+                                        Type = JsonSchemaType.Array,
+                                        Description = description,
+                                        Items = new OpenApiSchemaReference(linkedSchemaName)
+                                    };
+                                }
+                                else
+                                {
+                                    property = new OpenApiSchemaReference(linkedSchemaName);
+                                }
                             }
                             else
                             {
-                                property = new OpenApiSchema
+                                if (isCollection)
                                 {
-                                    Type = JsonSchemaType.Object,
-                                    Description = description
-                                };
+                                    property = new OpenApiSchema
+                                    {
+                                        Type = JsonSchemaType.Array,
+                                        Description = description,
+                                        Items = new OpenApiSchema
+                                        {
+                                            Type = JsonSchemaType.Object
+                                        }
+                                    };
+                                }
+                                else
+                                {
+                                    property = new OpenApiSchema
+                                    {
+                                        Type = JsonSchemaType.Object,
+                                        Description = description
+                                    };
+                                }
                             }
                         }
-                    }
 
-                    if (isRequired)
-                    {
-                        requiredProperties.Add(name);
-                    }
+                        if (isRequired)
+                        {
+                            requiredProperties.Add(name);
+                        }
 
-                    properties.Add(name, property);
+                        properties.Add(name, property);
+                    }
                 }
             }
-        }
 
-        var entityComponent = new OpenApiSchema
-        {
-            Type = JsonSchemaType.Object,
-            Properties = properties,
-            Required = requiredProperties
-        };
-        openApiDoc.Components!.Schemas!.Add(schemaName, entityComponent);
-
-        var array = new OpenApiSchema
-        {
-            Type = JsonSchemaType.Array,
-            Items = new OpenApiSchemaReference(schemaName),
-        };
-        openApiDoc.Components!.Schemas!.Add(schemaName + "_Array", array);
-
-        var arrayReference = new OpenApiSchemaReference(schemaName + "_Array");
-
-        var results = new OpenApiSchema
-        {
-            Type = JsonSchemaType.Object,
-            Properties = new Dictionary<string, IOpenApiSchema>
+            var entityComponent = new OpenApiSchema
             {
-                { "results", arrayReference }
-            },
-            Required = new HashSet<string> { "results" }
-        };
-        openApiDoc.Components!.Schemas!.Add(schemaName + "_Results", results);
+                Type = JsonSchemaType.Object,
+                Properties = properties,
+                Required = requiredProperties
+            };
 
-        var resultsReference = new OpenApiSchemaReference(schemaName + "_Results");
+            var schemaName = httpMethod == HttpMethod.Get ? baseSchemaName : baseSchemaName + httpMethod.ToString().ToPascalCase();
+            openApiDoc.Components!.Schemas!.Add(schemaName, entityComponent);
 
-        var response = new OpenApiSchema
-        {
-            Description = responseDescription,
-            Type = JsonSchemaType.Object,
-            Properties = new Dictionary<string, IOpenApiSchema>
+            if (httpMethod == HttpMethod.Get)
             {
-                { "d", new OpenApiSchema
+                var array = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.Array,
+                    Items = new OpenApiSchemaReference(schemaName)
+                };
+                openApiDoc.Components!.Schemas!.Add(schemaName + "_Array", array);
+
+                var arrayReference = new OpenApiSchemaReference(schemaName + "_Array");
+
+                var results = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.Object,
+                    Properties = new Dictionary<string, IOpenApiSchema>
                     {
-                        OneOf =
-                        [
-                            arrayReference,
-                            resultsReference
-                        ],
-                        Discriminator = new OpenApiDiscriminator
-                        {
-                            PropertyName = "results",
-                            Mapping = new Dictionary<string, OpenApiSchemaReference>
+                        { "results", arrayReference }
+                    },
+                    Required = new HashSet<string> { "results" }
+                };
+                openApiDoc.Components!.Schemas!.Add(schemaName + "_Results", results);
+
+                var resultsReference = new OpenApiSchemaReference(schemaName + "_Results");
+
+                var response = new OpenApiSchema
+                {
+                    Description = responseDescription,
+                    Type = JsonSchemaType.Object,
+                    Properties = new Dictionary<string, IOpenApiSchema>
+                    {
+                        { "d", new OpenApiSchema
                             {
-                                { "_Results", resultsReference }
+                                OneOf =
+                                [
+                                    arrayReference,
+                                    resultsReference
+                                ],
+                                Discriminator = new OpenApiDiscriminator
+                                {
+                                    PropertyName = "results",
+                                    Mapping = new Dictionary<string, OpenApiSchemaReference>
+                                    {
+                                        { "_Results", resultsReference }
+                                    }
+                                }
                             }
                         }
-                    }
-                }
-            },
-            Required = new HashSet<string> { "d" }
-        };
-        openApiDoc.Components!.Schemas!.Add(schemaName + "_Response", response);
+                    },
+                    Required = new HashSet<string> { "d" }
+                };
+                openApiDoc.Components!.Schemas!.Add(schemaName + "_Response", response);
+            }
 
-        foreach (var method in methods)
-        {
             var endpointUri = baseEndpointUri;
 
             var operation = new OpenApiOperation
             {
-                Summary = $"{method} {schemaName}",
+                Summary = $"{httpMethod} {baseSchemaName}",
                 Parameters = new List<IOpenApiParameter>(),
                 Responses = new OpenApiResponses()
             };
@@ -327,7 +333,7 @@ internal class EndpointCrawler
                 });
             }
 
-            if (method == HttpMethod.Get)
+            if (httpMethod == HttpMethod.Get)
             {
                 foreach (var queryParameter in queryParameters)
                 {
@@ -337,7 +343,7 @@ internal class EndpointCrawler
                 AddODataQueryParameters(operation.Parameters);
             }
 
-            if (method == HttpMethod.Put || method == HttpMethod.Delete)
+            if (httpMethod == HttpMethod.Put || httpMethod == HttpMethod.Delete)
             {
                 endpointUri = baseEndpointUri + "({id})";
 
@@ -351,15 +357,15 @@ internal class EndpointCrawler
                         Type = JsonSchemaType.String,
                         Format = "uuid"
                     },
-                    Description = $"Unique identifier (GUID) of the {schemaName}"
+                    Description = $"Unique identifier (GUID) of the {baseSchemaName}"
                 });
             }
 
-            if (method == HttpMethod.Put || method == HttpMethod.Post)
+            if (httpMethod == HttpMethod.Put || httpMethod == HttpMethod.Post)
             {
                 operation.RequestBody = new OpenApiRequestBody
                 {
-                    Description = $"The {schemaName} entity to create or update.",
+                    Description = $"The {baseSchemaName} entity to create or update.",
                     Required = true,
                     Content = new Dictionary<string, OpenApiMediaType>
                     {
@@ -373,7 +379,7 @@ internal class EndpointCrawler
                 };
             }
 
-            if (method == HttpMethod.Get)
+            if (httpMethod == HttpMethod.Get)
             {
                 operation.Responses.Add("200", new OpenApiResponse
                 {
@@ -393,13 +399,13 @@ internal class EndpointCrawler
             {
                 operation.Responses.Add("200", new OpenApiResponse
                 {
-                    Description = $"{method} operation successful"
+                    Description = $"{httpMethod} operation successful"
                 });
             }
 
             operation.Responses.Add("400", new OpenApiResponse
             {
-                Description = $"{method} operation failed",
+                Description = $"{httpMethod} operation failed",
                 Content = new Dictionary<string, OpenApiMediaType>
                 {
                     {
@@ -413,7 +419,7 @@ internal class EndpointCrawler
 
             if (openApiDoc.Paths.TryGetValue(endpointUri, out var existingPath))
             {
-                existingPath.Operations!.Add(method, operation);
+                existingPath.Operations!.Add(httpMethod, operation);
             }
             else
             {
@@ -422,86 +428,12 @@ internal class EndpointCrawler
                     Description = endpointDescription,
                     Operations = new Dictionary<HttpMethod, OpenApiOperation>
                     {
-                        { method, operation }
+                        { httpMethod, operation }
                     }
                 };
                 openApiDoc.Paths.Add(endpointUri, pathItem);
             }
         }
-    }
-
-    private static OpenApiSchema GetResponseSchema(string schemaName, string description)
-    {
-        //var array = new OpenApiSchema
-        //{
-        //    Type = JsonSchemaType.Array,
-        //    Items = new OpenApiSchemaReference(schemaName)
-        //};
-
-        //if (schemaName.StartsWith("Sync"))
-        //{
-        //    return new OpenApiSchema
-        //    {
-        //        Description = description,
-        //        Type = JsonSchemaType.Object,
-        //        Properties = new Dictionary<string, IOpenApiSchema>
-        //        {
-        //            { "d", array }
-        //        },
-        //        Required = new HashSet<string> { "d" }
-        //    };
-        //}
-
-        //var results = new OpenApiSchema
-        //{
-        //    Type = JsonSchemaType.Object,
-        //    Properties = new Dictionary<string, IOpenApiSchema>
-        //    {
-        //        { "results", new OpenApiSchema
-        //            {
-        //                Type = JsonSchemaType.Array,
-        //                Items = new OpenApiSchemaReference(schemaName)
-        //            }
-        //        }
-        //    },
-        //    Required = new HashSet<string> { "results" }
-        //};
-
-        return new OpenApiSchema
-        {
-            // Description = description,
-            Type = JsonSchemaType.Object,
-            Properties = new Dictionary<string, IOpenApiSchema>
-            {
-                { "d", new OpenApiSchema
-                    {
-                        OneOf =
-                        [
-                            new OpenApiSchema
-                            {
-                                Type = JsonSchemaType.Array,
-                                Items = new OpenApiSchemaReference(schemaName)
-                            },
-                            new OpenApiSchema
-                            {
-                                Type = JsonSchemaType.Object,
-                                Properties = new Dictionary<string, IOpenApiSchema>
-                                {
-                                    { "results", new OpenApiSchema
-                                        {
-                                            Type = JsonSchemaType.Array,
-                                            Items = new OpenApiSchemaReference(schemaName)
-                                        }
-                                    }
-                                },
-                                Required = new HashSet<string> { "results" }
-                            }
-                        ]
-                    }
-                }
-            },
-            Required = new HashSet<string> { "d" }
-        };
     }
 
     private static void AddODataQueryParameters(IList<IOpenApiParameter> parameters)
@@ -669,12 +601,18 @@ internal class EndpointCrawler
                 continue;
             }
 
-            TryParseAsEdmType(edmType, null, out var schema);
+            EdmTypeParser.TryParse(edmType, null, out var schema);
 
             var description = paramName switch
             {
                 "$filter" => "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
                 "$select" => "Comma-separated list of fields to return, e.g., `ID`",
+                "$top" => "Number of records to return, e.g., `100`",
+                "$skip" => "Number of records to skip, e.g., `10`",
+                "$orderby" => "Order by field, e.g., `ID desc`",
+                "$count" => "Include count of items, e.g., `true`",
+                "$inlinecount" => "Include inline count, e.g., `allpages`",
+                "$expand" => "Expand related entities, e.g., `ParentEntity`",
                 _ => $"Query parameter of type {edmType}"
             };
 
@@ -695,92 +633,5 @@ internal class EndpointCrawler
 
         var serviceUri = serviceUriNode.InnerText.Trim();
         return (serviceUri.Contains('?') ? serviceUri.Split('?')[0] : serviceUri, parameters);
-    }
-
-    private static bool TryParseAsEdmType(string type, string? description, [NotNullWhen(true)] out IOpenApiSchema? schema)
-    {
-        var property = new OpenApiSchema
-        {
-            Description = description
-        };
-
-        switch (type)
-        {
-            case "Edm.Binary":
-                property.Type = JsonSchemaType.String;
-                property.Format = "byte";
-                schema = property;
-                return true;
-
-            case "Edm.Byte":
-                property.Type = JsonSchemaType.Integer;
-                property.Format = "int32";
-                property.Minimum = "0";
-                property.Maximum = "255";
-                schema = property;
-                return true;
-
-            case "Edm.Boolean":
-                property.Type = JsonSchemaType.Boolean;
-                schema = property;
-                return true;
-
-            case "Edm.DateTime":
-                property.Type = JsonSchemaType.String;
-                property.Format = "date-time";
-                schema = property;
-                return true;
-
-            case "Edm.Decimal":
-                property.Type = JsonSchemaType.Number;
-                property.Format = "decimal";
-                schema = property;
-                return true;
-
-            case "Edm.Double":
-                property.Type = JsonSchemaType.Number;
-                property.Format = "double";
-                schema = property;
-                return true;
-
-            case "Edm.Float":
-                property.Type = JsonSchemaType.Number;
-                property.Format = "float";
-                schema = property;
-                return true;
-
-            case "Edm.Guid":
-                property.Type = JsonSchemaType.String;
-                property.Format = "uuid";
-                schema = property;
-                return true;
-
-            case "Edm.Int16":
-                property.Type = JsonSchemaType.Integer;
-                property.Format = "int16";
-                schema = property;
-                return true;
-
-            case "Edm.Int32":
-                property.Type = JsonSchemaType.Integer;
-                property.Format = "int32";
-                schema = property;
-                return true;
-
-            case "Edm.Int64":
-                property.Type = JsonSchemaType.Integer;
-                property.Format = "int64";
-                schema = property;
-                return true;
-
-            case "Edm.String":
-                property.Type = JsonSchemaType.String;
-                schema = property;
-                return true;
-
-            default:
-                schema = null;
-                return false;
-        }
     }
 }

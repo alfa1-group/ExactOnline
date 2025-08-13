@@ -74,6 +74,40 @@ await RunAsync(async () =>
 
 await RunAsync(async () =>
 {
+    Console.WriteLine("Post WebHook");
+    _ = await client.Api.V1[division].Webhooks.WebhookSubscriptions.PostAsync(new WebhooksWebhookSubscriptionsPost
+    {
+        CallbackURL = "https://mstack.nl",
+        Topic = "Accounts"
+    });
+
+    return true;
+});
+
+await RunAsync(async () =>
+{
+    var webhookSubscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync(w =>
+        {
+            w.QueryParameters.Top = 100;
+            w.QueryParameters.Orderby = orderBy;
+        })
+        .AsItems();
+    if (!webhookSubscriptions.Any())
+    {
+        Console.WriteLine("No WebhookSubscriptions found.");
+    }
+
+    foreach (var webhookSubscription in webhookSubscriptions)
+    {
+        Console.WriteLine($"Subscription ID: {webhookSubscription.ID}, CallbackURL: {webhookSubscription.CallbackURL}");
+    }
+
+    return true;
+});
+
+
+await RunAsync(async () =>
+{
     Console.WriteLine("Getting ProjectTimeTransactions");
     var list = await client.Api.V1[division].Project.TimeTransactions.GetAsync(p =>
     {
@@ -104,28 +138,6 @@ await RunAsync(async () =>
     }
 
     return list;
-});
-
-await RunAsync(async () =>
-{
-    var webhookSubscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync(w =>
-    {
-        w.QueryParameters.Top = 100;
-        w.QueryParameters.Orderby = orderBy;
-        w.QueryParameters.Select = SelectBuilder<WebhooksWebhookSubscriptions>.Build(t => new { t.UserID, t.CallbackURL, t.Description });
-    })
-    .AsItems();
-    if (!webhookSubscriptions.Any())
-    {
-        Console.WriteLine("No WebhookSubscriptions found.");
-    }
-
-    foreach (var webhookSubscription in webhookSubscriptions)
-    {
-        Console.WriteLine($"Subscription ID: {webhookSubscription.ID}, CallbackURL: {webhookSubscription.CallbackURL}");
-    }
-
-    return true;
 });
 
 await RunAsync(async () =>

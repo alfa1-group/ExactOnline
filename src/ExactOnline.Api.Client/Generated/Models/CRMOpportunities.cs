@@ -14,24 +14,6 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>The Account property</summary>
         public Guid? Account { get; set; }
-        /// <summary>The Accountant property</summary>
-        public Guid? Accountant { get; set; }
-        /// <summary>The AccountantCode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountantCode { get; set; }
-#nullable restore
-#else
-        public string AccountantCode { get; set; }
-#endif
-        /// <summary>The AccountantName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountantName { get; set; }
-#nullable restore
-#else
-        public string AccountantName { get; set; }
-#endif
         /// <summary>The AccountCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,16 +47,6 @@ namespace ExactOnline.Api.Client.Models
 #nullable restore
 #else
         public string CampaignDescription { get; set; }
-#endif
-        /// <summary>The Channel property</summary>
-        public int? Channel { get; set; }
-        /// <summary>The ChannelDescription property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ChannelDescription { get; set; }
-#nullable restore
-#else
-        public string ChannelDescription { get; set; }
 #endif
         /// <summary>The CloseDate property</summary>
         public DateTimeOffset? CloseDate { get; set; }
@@ -176,16 +148,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>The Number property</summary>
         public int? Number { get; set; }
-        /// <summary>The OpportunityDepartmentCode property</summary>
-        public int? OpportunityDepartmentCode { get; set; }
-        /// <summary>The OpportunityDepartmentDescription property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OpportunityDepartmentDescription { get; set; }
-#nullable restore
-#else
-        public string OpportunityDepartmentDescription { get; set; }
-#endif
         /// <summary>The OpportunityStage property</summary>
         public Guid? OpportunityStage { get; set; }
         /// <summary>The OpportunityStageDescription property</summary>
@@ -198,16 +160,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>The OpportunityStatus property</summary>
         public int? OpportunityStatus { get; set; }
-        /// <summary>The OpportunityType property</summary>
-        public int? OpportunityType { get; set; }
-        /// <summary>The OpportunityTypeDescription property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OpportunityTypeDescription { get; set; }
-#nullable restore
-#else
-        public string OpportunityTypeDescription { get; set; }
-#endif
         /// <summary>The Owner property</summary>
         public Guid? Owner { get; set; }
         /// <summary>The OwnerFullName property</summary>
@@ -250,24 +202,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ReasonCodeDescription { get; set; }
 #endif
-        /// <summary>The Reseller property</summary>
-        public Guid? Reseller { get; set; }
-        /// <summary>The ResellerCode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResellerCode { get; set; }
-#nullable restore
-#else
-        public string ResellerCode { get; set; }
-#endif
-        /// <summary>The ResellerName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResellerName { get; set; }
-#nullable restore
-#else
-        public string ResellerName { get; set; }
-#endif
         /// <summary>The SalesType property</summary>
         public Guid? SalesType { get; set; }
         /// <summary>The SalesTypeDescription property</summary>
@@ -306,16 +240,11 @@ namespace ExactOnline.Api.Client.Models
                 { "Account", n => { Account = n.GetGuidValue(); } },
                 { "AccountCode", n => { AccountCode = n.GetStringValue(); } },
                 { "AccountName", n => { AccountName = n.GetStringValue(); } },
-                { "Accountant", n => { Accountant = n.GetGuidValue(); } },
-                { "AccountantCode", n => { AccountantCode = n.GetStringValue(); } },
-                { "AccountantName", n => { AccountantName = n.GetStringValue(); } },
                 { "ActionDate", n => { ActionDate = n.GetDateTimeOffsetValue(); } },
                 { "AmountDC", n => { AmountDC = n.GetDoubleValue(); } },
                 { "AmountFC", n => { AmountFC = n.GetDoubleValue(); } },
                 { "Campaign", n => { Campaign = n.GetGuidValue(); } },
                 { "CampaignDescription", n => { CampaignDescription = n.GetStringValue(); } },
-                { "Channel", n => { Channel = n.GetIntValue(); } },
-                { "ChannelDescription", n => { ChannelDescription = n.GetStringValue(); } },
                 { "CloseDate", n => { CloseDate = n.GetDateTimeOffsetValue(); } },
                 { "Contact", n => { Contact = n.GetGuidValue(); } },
                 { "ContactFullName", n => { ContactFullName = n.GetStringValue(); } },
@@ -336,13 +265,9 @@ namespace ExactOnline.Api.Client.Models
                 { "NextAction", n => { NextAction = n.GetStringValue(); } },
                 { "Notes", n => { Notes = n.GetStringValue(); } },
                 { "Number", n => { Number = n.GetIntValue(); } },
-                { "OpportunityDepartmentCode", n => { OpportunityDepartmentCode = n.GetIntValue(); } },
-                { "OpportunityDepartmentDescription", n => { OpportunityDepartmentDescription = n.GetStringValue(); } },
                 { "OpportunityStage", n => { OpportunityStage = n.GetGuidValue(); } },
                 { "OpportunityStageDescription", n => { OpportunityStageDescription = n.GetStringValue(); } },
                 { "OpportunityStatus", n => { OpportunityStatus = n.GetIntValue(); } },
-                { "OpportunityType", n => { OpportunityType = n.GetIntValue(); } },
-                { "OpportunityTypeDescription", n => { OpportunityTypeDescription = n.GetStringValue(); } },
                 { "Owner", n => { Owner = n.GetGuidValue(); } },
                 { "OwnerFullName", n => { OwnerFullName = n.GetStringValue(); } },
                 { "Probability", n => { Probability = n.GetDoubleValue(); } },
@@ -352,9 +277,6 @@ namespace ExactOnline.Api.Client.Models
                 { "RateFC", n => { RateFC = n.GetDoubleValue(); } },
                 { "ReasonCode", n => { ReasonCode = n.GetGuidValue(); } },
                 { "ReasonCodeDescription", n => { ReasonCodeDescription = n.GetStringValue(); } },
-                { "Reseller", n => { Reseller = n.GetGuidValue(); } },
-                { "ResellerCode", n => { ResellerCode = n.GetStringValue(); } },
-                { "ResellerName", n => { ResellerName = n.GetStringValue(); } },
                 { "SalesType", n => { SalesType = n.GetGuidValue(); } },
                 { "SalesTypeDescription", n => { SalesTypeDescription = n.GetStringValue(); } },
             };
@@ -367,9 +289,6 @@ namespace ExactOnline.Api.Client.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("Account", Account);
-            writer.WriteGuidValue("Accountant", Accountant);
-            writer.WriteStringValue("AccountantCode", AccountantCode);
-            writer.WriteStringValue("AccountantName", AccountantName);
             writer.WriteStringValue("AccountCode", AccountCode);
             writer.WriteStringValue("AccountName", AccountName);
             writer.WriteDateTimeOffsetValue("ActionDate", ActionDate);
@@ -377,8 +296,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("AmountFC", AmountFC);
             writer.WriteGuidValue("Campaign", Campaign);
             writer.WriteStringValue("CampaignDescription", CampaignDescription);
-            writer.WriteIntValue("Channel", Channel);
-            writer.WriteStringValue("ChannelDescription", ChannelDescription);
             writer.WriteDateTimeOffsetValue("CloseDate", CloseDate);
             writer.WriteGuidValue("Contact", Contact);
             writer.WriteStringValue("ContactFullName", ContactFullName);
@@ -399,13 +316,9 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("NextAction", NextAction);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteIntValue("Number", Number);
-            writer.WriteIntValue("OpportunityDepartmentCode", OpportunityDepartmentCode);
-            writer.WriteStringValue("OpportunityDepartmentDescription", OpportunityDepartmentDescription);
             writer.WriteGuidValue("OpportunityStage", OpportunityStage);
             writer.WriteStringValue("OpportunityStageDescription", OpportunityStageDescription);
             writer.WriteIntValue("OpportunityStatus", OpportunityStatus);
-            writer.WriteIntValue("OpportunityType", OpportunityType);
-            writer.WriteStringValue("OpportunityTypeDescription", OpportunityTypeDescription);
             writer.WriteGuidValue("Owner", Owner);
             writer.WriteStringValue("OwnerFullName", OwnerFullName);
             writer.WriteDoubleValue("Probability", Probability);
@@ -415,9 +328,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("RateFC", RateFC);
             writer.WriteGuidValue("ReasonCode", ReasonCode);
             writer.WriteStringValue("ReasonCodeDescription", ReasonCodeDescription);
-            writer.WriteGuidValue("Reseller", Reseller);
-            writer.WriteStringValue("ResellerCode", ResellerCode);
-            writer.WriteStringValue("ResellerName", ResellerName);
             writer.WriteGuidValue("SalesType", SalesType);
             writer.WriteStringValue("SalesTypeDescription", SalesTypeDescription);
             writer.WriteAdditionalData(AdditionalData);

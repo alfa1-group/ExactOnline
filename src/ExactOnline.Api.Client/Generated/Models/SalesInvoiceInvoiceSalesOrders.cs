@@ -20,14 +20,6 @@ namespace ExactOnline.Api.Client.Models
         public int? DeliveryNumber { get; set; }
         /// <summary>Stock entries entry end date.</summary>
         public DateTimeOffset? EndDate { get; set; }
-        /// <summary>Errors in the process.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Errors { get; set; }
-#nullable restore
-#else
-        public string Errors { get; set; }
-#endif
         /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
         /// <summary>Invoice quantity processing mode- 0:By quantity delivered 1:By quantity ordered.</summary>
@@ -48,10 +40,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
 #endif
-        /// <summary>Number of invoices successfully created.</summary>
-        public int? NumberOfCreatedInvoices { get; set; }
-        /// <summary>Number of invoices failed to create.</summary>
-        public int? NumberOfFailedInvoices { get; set; }
         /// <summary>Collection of Sales order IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,13 +80,10 @@ namespace ExactOnline.Api.Client.Models
                 { "CreateMode", n => { CreateMode = n.GetIntValue(); } },
                 { "DeliveryNumber", n => { DeliveryNumber = n.GetIntValue(); } },
                 { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
-                { "Errors", n => { Errors = n.GetStringValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
                 { "InvoiceMode", n => { InvoiceMode = n.GetIntValue(); } },
                 { "JournalCode", n => { JournalCode = n.GetStringValue(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
-                { "NumberOfCreatedInvoices", n => { NumberOfCreatedInvoices = n.GetIntValue(); } },
-                { "NumberOfFailedInvoices", n => { NumberOfFailedInvoices = n.GetIntValue(); } },
                 { "SalesOrderIDs", n => { SalesOrderIDs = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SalesInvoiceSalesOrderID>(global::ExactOnline.Api.Client.Models.SalesInvoiceSalesOrderID.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "UserInvoiceDate", n => { UserInvoiceDate = n.GetDateTimeOffsetValue(); } },
@@ -114,13 +99,10 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("CreateMode", CreateMode);
             writer.WriteIntValue("DeliveryNumber", DeliveryNumber);
             writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteStringValue("Errors", Errors);
             writer.WriteGuidValue("ID", ID);
             writer.WriteIntValue("InvoiceMode", InvoiceMode);
             writer.WriteStringValue("JournalCode", JournalCode);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteIntValue("NumberOfCreatedInvoices", NumberOfCreatedInvoices);
-            writer.WriteIntValue("NumberOfFailedInvoices", NumberOfFailedInvoices);
             writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SalesInvoiceSalesOrderID>("SalesOrderIDs", SalesOrderIDs);
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteDateTimeOffsetValue("UserInvoiceDate", UserInvoiceDate);

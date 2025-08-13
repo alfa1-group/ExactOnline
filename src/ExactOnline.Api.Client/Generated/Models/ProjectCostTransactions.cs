@@ -24,8 +24,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Amount property</summary>
-        public double? Amount { get; set; }
         /// <summary>The AmountFC property</summary>
         public double? AmountFC { get; set; }
         /// <summary>The Attachment property</summary>
@@ -136,8 +134,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The Price property</summary>
-        public double? Price { get; set; }
         /// <summary>The PriceFC property</summary>
         public double? PriceFC { get; set; }
         /// <summary>The Project property</summary>
@@ -170,8 +166,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>The Quantity property</summary>
         public double? Quantity { get; set; }
-        /// <summary>The SkipValidation property</summary>
-        public bool? SkipValidation { get; set; }
         /// <summary>The Subscription property</summary>
         public Guid? Subscription { get; set; }
         /// <summary>The SubscriptionAccount property</summary>
@@ -231,7 +225,6 @@ namespace ExactOnline.Api.Client.Models
             {
                 { "Account", n => { Account = n.GetGuidValue(); } },
                 { "AccountName", n => { AccountName = n.GetStringValue(); } },
-                { "Amount", n => { Amount = n.GetDoubleValue(); } },
                 { "AmountFC", n => { AmountFC = n.GetDoubleValue(); } },
                 { "Attachment", n => { Attachment = n.GetGuidValue(); } },
                 { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
@@ -257,7 +250,6 @@ namespace ExactOnline.Api.Client.Models
                 { "Modifier", n => { Modifier = n.GetGuidValue(); } },
                 { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
                 { "Notes", n => { Notes = n.GetStringValue(); } },
-                { "Price", n => { Price = n.GetDoubleValue(); } },
                 { "PriceFC", n => { PriceFC = n.GetDoubleValue(); } },
                 { "Project", n => { Project = n.GetGuidValue(); } },
                 { "ProjectAccount", n => { ProjectAccount = n.GetGuidValue(); } },
@@ -265,7 +257,6 @@ namespace ExactOnline.Api.Client.Models
                 { "ProjectAccountName", n => { ProjectAccountName = n.GetStringValue(); } },
                 { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
                 { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
-                { "SkipValidation", n => { SkipValidation = n.GetBoolValue(); } },
                 { "Subscription", n => { Subscription = n.GetGuidValue(); } },
                 { "SubscriptionAccount", n => { SubscriptionAccount = n.GetGuidValue(); } },
                 { "SubscriptionAccountCode", n => { SubscriptionAccountCode = n.GetStringValue(); } },
@@ -284,7 +275,6 @@ namespace ExactOnline.Api.Client.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("Account", Account);
             writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteDoubleValue("Amount", Amount);
             writer.WriteDoubleValue("AmountFC", AmountFC);
             writer.WriteGuidValue("Attachment", Attachment);
             writer.WriteDateTimeOffsetValue("Created", Created);
@@ -310,7 +300,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
             writer.WriteStringValue("Notes", Notes);
-            writer.WriteDoubleValue("Price", Price);
             writer.WriteDoubleValue("PriceFC", PriceFC);
             writer.WriteGuidValue("Project", Project);
             writer.WriteGuidValue("ProjectAccount", ProjectAccount);
@@ -318,7 +307,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ProjectAccountName", ProjectAccountName);
             writer.WriteStringValue("ProjectDescription", ProjectDescription);
             writer.WriteDoubleValue("Quantity", Quantity);
-            writer.WriteBoolValue("SkipValidation", SkipValidation);
             writer.WriteGuidValue("Subscription", Subscription);
             writer.WriteGuidValue("SubscriptionAccount", SubscriptionAccount);
             writer.WriteStringValue("SubscriptionAccountCode", SubscriptionAccountCode);

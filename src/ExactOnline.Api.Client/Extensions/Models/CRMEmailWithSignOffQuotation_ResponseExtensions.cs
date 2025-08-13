@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class CRMEmailWithSignOffQuotation_ResponseExtensions
 {
+    public static async Task<CRMEmailWithSignOffQuotation?> AsItem(this Task<CRMEmailWithSignOffQuotation_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? null : (d.CRMEmailWithSignOffQuotation ?? d.CRMEmailWithSignOffQuotationResults?.Results ?? []).FirstOrDefault();
+    }
 
 }

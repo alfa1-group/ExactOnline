@@ -86,8 +86,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; set; }
 #endif
-        /// <summary>Picked by</summary>
-        public Guid? PickedBy { get; set; }
         /// <summary>Quantity of transfer</summary>
         public double? Quantity { get; set; }
         /// <summary>The collection of serial numbers that belong to the items included in this warehouse transfer</summary>
@@ -140,8 +138,6 @@ namespace ExactOnline.Api.Client.Models
         public int? StorageLocationToLocationSequence { get; set; }
         /// <summary>Entry number of the stock transaction</summary>
         public Guid? TransferID { get; set; }
-        /// <summary>Transferred by</summary>
-        public Guid? TransferredBy { get; set; }
         /// <summary>The standard unit code of this item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -198,7 +194,6 @@ namespace ExactOnline.Api.Client.Models
                 { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "Modifier", n => { Modifier = n.GetGuidValue(); } },
                 { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "PickedBy", n => { PickedBy = n.GetGuidValue(); } },
                 { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "SerialNumbers", n => { SerialNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "StorageLocationFrom", n => { StorageLocationFrom = n.GetGuidValue(); } },
@@ -210,7 +205,6 @@ namespace ExactOnline.Api.Client.Models
                 { "StorageLocationToDescription", n => { StorageLocationToDescription = n.GetStringValue(); } },
                 { "StorageLocationToLocationSequence", n => { StorageLocationToLocationSequence = n.GetIntValue(); } },
                 { "TransferID", n => { TransferID = n.GetGuidValue(); } },
-                { "TransferredBy", n => { TransferredBy = n.GetGuidValue(); } },
                 { "UnitCode", n => { UnitCode = n.GetStringValue(); } },
                 { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
             };
@@ -237,7 +231,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteGuidValue("PickedBy", PickedBy);
             writer.WriteDoubleValue("Quantity", Quantity);
             writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>("SerialNumbers", SerialNumbers);
             writer.WriteGuidValue("StorageLocationFrom", StorageLocationFrom);
@@ -249,7 +242,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("StorageLocationToDescription", StorageLocationToDescription);
             writer.WriteIntValue("StorageLocationToLocationSequence", StorageLocationToLocationSequence);
             writer.WriteGuidValue("TransferID", TransferID);
-            writer.WriteGuidValue("TransferredBy", TransferredBy);
             writer.WriteStringValue("UnitCode", UnitCode);
             writer.WriteStringValue("UnitDescription", UnitDescription);
             writer.WriteAdditionalData(AdditionalData);

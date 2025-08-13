@@ -16,14 +16,6 @@ namespace ExactOnline.Api.Client.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount including VAT in the foreign currency.</summary>
         public double? Amount { get; set; }
-        /// <summary>The amount including VAT in the default currency.</summary>
-        public double? AmountDC { get; set; }
-        /// <summary>Discount amount in the default currency of the company</summary>
-        public double? AmountDiscount { get; set; }
-        /// <summary>Discount amount excluding VAT in the default currency of the company</summary>
-        public double? AmountDiscountExclVat { get; set; }
-        /// <summary>Amount exclude VAT in the currency of the transaction.</summary>
-        public double? AmountFCExclVat { get; set; }
         /// <summary>Guid identifying the contact person of the supplier.</summary>
         public Guid? ContactPerson { get; set; }
         /// <summary>The code of the currency of the invoiced amount.</summary>
@@ -42,8 +34,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Discount percentage</summary>
-        public double? Discount { get; set; }
         /// <summary>Guid identifying a document that is attached to the invoice.</summary>
         public Guid? Document { get; set; }
         /// <summary>The date before which the invoice has to be paid. This by default will be set according to the payment condition.</summary>
@@ -156,14 +146,9 @@ namespace ExactOnline.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "Amount", n => { Amount = n.GetDoubleValue(); } },
-                { "AmountDC", n => { AmountDC = n.GetDoubleValue(); } },
-                { "AmountDiscount", n => { AmountDiscount = n.GetDoubleValue(); } },
-                { "AmountDiscountExclVat", n => { AmountDiscountExclVat = n.GetDoubleValue(); } },
-                { "AmountFCExclVat", n => { AmountFCExclVat = n.GetDoubleValue(); } },
                 { "ContactPerson", n => { ContactPerson = n.GetGuidValue(); } },
                 { "Currency", n => { Currency = n.GetStringValue(); } },
                 { "Description", n => { Description = n.GetStringValue(); } },
-                { "Discount", n => { Discount = n.GetDoubleValue(); } },
                 { "Document", n => { Document = n.GetGuidValue(); } },
                 { "DueDate", n => { DueDate = n.GetDateTimeOffsetValue(); } },
                 { "EntryNumber", n => { EntryNumber = n.GetIntValue(); } },
@@ -196,14 +181,9 @@ namespace ExactOnline.Api.Client.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("Amount", Amount);
-            writer.WriteDoubleValue("AmountDC", AmountDC);
-            writer.WriteDoubleValue("AmountDiscount", AmountDiscount);
-            writer.WriteDoubleValue("AmountDiscountExclVat", AmountDiscountExclVat);
-            writer.WriteDoubleValue("AmountFCExclVat", AmountFCExclVat);
             writer.WriteGuidValue("ContactPerson", ContactPerson);
             writer.WriteStringValue("Currency", Currency);
             writer.WriteStringValue("Description", Description);
-            writer.WriteDoubleValue("Discount", Discount);
             writer.WriteGuidValue("Document", Document);
             writer.WriteDateTimeOffsetValue("DueDate", DueDate);
             writer.WriteIntValue("EntryNumber", EntryNumber);

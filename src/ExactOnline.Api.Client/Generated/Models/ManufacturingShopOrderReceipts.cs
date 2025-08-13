@@ -26,14 +26,10 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>Date of this ShopOrderReceipt</summary>
         public DateTimeOffset? CreatedDate { get; set; }
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
         /// <summary>Serial or batch numbers are reserved prior to a POST to ShopOrderReceipts. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.</summary>
         public Guid? DraftStockTransactionID { get; set; }
         /// <summary>Indicates if this ShopOrderReceipt has a quantity eligible to be reversed via ShopOrderReversals</summary>
         public bool? HasReversibleQuantity { get; set; }
-        /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
         /// <summary>Does the shop order receipt&apos;s item use batch numbers</summary>
         public int? IsBatch { get; set; }
         /// <summary>Indicates if fractions (for example 0.35) are allowed for quantities of the shop order receipt&apos;s item</summary>
@@ -174,10 +170,8 @@ namespace ExactOnline.Api.Client.Models
                 { "CreatedBy", n => { CreatedBy = n.GetGuidValue(); } },
                 { "CreatedByFullName", n => { CreatedByFullName = n.GetStringValue(); } },
                 { "CreatedDate", n => { CreatedDate = n.GetDateTimeOffsetValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
                 { "DraftStockTransactionID", n => { DraftStockTransactionID = n.GetGuidValue(); } },
                 { "HasReversibleQuantity", n => { HasReversibleQuantity = n.GetBoolValue(); } },
-                { "ID", n => { ID = n.GetGuidValue(); } },
                 { "IsBatch", n => { IsBatch = n.GetIntValue(); } },
                 { "IsFractionAllowedItem", n => { IsFractionAllowedItem = n.GetIntValue(); } },
                 { "IsIssueToParent", n => { IsIssueToParent = n.GetBoolValue(); } },
@@ -216,10 +210,8 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("CreatedBy", CreatedBy);
             writer.WriteStringValue("CreatedByFullName", CreatedByFullName);
             writer.WriteDateTimeOffsetValue("CreatedDate", CreatedDate);
-            writer.WriteIntValue("Division", Division);
             writer.WriteGuidValue("DraftStockTransactionID", DraftStockTransactionID);
             writer.WriteBoolValue("HasReversibleQuantity", HasReversibleQuantity);
-            writer.WriteGuidValue("ID", ID);
             writer.WriteIntValue("IsBatch", IsBatch);
             writer.WriteIntValue("IsFractionAllowedItem", IsFractionAllowedItem);
             writer.WriteBoolValue("IsIssueToParent", IsIssueToParent);

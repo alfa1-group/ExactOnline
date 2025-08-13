@@ -36,8 +36,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
         /// <summary>Finish order quantity of assembly order</summary>
         public double? FinishOrderQuantity { get; set; }
         /// <summary>The __metadata property</summary>
@@ -94,7 +92,6 @@ namespace ExactOnline.Api.Client.Models
                 { "AssemblyOrder", n => { AssemblyOrder = n.GetGuidValue(); } },
                 { "BatchNumbers", n => { BatchNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Description", n => { Description = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
                 { "FinishOrderQuantity", n => { FinishOrderQuantity = n.GetDoubleValue(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
                 { "Notes", n => { Notes = n.GetStringValue(); } },
@@ -113,7 +110,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("AssemblyOrder", AssemblyOrder);
             writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>("BatchNumbers", BatchNumbers);
             writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
             writer.WriteDoubleValue("FinishOrderQuantity", FinishOrderQuantity);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("Notes", Notes);

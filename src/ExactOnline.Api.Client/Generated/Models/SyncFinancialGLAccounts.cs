@@ -106,8 +106,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The DescriptionTermID property</summary>
-        public int? DescriptionTermID { get; set; }
         /// <summary>The Division property</summary>
         public int? Division { get; set; }
         /// <summary>The ExcludeVATListing property</summary>
@@ -259,7 +257,6 @@ namespace ExactOnline.Api.Client.Models
                 { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
                 { "CustomField", n => { CustomField = n.GetStringValue(); } },
                 { "Description", n => { Description = n.GetStringValue(); } },
-                { "DescriptionTermID", n => { DescriptionTermID = n.GetIntValue(); } },
                 { "Division", n => { Division = n.GetIntValue(); } },
                 { "ExcludeVATListing", n => { ExcludeVATListing = n.GetIntValue(); } },
                 { "ExpenseNonDeductiblePercentage", n => { ExpenseNonDeductiblePercentage = n.GetDoubleValue(); } },
@@ -313,7 +310,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("CreatorFullName", CreatorFullName);
             writer.WriteStringValue("CustomField", CustomField);
             writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("DescriptionTermID", DescriptionTermID);
             writer.WriteIntValue("Division", Division);
             writer.WriteIntValue("ExcludeVATListing", ExcludeVATListing);
             writer.WriteDoubleValue("ExpenseNonDeductiblePercentage", ExpenseNonDeductiblePercentage);

@@ -120,8 +120,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectDescription { get; set; }
 #endif
-        /// <summary>Project term action</summary>
-        public int? ProjectTermAction { get; set; }
         /// <summary>Purchase price of the item</summary>
         public double? PurchasePrice { get; set; }
         /// <summary>Quantity of the WBS</summary>
@@ -130,18 +128,12 @@ namespace ExactOnline.Api.Client.Models
         public bool? ReleaseInvoiceTerm { get; set; }
         /// <summary>Release invoice term date. The linked invoice term date can be updated by using this property. The update will only happen when releasing a WBS expense&apos;s invoice term</summary>
         public DateTimeOffset? ReleaseInvoiceTermDate { get; set; }
-        /// <summary>Release invoice term has specify date</summary>
-        public bool? ReleaseInvoiceTermHasSpecifyDate { get; set; }
         /// <summary>Sequence number of the WBS deliverable. Last sequence will be selected if not specified</summary>
         public int? SequenceNumber { get; set; }
         /// <summary>Start date of the WBS expense</summary>
         public DateTimeOffset? StartDate { get; set; }
         /// <summary>Supplier of the item</summary>
         public Guid? Supplier { get; set; }
-        /// <summary>The type of project WBS. E.g: 1 = Deliverable, 2 = Activity, 3 = Expense</summary>
-        public int? Type { get; set; }
-        /// <summary>Update action</summary>
-        public int? UpdateAction { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ProjectWBSExpenses"/> and sets the default values.
         /// </summary>
@@ -196,17 +188,13 @@ namespace ExactOnline.Api.Client.Models
                 { "PartOfDescription", n => { PartOfDescription = n.GetStringValue(); } },
                 { "Project", n => { Project = n.GetGuidValue(); } },
                 { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
-                { "ProjectTermAction", n => { ProjectTermAction = n.GetIntValue(); } },
                 { "PurchasePrice", n => { PurchasePrice = n.GetDoubleValue(); } },
                 { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "ReleaseInvoiceTerm", n => { ReleaseInvoiceTerm = n.GetBoolValue(); } },
                 { "ReleaseInvoiceTermDate", n => { ReleaseInvoiceTermDate = n.GetDateTimeOffsetValue(); } },
-                { "ReleaseInvoiceTermHasSpecifyDate", n => { ReleaseInvoiceTermHasSpecifyDate = n.GetBoolValue(); } },
                 { "SequenceNumber", n => { SequenceNumber = n.GetIntValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "Supplier", n => { Supplier = n.GetGuidValue(); } },
-                { "Type", n => { Type = n.GetIntValue(); } },
-                { "UpdateAction", n => { UpdateAction = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -245,17 +233,13 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("PartOfDescription", PartOfDescription);
             writer.WriteGuidValue("Project", Project);
             writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteIntValue("ProjectTermAction", ProjectTermAction);
             writer.WriteDoubleValue("PurchasePrice", PurchasePrice);
             writer.WriteDoubleValue("Quantity", Quantity);
             writer.WriteBoolValue("ReleaseInvoiceTerm", ReleaseInvoiceTerm);
             writer.WriteDateTimeOffsetValue("ReleaseInvoiceTermDate", ReleaseInvoiceTermDate);
-            writer.WriteBoolValue("ReleaseInvoiceTermHasSpecifyDate", ReleaseInvoiceTermHasSpecifyDate);
             writer.WriteIntValue("SequenceNumber", SequenceNumber);
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteGuidValue("Supplier", Supplier);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteIntValue("UpdateAction", UpdateAction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -22,8 +22,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BankExportDocumentsUrl { get; set; }
 #endif
-        /// <summary>Division code</summary>
-        public int? Division { get; set; }
         /// <summary>Contains the error message if an error occurred during the processing of the payment(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,7 +82,6 @@ namespace ExactOnline.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "BankExportDocumentsUrl", n => { BankExportDocumentsUrl = n.GetStringValue(); } },
-                { "Division", n => { Division = n.GetIntValue(); } },
                 { "ErrorMessage", n => { ErrorMessage = n.GetStringValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
@@ -100,7 +97,6 @@ namespace ExactOnline.Api.Client.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("BankExportDocumentsUrl", BankExportDocumentsUrl);
-            writer.WriteIntValue("Division", Division);
             writer.WriteStringValue("ErrorMessage", ErrorMessage);
             writer.WriteGuidValue("ID", ID);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);

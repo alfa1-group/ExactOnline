@@ -96,8 +96,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
 #endif
-        /// <summary>Mode of priority</summary>
-        public int? Mode { get; set; }
         /// <summary>Shop order notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,8 +130,6 @@ namespace ExactOnline.Api.Client.Models
         public double? PlannedSetupHours { get; set; }
         /// <summary>Priority of the shop order</summary>
         public int? Priority { get; set; }
-        /// <summary>Priority of the shop order</summary>
-        public int? PriorityDescendingOrder { get; set; }
         /// <summary>Shop order project</summary>
         public Guid? Project { get; set; }
         /// <summary>Shop order project code</summary>
@@ -287,7 +283,6 @@ namespace ExactOnline.Api.Client.Models
                 { "ItemVersionNotes", n => { ItemVersionNotes = n.GetStringValue(); } },
                 { "LineNumber", n => { LineNumber = n.GetIntValue(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
-                { "Mode", n => { Mode = n.GetIntValue(); } },
                 { "Notes", n => { Notes = n.GetStringValue(); } },
                 { "Operation", n => { Operation = n.GetGuidValue(); } },
                 { "OperationCode", n => { OperationCode = n.GetStringValue(); } },
@@ -296,7 +291,6 @@ namespace ExactOnline.Api.Client.Models
                 { "PlannedQuantity", n => { PlannedQuantity = n.GetDoubleValue(); } },
                 { "PlannedSetupHours", n => { PlannedSetupHours = n.GetDoubleValue(); } },
                 { "Priority", n => { Priority = n.GetIntValue(); } },
-                { "PriorityDescendingOrder", n => { PriorityDescendingOrder = n.GetIntValue(); } },
                 { "Project", n => { Project = n.GetGuidValue(); } },
                 { "ProjectCode", n => { ProjectCode = n.GetStringValue(); } },
                 { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
@@ -356,7 +350,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ItemVersionNotes", ItemVersionNotes);
             writer.WriteIntValue("LineNumber", LineNumber);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteIntValue("Mode", Mode);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteGuidValue("Operation", Operation);
             writer.WriteStringValue("OperationCode", OperationCode);
@@ -365,7 +358,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("PlannedQuantity", PlannedQuantity);
             writer.WriteDoubleValue("PlannedSetupHours", PlannedSetupHours);
             writer.WriteIntValue("Priority", Priority);
-            writer.WriteIntValue("PriorityDescendingOrder", PriorityDescendingOrder);
             writer.WriteGuidValue("Project", Project);
             writer.WriteStringValue("ProjectCode", ProjectCode);
             writer.WriteStringValue("ProjectDescription", ProjectDescription);

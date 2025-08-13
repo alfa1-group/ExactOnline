@@ -44,8 +44,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? ID { get; set; }
         /// <summary>The MailMessageID property</summary>
         public Guid? MailMessageID { get; set; }
-        /// <summary>The MailMessageOrigin property</summary>
-        public int? MailMessageOrigin { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,7 +105,6 @@ namespace ExactOnline.Api.Client.Models
                 { "FileSize", n => { FileSize = n.GetLongValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
                 { "MailMessageID", n => { MailMessageID = n.GetGuidValue(); } },
-                { "MailMessageOrigin", n => { MailMessageOrigin = n.GetIntValue(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
                 { "RecipientAccount", n => { RecipientAccount = n.GetGuidValue(); } },
                 { "SenderAccount", n => { SenderAccount = n.GetGuidValue(); } },
@@ -129,7 +126,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteLongValue("FileSize", FileSize);
             writer.WriteGuidValue("ID", ID);
             writer.WriteGuidValue("MailMessageID", MailMessageID);
-            writer.WriteIntValue("MailMessageOrigin", MailMessageOrigin);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("RecipientAccount", RecipientAccount);
             writer.WriteGuidValue("SenderAccount", SenderAccount);

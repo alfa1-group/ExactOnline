@@ -36,8 +36,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; set; }
 #endif
-        /// <summary>The DDView property</summary>
-        public Guid? DDView { get; set; }
         /// <summary>Division code</summary>
         public int? Division { get; set; }
         /// <summary>Primary key</summary>
@@ -112,7 +110,6 @@ namespace ExactOnline.Api.Client.Models
                 { "Created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "Creator", n => { Creator = n.GetGuidValue(); } },
                 { "CreatorFullName", n => { CreatorFullName = n.GetStringValue(); } },
-                { "DDView", n => { DDView = n.GetGuidValue(); } },
                 { "Division", n => { Division = n.GetIntValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
                 { "Language", n => { Language = n.GetStringValue(); } },
@@ -137,7 +134,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDateTimeOffsetValue("Created", Created);
             writer.WriteGuidValue("Creator", Creator);
             writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteGuidValue("DDView", DDView);
             writer.WriteIntValue("Division", Division);
             writer.WriteGuidValue("ID", ID);
             writer.WriteStringValue("Language", Language);

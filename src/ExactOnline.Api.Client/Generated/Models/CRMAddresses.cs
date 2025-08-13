@@ -256,8 +256,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Postcode { get; set; }
 #endif
-        /// <summary>CRM creation source</summary>
-        public int? Source { get; set; }
         /// <summary>State</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -368,7 +366,6 @@ namespace ExactOnline.Api.Client.Models
                 { "Phone", n => { Phone = n.GetStringValue(); } },
                 { "PhoneExtension", n => { PhoneExtension = n.GetStringValue(); } },
                 { "Postcode", n => { Postcode = n.GetStringValue(); } },
-                { "Source", n => { Source = n.GetIntValue(); } },
                 { "State", n => { State = n.GetStringValue(); } },
                 { "StateDescription", n => { StateDescription = n.GetStringValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
@@ -433,7 +430,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("Phone", Phone);
             writer.WriteStringValue("PhoneExtension", PhoneExtension);
             writer.WriteStringValue("Postcode", Postcode);
-            writer.WriteIntValue("Source", Source);
             writer.WriteStringValue("State", State);
             writer.WriteStringValue("StateDescription", StateDescription);
             writer.WriteIntValue("Type", Type);

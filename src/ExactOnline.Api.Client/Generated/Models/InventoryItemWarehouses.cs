@@ -54,14 +54,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? ID { get; set; }
         /// <summary>Item ID</summary>
         public Guid? Item { get; set; }
-        /// <summary>Barcode of item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemBarcode { get; set; }
-#nullable restore
-#else
-        public string ItemBarcode { get; set; }
-#endif
         /// <summary>Code of item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,8 +116,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; set; }
 #endif
-        /// <summary>Indicates the date for next cycle count</summary>
-        public DateTimeOffset? NextCountingCycle { get; set; }
         /// <summary>Order Policy options: 1-Lot for lot, 2-Fixed order quantity, 3-Min / Max, 4-Order</summary>
         public int? OrderPolicy { get; set; }
         /// <summary>Period that work together with replenishment in MRP</summary>
@@ -218,7 +208,6 @@ namespace ExactOnline.Api.Client.Models
                 { "Division", n => { Division = n.GetIntValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
                 { "Item", n => { Item = n.GetGuidValue(); } },
-                { "ItemBarcode", n => { ItemBarcode = n.GetStringValue(); } },
                 { "ItemCode", n => { ItemCode = n.GetStringValue(); } },
                 { "ItemDescription", n => { ItemDescription = n.GetStringValue(); } },
                 { "ItemEndDate", n => { ItemEndDate = n.GetDateTimeOffsetValue(); } },
@@ -232,7 +221,6 @@ namespace ExactOnline.Api.Client.Models
                 { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "Modifier", n => { Modifier = n.GetGuidValue(); } },
                 { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "NextCountingCycle", n => { NextCountingCycle = n.GetDateTimeOffsetValue(); } },
                 { "OrderPolicy", n => { OrderPolicy = n.GetIntValue(); } },
                 { "Period", n => { Period = n.GetIntValue(); } },
                 { "PlannedStockIn", n => { PlannedStockIn = n.GetDoubleValue(); } },
@@ -269,7 +257,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("Division", Division);
             writer.WriteGuidValue("ID", ID);
             writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemBarcode", ItemBarcode);
             writer.WriteStringValue("ItemCode", ItemCode);
             writer.WriteStringValue("ItemDescription", ItemDescription);
             writer.WriteDateTimeOffsetValue("ItemEndDate", ItemEndDate);
@@ -283,7 +270,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteDateTimeOffsetValue("NextCountingCycle", NextCountingCycle);
             writer.WriteIntValue("OrderPolicy", OrderPolicy);
             writer.WriteIntValue("Period", Period);
             writer.WriteDoubleValue("PlannedStockIn", PlannedStockIn);

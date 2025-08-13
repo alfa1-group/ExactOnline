@@ -94,14 +94,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; set; }
 #endif
-        /// <summary>Type</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.LogisticsCustomerItems"/> and sets the default values.
         /// </summary>
@@ -143,7 +135,6 @@ namespace ExactOnline.Api.Client.Models
                 { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "Modifier", n => { Modifier = n.GetGuidValue(); } },
                 { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
-                { "Type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -169,7 +160,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

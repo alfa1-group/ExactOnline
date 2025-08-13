@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class CustomFieldUpdateCustomField_ResponseExtensions
 {
+    public static async Task<CustomFieldUpdateCustomField?> AsItem(this Task<CustomFieldUpdateCustomField_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? null : (d.CustomFieldUpdateCustomField ?? d.CustomFieldUpdateCustomFieldResults?.Results ?? []).FirstOrDefault();
+    }
 
 }

@@ -294,16 +294,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectDescription { get; set; }
 #endif
-        /// <summary>The ProjectWBS property</summary>
-        public Guid? ProjectWBS { get; set; }
-        /// <summary>The ProjectWBSDescription property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectWBSDescription { get; set; }
-#nullable restore
-#else
-        public string ProjectWBSDescription { get; set; }
-#endif
         /// <summary>The Quantity property</summary>
         public double? Quantity { get; set; }
         /// <summary>The SerialNumber property</summary>
@@ -464,8 +454,6 @@ namespace ExactOnline.Api.Client.Models
                 { "Project", n => { Project = n.GetGuidValue(); } },
                 { "ProjectCode", n => { ProjectCode = n.GetStringValue(); } },
                 { "ProjectDescription", n => { ProjectDescription = n.GetStringValue(); } },
-                { "ProjectWBS", n => { ProjectWBS = n.GetGuidValue(); } },
-                { "ProjectWBSDescription", n => { ProjectWBSDescription = n.GetStringValue(); } },
                 { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "SerialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 { "Status", n => { Status = n.GetIntValue(); } },
@@ -548,8 +536,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("Project", Project);
             writer.WriteStringValue("ProjectCode", ProjectCode);
             writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteGuidValue("ProjectWBS", ProjectWBS);
-            writer.WriteStringValue("ProjectWBSDescription", ProjectWBSDescription);
             writer.WriteDoubleValue("Quantity", Quantity);
             writer.WriteStringValue("SerialNumber", SerialNumber);
             writer.WriteIntValue("Status", Status);

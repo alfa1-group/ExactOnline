@@ -4,5 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class InventoryProcessStockCount_ResponseExtensions
 {
+    public static async Task<InventoryProcessStockCount?> AsItem(this Task<InventoryProcessStockCount_Response?> task)
+    {
+        var d = (await task)?.D;
+        return d == null ? null : (d.InventoryProcessStockCount ?? d.InventoryProcessStockCountResults?.Results ?? []).FirstOrDefault();
+    }
 
 }

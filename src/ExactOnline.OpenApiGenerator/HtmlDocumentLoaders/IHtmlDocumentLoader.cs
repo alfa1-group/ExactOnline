@@ -1,8 +1,0 @@
-﻿using HtmlAgilityPack;
-
-namespace ExactOnline.OpenApiGenerator.HtmlDocumentLoaders;
-
-internal interface IHtmlDocumentLoader : IAsyncDisposable
-{
-    Task<HtmlDocument> LoadAsync(string url, CancellationToken cancellationToken);
-}

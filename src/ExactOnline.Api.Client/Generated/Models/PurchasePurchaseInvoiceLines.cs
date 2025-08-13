@@ -16,8 +16,6 @@ namespace ExactOnline.Api.Client.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>In a GET request the line amount is always returned excluding VAT in foreign currency.In a POST request the line amount has to be submitted either including or excluding the VAT amount. This depends on the type (including or excluding) of the VAT code.</summary>
         public double? Amount { get; set; }
-        /// <summary>Amount excluding VAT in default currency.</summary>
-        public double? AmountDC { get; set; }
         /// <summary>The code of the cost center that is linked to this invoice line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,8 +72,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? ID { get; set; }
         /// <summary>The unique identifier of the purchase invoice this line belongs to.</summary>
         public Guid? InvoiceID { get; set; }
-        /// <summary>Purchase invoice type.</summary>
-        public int? InvoiceType { get; set; }
         /// <summary>Guid that identifies the purchase item. In a POST request either the Item or the PurchaseOrderLine has to be supplied.</summary>
         public Guid? Item { get; set; }
         /// <summary>The default unit of the purchased item.</summary>
@@ -166,7 +162,6 @@ namespace ExactOnline.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "Amount", n => { Amount = n.GetDoubleValue(); } },
-                { "AmountDC", n => { AmountDC = n.GetDoubleValue(); } },
                 { "CostCenter", n => { CostCenter = n.GetStringValue(); } },
                 { "CostUnit", n => { CostUnit = n.GetStringValue(); } },
                 { "Currency", n => { Currency = n.GetStringValue(); } },
@@ -177,7 +172,6 @@ namespace ExactOnline.Api.Client.Models
                 { "ExpenseDescription", n => { ExpenseDescription = n.GetStringValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
                 { "InvoiceID", n => { InvoiceID = n.GetGuidValue(); } },
-                { "InvoiceType", n => { InvoiceType = n.GetIntValue(); } },
                 { "Item", n => { Item = n.GetGuidValue(); } },
                 { "ItemUnit", n => { ItemUnit = n.GetStringValue(); } },
                 { "LineNumber", n => { LineNumber = n.GetIntValue(); } },
@@ -205,7 +199,6 @@ namespace ExactOnline.Api.Client.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("Amount", Amount);
-            writer.WriteDoubleValue("AmountDC", AmountDC);
             writer.WriteStringValue("CostCenter", CostCenter);
             writer.WriteStringValue("CostUnit", CostUnit);
             writer.WriteStringValue("Currency", Currency);
@@ -216,7 +209,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ExpenseDescription", ExpenseDescription);
             writer.WriteGuidValue("ID", ID);
             writer.WriteGuidValue("InvoiceID", InvoiceID);
-            writer.WriteIntValue("InvoiceType", InvoiceType);
             writer.WriteGuidValue("Item", Item);
             writer.WriteStringValue("ItemUnit", ItemUnit);
             writer.WriteIntValue("LineNumber", LineNumber);
