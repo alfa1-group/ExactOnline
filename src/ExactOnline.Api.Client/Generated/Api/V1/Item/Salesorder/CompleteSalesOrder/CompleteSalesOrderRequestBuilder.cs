@@ -40,6 +40,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrder
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> PostAsync(global::ExactOnline.Api.Client.Models.SalesOrderCompleteSalesOrder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,7 +52,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrder
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// POST SalesOrderCompleteSalesOrder
@@ -71,6 +76,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrder
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

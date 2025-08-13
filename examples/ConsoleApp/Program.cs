@@ -5,6 +5,7 @@ using ExactOnline.Api.Client.Builders.Select;
 using ExactOnline.Api.Client.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Kiota.Abstractions;
 
 var someTimeAgo = TimeProvider.System.GetUtcNow().AddDays(-30);
 
@@ -60,6 +61,17 @@ await RunAsync(async () =>
     Console.WriteLine($"After waiting: {meTop?.Email}");
 
     return true;
+});
+
+await RunAsync(async () =>
+{
+    Console.WriteLine("Getting Sync.Project.TimeCostTransactions : 400 error");
+    _ = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAsync(p =>
+    {
+        p.QueryParameters.Filter = syncFilter;
+    }).AsItems();
+
+    return false;
 });
 
 await RunAsync(async () =>
@@ -147,10 +159,20 @@ async Task<T?> RunAsync<T>(Func<Task<T>> task)
     {
         return await task();
     }
+    catch (ODataError odata)
+    {
+        Console.WriteLine($"ODataError: {odata.Message}");
+        Console.WriteLine($"Error Code: {odata.Error?.Code}");
+        Console.WriteLine($"Error Message: {odata.Error?.Message?.Value}");
+    }
+    catch (ApiException apiEx)
+    {
+        Console.WriteLine($"ApiException: {apiEx.Message}");
+    }
     catch (Exception ex)
     {
-        Console.WriteLine($"Error: {ex.Message}");
-
-        return default;
+        Console.WriteLine($"Exception: {ex.Message}");
     }
+
+    return default;
 }

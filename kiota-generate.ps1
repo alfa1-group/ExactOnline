@@ -15,8 +15,7 @@ Write-Output "⚙️ C# client code generated"
 
 $modelsPath = "./src/ExactOnline.Api.Client/Generated/Models"
 
-# Patch response models to handle "results" property correctly
-Write-Output "🔧 Patching response models for 'results' property..."
+Write-Output "🔧 Patching response models"
 $responseModelFiles = Get-ChildItem -Path $modelsPath -Filter "*_Response.cs"
 
 foreach ($file in $responseModelFiles) {
@@ -46,7 +45,7 @@ if (!(Test-Path $extensionsPath)) {
 
 # Find all .cs files in the Generated/Models folder that don't end with "_Response.cs" or "_Results.cs"
 $modelFiles = Get-ChildItem -Path $modelsPath -Filter "*.cs" | Where-Object { 
-    $_.Name -notlike "*_Response.cs" -and $_.Name -notlike "*_Results.cs" -and $_.Name -ne "ExactOnlineMetadata.cs"
+    $_.Name -notlike "*_Response.cs" -and $_.Name -notlike "*_Results.cs" -and $_.Name -notlike "ExactOnlineMetadata*.cs" -and $_.Name -notlike "ODataError*.cs"
 }
 
 Write-Output "🔄 Generating response extension classes..."

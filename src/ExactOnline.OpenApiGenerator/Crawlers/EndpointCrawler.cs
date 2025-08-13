@@ -22,11 +22,52 @@ internal class EndpointCrawler
         var metadata = new OpenApiSchema
         {
             Type = JsonSchemaType.Object,
+            Required = new HashSet<string> { "uri", "type" },
             Properties = new Dictionary<string, IOpenApiSchema>
             {
                 { "uri", new OpenApiSchema { Type = JsonSchemaType.String } },
                 { "type", new OpenApiSchema { Type = JsonSchemaType.String } }
             }
+        };
+
+        var error = new OpenApiSchema
+        {
+            Type = JsonSchemaType.Object,
+            Properties = new Dictionary<string, IOpenApiSchema>
+            {
+                ["error"] = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.Object,
+                    Properties = new Dictionary<string, IOpenApiSchema>
+                    {
+                        ["code"] = new OpenApiSchema
+                        {
+                            Type = JsonSchemaType.String,
+                            Description = "Service-defined error code"
+                        },
+                        ["message"] = new OpenApiSchema
+                        {
+                            Type = JsonSchemaType.Object,
+                            Properties = new Dictionary<string, IOpenApiSchema>
+                            {
+                                ["lang"] = new OpenApiSchema
+                                {
+                                    Type = JsonSchemaType.String,
+                                    Description = "Language code (e.g., en-us)"
+                                },
+                                ["value"] = new OpenApiSchema
+                                {
+                                    Type = JsonSchemaType.String,
+                                    Description = "A human-readable error message"
+                                }
+                            },
+                            Required = new HashSet<string> { "lang", "value" }
+                        }
+                    },
+                    Required = new HashSet<string> { "code", "message" }
+                }
+            },
+            Required = new HashSet<string> { "error" }
         };
 
         _openApiDoc = new OpenApiDocument
@@ -49,7 +90,8 @@ internal class EndpointCrawler
             {
                 Schemas = new Dictionary<string, IOpenApiSchema>
                 {
-                    { "ExactOnlineMetadata", metadata }
+                    { "ExactOnlineMetadata", metadata },
+                    { "ODataError", error }
                 }
             }
         };
@@ -342,14 +384,6 @@ internal class EndpointCrawler
                             "application/json", new OpenApiMediaType
                             {
                                 Schema = new OpenApiSchemaReference(schemaName + "_Response")
-                                //Schema = new OpenApiSchema
-                                //{
-                                //    OneOf = [
-
-                                //        new OpenApiSchemaReference(schemaName + "_Array"),
-                                //        new OpenApiSchemaReference(schemaName + "_Results"),
-                                //    ]
-                                //}
                             }
                         }
                     }
@@ -362,6 +396,20 @@ internal class EndpointCrawler
                     Description = $"{method} operation successful"
                 });
             }
+
+            operation.Responses.Add("400", new OpenApiResponse
+            {
+                Description = $"{method} operation failed",
+                Content = new Dictionary<string, OpenApiMediaType>
+                {
+                    {
+                        "application/json", new OpenApiMediaType
+                        {
+                            Schema = new OpenApiSchemaReference("ODataError")
+                        }
+                    }
+                }
+            });
 
             if (openApiDoc.Paths.TryGetValue(endpointUri, out var existingPath))
             {
