@@ -4,5 +4,8 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class FinancialGLAccountClassificationMappingsPost_ResponseExtensions
 {
-
+    public static async Task<FinancialGLAccountClassificationMappings?> AsItem(this Task<FinancialGLAccountClassificationMappingsPost_Response?> task)
+    {
+        return (await task)?.D;
+    }
 }

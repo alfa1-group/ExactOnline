@@ -4,5 +4,8 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class InventoryFinishAssemblyOrderPost_ResponseExtensions
 {
-
+    public static async Task<InventoryFinishAssemblyOrder?> AsItem(this Task<InventoryFinishAssemblyOrderPost_Response?> task)
+    {
+        return (await task)?.D;
+    }
 }

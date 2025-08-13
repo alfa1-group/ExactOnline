@@ -4,5 +4,8 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class FinancialJournalsPost_ResponseExtensions
 {
-
+    public static async Task<FinancialJournals?> AsItem(this Task<FinancialJournalsPost_Response?> task)
+    {
+        return (await task)?.D;
+    }
 }

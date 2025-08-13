@@ -4,5 +4,8 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class FinancialTransactionCashEntryLinesPost_ResponseExtensions
 {
-
+    public static async Task<FinancialTransactionCashEntryLines?> AsItem(this Task<FinancialTransactionCashEntryLinesPost_Response?> task)
+    {
+        return (await task)?.D;
+    }
 }

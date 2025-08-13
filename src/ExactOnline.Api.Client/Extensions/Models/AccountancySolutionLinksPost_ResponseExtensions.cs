@@ -4,5 +4,8 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class AccountancySolutionLinksPost_ResponseExtensions
 {
-
+    public static async Task<AccountancySolutionLinks?> AsItem(this Task<AccountancySolutionLinksPost_Response?> task)
+    {
+        return (await task)?.D;
+    }
 }

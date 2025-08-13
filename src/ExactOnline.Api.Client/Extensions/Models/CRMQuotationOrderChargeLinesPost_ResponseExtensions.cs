@@ -4,5 +4,8 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class CRMQuotationOrderChargeLinesPost_ResponseExtensions
 {
-
+    public static async Task<CRMQuotationOrderChargeLines?> AsItem(this Task<CRMQuotationOrderChargeLinesPost_Response?> task)
+    {
+        return (await task)?.D;
+    }
 }

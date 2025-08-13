@@ -4,5 +4,8 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ActivitiesServiceRequestsPost_ResponseExtensions
 {
-
+    public static async Task<ActivitiesServiceRequests?> AsItem(this Task<ActivitiesServiceRequestsPost_Response?> task)
+    {
+        return (await task)?.D;
+    }
 }

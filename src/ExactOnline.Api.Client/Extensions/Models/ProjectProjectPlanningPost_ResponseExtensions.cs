@@ -4,5 +4,8 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ProjectProjectPlanningPost_ResponseExtensions
 {
-
+    public static async Task<ProjectProjectPlanning?> AsItem(this Task<ProjectProjectPlanningPost_Response?> task)
+    {
+        return (await task)?.D;
+    }
 }

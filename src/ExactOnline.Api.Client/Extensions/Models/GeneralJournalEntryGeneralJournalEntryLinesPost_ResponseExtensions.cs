@@ -4,5 +4,8 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class GeneralJournalEntryGeneralJournalEntryLinesPost_ResponseExtensions
 {
-
+    public static async Task<GeneralJournalEntryGeneralJournalEntryLines?> AsItem(this Task<GeneralJournalEntryGeneralJournalEntryLinesPost_Response?> task)
+    {
+        return (await task)?.D;
+    }
 }

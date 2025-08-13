@@ -4,5 +4,8 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class InventoryStockCountsPost_ResponseExtensions
 {
-
+    public static async Task<InventoryStockCounts?> AsItem(this Task<InventoryStockCountsPost_Response?> task)
+    {
+        return (await task)?.D;
+    }
 }

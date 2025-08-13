@@ -26,10 +26,10 @@ public class OpenApiBuilderService
         Console.WriteLine();
 
         var pages = (await MainPageCrawler.ExtractEndpointUrlsAsync(MainPage))
-            //.Where(x => 
+            //.Where(x =>
             //    x.Contains("SystemSystemMe") ||
             //    x.Contains("WebhooksWebhookSubscriptions") ||
-            //    x.Contains("TimeTransactions") || 
+            //    x.Contains("TimeTransactions") ||
             //    x.Contains("SyncProjectTimeCostTransactions")
             //)
             .ToList();

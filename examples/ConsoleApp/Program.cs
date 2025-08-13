@@ -32,7 +32,7 @@ var syncFilter = SyncFilterBuilder.Build(t => t.Timestamp >= 1);
 
 await RunAsync(async () =>
 {
-    _ = await client.Api.V1[123456].Webhooks.WebhookSubscriptionsWithId(new Guid("AE0253AA-67AB-480B-9321-F27C50AF22B7")).DeleteAsync();
+    await client.Api.V1[123456].Webhooks.WebhookSubscriptionsWithId(new Guid("AE0253AA-67AB-480B-9321-F27C50AF22B7")).DeleteAsync();
     return true;
 });
 
@@ -75,11 +75,13 @@ await RunAsync(async () =>
 await RunAsync(async () =>
 {
     Console.WriteLine("Post WebHook");
-    _ = await client.Api.V1[division].Webhooks.WebhookSubscriptions.PostAsync(new WebhooksWebhookSubscriptionsPost
+    var postResult = await client.Api.V1[division].Webhooks.WebhookSubscriptions.PostAsync(new WebhooksWebhookSubscriptionsPost
     {
         CallbackURL = "https://mstack.nl",
-        Topic = "Accounts"
-    });
+        Topic = "StockPositions"
+    }).AsItem();
+
+    Console.WriteLine($"Post WebHook ID: {postResult.ID}");
 
     return true;
 });

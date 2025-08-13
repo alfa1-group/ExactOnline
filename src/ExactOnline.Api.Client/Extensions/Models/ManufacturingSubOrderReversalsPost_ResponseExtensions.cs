@@ -4,5 +4,8 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ManufacturingSubOrderReversalsPost_ResponseExtensions
 {
-
+    public static async Task<ManufacturingSubOrderReversals?> AsItem(this Task<ManufacturingSubOrderReversalsPost_Response?> task)
+    {
+        return (await task)?.D;
+    }
 }

@@ -307,6 +307,20 @@ internal class EndpointCrawler
                 };
                 openApiDoc.Components!.Schemas!.Add(schemaName + "_Response", response);
             }
+            else if (httpMethod == HttpMethod.Post)
+            {
+                var response = new OpenApiSchema
+                {
+                    Description = responseDescription,
+                    Type = JsonSchemaType.Object,
+                    Properties = new Dictionary<string, IOpenApiSchema>
+                    {
+                        { "d", new OpenApiSchemaReference(baseSchemaName) }
+                    },
+                    Required = new HashSet<string> { "d" }
+                };
+                openApiDoc.Components!.Schemas!.Add(schemaName + "_Response", response);
+            }
 
             var endpointUri = baseEndpointUri;
 
@@ -395,9 +409,26 @@ internal class EndpointCrawler
                     }
                 });
             }
+            else if (httpMethod == HttpMethod.Post)
+            {
+                operation.Responses.Add("201", new OpenApiResponse
+                {
+                    Description = $"{httpMethod} operation successful",
+                    Content = new Dictionary<string, OpenApiMediaType>
+                    {
+                        {
+                            "application/json", new OpenApiMediaType
+                            {
+                                Schema = new OpenApiSchemaReference(schemaName + "_Response")
+                            }
+                        }
+                    }
+                });
+            }
             else
             {
-                operation.Responses.Add("200", new OpenApiResponse
+                // For Put and Delete operations, use 204.
+                operation.Responses.Add("204", new OpenApiResponse
                 {
                     Description = $"{httpMethod} operation successful"
                 });
