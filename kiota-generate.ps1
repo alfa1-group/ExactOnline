@@ -1,6 +1,6 @@
 ﻿# Kiota generation script for Exact Online API client in C#
 
-# Generate the C# client code using Kiota
+Write-Output "⚙️ Generating C# client code..."
 kiota generate `
     --cc `
     --openapi "./resources/exactonline-openapi.json" `
@@ -10,12 +10,9 @@ kiota generate `
     --namespace-name "ExactOnline.Api.Client" `
     --class-name "ExactOnlineServiceClient" `
 
-Write-Output "⚙️ C# client code generated"
-
-
 $modelsPath = "./src/ExactOnline.Api.Client/Generated/Models"
 
-Write-Output "🔧 Patching response models"
+Write-Output "🔧 Patching response models..."
 $responseModelFiles = Get-ChildItem -Path $modelsPath -Filter "*_Response.cs"
 
 foreach ($file in $responseModelFiles) {
