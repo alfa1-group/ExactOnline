@@ -126,16 +126,51 @@ await RunAsync(async () =>
 
 await RunAsync(async () =>
 {
-    Console.WriteLine("Getting Sync.Project.TimeCostTransactions");
+    Console.WriteLine("Getting Sync.Project.TimeCostTransactions - top 1");
     var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAsync(p =>
     {
-        p.QueryParameters.Top = 1; // Must be 1 !
+        p.QueryParameters.Top = 1;
         p.QueryParameters.Filter = syncFilter;
     }).AsItems();
 
     foreach (var tt in list)
     {
-        Console.WriteLine($"Sync.Project.TimeCostTransactions ID: {tt.ID}, Type: {tt.Type}, Created: {tt.Created}");
+        Console.WriteLine($"Sync.Project.TimeCostTransactions TS: {tt.Timestamp} ID: {tt.ID}, Type: {tt.Type}, Created: {tt.Created}");
+    }
+
+    return list;
+});
+
+await RunAsync(async () =>
+{
+    Console.WriteLine("Getting Sync.Project.TimeCostTransactions - select");
+    var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAsync(p =>
+    {
+        p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransactions>.Build(t => t.ID, t => t.Timestamp, t => t.Type, t => t.Created);
+        p.QueryParameters.Filter = syncFilter;
+    }).AsItems();
+
+    foreach (var tt in list)
+    {
+        Console.WriteLine($"Sync.Project.TimeCostTransactions TS: {tt.Timestamp} ID: {tt.ID}, Type: {tt.Type}, Created: {tt.Created}");
+    }
+
+    return list;
+});
+
+await RunAsync(async () =>
+{
+    Console.WriteLine("Getting Sync.Project.TimeCostTransactions - select & top");
+    var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAsync(p =>
+    {
+        p.QueryParameters.Top = 2;
+        p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransactions>.Build(t => t.ID, t => t.Timestamp, t => t.Type, t => t.Created);
+        p.QueryParameters.Filter = syncFilter;
+    }).AsItems();
+
+    foreach (var tt in list)
+    {
+        Console.WriteLine($"Sync.Project.TimeCostTransactions TS: {tt.Timestamp} ID: {tt.ID}, Type: {tt.Type}, Created: {tt.Created}");
     }
 
     return list;

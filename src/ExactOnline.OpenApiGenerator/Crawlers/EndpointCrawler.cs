@@ -517,13 +517,12 @@ internal class EndpointCrawler
             {
                 Name = "$top",
                 In = ParameterLocation.Query,
-                Required = isSyncInterface,
+                Required = false,
                 Schema = new OpenApiSchema
                 {
-                    Type = JsonSchemaType.Integer,
-                    Default = isSyncInterface ? 1 : null
+                    Type = JsonSchemaType.Integer
                 },
-                Description = isSyncInterface ? "Number of records to return, e.g., `1`" : "Number of records to return, e.g., `100`"
+                Description = "Number of records to return, e.g., `100`"
             });
         }
 

@@ -52497,11 +52497,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -52602,11 +52600,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -52707,11 +52703,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -52812,11 +52806,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -52917,11 +52909,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -53022,11 +53012,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -53127,11 +53115,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -53232,11 +53218,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -53337,11 +53321,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -53442,11 +53424,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -53547,11 +53527,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -53652,11 +53630,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -53757,11 +53733,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -53862,11 +53836,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -53967,11 +53939,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -54072,11 +54042,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -54177,11 +54145,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -54282,11 +54248,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -54387,11 +54351,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -54492,11 +54454,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -54597,11 +54557,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -54702,11 +54660,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -54807,11 +54763,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -54912,11 +54866,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -55017,11 +54969,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -55122,11 +55072,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -55227,11 +55175,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -55332,11 +55278,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -55437,11 +55381,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -55542,11 +55484,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -55647,11 +55587,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -55752,11 +55690,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -55857,11 +55793,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -55962,11 +55896,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -56067,11 +55999,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -56172,11 +56102,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -56277,11 +56205,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -56382,11 +56308,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -56487,11 +56411,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -56592,11 +56514,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -56697,11 +56617,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -56802,11 +56720,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -56907,11 +56823,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -57012,11 +56926,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -57117,11 +57029,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -57222,11 +57132,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -57327,11 +57235,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -57432,11 +57338,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -57537,11 +57441,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -57642,11 +57544,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -57747,11 +57647,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -57852,11 +57750,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -57957,11 +57853,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -58062,11 +57956,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -58167,11 +58059,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -58272,11 +58162,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -58377,11 +58265,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {
@@ -58482,11 +58368,9 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `1`",
-            "required": true,
+            "description": "Number of records to return, e.g., `100`",
             "schema": {
-              "type": "integer",
-              "default": 1
+              "type": "integer"
             }
           },
           {

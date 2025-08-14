@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SupplierItem
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SupplierItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Logistics/SupplierItem?$filter={%24filter}&$top={%24top}{&%24count*,%24expand*,%24inlinecount*,%24orderby*,%24select*,%24skip*}", pathParameters)
+        public SupplierItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Logistics/SupplierItem?$filter={%24filter}{&%24count*,%24expand*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SupplierItem
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SupplierItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Logistics/SupplierItem?$filter={%24filter}&$top={%24top}{&%24count*,%24expand*,%24inlinecount*,%24orderby*,%24select*,%24skip*}", rawUrl)
+        public SupplierItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Logistics/SupplierItem?$filter={%24filter}{&%24count*,%24expand*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", rawUrl)
         {
         }
         /// <summary>
@@ -146,7 +146,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SupplierItem
             /// <summary>Number of records to skip, e.g., `10`</summary>
             [QueryParameter("%24skip")]
             public int? Skip { get; set; }
-            /// <summary>Number of records to return, e.g., `1`</summary>
+            /// <summary>Number of records to return, e.g., `100`</summary>
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
