@@ -28,7 +28,7 @@ var orderBy = OrderByBuilder<WebhooksWebhookSubscriptions>
     .ThenByDescending(w => w.CallbackURL)
     .Build();
 var filter = FilterBuilder<WebhooksWebhookSubscriptions>.Build(a => a.CallbackURL!.Equals("abc") && (a.Division > 100 || a.Created > TimeProvider.System.GetUtcNow().AddDays(-30)));
-var syncFilter = SyncFilterBuilder.Build(t => t.Timestamp >= 1);
+var syncFilter = TimestampFilterBuilder.Build(t => t.Timestamp >= 13361108664);
 
 await RunAsync(async () =>
 {

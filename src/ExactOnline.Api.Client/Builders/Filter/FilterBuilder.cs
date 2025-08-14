@@ -1,5 +1,6 @@
 using System.Linq.Expressions;
 using System.Text;
+using ExactOnline.Api.Client.Utils;
 
 namespace ExactOnline.Api.Client.Builders.Filter;
 
@@ -54,7 +55,7 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
             ExpressionType.LessThanOrEqual => " le ",
             ExpressionType.GreaterThan => " gt ",
             ExpressionType.GreaterThanOrEqual => " ge ",
-            _ => throw new NotSupportedException($"Operator '{node.NodeType}' not supported"),
+            _ => throw new NotSupportedException($"Operator '{node.NodeType}' not supported")
         });
 
         Visit(node.Right);
@@ -88,6 +89,10 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
 
             case bool boolValue:
                 _filter.Append(boolValue.ToString().ToLower());
+                break;
+
+            case long longValue:
+                _filter.Append(LongValueTransformer.Transform(longValue));
                 break;
 
             case Guid guidValue:

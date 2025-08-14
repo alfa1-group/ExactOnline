@@ -467,7 +467,21 @@ internal class EndpointCrawler
 
             operation.Responses.Add("400", new OpenApiResponse
             {
-                Description = $"{httpMethod} operation failed",
+                Description = $"Bad request: {httpMethod} operation failed",
+                Content = new Dictionary<string, OpenApiMediaType>
+                {
+                    {
+                        "application/json", new OpenApiMediaType
+                        {
+                            Schema = new OpenApiSchemaReference("ODataError")
+                        }
+                    }
+                }
+            });
+
+            operation.Responses.Add("500", new OpenApiResponse
+            {
+                Description = $"Internal server error: {httpMethod} operation failed",
                 Content = new Dictionary<string, OpenApiMediaType>
                 {
                     {

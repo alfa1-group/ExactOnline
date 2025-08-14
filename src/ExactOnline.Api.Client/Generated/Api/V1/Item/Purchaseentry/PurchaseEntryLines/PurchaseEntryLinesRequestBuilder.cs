@@ -40,6 +40,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseentry.PurchaseEntryLines
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
+        /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::ExactOnline.Api.Client.Models.PurchaseEntryPurchaseEntryLines_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Purchaseentry.PurchaseEntryLines.PurchaseEntryLinesRequestBuilder.PurchaseEntryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -53,6 +54,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseentry.PurchaseEntryLines
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
+                { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.PurchaseEntryPurchaseEntryLines_Response>(requestInfo, global::ExactOnline.Api.Client.Models.PurchaseEntryPurchaseEntryLines_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -64,6 +66,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseentry.PurchaseEntryLines
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
+        /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::ExactOnline.Api.Client.Models.PurchaseEntryPurchaseEntryLinesPost_Response?> PostAsync(global::ExactOnline.Api.Client.Models.PurchaseEntryPurchaseEntryLinesPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -78,6 +81,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseentry.PurchaseEntryLines
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
+                { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.PurchaseEntryPurchaseEntryLinesPost_Response>(requestInfo, global::ExactOnline.Api.Client.Models.PurchaseEntryPurchaseEntryLinesPost_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

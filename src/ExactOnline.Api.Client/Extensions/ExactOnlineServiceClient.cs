@@ -35,11 +35,12 @@ public partial class ExactOnlineServiceClient
     {
         var handlers = KiotaClientFactory.CreateDefaultHandlers();
 
-        // 1. Insert the GuidWrappingHandler after the UriReplacementHandler.
+        // 1. Insert the QueryParameterTransformationHandler and GuidWrappingHandler after the UriReplacementHandler.
         var urlReplacementHandlerPosition = handlers.Select((handler, index) => new { handler, index }).FirstOrDefault(dg => dg.handler is UriReplacementHandler<UriReplacementHandlerOption>)?.index ?? -1;
         if (urlReplacementHandlerPosition != -1)
         {
-            handlers.Insert(urlReplacementHandlerPosition + 1, new GuidWrappingHandler());
+            handlers.Insert(urlReplacementHandlerPosition + 1, new QueryParametersHandler());
+            handlers.Insert(urlReplacementHandlerPosition + 2, new GuidWrappingHandler());
         }
 
         // 2. Replace the RetryHandler by ExactOnlineRateLimitHandler.
@@ -67,7 +68,7 @@ public partial class ExactOnlineServiceClient
 
         // 2. Create the Kiota JSON Parse Node Factory with the custom options.
         var kiotaJsonSerializationContext = new KiotaJsonSerializationContext(customOptions);
-
+        
         // 3. Create the JsonParseNodeFactory with the KiotaJsonSerializationContext.
         return new JsonParseNodeFactory(kiotaJsonSerializationContext);
     }
