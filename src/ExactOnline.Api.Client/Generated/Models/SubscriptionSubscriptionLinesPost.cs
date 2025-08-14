@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SubscriptionSubscriptionLinesPost : IAdditionalDataHolder, IParsable
+    public partial class SubscriptionSubscriptionLinesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AmountDC property</summary>
         public double? AmountDC { get; set; }
         /// <summary>The AmountFC property</summary>
@@ -57,10 +55,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The NetPrice property</summary>
         public double? NetPrice { get; set; }
@@ -96,13 +94,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCode { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLinesPost"/> and sets the default values.
-        /// </summary>
-        public SubscriptionSubscriptionLinesPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -161,7 +152,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("ID", ID);
             writer.WriteGuidValue("Item", Item);
             writer.WriteIntValue("LineType", LineType);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDoubleValue("NetPrice", NetPrice);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteDoubleValue("Quantity", Quantity);
@@ -170,7 +160,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("UnitPrice", UnitPrice);
             writer.WriteDoubleValue("VATAmountFC", VATAmountFC);
             writer.WriteStringValue("VATCode", VATCode);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

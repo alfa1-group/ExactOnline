@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using System.Text.RegularExpressions;
 using ExactOnline.OpenApiGenerator.Extensions;
 using ExactOnline.OpenApiGenerator.HtmlDocumentLoaders;
@@ -28,6 +29,7 @@ internal class EndpointCrawler
         var metadata = new OpenApiSchema
         {
             Type = JsonSchemaType.Object,
+            ReadOnly = true,
             Required = new HashSet<string> { "uri", "type" },
             Properties = new Dictionary<string, IOpenApiSchema>
             {
@@ -44,26 +46,31 @@ internal class EndpointCrawler
                 ["error"] = new OpenApiSchema
                 {
                     Type = JsonSchemaType.Object,
+                    ReadOnly = true,
                     Properties = new Dictionary<string, IOpenApiSchema>
                     {
                         ["code"] = new OpenApiSchema
                         {
                             Type = JsonSchemaType.String,
+                            ReadOnly = true,
                             Description = "Service-defined error code"
                         },
                         ["message"] = new OpenApiSchema
                         {
                             Type = JsonSchemaType.Object,
+                            ReadOnly = true,
                             Properties = new Dictionary<string, IOpenApiSchema>
                             {
                                 ["lang"] = new OpenApiSchema
                                 {
                                     Type = JsonSchemaType.String,
+                                    ReadOnly = true,
                                     Description = "Language code (e.g., en-us)"
                                 },
                                 ["value"] = new OpenApiSchema
                                 {
                                     Type = JsonSchemaType.String,
+                                    ReadOnly = true,
                                     Description = "A human-readable error message"
                                 }
                             },
@@ -135,7 +142,7 @@ internal class EndpointCrawler
 
     private async Task<IDictionary<string, string>> GetDocsAsync(string url, CancellationToken cancellationToken)
     {
-        if (!Barrel.Current.IsExpired(key: url))
+        if (_useCache && !Barrel.Current.IsExpired(key: url))
         {
             return Barrel.Current.Get<IDictionary<string, string>>(key: url);
         }
@@ -178,12 +185,17 @@ internal class EndpointCrawler
         var responseDescription = schemaIsCollection ? $"A collection of {baseSchemaName} entities." : $"The {baseSchemaName} entity.";
         var (baseEndpointUri, queryParameters) = GetEndpointUriDetails(docGet);
         var isSyncInterface = baseSchemaName.StartsWith("Sync");
+        var isGetOnly = docs.Count == 1 && docs.ContainsKey(HttpMethod.Get);
 
         foreach (var (httpMethod, document) in docs)
         {
             var properties = new Dictionary<string, IOpenApiSchema>
             {
-                { "__metadata", new OpenApiSchemaReference("ExactOnlineMetadata") }
+                { "__metadata", new OpenApiSchemaReference("ExactOnlineMetadata")
+                    {
+                        ReadOnly = isGetOnly
+                    }
+                }
             };
 
             var requiredProperties = new HashSet<string>();
@@ -222,7 +234,7 @@ internal class EndpointCrawler
                             continue;
                         }
 
-                        if (!EdmTypeParser.TryParse(type, name, description, out var property))
+                        if (!EdmTypeParser.TryParse(type, name, description, isGetOnly, out var property))
                         {
                             if (!string.IsNullOrEmpty(linkedSchemaName))
                             {
@@ -232,12 +244,16 @@ internal class EndpointCrawler
                                     {
                                         Type = JsonSchemaType.Array,
                                         Description = description,
-                                        Items = new OpenApiSchemaReference(linkedSchemaName)
+                                        Items = new OpenApiSchemaReference(linkedSchemaName),
+                                        ReadOnly = isGetOnly
                                     };
                                 }
                                 else
                                 {
-                                    property = new OpenApiSchemaReference(linkedSchemaName);
+                                    property = new OpenApiSchemaReference(linkedSchemaName)
+                                    {
+                                        ReadOnly = isGetOnly
+                                    };
                                 }
                             }
                             else
@@ -251,7 +267,8 @@ internal class EndpointCrawler
                                         Items = new OpenApiSchema
                                         {
                                             Type = JsonSchemaType.Object
-                                        }
+                                        },
+                                        ReadOnly = isGetOnly
                                     };
                                 }
                                 else
@@ -259,7 +276,8 @@ internal class EndpointCrawler
                                     property = new OpenApiSchema
                                     {
                                         Type = JsonSchemaType.Object,
-                                        Description = description
+                                        Description = description,
+                                        ReadOnly = isGetOnly
                                     };
                                 }
                             }
@@ -287,48 +305,52 @@ internal class EndpointCrawler
 
             if (httpMethod == HttpMethod.Get)
             {
-                var array = new OpenApiSchema
+                var arrayResponse = new OpenApiSchema
                 {
                     Type = JsonSchemaType.Array,
+                    ReadOnly = true,
                     Items = new OpenApiSchemaReference(schemaName)
                 };
-                openApiDoc.Components!.Schemas!.Add(schemaName + "_Array", array);
+                openApiDoc.Components!.Schemas!.Add(schemaName + "_Array", arrayResponse);
 
-                var arrayReference = new OpenApiSchemaReference(schemaName + "_Array");
+                var arrayResponseRef = new OpenApiSchemaReference(schemaName + "_Array");
 
-                var results = new OpenApiSchema
+                var resultsResponse = new OpenApiSchema
                 {
                     Type = JsonSchemaType.Object,
+                    ReadOnly = true,
                     Properties = new Dictionary<string, IOpenApiSchema>
                     {
-                        { "results", arrayReference },
-                        { "__next", new OpenApiSchema { Type = JsonSchemaType.String } }
+                        { "results", arrayResponseRef },
+                        { "__next", new OpenApiSchema { Type = JsonSchemaType.String, ReadOnly = true } }
                     },
                     Required = new HashSet<string> { "results" }
                 };
-                openApiDoc.Components!.Schemas!.Add(schemaName + "_Results", results);
+                openApiDoc.Components!.Schemas!.Add(schemaName + "_Results", resultsResponse);
 
-                var resultsReference = new OpenApiSchemaReference(schemaName + "_Results");
+                var resultsResponseRef = new OpenApiSchemaReference(schemaName + "_Results");
 
-                var response = new OpenApiSchema
+                var responseSchema = new OpenApiSchema
                 {
                     Description = responseDescription,
                     Type = JsonSchemaType.Object,
+                    ReadOnly = true,
                     Properties = new Dictionary<string, IOpenApiSchema>
                     {
                         { "d", new OpenApiSchema
                             {
+                                ReadOnly = true,
                                 OneOf =
                                 [
-                                    arrayReference,
-                                    resultsReference
+                                    arrayResponseRef,
+                                    resultsResponseRef
                                 ],
                                 Discriminator = new OpenApiDiscriminator
                                 {
                                     PropertyName = "results",
                                     Mapping = new Dictionary<string, OpenApiSchemaReference>
                                     {
-                                        { "_Results", resultsReference }
+                                        { "_Results", resultsResponseRef }
                                     }
                                 }
                             }
@@ -336,21 +358,26 @@ internal class EndpointCrawler
                     },
                     Required = new HashSet<string> { "d" }
                 };
-                openApiDoc.Components!.Schemas!.Add(schemaName + "_Response", response);
+                openApiDoc.Components!.Schemas!.Add(schemaName + "_Response", responseSchema);
             }
             else if (httpMethod == HttpMethod.Post)
             {
-                var response = new OpenApiSchema
+                var responseSchema = new OpenApiSchema
                 {
                     Description = responseDescription,
                     Type = JsonSchemaType.Object,
+                    ReadOnly = true,
                     Properties = new Dictionary<string, IOpenApiSchema>
                     {
-                        { "d", new OpenApiSchemaReference(baseSchemaName) }
+                        { "d", new OpenApiSchemaReference(baseSchemaName)
+                            {
+                                ReadOnly = true
+                            }
+                        }
                     },
                     Required = new HashSet<string> { "d" }
                 };
-                openApiDoc.Components!.Schemas!.Add(schemaName + "_Response", response);
+                openApiDoc.Components!.Schemas!.Add(schemaName + "_Response", responseSchema);
             }
 
             var endpointUri = baseEndpointUri;
@@ -415,7 +442,7 @@ internal class EndpointCrawler
                     Content = new Dictionary<string, OpenApiMediaType>
                     {
                         {
-                            "application/json", new OpenApiMediaType
+                            MediaTypeNames.Application.Json, new OpenApiMediaType
                             {
                                 Schema = new OpenApiSchemaReference(schemaName)
                             }
@@ -424,37 +451,31 @@ internal class EndpointCrawler
                 };
             }
 
-            if (httpMethod == HttpMethod.Get)
+            var response = new OpenApiResponse
             {
-                operation.Responses.Add("200", new OpenApiResponse
+                Content = new Dictionary<string, OpenApiMediaType>
                 {
-                    Description = responseDescription,
-                    Content = new Dictionary<string, OpenApiMediaType>
                     {
+                        MediaTypeNames.Application.Json, new OpenApiMediaType
                         {
-                            "application/json", new OpenApiMediaType
+                            Schema = new OpenApiSchemaReference(schemaName + "_Response")
                             {
-                                Schema = new OpenApiSchemaReference(schemaName + "_Response")
+                                ReadOnly = true
                             }
                         }
                     }
-                });
+                }
+            };
+
+            if (httpMethod == HttpMethod.Get)
+            {
+                response.Description = responseDescription;
+                operation.Responses.Add("200", response);
             }
             else if (httpMethod == HttpMethod.Post)
             {
-                operation.Responses.Add("201", new OpenApiResponse
-                {
-                    Description = $"{httpMethod} operation successful",
-                    Content = new Dictionary<string, OpenApiMediaType>
-                    {
-                        {
-                            "application/json", new OpenApiMediaType
-                            {
-                                Schema = new OpenApiSchemaReference(schemaName + "_Response")
-                            }
-                        }
-                    }
-                });
+                response.Description = $"{httpMethod} operation successful";
+                operation.Responses.Add("201", response);
             }
             else
             {
@@ -465,32 +486,29 @@ internal class EndpointCrawler
                 });
             }
 
-            operation.Responses.Add("400", new OpenApiResponse
+            var errorContent = new Dictionary<string, OpenApiMediaType>
             {
-                Description = $"Bad request: {httpMethod} operation failed",
-                Content = new Dictionary<string, OpenApiMediaType>
                 {
+                    MediaTypeNames.Application.Json, new OpenApiMediaType
                     {
-                        "application/json", new OpenApiMediaType
+                        Schema = new OpenApiSchemaReference("ODataError")
                         {
-                            Schema = new OpenApiSchemaReference("ODataError")
+                            ReadOnly = true
                         }
                     }
                 }
+            };
+
+            operation.Responses.Add("400", new OpenApiResponse
+            {
+                Description = $"Bad request: {httpMethod} operation failed",
+                Content = errorContent
             });
 
             operation.Responses.Add("500", new OpenApiResponse
             {
                 Description = $"Internal server error: {httpMethod} operation failed",
-                Content = new Dictionary<string, OpenApiMediaType>
-                {
-                    {
-                        "application/json", new OpenApiMediaType
-                        {
-                            Schema = new OpenApiSchemaReference("ODataError")
-                        }
-                    }
-                }
+                Content = errorContent
             });
 
             if (openApiDoc.Paths.TryGetValue(endpointUri, out var existingPath))
@@ -681,7 +699,7 @@ internal class EndpointCrawler
                 continue;
             }
 
-            EdmTypeParser.TryParse(edmType, paramName, description: null, out var schema);
+            EdmTypeParser.TryParse(edmType, paramName, description: null, isSyncInterface: false, out var schema);
 
             //var description = paramName switch
             //{

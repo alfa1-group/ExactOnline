@@ -9,7 +9,7 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CRMAccounts : IAdditionalDataHolder, IParsable
+    public partial class CRMAccounts : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Reference to the accountant of the customer. Conditions: The referred accountant must have value &amp;gt; 0 in the field IsAccountant</summary>
@@ -30,8 +30,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? ActivitySector { get; set; }
         /// <summary>Reference to Activity sub-sector of the account</summary>
         public Guid? ActivitySubSector { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Visit address first line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -497,10 +495,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -823,13 +821,6 @@ namespace ExactOnline.Api.Client.Models
         public string Website { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CRMAccounts"/> and sets the default values.
-        /// </summary>
-        public CRMAccounts()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.CRMAccounts"/></returns>
@@ -1125,7 +1116,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("LogoUrl", LogoUrl);
             writer.WriteDoubleValue("Longitude", Longitude);
             writer.WriteGuidValue("MainContact", MainContact);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
@@ -1178,7 +1168,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("VATLiability", VATLiability);
             writer.WriteStringValue("VATNumber", VATNumber);
             writer.WriteStringValue("Website", Website);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

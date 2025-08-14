@@ -9,152 +9,143 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PayrollEmploymentOrganizations : IAdditionalDataHolder, IParsable
+    public partial class PayrollEmploymentOrganizations : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Cost center code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenter { get; set; }
+        public string? CostCenter { get; private set; }
 #nullable restore
 #else
-        public string CostCenter { get; set; }
+        public string CostCenter { get; private set; }
 #endif
         /// <summary>Description of cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenterDescription { get; set; }
+        public string? CostCenterDescription { get; private set; }
 #nullable restore
 #else
-        public string CostCenterDescription { get; set; }
+        public string CostCenterDescription { get; private set; }
 #endif
         /// <summary>Cost unit code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnit { get; set; }
+        public string? CostUnit { get; private set; }
 #nullable restore
 #else
-        public string CostUnit { get; set; }
+        public string CostUnit { get; private set; }
 #endif
         /// <summary>Description of cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnitDescription { get; set; }
+        public string? CostUnitDescription { get; private set; }
 #nullable restore
 #else
-        public string CostUnitDescription { get; set; }
+        public string CostUnitDescription { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>ID of department</summary>
-        public Guid? Department { get; set; }
+        public Guid? Department { get; private set; }
         /// <summary>Department code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DepartmentCode { get; set; }
+        public string? DepartmentCode { get; private set; }
 #nullable restore
 #else
-        public string DepartmentCode { get; set; }
+        public string DepartmentCode { get; private set; }
 #endif
         /// <summary>Department description for organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DepartmentDescription { get; set; }
+        public string? DepartmentDescription { get; private set; }
 #nullable restore
 #else
-        public string DepartmentDescription { get; set; }
+        public string DepartmentDescription { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>ID of employee</summary>
-        public Guid? Employee { get; set; }
+        public Guid? Employee { get; private set; }
         /// <summary>Name of employee</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeFullName { get; set; }
+        public string? EmployeeFullName { get; private set; }
 #nullable restore
 #else
-        public string EmployeeFullName { get; set; }
+        public string EmployeeFullName { get; private set; }
 #endif
         /// <summary>Numeric ID of the employee</summary>
-        public int? EmployeeHID { get; set; }
+        public int? EmployeeHID { get; private set; }
         /// <summary>Employment ID</summary>
-        public Guid? Employment { get; set; }
+        public Guid? Employment { get; private set; }
         /// <summary>Obsolete</summary>
-        public int? EmploymentHID { get; set; }
+        public int? EmploymentHID { get; private set; }
         /// <summary>Employment number</summary>
-        public int? EmploymentNumber { get; set; }
+        public int? EmploymentNumber { get; private set; }
         /// <summary>Organization end dateNote : This property only supported for successor</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>ID of job title</summary>
-        public Guid? JobTitle { get; set; }
+        public Guid? JobTitle { get; private set; }
         /// <summary>Job title code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobTitleCode { get; set; }
+        public string? JobTitleCode { get; private set; }
 #nullable restore
 #else
-        public string JobTitleCode { get; set; }
+        public string JobTitleCode { get; private set; }
 #endif
         /// <summary>Job title description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobTitleDescription { get; set; }
+        public string? JobTitleDescription { get; private set; }
 #nullable restore
 #else
-        public string JobTitleDescription { get; set; }
+        public string JobTitleDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Obsolete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Organization start dateNote : This property only supported for successor</summary>
-        public DateTimeOffset? StartDate { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PayrollEmploymentOrganizations"/> and sets the default values.
-        /// </summary>
-        public PayrollEmploymentOrganizations()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -210,35 +201,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("CostCenter", CostCenter);
-            writer.WriteStringValue("CostCenterDescription", CostCenterDescription);
-            writer.WriteStringValue("CostUnit", CostUnit);
-            writer.WriteStringValue("CostUnitDescription", CostUnitDescription);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteGuidValue("Department", Department);
-            writer.WriteStringValue("DepartmentCode", DepartmentCode);
-            writer.WriteStringValue("DepartmentDescription", DepartmentDescription);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
-            writer.WriteIntValue("EmployeeHID", EmployeeHID);
-            writer.WriteGuidValue("Employment", Employment);
-            writer.WriteIntValue("EmploymentHID", EmploymentHID);
-            writer.WriteIntValue("EmploymentNumber", EmploymentNumber);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("JobTitle", JobTitle);
-            writer.WriteStringValue("JobTitleCode", JobTitleCode);
-            writer.WriteStringValue("JobTitleDescription", JobTitleDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

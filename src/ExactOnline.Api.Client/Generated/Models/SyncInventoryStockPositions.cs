@@ -9,98 +9,89 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncInventoryStockPositions : IAdditionalDataHolder, IParsable
+    public partial class SyncInventoryStockPositions : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of items in stock</summary>
-        public double? CurrentStock { get; set; }
+        public double? CurrentStock { get; private set; }
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Quantity of available stock</summary>
-        public double? FreeStock { get; set; }
+        public double? FreeStock { get; private set; }
         /// <summary>Primary Key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Code of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Description of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>A guid that is the unique identifier of the item</summary>
-        public Guid? ItemId { get; set; }
+        public Guid? ItemId { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Number of items that are planned to come in</summary>
-        public double? PlanningIn { get; set; }
+        public double? PlanningIn { get; private set; }
         /// <summary>Number of items that are planned to go out</summary>
-        public double? PlanningOut { get; set; }
+        public double? PlanningOut { get; private set; }
         /// <summary>The quantity of stock projected given all planned future stock changes</summary>
-        public double? ProjectedStock { get; set; }
+        public double? ProjectedStock { get; private set; }
         /// <summary>Quantity of items as an indication of when you need to reorder more stock for the warehouse</summary>
-        public double? ReorderPoint { get; set; }
+        public double? ReorderPoint { get; private set; }
         /// <summary>Stock stored in the warehouse that is already reserved</summary>
-        public double? ReservedStock { get; set; }
+        public double? ReservedStock { get; private set; }
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>Code of item unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitCode { get; set; }
+        public string? UnitCode { get; private set; }
 #nullable restore
 #else
-        public string UnitCode { get; set; }
+        public string UnitCode { get; private set; }
 #endif
         /// <summary>Description of the item unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitDescription { get; set; }
+        public string? UnitDescription { get; private set; }
 #nullable restore
 #else
-        public string UnitDescription { get; set; }
+        public string UnitDescription { get; private set; }
 #endif
         /// <summary>A guid that is the unique identifier of the warehouse</summary>
-        public Guid? Warehouse { get; set; }
+        public Guid? Warehouse { get; private set; }
         /// <summary>Code of warehouse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseCode { get; set; }
+        public string? WarehouseCode { get; private set; }
 #nullable restore
 #else
-        public string WarehouseCode { get; set; }
+        public string WarehouseCode { get; private set; }
 #endif
         /// <summary>Description of warehouse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseDescription { get; set; }
+        public string? WarehouseDescription { get; private set; }
 #nullable restore
 #else
-        public string WarehouseDescription { get; set; }
+        public string WarehouseDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncInventoryStockPositions"/> and sets the default values.
-        /// </summary>
-        public SyncInventoryStockPositions()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -147,26 +138,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("CurrentStock", CurrentStock);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDoubleValue("FreeStock", FreeStock);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteGuidValue("ItemId", ItemId);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDoubleValue("PlanningIn", PlanningIn);
-            writer.WriteDoubleValue("PlanningOut", PlanningOut);
-            writer.WriteDoubleValue("ProjectedStock", ProjectedStock);
-            writer.WriteDoubleValue("ReorderPoint", ReorderPoint);
-            writer.WriteDoubleValue("ReservedStock", ReservedStock);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteStringValue("UnitCode", UnitCode);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

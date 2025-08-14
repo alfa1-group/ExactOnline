@@ -9,150 +9,141 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncSubscriptionSubscriptionLines : IAdditionalDataHolder, IParsable
+    public partial class SyncSubscriptionSubscriptionLines : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AmountDC property</summary>
-        public double? AmountDC { get; set; }
+        public double? AmountDC { get; private set; }
         /// <summary>The AmountFC property</summary>
-        public double? AmountFC { get; set; }
+        public double? AmountFC { get; private set; }
         /// <summary>The Costcenter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Costcenter { get; set; }
+        public string? Costcenter { get; private set; }
 #nullable restore
 #else
-        public string Costcenter { get; set; }
+        public string Costcenter { get; private set; }
 #endif
         /// <summary>The Costunit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Costunit { get; set; }
+        public string? Costunit { get; private set; }
 #nullable restore
 #else
-        public string Costunit { get; set; }
+        public string Costunit { get; private set; }
 #endif
         /// <summary>The CustomField property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>The Description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>The Discount property</summary>
-        public double? Discount { get; set; }
+        public double? Discount { get; private set; }
         /// <summary>The Division property</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>The EntryID property</summary>
-        public Guid? EntryID { get; set; }
+        public Guid? EntryID { get; private set; }
         /// <summary>The FromDate property</summary>
-        public DateTimeOffset? FromDate { get; set; }
+        public DateTimeOffset? FromDate { get; private set; }
         /// <summary>The ID property</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The Item property</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>The ItemDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>The LineNumber property</summary>
-        public int? LineNumber { get; set; }
+        public int? LineNumber { get; private set; }
         /// <summary>The LineType property</summary>
-        public int? LineType { get; set; }
+        public int? LineType { get; private set; }
         /// <summary>The LineTypeDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LineTypeDescription { get; set; }
+        public string? LineTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string LineTypeDescription { get; set; }
+        public string LineTypeDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The Modified property</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>The NetPrice property</summary>
-        public double? NetPrice { get; set; }
+        public double? NetPrice { get; private set; }
         /// <summary>The Notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>The Quantity property</summary>
-        public double? Quantity { get; set; }
+        public double? Quantity { get; private set; }
         /// <summary>The SubscriptionNumber property</summary>
-        public int? SubscriptionNumber { get; set; }
+        public int? SubscriptionNumber { get; private set; }
         /// <summary>The Timestamp property</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>The ToDate property</summary>
-        public DateTimeOffset? ToDate { get; set; }
+        public DateTimeOffset? ToDate { get; private set; }
         /// <summary>The UnitCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitCode { get; set; }
+        public string? UnitCode { get; private set; }
 #nullable restore
 #else
-        public string UnitCode { get; set; }
+        public string UnitCode { get; private set; }
 #endif
         /// <summary>The UnitDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitDescription { get; set; }
+        public string? UnitDescription { get; private set; }
 #nullable restore
 #else
-        public string UnitDescription { get; set; }
+        public string UnitDescription { get; private set; }
 #endif
         /// <summary>The UnitPrice property</summary>
-        public double? UnitPrice { get; set; }
+        public double? UnitPrice { get; private set; }
         /// <summary>The VATAmountFC property</summary>
-        public double? VATAmountFC { get; set; }
+        public double? VATAmountFC { get; private set; }
         /// <summary>The VATCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VATCode { get; set; }
+        public string? VATCode { get; private set; }
 #nullable restore
 #else
-        public string VATCode { get; set; }
+        public string VATCode { get; private set; }
 #endif
         /// <summary>The VATCodeDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VATCodeDescription { get; set; }
+        public string? VATCodeDescription { get; private set; }
 #nullable restore
 #else
-        public string VATCodeDescription { get; set; }
+        public string VATCodeDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncSubscriptionSubscriptionLines"/> and sets the default values.
-        /// </summary>
-        public SyncSubscriptionSubscriptionLines()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -210,37 +201,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("AmountDC", AmountDC);
-            writer.WriteDoubleValue("AmountFC", AmountFC);
-            writer.WriteStringValue("Costcenter", Costcenter);
-            writer.WriteStringValue("Costunit", Costunit);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteDoubleValue("Discount", Discount);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("EntryID", EntryID);
-            writer.WriteDateTimeOffsetValue("FromDate", FromDate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteIntValue("LineNumber", LineNumber);
-            writer.WriteIntValue("LineType", LineType);
-            writer.WriteStringValue("LineTypeDescription", LineTypeDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteDoubleValue("NetPrice", NetPrice);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteDoubleValue("Quantity", Quantity);
-            writer.WriteIntValue("SubscriptionNumber", SubscriptionNumber);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteDateTimeOffsetValue("ToDate", ToDate);
-            writer.WriteStringValue("UnitCode", UnitCode);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
-            writer.WriteDoubleValue("UnitPrice", UnitPrice);
-            writer.WriteDoubleValue("VATAmountFC", VATAmountFC);
-            writer.WriteStringValue("VATCode", VATCode);
-            writer.WriteStringValue("VATCodeDescription", VATCodeDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

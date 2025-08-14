@@ -9,334 +9,325 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BulkCRMQuotations : IAdditionalDataHolder, IParsable
+    public partial class BulkCRMQuotations : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount in the default currency of the company</summary>
-        public double? AmountDC { get; set; }
+        public double? AmountDC { get; private set; }
         /// <summary>Discount Amount in the currency of the transaction</summary>
-        public double? AmountDiscount { get; set; }
+        public double? AmountDiscount { get; private set; }
         /// <summary>Discount Amount excluding VAT in the currency of the transaction</summary>
-        public double? AmountDiscountExclVat { get; set; }
+        public double? AmountDiscountExclVat { get; private set; }
         /// <summary>Amount in the currency of the transaction</summary>
-        public double? AmountFC { get; set; }
+        public double? AmountFC { get; private set; }
         /// <summary>Date on which the customer accepted or rejected the quotation version</summary>
-        public DateTimeOffset? CloseDate { get; set; }
+        public DateTimeOffset? CloseDate { get; private set; }
         /// <summary>Date on which you expect to close/win the deal</summary>
-        public DateTimeOffset? ClosingDate { get; set; }
+        public DateTimeOffset? ClosingDate { get; private set; }
         /// <summary>Date and time on which the quotation was created</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of the creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of the creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>The currency of the quotation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get; private set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get; private set; }
 #endif
         /// <summary>The account where the items should delivered</summary>
-        public Guid? DeliveryAccount { get; set; }
+        public Guid? DeliveryAccount { get; private set; }
         /// <summary>The code of the delivery account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAccountCode { get; set; }
+        public string? DeliveryAccountCode { get; private set; }
 #nullable restore
 #else
-        public string DeliveryAccountCode { get; set; }
+        public string DeliveryAccountCode { get; private set; }
 #endif
         /// <summary>The contact person of the delivery account</summary>
-        public Guid? DeliveryAccountContact { get; set; }
+        public Guid? DeliveryAccountContact { get; private set; }
         /// <summary>Full name of the delivery account contact person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAccountContactFullName { get; set; }
+        public string? DeliveryAccountContactFullName { get; private set; }
 #nullable restore
 #else
-        public string DeliveryAccountContactFullName { get; set; }
+        public string DeliveryAccountContactFullName { get; private set; }
 #endif
         /// <summary>The name of the delivery account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAccountName { get; set; }
+        public string? DeliveryAccountName { get; private set; }
 #nullable restore
 #else
-        public string DeliveryAccountName { get; set; }
+        public string DeliveryAccountName { get; private set; }
 #endif
         /// <summary>The id of the delivery address</summary>
-        public Guid? DeliveryAddress { get; set; }
+        public Guid? DeliveryAddress { get; private set; }
         /// <summary>The date of the delivery</summary>
-        public DateTimeOffset? DeliveryDate { get; set; }
+        public DateTimeOffset? DeliveryDate { get; private set; }
         /// <summary>The description of the quotation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Document linked to the quotation</summary>
-        public Guid? Document { get; set; }
+        public Guid? Document { get; private set; }
         /// <summary>The subject of the document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentSubject { get; set; }
+        public string? DocumentSubject { get; private set; }
 #nullable restore
 #else
-        public string DocumentSubject { get; set; }
+        public string DocumentSubject { get; private set; }
 #endif
         /// <summary>Date after which the quotation is no longer valid</summary>
-        public DateTimeOffset? DueDate { get; set; }
+        public DateTimeOffset? DueDate { get; private set; }
         /// <summary>Address of Incoterm</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncotermAddress { get; set; }
+        public string? IncotermAddress { get; private set; }
 #nullable restore
 #else
-        public string IncotermAddress { get; set; }
+        public string IncotermAddress { get; private set; }
 #endif
         /// <summary>Code of Incoterm</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncotermCode { get; set; }
+        public string? IncotermCode { get; private set; }
 #nullable restore
 #else
-        public string IncotermCode { get; set; }
+        public string IncotermCode { get; private set; }
 #endif
         /// <summary>Version of Incoterm Supported version for Incoterms : 2010, 2020</summary>
-        public int? IncotermVersion { get; set; }
+        public int? IncotermVersion { get; private set; }
         /// <summary>The account to which the invoice is sent</summary>
-        public Guid? InvoiceAccount { get; set; }
+        public Guid? InvoiceAccount { get; private set; }
         /// <summary>The code of the invoice account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceAccountCode { get; set; }
+        public string? InvoiceAccountCode { get; private set; }
 #nullable restore
 #else
-        public string InvoiceAccountCode { get; set; }
+        public string InvoiceAccountCode { get; private set; }
 #endif
         /// <summary>The contact person of the invoice account</summary>
-        public Guid? InvoiceAccountContact { get; set; }
+        public Guid? InvoiceAccountContact { get; private set; }
         /// <summary>Full name of the invoice account contact person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceAccountContactFullName { get; set; }
+        public string? InvoiceAccountContactFullName { get; private set; }
 #nullable restore
 #else
-        public string InvoiceAccountContactFullName { get; set; }
+        public string InvoiceAccountContactFullName { get; private set; }
 #endif
         /// <summary>The name of the invoice account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceAccountName { get; set; }
+        public string? InvoiceAccountName { get; private set; }
 #nullable restore
 #else
-        public string InvoiceAccountName { get; set; }
+        public string InvoiceAccountName { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Date and time on which the quotation was last modified</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of the modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of the modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Opportunity linked to the quotation</summary>
-        public Guid? Opportunity { get; set; }
+        public Guid? Opportunity { get; private set; }
         /// <summary>The name of the opportunity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OpportunityName { get; set; }
+        public string? OpportunityName { get; private set; }
 #nullable restore
 #else
-        public string OpportunityName { get; set; }
+        public string OpportunityName { get; private set; }
 #endif
         /// <summary>The account that requested the quotation</summary>
-        public Guid? OrderAccount { get; set; }
+        public Guid? OrderAccount { get; private set; }
         /// <summary>The code of the order account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrderAccountCode { get; set; }
+        public string? OrderAccountCode { get; private set; }
 #nullable restore
 #else
-        public string OrderAccountCode { get; set; }
+        public string OrderAccountCode { get; private set; }
 #endif
         /// <summary>The contact person of the order account</summary>
-        public Guid? OrderAccountContact { get; set; }
+        public Guid? OrderAccountContact { get; private set; }
         /// <summary>Full name of the order account contact person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrderAccountContactFullName { get; set; }
+        public string? OrderAccountContactFullName { get; private set; }
 #nullable restore
 #else
-        public string OrderAccountContactFullName { get; set; }
+        public string OrderAccountContactFullName { get; private set; }
 #endif
         /// <summary>The name of the order account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrderAccountName { get; set; }
+        public string? OrderAccountName { get; private set; }
 #nullable restore
 #else
-        public string OrderAccountName { get; set; }
+        public string OrderAccountName { get; private set; }
 #endif
         /// <summary>Payment condition code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentCondition { get; set; }
+        public string? PaymentCondition { get; private set; }
 #nullable restore
 #else
-        public string PaymentCondition { get; set; }
+        public string PaymentCondition { get; private set; }
 #endif
         /// <summary>Payment condition description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentConditionDescription { get; set; }
+        public string? PaymentConditionDescription { get; private set; }
 #nullable restore
 #else
-        public string PaymentConditionDescription { get; set; }
+        public string PaymentConditionDescription { get; private set; }
 #endif
         /// <summary>The project linked to the quotation</summary>
-        public Guid? Project { get; set; }
+        public Guid? Project { get; private set; }
         /// <summary>The code of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectCode { get; set; }
+        public string? ProjectCode { get; private set; }
 #nullable restore
 #else
-        public string ProjectCode { get; set; }
+        public string ProjectCode { get; private set; }
 #endif
         /// <summary>The description of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectDescription { get; set; }
+        public string? ProjectDescription { get; private set; }
 #nullable restore
 #else
-        public string ProjectDescription { get; set; }
+        public string ProjectDescription { get; private set; }
 #endif
         /// <summary>Date on which the quotation version is entered or printed. Both during entering and printing this date can be adjusted</summary>
-        public DateTimeOffset? QuotationDate { get; set; }
+        public DateTimeOffset? QuotationDate { get; private set; }
         /// <summary>Identifier of the quotation</summary>
-        public Guid? QuotationID { get; set; }
+        public Guid? QuotationID { get; private set; }
         /// <summary>Unique number to indentify the quotation. By default this number is based on the setting for first available number</summary>
-        public int? QuotationNumber { get; set; }
+        public int? QuotationNumber { get; private set; }
         /// <summary>Extra text that can be added to the quotation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Remarks { get; set; }
+        public string? Remarks { get; private set; }
 #nullable restore
 #else
-        public string Remarks { get; set; }
+        public string Remarks { get; private set; }
 #endif
         /// <summary>ID of Sales channel.</summary>
-        public Guid? SalesChannel { get; set; }
+        public Guid? SalesChannel { get; private set; }
         /// <summary>Code of Sales channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalesChannelCode { get; set; }
+        public string? SalesChannelCode { get; private set; }
 #nullable restore
 #else
-        public string SalesChannelCode { get; set; }
+        public string SalesChannelCode { get; private set; }
 #endif
         /// <summary>Description of Sales channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalesChannelDescription { get; set; }
+        public string? SalesChannelDescription { get; private set; }
 #nullable restore
 #else
-        public string SalesChannelDescription { get; set; }
+        public string SalesChannelDescription { get; private set; }
 #endif
         /// <summary>The user that is responsible for the quotation version</summary>
-        public Guid? SalesPerson { get; set; }
+        public Guid? SalesPerson { get; private set; }
         /// <summary>Full name of the sales person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalesPersonFullName { get; set; }
+        public string? SalesPersonFullName { get; private set; }
 #nullable restore
 #else
-        public string SalesPersonFullName { get; set; }
+        public string SalesPersonFullName { get; private set; }
 #endif
         /// <summary>ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale &amp;amp; Distribution and Manufacturing</summary>
-        public Guid? SelectionCode { get; set; }
+        public Guid? SelectionCode { get; private set; }
         /// <summary>Code of selection code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SelectionCodeCode { get; set; }
+        public string? SelectionCodeCode { get; private set; }
 #nullable restore
 #else
-        public string SelectionCodeCode { get; set; }
+        public string SelectionCodeCode { get; private set; }
 #endif
         /// <summary>Description of selection code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SelectionCodeDescription { get; set; }
+        public string? SelectionCodeDescription { get; private set; }
 #nullable restore
 #else
-        public string SelectionCodeDescription { get; set; }
+        public string SelectionCodeDescription { get; private set; }
 #endif
         /// <summary>Shipping method ID</summary>
-        public Guid? ShippingMethod { get; set; }
+        public Guid? ShippingMethod { get; private set; }
         /// <summary>Shipping method description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShippingMethodDescription { get; set; }
+        public string? ShippingMethodDescription { get; private set; }
 #nullable restore
 #else
-        public string ShippingMethodDescription { get; set; }
+        public string ShippingMethodDescription { get; private set; }
 #endif
         /// <summary>The status of the quotation version. 5 = Rejected, 6 = Reviewed and closed, 10 = Recovery, 20 = Draft, 25 = Open, 35 = Processing... , 40 = Printed, 50 = Accepted</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>The description of the status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusDescription { get; set; }
+        public string? StatusDescription { get; private set; }
 #nullable restore
 #else
-        public string StatusDescription { get; set; }
+        public string StatusDescription { get; private set; }
 #endif
         /// <summary>Total VAT amount in the currency of the transaction</summary>
-        public double? VATAmountFC { get; set; }
+        public double? VATAmountFC { get; private set; }
         /// <summary>Number indicating the different reviews which are made for the quotation</summary>
-        public int? VersionNumber { get; set; }
+        public int? VersionNumber { get; private set; }
         /// <summary>The number by which this quotation is identified by the order account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? YourRef { get; set; }
+        public string? YourRef { get; private set; }
 #nullable restore
 #else
-        public string YourRef { get; set; }
+        public string YourRef { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.BulkCRMQuotations"/> and sets the default values.
-        /// </summary>
-        public BulkCRMQuotations()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -429,72 +420,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("AmountDC", AmountDC);
-            writer.WriteDoubleValue("AmountDiscount", AmountDiscount);
-            writer.WriteDoubleValue("AmountDiscountExclVat", AmountDiscountExclVat);
-            writer.WriteDoubleValue("AmountFC", AmountFC);
-            writer.WriteDateTimeOffsetValue("CloseDate", CloseDate);
-            writer.WriteDateTimeOffsetValue("ClosingDate", ClosingDate);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Currency", Currency);
-            writer.WriteGuidValue("DeliveryAccount", DeliveryAccount);
-            writer.WriteStringValue("DeliveryAccountCode", DeliveryAccountCode);
-            writer.WriteGuidValue("DeliveryAccountContact", DeliveryAccountContact);
-            writer.WriteStringValue("DeliveryAccountContactFullName", DeliveryAccountContactFullName);
-            writer.WriteStringValue("DeliveryAccountName", DeliveryAccountName);
-            writer.WriteGuidValue("DeliveryAddress", DeliveryAddress);
-            writer.WriteDateTimeOffsetValue("DeliveryDate", DeliveryDate);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Document", Document);
-            writer.WriteStringValue("DocumentSubject", DocumentSubject);
-            writer.WriteDateTimeOffsetValue("DueDate", DueDate);
-            writer.WriteStringValue("IncotermAddress", IncotermAddress);
-            writer.WriteStringValue("IncotermCode", IncotermCode);
-            writer.WriteIntValue("IncotermVersion", IncotermVersion);
-            writer.WriteGuidValue("InvoiceAccount", InvoiceAccount);
-            writer.WriteStringValue("InvoiceAccountCode", InvoiceAccountCode);
-            writer.WriteGuidValue("InvoiceAccountContact", InvoiceAccountContact);
-            writer.WriteStringValue("InvoiceAccountContactFullName", InvoiceAccountContactFullName);
-            writer.WriteStringValue("InvoiceAccountName", InvoiceAccountName);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteGuidValue("Opportunity", Opportunity);
-            writer.WriteStringValue("OpportunityName", OpportunityName);
-            writer.WriteGuidValue("OrderAccount", OrderAccount);
-            writer.WriteStringValue("OrderAccountCode", OrderAccountCode);
-            writer.WriteGuidValue("OrderAccountContact", OrderAccountContact);
-            writer.WriteStringValue("OrderAccountContactFullName", OrderAccountContactFullName);
-            writer.WriteStringValue("OrderAccountName", OrderAccountName);
-            writer.WriteStringValue("PaymentCondition", PaymentCondition);
-            writer.WriteStringValue("PaymentConditionDescription", PaymentConditionDescription);
-            writer.WriteGuidValue("Project", Project);
-            writer.WriteStringValue("ProjectCode", ProjectCode);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteDateTimeOffsetValue("QuotationDate", QuotationDate);
-            writer.WriteGuidValue("QuotationID", QuotationID);
-            writer.WriteIntValue("QuotationNumber", QuotationNumber);
-            writer.WriteStringValue("Remarks", Remarks);
-            writer.WriteGuidValue("SalesChannel", SalesChannel);
-            writer.WriteStringValue("SalesChannelCode", SalesChannelCode);
-            writer.WriteStringValue("SalesChannelDescription", SalesChannelDescription);
-            writer.WriteGuidValue("SalesPerson", SalesPerson);
-            writer.WriteStringValue("SalesPersonFullName", SalesPersonFullName);
-            writer.WriteGuidValue("SelectionCode", SelectionCode);
-            writer.WriteStringValue("SelectionCodeCode", SelectionCodeCode);
-            writer.WriteStringValue("SelectionCodeDescription", SelectionCodeDescription);
-            writer.WriteGuidValue("ShippingMethod", ShippingMethod);
-            writer.WriteStringValue("ShippingMethodDescription", ShippingMethodDescription);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteStringValue("StatusDescription", StatusDescription);
-            writer.WriteDoubleValue("VATAmountFC", VATAmountFC);
-            writer.WriteIntValue("VersionNumber", VersionNumber);
-            writer.WriteStringValue("YourRef", YourRef);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

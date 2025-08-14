@@ -9,48 +9,39 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadPayrollEmploymentEndReasonsOnFocusDate : IAdditionalDataHolder, IParsable
+    public partial class ReadPayrollEmploymentEndReasonsOnFocusDate : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Code used to declare the employment end reason to the Dutch Tax Authority</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get; private set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get; private set; }
 #endif
         /// <summary>Employment end reason description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>End date of the employment end reason</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Primary key</summary>
-        public int? ID { get; set; }
+        public int? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Start date of the employment end reason</summary>
-        public DateTimeOffset? StartDate { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadPayrollEmploymentEndReasonsOnFocusDate"/> and sets the default values.
-        /// </summary>
-        public ReadPayrollEmploymentEndReasonsOnFocusDate()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,13 +75,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Code", Code);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteIntValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,242 +9,233 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadManufacturingShopOrderRoutingStepPlansAvailableToWork : IAdditionalDataHolder, IParsable
+    public partial class ReadManufacturingShopOrderRoutingStepPlansAvailableToWork : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Customer code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerCode { get; set; }
+        public string? CustomerCode { get; private set; }
 #nullable restore
 #else
-        public string CustomerCode { get; set; }
+        public string CustomerCode { get; private set; }
 #endif
         /// <summary>Count of customers</summary>
-        public int? CustomerCount { get; set; }
+        public int? CustomerCount { get; private set; }
         /// <summary>Customer name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerName { get; set; }
+        public string? CustomerName { get; private set; }
 #nullable restore
 #else
-        public string CustomerName { get; set; }
+        public string CustomerName { get; private set; }
 #endif
         /// <summary>Type of data returned by query - for internal use</summary>
-        public int? DataType { get; set; }
+        public int? DataType { get; private set; }
         /// <summary>Planned dates ascending order</summary>
-        public int? DateAscendingOrder { get; set; }
+        public int? DateAscendingOrder { get; private set; }
         /// <summary>Planned dates descending order</summary>
-        public int? DateDescendingOrder { get; set; }
+        public int? DateDescendingOrder { get; private set; }
         /// <summary>Extra description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtraDescription { get; set; }
+        public string? ExtraDescription { get; private set; }
 #nullable restore
 #else
-        public string ExtraDescription { get; set; }
+        public string ExtraDescription { get; private set; }
 #endif
         /// <summary>Is fraction allowed item</summary>
-        public bool? IsFractionAllowedItem { get; set; }
+        public bool? IsFractionAllowedItem { get; private set; }
         /// <summary>Is released</summary>
-        public bool? IsReleased { get; set; }
+        public bool? IsReleased { get; private set; }
         /// <summary>Is run operation finished</summary>
-        public bool? IsRunOperationFinished { get; set; }
+        public bool? IsRunOperationFinished { get; private set; }
         /// <summary>Is setup operation finished</summary>
-        public bool? IsSetupOperationFinished { get; set; }
+        public bool? IsSetupOperationFinished { get; private set; }
         /// <summary>Item</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>Item code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Shop order item code ascending order</summary>
-        public int? ItemCodeAscendingOrder { get; set; }
+        public int? ItemCodeAscendingOrder { get; private set; }
         /// <summary>Shop order item code descending order</summary>
-        public int? ItemCodeDescendingOrder { get; set; }
+        public int? ItemCodeDescendingOrder { get; private set; }
         /// <summary>Item description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>Item version ID</summary>
-        public Guid? ItemVersion { get; set; }
+        public Guid? ItemVersion { get; private set; }
         /// <summary>Item version notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemVersionNotes { get; set; }
+        public string? ItemVersionNotes { get; private set; }
 #nullable restore
 #else
-        public string ItemVersionNotes { get; set; }
+        public string ItemVersionNotes { get; private set; }
 #endif
         /// <summary>Sequence</summary>
-        public int? LineNumber { get; set; }
+        public int? LineNumber { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Shop order notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Operation</summary>
-        public Guid? Operation { get; set; }
+        public Guid? Operation { get; private set; }
         /// <summary>Operation code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperationCode { get; set; }
+        public string? OperationCode { get; private set; }
 #nullable restore
 #else
-        public string OperationCode { get; set; }
+        public string OperationCode { get; private set; }
 #endif
         /// <summary>PictureThumbnailPath</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PictureThumbnailPath { get; set; }
+        public string? PictureThumbnailPath { get; private set; }
 #nullable restore
 #else
-        public string PictureThumbnailPath { get; set; }
+        public string PictureThumbnailPath { get; private set; }
 #endif
         /// <summary>Planned date</summary>
-        public DateTimeOffset? PlannedDate { get; set; }
+        public DateTimeOffset? PlannedDate { get; private set; }
         /// <summary>Planned quantity</summary>
-        public double? PlannedQuantity { get; set; }
+        public double? PlannedQuantity { get; private set; }
         /// <summary>Planned setup hours</summary>
-        public double? PlannedSetupHours { get; set; }
+        public double? PlannedSetupHours { get; private set; }
         /// <summary>Priority of the shop order</summary>
-        public int? Priority { get; set; }
+        public int? Priority { get; private set; }
         /// <summary>Shop order project</summary>
-        public Guid? Project { get; set; }
+        public Guid? Project { get; private set; }
         /// <summary>Shop order project code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectCode { get; set; }
+        public string? ProjectCode { get; private set; }
 #nullable restore
 #else
-        public string ProjectCode { get; set; }
+        public string ProjectCode { get; private set; }
 #endif
         /// <summary>Project description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectDescription { get; set; }
+        public string? ProjectDescription { get; private set; }
 #nullable restore
 #else
-        public string ProjectDescription { get; set; }
+        public string ProjectDescription { get; private set; }
 #endif
         /// <summary>QuantityCompleted</summary>
-        public double? QuantityCompleted { get; set; }
+        public double? QuantityCompleted { get; private set; }
         /// <summary>Routing Step ID</summary>
-        public Guid? RoutingStep { get; set; }
+        public Guid? RoutingStep { get; private set; }
         /// <summary>Routing step description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoutingStepDescription { get; set; }
+        public string? RoutingStepDescription { get; private set; }
 #nullable restore
 #else
-        public string RoutingStepDescription { get; set; }
+        public string RoutingStepDescription { get; private set; }
 #endif
         /// <summary>RoutingStepRealizationNotes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoutingStepRealizationNotes { get; set; }
+        public string? RoutingStepRealizationNotes { get; private set; }
 #nullable restore
 #else
-        public string RoutingStepRealizationNotes { get; set; }
+        public string RoutingStepRealizationNotes { get; private set; }
 #endif
         /// <summary>Routing step status</summary>
-        public int? RoutingStepStatus { get; set; }
+        public int? RoutingStepStatus { get; private set; }
         /// <summary>Routing step status description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoutingStepStatusDescription { get; set; }
+        public string? RoutingStepStatusDescription { get; private set; }
 #nullable restore
 #else
-        public string RoutingStepStatusDescription { get; set; }
+        public string RoutingStepStatusDescription { get; private set; }
 #endif
         /// <summary>Routing step type</summary>
-        public int? RoutingStepType { get; set; }
+        public int? RoutingStepType { get; private set; }
         /// <summary>Run start time</summary>
-        public DateTimeOffset? RunStartTime { get; set; }
+        public DateTimeOffset? RunStartTime { get; private set; }
         /// <summary>Run timed status</summary>
-        public int? RunStatus { get; set; }
+        public int? RunStatus { get; private set; }
         /// <summary>Run timed time transaction</summary>
-        public Guid? RunTimedTimeTransaction { get; set; }
+        public Guid? RunTimedTimeTransaction { get; private set; }
         /// <summary>Count of Sales order</summary>
-        public int? SalesOrderCount { get; set; }
+        public int? SalesOrderCount { get; private set; }
         /// <summary>Sales order line number</summary>
-        public int? SalesOrderLineNumber { get; set; }
+        public int? SalesOrderLineNumber { get; private set; }
         /// <summary>Sales order number</summary>
-        public int? SalesOrderNumber { get; set; }
+        public int? SalesOrderNumber { get; private set; }
         /// <summary>SetupPercentComplete</summary>
-        public double? SetupPercentComplete { get; set; }
+        public double? SetupPercentComplete { get; private set; }
         /// <summary>Setup start time</summary>
-        public DateTimeOffset? SetupStartTime { get; set; }
+        public DateTimeOffset? SetupStartTime { get; private set; }
         /// <summary>Setup timed status</summary>
-        public int? SetupStatus { get; set; }
+        public int? SetupStatus { get; private set; }
         /// <summary>Setup timed time transaction</summary>
-        public Guid? SetupTimedTimeTransaction { get; set; }
+        public Guid? SetupTimedTimeTransaction { get; private set; }
         /// <summary>Shop order ID</summary>
-        public Guid? ShopOrder { get; set; }
+        public Guid? ShopOrder { get; private set; }
         /// <summary>Shop order description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShopOrderDescription { get; set; }
+        public string? ShopOrderDescription { get; private set; }
 #nullable restore
 #else
-        public string ShopOrderDescription { get; set; }
+        public string ShopOrderDescription { get; private set; }
 #endif
         /// <summary>Shop order number</summary>
-        public int? ShopOrderNumber { get; set; }
+        public int? ShopOrderNumber { get; private set; }
         /// <summary>Shop order number ascending order</summary>
-        public int? ShopOrderNumberAscendingOrder { get; set; }
+        public int? ShopOrderNumberAscendingOrder { get; private set; }
         /// <summary>Shop order number descending order</summary>
-        public int? ShopOrderNumberDescendingOrder { get; set; }
+        public int? ShopOrderNumberDescendingOrder { get; private set; }
         /// <summary>Shop order status</summary>
-        public int? ShopOrderStatus { get; set; }
+        public int? ShopOrderStatus { get; private set; }
         /// <summary>Description of unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit { get; set; }
+        public string? Unit { get; private set; }
 #nullable restore
 #else
-        public string Unit { get; set; }
+        public string Unit { get; private set; }
 #endif
         /// <summary>ID of warehouse where shop order is finished</summary>
-        public Guid? Warehouse { get; set; }
+        public Guid? Warehouse { get; private set; }
         /// <summary>Workcenter</summary>
-        public Guid? Workcenter { get; set; }
+        public Guid? Workcenter { get; private set; }
         /// <summary>Workcenter code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkcenterCode { get; set; }
+        public string? WorkcenterCode { get; private set; }
 #nullable restore
 #else
-        public string WorkcenterCode { get; set; }
+        public string WorkcenterCode { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadManufacturingShopOrderRoutingStepPlansAvailableToWork"/> and sets the default values.
-        /// </summary>
-        public ReadManufacturingShopOrderRoutingStepPlansAvailableToWork()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -330,65 +321,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("CustomerCode", CustomerCode);
-            writer.WriteIntValue("CustomerCount", CustomerCount);
-            writer.WriteStringValue("CustomerName", CustomerName);
-            writer.WriteIntValue("DataType", DataType);
-            writer.WriteIntValue("DateAscendingOrder", DateAscendingOrder);
-            writer.WriteIntValue("DateDescendingOrder", DateDescendingOrder);
-            writer.WriteStringValue("ExtraDescription", ExtraDescription);
-            writer.WriteBoolValue("IsFractionAllowedItem", IsFractionAllowedItem);
-            writer.WriteBoolValue("IsReleased", IsReleased);
-            writer.WriteBoolValue("IsRunOperationFinished", IsRunOperationFinished);
-            writer.WriteBoolValue("IsSetupOperationFinished", IsSetupOperationFinished);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteIntValue("ItemCodeAscendingOrder", ItemCodeAscendingOrder);
-            writer.WriteIntValue("ItemCodeDescendingOrder", ItemCodeDescendingOrder);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteGuidValue("ItemVersion", ItemVersion);
-            writer.WriteStringValue("ItemVersionNotes", ItemVersionNotes);
-            writer.WriteIntValue("LineNumber", LineNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteGuidValue("Operation", Operation);
-            writer.WriteStringValue("OperationCode", OperationCode);
-            writer.WriteStringValue("PictureThumbnailPath", PictureThumbnailPath);
-            writer.WriteDateTimeOffsetValue("PlannedDate", PlannedDate);
-            writer.WriteDoubleValue("PlannedQuantity", PlannedQuantity);
-            writer.WriteDoubleValue("PlannedSetupHours", PlannedSetupHours);
-            writer.WriteIntValue("Priority", Priority);
-            writer.WriteGuidValue("Project", Project);
-            writer.WriteStringValue("ProjectCode", ProjectCode);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteDoubleValue("QuantityCompleted", QuantityCompleted);
-            writer.WriteGuidValue("RoutingStep", RoutingStep);
-            writer.WriteStringValue("RoutingStepDescription", RoutingStepDescription);
-            writer.WriteStringValue("RoutingStepRealizationNotes", RoutingStepRealizationNotes);
-            writer.WriteIntValue("RoutingStepStatus", RoutingStepStatus);
-            writer.WriteStringValue("RoutingStepStatusDescription", RoutingStepStatusDescription);
-            writer.WriteIntValue("RoutingStepType", RoutingStepType);
-            writer.WriteDateTimeOffsetValue("RunStartTime", RunStartTime);
-            writer.WriteIntValue("RunStatus", RunStatus);
-            writer.WriteGuidValue("RunTimedTimeTransaction", RunTimedTimeTransaction);
-            writer.WriteIntValue("SalesOrderCount", SalesOrderCount);
-            writer.WriteIntValue("SalesOrderLineNumber", SalesOrderLineNumber);
-            writer.WriteIntValue("SalesOrderNumber", SalesOrderNumber);
-            writer.WriteDoubleValue("SetupPercentComplete", SetupPercentComplete);
-            writer.WriteDateTimeOffsetValue("SetupStartTime", SetupStartTime);
-            writer.WriteIntValue("SetupStatus", SetupStatus);
-            writer.WriteGuidValue("SetupTimedTimeTransaction", SetupTimedTimeTransaction);
-            writer.WriteGuidValue("ShopOrder", ShopOrder);
-            writer.WriteStringValue("ShopOrderDescription", ShopOrderDescription);
-            writer.WriteIntValue("ShopOrderNumber", ShopOrderNumber);
-            writer.WriteIntValue("ShopOrderNumberAscendingOrder", ShopOrderNumberAscendingOrder);
-            writer.WriteIntValue("ShopOrderNumberDescendingOrder", ShopOrderNumberDescendingOrder);
-            writer.WriteIntValue("ShopOrderStatus", ShopOrderStatus);
-            writer.WriteStringValue("Unit", Unit);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteGuidValue("Workcenter", Workcenter);
-            writer.WriteStringValue("WorkcenterCode", WorkcenterCode);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

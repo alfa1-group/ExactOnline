@@ -9,13 +9,11 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ActivitiesEventsPost : IAdditionalDataHolder, IParsable
+    public partial class ActivitiesEventsPost : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account that is related to the event</summary>
         public Guid? Account { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The campaign linked to the event</summary>
         public Guid? Campaign { get; set; }
         /// <summary>The contact person that is related to the event</summary>
@@ -47,10 +45,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The notes of the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,13 +90,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string UserFullName { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ActivitiesEventsPost"/> and sets the default values.
-        /// </summary>
-        public ActivitiesEventsPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -153,7 +144,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDateTimeOffsetValue("EndDate", EndDate);
             writer.WriteIntValue("HID", HID);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteGuidValue("Opportunity", Opportunity);
             writer.WriteStringValue("OpportunityName", OpportunityName);
@@ -162,7 +152,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteGuidValue("User", User);
             writer.WriteStringValue("UserFullName", UserFullName);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

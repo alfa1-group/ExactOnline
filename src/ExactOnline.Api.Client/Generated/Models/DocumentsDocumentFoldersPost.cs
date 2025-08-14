@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DocumentsDocumentFoldersPost : IAdditionalDataHolder, IParsable
+    public partial class DocumentsDocumentFoldersPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Document folder code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,22 +33,15 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Document folder parent folder ID</summary>
         public Guid? ParentFolder { get; set; }
         /// <summary>Document folder share level</summary>
         public int? Share { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.DocumentsDocumentFoldersPost"/> and sets the default values.
-        /// </summary>
-        public DocumentsDocumentFoldersPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -87,10 +78,8 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("Code", Code);
             writer.WriteStringValue("Description", Description);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("ParentFolder", ParentFolder);
             writer.WriteIntValue("Share", Share);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

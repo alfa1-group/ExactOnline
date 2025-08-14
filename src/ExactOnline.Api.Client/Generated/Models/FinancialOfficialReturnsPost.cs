@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FinancialOfficialReturnsPost : IAdditionalDataHolder, IParsable
+    public partial class FinancialOfficialReturnsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total liquidation amount of the official return</summary>
         public double? Amount { get; set; }
         /// <summary>Document linked to the official return.</summary>
@@ -27,10 +25,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Financial period (for annual returns = 0)</summary>
         public int? Period { get; set; }
@@ -74,13 +72,6 @@ namespace ExactOnline.Api.Client.Models
         public int? Type { get; set; }
         /// <summary>Financial year of the official return</summary>
         public int? Year { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.FinancialOfficialReturnsPost"/> and sets the default values.
-        /// </summary>
-        public FinancialOfficialReturnsPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -128,7 +119,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("Frequency", Frequency);
             writer.WriteGuidValue("ID", ID);
             writer.WriteIntValue("IsCorrection", IsCorrection);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteIntValue("Period", Period);
             writer.WriteStringValue("PresentationData", PresentationData);
             writer.WriteDateTimeOffsetValue("PresentationDate", PresentationDate);
@@ -138,7 +128,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("Status", Status);
             writer.WriteIntValue("Type", Type);
             writer.WriteIntValue("Year", Year);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

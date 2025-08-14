@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InventoryStockCountLinesPost : IAdditionalDataHolder, IParsable
+    public partial class InventoryStockCountLinesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The collection of batch numbers that belong to the items included in this stock count</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,10 +27,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The difference between the current quantity in stock and the new quantity in stock. For example specify -1 for this field to correct the quantity if one item in stock is broken.</summary>
         public double? QuantityDifference { get; set; }
@@ -58,13 +56,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? StockCountID { get; set; }
         /// <summary>This property is package specific (Stock count can have multiple lines for the same item only if it is for multiple storage locations).</summary>
         public Guid? StorageLocation { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryStockCountLinesPost"/> and sets the default values.
-        /// </summary>
-        public InventoryStockCountLinesPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -105,14 +96,12 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>("BatchNumbers", BatchNumbers);
             writer.WriteGuidValue("ID", ID);
             writer.WriteGuidValue("Item", Item);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDoubleValue("QuantityDifference", QuantityDifference);
             writer.WriteDoubleValue("QuantityNew", QuantityNew);
             writer.WriteStringValue("ReasonCode", ReasonCode);
             writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>("SerialNumbers", SerialNumbers);
             writer.WriteGuidValue("StockCountID", StockCountID);
             writer.WriteGuidValue("StorageLocation", StorageLocation);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

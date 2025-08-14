@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LogisticsItemsPut : IAdditionalDataHolder, IParsable
+    public partial class LogisticsItemsPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Barcode of the item (numeric string)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -299,10 +297,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Net weight for international goods shipments</summary>
         public double? NetWeight { get; set; }
@@ -366,13 +364,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Unit { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.LogisticsItemsPut"/> and sets the default values.
-        /// </summary>
-        public LogisticsItemsPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -543,7 +534,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("IsTime", IsTime);
             writer.WriteIntValue("IsWebshopItem", IsWebshopItem);
             writer.WriteGuidValue("ItemGroup", ItemGroup);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDoubleValue("NetWeight", NetWeight);
             writer.WriteStringValue("NetWeightUnit", NetWeightUnit);
             writer.WriteStringValue("Notes", Notes);
@@ -554,7 +544,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("SecurityLevel", SecurityLevel);
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteStringValue("Unit", Unit);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

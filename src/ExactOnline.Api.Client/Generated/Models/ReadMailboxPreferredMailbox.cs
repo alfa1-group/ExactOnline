@@ -9,60 +9,51 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadMailboxPreferredMailbox : IAdditionalDataHolder, IParsable
+    public partial class ReadMailboxPreferredMailbox : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Extra description of the mailbox</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Only used when this mailbox is used for one specific administration, for example invoices to this mailbox will only be booked in this administration</summary>
-        public int? ForDivision { get; set; }
+        public int? ForDivision { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Indicates whether this service is used for messages returned by the scanning service</summary>
-        public bool? IsScanServiceMailbox { get; set; }
+        public bool? IsScanServiceMailbox { get; private set; }
         /// <summary>E-mail address-like format, for example johndoe@exactonline.nl</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mailbox { get; set; }
+        public string? Mailbox { get; private set; }
 #nullable restore
 #else
-        public string Mailbox { get; set; }
+        public string Mailbox { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Date that this mailbox became valid</summary>
-        public DateTimeOffset? ValidFrom { get; set; }
+        public DateTimeOffset? ValidFrom { get; private set; }
         /// <summary>Date that this mailbox will not be valid anymore</summary>
-        public DateTimeOffset? ValidTo { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadMailboxPreferredMailbox"/> and sets the default values.
-        /// </summary>
-        public ReadMailboxPreferredMailbox()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public DateTimeOffset? ValidTo { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -102,19 +93,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("ForDivision", ForDivision);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteBoolValue("IsScanServiceMailbox", IsScanServiceMailbox);
-            writer.WriteStringValue("Mailbox", Mailbox);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteDateTimeOffsetValue("ValidFrom", ValidFrom);
-            writer.WriteDateTimeOffsetValue("ValidTo", ValidTo);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

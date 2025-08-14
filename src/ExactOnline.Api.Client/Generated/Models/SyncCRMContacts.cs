@@ -9,444 +9,435 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncCRMContacts : IAdditionalDataHolder, IParsable
+    public partial class SyncCRMContacts : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Account property</summary>
-        public Guid? Account { get; set; }
+        public Guid? Account { get; private set; }
         /// <summary>The AccountIsCustomer property</summary>
-        public bool? AccountIsCustomer { get; set; }
+        public bool? AccountIsCustomer { get; private set; }
         /// <summary>The AccountIsSupplier property</summary>
-        public bool? AccountIsSupplier { get; set; }
+        public bool? AccountIsSupplier { get; private set; }
         /// <summary>The AccountMainContact property</summary>
-        public Guid? AccountMainContact { get; set; }
+        public Guid? AccountMainContact { get; private set; }
         /// <summary>The AccountName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get; private set; }
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get; private set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AddressLine2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLine2 { get; set; }
+        public string? AddressLine2 { get; private set; }
 #nullable restore
 #else
-        public string AddressLine2 { get; set; }
+        public string AddressLine2 { get; private set; }
 #endif
         /// <summary>The AddressStreet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressStreet { get; set; }
+        public string? AddressStreet { get; private set; }
 #nullable restore
 #else
-        public string AddressStreet { get; set; }
+        public string AddressStreet { get; private set; }
 #endif
         /// <summary>The AddressStreetNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressStreetNumber { get; set; }
+        public string? AddressStreetNumber { get; private set; }
 #nullable restore
 #else
-        public string AddressStreetNumber { get; set; }
+        public string AddressStreetNumber { get; private set; }
 #endif
         /// <summary>The AddressStreetNumberSuffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressStreetNumberSuffix { get; set; }
+        public string? AddressStreetNumberSuffix { get; private set; }
 #nullable restore
 #else
-        public string AddressStreetNumberSuffix { get; set; }
+        public string AddressStreetNumberSuffix { get; private set; }
 #endif
         /// <summary>The AllowMailing property</summary>
-        public int? AllowMailing { get; set; }
+        public int? AllowMailing { get; private set; }
         /// <summary>The BirthDate property</summary>
-        public DateTimeOffset? BirthDate { get; set; }
+        public DateTimeOffset? BirthDate { get; private set; }
         /// <summary>The BirthName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BirthName { get; set; }
+        public string? BirthName { get; private set; }
 #nullable restore
 #else
-        public string BirthName { get; set; }
+        public string BirthName { get; private set; }
 #endif
         /// <summary>The BirthNamePrefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BirthNamePrefix { get; set; }
+        public string? BirthNamePrefix { get; private set; }
 #nullable restore
 #else
-        public string BirthNamePrefix { get; set; }
+        public string BirthNamePrefix { get; private set; }
 #endif
         /// <summary>The BirthPlace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BirthPlace { get; set; }
+        public string? BirthPlace { get; private set; }
 #nullable restore
 #else
-        public string BirthPlace { get; set; }
+        public string BirthPlace { get; private set; }
 #endif
         /// <summary>The BusinessEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessEmail { get; set; }
+        public string? BusinessEmail { get; private set; }
 #nullable restore
 #else
-        public string BusinessEmail { get; set; }
+        public string BusinessEmail { get; private set; }
 #endif
         /// <summary>The BusinessFax property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessFax { get; set; }
+        public string? BusinessFax { get; private set; }
 #nullable restore
 #else
-        public string BusinessFax { get; set; }
+        public string BusinessFax { get; private set; }
 #endif
         /// <summary>The BusinessMobile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessMobile { get; set; }
+        public string? BusinessMobile { get; private set; }
 #nullable restore
 #else
-        public string BusinessMobile { get; set; }
+        public string BusinessMobile { get; private set; }
 #endif
         /// <summary>The BusinessPhone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessPhone { get; set; }
+        public string? BusinessPhone { get; private set; }
 #nullable restore
 #else
-        public string BusinessPhone { get; set; }
+        public string BusinessPhone { get; private set; }
 #endif
         /// <summary>The BusinessPhoneExtension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessPhoneExtension { get; set; }
+        public string? BusinessPhoneExtension { get; private set; }
 #nullable restore
 #else
-        public string BusinessPhoneExtension { get; set; }
+        public string BusinessPhoneExtension { get; private set; }
 #endif
         /// <summary>The City property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City { get; set; }
+        public string? City { get; private set; }
 #nullable restore
 #else
-        public string City { get; set; }
+        public string City { get; private set; }
 #endif
         /// <summary>The Code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get; private set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get; private set; }
 #endif
         /// <summary>The Country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public string? Country { get; private set; }
 #nullable restore
 #else
-        public string Country { get; set; }
+        public string Country { get; private set; }
 #endif
         /// <summary>The Created property</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>The Creator property</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>The CreatorFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>The CustomField property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>The Division property</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>The Email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get; private set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get; private set; }
 #endif
         /// <summary>The EndDate property</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>The FirstName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get; set; }
+        public string? FirstName { get; private set; }
 #nullable restore
 #else
-        public string FirstName { get; set; }
+        public string FirstName { get; private set; }
 #endif
         /// <summary>The FullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FullName { get; set; }
+        public string? FullName { get; private set; }
 #nullable restore
 #else
-        public string FullName { get; set; }
+        public string FullName { get; private set; }
 #endif
         /// <summary>The Gender property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Gender { get; set; }
+        public string? Gender { get; private set; }
 #nullable restore
 #else
-        public string Gender { get; set; }
+        public string Gender { get; private set; }
 #endif
         /// <summary>The HID property</summary>
-        public int? HID { get; set; }
+        public int? HID { get; private set; }
         /// <summary>The ID property</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The IdentificationDate property</summary>
-        public DateTimeOffset? IdentificationDate { get; set; }
+        public DateTimeOffset? IdentificationDate { get; private set; }
         /// <summary>The IdentificationDocument property</summary>
-        public Guid? IdentificationDocument { get; set; }
+        public Guid? IdentificationDocument { get; private set; }
         /// <summary>The IdentificationUser property</summary>
-        public Guid? IdentificationUser { get; set; }
+        public Guid? IdentificationUser { get; private set; }
         /// <summary>The Initials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Initials { get; set; }
+        public string? Initials { get; private set; }
 #nullable restore
 #else
-        public string Initials { get; set; }
+        public string Initials { get; private set; }
 #endif
         /// <summary>The IsAnonymised property</summary>
-        public int? IsAnonymised { get; set; }
+        public int? IsAnonymised { get; private set; }
         /// <summary>The IsMailingExcluded property</summary>
-        public bool? IsMailingExcluded { get; set; }
+        public bool? IsMailingExcluded { get; private set; }
         /// <summary>The IsMainContact property</summary>
-        public bool? IsMainContact { get; set; }
+        public bool? IsMainContact { get; private set; }
         /// <summary>The JobTitleDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobTitleDescription { get; set; }
+        public string? JobTitleDescription { get; private set; }
 #nullable restore
 #else
-        public string JobTitleDescription { get; set; }
+        public string JobTitleDescription { get; private set; }
 #endif
         /// <summary>The Language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get; private set; }
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get; private set; }
 #endif
         /// <summary>The LastName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get; set; }
+        public string? LastName { get; private set; }
 #nullable restore
 #else
-        public string LastName { get; set; }
+        public string LastName { get; private set; }
 #endif
         /// <summary>The LeadPurpose property</summary>
-        public Guid? LeadPurpose { get; set; }
+        public Guid? LeadPurpose { get; private set; }
         /// <summary>The LeadSource property</summary>
-        public Guid? LeadSource { get; set; }
+        public Guid? LeadSource { get; private set; }
         /// <summary>The MarketingNotes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MarketingNotes { get; set; }
+        public string? MarketingNotes { get; private set; }
 #nullable restore
 #else
-        public string MarketingNotes { get; set; }
+        public string MarketingNotes { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The MiddleName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MiddleName { get; set; }
+        public string? MiddleName { get; private set; }
 #nullable restore
 #else
-        public string MiddleName { get; set; }
+        public string MiddleName { get; private set; }
 #endif
         /// <summary>The Mobile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mobile { get; set; }
+        public string? Mobile { get; private set; }
 #nullable restore
 #else
-        public string Mobile { get; set; }
+        public string Mobile { get; private set; }
 #endif
         /// <summary>The Modified property</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>The Modifier property</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>The ModifierFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>The Nationality property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Nationality { get; set; }
+        public string? Nationality { get; private set; }
 #nullable restore
 #else
-        public string Nationality { get; set; }
+        public string Nationality { get; private set; }
 #endif
         /// <summary>The Notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>The PartnerName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerName { get; set; }
+        public string? PartnerName { get; private set; }
 #nullable restore
 #else
-        public string PartnerName { get; set; }
+        public string PartnerName { get; private set; }
 #endif
         /// <summary>The PartnerNamePrefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerNamePrefix { get; set; }
+        public string? PartnerNamePrefix { get; private set; }
 #nullable restore
 #else
-        public string PartnerNamePrefix { get; set; }
+        public string PartnerNamePrefix { get; private set; }
 #endif
         /// <summary>The Person property</summary>
-        public Guid? Person { get; set; }
+        public Guid? Person { get; private set; }
         /// <summary>The Phone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phone { get; set; }
+        public string? Phone { get; private set; }
 #nullable restore
 #else
-        public string Phone { get; set; }
+        public string Phone { get; private set; }
 #endif
         /// <summary>The PhoneExtension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneExtension { get; set; }
+        public string? PhoneExtension { get; private set; }
 #nullable restore
 #else
-        public string PhoneExtension { get; set; }
+        public string PhoneExtension { get; private set; }
 #endif
         /// <summary>The Picture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Picture { get; set; }
+        public byte[]? Picture { get; private set; }
 #nullable restore
 #else
-        public byte[] Picture { get; set; }
+        public byte[] Picture { get; private set; }
 #endif
         /// <summary>The PictureName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PictureName { get; set; }
+        public string? PictureName { get; private set; }
 #nullable restore
 #else
-        public string PictureName { get; set; }
+        public string PictureName { get; private set; }
 #endif
         /// <summary>The PictureThumbnailUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PictureThumbnailUrl { get; set; }
+        public string? PictureThumbnailUrl { get; private set; }
 #nullable restore
 #else
-        public string PictureThumbnailUrl { get; set; }
+        public string PictureThumbnailUrl { get; private set; }
 #endif
         /// <summary>The PictureUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PictureUrl { get; set; }
+        public string? PictureUrl { get; private set; }
 #nullable restore
 #else
-        public string PictureUrl { get; set; }
+        public string PictureUrl { get; private set; }
 #endif
         /// <summary>The Postcode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Postcode { get; set; }
+        public string? Postcode { get; private set; }
 #nullable restore
 #else
-        public string Postcode { get; set; }
+        public string Postcode { get; private set; }
 #endif
         /// <summary>The SocialSecurityNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SocialSecurityNumber { get; set; }
+        public string? SocialSecurityNumber { get; private set; }
 #nullable restore
 #else
-        public string SocialSecurityNumber { get; set; }
+        public string SocialSecurityNumber { get; private set; }
 #endif
         /// <summary>The StartDate property</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>The State property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? State { get; private set; }
 #nullable restore
 #else
-        public string State { get; set; }
+        public string State { get; private set; }
 #endif
         /// <summary>The Timestamp property</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>The Title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get; private set; }
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get; private set; }
 #endif
         /// <summary>The TitleAbbreviation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TitleAbbreviation { get; set; }
+        public string? TitleAbbreviation { get; private set; }
 #nullable restore
 #else
-        public string TitleAbbreviation { get; set; }
+        public string TitleAbbreviation { get; private set; }
 #endif
         /// <summary>The TitleDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TitleDescription { get; set; }
+        public string? TitleDescription { get; private set; }
 #nullable restore
 #else
-        public string TitleDescription { get; set; }
+        public string TitleDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncCRMContacts"/> and sets the default values.
-        /// </summary>
-        public SyncCRMContacts()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -546,79 +537,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Account", Account);
-            writer.WriteBoolValue("AccountIsCustomer", AccountIsCustomer);
-            writer.WriteBoolValue("AccountIsSupplier", AccountIsSupplier);
-            writer.WriteGuidValue("AccountMainContact", AccountMainContact);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteStringValue("AddressLine2", AddressLine2);
-            writer.WriteStringValue("AddressStreet", AddressStreet);
-            writer.WriteStringValue("AddressStreetNumber", AddressStreetNumber);
-            writer.WriteStringValue("AddressStreetNumberSuffix", AddressStreetNumberSuffix);
-            writer.WriteIntValue("AllowMailing", AllowMailing);
-            writer.WriteDateTimeOffsetValue("BirthDate", BirthDate);
-            writer.WriteStringValue("BirthName", BirthName);
-            writer.WriteStringValue("BirthNamePrefix", BirthNamePrefix);
-            writer.WriteStringValue("BirthPlace", BirthPlace);
-            writer.WriteStringValue("BusinessEmail", BusinessEmail);
-            writer.WriteStringValue("BusinessFax", BusinessFax);
-            writer.WriteStringValue("BusinessMobile", BusinessMobile);
-            writer.WriteStringValue("BusinessPhone", BusinessPhone);
-            writer.WriteStringValue("BusinessPhoneExtension", BusinessPhoneExtension);
-            writer.WriteStringValue("City", City);
-            writer.WriteStringValue("Code", Code);
-            writer.WriteStringValue("Country", Country);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteStringValue("Email", Email);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteStringValue("FirstName", FirstName);
-            writer.WriteStringValue("FullName", FullName);
-            writer.WriteStringValue("Gender", Gender);
-            writer.WriteIntValue("HID", HID);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("IdentificationDate", IdentificationDate);
-            writer.WriteGuidValue("IdentificationDocument", IdentificationDocument);
-            writer.WriteGuidValue("IdentificationUser", IdentificationUser);
-            writer.WriteStringValue("Initials", Initials);
-            writer.WriteIntValue("IsAnonymised", IsAnonymised);
-            writer.WriteBoolValue("IsMailingExcluded", IsMailingExcluded);
-            writer.WriteBoolValue("IsMainContact", IsMainContact);
-            writer.WriteStringValue("JobTitleDescription", JobTitleDescription);
-            writer.WriteStringValue("Language", Language);
-            writer.WriteStringValue("LastName", LastName);
-            writer.WriteGuidValue("LeadPurpose", LeadPurpose);
-            writer.WriteGuidValue("LeadSource", LeadSource);
-            writer.WriteStringValue("MarketingNotes", MarketingNotes);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteStringValue("MiddleName", MiddleName);
-            writer.WriteStringValue("Mobile", Mobile);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Nationality", Nationality);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteStringValue("PartnerName", PartnerName);
-            writer.WriteStringValue("PartnerNamePrefix", PartnerNamePrefix);
-            writer.WriteGuidValue("Person", Person);
-            writer.WriteStringValue("Phone", Phone);
-            writer.WriteStringValue("PhoneExtension", PhoneExtension);
-            writer.WriteByteArrayValue("Picture", Picture);
-            writer.WriteStringValue("PictureName", PictureName);
-            writer.WriteStringValue("PictureThumbnailUrl", PictureThumbnailUrl);
-            writer.WriteStringValue("PictureUrl", PictureUrl);
-            writer.WriteStringValue("Postcode", Postcode);
-            writer.WriteStringValue("SocialSecurityNumber", SocialSecurityNumber);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteStringValue("State", State);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteStringValue("Title", Title);
-            writer.WriteStringValue("TitleAbbreviation", TitleAbbreviation);
-            writer.WriteStringValue("TitleDescription", TitleDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

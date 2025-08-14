@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FinancialJournalsPut : IAdditionalDataHolder, IParsable
+    public partial class FinancialJournalsPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the journal allows variable currency</summary>
         public bool? AllowVariableCurrency { get; set; }
         /// <summary>Indicates if the journal allows the exchange rate of the currency of the amounts in the journal entry to be changed</summary>
@@ -67,10 +65,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>General ledger account for payment in transit</summary>
         public Guid? PaymentInTransitAccount { get; set; }
@@ -86,13 +84,6 @@ namespace ExactOnline.Api.Client.Models
         public int? PaymentServiceProvider { get; set; }
         /// <summary>Type of Journal. The following values are supported: 10 (Cash) 12 (Bank) 16 (Payment service) 20 (Sales) 21 (Return invoice) 22 (Purchase) 23 (Received return invoice) 90 (General journal)</summary>
         public int? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.FinancialJournalsPut"/> and sets the default values.
-        /// </summary>
-        public FinancialJournalsPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -151,12 +142,10 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("GLAccount", GLAccount);
             writer.WriteGuidValue("ID", ID);
             writer.WriteBoolValue("IsBlocked", IsBlocked);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("PaymentInTransitAccount", PaymentInTransitAccount);
             writer.WriteStringValue("PaymentServiceAccountIdentifier", PaymentServiceAccountIdentifier);
             writer.WriteIntValue("PaymentServiceProvider", PaymentServiceProvider);
             writer.WriteIntValue("Type", Type);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

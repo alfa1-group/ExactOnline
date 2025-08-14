@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SalesOrderPlannedSalesReturnLinesPut : IAdditionalDataHolder, IParsable
+    public partial class SalesOrderPlannedSalesReturnLinesPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Option to redeliver to replace the goods or to create a credit note for the returned item: 0-Redelivery, 1-Credit Note</summary>
         public int? CreateCredit { get; set; }
         /// <summary>Primary key</summary>
@@ -21,10 +19,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,13 +38,6 @@ namespace ExactOnline.Api.Client.Models
         public double? ReceivedQuantity { get; set; }
         /// <summary>Storage location</summary>
         public Guid? StorageLocation { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesOrderPlannedSalesReturnLinesPut"/> and sets the default values.
-        /// </summary>
-        public SalesOrderPlannedSalesReturnLinesPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,12 +74,10 @@ namespace ExactOnline.Api.Client.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("CreateCredit", CreateCredit);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteDoubleValue("PlannedReturnQuantity", PlannedReturnQuantity);
             writer.WriteDoubleValue("ReceivedQuantity", ReceivedQuantity);
             writer.WriteGuidValue("StorageLocation", StorageLocation);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

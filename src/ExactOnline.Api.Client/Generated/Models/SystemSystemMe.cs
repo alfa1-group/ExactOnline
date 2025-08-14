@@ -9,254 +9,245 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SystemSystemMe : IAdditionalDataHolder, IParsable
+    public partial class SystemSystemMe : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Accounting division number</summary>
-        public int? AccountingDivision { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public int? AccountingDivision { get; private set; }
         /// <summary>Division number that is currently used in the API. You should use a division number in the url</summary>
-        public int? CurrentDivision { get; set; }
+        public int? CurrentDivision { get; private set; }
         /// <summary>Account code of the logged in user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerCode { get; set; }
+        public string? CustomerCode { get; private set; }
 #nullable restore
 #else
-        public string CustomerCode { get; set; }
+        public string CustomerCode { get; private set; }
 #endif
         /// <summary>Owner account of the division</summary>
-        public Guid? DivisionCustomer { get; set; }
+        public Guid? DivisionCustomer { get; private set; }
         /// <summary>Owner account code of the division</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DivisionCustomerCode { get; set; }
+        public string? DivisionCustomerCode { get; private set; }
 #nullable restore
 #else
-        public string DivisionCustomerCode { get; set; }
+        public string DivisionCustomerCode { get; private set; }
 #endif
         /// <summary>Owner account name of the division</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DivisionCustomerName { get; set; }
+        public string? DivisionCustomerName { get; private set; }
 #nullable restore
 #else
-        public string DivisionCustomerName { get; set; }
+        public string DivisionCustomerName { get; private set; }
 #endif
         /// <summary>Owner account SIRET Number of the division for French legislation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DivisionCustomerSiretNumber { get; set; }
+        public string? DivisionCustomerSiretNumber { get; private set; }
 #nullable restore
 #else
-        public string DivisionCustomerSiretNumber { get; set; }
+        public string DivisionCustomerSiretNumber { get; private set; }
 #endif
         /// <summary>Owner account VAT Number of the division</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DivisionCustomerVatNumber { get; set; }
+        public string? DivisionCustomerVatNumber { get; private set; }
 #nullable restore
 #else
-        public string DivisionCustomerVatNumber { get; set; }
+        public string DivisionCustomerVatNumber { get; private set; }
 #endif
         /// <summary>Dossier division number (optional)</summary>
-        public int? DossierDivision { get; set; }
+        public int? DossierDivision { get; private set; }
         /// <summary>Email address of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get; private set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get; private set; }
 #endif
         /// <summary>Employee ID</summary>
-        public Guid? EmployeeID { get; set; }
+        public Guid? EmployeeID { get; private set; }
         /// <summary>First name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get; set; }
+        public string? FirstName { get; private set; }
 #nullable restore
 #else
-        public string FirstName { get; set; }
+        public string FirstName { get; private set; }
 #endif
         /// <summary>Full name of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FullName { get; set; }
+        public string? FullName { get; private set; }
 #nullable restore
 #else
-        public string FullName { get; set; }
+        public string FullName { get; private set; }
 #endif
         /// <summary>Gender: M=Male, V=Female, O=Unknown</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Gender { get; set; }
+        public string? Gender { get; private set; }
 #nullable restore
 #else
-        public string Gender { get; set; }
+        public string Gender { get; private set; }
 #endif
         /// <summary>Initials</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Initials { get; set; }
+        public string? Initials { get; private set; }
 #nullable restore
 #else
-        public string Initials { get; set; }
+        public string Initials { get; private set; }
 #endif
         /// <summary>Client user of an accountant: either a portal user or a non-accountant user with his own license (internal use)</summary>
-        public bool? IsClientUser { get; set; }
+        public bool? IsClientUser { get; private set; }
         /// <summary>Employee user with limited access and specific start page</summary>
-        public bool? IsEmployeeSelfServiceUser { get; set; }
+        public bool? IsEmployeeSelfServiceUser { get; private set; }
         /// <summary>MyFirm lite user of accountant with limited access and specific start page (internal use)</summary>
-        public bool? IsMyFirmLiteUser { get; set; }
+        public bool? IsMyFirmLiteUser { get; private set; }
         /// <summary>MyFirm user of accountant with limited access and specific start page (internal use)</summary>
-        public bool? IsMyFirmPortalUser { get; set; }
+        public bool? IsMyFirmPortalUser { get; private set; }
         /// <summary>Determines whether one exact identity migration is mandatory for the user. True - User does have to migrate, False - User does not have to migrate</summary>
-        public bool? IsOEIMigrationMandatory { get; set; }
+        public bool? IsOEIMigrationMandatory { get; private set; }
         /// <summary>Starter user with limited access and specific start page (internal use)</summary>
-        public bool? IsStarterUser { get; set; }
+        public bool? IsStarterUser { get; private set; }
         /// <summary>Language spoken by this user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get; private set; }
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get; private set; }
 #endif
         /// <summary>Language (culture) that is used in Exact Online</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageCode { get; set; }
+        public string? LanguageCode { get; private set; }
 #nullable restore
 #else
-        public string LanguageCode { get; set; }
+        public string LanguageCode { get; private set; }
 #endif
         /// <summary>Last name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get; set; }
+        public string? LastName { get; private set; }
 #nullable restore
 #else
-        public string LastName { get; set; }
+        public string LastName { get; private set; }
 #endif
         /// <summary>Legislation</summary>
-        public long? Legislation { get; set; }
+        public long? Legislation { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Middle name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MiddleName { get; set; }
+        public string? MiddleName { get; private set; }
 #nullable restore
 #else
-        public string MiddleName { get; set; }
+        public string MiddleName { get; private set; }
 #endif
         /// <summary>Mobile phone</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mobile { get; set; }
+        public string? Mobile { get; private set; }
 #nullable restore
 #else
-        public string Mobile { get; set; }
+        public string Mobile { get; private set; }
 #endif
         /// <summary>Nationality</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Nationality { get; set; }
+        public string? Nationality { get; private set; }
 #nullable restore
 #else
-        public string Nationality { get; set; }
+        public string Nationality { get; private set; }
 #endif
         /// <summary>Package code used in the customers license</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageCode { get; set; }
+        public string? PackageCode { get; private set; }
 #nullable restore
 #else
-        public string PackageCode { get; set; }
+        public string PackageCode { get; private set; }
 #endif
         /// <summary>Phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phone { get; set; }
+        public string? Phone { get; private set; }
 #nullable restore
 #else
-        public string Phone { get; set; }
+        public string Phone { get; private set; }
 #endif
         /// <summary>Phone number extension</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneExtension { get; set; }
+        public string? PhoneExtension { get; private set; }
 #nullable restore
 #else
-        public string PhoneExtension { get; set; }
+        public string PhoneExtension { get; private set; }
 #endif
         /// <summary>Url that can be used to retrieve the picture of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PictureUrl { get; set; }
+        public string? PictureUrl { get; private set; }
 #nullable restore
 #else
-        public string PictureUrl { get; set; }
+        public string PictureUrl { get; private set; }
 #endif
         /// <summary>The current date and time in Exact Online</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServerTime { get; set; }
+        public string? ServerTime { get; private set; }
 #nullable restore
 #else
-        public string ServerTime { get; set; }
+        public string ServerTime { get; private set; }
 #endif
         /// <summary>The time difference with UTC in seconds</summary>
-        public double? ServerUtcOffset { get; set; }
+        public double? ServerUtcOffset { get; private set; }
         /// <summary>Binary thumbnail picture of this user (This property will never return value and will be removed in the near future.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? ThumbnailPicture { get; set; }
+        public byte[]? ThumbnailPicture { get; private set; }
 #nullable restore
 #else
-        public byte[] ThumbnailPicture { get; set; }
+        public byte[] ThumbnailPicture { get; private set; }
 #endif
         /// <summary>File type of the picture (This property will never return value and will be removed in the near future.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThumbnailPictureFormat { get; set; }
+        public string? ThumbnailPictureFormat { get; private set; }
 #nullable restore
 #else
-        public string ThumbnailPictureFormat { get; set; }
+        public string ThumbnailPictureFormat { get; private set; }
 #endif
         /// <summary>Title</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get; private set; }
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get; private set; }
 #endif
         /// <summary>Primary key</summary>
-        public Guid? UserID { get; set; }
+        public Guid? UserID { get; private set; }
         /// <summary>Login name of the user. If the user logs in with One Exact Identity, the login name is in the email address field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName { get; set; }
+        public string? UserName { get; private set; }
 #nullable restore
 #else
-        public string UserName { get; set; }
+        public string UserName { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SystemSystemMe"/> and sets the default values.
-        /// </summary>
-        public SystemSystemMe()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -324,47 +315,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("AccountingDivision", AccountingDivision);
-            writer.WriteIntValue("CurrentDivision", CurrentDivision);
-            writer.WriteStringValue("CustomerCode", CustomerCode);
-            writer.WriteGuidValue("DivisionCustomer", DivisionCustomer);
-            writer.WriteStringValue("DivisionCustomerCode", DivisionCustomerCode);
-            writer.WriteStringValue("DivisionCustomerName", DivisionCustomerName);
-            writer.WriteStringValue("DivisionCustomerSiretNumber", DivisionCustomerSiretNumber);
-            writer.WriteStringValue("DivisionCustomerVatNumber", DivisionCustomerVatNumber);
-            writer.WriteIntValue("DossierDivision", DossierDivision);
-            writer.WriteStringValue("Email", Email);
-            writer.WriteGuidValue("EmployeeID", EmployeeID);
-            writer.WriteStringValue("FirstName", FirstName);
-            writer.WriteStringValue("FullName", FullName);
-            writer.WriteStringValue("Gender", Gender);
-            writer.WriteStringValue("Initials", Initials);
-            writer.WriteBoolValue("IsClientUser", IsClientUser);
-            writer.WriteBoolValue("IsEmployeeSelfServiceUser", IsEmployeeSelfServiceUser);
-            writer.WriteBoolValue("IsMyFirmLiteUser", IsMyFirmLiteUser);
-            writer.WriteBoolValue("IsMyFirmPortalUser", IsMyFirmPortalUser);
-            writer.WriteBoolValue("IsOEIMigrationMandatory", IsOEIMigrationMandatory);
-            writer.WriteBoolValue("IsStarterUser", IsStarterUser);
-            writer.WriteStringValue("Language", Language);
-            writer.WriteStringValue("LanguageCode", LanguageCode);
-            writer.WriteStringValue("LastName", LastName);
-            writer.WriteLongValue("Legislation", Legislation);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteStringValue("MiddleName", MiddleName);
-            writer.WriteStringValue("Mobile", Mobile);
-            writer.WriteStringValue("Nationality", Nationality);
-            writer.WriteStringValue("PackageCode", PackageCode);
-            writer.WriteStringValue("Phone", Phone);
-            writer.WriteStringValue("PhoneExtension", PhoneExtension);
-            writer.WriteStringValue("PictureUrl", PictureUrl);
-            writer.WriteStringValue("ServerTime", ServerTime);
-            writer.WriteDoubleValue("ServerUtcOffset", ServerUtcOffset);
-            writer.WriteByteArrayValue("ThumbnailPicture", ThumbnailPicture);
-            writer.WriteStringValue("ThumbnailPictureFormat", ThumbnailPictureFormat);
-            writer.WriteStringValue("Title", Title);
-            writer.WriteGuidValue("UserID", UserID);
-            writer.WriteStringValue("UserName", UserName);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

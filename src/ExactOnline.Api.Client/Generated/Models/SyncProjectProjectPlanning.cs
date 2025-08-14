@@ -9,176 +9,167 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncProjectProjectPlanning : IAdditionalDataHolder, IParsable
+    public partial class SyncProjectProjectPlanning : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Account property</summary>
-        public Guid? Account { get; set; }
+        public Guid? Account { get; private set; }
         /// <summary>The AccountCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCode { get; set; }
+        public string? AccountCode { get; private set; }
 #nullable restore
 #else
-        public string AccountCode { get; set; }
+        public string AccountCode { get; private set; }
 #endif
         /// <summary>The AccountName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get; private set; }
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get; private set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The BGTStatus property</summary>
-        public int? BGTStatus { get; set; }
+        public int? BGTStatus { get; private set; }
         /// <summary>The CommunicationErrorStatus property</summary>
-        public int? CommunicationErrorStatus { get; set; }
+        public int? CommunicationErrorStatus { get; private set; }
         /// <summary>The Created property</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>The Creator property</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>The CreatorFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>The CustomField property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>The Description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>The Division property</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>The Employee property</summary>
-        public Guid? Employee { get; set; }
+        public Guid? Employee { get; private set; }
         /// <summary>The EmployeeCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeCode { get; set; }
+        public string? EmployeeCode { get; private set; }
 #nullable restore
 #else
-        public string EmployeeCode { get; set; }
+        public string EmployeeCode { get; private set; }
 #endif
         /// <summary>The EmployeeHID property</summary>
-        public int? EmployeeHID { get; set; }
+        public int? EmployeeHID { get; private set; }
         /// <summary>The EndDate property</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>The Hours property</summary>
-        public double? Hours { get; set; }
+        public double? Hours { get; private set; }
         /// <summary>The HourType property</summary>
-        public Guid? HourType { get; set; }
+        public Guid? HourType { get; private set; }
         /// <summary>The HourTypeCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HourTypeCode { get; set; }
+        public string? HourTypeCode { get; private set; }
 #nullable restore
 #else
-        public string HourTypeCode { get; set; }
+        public string HourTypeCode { get; private set; }
 #endif
         /// <summary>The HourTypeDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HourTypeDescription { get; set; }
+        public string? HourTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string HourTypeDescription { get; set; }
+        public string HourTypeDescription { get; private set; }
 #endif
         /// <summary>The ID property</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The IsBrokenRecurrence property</summary>
-        public bool? IsBrokenRecurrence { get; set; }
+        public bool? IsBrokenRecurrence { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The Modified property</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>The Modifier property</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>The ModifierFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>The Notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>The OverAllocate property</summary>
-        public bool? OverAllocate { get; set; }
+        public bool? OverAllocate { get; private set; }
         /// <summary>The Project property</summary>
-        public Guid? Project { get; set; }
+        public Guid? Project { get; private set; }
         /// <summary>The ProjectCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectCode { get; set; }
+        public string? ProjectCode { get; private set; }
 #nullable restore
 #else
-        public string ProjectCode { get; set; }
+        public string ProjectCode { get; private set; }
 #endif
         /// <summary>The ProjectDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectDescription { get; set; }
+        public string? ProjectDescription { get; private set; }
 #nullable restore
 #else
-        public string ProjectDescription { get; set; }
+        public string ProjectDescription { get; private set; }
 #endif
         /// <summary>The ProjectPlanningRecurring property</summary>
-        public Guid? ProjectPlanningRecurring { get; set; }
+        public Guid? ProjectPlanningRecurring { get; private set; }
         /// <summary>The ProjectWBS property</summary>
-        public Guid? ProjectWBS { get; set; }
+        public Guid? ProjectWBS { get; private set; }
         /// <summary>The ProjectWBSDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectWBSDescription { get; set; }
+        public string? ProjectWBSDescription { get; private set; }
 #nullable restore
 #else
-        public string ProjectWBSDescription { get; set; }
+        public string ProjectWBSDescription { get; private set; }
 #endif
         /// <summary>The StartDate property</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>The Status property</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>The Timestamp property</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>The Type property</summary>
-        public int? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncProjectProjectPlanning"/> and sets the default values.
-        /// </summary>
-        public SyncProjectProjectPlanning()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public int? Type { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -243,44 +234,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Account", Account);
-            writer.WriteStringValue("AccountCode", AccountCode);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteIntValue("BGTStatus", BGTStatus);
-            writer.WriteIntValue("CommunicationErrorStatus", CommunicationErrorStatus);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteStringValue("EmployeeCode", EmployeeCode);
-            writer.WriteIntValue("EmployeeHID", EmployeeHID);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteDoubleValue("Hours", Hours);
-            writer.WriteGuidValue("HourType", HourType);
-            writer.WriteStringValue("HourTypeCode", HourTypeCode);
-            writer.WriteStringValue("HourTypeDescription", HourTypeDescription);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteBoolValue("IsBrokenRecurrence", IsBrokenRecurrence);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteBoolValue("OverAllocate", OverAllocate);
-            writer.WriteGuidValue("Project", Project);
-            writer.WriteStringValue("ProjectCode", ProjectCode);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteGuidValue("ProjectPlanningRecurring", ProjectPlanningRecurring);
-            writer.WriteGuidValue("ProjectWBS", ProjectWBS);
-            writer.WriteStringValue("ProjectWBSDescription", ProjectWBSDescription);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

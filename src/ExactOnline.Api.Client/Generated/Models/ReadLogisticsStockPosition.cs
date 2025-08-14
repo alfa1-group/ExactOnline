@@ -9,40 +9,31 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadLogisticsStockPosition : IAdditionalDataHolder, IParsable
+    public partial class ReadLogisticsStockPosition : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The FreeStock property</summary>
-        public double? FreeStock { get; set; }
+        public double? FreeStock { get; private set; }
         /// <summary>The InStock property</summary>
-        public double? InStock { get; set; }
+        public double? InStock { get; private set; }
         /// <summary>The ItemId property</summary>
-        public Guid? ItemId { get; set; }
+        public Guid? ItemId { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The PlanningIn property</summary>
-        public double? PlanningIn { get; set; }
+        public double? PlanningIn { get; private set; }
         /// <summary>The PlanningOut property</summary>
-        public double? PlanningOut { get; set; }
+        public double? PlanningOut { get; private set; }
         /// <summary>The ProjectedStock property</summary>
-        public double? ProjectedStock { get; set; }
+        public double? ProjectedStock { get; private set; }
         /// <summary>The ReservedStock property</summary>
-        public double? ReservedStock { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadLogisticsStockPosition"/> and sets the default values.
-        /// </summary>
-        public ReadLogisticsStockPosition()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public double? ReservedStock { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,15 +69,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("FreeStock", FreeStock);
-            writer.WriteDoubleValue("InStock", InStock);
-            writer.WriteGuidValue("ItemId", ItemId);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDoubleValue("PlanningIn", PlanningIn);
-            writer.WriteDoubleValue("PlanningOut", PlanningOut);
-            writer.WriteDoubleValue("ProjectedStock", ProjectedStock);
-            writer.WriteDoubleValue("ReservedStock", ReservedStock);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

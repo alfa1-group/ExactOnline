@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SalesOrderPlannedSalesReturnsPost : IAdditionalDataHolder, IParsable
+    public partial class SalesOrderPlannedSalesReturnsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Reference to the customer where item is delivered to/customer returning items</summary>
         public Guid? DeliveredTo { get; set; }
         /// <summary>Reference to the contact person of customer where item is delivered to/customer returning items</summary>
@@ -29,10 +27,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Primary key</summary>
         public Guid? PlannedSalesReturnID { get; set; }
@@ -58,13 +56,6 @@ namespace ExactOnline.Api.Client.Models
         public int? Status { get; set; }
         /// <summary>ID of warehouse to receive the returning items</summary>
         public Guid? Warehouse { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesOrderPlannedSalesReturnsPost"/> and sets the default values.
-        /// </summary>
-        public SalesOrderPlannedSalesReturnsPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -105,14 +96,12 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("DeliveredTo", DeliveredTo);
             writer.WriteGuidValue("DeliveredToContactPerson", DeliveredToContactPerson);
             writer.WriteStringValue("Description", Description);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("PlannedSalesReturnID", PlannedSalesReturnID);
             writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SalesOrderPlannedSalesReturnLines>("PlannedSalesReturnLines", PlannedSalesReturnLines);
             writer.WriteStringValue("Remarks", Remarks);
             writer.WriteDateTimeOffsetValue("ReturnDate", ReturnDate);
             writer.WriteIntValue("Status", Status);
             writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

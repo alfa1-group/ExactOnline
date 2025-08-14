@@ -9,124 +9,115 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncHRMScheduleEntries : IAdditionalDataHolder, IParsable
+    public partial class SyncHRMScheduleEntries : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This property is for Schedule type 4 (Time frames per day). Set to true if there is break time else false.</summary>
-        public bool? Break { get; set; }
+        public bool? Break { get; private set; }
         /// <summary>This is the break end time. This property is for Schedule type 4 (Time frames per day)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BreakEndTime { get; set; }
+        public string? BreakEndTime { get; private set; }
 #nullable restore
 #else
-        public string BreakEndTime { get; set; }
+        public string BreakEndTime { get; private set; }
 #endif
         /// <summary>This is the break start time. This property is for Schedule type 4 (Time frames per day)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BreakStartTime { get; set; }
+        public string? BreakStartTime { get; private set; }
 #nullable restore
 #else
-        public string BreakStartTime { get; set; }
+        public string BreakStartTime { get; private set; }
 #endif
         /// <summary>Created date.</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator.</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>The day in the week. 0 - Monday; 1 - Tuesday; 2 - Wednesday; 3 - Thursday; 4 - Friday; 5 - Saturday; 6 - Sunday</summary>
-        public int? Day { get; set; }
+        public int? Day { get; private set; }
         /// <summary>This property is required for Schedule type 2 (Hours and specific days).</summary>
-        public bool? DayIsSelected { get; set; }
+        public bool? DayIsSelected { get; private set; }
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Identifier of the employee</summary>
-        public Guid? Employee { get; set; }
+        public Guid? Employee { get; private set; }
         /// <summary>Name of employee</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeFullName { get; set; }
+        public string? EmployeeFullName { get; private set; }
 #nullable restore
 #else
-        public string EmployeeFullName { get; set; }
+        public string EmployeeFullName { get; private set; }
 #endif
         /// <summary>Employment ID</summary>
-        public Guid? Employment { get; set; }
+        public Guid? Employment { get; private set; }
         /// <summary>Employment number</summary>
-        public int? EmploymentNumber { get; set; }
+        public int? EmploymentNumber { get; private set; }
         /// <summary>This is the end time of the work day. This property is for Schedule type 4 (Time frames per day)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndTime { get; set; }
+        public string? EndTime { get; private set; }
 #nullable restore
 #else
-        public string EndTime { get; set; }
+        public string EndTime { get; private set; }
 #endif
         /// <summary>Set the total number of hours for per day. This property is for Schedule type 3 (Hours per day). Values should be in &apos;HH:mm&apos; format, eg : 08:00</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hours { get; set; }
+        public string? Hours { get; private set; }
 #nullable restore
 #else
-        public string Hours { get; set; }
+        public string Hours { get; private set; }
 #endif
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date.</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier.</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>The id of the schedule linked to this schedule entry.</summary>
-        public Guid? Schedule { get; set; }
+        public Guid? Schedule { get; private set; }
         /// <summary>Obsolete</summary>
-        public int? ScheduleActivityType { get; set; }
+        public int? ScheduleActivityType { get; private set; }
         /// <summary>This is the schedule type id based on the Schedule. 1 - Hours and average days; 2 - Hours and specific days; 3 - Hours per day; 4 - Time frames per day</summary>
-        public int? ScheduleType { get; set; }
+        public int? ScheduleType { get; private set; }
         /// <summary>This is the start time of the work day. This property is for Schedule type 4 (Time frames per day)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartTime { get; set; }
+        public string? StartTime { get; private set; }
 #nullable restore
 #else
-        public string StartTime { get; set; }
+        public string StartTime { get; private set; }
 #endif
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>This is the week number .</summary>
-        public int? WeekNumber { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncHRMScheduleEntries"/> and sets the default values.
-        /// </summary>
-        public SyncHRMScheduleEntries()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public int? WeekNumber { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -180,33 +171,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("Break", Break);
-            writer.WriteStringValue("BreakEndTime", BreakEndTime);
-            writer.WriteStringValue("BreakStartTime", BreakStartTime);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Day", Day);
-            writer.WriteBoolValue("DayIsSelected", DayIsSelected);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
-            writer.WriteGuidValue("Employment", Employment);
-            writer.WriteIntValue("EmploymentNumber", EmploymentNumber);
-            writer.WriteStringValue("EndTime", EndTime);
-            writer.WriteStringValue("Hours", Hours);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteGuidValue("Schedule", Schedule);
-            writer.WriteIntValue("ScheduleActivityType", ScheduleActivityType);
-            writer.WriteIntValue("ScheduleType", ScheduleType);
-            writer.WriteStringValue("StartTime", StartTime);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteIntValue("WeekNumber", WeekNumber);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

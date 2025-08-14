@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PurchaseOrderPurchaseOrderLines : IAdditionalDataHolder, IParsable
+    public partial class PurchaseOrderPurchaseOrderLines : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AmountDC property</summary>
         public double? AmountDC { get; set; }
         /// <summary>The AmountFC property</summary>
@@ -143,10 +141,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The Modified property</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -287,13 +285,6 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The VATPercentage property</summary>
         public double? VATPercentage { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines"/> and sets the default values.
-        /// </summary>
-        public PurchaseOrderPurchaseOrderLines()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines"/></returns>
@@ -411,7 +402,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ItemDescription", ItemDescription);
             writer.WriteBoolValue("ItemDivisable", ItemDivisable);
             writer.WriteIntValue("LineNumber", LineNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
@@ -448,7 +438,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("VATCode", VATCode);
             writer.WriteStringValue("VATDescription", VATDescription);
             writer.WriteDoubleValue("VATPercentage", VATPercentage);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

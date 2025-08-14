@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManufacturingWorkcentersPut : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingWorkcentersPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Capacity of the work center</summary>
         public int? Capacity { get; set; }
         /// <summary>Code of the work center</summary>
@@ -61,10 +59,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Remarks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,13 +90,6 @@ namespace ExactOnline.Api.Client.Models
         public int? Status { get; set; }
         /// <summary>Reference to WorkcenterTypes</summary>
         public int? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingWorkcentersPut"/> and sets the default values.
-        /// </summary>
-        public ManufacturingWorkcentersPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -154,7 +145,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("IsLaborBurdenPercent", IsLaborBurdenPercent);
             writer.WriteDoubleValue("LaborBurdenRate", LaborBurdenRate);
             writer.WriteDoubleValue("MachineBurdenRate", MachineBurdenRate);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteGuidValue("ProductionArea", ProductionArea);
             writer.WriteDoubleValue("RunLaborRate", RunLaborRate);
@@ -162,7 +152,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("SetupLaborRate", SetupLaborRate);
             writer.WriteIntValue("Status", Status);
             writer.WriteIntValue("Type", Type);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

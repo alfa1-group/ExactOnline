@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SystemSystemDivisions : IAdditionalDataHolder, IParsable
+    public partial class SystemSystemDivisions : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Address line 1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -253,10 +251,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -405,13 +403,6 @@ namespace ExactOnline.Api.Client.Models
         public string Website { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SystemSystemDivisions"/> and sets the default values.
-        /// </summary>
-        public SystemSystemDivisions()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.SystemSystemDivisions"/></returns>
@@ -541,7 +532,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteBoolValue("IsMainDivision", IsMainDivision);
             writer.WriteBoolValue("IsPracticeDivision", IsPracticeDivision);
             writer.WriteStringValue("Legislation", Legislation);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
@@ -564,7 +554,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("TemplateCode", TemplateCode);
             writer.WriteStringValue("VATNumber", VATNumber);
             writer.WriteStringValue("Website", Website);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

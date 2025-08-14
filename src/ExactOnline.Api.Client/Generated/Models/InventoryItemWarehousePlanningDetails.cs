@@ -9,100 +9,91 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InventoryItemWarehousePlanningDetails : IAdditionalDataHolder, IParsable
+    public partial class InventoryItemWarehousePlanningDetails : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>ID of item</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>Code of item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Description of item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Date which quantity in stock is planned to change</summary>
-        public DateTimeOffset? PlannedDate { get; set; }
+        public DateTimeOffset? PlannedDate { get; private set; }
         /// <summary>Amount by which quantity in stock is planned to change</summary>
-        public double? PlannedQuantity { get; set; }
+        public double? PlannedQuantity { get; private set; }
         /// <summary>Human readable description of the PlanningSource (translated to user&apos;s language) - Examples: Purchase Order, Sales Order, Shop Order, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlanningSourceDescription { get; set; }
+        public string? PlanningSourceDescription { get; private set; }
 #nullable restore
 #else
-        public string PlanningSourceDescription { get; set; }
+        public string PlanningSourceDescription { get; private set; }
 #endif
         /// <summary>ID of the PlanningSource</summary>
-        public Guid? PlanningSourceID { get; set; }
+        public Guid? PlanningSourceID { get; private set; }
         /// <summary>Line number of the PlanningSource if the PlanningSourceType supports line numbers</summary>
-        public int? PlanningSourceLineNumber { get; set; }
+        public int? PlanningSourceLineNumber { get; private set; }
         /// <summary>Human readable number of the PlanningSource - Examples: Shop order number &apos;201600001&apos; or Sales order number &apos;2016020001&apos;</summary>
-        public int? PlanningSourceNumber { get; set; }
+        public int? PlanningSourceNumber { get; private set; }
         /// <summary>REST API URL of this specific PlanningSource and PlanningSourceID (Assembly orders and warehouse transfers not supported over REST)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlanningSourceUrl { get; set; }
+        public string? PlanningSourceUrl { get; private set; }
 #nullable restore
 #else
-        public string PlanningSourceUrl { get; set; }
+        public string PlanningSourceUrl { get; private set; }
 #endif
         /// <summary>Type of the PlanningSource - 120=GoodsDelivery, 124=WarehouseTransferDelivery, 130=GoodsReceipt, 134=WarehouseTransferReceipt, 140=ShopOrderStockReceipt, 147=ShopOrderByProductReceipt, 150=ShopOrderRequirement, 160=AssemblyOrderReceipt, 161=DisassemblyReturnReceipt, 165=AssemblyOrderIssue, 166=DisassemblyReturnIssue, 200=Trade-in</summary>
-        public int? PlanningType { get; set; }
+        public int? PlanningType { get; private set; }
         /// <summary>Human readable description of the PlanningSourceType (translated to user&apos;s language) - Examples: &apos;Shop order stock receipt&apos; or &apos;Goods delivery&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlanningTypeDescription { get; set; }
+        public string? PlanningTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string PlanningTypeDescription { get; set; }
+        public string PlanningTypeDescription { get; private set; }
 #endif
         /// <summary>ID of warehouse</summary>
-        public Guid? Warehouse { get; set; }
+        public Guid? Warehouse { get; private set; }
         /// <summary>Code of warehouse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseCode { get; set; }
+        public string? WarehouseCode { get; private set; }
 #nullable restore
 #else
-        public string WarehouseCode { get; set; }
+        public string WarehouseCode { get; private set; }
 #endif
         /// <summary>Description of warehouse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseDescription { get; set; }
+        public string? WarehouseDescription { get; private set; }
 #nullable restore
 #else
-        public string WarehouseDescription { get; set; }
+        public string WarehouseDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryItemWarehousePlanningDetails"/> and sets the default values.
-        /// </summary>
-        public InventoryItemWarehousePlanningDetails()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -147,24 +138,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("PlannedDate", PlannedDate);
-            writer.WriteDoubleValue("PlannedQuantity", PlannedQuantity);
-            writer.WriteStringValue("PlanningSourceDescription", PlanningSourceDescription);
-            writer.WriteGuidValue("PlanningSourceID", PlanningSourceID);
-            writer.WriteIntValue("PlanningSourceLineNumber", PlanningSourceLineNumber);
-            writer.WriteIntValue("PlanningSourceNumber", PlanningSourceNumber);
-            writer.WriteStringValue("PlanningSourceUrl", PlanningSourceUrl);
-            writer.WriteIntValue("PlanningType", PlanningType);
-            writer.WriteStringValue("PlanningTypeDescription", PlanningTypeDescription);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

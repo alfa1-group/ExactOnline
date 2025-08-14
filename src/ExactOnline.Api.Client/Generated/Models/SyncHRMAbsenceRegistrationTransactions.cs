@@ -9,86 +9,77 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncHRMAbsenceRegistrationTransactions : IAdditionalDataHolder, IParsable
+    public partial class SyncHRMAbsenceRegistrationTransactions : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Reference key to Absence Registration</summary>
-        public Guid? AbsenceRegistration { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public Guid? AbsenceRegistration { get; private set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>End time on the last day of absence stored as DateTime, and the date should be ignored</summary>
-        public DateTimeOffset? EndTime { get; set; }
+        public DateTimeOffset? EndTime { get; private set; }
         /// <summary>Expected end date of absence</summary>
-        public DateTimeOffset? ExpectedEndDate { get; set; }
+        public DateTimeOffset? ExpectedEndDate { get; private set; }
         /// <summary>Differentiation of absence hours of the absence registration transaction between previous and current status</summary>
-        public double? Hours { get; set; }
+        public double? Hours { get; private set; }
         /// <summary>Hours of absence on the first day</summary>
-        public double? HoursFirstDay { get; set; }
+        public double? HoursFirstDay { get; private set; }
         /// <summary>Hours of absence on the last day</summary>
-        public double? HoursLastDay { get; set; }
+        public double? HoursLastDay { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Extra information for absence</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Notification moment of absence</summary>
-        public DateTimeOffset? NotificationMoment { get; set; }
+        public DateTimeOffset? NotificationMoment { get; private set; }
         /// <summary>Percentage disablement</summary>
-        public double? PercentageDisablement { get; set; }
+        public double? PercentageDisablement { get; private set; }
         /// <summary>Start date of absence</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>Start time on the first day of absence stored as DateTime, and the date should be ignored</summary>
-        public DateTimeOffset? StartTime { get; set; }
+        public DateTimeOffset? StartTime { get; private set; }
         /// <summary>Status of absence, 0 = Open, 1 = Recovered</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncHRMAbsenceRegistrationTransactions"/> and sets the default values.
-        /// </summary>
-        public SyncHRMAbsenceRegistrationTransactions()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public long? Timestamp { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -138,29 +129,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("AbsenceRegistration", AbsenceRegistration);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDateTimeOffsetValue("EndTime", EndTime);
-            writer.WriteDateTimeOffsetValue("ExpectedEndDate", ExpectedEndDate);
-            writer.WriteDoubleValue("Hours", Hours);
-            writer.WriteDoubleValue("HoursFirstDay", HoursFirstDay);
-            writer.WriteDoubleValue("HoursLastDay", HoursLastDay);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteDateTimeOffsetValue("NotificationMoment", NotificationMoment);
-            writer.WriteDoubleValue("PercentageDisablement", PercentageDisablement);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteDateTimeOffsetValue("StartTime", StartTime);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

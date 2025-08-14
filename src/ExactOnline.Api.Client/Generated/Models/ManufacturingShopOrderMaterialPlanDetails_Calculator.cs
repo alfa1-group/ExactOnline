@@ -11,17 +11,8 @@ namespace ExactOnline.Api.Client.Models
     /// The calculator associated with this material plan
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ManufacturingShopOrderMaterialPlanDetails_Calculator : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingShopOrderMaterialPlanDetails_Calculator : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingShopOrderMaterialPlanDetails_Calculator"/> and sets the default values.
-        /// </summary>
-        public ManufacturingShopOrderMaterialPlanDetails_Calculator()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,7 +40,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

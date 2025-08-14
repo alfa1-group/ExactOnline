@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ProjectInvoiceTerms : IAdditionalDataHolder, IParsable
+    public partial class ProjectInvoiceTerms : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount in the currency of the transaction</summary>
         public double? Amount { get; set; }
         /// <summary>Date and time when the invoice term was created</summary>
@@ -71,10 +69,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date of invoice term</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -128,13 +126,6 @@ namespace ExactOnline.Api.Client.Models
         public double? VATPercentage { get; set; }
         /// <summary>ID of WBS that linked to the invoice term</summary>
         public Guid? WBS { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ProjectInvoiceTerms"/> and sets the default values.
-        /// </summary>
-        public ProjectInvoiceTerms()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -204,7 +195,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("InvoiceStatus", InvoiceStatus);
             writer.WriteGuidValue("Item", Item);
             writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
@@ -216,7 +206,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("VATCodeDescription", VATCodeDescription);
             writer.WriteDoubleValue("VATPercentage", VATPercentage);
             writer.WriteGuidValue("WBS", WBS);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,118 +9,109 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncHRMLeaveRegistrations : IAdditionalDataHolder, IParsable
+    public partial class SyncHRMLeaveRegistrations : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Description of leave</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Employee linked to the leave registration</summary>
-        public Guid? Employee { get; set; }
+        public Guid? Employee { get; private set; }
         /// <summary>Employee full name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeFullName { get; set; }
+        public string? EmployeeFullName { get; private set; }
 #nullable restore
 #else
-        public string EmployeeFullName { get; set; }
+        public string EmployeeFullName { get; private set; }
 #endif
         /// <summary>Numeric ID of the employee</summary>
-        public int? EmployeeHID { get; set; }
+        public int? EmployeeHID { get; private set; }
         /// <summary>End date of leave</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>End time on the last day of leave stored as DateTime, and the date should be ignored</summary>
-        public DateTimeOffset? EndTime { get; set; }
+        public DateTimeOffset? EndTime { get; private set; }
         /// <summary>Total number of leave hours</summary>
-        public double? Hours { get; set; }
+        public double? Hours { get; private set; }
         /// <summary>Hours of leave on the first day</summary>
-        public double? HoursFirstDay { get; set; }
+        public double? HoursFirstDay { get; private set; }
         /// <summary>Hours of leave on the last day</summary>
-        public double? HoursLastDay { get; set; }
+        public double? HoursLastDay { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Type of leave</summary>
-        public Guid? LeaveType { get; set; }
+        public Guid? LeaveType { get; private set; }
         /// <summary>Code for type of leave</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LeaveTypeCode { get; set; }
+        public string? LeaveTypeCode { get; private set; }
 #nullable restore
 #else
-        public string LeaveTypeCode { get; set; }
+        public string LeaveTypeCode { get; private set; }
 #endif
         /// <summary>Description for type of leave</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LeaveTypeDescription { get; set; }
+        public string? LeaveTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string LeaveTypeDescription { get; set; }
+        public string LeaveTypeDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Extra information for leave</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Start date of leave</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>Start time on the first day of leave stored as DateTime, and the date should be ignored</summary>
-        public DateTimeOffset? StartTime { get; set; }
+        public DateTimeOffset? StartTime { get; private set; }
         /// <summary>Status of leave, 1 = Submitted, 2 = Approved, 3 = Rejected</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncHRMLeaveRegistrations"/> and sets the default values.
-        /// </summary>
-        public SyncHRMLeaveRegistrations()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public long? Timestamp { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -174,33 +165,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
-            writer.WriteIntValue("EmployeeHID", EmployeeHID);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteDateTimeOffsetValue("EndTime", EndTime);
-            writer.WriteDoubleValue("Hours", Hours);
-            writer.WriteDoubleValue("HoursFirstDay", HoursFirstDay);
-            writer.WriteDoubleValue("HoursLastDay", HoursLastDay);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("LeaveType", LeaveType);
-            writer.WriteStringValue("LeaveTypeCode", LeaveTypeCode);
-            writer.WriteStringValue("LeaveTypeDescription", LeaveTypeDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteDateTimeOffsetValue("StartTime", StartTime);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

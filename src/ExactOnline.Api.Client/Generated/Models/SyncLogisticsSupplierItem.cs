@@ -9,218 +9,209 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncLogisticsSupplierItem : IAdditionalDataHolder, IParsable
+    public partial class SyncLogisticsSupplierItem : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This is the barcode for the unit other than standard unit of the item. Only supported by the Premium for Wholesale &amp;amp; Distribution and Manufacturing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Barcode { get; set; }
+        public string? Barcode { get; private set; }
 #nullable restore
 #else
-        public string Barcode { get; set; }
+        public string Barcode { get; private set; }
 #endif
         /// <summary>Copy purchase remarks to purchase lines</summary>
-        public int? CopyRemarks { get; set; }
+        public int? CopyRemarks { get; private set; }
         /// <summary>Country of origin code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryOfOrigin { get; set; }
+        public string? CountryOfOrigin { get; private set; }
 #nullable restore
 #else
-        public string CountryOfOrigin { get; set; }
+        public string CountryOfOrigin { get; private set; }
 #endif
         /// <summary>Description of country of origin</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryOfOriginDescription { get; set; }
+        public string? CountryOfOriginDescription { get; private set; }
 #nullable restore
 #else
-        public string CountryOfOriginDescription { get; set; }
+        public string CountryOfOriginDescription { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Currency of item price</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get; private set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get; private set; }
 #endif
         /// <summary>Description of currency of item price</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyDescription { get; set; }
+        public string? CurrencyDescription { get; private set; }
 #nullable restore
 #else
-        public string CurrencyDescription { get; set; }
+        public string CurrencyDescription { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Indicates that the supplier will deliver the item directly to customer. Values: 0 = No, 1 = Yes, 2 = Optional</summary>
-        public int? DropShipment { get; set; }
+        public int? DropShipment { get; private set; }
         /// <summary>Together with StartDate this determines whether the price is active</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Item ID</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>Item code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Description of Item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>Item Unit</summary>
-        public Guid? ItemUnit { get; set; }
+        public Guid? ItemUnit { get; private set; }
         /// <summary>Item Unit Code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemUnitCode { get; set; }
+        public string? ItemUnitCode { get; private set; }
 #nullable restore
 #else
-        public string ItemUnitCode { get; set; }
+        public string ItemUnitCode { get; private set; }
 #endif
         /// <summary>Item Unit Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemUnitDescription { get; set; }
+        public string? ItemUnitDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemUnitDescription { get; set; }
+        public string ItemUnitDescription { get; private set; }
 #endif
         /// <summary>Indicates this is a main supplier</summary>
-        public bool? MainSupplier { get; set; }
+        public bool? MainSupplier { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Minimum quantity of the item for purchase, only available for Wholesale &amp;amp; Distribution (Professional and Premium only)</summary>
-        public double? MinimumQuantity { get; set; }
+        public double? MinimumQuantity { get; private set; }
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>The number of days between placing an order with a supplier and receiving items from the supplier</summary>
-        public int? PurchaseLeadTime { get; set; }
+        public int? PurchaseLeadTime { get; private set; }
         /// <summary>Lot size of the item for purchase, only available for Wholesale &amp;amp; Distribution (Premium only)</summary>
-        public int? PurchaseLotSize { get; set; }
+        public int? PurchaseLotSize { get; private set; }
         /// <summary>Purchase price. If neither active nor future price exists, it shows 0 when GET</summary>
-        public double? PurchasePrice { get; set; }
+        public double? PurchasePrice { get; private set; }
         /// <summary>Unit code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PurchaseUnit { get; set; }
+        public string? PurchaseUnit { get; private set; }
 #nullable restore
 #else
-        public string PurchaseUnit { get; set; }
+        public string PurchaseUnit { get; private set; }
 #endif
         /// <summary>Description of unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PurchaseUnitDescription { get; set; }
+        public string? PurchaseUnitDescription { get; private set; }
 #nullable restore
 #else
-        public string PurchaseUnitDescription { get; set; }
+        public string PurchaseUnitDescription { get; private set; }
 #endif
         /// <summary>This is the multiplication factor when going from default item unit to the unit of this price</summary>
-        public double? PurchaseUnitFactor { get; set; }
+        public double? PurchaseUnitFactor { get; private set; }
         /// <summary>VAT code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PurchaseVATCode { get; set; }
+        public string? PurchaseVATCode { get; private set; }
 #nullable restore
 #else
-        public string PurchaseVATCode { get; set; }
+        public string PurchaseVATCode { get; private set; }
 #endif
         /// <summary>Description of VAT</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PurchaseVATCodeDescription { get; set; }
+        public string? PurchaseVATCodeDescription { get; private set; }
 #nullable restore
 #else
-        public string PurchaseVATCodeDescription { get; set; }
+        public string PurchaseVATCodeDescription { get; private set; }
 #endif
         /// <summary>Together with EndDate this determines whether the price is active</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>Supplier ID</summary>
-        public Guid? Supplier { get; set; }
+        public Guid? Supplier { get; private set; }
         /// <summary>Supplier code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupplierCode { get; set; }
+        public string? SupplierCode { get; private set; }
 #nullable restore
 #else
-        public string SupplierCode { get; set; }
+        public string SupplierCode { get; private set; }
 #endif
         /// <summary>Description of supplier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupplierDescription { get; set; }
+        public string? SupplierDescription { get; private set; }
 #nullable restore
 #else
-        public string SupplierDescription { get; set; }
+        public string SupplierDescription { get; private set; }
 #endif
         /// <summary>Supplier&apos;s item code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupplierItemCode { get; set; }
+        public string? SupplierItemCode { get; private set; }
 #nullable restore
 #else
-        public string SupplierItemCode { get; set; }
+        public string SupplierItemCode { get; private set; }
 #endif
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncLogisticsSupplierItem"/> and sets the default values.
-        /// </summary>
-        public SyncLogisticsSupplierItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public long? Timestamp { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -288,47 +279,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Barcode", Barcode);
-            writer.WriteIntValue("CopyRemarks", CopyRemarks);
-            writer.WriteStringValue("CountryOfOrigin", CountryOfOrigin);
-            writer.WriteStringValue("CountryOfOriginDescription", CountryOfOriginDescription);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Currency", Currency);
-            writer.WriteStringValue("CurrencyDescription", CurrencyDescription);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteIntValue("DropShipment", DropShipment);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteGuidValue("ItemUnit", ItemUnit);
-            writer.WriteStringValue("ItemUnitCode", ItemUnitCode);
-            writer.WriteStringValue("ItemUnitDescription", ItemUnitDescription);
-            writer.WriteBoolValue("MainSupplier", MainSupplier);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDoubleValue("MinimumQuantity", MinimumQuantity);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteIntValue("PurchaseLeadTime", PurchaseLeadTime);
-            writer.WriteIntValue("PurchaseLotSize", PurchaseLotSize);
-            writer.WriteDoubleValue("PurchasePrice", PurchasePrice);
-            writer.WriteStringValue("PurchaseUnit", PurchaseUnit);
-            writer.WriteStringValue("PurchaseUnitDescription", PurchaseUnitDescription);
-            writer.WriteDoubleValue("PurchaseUnitFactor", PurchaseUnitFactor);
-            writer.WriteStringValue("PurchaseVATCode", PurchaseVATCode);
-            writer.WriteStringValue("PurchaseVATCodeDescription", PurchaseVATCodeDescription);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteGuidValue("Supplier", Supplier);
-            writer.WriteStringValue("SupplierCode", SupplierCode);
-            writer.WriteStringValue("SupplierDescription", SupplierDescription);
-            writer.WriteStringValue("SupplierItemCode", SupplierItemCode);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

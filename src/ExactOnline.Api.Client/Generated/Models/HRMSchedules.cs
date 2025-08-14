@@ -9,128 +9,119 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class HRMSchedules : IAdditionalDataHolder, IParsable
+    public partial class HRMSchedules : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Obsolete</summary>
-        public int? Active { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public int? Active { get; private set; }
         /// <summary>Average hours per week in a schedulePlease be aware this property is mandatory if you use ScheduleType 1 or 2.For Time and Billing basic company, when creating a new schedule, the value is set to 0. When schedule entries are created, the BC will set the calculated value for Average hours per week.</summary>
-        public double? AverageHours { get; set; }
+        public double? AverageHours { get; private set; }
         /// <summary>Billability target</summary>
-        public double? BillabilityTarget { get; set; }
+        public double? BillabilityTarget { get; private set; }
         /// <summary>Schedule code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get; private set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of the creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Average days per week in the scheduleFor Time and Billing basic company, when creating a new schedule, the value is set to 0. When schedule entries are created, the BC will set the calculated value for Average days per week.</summary>
-        public double? Days { get; set; }
+        public double? Days { get; private set; }
         /// <summary>Description of the schedule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Employee ID of the schedule</summary>
-        public Guid? Employee { get; set; }
+        public Guid? Employee { get; private set; }
         /// <summary>Employee full name of the schedule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeFullName { get; set; }
+        public string? EmployeeFullName { get; private set; }
 #nullable restore
 #else
-        public string EmployeeFullName { get; set; }
+        public string EmployeeFullName { get; private set; }
 #endif
         /// <summary>Employment ID for schedule</summary>
-        public Guid? Employment { get; set; }
+        public Guid? Employment { get; private set; }
         /// <summary>Employment CLA ID of the schedule</summary>
-        public Guid? EmploymentCLA { get; set; }
+        public Guid? EmploymentCLA { get; private set; }
         /// <summary>Obsolete</summary>
-        public int? EmploymentHID { get; set; }
+        public int? EmploymentHID { get; private set; }
         /// <summary>Employment number</summary>
-        public int? EmploymentNumber { get; set; }
+        public int? EmploymentNumber { get; private set; }
         /// <summary>End date of the schedule</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Number of hours per week in a CLA for which the schedule is built</summary>
-        public double? Hours { get; set; }
+        public double? Hours { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Number of hours which are built up each week for later leaveFor Time and Billing basic company, the value is set to 0.</summary>
-        public double? LeaveHoursCompensation { get; set; }
+        public double? LeaveHoursCompensation { get; private set; }
         /// <summary>Indication if the schedule is a main schedule for a CLA. 1 = Yes, 0 = No</summary>
-        public int? Main { get; set; }
+        public int? Main { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of the modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Part-time factor for payroll calculation. Value between 0 and 1</summary>
-        public double? PaymentParttimeFactor { get; set; }
+        public double? PaymentParttimeFactor { get; private set; }
         /// <summary>The collection of schedule entries</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::ExactOnline.Api.Client.Models.HRMSchedules_ScheduleEntries>? ScheduleEntries { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.HRMSchedules_ScheduleEntries>? ScheduleEntries { get; private set; }
 #nullable restore
 #else
-        public List<global::ExactOnline.Api.Client.Models.HRMSchedules_ScheduleEntries> ScheduleEntries { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.HRMSchedules_ScheduleEntries> ScheduleEntries { get; private set; }
 #endif
         /// <summary>Type of schedule. 1 = Hours and average days, 2 = Hours and specific days, 3 = Hours per day, 4 = Time frames per day1 - Hours and average days, StartWeek will automatically set to 12 - Hours and specific days, StartWeek must be greater or equal to 1, AverageDaysPerWeek will automatically set to 03 - Hours per day, StartWeek must be greater or equal to 1, AverageHoursPerWeek and AverageDaysPerWeek will automatically set to 04 - Time frames per day, Hours per day, StartWeek must be greater or equal to 1, AverageHoursPerWeek and AverageDaysPerWeek will automatically set to 0Note: For Time and Billing basic company, the schedule type is automatically set to value &quot;3 - Hour per day&quot;.</summary>
-        public int? ScheduleType { get; set; }
+        public int? ScheduleType { get; private set; }
         /// <summary>Description of the schedule type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScheduleTypeDescription { get; set; }
+        public string? ScheduleTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string ScheduleTypeDescription { get; set; }
+        public string ScheduleTypeDescription { get; private set; }
 #endif
         /// <summary>Start date of the schedule</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>Week to start the schedule from for an employee</summary>
-        public int? StartWeek { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.HRMSchedules"/> and sets the default values.
-        /// </summary>
-        public HRMSchedules()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public int? StartWeek { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -189,38 +180,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Active", Active);
-            writer.WriteDoubleValue("AverageHours", AverageHours);
-            writer.WriteDoubleValue("BillabilityTarget", BillabilityTarget);
-            writer.WriteStringValue("Code", Code);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteDoubleValue("Days", Days);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
-            writer.WriteGuidValue("Employment", Employment);
-            writer.WriteGuidValue("EmploymentCLA", EmploymentCLA);
-            writer.WriteIntValue("EmploymentHID", EmploymentHID);
-            writer.WriteIntValue("EmploymentNumber", EmploymentNumber);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteDoubleValue("Hours", Hours);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDoubleValue("LeaveHoursCompensation", LeaveHoursCompensation);
-            writer.WriteIntValue("Main", Main);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteDoubleValue("PaymentParttimeFactor", PaymentParttimeFactor);
-            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.HRMSchedules_ScheduleEntries>("ScheduleEntries", ScheduleEntries);
-            writer.WriteIntValue("ScheduleType", ScheduleType);
-            writer.WriteStringValue("ScheduleTypeDescription", ScheduleTypeDescription);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteIntValue("StartWeek", StartWeek);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

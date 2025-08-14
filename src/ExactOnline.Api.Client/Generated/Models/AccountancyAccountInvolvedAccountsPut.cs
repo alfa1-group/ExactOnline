@@ -9,7 +9,7 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AccountancyAccountInvolvedAccountsPut : IAdditionalDataHolder, IParsable
+    public partial class AccountancyAccountInvolvedAccountsPut : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID of account</summary>
@@ -22,8 +22,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountName { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>User ID of creator</summary>
@@ -57,10 +55,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -82,13 +80,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.AccountancyAccountInvolvedAccountsPut"/> and sets the default values.
-        /// </summary>
-        public AccountancyAccountInvolvedAccountsPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -143,12 +134,10 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("InvolvedAccountRelationTypeDescription", InvolvedAccountRelationTypeDescription);
             writer.WriteIntValue("InvolvedAccountRelationTypeDescriptionTermId", InvolvedAccountRelationTypeDescriptionTermId);
             writer.WriteIntValue("InvolvedAccountRelationTypeId", InvolvedAccountRelationTypeId);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
             writer.WriteStringValue("Notes", Notes);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

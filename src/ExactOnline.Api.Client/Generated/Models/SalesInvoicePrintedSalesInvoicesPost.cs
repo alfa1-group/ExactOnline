@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SalesInvoicePrintedSalesInvoicesPost : IAdditionalDataHolder, IParsable
+    public partial class SalesInvoicePrintedSalesInvoicesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Division code</summary>
         public int? Division { get; set; }
         /// <summary>Contains the id of the document that was created</summary>
@@ -69,10 +67,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Contains the error message if an error occurred during the sending via peppol</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,13 +126,6 @@ namespace ExactOnline.Api.Client.Models
         public bool? SendInvoiceViaPeppol { get; set; }
         /// <summary>Set to True if the output preference should be taken from the account. It will be either Document only, Email, Digital postbox or Peppol. This option overrules by SendEmailToCustomer, SendInvoiceToCustomerPostbox, SendInvoiceViaPeppol. Take notes:The digital postbox option only available if the license has Mailbox feature set.</summary>
         public bool? SendOutputBasedOnAccount { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesInvoicePrintedSalesInvoicesPost"/> and sets the default values.
-        /// </summary>
-        public SalesInvoicePrintedSalesInvoicesPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -197,7 +188,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ExtraText", ExtraText);
             writer.WriteDateTimeOffsetValue("InvoiceDate", InvoiceDate);
             writer.WriteGuidValue("InvoiceID", InvoiceID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("PeppolCreationError", PeppolCreationError);
             writer.WriteStringValue("PeppolCreationSuccess", PeppolCreationSuccess);
             writer.WriteStringValue("PostboxMessageCreationError", PostboxMessageCreationError);
@@ -210,7 +200,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteBoolValue("SendInvoiceToCustomerPostbox", SendInvoiceToCustomerPostbox);
             writer.WriteBoolValue("SendInvoiceViaPeppol", SendInvoiceViaPeppol);
             writer.WriteBoolValue("SendOutputBasedOnAccount", SendOutputBasedOnAccount);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

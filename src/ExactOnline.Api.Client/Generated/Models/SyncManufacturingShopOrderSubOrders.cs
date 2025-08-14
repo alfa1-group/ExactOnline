@@ -9,72 +9,63 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncManufacturingShopOrderSubOrders : IAdditionalDataHolder, IParsable
+    public partial class SyncManufacturingShopOrderSubOrders : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Level of the sub shop order within the shop order structure</summary>
-        public int? Level { get; set; }
+        public int? Level { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Reference to ShopOrders for the current shop order</summary>
-        public Guid? ShopOrder { get; set; }
+        public Guid? ShopOrder { get; private set; }
         /// <summary>Reference to ShopOrders for main shop order</summary>
-        public Guid? ShopOrderMain { get; set; }
+        public Guid? ShopOrderMain { get; private set; }
         /// <summary>Number of main shop order</summary>
-        public int? ShopOrderMainNumber { get; set; }
+        public int? ShopOrderMainNumber { get; private set; }
         /// <summary>Reference to ShopOrderMaterialPlans</summary>
-        public Guid? ShopOrderMaterialPlan { get; set; }
+        public Guid? ShopOrderMaterialPlan { get; private set; }
         /// <summary>Number of the current shop order</summary>
-        public int? ShopOrderNumber { get; set; }
+        public int? ShopOrderNumber { get; private set; }
         /// <summary>Reference to ShopOrders for parent shop order</summary>
-        public Guid? ShopOrderParent { get; set; }
+        public Guid? ShopOrderParent { get; private set; }
         /// <summary>Number of parent shop order</summary>
-        public int? ShopOrderParentNumber { get; set; }
+        public int? ShopOrderParentNumber { get; private set; }
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncManufacturingShopOrderSubOrders"/> and sets the default values.
-        /// </summary>
-        public SyncManufacturingShopOrderSubOrders()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public long? Timestamp { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -120,25 +111,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("Level", Level);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteGuidValue("ShopOrder", ShopOrder);
-            writer.WriteGuidValue("ShopOrderMain", ShopOrderMain);
-            writer.WriteIntValue("ShopOrderMainNumber", ShopOrderMainNumber);
-            writer.WriteGuidValue("ShopOrderMaterialPlan", ShopOrderMaterialPlan);
-            writer.WriteIntValue("ShopOrderNumber", ShopOrderNumber);
-            writer.WriteGuidValue("ShopOrderParent", ShopOrderParent);
-            writer.WriteIntValue("ShopOrderParentNumber", ShopOrderParentNumber);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

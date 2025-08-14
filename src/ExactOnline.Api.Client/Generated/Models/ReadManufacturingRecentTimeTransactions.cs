@@ -9,182 +9,173 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadManufacturingRecentTimeTransactions : IAdditionalDataHolder, IParsable
+    public partial class ReadManufacturingRecentTimeTransactions : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Customer code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerCode { get; set; }
+        public string? CustomerCode { get; private set; }
 #nullable restore
 #else
-        public string CustomerCode { get; set; }
+        public string CustomerCode { get; private set; }
 #endif
         /// <summary>Count of customers</summary>
-        public int? CustomerCount { get; set; }
+        public int? CustomerCount { get; private set; }
         /// <summary>Customer name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerName { get; set; }
+        public string? CustomerName { get; private set; }
 #nullable restore
 #else
-        public string CustomerName { get; set; }
+        public string CustomerName { get; private set; }
 #endif
         /// <summary>Type of data returned by query - for internal use</summary>
-        public int? DataType { get; set; }
+        public int? DataType { get; private set; }
         /// <summary>Date of time entry</summary>
-        public DateTimeOffset? Date { get; set; }
+        public DateTimeOffset? Date { get; private set; }
         /// <summary>ID of employee</summary>
-        public Guid? Employee { get; set; }
+        public Guid? Employee { get; private set; }
         /// <summary>Time that operation was stopped</summary>
-        public DateTimeOffset? EndTime { get; set; }
+        public DateTimeOffset? EndTime { get; private set; }
         /// <summary>Hour Status of the time transaction: Rejected = 2, Submitted = 10, Approved = 20</summary>
-        public int? HourStatus { get; set; }
+        public int? HourStatus { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Is fraction allowed item</summary>
-        public int? IsFractionAllowedItem { get; set; }
+        public int? IsFractionAllowedItem { get; private set; }
         /// <summary>Is the operation finished?</summary>
-        public int? IsOperationFinished { get; set; }
+        public int? IsOperationFinished { get; private set; }
         /// <summary>Shop order make item</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>Make item code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Url to retrieve the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemPictureUrl { get; set; }
+        public string? ItemPictureUrl { get; private set; }
 #nullable restore
 #else
-        public string ItemPictureUrl { get; set; }
+        public string ItemPictureUrl { get; private set; }
 #endif
         /// <summary>Make item unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemUnit { get; set; }
+        public string? ItemUnit { get; private set; }
 #nullable restore
 #else
-        public string ItemUnit { get; set; }
+        public string ItemUnit { get; private set; }
 #endif
         /// <summary>Adjustable labor hours</summary>
-        public double? LaborHours { get; set; }
+        public double? LaborHours { get; private set; }
         /// <summary>Adjustable machine hours</summary>
-        public double? MachineHours { get; set; }
+        public double? MachineHours { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>Notes - viewable in data collection</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Routing step operation</summary>
-        public Guid? Operation { get; set; }
+        public Guid? Operation { get; private set; }
         /// <summary>Routing step operation code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperationCode { get; set; }
+        public string? OperationCode { get; private set; }
 #nullable restore
 #else
-        public string OperationCode { get; set; }
+        public string OperationCode { get; private set; }
 #endif
         /// <summary>Percentage of operation completed within time period</summary>
-        public double? PercentComplete { get; set; }
+        public double? PercentComplete { get; private set; }
         /// <summary>Quantity of make item produced within time period</summary>
-        public double? ProducedQuantity { get; set; }
+        public double? ProducedQuantity { get; private set; }
         /// <summary>Project ID of the shop order</summary>
-        public Guid? Project { get; set; }
+        public Guid? Project { get; private set; }
         /// <summary>Project code of the shop order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectCode { get; set; }
+        public string? ProjectCode { get; private set; }
 #nullable restore
 #else
-        public string ProjectCode { get; set; }
+        public string ProjectCode { get; private set; }
 #endif
         /// <summary>Project description of the shop order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectDescription { get; set; }
+        public string? ProjectDescription { get; private set; }
 #nullable restore
 #else
-        public string ProjectDescription { get; set; }
+        public string ProjectDescription { get; private set; }
 #endif
         /// <summary>Count of Sales order</summary>
-        public int? SalesOrderCount { get; set; }
+        public int? SalesOrderCount { get; private set; }
         /// <summary>Sales order line number</summary>
-        public int? SalesOrderLineNumber { get; set; }
+        public int? SalesOrderLineNumber { get; private set; }
         /// <summary>Sales order number</summary>
-        public int? SalesOrderNumber { get; set; }
+        public int? SalesOrderNumber { get; private set; }
         /// <summary>Shop order</summary>
-        public Guid? ShopOrder { get; set; }
+        public Guid? ShopOrder { get; private set; }
         /// <summary>Shop order description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShopOrderDescription { get; set; }
+        public string? ShopOrderDescription { get; private set; }
 #nullable restore
 #else
-        public string ShopOrderDescription { get; set; }
+        public string ShopOrderDescription { get; private set; }
 #endif
         /// <summary>Shop order number</summary>
-        public int? ShopOrderNumber { get; set; }
+        public int? ShopOrderNumber { get; private set; }
         /// <summary>Shop order planned quantity</summary>
-        public double? ShopOrderPlannedQuantity { get; set; }
+        public double? ShopOrderPlannedQuantity { get; private set; }
         /// <summary>Shop order routing step where work occurred</summary>
-        public Guid? ShopOrderRoutingStepPlan { get; set; }
+        public Guid? ShopOrderRoutingStepPlan { get; private set; }
         /// <summary>Percentage of time attended on the routing step plan</summary>
-        public double? ShopOrderRoutingStepPlanAttendedPercentage { get; set; }
+        public double? ShopOrderRoutingStepPlanAttendedPercentage { get; private set; }
         /// <summary>Description of the shop order routing step where work occurred</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShopOrderRoutingStepPlanDescription { get; set; }
+        public string? ShopOrderRoutingStepPlanDescription { get; private set; }
 #nullable restore
 #else
-        public string ShopOrderRoutingStepPlanDescription { get; set; }
+        public string ShopOrderRoutingStepPlanDescription { get; private set; }
 #endif
         /// <summary>Time that operation was started</summary>
-        public DateTimeOffset? StartTime { get; set; }
+        public DateTimeOffset? StartTime { get; private set; }
         /// <summary>Status of the time transaction</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>Type of the time transaction: Setup = 10, Run = 20</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>ID of warehouse where shop order is finished</summary>
-        public Guid? Warehouse { get; set; }
+        public Guid? Warehouse { get; private set; }
         /// <summary>Work center where work occurred</summary>
-        public Guid? Workcenter { get; set; }
+        public Guid? Workcenter { get; private set; }
         /// <summary>Work center code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkcenterCode { get; set; }
+        public string? WorkcenterCode { get; private set; }
 #nullable restore
 #else
-        public string WorkcenterCode { get; set; }
+        public string WorkcenterCode { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadManufacturingRecentTimeTransactions"/> and sets the default values.
-        /// </summary>
-        public ReadManufacturingRecentTimeTransactions()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -255,50 +246,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("CustomerCode", CustomerCode);
-            writer.WriteIntValue("CustomerCount", CustomerCount);
-            writer.WriteStringValue("CustomerName", CustomerName);
-            writer.WriteIntValue("DataType", DataType);
-            writer.WriteDateTimeOffsetValue("Date", Date);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteDateTimeOffsetValue("EndTime", EndTime);
-            writer.WriteIntValue("HourStatus", HourStatus);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("IsFractionAllowedItem", IsFractionAllowedItem);
-            writer.WriteIntValue("IsOperationFinished", IsOperationFinished);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemPictureUrl", ItemPictureUrl);
-            writer.WriteStringValue("ItemUnit", ItemUnit);
-            writer.WriteDoubleValue("LaborHours", LaborHours);
-            writer.WriteDoubleValue("MachineHours", MachineHours);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteGuidValue("Operation", Operation);
-            writer.WriteStringValue("OperationCode", OperationCode);
-            writer.WriteDoubleValue("PercentComplete", PercentComplete);
-            writer.WriteDoubleValue("ProducedQuantity", ProducedQuantity);
-            writer.WriteGuidValue("Project", Project);
-            writer.WriteStringValue("ProjectCode", ProjectCode);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteIntValue("SalesOrderCount", SalesOrderCount);
-            writer.WriteIntValue("SalesOrderLineNumber", SalesOrderLineNumber);
-            writer.WriteIntValue("SalesOrderNumber", SalesOrderNumber);
-            writer.WriteGuidValue("ShopOrder", ShopOrder);
-            writer.WriteStringValue("ShopOrderDescription", ShopOrderDescription);
-            writer.WriteIntValue("ShopOrderNumber", ShopOrderNumber);
-            writer.WriteDoubleValue("ShopOrderPlannedQuantity", ShopOrderPlannedQuantity);
-            writer.WriteGuidValue("ShopOrderRoutingStepPlan", ShopOrderRoutingStepPlan);
-            writer.WriteDoubleValue("ShopOrderRoutingStepPlanAttendedPercentage", ShopOrderRoutingStepPlanAttendedPercentage);
-            writer.WriteStringValue("ShopOrderRoutingStepPlanDescription", ShopOrderRoutingStepPlanDescription);
-            writer.WriteDateTimeOffsetValue("StartTime", StartTime);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteGuidValue("Workcenter", Workcenter);
-            writer.WriteStringValue("WorkcenterCode", WorkcenterCode);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CRMContacts : IAdditionalDataHolder, IParsable
+    public partial class CRMContacts : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Account property</summary>
@@ -28,8 +28,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountName { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AddressLine2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -273,10 +271,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The MiddleName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -439,13 +437,6 @@ namespace ExactOnline.Api.Client.Models
         public string TitleDescription { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CRMContacts"/> and sets the default values.
-        /// </summary>
-        public CRMContacts()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.CRMContacts"/></returns>
@@ -590,7 +581,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("LeadPurpose", LeadPurpose);
             writer.WriteGuidValue("LeadSource", LeadSource);
             writer.WriteStringValue("MarketingNotes", MarketingNotes);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("MiddleName", MiddleName);
             writer.WriteStringValue("Mobile", Mobile);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
@@ -614,7 +604,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("Title", Title);
             writer.WriteStringValue("TitleAbbreviation", TitleAbbreviation);
             writer.WriteStringValue("TitleDescription", TitleDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

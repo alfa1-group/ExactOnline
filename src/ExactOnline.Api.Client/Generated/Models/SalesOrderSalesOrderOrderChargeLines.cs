@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SalesOrderSalesOrderOrderChargeLines : IAdditionalDataHolder, IParsable
+    public partial class SalesOrderSalesOrderOrderChargeLines : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount excluded VAT in reporting currency for shipping cost or order charges</summary>
         public double? AmountDC { get; set; }
         /// <summary>Amount excluded VAT in trading currency for shipping cost or order charges</summary>
@@ -33,10 +31,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>ID of order charges is mandatory for order charge. However, it is not required for shipping cost</summary>
         public Guid? OrderCharge { get; set; }
@@ -84,13 +82,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>The vat percentage of the VAT code. This is the percentage at the moment the invoice is created. It&apos;s also used for the default calculation of VAT amounts and VAT base amounts</summary>
         public double? VATPercentage { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesOrderSalesOrderOrderChargeLines"/> and sets the default values.
-        /// </summary>
-        public SalesOrderSalesOrderOrderChargeLines()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -143,7 +134,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("ID", ID);
             writer.WriteBoolValue("IsShippingCost", IsShippingCost);
             writer.WriteIntValue("LineNumber", LineNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("OrderCharge", OrderCharge);
             writer.WriteStringValue("OrderChargeCode", OrderChargeCode);
             writer.WriteStringValue("OrderChargeDescription", OrderChargeDescription);
@@ -152,7 +142,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("VATCode", VATCode);
             writer.WriteStringValue("VATDescription", VATDescription);
             writer.WriteDoubleValue("VATPercentage", VATPercentage);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

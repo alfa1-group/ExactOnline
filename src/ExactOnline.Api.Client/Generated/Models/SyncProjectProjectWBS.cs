@@ -9,154 +9,145 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncProjectProjectWBS : IAdditionalDataHolder, IParsable
+    public partial class SyncProjectProjectWBS : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A boolean field to indicated if time and cost entries is blocked</summary>
-        public int? BlockEntry { get; set; }
+        public int? BlockEntry { get; private set; }
         /// <summary>A boolean field to indicated if rebilling is blocked. Only for expense</summary>
-        public int? BlockRebilling { get; set; }
+        public int? BlockRebilling { get; private set; }
         /// <summary>Budget cost of the WBS activity and expense</summary>
-        public double? BudgetedCost { get; set; }
+        public double? BudgetedCost { get; private set; }
         /// <summary>Budget hours of the WBS. Only for activity</summary>
-        public double? BudgetedHours { get; set; }
+        public double? BudgetedHours { get; private set; }
         /// <summary>Budget quantity of the WBS. Only for expense</summary>
-        public double? BudgetedQuantity { get; set; }
+        public double? BudgetedQuantity { get; private set; }
         /// <summary>Revenue of the WBS. Only for activity and expense</summary>
-        public double? BudgetedRevenue { get; set; }
+        public double? BudgetedRevenue { get; private set; }
         /// <summary>BudgetOverrunHours: 10-Allowed, 20-Not Allowed. Only for activity</summary>
-        public int? BudgetOverrunHours { get; set; }
+        public int? BudgetOverrunHours { get; private set; }
         /// <summary>A boolean field to indicated if the project WBS deliverable is completed.</summary>
-        public int? Completed { get; set; }
+        public int? Completed { get; private set; }
         /// <summary>The date and time when the WBS was created</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>The ID of the user that created the WBS</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>The full name of the user that created the WBS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>Default item to used for timecost entry</summary>
-        public Guid? DefaultItem { get; set; }
+        public Guid? DefaultItem { get; private set; }
         /// <summary>To indicated if only default item is allowed. Only for activity</summary>
-        public int? DefaultItemIsMandatory { get; set; }
+        public int? DefaultItemIsMandatory { get; private set; }
         /// <summary>Description of the project WBS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>EndDate of the WBS. If it is a deliverable then EndDate is the lastest EndDate of its children</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The invoice date of the WBS when invoice term is generated</summary>
-        public DateTimeOffset? InvoiceDate { get; set; }
+        public DateTimeOffset? InvoiceDate { get; private set; }
         /// <summary>The invoice method of the WBS. For activity: null = According to parent, 2 = Fixed price, 3 = Time and Material, 4 = Non billable, 5 = Prepaid. For expense: null = According to parent, 6 = Fixed, 7 = Rebill, 8 = Non re-billable</summary>
-        public int? InvoiceMethod { get; set; }
+        public int? InvoiceMethod { get; private set; }
         /// <summary>To indicated if additional invoice is allowed on this WBS. Additional invoice can only be set when the project type is fixed price or prepaid and the project allow additional invoices. Only for activity and expense. (Obsolete)</summary>
-        public int? InvoiceSeparately { get; set; }
+        public int? InvoiceSeparately { get; private set; }
         /// <summary>Markup percentage for WBS expense</summary>
-        public double? MarkupPercentage { get; set; }
+        public double? MarkupPercentage { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>To indicated if this is a milestone for WBS deliverable</summary>
-        public int? Milestone { get; set; }
+        public int? Milestone { get; private set; }
         /// <summary>Last modified date and time</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>The Guid ID of the user that modified the records</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>The full name of the user that modified the WBS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>For additional information about wbs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>ID of the parent WBS</summary>
-        public Guid? PartOf { get; set; }
+        public Guid? PartOf { get; private set; }
         /// <summary>Description of part of</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartOfDescription { get; set; }
+        public string? PartOfDescription { get; private set; }
 #nullable restore
 #else
-        public string PartOfDescription { get; set; }
+        public string PartOfDescription { get; private set; }
 #endif
         /// <summary>ID of the project that linked to WBS</summary>
-        public Guid? Project { get; set; }
+        public Guid? Project { get; private set; }
         /// <summary>Description of the project that linked to WBS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectDescription { get; set; }
+        public string? ProjectDescription { get; private set; }
 #nullable restore
 #else
-        public string ProjectDescription { get; set; }
+        public string ProjectDescription { get; private set; }
 #endif
         /// <summary>ID of invoice term that linked to the WBS deliverable. Invoice term can only be linked when the project is using billing milestones and the deliverable is set as a milestone</summary>
-        public Guid? ProjectTerm { get; set; }
+        public Guid? ProjectTerm { get; private set; }
         /// <summary>Description of invoice term that linked to the WBS deliverable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectTermDescription { get; set; }
+        public string? ProjectTermDescription { get; private set; }
 #nullable restore
 #else
-        public string ProjectTermDescription { get; set; }
+        public string ProjectTermDescription { get; private set; }
 #endif
         /// <summary>Purchase price of the item. Only for expense</summary>
-        public double? PurchasePrice { get; set; }
+        public double? PurchasePrice { get; private set; }
         /// <summary>Sequence number of the WBS. Last sequence will be selected if not specified</summary>
-        public int? SequenceNumber { get; set; }
+        public int? SequenceNumber { get; private set; }
         /// <summary>Startdate of the WBS. If it is a deliverable then StartDate is the earliest StartDate of its children</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>Supplier of the item. Only for expense</summary>
-        public Guid? Supplier { get; set; }
+        public Guid? Supplier { get; private set; }
         /// <summary>Alert when exceeding this time quantity for WBS activity</summary>
-        public double? TimeQuantityToAlert { get; set; }
+        public double? TimeQuantityToAlert { get; private set; }
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>The type of project WBS. E.g: 1 = Deliverable, 2 = Activity, 3 = Expense</summary>
-        public int? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncProjectProjectWBS"/> and sets the default values.
-        /// </summary>
-        public SyncProjectProjectWBS()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public int? Type { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -225,48 +216,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("BlockEntry", BlockEntry);
-            writer.WriteIntValue("BlockRebilling", BlockRebilling);
-            writer.WriteDoubleValue("BudgetedCost", BudgetedCost);
-            writer.WriteDoubleValue("BudgetedHours", BudgetedHours);
-            writer.WriteDoubleValue("BudgetedQuantity", BudgetedQuantity);
-            writer.WriteDoubleValue("BudgetedRevenue", BudgetedRevenue);
-            writer.WriteIntValue("BudgetOverrunHours", BudgetOverrunHours);
-            writer.WriteIntValue("Completed", Completed);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteGuidValue("DefaultItem", DefaultItem);
-            writer.WriteIntValue("DefaultItemIsMandatory", DefaultItemIsMandatory);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("InvoiceDate", InvoiceDate);
-            writer.WriteIntValue("InvoiceMethod", InvoiceMethod);
-            writer.WriteIntValue("InvoiceSeparately", InvoiceSeparately);
-            writer.WriteDoubleValue("MarkupPercentage", MarkupPercentage);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteIntValue("Milestone", Milestone);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteGuidValue("PartOf", PartOf);
-            writer.WriteStringValue("PartOfDescription", PartOfDescription);
-            writer.WriteGuidValue("Project", Project);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteGuidValue("ProjectTerm", ProjectTerm);
-            writer.WriteStringValue("ProjectTermDescription", ProjectTermDescription);
-            writer.WriteDoubleValue("PurchasePrice", PurchasePrice);
-            writer.WriteIntValue("SequenceNumber", SequenceNumber);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteGuidValue("Supplier", Supplier);
-            writer.WriteDoubleValue("TimeQuantityToAlert", TimeQuantityToAlert);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManufacturingBillOfMaterialMaterialsPost : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingBillOfMaterialMaterialsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if this is a backflush item</summary>
         public int? Backflush { get; set; }
         /// <summary>Calculator type</summary>
@@ -57,10 +55,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Net weight</summary>
         public double? NetWeight { get; set; }
@@ -82,13 +80,6 @@ namespace ExactOnline.Api.Client.Models
         public int? Type { get; set; }
         /// <summary>Waste percentage must be null or integer from 1 to 9999 (only available in Manufacturing Professional and Premium)</summary>
         public double? WastePercentage { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingBillOfMaterialMaterialsPost"/> and sets the default values.
-        /// </summary>
-        public ManufacturingBillOfMaterialMaterialsPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -140,7 +131,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("DetailDrawing", DetailDrawing);
             writer.WriteGuidValue("ID", ID);
             writer.WriteGuidValue("ItemVersion", ItemVersion);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDoubleValue("NetWeight", NetWeight);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteGuidValue("PartItem", PartItem);
@@ -148,7 +138,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("RoutingStepID", RoutingStepID);
             writer.WriteIntValue("Type", Type);
             writer.WriteDoubleValue("WastePercentage", WastePercentage);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

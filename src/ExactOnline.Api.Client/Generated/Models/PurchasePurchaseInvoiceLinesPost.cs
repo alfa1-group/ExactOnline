@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PurchasePurchaseInvoiceLinesPost : IAdditionalDataHolder, IParsable
+    public partial class PurchasePurchaseInvoiceLinesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>In a GET request the line amount is always returned excluding VAT in foreign currency.In a POST request the line amount has to be submitted either including or excluding the VAT amount. This depends on the type (including or excluding) of the VAT code.</summary>
         public double? Amount { get; set; }
         /// <summary>The code of the cost center that is linked to this invoice line.</summary>
@@ -51,10 +49,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The net price that has to be paid per unit. NetPrice = UnitPrice * (1.0 - Discount).Depending on the type of the VAT code the net price is including or excluding VAT.</summary>
         public double? NetPrice { get; set; }
@@ -86,13 +84,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCode { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PurchasePurchaseInvoiceLinesPost"/> and sets the default values.
-        /// </summary>
-        public PurchasePurchaseInvoiceLinesPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -146,7 +137,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("Expense", Expense);
             writer.WriteGuidValue("ID", ID);
             writer.WriteGuidValue("Item", Item);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDoubleValue("NetPrice", NetPrice);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteGuidValue("Project", Project);
@@ -156,7 +146,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("UnitPrice", UnitPrice);
             writer.WriteDoubleValue("VATAmount", VATAmount);
             writer.WriteStringValue("VATCode", VATCode);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

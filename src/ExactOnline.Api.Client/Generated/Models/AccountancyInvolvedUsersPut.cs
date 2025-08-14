@@ -9,7 +9,7 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AccountancyInvolvedUsersPut : IAdditionalDataHolder, IParsable
+    public partial class AccountancyInvolvedUsersPut : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID of the account the user is involved with</summary>
@@ -22,8 +22,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountCity { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
         /// <summary>ID of the user role</summary>
@@ -33,20 +31,13 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>ID of the involved user</summary>
         public Guid? User { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.AccountancyInvolvedUsersPut"/> and sets the default values.
-        /// </summary>
-        public AccountancyInvolvedUsersPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -86,9 +77,7 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("ID", ID);
             writer.WriteGuidValue("InvolvedUserRole", InvolvedUserRole);
             writer.WriteBoolValue("IsMainContact", IsMainContact);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("User", User);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

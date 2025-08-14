@@ -9,146 +9,137 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SalesSalesPriceListVolumeDiscounts : IAdditionalDataHolder, IParsable
+    public partial class SalesSalesPriceListVolumeDiscounts : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of the base price.  If base price = use the standard sales price, it shows null.  If base price = set sales price, it shows ID of the sales price within this volume discount.</summary>
-        public Guid? BasePrice { get; set; }
+        public Guid? BasePrice { get; private set; }
         /// <summary>Amount of the base price.  If base price = use the standard sales price, it shows the latest item sales price. If base price = set sales price, it shows the base price which defined in price list.</summary>
-        public double? BasePriceAmount { get; set; }
+        public double? BasePriceAmount { get; private set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Discount</summary>
-        public double? Discount { get; set; }
+        public double? Discount { get; private set; }
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Indicates whether discount or the new price is leading : 1-Discount, 2-New price.  Scenario  1. When entry method is Discount and use base price, Discounted price = (1 - SalesPriceListVolumeDiscounts.Discount) * SalesPriceListVolumeDiscounts.BasePriceAmount  2. When entry method is Discount and use Item&apos;s standard sales price, Discounted price = (1 - SalesPriceListVolumeDiscounts.Discount) * SalesItemPrices.Price  3. When entry method is New price, Discounted price = SalesPriceListVolumeDiscounts.NewPrice</summary>
-        public int? EntryMethod { get; set; }
+        public int? EntryMethod { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Item ID</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>Item code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Description of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>Item group ID</summary>
-        public Guid? ItemGroup { get; set; }
+        public Guid? ItemGroup { get; private set; }
         /// <summary>Item group code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemGroupCode { get; set; }
+        public string? ItemGroupCode { get; private set; }
 #nullable restore
 #else
-        public string ItemGroupCode { get; set; }
+        public string ItemGroupCode { get; private set; }
 #endif
         /// <summary>Item group description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemGroupDescription { get; set; }
+        public string? ItemGroupDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemGroupDescription { get; set; }
+        public string ItemGroupDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>New price after discount</summary>
-        public double? NewPrice { get; set; }
+        public double? NewPrice { get; private set; }
         /// <summary>Number of the item per unit</summary>
-        public double? NumberOfItemsPerUnit { get; set; }
+        public double? NumberOfItemsPerUnit { get; private set; }
         /// <summary>Code of the PriceList</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PriceListCode { get; set; }
+        public string? PriceListCode { get; private set; }
 #nullable restore
 #else
-        public string PriceListCode { get; set; }
+        public string PriceListCode { get; private set; }
 #endif
         /// <summary>Description of the PriceList</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PriceListDescription { get; set; }
+        public string? PriceListDescription { get; private set; }
 #nullable restore
 #else
-        public string PriceListDescription { get; set; }
+        public string PriceListDescription { get; private set; }
 #endif
         /// <summary>Price list period ID</summary>
-        public Guid? PriceListPeriod { get; set; }
+        public Guid? PriceListPeriod { get; private set; }
         /// <summary>Quantity</summary>
-        public double? Quantity { get; set; }
+        public double? Quantity { get; private set; }
         /// <summary>Default sales unit of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalesUnit { get; set; }
+        public string? SalesUnit { get; private set; }
 #nullable restore
 #else
-        public string SalesUnit { get; set; }
+        public string SalesUnit { get; private set; }
 #endif
         /// <summary>Unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit { get; set; }
+        public string? Unit { get; private set; }
 #nullable restore
 #else
-        public string Unit { get; set; }
+        public string Unit { get; private set; }
 #endif
         /// <summary>Description of the unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitDescription { get; set; }
+        public string? UnitDescription { get; private set; }
 #nullable restore
 #else
-        public string UnitDescription { get; set; }
+        public string UnitDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesSalesPriceListVolumeDiscounts"/> and sets the default values.
-        /// </summary>
-        public SalesSalesPriceListVolumeDiscounts()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -204,35 +195,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("BasePrice", BasePrice);
-            writer.WriteDoubleValue("BasePriceAmount", BasePriceAmount);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteDoubleValue("Discount", Discount);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteIntValue("EntryMethod", EntryMethod);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteGuidValue("ItemGroup", ItemGroup);
-            writer.WriteStringValue("ItemGroupCode", ItemGroupCode);
-            writer.WriteStringValue("ItemGroupDescription", ItemGroupDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteDoubleValue("NewPrice", NewPrice);
-            writer.WriteDoubleValue("NumberOfItemsPerUnit", NumberOfItemsPerUnit);
-            writer.WriteStringValue("PriceListCode", PriceListCode);
-            writer.WriteStringValue("PriceListDescription", PriceListDescription);
-            writer.WriteGuidValue("PriceListPeriod", PriceListPeriod);
-            writer.WriteDoubleValue("Quantity", Quantity);
-            writer.WriteStringValue("SalesUnit", SalesUnit);
-            writer.WriteStringValue("Unit", Unit);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

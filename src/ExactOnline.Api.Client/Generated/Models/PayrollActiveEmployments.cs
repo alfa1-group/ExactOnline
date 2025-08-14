@@ -9,180 +9,171 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PayrollActiveEmployments : IAdditionalDataHolder, IParsable
+    public partial class PayrollActiveEmployments : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The average number of contract days that an employee works per week</summary>
-        public double? AverageDaysPerWeek { get; set; }
+        public double? AverageDaysPerWeek { get; private set; }
         /// <summary>The average number of contract hours that an employee works per week</summary>
-        public double? AverageHoursPerWeek { get; set; }
+        public double? AverageHoursPerWeek { get; private set; }
         /// <summary>Employment contract ID</summary>
-        public Guid? Contract { get; set; }
+        public Guid? Contract { get; private set; }
         /// <summary>Document ID of the employment contract</summary>
-        public Guid? ContractDocument { get; set; }
+        public Guid? ContractDocument { get; private set; }
         /// <summary>End date of employment contract</summary>
-        public DateTimeOffset? ContractEndDate { get; set; }
+        public DateTimeOffset? ContractEndDate { get; private set; }
         /// <summary>Employment probation end date</summary>
-        public DateTimeOffset? ContractProbationEndDate { get; set; }
+        public DateTimeOffset? ContractProbationEndDate { get; private set; }
         /// <summary>Employment probation period</summary>
-        public int? ContractProbationPeriod { get; set; }
+        public int? ContractProbationPeriod { get; private set; }
         /// <summary>Start date of employment contract</summary>
-        public DateTimeOffset? ContractStartDate { get; set; }
+        public DateTimeOffset? ContractStartDate { get; private set; }
         /// <summary>Type of employment contract. 1 - Definite, 2 - Indefinite, 3 - External</summary>
-        public int? ContractType { get; set; }
+        public int? ContractType { get; private set; }
         /// <summary>Description of employment contract type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContractTypeDescription { get; set; }
+        public string? ContractTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string ContractTypeDescription { get; set; }
+        public string ContractTypeDescription { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Department of employee</summary>
-        public Guid? Department { get; set; }
+        public Guid? Department { get; private set; }
         /// <summary>Department code of employee</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DepartmentCode { get; set; }
+        public string? DepartmentCode { get; private set; }
 #nullable restore
 #else
-        public string DepartmentCode { get; set; }
+        public string DepartmentCode { get; private set; }
 #endif
         /// <summary>Description of department</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DepartmentDescription { get; set; }
+        public string? DepartmentDescription { get; private set; }
 #nullable restore
 #else
-        public string DepartmentDescription { get; set; }
+        public string DepartmentDescription { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Employee ID</summary>
-        public Guid? Employee { get; set; }
+        public Guid? Employee { get; private set; }
         /// <summary>Name of employee</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeFullName { get; set; }
+        public string? EmployeeFullName { get; private set; }
 #nullable restore
 #else
-        public string EmployeeFullName { get; set; }
+        public string EmployeeFullName { get; private set; }
 #endif
         /// <summary>Numeric number of Employee</summary>
-        public int? EmployeeHID { get; set; }
+        public int? EmployeeHID { get; private set; }
         /// <summary>Organization of employment</summary>
-        public Guid? EmploymentOrganization { get; set; }
+        public Guid? EmploymentOrganization { get; private set; }
         /// <summary>End date of employment</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Numeric ID of the employment</summary>
-        public int? HID { get; set; }
+        public int? HID { get; private set; }
         /// <summary>Hourly wage</summary>
-        public double? HourlyWage { get; set; }
+        public double? HourlyWage { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Internal rate for time &amp;amp; billing or professional service user</summary>
-        public double? InternalRate { get; set; }
+        public double? InternalRate { get; private set; }
         /// <summary>Job title of employee</summary>
-        public Guid? Jobtitle { get; set; }
+        public Guid? Jobtitle { get; private set; }
         /// <summary>Description of job title</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobtitleDescription { get; set; }
+        public string? JobtitleDescription { get; private set; }
 #nullable restore
 #else
-        public string JobtitleDescription { get; set; }
+        public string JobtitleDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>ID of employment ended</summary>
-        public int? ReasonEnd { get; set; }
+        public int? ReasonEnd { get; private set; }
         /// <summary>Reason of end of employment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReasonEndDescription { get; set; }
+        public string? ReasonEndDescription { get; private set; }
 #nullable restore
 #else
-        public string ReasonEndDescription { get; set; }
+        public string ReasonEndDescription { get; private set; }
 #endif
         /// <summary>Reason of ended flexible employment</summary>
-        public int? ReasonEndFlex { get; set; }
+        public int? ReasonEndFlex { get; private set; }
         /// <summary>Other reason for end of employment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReasonEndFlexDescription { get; set; }
+        public string? ReasonEndFlexDescription { get; private set; }
 #nullable restore
 #else
-        public string ReasonEndFlexDescription { get; set; }
+        public string ReasonEndFlexDescription { get; private set; }
 #endif
         /// <summary>Employment salary</summary>
-        public Guid? Salary { get; set; }
+        public Guid? Salary { get; private set; }
         /// <summary>Work schedule</summary>
-        public Guid? Schedule { get; set; }
+        public Guid? Schedule { get; private set; }
         /// <summary>Average hours per week in a schedule.</summary>
-        public double? ScheduleAverageHours { get; set; }
+        public double? ScheduleAverageHours { get; private set; }
         /// <summary>Work schedule code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScheduleCode { get; set; }
+        public string? ScheduleCode { get; private set; }
 #nullable restore
 #else
-        public string ScheduleCode { get; set; }
+        public string ScheduleCode { get; private set; }
 #endif
         /// <summary>Number of days of work per week</summary>
-        public double? ScheduleDays { get; set; }
+        public double? ScheduleDays { get; private set; }
         /// <summary>Description of work schedule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScheduleDescription { get; set; }
+        public string? ScheduleDescription { get; private set; }
 #nullable restore
 #else
-        public string ScheduleDescription { get; set; }
+        public string ScheduleDescription { get; private set; }
 #endif
         /// <summary>Number of work hours per week.</summary>
-        public double? ScheduleHours { get; set; }
+        public double? ScheduleHours { get; private set; }
         /// <summary>Start date of employment</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>Start date of the employee in the organization. This field is used to count the years in service.</summary>
-        public DateTimeOffset? StartDateOrganization { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PayrollActiveEmployments"/> and sets the default values.
-        /// </summary>
-        public PayrollActiveEmployments()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public DateTimeOffset? StartDateOrganization { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -255,52 +246,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("AverageDaysPerWeek", AverageDaysPerWeek);
-            writer.WriteDoubleValue("AverageHoursPerWeek", AverageHoursPerWeek);
-            writer.WriteGuidValue("Contract", Contract);
-            writer.WriteGuidValue("ContractDocument", ContractDocument);
-            writer.WriteDateTimeOffsetValue("ContractEndDate", ContractEndDate);
-            writer.WriteDateTimeOffsetValue("ContractProbationEndDate", ContractProbationEndDate);
-            writer.WriteIntValue("ContractProbationPeriod", ContractProbationPeriod);
-            writer.WriteDateTimeOffsetValue("ContractStartDate", ContractStartDate);
-            writer.WriteIntValue("ContractType", ContractType);
-            writer.WriteStringValue("ContractTypeDescription", ContractTypeDescription);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteGuidValue("Department", Department);
-            writer.WriteStringValue("DepartmentCode", DepartmentCode);
-            writer.WriteStringValue("DepartmentDescription", DepartmentDescription);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
-            writer.WriteIntValue("EmployeeHID", EmployeeHID);
-            writer.WriteGuidValue("EmploymentOrganization", EmploymentOrganization);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteIntValue("HID", HID);
-            writer.WriteDoubleValue("HourlyWage", HourlyWage);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDoubleValue("InternalRate", InternalRate);
-            writer.WriteGuidValue("Jobtitle", Jobtitle);
-            writer.WriteStringValue("JobtitleDescription", JobtitleDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteIntValue("ReasonEnd", ReasonEnd);
-            writer.WriteStringValue("ReasonEndDescription", ReasonEndDescription);
-            writer.WriteIntValue("ReasonEndFlex", ReasonEndFlex);
-            writer.WriteStringValue("ReasonEndFlexDescription", ReasonEndFlexDescription);
-            writer.WriteGuidValue("Salary", Salary);
-            writer.WriteGuidValue("Schedule", Schedule);
-            writer.WriteDoubleValue("ScheduleAverageHours", ScheduleAverageHours);
-            writer.WriteStringValue("ScheduleCode", ScheduleCode);
-            writer.WriteDoubleValue("ScheduleDays", ScheduleDays);
-            writer.WriteStringValue("ScheduleDescription", ScheduleDescription);
-            writer.WriteDoubleValue("ScheduleHours", ScheduleHours);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteDateTimeOffsetValue("StartDateOrganization", StartDateOrganization);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

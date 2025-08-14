@@ -9,13 +9,11 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManufacturingTimeTransactions : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingTimeTransactions : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Manufacturing time type: Setup = 10, Run = 20</summary>
         public int? Activity { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>User ID of creator</summary>
@@ -45,10 +43,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -84,13 +82,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? TimedTimeTransaction { get; set; }
         /// <summary>Workcenter linked to the transaction</summary>
         public Guid? WorkCenter { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingTimeTransactions"/> and sets the default values.
-        /// </summary>
-        public ManufacturingTimeTransactions()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -152,7 +143,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("ID", ID);
             writer.WriteIntValue("IsOperationFinished", IsOperationFinished);
             writer.WriteDoubleValue("LaborHours", LaborHours);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
@@ -164,7 +154,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("Status", Status);
             writer.WriteGuidValue("TimedTimeTransaction", TimedTimeTransaction);
             writer.WriteGuidValue("WorkCenter", WorkCenter);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

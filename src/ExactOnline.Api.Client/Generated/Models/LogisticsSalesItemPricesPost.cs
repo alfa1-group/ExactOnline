@@ -9,13 +9,11 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LogisticsSalesItemPricesPost : IAdditionalDataHolder, IParsable
+    public partial class LogisticsSalesItemPricesPost : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID of the customer</summary>
         public Guid? Account { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The currency of the price</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,10 +33,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>This is the multiplication factor when going from default item unit to the unit of this price.For example if the default item unit is &apos;gram&apos; and the price unit is &apos;kilogram&apos; then the value of this property is 1000.</summary>
         public double? NumberOfItemsPerUnit { get; set; }
@@ -58,13 +56,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Unit { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.LogisticsSalesItemPricesPost"/> and sets the default values.
-        /// </summary>
-        public LogisticsSalesItemPricesPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -111,14 +102,12 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDateTimeOffsetValue("EndDate", EndDate);
             writer.WriteGuidValue("ID", ID);
             writer.WriteGuidValue("Item", Item);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDoubleValue("NumberOfItemsPerUnit", NumberOfItemsPerUnit);
             writer.WriteDoubleValue("Price", Price);
             writer.WriteGuidValue("Project", Project);
             writer.WriteDoubleValue("Quantity", Quantity);
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteStringValue("Unit", Unit);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

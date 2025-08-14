@@ -9,144 +9,135 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PayrollEmploymentContracts : IAdditionalDataHolder, IParsable
+    public partial class PayrollEmploymentContracts : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Flexible employment contract phase</summary>
-        public int? ContractFlexPhase { get; set; }
+        public int? ContractFlexPhase { get; private set; }
         /// <summary>Flexible employment contract phase description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContractFlexPhaseDescription { get; set; }
+        public string? ContractFlexPhaseDescription { get; private set; }
 #nullable restore
 #else
-        public string ContractFlexPhaseDescription { get; set; }
+        public string ContractFlexPhaseDescription { get; private set; }
 #endif
         /// <summary>Confirmation: Create Auto CorrectionWhen the &apos;payroll run&apos; already finalized and the update is made to the employment contract start date, the system will first block the PUT action with the message below.With the &apos;PayrollCorrection&apos; right, the error message below will be thrown: This change will lead to a recalculation of previous periods. A correction request will be created with the following data:  Activation date: 01-01-2019  Payroll year: 2019  Period: 1 If you are confirmed want to proceed, set the [CreateAutoCorrection] to True and re-submit the request.Without the &apos;PayrollCorrection&apos; right, the error message below will be thrown: You do not have rights to change data that can influence processed payroll transactions.Note : If you delete this contract in an already calculated period, auto corrections will be created for this employee.</summary>
-        public bool? CreateAutoCorrection { get; set; }
+        public bool? CreateAutoCorrection { get; private set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>Confirmation: Create Predecessors For Linked AgenciesThe system will block the POST/PUT action when one of the condition below fulfilled:When create (POST) a new successor, the employment contract successor start date is set to an earlier payroll year.When update (PUT) the existing employment contract start date to an earlier payroll year.The error message below will be thrown: Attention: If you change the start date to an earlier payroll year, predecessors will be created for linked agencies. You will have to check if the data of the predecessors is correct. If you are confirmed want to proceed, set the [CreatePredecessorsForLinkedAgencies] to True and re-submit the request.</summary>
-        public bool? CreatePredecessorsForLinkedAgencies { get; set; }
+        public bool? CreatePredecessorsForLinkedAgencies { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Document ID of the employment contract</summary>
-        public Guid? Document { get; set; }
+        public Guid? Document { get; private set; }
         /// <summary>ID of employee</summary>
-        public Guid? Employee { get; set; }
+        public Guid? Employee { get; private set; }
         /// <summary>Name of employee</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeFullName { get; set; }
+        public string? EmployeeFullName { get; private set; }
 #nullable restore
 #else
-        public string EmployeeFullName { get; set; }
+        public string EmployeeFullName { get; private set; }
 #endif
         /// <summary>Numeric ID of the employee</summary>
-        public int? EmployeeHID { get; set; }
+        public int? EmployeeHID { get; private set; }
         /// <summary>Type of employee. 1 - Employee, 2 - Contractor, 3 - Temporary, 4 - Student, 5 - Flexworker</summary>
-        public int? EmployeeType { get; set; }
+        public int? EmployeeType { get; private set; }
         /// <summary>Employee type description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeTypeDescription { get; set; }
+        public string? EmployeeTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string EmployeeTypeDescription { get; set; }
+        public string EmployeeTypeDescription { get; private set; }
 #endif
         /// <summary>Employment ID</summary>
-        public Guid? Employment { get; set; }
+        public Guid? Employment { get; private set; }
         /// <summary>Obsolete</summary>
-        public int? EmploymentHID { get; set; }
+        public int? EmploymentHID { get; private set; }
         /// <summary>Employment number</summary>
-        public int? EmploymentNumber { get; set; }
+        public int? EmploymentNumber { get; private set; }
         /// <summary>End date of employment contract</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Obsolete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Employment probation end date</summary>
-        public DateTimeOffset? ProbationEndDate { get; set; }
+        public DateTimeOffset? ProbationEndDate { get; private set; }
         /// <summary>Employment probation period</summary>
-        public int? ProbationPeriod { get; set; }
+        public int? ProbationPeriod { get; private set; }
         /// <summary>Contract probation period description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProbationPeriodDescription { get; set; }
+        public string? ProbationPeriodDescription { get; private set; }
 #nullable restore
 #else
-        public string ProbationPeriodDescription { get; set; }
+        public string ProbationPeriodDescription { get; private set; }
 #endif
         /// <summary>Employment contract reason code. 1 - New employment, 2 - Employment change, 3 - New legal employer, 4 - Acquisition 5 - Previous contract expired, 6 - Other</summary>
-        public int? ReasonContract { get; set; }
+        public int? ReasonContract { get; private set; }
         /// <summary>Employment contract reason description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReasonContractDescription { get; set; }
+        public string? ReasonContractDescription { get; private set; }
 #nullable restore
 #else
-        public string ReasonContractDescription { get; set; }
+        public string ReasonContractDescription { get; private set; }
 #endif
         /// <summary>Sequence number</summary>
-        public int? Sequence { get; set; }
+        public int? Sequence { get; private set; }
         /// <summary>Start date of employment contractNote : Be aware that for PUT, when you use a start date in the past it will also update years in service to this date.</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>Type of employment contract. 1 - Definite, 2 - Indefinite, 3 - External</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>Description of employment contract type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TypeDescription { get; set; }
+        public string? TypeDescription { get; private set; }
 #nullable restore
 #else
-        public string TypeDescription { get; set; }
+        public string TypeDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PayrollEmploymentContracts"/> and sets the default values.
-        /// </summary>
-        public PayrollEmploymentContracts()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -207,40 +198,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("ContractFlexPhase", ContractFlexPhase);
-            writer.WriteStringValue("ContractFlexPhaseDescription", ContractFlexPhaseDescription);
-            writer.WriteBoolValue("CreateAutoCorrection", CreateAutoCorrection);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteBoolValue("CreatePredecessorsForLinkedAgencies", CreatePredecessorsForLinkedAgencies);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Document", Document);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
-            writer.WriteIntValue("EmployeeHID", EmployeeHID);
-            writer.WriteIntValue("EmployeeType", EmployeeType);
-            writer.WriteStringValue("EmployeeTypeDescription", EmployeeTypeDescription);
-            writer.WriteGuidValue("Employment", Employment);
-            writer.WriteIntValue("EmploymentHID", EmploymentHID);
-            writer.WriteIntValue("EmploymentNumber", EmploymentNumber);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteDateTimeOffsetValue("ProbationEndDate", ProbationEndDate);
-            writer.WriteIntValue("ProbationPeriod", ProbationPeriod);
-            writer.WriteStringValue("ProbationPeriodDescription", ProbationPeriodDescription);
-            writer.WriteIntValue("ReasonContract", ReasonContract);
-            writer.WriteStringValue("ReasonContractDescription", ReasonContractDescription);
-            writer.WriteIntValue("Sequence", Sequence);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteStringValue("TypeDescription", TypeDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

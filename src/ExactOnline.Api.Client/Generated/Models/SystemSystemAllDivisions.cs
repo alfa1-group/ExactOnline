@@ -9,78 +9,76 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SystemSystemAllDivisions : IAdditionalDataHolder, IParsable
+    public partial class SystemSystemAllDivisions : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Address line 1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLine1 { get; set; }
+        public string? AddressLine1 { get; private set; }
 #nullable restore
 #else
-        public string AddressLine1 { get; set; }
+        public string AddressLine1 { get; private set; }
 #endif
         /// <summary>Address line 2</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLine2 { get; set; }
+        public string? AddressLine2 { get; private set; }
 #nullable restore
 #else
-        public string AddressLine2 { get; set; }
+        public string AddressLine2 { get; private set; }
 #endif
         /// <summary>Address line 3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLine3 { get; set; }
+        public string? AddressLine3 { get; private set; }
 #nullable restore
 #else
-        public string AddressLine3 { get; set; }
+        public string AddressLine3 { get; private set; }
 #endif
         /// <summary>Date on which the division is archived</summary>
-        public DateTimeOffset? ArchiveDate { get; set; }
+        public DateTimeOffset? ArchiveDate { get; private set; }
         /// <summary>Values: 0 = Not blocked, 1 = Backup/restore, 2 = Conversion busy, 3 = Conversion shadow, 4 = Conversion waiting, 5 = Copy data waiting, 6 = Copy data busy</summary>
-        public int? BlockingStatus { get; set; }
+        public int? BlockingStatus { get; private set; }
         /// <summary>Business type code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessTypeCode { get; set; }
+        public string? BusinessTypeCode { get; private set; }
 #nullable restore
 #else
-        public string BusinessTypeCode { get; set; }
+        public string BusinessTypeCode { get; private set; }
 #endif
         /// <summary>Business type description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessTypeDescription { get; set; }
+        public string? BusinessTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string BusinessTypeDescription { get; set; }
+        public string BusinessTypeDescription { get; private set; }
 #endif
         /// <summary>Chamber of commerce establishment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChamberOfCommerceEstablishment { get; set; }
+        public string? ChamberOfCommerceEstablishment { get; private set; }
 #nullable restore
 #else
-        public string ChamberOfCommerceEstablishment { get; set; }
+        public string ChamberOfCommerceEstablishment { get; private set; }
 #endif
         /// <summary>Chamber of commerce number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChamberOfCommerceNumber { get; set; }
+        public string? ChamberOfCommerceNumber { get; private set; }
 #nullable restore
 #else
-        public string ChamberOfCommerceNumber { get; set; }
+        public string ChamberOfCommerceNumber { get; private set; }
 #endif
         /// <summary>City</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City { get; set; }
+        public string? City { get; private set; }
 #nullable restore
 #else
-        public string City { get; set; }
+        public string City { get; private set; }
 #endif
         /// <summary>The Class_01 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,294 +121,287 @@ namespace ExactOnline.Api.Client.Models
         public global::ExactOnline.Api.Client.Models.HRMDivisionClasses Class05 { get; set; }
 #endif
         /// <summary>Primary key</summary>
-        public int? Code { get; set; }
+        public int? Code { get; private set; }
         /// <summary>Company size code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanySizeCode { get; set; }
+        public string? CompanySizeCode { get; private set; }
 #nullable restore
 #else
-        public string CompanySizeCode { get; set; }
+        public string CompanySizeCode { get; private set; }
 #endif
         /// <summary>Company size description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanySizeDescription { get; set; }
+        public string? CompanySizeDescription { get; private set; }
 #nullable restore
 #else
-        public string CompanySizeDescription { get; set; }
+        public string CompanySizeDescription { get; private set; }
 #endif
         /// <summary>Country of the division. Is used for determination of legislation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public string? Country { get; private set; }
 #nullable restore
 #else
-        public string Country { get; set; }
+        public string Country { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of the creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Default currency</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get; private set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get; private set; }
 #endif
         /// <summary>True when this division is most recently used by the API</summary>
-        public bool? Current { get; set; }
+        public bool? Current { get; private set; }
         /// <summary>Owner account of the division</summary>
-        public Guid? Customer { get; set; }
+        public Guid? Customer { get; private set; }
         /// <summary>Owner account code of the division</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerCode { get; set; }
+        public string? CustomerCode { get; private set; }
 #nullable restore
 #else
-        public string CustomerCode { get; set; }
+        public string CustomerCode { get; private set; }
 #endif
         /// <summary>Owner account name of the division</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerName { get; set; }
+        public string? CustomerName { get; private set; }
 #nullable restore
 #else
-        public string CustomerName { get; set; }
+        public string CustomerName { get; private set; }
 #endif
         /// <summary>Accountant number DATEV (Germany)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatevAccountantNumber { get; set; }
+        public string? DatevAccountantNumber { get; private set; }
 #nullable restore
 #else
-        public string DatevAccountantNumber { get; set; }
+        public string DatevAccountantNumber { get; private set; }
 #endif
         /// <summary>Client number DATEV (Germany)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatevClientNumber { get; set; }
+        public string? DatevClientNumber { get; private set; }
 #nullable restore
 #else
-        public string DatevClientNumber { get; set; }
+        public string DatevClientNumber { get; private set; }
 #endif
         /// <summary>Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Date when the division was linked or unlinked to Exact Online HR. Please resync all data when this value changes because value of Timestamp is regenerated.</summary>
-        public DateTimeOffset? DivisionHRLinkUnlinkDate { get; set; }
+        public DateTimeOffset? DivisionHRLinkUnlinkDate { get; private set; }
         /// <summary>Date when the division was moved. Please resync all data when this value changes because value of Timestamp is regenerated.</summary>
-        public DateTimeOffset? DivisionMoveDate { get; set; }
+        public DateTimeOffset? DivisionMoveDate { get; private set; }
         /// <summary>Email address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get; private set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get; private set; }
 #endif
         /// <summary>Fax number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fax { get; set; }
+        public string? Fax { get; private set; }
 #nullable restore
 #else
-        public string Fax { get; set; }
+        public string Fax { get; private set; }
 #endif
         /// <summary>Company number that is assigned by the customer</summary>
-        public long? Hid { get; set; }
+        public long? Hid { get; private set; }
         /// <summary>True if the division is a dossier division</summary>
-        public bool? IsDossierDivision { get; set; }
+        public bool? IsDossierDivision { get; private set; }
         /// <summary>True if the division is linked to Exact Online HR</summary>
-        public bool? IsHRDivision { get; set; }
+        public bool? IsHRDivision { get; private set; }
         /// <summary>True if the division is the main division</summary>
-        public bool? IsMainDivision { get; set; }
+        public bool? IsMainDivision { get; private set; }
         /// <summary>True if the division is a practice division</summary>
-        public bool? IsPracticeDivision { get; set; }
+        public bool? IsPracticeDivision { get; private set; }
         /// <summary>Legislation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Legislation { get; set; }
+        public string? Legislation { get; private set; }
 #nullable restore
 #else
-        public string Legislation { get; set; }
+        public string Legislation { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of the last modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>The soletrader VAT number used for offical returns to tax authority</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OBNumber { get; set; }
+        public string? OBNumber { get; private set; }
 #nullable restore
 #else
-        public string OBNumber { get; set; }
+        public string OBNumber { get; private set; }
 #endif
         /// <summary>Phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phone { get; set; }
+        public string? Phone { get; private set; }
 #nullable restore
 #else
-        public string Phone { get; set; }
+        public string Phone { get; private set; }
 #endif
         /// <summary>Postcode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Postcode { get; set; }
+        public string? Postcode { get; private set; }
 #nullable restore
 #else
-        public string Postcode { get; set; }
+        public string Postcode { get; private set; }
 #endif
         /// <summary>SBI code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SbiCode { get; set; }
+        public string? SbiCode { get; private set; }
 #nullable restore
 #else
-        public string SbiCode { get; set; }
+        public string SbiCode { get; private set; }
 #endif
         /// <summary>SBI description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SbiDescription { get; set; }
+        public string? SbiDescription { get; private set; }
 #nullable restore
 #else
-        public string SbiDescription { get; set; }
+        public string SbiDescription { get; private set; }
 #endif
         /// <summary>Sector code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SectorCode { get; set; }
+        public string? SectorCode { get; private set; }
 #nullable restore
 #else
-        public string SectorCode { get; set; }
+        public string SectorCode { get; private set; }
 #endif
         /// <summary>Sector description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SectorDescription { get; set; }
+        public string? SectorDescription { get; private set; }
 #nullable restore
 #else
-        public string SectorDescription { get; set; }
+        public string SectorDescription { get; private set; }
 #endif
         /// <summary>the part of the capital of a company that comes from the issue of shares (France)</summary>
-        public double? ShareCapital { get; set; }
+        public double? ShareCapital { get; private set; }
         /// <summary>An INSEE code which allows the geographic identification of the company. (France)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiretNumber { get; set; }
+        public string? SiretNumber { get; private set; }
 #nullable restore
 #else
-        public string SiretNumber { get; set; }
+        public string SiretNumber { get; private set; }
 #endif
         /// <summary>Date on which the division becomes active</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>State/Province code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? State { get; private set; }
 #nullable restore
 #else
-        public string State { get; set; }
+        public string State { get; private set; }
 #endif
         /// <summary>Follow the Division Status 0 for Inactive, 1 for Active and 2 for Archived Divisions</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>Subsector code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubsectorCode { get; set; }
+        public string? SubsectorCode { get; private set; }
 #nullable restore
 #else
-        public string SubsectorCode { get; set; }
+        public string SubsectorCode { get; private set; }
 #endif
         /// <summary>Subsector description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubsectorDescription { get; set; }
+        public string? SubsectorDescription { get; private set; }
 #nullable restore
 #else
-        public string SubsectorDescription { get; set; }
+        public string SubsectorDescription { get; private set; }
 #endif
         /// <summary>Number of your local tax authority (Germany)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxOfficeNumber { get; set; }
+        public string? TaxOfficeNumber { get; private set; }
 #nullable restore
 #else
-        public string TaxOfficeNumber { get; set; }
+        public string TaxOfficeNumber { get; private set; }
 #endif
         /// <summary>Local tax reference number (Germany)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxReferenceNumber { get; set; }
+        public string? TaxReferenceNumber { get; private set; }
 #nullable restore
 #else
-        public string TaxReferenceNumber { get; set; }
+        public string TaxReferenceNumber { get; private set; }
 #endif
         /// <summary>Division template code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateCode { get; set; }
+        public string? TemplateCode { get; private set; }
 #nullable restore
 #else
-        public string TemplateCode { get; set; }
+        public string TemplateCode { get; private set; }
 #endif
         /// <summary>The number under which the account is known at the Value Added Tax collection agency</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VATNumber { get; set; }
+        public string? VATNumber { get; private set; }
 #nullable restore
 #else
-        public string VATNumber { get; set; }
+        public string VATNumber { get; private set; }
 #endif
         /// <summary>Customer value, hyperlink to external website</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get; set; }
+        public string? Website { get; private set; }
 #nullable restore
 #else
-        public string Website { get; set; }
+        public string Website { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SystemSystemAllDivisions"/> and sets the default values.
-        /// </summary>
-        public SystemSystemAllDivisions()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -501,70 +492,11 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("AddressLine1", AddressLine1);
-            writer.WriteStringValue("AddressLine2", AddressLine2);
-            writer.WriteStringValue("AddressLine3", AddressLine3);
-            writer.WriteDateTimeOffsetValue("ArchiveDate", ArchiveDate);
-            writer.WriteIntValue("BlockingStatus", BlockingStatus);
-            writer.WriteStringValue("BusinessTypeCode", BusinessTypeCode);
-            writer.WriteStringValue("BusinessTypeDescription", BusinessTypeDescription);
-            writer.WriteStringValue("ChamberOfCommerceEstablishment", ChamberOfCommerceEstablishment);
-            writer.WriteStringValue("ChamberOfCommerceNumber", ChamberOfCommerceNumber);
-            writer.WriteStringValue("City", City);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_01", Class01);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_02", Class02);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_03", Class03);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_04", Class04);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClasses>("Class_05", Class05);
-            writer.WriteIntValue("Code", Code);
-            writer.WriteStringValue("CompanySizeCode", CompanySizeCode);
-            writer.WriteStringValue("CompanySizeDescription", CompanySizeDescription);
-            writer.WriteStringValue("Country", Country);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Currency", Currency);
-            writer.WriteBoolValue("Current", Current);
-            writer.WriteGuidValue("Customer", Customer);
-            writer.WriteStringValue("CustomerCode", CustomerCode);
-            writer.WriteStringValue("CustomerName", CustomerName);
-            writer.WriteStringValue("DatevAccountantNumber", DatevAccountantNumber);
-            writer.WriteStringValue("DatevClientNumber", DatevClientNumber);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteDateTimeOffsetValue("DivisionHRLinkUnlinkDate", DivisionHRLinkUnlinkDate);
-            writer.WriteDateTimeOffsetValue("DivisionMoveDate", DivisionMoveDate);
-            writer.WriteStringValue("Email", Email);
-            writer.WriteStringValue("Fax", Fax);
-            writer.WriteLongValue("Hid", Hid);
-            writer.WriteBoolValue("IsDossierDivision", IsDossierDivision);
-            writer.WriteBoolValue("IsHRDivision", IsHRDivision);
-            writer.WriteBoolValue("IsMainDivision", IsMainDivision);
-            writer.WriteBoolValue("IsPracticeDivision", IsPracticeDivision);
-            writer.WriteStringValue("Legislation", Legislation);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("OBNumber", OBNumber);
-            writer.WriteStringValue("Phone", Phone);
-            writer.WriteStringValue("Postcode", Postcode);
-            writer.WriteStringValue("SbiCode", SbiCode);
-            writer.WriteStringValue("SbiDescription", SbiDescription);
-            writer.WriteStringValue("SectorCode", SectorCode);
-            writer.WriteStringValue("SectorDescription", SectorDescription);
-            writer.WriteDoubleValue("ShareCapital", ShareCapital);
-            writer.WriteStringValue("SiretNumber", SiretNumber);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteStringValue("State", State);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteStringValue("SubsectorCode", SubsectorCode);
-            writer.WriteStringValue("SubsectorDescription", SubsectorDescription);
-            writer.WriteStringValue("TaxOfficeNumber", TaxOfficeNumber);
-            writer.WriteStringValue("TaxReferenceNumber", TaxReferenceNumber);
-            writer.WriteStringValue("TemplateCode", TemplateCode);
-            writer.WriteStringValue("VATNumber", VATNumber);
-            writer.WriteStringValue("Website", Website);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

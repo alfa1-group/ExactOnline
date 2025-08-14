@@ -9,230 +9,221 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadLogisticsAccountItems : IAdditionalDataHolder, IParsable
+    public partial class ReadLogisticsAccountItems : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Account</summary>
-        public Guid? Account { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public Guid? Account { get; private set; }
         /// <summary>Barcode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Barcode { get; set; }
+        public string? Barcode { get; private set; }
 #nullable restore
 #else
-        public string Barcode { get; set; }
+        public string Barcode { get; private set; }
 #endif
         /// <summary>Item code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get; private set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get; private set; }
 #endif
         /// <summary>Currency of cost price</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostPriceCurrency { get; set; }
+        public string? CostPriceCurrency { get; private set; }
 #nullable restore
 #else
-        public string CostPriceCurrency { get; set; }
+        public string CostPriceCurrency { get; private set; }
 #endif
         /// <summary>New cost price</summary>
-        public double? CostPriceNew { get; set; }
+        public double? CostPriceNew { get; private set; }
         /// <summary>Standard cost price</summary>
-        public double? CostPriceStandard { get; set; }
+        public double? CostPriceStandard { get; private set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of the creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of the creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Default sales price</summary>
-        public double? DefaultSalesPrice { get; set; }
+        public double? DefaultSalesPrice { get; private set; }
         /// <summary>Item Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>End date</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Item</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Indicates if decimals are allowed in quantities</summary>
-        public bool? IsFractionAllowedItem { get; set; }
+        public bool? IsFractionAllowedItem { get; private set; }
         /// <summary>Indicates if the item can be sold</summary>
-        public bool? IsSalesItem { get; set; }
+        public bool? IsSalesItem { get; private set; }
         /// <summary>If you have the Trade or Manufacturing license and you check this property, the item will be shown in the stock positions overview, stock counts and transaction lists</summary>
-        public bool? IsStockItem { get; set; }
+        public bool? IsStockItem { get; private set; }
         /// <summary>Indicates if tax needs to be calculated for this item</summary>
-        public int? IsTaxableItem { get; set; }
+        public int? IsTaxableItem { get; private set; }
         /// <summary>Indicates if this is a webshop item</summary>
-        public int? IsWebshopItem { get; set; }
+        public int? IsWebshopItem { get; private set; }
         /// <summary>Item group</summary>
-        public Guid? ItemGroup { get; set; }
+        public Guid? ItemGroup { get; private set; }
         /// <summary>Code of Item group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemGroupCode { get; set; }
+        public string? ItemGroupCode { get; private set; }
 #nullable restore
 #else
-        public string ItemGroupCode { get; set; }
+        public string ItemGroupCode { get; private set; }
 #endif
         /// <summary>Description of Item group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemGroupDescription { get; set; }
+        public string? ItemGroupDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemGroupDescription { get; set; }
+        public string ItemGroupDescription { get; private set; }
 #endif
         /// <summary>Margin</summary>
-        public double? Margin { get; set; }
+        public double? Margin { get; private set; }
         /// <summary>Markup</summary>
-        public double? Markup { get; set; }
+        public double? Markup { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of the last modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of the last modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Extra remarks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>File name of picture</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PictureName { get; set; }
+        public string? PictureName { get; private set; }
 #nullable restore
 #else
-        public string PictureName { get; set; }
+        public string PictureName { get; private set; }
 #endif
         /// <summary>Url where thumbnail picture can be retrieved</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PictureThumbnailUrl { get; set; }
+        public string? PictureThumbnailUrl { get; private set; }
 #nullable restore
 #else
-        public string PictureThumbnailUrl { get; set; }
+        public string PictureThumbnailUrl { get; private set; }
 #endif
         /// <summary>Url where picture can be retrieved</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PictureUrl { get; set; }
+        public string? PictureUrl { get; private set; }
 #nullable restore
 #else
-        public string PictureUrl { get; set; }
+        public string PictureUrl { get; private set; }
 #endif
         /// <summary>The quantity of stock projected given all planned future stock changes</summary>
-        public double? ProjectedStock { get; set; }
+        public double? ProjectedStock { get; private set; }
         /// <summary>Number of days before purchase arrives</summary>
-        public int? PurchaseLeadDays { get; set; }
+        public int? PurchaseLeadDays { get; private set; }
         /// <summary>Quantity to be consumed</summary>
-        public double? QuantityToBeConsumed { get; set; }
+        public double? QuantityToBeConsumed { get; private set; }
         /// <summary>Quantity to be delivered</summary>
-        public double? QuantityToBeDelivered { get; set; }
+        public double? QuantityToBeDelivered { get; private set; }
         /// <summary>Quantity to be produced</summary>
-        public double? QuantityToBeProduced { get; set; }
+        public double? QuantityToBeProduced { get; private set; }
         /// <summary>Quantity to be received</summary>
-        public double? QuantityToBeReceived { get; set; }
+        public double? QuantityToBeReceived { get; private set; }
         /// <summary>Quantity in stock that is reserved</summary>
-        public double? ReservedStock { get; set; }
+        public double? ReservedStock { get; private set; }
         /// <summary>Currency of sales price</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalesCurrency { get; set; }
+        public string? SalesCurrency { get; private set; }
 #nullable restore
 #else
-        public string SalesCurrency { get; set; }
+        public string SalesCurrency { get; private set; }
 #endif
         /// <summary>Sales price</summary>
-        public double? SalesPrice { get; set; }
+        public double? SalesPrice { get; private set; }
         /// <summary>Sales vat code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalesVatCode { get; set; }
+        public string? SalesVatCode { get; private set; }
 #nullable restore
 #else
-        public string SalesVatCode { get; set; }
+        public string SalesVatCode { get; private set; }
 #endif
         /// <summary>Description of Sales vat code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalesVatCodeDescription { get; set; }
+        public string? SalesVatCodeDescription { get; private set; }
 #nullable restore
 #else
-        public string SalesVatCodeDescription { get; set; }
+        public string SalesVatCodeDescription { get; private set; }
 #endif
         /// <summary>Start date</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>Quantity that is in stock</summary>
-        public double? Stock { get; set; }
+        public double? Stock { get; private set; }
         /// <summary>Unit</summary>
-        public Guid? Unit { get; set; }
+        public Guid? Unit { get; private set; }
         /// <summary>Code of unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitCode { get; set; }
+        public string? UnitCode { get; private set; }
 #nullable restore
 #else
-        public string UnitCode { get; set; }
+        public string UnitCode { get; private set; }
 #endif
         /// <summary>Description of unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitDescription { get; set; }
+        public string? UnitDescription { get; private set; }
 #nullable restore
 #else
-        public string UnitDescription { get; set; }
+        public string UnitDescription { get; private set; }
 #endif
         /// <summary>Type of unit: A=Area, L=Length, O=Other, T=Time, V=Volume, W=Weight</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitType { get; set; }
+        public string? UnitType { get; private set; }
 #nullable restore
 #else
-        public string UnitType { get; set; }
+        public string UnitType { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadLogisticsAccountItems"/> and sets the default values.
-        /// </summary>
-        public ReadLogisticsAccountItems()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -309,56 +300,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Account", Account);
-            writer.WriteStringValue("Barcode", Barcode);
-            writer.WriteStringValue("Code", Code);
-            writer.WriteStringValue("CostPriceCurrency", CostPriceCurrency);
-            writer.WriteDoubleValue("CostPriceNew", CostPriceNew);
-            writer.WriteDoubleValue("CostPriceStandard", CostPriceStandard);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteDoubleValue("DefaultSalesPrice", DefaultSalesPrice);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteBoolValue("IsFractionAllowedItem", IsFractionAllowedItem);
-            writer.WriteBoolValue("IsSalesItem", IsSalesItem);
-            writer.WriteBoolValue("IsStockItem", IsStockItem);
-            writer.WriteIntValue("IsTaxableItem", IsTaxableItem);
-            writer.WriteIntValue("IsWebshopItem", IsWebshopItem);
-            writer.WriteGuidValue("ItemGroup", ItemGroup);
-            writer.WriteStringValue("ItemGroupCode", ItemGroupCode);
-            writer.WriteStringValue("ItemGroupDescription", ItemGroupDescription);
-            writer.WriteDoubleValue("Margin", Margin);
-            writer.WriteDoubleValue("Markup", Markup);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteStringValue("PictureName", PictureName);
-            writer.WriteStringValue("PictureThumbnailUrl", PictureThumbnailUrl);
-            writer.WriteStringValue("PictureUrl", PictureUrl);
-            writer.WriteDoubleValue("ProjectedStock", ProjectedStock);
-            writer.WriteIntValue("PurchaseLeadDays", PurchaseLeadDays);
-            writer.WriteDoubleValue("QuantityToBeConsumed", QuantityToBeConsumed);
-            writer.WriteDoubleValue("QuantityToBeDelivered", QuantityToBeDelivered);
-            writer.WriteDoubleValue("QuantityToBeProduced", QuantityToBeProduced);
-            writer.WriteDoubleValue("QuantityToBeReceived", QuantityToBeReceived);
-            writer.WriteDoubleValue("ReservedStock", ReservedStock);
-            writer.WriteStringValue("SalesCurrency", SalesCurrency);
-            writer.WriteDoubleValue("SalesPrice", SalesPrice);
-            writer.WriteStringValue("SalesVatCode", SalesVatCode);
-            writer.WriteStringValue("SalesVatCodeDescription", SalesVatCodeDescription);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteDoubleValue("Stock", Stock);
-            writer.WriteGuidValue("Unit", Unit);
-            writer.WriteStringValue("UnitCode", UnitCode);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
-            writer.WriteStringValue("UnitType", UnitType);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

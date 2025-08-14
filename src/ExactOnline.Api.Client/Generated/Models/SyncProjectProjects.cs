@@ -9,270 +9,261 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncProjectProjects : IAdditionalDataHolder, IParsable
+    public partial class SyncProjectProjects : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account for this project</summary>
-        public Guid? Account { get; set; }
+        public Guid? Account { get; private set; }
         /// <summary>Code of Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCode { get; set; }
+        public string? AccountCode { get; private set; }
 #nullable restore
 #else
-        public string AccountCode { get; set; }
+        public string AccountCode { get; private set; }
 #endif
         /// <summary>Contact person of Account</summary>
-        public Guid? AccountContact { get; set; }
+        public Guid? AccountContact { get; private set; }
         /// <summary>Name of Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get; private set; }
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get; private set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if additional invoice is allowed for project</summary>
-        public bool? AllowAdditionalInvoicing { get; set; }
+        public bool? AllowAdditionalInvoicing { get; private set; }
         /// <summary>Allow only member to create time or cost entry</summary>
-        public bool? AllowMemberEntryOnly { get; set; }
+        public bool? AllowMemberEntryOnly { get; private set; }
         /// <summary>Block time and cost entries</summary>
-        public bool? BlockEntry { get; set; }
+        public bool? BlockEntry { get; private set; }
         /// <summary>Block invoicing</summary>
-        public bool? BlockInvoicing { get; set; }
+        public bool? BlockInvoicing { get; private set; }
         /// <summary>Block planning and reservations</summary>
-        public bool? BlockPlanning { get; set; }
+        public bool? BlockPlanning { get; private set; }
         /// <summary>Block purchasing</summary>
-        public bool? BlockPurchasing { get; set; }
+        public bool? BlockPurchasing { get; private set; }
         /// <summary>Block rebilling</summary>
-        public bool? BlockRebilling { get; set; }
+        public bool? BlockRebilling { get; private set; }
         /// <summary>Budgeted amount of sales in the default currency of the company</summary>
-        public double? BudgetedAmount { get; set; }
+        public double? BudgetedAmount { get; private set; }
         /// <summary>Budgeted amount of costs in the default currency of the company</summary>
-        public double? BudgetedCosts { get; set; }
+        public double? BudgetedCosts { get; private set; }
         /// <summary>Budgeted amount of revenue in the default currency of the company</summary>
-        public double? BudgetedRevenue { get; set; }
+        public double? BudgetedRevenue { get; private set; }
         /// <summary>BudgetOverrunHours: 10-Allowed, 20-Not Allowed</summary>
-        public int? BudgetOverrunHours { get; set; }
+        public int? BudgetOverrunHours { get; private set; }
         /// <summary>Budget type</summary>
-        public int? BudgetType { get; set; }
+        public int? BudgetType { get; private set; }
         /// <summary>Budget type description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BudgetTypeDescription { get; set; }
+        public string? BudgetTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string BudgetTypeDescription { get; set; }
+        public string BudgetTypeDescription { get; private set; }
 #endif
         /// <summary>Used only for PSA to link a project classification to the project</summary>
-        public Guid? Classification { get; set; }
+        public Guid? Classification { get; private set; }
         /// <summary>Description of Classification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClassificationDescription { get; set; }
+        public string? ClassificationDescription { get; private set; }
 #nullable restore
 #else
-        public string ClassificationDescription { get; set; }
+        public string ClassificationDescription { get; private set; }
 #endif
         /// <summary>Code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get; private set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get; private set; }
 #endif
         /// <summary>Used only for PSA to store the budgetted costs of a project (except for project type Campaign and Non-billable). Positive quantities only</summary>
-        public double? CostsAmountFC { get; set; }
+        public double? CostsAmountFC { get; private set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Used only for PSA to store the customer&apos;s PO number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerPOnumber { get; set; }
+        public string? CustomerPOnumber { get; private set; }
 #nullable restore
 #else
-        public string CustomerPOnumber { get; set; }
+        public string CustomerPOnumber { get; private set; }
 #endif
         /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>Description of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Name of Division</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DivisionName { get; set; }
+        public string? DivisionName { get; private set; }
 #nullable restore
 #else
-        public string DivisionName { get; set; }
+        public string DivisionName { get; private set; }
 #endif
         /// <summary>Work in progress: To be invoiced</summary>
-        public bool? EnableWorkInProgress { get; set; }
+        public bool? EnableWorkInProgress { get; private set; }
         /// <summary>End date of the project. In combination with the start date the status is determined</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Item used for fixed price invoicing. To be defined per project. If empty the functionality relies on the setting</summary>
-        public Guid? FixedPriceItem { get; set; }
+        public Guid? FixedPriceItem { get; private set; }
         /// <summary>Description of FixedPriceItem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FixedPriceItemDescription { get; set; }
+        public string? FixedPriceItemDescription { get; private set; }
 #nullable restore
 #else
-        public string FixedPriceItemDescription { get; set; }
+        public string FixedPriceItemDescription { get; private set; }
 #endif
         /// <summary>Indicates if whether the Project has WBS</summary>
-        public bool? HasWBSLines { get; set; }
+        public bool? HasWBSLines { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Include invoice specification. E.g: 1 = Based on account, 2 = Always, 3 = Never</summary>
-        public int? IncludeInvoiceSpecification { get; set; }
+        public int? IncludeInvoiceSpecification { get; private set; }
         /// <summary>Indicates whether to include invoice specification in invoice PDF</summary>
-        public bool? IncludeSpecificationInInvoicePdf { get; set; }
+        public bool? IncludeSpecificationInInvoicePdf { get; private set; }
         /// <summary>Internal notes not to be printed in invoice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InternalNotes { get; set; }
+        public string? InternalNotes { get; private set; }
 #nullable restore
 #else
-        public string InternalNotes { get; set; }
+        public string InternalNotes { get; private set; }
 #endif
         /// <summary>Invoice address</summary>
-        public Guid? InvoiceAddress { get; set; }
+        public Guid? InvoiceAddress { get; private set; }
         /// <summary>Indicates whether the project is invoice as quoted</summary>
-        public bool? InvoiceAsQuoted { get; set; }
+        public bool? InvoiceAsQuoted { get; private set; }
         /// <summary>Description for generate project invoice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceDescription { get; set; }
+        public string? InvoiceDescription { get; private set; }
 #nullable restore
 #else
-        public string InvoiceDescription { get; set; }
+        public string InvoiceDescription { get; private set; }
 #endif
         /// <summary>Indicates whether the project WBS is required for time and cost entry E.g: 0 = Based on company setting, 1 = Yes, 2 = No</summary>
-        public int? IsWBSRequiredForEntry { get; set; }
+        public int? IsWBSRequiredForEntry { get; private set; }
         /// <summary>Responsible person for this project</summary>
-        public Guid? Manager { get; set; }
+        public Guid? Manager { get; private set; }
         /// <summary>Name of Manager</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagerFullname { get; set; }
+        public string? ManagerFullname { get; private set; }
 #nullable restore
 #else
-        public string ManagerFullname { get; set; }
+        public string ManagerFullname { get; private set; }
 #endif
         /// <summary>Purchase markup percentage</summary>
-        public double? MarkupPercentage { get; set; }
+        public double? MarkupPercentage { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>For additional information about projects</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Payment condition code for this project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentCondition { get; set; }
+        public string? PaymentCondition { get; private set; }
 #nullable restore
 #else
-        public string PaymentCondition { get; set; }
+        public string PaymentCondition { get; private set; }
 #endif
         /// <summary>Used only for PSA. This item is used for prepaid invoicing. If left empty, the functionality relies on a setting</summary>
-        public Guid? PrepaidItem { get; set; }
+        public Guid? PrepaidItem { get; private set; }
         /// <summary>Description of PrepaidItem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrepaidItemDescription { get; set; }
+        public string? PrepaidItemDescription { get; private set; }
 #nullable restore
 #else
-        public string PrepaidItemDescription { get; set; }
+        public string PrepaidItemDescription { get; private set; }
 #endif
         /// <summary>PrepaidType: 1-Retainer, 2-Hour type bundle</summary>
-        public int? PrepaidType { get; set; }
+        public int? PrepaidType { get; private set; }
         /// <summary>Description of PrepaidType</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrepaidTypeDescription { get; set; }
+        public string? PrepaidTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string PrepaidTypeDescription { get; set; }
+        public string PrepaidTypeDescription { get; private set; }
 #endif
         /// <summary>Budgeted time. Total number of hours estimated for the fixed price project</summary>
-        public double? SalesTimeQuantity { get; set; }
+        public double? SalesTimeQuantity { get; private set; }
         /// <summary>Source quotation</summary>
-        public Guid? SourceQuotation { get; set; }
+        public Guid? SourceQuotation { get; private set; }
         /// <summary>Start date of a project. In combination with the end date the status is determined</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>Alert when exceeding (Hours)</summary>
-        public double? TimeQuantityToAlert { get; set; }
+        public double? TimeQuantityToAlert { get; private set; }
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>Reference to ProjectTypes. E.g: 1 = Campaign , 2 = Fixed Price, 3 = Time and Material, 4 = Non billable, 5 = Prepaid</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>Description of Type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TypeDescription { get; set; }
+        public string? TypeDescription { get; private set; }
 #nullable restore
 #else
-        public string TypeDescription { get; set; }
+        public string TypeDescription { get; private set; }
 #endif
         /// <summary>Indicates whether the Project is using billing milestones</summary>
-        public bool? UseBillingMilestones { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncProjectProjects"/> and sets the default values.
-        /// </summary>
-        public SyncProjectProjects()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public bool? UseBillingMilestones { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -363,70 +354,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Account", Account);
-            writer.WriteStringValue("AccountCode", AccountCode);
-            writer.WriteGuidValue("AccountContact", AccountContact);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteBoolValue("AllowAdditionalInvoicing", AllowAdditionalInvoicing);
-            writer.WriteBoolValue("AllowMemberEntryOnly", AllowMemberEntryOnly);
-            writer.WriteBoolValue("BlockEntry", BlockEntry);
-            writer.WriteBoolValue("BlockInvoicing", BlockInvoicing);
-            writer.WriteBoolValue("BlockPlanning", BlockPlanning);
-            writer.WriteBoolValue("BlockPurchasing", BlockPurchasing);
-            writer.WriteBoolValue("BlockRebilling", BlockRebilling);
-            writer.WriteDoubleValue("BudgetedAmount", BudgetedAmount);
-            writer.WriteDoubleValue("BudgetedCosts", BudgetedCosts);
-            writer.WriteDoubleValue("BudgetedRevenue", BudgetedRevenue);
-            writer.WriteIntValue("BudgetOverrunHours", BudgetOverrunHours);
-            writer.WriteIntValue("BudgetType", BudgetType);
-            writer.WriteStringValue("BudgetTypeDescription", BudgetTypeDescription);
-            writer.WriteGuidValue("Classification", Classification);
-            writer.WriteStringValue("ClassificationDescription", ClassificationDescription);
-            writer.WriteStringValue("Code", Code);
-            writer.WriteDoubleValue("CostsAmountFC", CostsAmountFC);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("CustomerPOnumber", CustomerPOnumber);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteStringValue("DivisionName", DivisionName);
-            writer.WriteBoolValue("EnableWorkInProgress", EnableWorkInProgress);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteGuidValue("FixedPriceItem", FixedPriceItem);
-            writer.WriteStringValue("FixedPriceItemDescription", FixedPriceItemDescription);
-            writer.WriteBoolValue("HasWBSLines", HasWBSLines);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("IncludeInvoiceSpecification", IncludeInvoiceSpecification);
-            writer.WriteBoolValue("IncludeSpecificationInInvoicePdf", IncludeSpecificationInInvoicePdf);
-            writer.WriteStringValue("InternalNotes", InternalNotes);
-            writer.WriteGuidValue("InvoiceAddress", InvoiceAddress);
-            writer.WriteBoolValue("InvoiceAsQuoted", InvoiceAsQuoted);
-            writer.WriteStringValue("InvoiceDescription", InvoiceDescription);
-            writer.WriteIntValue("IsWBSRequiredForEntry", IsWBSRequiredForEntry);
-            writer.WriteGuidValue("Manager", Manager);
-            writer.WriteStringValue("ManagerFullname", ManagerFullname);
-            writer.WriteDoubleValue("MarkupPercentage", MarkupPercentage);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteStringValue("PaymentCondition", PaymentCondition);
-            writer.WriteGuidValue("PrepaidItem", PrepaidItem);
-            writer.WriteStringValue("PrepaidItemDescription", PrepaidItemDescription);
-            writer.WriteIntValue("PrepaidType", PrepaidType);
-            writer.WriteStringValue("PrepaidTypeDescription", PrepaidTypeDescription);
-            writer.WriteDoubleValue("SalesTimeQuantity", SalesTimeQuantity);
-            writer.WriteGuidValue("SourceQuotation", SourceQuotation);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteDoubleValue("TimeQuantityToAlert", TimeQuantityToAlert);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteStringValue("TypeDescription", TypeDescription);
-            writer.WriteBoolValue("UseBillingMilestones", UseBillingMilestones);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AssetsDepreciationMethodsPut : IAdditionalDataHolder, IParsable
+    public partial class AssetsDepreciationMethodsPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the method is fixed amount, this is the periodic depreciation amount</summary>
         public double? Amount { get; set; }
         /// <summary>Code of the depreciation method</summary>
@@ -47,10 +45,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Degressive percentage for methods: 10 - Degressive to linear, 11 - Degressive (fixed perc. of book value), 12 - Degressive to linear (Belgium &amp;amp; Luxembourg only). And interest percentage for method: 40 - Normal annuity method. On import: Can not be modified if depreciation method is already linked to an asset. For Belgium &amp;amp; Luxembourg the degressive percentage is calculated as double of the linear percentage</summary>
         public double? Percentage { get; set; }
@@ -62,13 +60,6 @@ namespace ExactOnline.Api.Client.Models
         public int? Type { get; set; }
         /// <summary>Determines the total number of years for the depreciation method. Used in combination with depreciation interval: only used when interval is yearly</summary>
         public int? Years { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.AssetsDepreciationMethodsPut"/> and sets the default values.
-        /// </summary>
-        public AssetsDepreciationMethodsPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -114,13 +105,11 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("Description", Description);
             writer.WriteGuidValue("ID", ID);
             writer.WriteDoubleValue("MaxPercentage", MaxPercentage);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDoubleValue("Percentage", Percentage);
             writer.WriteDoubleValue("Percentage2", Percentage2);
             writer.WriteIntValue("Periods", Periods);
             writer.WriteIntValue("Type", Type);
             writer.WriteIntValue("Years", Years);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

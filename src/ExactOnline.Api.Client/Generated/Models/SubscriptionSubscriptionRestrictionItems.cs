@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SubscriptionSubscriptionRestrictionItems : IAdditionalDataHolder, IParsable
+    public partial class SubscriptionSubscriptionRestrictionItems : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date and time when the subscription restriction was created</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>ID of user that created the subscription restriction</summary>
@@ -51,10 +49,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date of subscription restriction</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -80,13 +78,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>Subscription number that the restriction is referenced to</summary>
         public int? SubscriptionNumber { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionItems"/> and sets the default values.
-        /// </summary>
-        public SubscriptionSubscriptionRestrictionItems()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -137,14 +128,12 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("Item", Item);
             writer.WriteStringValue("ItemCode", ItemCode);
             writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
             writer.WriteGuidValue("Subscription", Subscription);
             writer.WriteStringValue("SubscriptionDescription", SubscriptionDescription);
             writer.WriteIntValue("SubscriptionNumber", SubscriptionNumber);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

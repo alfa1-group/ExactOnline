@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InventoryAssemblyBillOfMaterialHeaderPut : IAdditionalDataHolder, IParsable
+    public partial class InventoryAssemblyBillOfMaterialHeaderPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Main item assembly lead days</summary>
         public int? AssembledLeadDays { get; set; }
         /// <summary>Quantity of the material needed to produce the batch</summary>
@@ -23,22 +21,15 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Indicates if cost price is updated</summary>
         public bool? UpdateCostPrice { get; set; }
         /// <summary>Indicates if main item assemble at delivery is used</summary>
         public int? UseExplosion { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialHeaderPut"/> and sets the default values.
-        /// </summary>
-        public InventoryAssemblyBillOfMaterialHeaderPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -75,10 +66,8 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("AssembledLeadDays", AssembledLeadDays);
             writer.WriteDoubleValue("BatchQuantity", BatchQuantity);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteBoolValue("UpdateCostPrice", UpdateCostPrice);
             writer.WriteIntValue("UseExplosion", UseExplosion);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

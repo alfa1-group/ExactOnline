@@ -9,144 +9,135 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InventoryAssemblyOrders : IAdditionalDataHolder, IParsable
+    public partial class InventoryAssemblyOrders : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Planned date for assembly of the item</summary>
-        public DateTimeOffset? AssemblyDate { get; set; }
+        public DateTimeOffset? AssemblyDate { get; private set; }
         /// <summary>Description of assembly order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Latest finished date for assembly of the item</summary>
-        public DateTimeOffset? FinishedAssemblyDate { get; set; }
+        public DateTimeOffset? FinishedAssemblyDate { get; private set; }
         /// <summary>Quantity of items that have actually been assembled</summary>
-        public double? FinishedQuantity { get; set; }
+        public double? FinishedQuantity { get; private set; }
         /// <summary>A guid that is the unique identifier of the assembly order</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Reference to assembled item</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>Assembled item code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Description of assembled item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Notes of the assembly order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Date of the assembly order is initiated</summary>
-        public DateTimeOffset? OrderDate { get; set; }
+        public DateTimeOffset? OrderDate { get; private set; }
         /// <summary>Assembly order number</summary>
-        public int? OrderNumber { get; set; }
+        public int? OrderNumber { get; private set; }
         /// <summary>Assembly order status: 20 = Open, 30 = Partial, 50 = Complete</summary>
-        public int? OrderStatus { get; set; }
+        public int? OrderStatus { get; private set; }
         /// <summary>Collection of part items for assembly order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::ExactOnline.Api.Client.Models.InventoryAssemblyOrders_PartItems>? PartItems { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.InventoryAssemblyOrders_PartItems>? PartItems { get; private set; }
 #nullable restore
 #else
-        public List<global::ExactOnline.Api.Client.Models.InventoryAssemblyOrders_PartItems> PartItems { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.InventoryAssemblyOrders_PartItems> PartItems { get; private set; }
 #endif
         /// <summary>Planned quantity of the item to be assembled</summary>
-        public double? PlannedQuantity { get; set; }
+        public double? PlannedQuantity { get; private set; }
         /// <summary>Reference to storage location</summary>
-        public Guid? StorageLocation { get; set; }
+        public Guid? StorageLocation { get; private set; }
         /// <summary>Storage location code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StorageLocationCode { get; set; }
+        public string? StorageLocationCode { get; private set; }
 #nullable restore
 #else
-        public string StorageLocationCode { get; set; }
+        public string StorageLocationCode { get; private set; }
 #endif
         /// <summary>Storage location description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StorageLocationDescription { get; set; }
+        public string? StorageLocationDescription { get; private set; }
 #nullable restore
 #else
-        public string StorageLocationDescription { get; set; }
+        public string StorageLocationDescription { get; private set; }
 #endif
         /// <summary>Sequence number for assembly order (Premium Only)</summary>
-        public int? StorageLocationSequenceNumber { get; set; }
+        public int? StorageLocationSequenceNumber { get; private set; }
         /// <summary>Assembly order type: 8060 = Assembly, 8061 = Disassemble</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>The standard unit of the assembled item</summary>
-        public Guid? Unit { get; set; }
+        public Guid? Unit { get; private set; }
         /// <summary>Code of Unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitCode { get; set; }
+        public string? UnitCode { get; private set; }
 #nullable restore
 #else
-        public string UnitCode { get; set; }
+        public string UnitCode { get; private set; }
 #endif
         /// <summary>Description of Unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitDescription { get; set; }
+        public string? UnitDescription { get; private set; }
 #nullable restore
 #else
-        public string UnitDescription { get; set; }
+        public string UnitDescription { get; private set; }
 #endif
         /// <summary>Warehouse</summary>
-        public Guid? Warehouse { get; set; }
+        public Guid? Warehouse { get; private set; }
         /// <summary>Code of Warehouse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseCode { get; set; }
+        public string? WarehouseCode { get; private set; }
 #nullable restore
 #else
-        public string WarehouseCode { get; set; }
+        public string WarehouseCode { get; private set; }
 #endif
         /// <summary>Description of Warehouse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseDescription { get; set; }
+        public string? WarehouseDescription { get; private set; }
 #nullable restore
 #else
-        public string WarehouseDescription { get; set; }
+        public string WarehouseDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryAssemblyOrders"/> and sets the default values.
-        /// </summary>
-        public InventoryAssemblyOrders()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -201,34 +192,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("AssemblyDate", AssemblyDate);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDateTimeOffsetValue("FinishedAssemblyDate", FinishedAssemblyDate);
-            writer.WriteDoubleValue("FinishedQuantity", FinishedQuantity);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteDateTimeOffsetValue("OrderDate", OrderDate);
-            writer.WriteIntValue("OrderNumber", OrderNumber);
-            writer.WriteIntValue("OrderStatus", OrderStatus);
-            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryAssemblyOrders_PartItems>("PartItems", PartItems);
-            writer.WriteDoubleValue("PlannedQuantity", PlannedQuantity);
-            writer.WriteGuidValue("StorageLocation", StorageLocation);
-            writer.WriteStringValue("StorageLocationCode", StorageLocationCode);
-            writer.WriteStringValue("StorageLocationDescription", StorageLocationDescription);
-            writer.WriteIntValue("StorageLocationSequenceNumber", StorageLocationSequenceNumber);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteGuidValue("Unit", Unit);
-            writer.WriteStringValue("UnitCode", UnitCode);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,488 +9,479 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncPurchaseOrderPurchaseOrders : IAdditionalDataHolder, IParsable
+    public partial class SyncPurchaseOrderPurchaseOrders : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AmountDC property</summary>
-        public double? AmountDC { get; set; }
+        public double? AmountDC { get; private set; }
         /// <summary>The AmountFC property</summary>
-        public double? AmountFC { get; set; }
+        public double? AmountFC { get; private set; }
         /// <summary>The ApprovalStatus property</summary>
-        public int? ApprovalStatus { get; set; }
+        public int? ApprovalStatus { get; private set; }
         /// <summary>The ApprovalStatusDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApprovalStatusDescription { get; set; }
+        public string? ApprovalStatusDescription { get; private set; }
 #nullable restore
 #else
-        public string ApprovalStatusDescription { get; set; }
+        public string ApprovalStatusDescription { get; private set; }
 #endif
         /// <summary>The Approved property</summary>
-        public DateTimeOffset? Approved { get; set; }
+        public DateTimeOffset? Approved { get; private set; }
         /// <summary>The Approver property</summary>
-        public Guid? Approver { get; set; }
+        public Guid? Approver { get; private set; }
         /// <summary>The ApproverFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApproverFullName { get; set; }
+        public string? ApproverFullName { get; private set; }
 #nullable restore
 #else
-        public string ApproverFullName { get; set; }
+        public string ApproverFullName { get; private set; }
 #endif
         /// <summary>The CostCenter property</summary>
-        public Guid? CostCenter { get; set; }
+        public Guid? CostCenter { get; private set; }
         /// <summary>The CostCenterCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenterCode { get; set; }
+        public string? CostCenterCode { get; private set; }
 #nullable restore
 #else
-        public string CostCenterCode { get; set; }
+        public string CostCenterCode { get; private set; }
 #endif
         /// <summary>The CostCenterDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenterDescription { get; set; }
+        public string? CostCenterDescription { get; private set; }
 #nullable restore
 #else
-        public string CostCenterDescription { get; set; }
+        public string CostCenterDescription { get; private set; }
 #endif
         /// <summary>The CostUnit property</summary>
-        public Guid? CostUnit { get; set; }
+        public Guid? CostUnit { get; private set; }
         /// <summary>The CostUnitCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnitCode { get; set; }
+        public string? CostUnitCode { get; private set; }
 #nullable restore
 #else
-        public string CostUnitCode { get; set; }
+        public string CostUnitCode { get; private set; }
 #endif
         /// <summary>The CostUnitDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnitDescription { get; set; }
+        public string? CostUnitDescription { get; private set; }
 #nullable restore
 #else
-        public string CostUnitDescription { get; set; }
+        public string CostUnitDescription { get; private set; }
 #endif
         /// <summary>The Created property</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>The Creator property</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>The CreatorFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>The Currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get; private set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get; private set; }
 #endif
         /// <summary>The CustomField property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>The DeliveryAccount property</summary>
-        public Guid? DeliveryAccount { get; set; }
+        public Guid? DeliveryAccount { get; private set; }
         /// <summary>The DeliveryAccountCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAccountCode { get; set; }
+        public string? DeliveryAccountCode { get; private set; }
 #nullable restore
 #else
-        public string DeliveryAccountCode { get; set; }
+        public string DeliveryAccountCode { get; private set; }
 #endif
         /// <summary>The DeliveryAccountName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAccountName { get; set; }
+        public string? DeliveryAccountName { get; private set; }
 #nullable restore
 #else
-        public string DeliveryAccountName { get; set; }
+        public string DeliveryAccountName { get; private set; }
 #endif
         /// <summary>The DeliveryAddress property</summary>
-        public Guid? DeliveryAddress { get; set; }
+        public Guid? DeliveryAddress { get; private set; }
         /// <summary>The DeliveryContact property</summary>
-        public Guid? DeliveryContact { get; set; }
+        public Guid? DeliveryContact { get; private set; }
         /// <summary>The DeliveryContactPersonFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryContactPersonFullName { get; set; }
+        public string? DeliveryContactPersonFullName { get; private set; }
 #nullable restore
 #else
-        public string DeliveryContactPersonFullName { get; set; }
+        public string DeliveryContactPersonFullName { get; private set; }
 #endif
         /// <summary>The Description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>The Discount property</summary>
-        public double? Discount { get; set; }
+        public double? Discount { get; private set; }
         /// <summary>The Division property</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>The Document property</summary>
-        public Guid? Document { get; set; }
+        public Guid? Document { get; private set; }
         /// <summary>The DocumentNumber property</summary>
-        public int? DocumentNumber { get; set; }
+        public int? DocumentNumber { get; private set; }
         /// <summary>The DocumentSubject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentSubject { get; set; }
+        public string? DocumentSubject { get; private set; }
 #nullable restore
 #else
-        public string DocumentSubject { get; set; }
+        public string DocumentSubject { get; private set; }
 #endif
         /// <summary>The DropShipment property</summary>
-        public bool? DropShipment { get; set; }
+        public bool? DropShipment { get; private set; }
         /// <summary>The ExchangeRate property</summary>
-        public double? ExchangeRate { get; set; }
+        public double? ExchangeRate { get; private set; }
         /// <summary>The Expense property</summary>
-        public Guid? Expense { get; set; }
+        public Guid? Expense { get; private set; }
         /// <summary>The ExpenseDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpenseDescription { get; set; }
+        public string? ExpenseDescription { get; private set; }
 #nullable restore
 #else
-        public string ExpenseDescription { get; set; }
+        public string ExpenseDescription { get; private set; }
 #endif
         /// <summary>The ID property</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The IncotermAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncotermAddress { get; set; }
+        public string? IncotermAddress { get; private set; }
 #nullable restore
 #else
-        public string IncotermAddress { get; set; }
+        public string IncotermAddress { get; private set; }
 #endif
         /// <summary>The IncotermCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncotermCode { get; set; }
+        public string? IncotermCode { get; private set; }
 #nullable restore
 #else
-        public string IncotermCode { get; set; }
+        public string IncotermCode { get; private set; }
 #endif
         /// <summary>The IncotermVersion property</summary>
-        public int? IncotermVersion { get; set; }
+        public int? IncotermVersion { get; private set; }
         /// <summary>The InvoicedQuantity property</summary>
-        public double? InvoicedQuantity { get; set; }
+        public double? InvoicedQuantity { get; private set; }
         /// <summary>The InvoiceStatus property</summary>
-        public int? InvoiceStatus { get; set; }
+        public int? InvoiceStatus { get; private set; }
         /// <summary>The IsBatchNumberItem property</summary>
-        public int? IsBatchNumberItem { get; set; }
+        public int? IsBatchNumberItem { get; private set; }
         /// <summary>The IsSerialNumberItem property</summary>
-        public int? IsSerialNumberItem { get; set; }
+        public int? IsSerialNumberItem { get; private set; }
         /// <summary>The Item property</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>The ItemBarcode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemBarcode { get; set; }
+        public string? ItemBarcode { get; private set; }
 #nullable restore
 #else
-        public string ItemBarcode { get; set; }
+        public string ItemBarcode { get; private set; }
 #endif
         /// <summary>The ItemCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>The ItemDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>The ItemDivisable property</summary>
-        public bool? ItemDivisable { get; set; }
+        public bool? ItemDivisable { get; private set; }
         /// <summary>The LineNumber property</summary>
-        public int? LineNumber { get; set; }
+        public int? LineNumber { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The Modified property</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>The Modifier property</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>The ModifierFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>The NetPrice property</summary>
-        public double? NetPrice { get; set; }
+        public double? NetPrice { get; private set; }
         /// <summary>The Notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>The OrderDate property</summary>
-        public DateTimeOffset? OrderDate { get; set; }
+        public DateTimeOffset? OrderDate { get; private set; }
         /// <summary>The OrderNumber property</summary>
-        public int? OrderNumber { get; set; }
+        public int? OrderNumber { get; private set; }
         /// <summary>The OrderStatus property</summary>
-        public int? OrderStatus { get; set; }
+        public int? OrderStatus { get; private set; }
         /// <summary>The PaymentCondition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentCondition { get; set; }
+        public string? PaymentCondition { get; private set; }
 #nullable restore
 #else
-        public string PaymentCondition { get; set; }
+        public string PaymentCondition { get; private set; }
 #endif
         /// <summary>The PaymentConditionDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentConditionDescription { get; set; }
+        public string? PaymentConditionDescription { get; private set; }
 #nullable restore
 #else
-        public string PaymentConditionDescription { get; set; }
+        public string PaymentConditionDescription { get; private set; }
 #endif
         /// <summary>The Project property</summary>
-        public Guid? Project { get; set; }
+        public Guid? Project { get; private set; }
         /// <summary>The ProjectCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectCode { get; set; }
+        public string? ProjectCode { get; private set; }
 #nullable restore
 #else
-        public string ProjectCode { get; set; }
+        public string ProjectCode { get; private set; }
 #endif
         /// <summary>The ProjectDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectDescription { get; set; }
+        public string? ProjectDescription { get; private set; }
 #nullable restore
 #else
-        public string ProjectDescription { get; set; }
+        public string ProjectDescription { get; private set; }
 #endif
         /// <summary>The PurchaseAgent property</summary>
-        public Guid? PurchaseAgent { get; set; }
+        public Guid? PurchaseAgent { get; private set; }
         /// <summary>The PurchaseAgentFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PurchaseAgentFullName { get; set; }
+        public string? PurchaseAgentFullName { get; private set; }
 #nullable restore
 #else
-        public string PurchaseAgentFullName { get; set; }
+        public string PurchaseAgentFullName { get; private set; }
 #endif
         /// <summary>The PurchaseOrderID property</summary>
-        public Guid? PurchaseOrderID { get; set; }
+        public Guid? PurchaseOrderID { get; private set; }
         /// <summary>The Quantity property</summary>
-        public double? Quantity { get; set; }
+        public double? Quantity { get; private set; }
         /// <summary>The QuantityInPurchaseUnits property</summary>
-        public double? QuantityInPurchaseUnits { get; set; }
+        public double? QuantityInPurchaseUnits { get; private set; }
         /// <summary>The Rebill property</summary>
-        public bool? Rebill { get; set; }
+        public bool? Rebill { get; private set; }
         /// <summary>The ReceiptDate property</summary>
-        public DateTimeOffset? ReceiptDate { get; set; }
+        public DateTimeOffset? ReceiptDate { get; private set; }
         /// <summary>The ReceiptStatus property</summary>
-        public int? ReceiptStatus { get; set; }
+        public int? ReceiptStatus { get; private set; }
         /// <summary>The ReceivedQuantity property</summary>
-        public double? ReceivedQuantity { get; set; }
+        public double? ReceivedQuantity { get; private set; }
         /// <summary>The Remarks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Remarks { get; set; }
+        public string? Remarks { get; private set; }
 #nullable restore
 #else
-        public string Remarks { get; set; }
+        public string Remarks { get; private set; }
 #endif
         /// <summary>The SalesOrder property</summary>
-        public Guid? SalesOrder { get; set; }
+        public Guid? SalesOrder { get; private set; }
         /// <summary>The SalesOrderLine property</summary>
-        public Guid? SalesOrderLine { get; set; }
+        public Guid? SalesOrderLine { get; private set; }
         /// <summary>The SalesOrderLineNumber property</summary>
-        public int? SalesOrderLineNumber { get; set; }
+        public int? SalesOrderLineNumber { get; private set; }
         /// <summary>The SalesOrderNumber property</summary>
-        public int? SalesOrderNumber { get; set; }
+        public int? SalesOrderNumber { get; private set; }
         /// <summary>The SelectionCode property</summary>
-        public Guid? SelectionCode { get; set; }
+        public Guid? SelectionCode { get; private set; }
         /// <summary>The SelectionCodeCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SelectionCodeCode { get; set; }
+        public string? SelectionCodeCode { get; private set; }
 #nullable restore
 #else
-        public string SelectionCodeCode { get; set; }
+        public string SelectionCodeCode { get; private set; }
 #endif
         /// <summary>The SelectionCodeDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SelectionCodeDescription { get; set; }
+        public string? SelectionCodeDescription { get; private set; }
 #nullable restore
 #else
-        public string SelectionCodeDescription { get; set; }
+        public string SelectionCodeDescription { get; private set; }
 #endif
         /// <summary>The SendingMethod property</summary>
-        public int? SendingMethod { get; set; }
+        public int? SendingMethod { get; private set; }
         /// <summary>The ShippingMethod property</summary>
-        public Guid? ShippingMethod { get; set; }
+        public Guid? ShippingMethod { get; private set; }
         /// <summary>The ShippingMethodCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShippingMethodCode { get; set; }
+        public string? ShippingMethodCode { get; private set; }
 #nullable restore
 #else
-        public string ShippingMethodCode { get; set; }
+        public string ShippingMethodCode { get; private set; }
 #endif
         /// <summary>The ShippingMethodDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShippingMethodDescription { get; set; }
+        public string? ShippingMethodDescription { get; private set; }
 #nullable restore
 #else
-        public string ShippingMethodDescription { get; set; }
+        public string ShippingMethodDescription { get; private set; }
 #endif
         /// <summary>The Source property</summary>
-        public int? Source { get; set; }
+        public int? Source { get; private set; }
         /// <summary>The Supplier property</summary>
-        public Guid? Supplier { get; set; }
+        public Guid? Supplier { get; private set; }
         /// <summary>The SupplierCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupplierCode { get; set; }
+        public string? SupplierCode { get; private set; }
 #nullable restore
 #else
-        public string SupplierCode { get; set; }
+        public string SupplierCode { get; private set; }
 #endif
         /// <summary>The SupplierContact property</summary>
-        public Guid? SupplierContact { get; set; }
+        public Guid? SupplierContact { get; private set; }
         /// <summary>The SupplierContactPersonFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupplierContactPersonFullName { get; set; }
+        public string? SupplierContactPersonFullName { get; private set; }
 #nullable restore
 #else
-        public string SupplierContactPersonFullName { get; set; }
+        public string SupplierContactPersonFullName { get; private set; }
 #endif
         /// <summary>The SupplierItemCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupplierItemCode { get; set; }
+        public string? SupplierItemCode { get; private set; }
 #nullable restore
 #else
-        public string SupplierItemCode { get; set; }
+        public string SupplierItemCode { get; private set; }
 #endif
         /// <summary>The SupplierItemCopyRemarks property</summary>
-        public int? SupplierItemCopyRemarks { get; set; }
+        public int? SupplierItemCopyRemarks { get; private set; }
         /// <summary>The SupplierName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupplierName { get; set; }
+        public string? SupplierName { get; private set; }
 #nullable restore
 #else
-        public string SupplierName { get; set; }
+        public string SupplierName { get; private set; }
 #endif
         /// <summary>The Timestamp property</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>The Unit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit { get; set; }
+        public string? Unit { get; private set; }
 #nullable restore
 #else
-        public string Unit { get; set; }
+        public string Unit { get; private set; }
 #endif
         /// <summary>The UnitDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitDescription { get; set; }
+        public string? UnitDescription { get; private set; }
 #nullable restore
 #else
-        public string UnitDescription { get; set; }
+        public string UnitDescription { get; private set; }
 #endif
         /// <summary>The UnitPrice property</summary>
-        public double? UnitPrice { get; set; }
+        public double? UnitPrice { get; private set; }
         /// <summary>The VATAmount property</summary>
-        public double? VATAmount { get; set; }
+        public double? VATAmount { get; private set; }
         /// <summary>The VATCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VATCode { get; set; }
+        public string? VATCode { get; private set; }
 #nullable restore
 #else
-        public string VATCode { get; set; }
+        public string VATCode { get; private set; }
 #endif
         /// <summary>The VATDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VATDescription { get; set; }
+        public string? VATDescription { get; private set; }
 #nullable restore
 #else
-        public string VATDescription { get; set; }
+        public string VATDescription { get; private set; }
 #endif
         /// <summary>The VATPercentage property</summary>
-        public double? VATPercentage { get; set; }
+        public double? VATPercentage { get; private set; }
         /// <summary>The Warehouse property</summary>
-        public Guid? Warehouse { get; set; }
+        public Guid? Warehouse { get; private set; }
         /// <summary>The WarehouseCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseCode { get; set; }
+        public string? WarehouseCode { get; private set; }
 #nullable restore
 #else
-        public string WarehouseCode { get; set; }
+        public string WarehouseCode { get; private set; }
 #endif
         /// <summary>The WarehouseDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseDescription { get; set; }
+        public string? WarehouseDescription { get; private set; }
 #nullable restore
 #else
-        public string WarehouseDescription { get; set; }
+        public string WarehouseDescription { get; private set; }
 #endif
         /// <summary>The YourRef property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? YourRef { get; set; }
+        public string? YourRef { get; private set; }
 #nullable restore
 #else
-        public string YourRef { get; set; }
+        public string YourRef { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncPurchaseOrderPurchaseOrders"/> and sets the default values.
-        /// </summary>
-        public SyncPurchaseOrderPurchaseOrders()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -621,110 +612,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("AmountDC", AmountDC);
-            writer.WriteDoubleValue("AmountFC", AmountFC);
-            writer.WriteIntValue("ApprovalStatus", ApprovalStatus);
-            writer.WriteStringValue("ApprovalStatusDescription", ApprovalStatusDescription);
-            writer.WriteDateTimeOffsetValue("Approved", Approved);
-            writer.WriteGuidValue("Approver", Approver);
-            writer.WriteStringValue("ApproverFullName", ApproverFullName);
-            writer.WriteGuidValue("CostCenter", CostCenter);
-            writer.WriteStringValue("CostCenterCode", CostCenterCode);
-            writer.WriteStringValue("CostCenterDescription", CostCenterDescription);
-            writer.WriteGuidValue("CostUnit", CostUnit);
-            writer.WriteStringValue("CostUnitCode", CostUnitCode);
-            writer.WriteStringValue("CostUnitDescription", CostUnitDescription);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Currency", Currency);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteGuidValue("DeliveryAccount", DeliveryAccount);
-            writer.WriteStringValue("DeliveryAccountCode", DeliveryAccountCode);
-            writer.WriteStringValue("DeliveryAccountName", DeliveryAccountName);
-            writer.WriteGuidValue("DeliveryAddress", DeliveryAddress);
-            writer.WriteGuidValue("DeliveryContact", DeliveryContact);
-            writer.WriteStringValue("DeliveryContactPersonFullName", DeliveryContactPersonFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteDoubleValue("Discount", Discount);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Document", Document);
-            writer.WriteIntValue("DocumentNumber", DocumentNumber);
-            writer.WriteStringValue("DocumentSubject", DocumentSubject);
-            writer.WriteBoolValue("DropShipment", DropShipment);
-            writer.WriteDoubleValue("ExchangeRate", ExchangeRate);
-            writer.WriteGuidValue("Expense", Expense);
-            writer.WriteStringValue("ExpenseDescription", ExpenseDescription);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteStringValue("IncotermAddress", IncotermAddress);
-            writer.WriteStringValue("IncotermCode", IncotermCode);
-            writer.WriteIntValue("IncotermVersion", IncotermVersion);
-            writer.WriteDoubleValue("InvoicedQuantity", InvoicedQuantity);
-            writer.WriteIntValue("InvoiceStatus", InvoiceStatus);
-            writer.WriteIntValue("IsBatchNumberItem", IsBatchNumberItem);
-            writer.WriteIntValue("IsSerialNumberItem", IsSerialNumberItem);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemBarcode", ItemBarcode);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteBoolValue("ItemDivisable", ItemDivisable);
-            writer.WriteIntValue("LineNumber", LineNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteDoubleValue("NetPrice", NetPrice);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteDateTimeOffsetValue("OrderDate", OrderDate);
-            writer.WriteIntValue("OrderNumber", OrderNumber);
-            writer.WriteIntValue("OrderStatus", OrderStatus);
-            writer.WriteStringValue("PaymentCondition", PaymentCondition);
-            writer.WriteStringValue("PaymentConditionDescription", PaymentConditionDescription);
-            writer.WriteGuidValue("Project", Project);
-            writer.WriteStringValue("ProjectCode", ProjectCode);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteGuidValue("PurchaseAgent", PurchaseAgent);
-            writer.WriteStringValue("PurchaseAgentFullName", PurchaseAgentFullName);
-            writer.WriteGuidValue("PurchaseOrderID", PurchaseOrderID);
-            writer.WriteDoubleValue("Quantity", Quantity);
-            writer.WriteDoubleValue("QuantityInPurchaseUnits", QuantityInPurchaseUnits);
-            writer.WriteBoolValue("Rebill", Rebill);
-            writer.WriteDateTimeOffsetValue("ReceiptDate", ReceiptDate);
-            writer.WriteIntValue("ReceiptStatus", ReceiptStatus);
-            writer.WriteDoubleValue("ReceivedQuantity", ReceivedQuantity);
-            writer.WriteStringValue("Remarks", Remarks);
-            writer.WriteGuidValue("SalesOrder", SalesOrder);
-            writer.WriteGuidValue("SalesOrderLine", SalesOrderLine);
-            writer.WriteIntValue("SalesOrderLineNumber", SalesOrderLineNumber);
-            writer.WriteIntValue("SalesOrderNumber", SalesOrderNumber);
-            writer.WriteGuidValue("SelectionCode", SelectionCode);
-            writer.WriteStringValue("SelectionCodeCode", SelectionCodeCode);
-            writer.WriteStringValue("SelectionCodeDescription", SelectionCodeDescription);
-            writer.WriteIntValue("SendingMethod", SendingMethod);
-            writer.WriteGuidValue("ShippingMethod", ShippingMethod);
-            writer.WriteStringValue("ShippingMethodCode", ShippingMethodCode);
-            writer.WriteStringValue("ShippingMethodDescription", ShippingMethodDescription);
-            writer.WriteIntValue("Source", Source);
-            writer.WriteGuidValue("Supplier", Supplier);
-            writer.WriteStringValue("SupplierCode", SupplierCode);
-            writer.WriteGuidValue("SupplierContact", SupplierContact);
-            writer.WriteStringValue("SupplierContactPersonFullName", SupplierContactPersonFullName);
-            writer.WriteStringValue("SupplierItemCode", SupplierItemCode);
-            writer.WriteIntValue("SupplierItemCopyRemarks", SupplierItemCopyRemarks);
-            writer.WriteStringValue("SupplierName", SupplierName);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteStringValue("Unit", Unit);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
-            writer.WriteDoubleValue("UnitPrice", UnitPrice);
-            writer.WriteDoubleValue("VATAmount", VATAmount);
-            writer.WriteStringValue("VATCode", VATCode);
-            writer.WriteStringValue("VATDescription", VATDescription);
-            writer.WriteDoubleValue("VATPercentage", VATPercentage);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
-            writer.WriteStringValue("YourRef", YourRef);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

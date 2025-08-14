@@ -9,380 +9,371 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BulkSalesInvoiceSalesInvoices : IAdditionalDataHolder, IParsable
+    public partial class BulkSalesInvoiceSalesInvoices : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>For the header lines (LineNumber = 0) of an entry this is the SUM(AmountDC) of all lines</summary>
-        public double? AmountDC { get; set; }
+        public double? AmountDC { get; private set; }
         /// <summary>Discount amount in the default currency of the company</summary>
-        public double? AmountDiscount { get; set; }
+        public double? AmountDiscount { get; private set; }
         /// <summary>Discount amount exclude VAT in the default currency of the company</summary>
-        public double? AmountDiscountExclVat { get; set; }
+        public double? AmountDiscountExclVat { get; private set; }
         /// <summary>For the header this is the sum of all lines, including VAT</summary>
-        public double? AmountFC { get; set; }
+        public double? AmountFC { get; private set; }
         /// <summary>For the header this is the sum of all lines, excluding VAT</summary>
-        public double? AmountFCExclVat { get; set; }
+        public double? AmountFCExclVat { get; private set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Currency for the invoice. Default this is the currency of the administration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get; private set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get; private set; }
 #endif
         /// <summary>Delivery account for invoice</summary>
-        public Guid? DeliverTo { get; set; }
+        public Guid? DeliverTo { get; private set; }
         /// <summary>Address of delivery as per invoice delivery account</summary>
-        public Guid? DeliverToAddress { get; set; }
+        public Guid? DeliverToAddress { get; private set; }
         /// <summary>Delivery account person for invoice</summary>
-        public Guid? DeliverToContactPerson { get; set; }
+        public Guid? DeliverToContactPerson { get; private set; }
         /// <summary>Name of delivery account&apos;s contact person as per invoice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliverToContactPersonFullName { get; set; }
+        public string? DeliverToContactPersonFullName { get; private set; }
 #nullable restore
 #else
-        public string DeliverToContactPersonFullName { get; set; }
+        public string DeliverToContactPersonFullName { get; private set; }
 #endif
         /// <summary>Name of the delivery account&apos;s customer as per invoice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliverToName { get; set; }
+        public string? DeliverToName { get; private set; }
 #nullable restore
 #else
-        public string DeliverToName { get; set; }
+        public string DeliverToName { get; private set; }
 #endif
         /// <summary>Description. Can be different for header and lines</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Discount percentage</summary>
-        public double? Discount { get; set; }
+        public double? Discount { get; private set; }
         /// <summary>Leading field of total discount. 1=Discount percentage, 2=Discount amount excl. VAT, 3=Discount amount incl. VAT, 4=Total amount excl. VAT, 5=Total amount incl. VAT</summary>
-        public int? DiscountType { get; set; }
+        public int? DiscountType { get; private set; }
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Document that is manually linked to the invoice</summary>
-        public Guid? Document { get; set; }
+        public Guid? Document { get; private set; }
         /// <summary>Number of the document</summary>
-        public int? DocumentNumber { get; set; }
+        public int? DocumentNumber { get; private set; }
         /// <summary>Subject of the document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentSubject { get; set; }
+        public string? DocumentSubject { get; private set; }
 #nullable restore
 #else
-        public string DocumentSubject { get; set; }
+        public string DocumentSubject { get; private set; }
 #endif
         /// <summary>The due date for payments. This date is calculated based on the EntryDate and the Paymentcondition</summary>
-        public DateTimeOffset? DueDate { get; set; }
+        public DateTimeOffset? DueDate { get; private set; }
         /// <summary>Extra duty amount in the currency of the transaction. Both extra duty amount and VAT amount need to be specified in order to differ this property from automatically calculated.</summary>
-        public double? ExtraDutyAmountFC { get; set; }
+        public double? ExtraDutyAmountFC { get; private set; }
         /// <summary>A positive value of the amount indicates that the amount is to be paid by the customer to your G bank account.In case of a credit invoice the amount should have negative value when retrieved or posted to Exact.</summary>
-        public double? GAccountAmountFC { get; set; }
+        public double? GAccountAmountFC { get; private set; }
         /// <summary>Address of Incoterm</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncotermAddress { get; set; }
+        public string? IncotermAddress { get; private set; }
 #nullable restore
 #else
-        public string IncotermAddress { get; set; }
+        public string IncotermAddress { get; private set; }
 #endif
         /// <summary>Code of Incoterm</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncotermCode { get; set; }
+        public string? IncotermCode { get; private set; }
 #nullable restore
 #else
-        public string IncotermCode { get; set; }
+        public string IncotermCode { get; private set; }
 #endif
         /// <summary>Version of Incoterm Supported version for Incoterms : 2010, 2020</summary>
-        public int? IncotermVersion { get; set; }
+        public int? IncotermVersion { get; private set; }
         /// <summary>Official date for the invoice. When the invoice is entered it&apos;s equal to the field &apos;EntryDate&apos;. During the printing process the invoice date can be entered</summary>
-        public DateTimeOffset? InvoiceDate { get; set; }
+        public DateTimeOffset? InvoiceDate { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? InvoiceID { get; set; }
+        public Guid? InvoiceID { get; private set; }
         /// <summary>Assigned at entry or at printing depending on setting. The number assigned is based on the freenumbers as defined for the Journal. When printing the field InvoiceNumber is copied to the fields EntryNumber and InvoiceNumber of the sales entry</summary>
-        public int? InvoiceNumber { get; set; }
+        public int? InvoiceNumber { get; private set; }
         /// <summary>Reference to the Customer who will receive the invoice</summary>
-        public Guid? InvoiceTo { get; set; }
+        public Guid? InvoiceTo { get; private set; }
         /// <summary>Reference to the Contact person of the customer who will receive the invoice</summary>
-        public Guid? InvoiceToContactPerson { get; set; }
+        public Guid? InvoiceToContactPerson { get; private set; }
         /// <summary>Name of the contact person of the customer who will receive the invoice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceToContactPersonFullName { get; set; }
+        public string? InvoiceToContactPersonFullName { get; private set; }
 #nullable restore
 #else
-        public string InvoiceToContactPersonFullName { get; set; }
+        public string InvoiceToContactPersonFullName { get; private set; }
 #endif
         /// <summary>Name of the customer who will receive the invoice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceToName { get; set; }
+        public string? InvoiceToName { get; private set; }
 #nullable restore
 #else
-        public string InvoiceToName { get; set; }
+        public string InvoiceToName { get; private set; }
 #endif
         /// <summary>Indicates whether the invoice has extra duty</summary>
-        public bool? IsExtraDuty { get; set; }
+        public bool? IsExtraDuty { get; private set; }
         /// <summary>The journal code. Every invoice should be linked to a sales journal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Journal { get; set; }
+        public string? Journal { get; private set; }
 #nullable restore
 #else
-        public string Journal { get; set; }
+        public string Journal { get; private set; }
 #endif
         /// <summary>Description of Journal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JournalDescription { get; set; }
+        public string? JournalDescription { get; private set; }
 #nullable restore
 #else
-        public string JournalDescription { get; set; }
+        public string JournalDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Order date</summary>
-        public DateTimeOffset? OrderDate { get; set; }
+        public DateTimeOffset? OrderDate { get; private set; }
         /// <summary>Customer who ordered the invoice</summary>
-        public Guid? OrderedBy { get; set; }
+        public Guid? OrderedBy { get; private set; }
         /// <summary>Contact person of customer who ordered the invoice</summary>
-        public Guid? OrderedByContactPerson { get; set; }
+        public Guid? OrderedByContactPerson { get; private set; }
         /// <summary>Name of contact person of customer who ordered the invoice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrderedByContactPersonFullName { get; set; }
+        public string? OrderedByContactPersonFullName { get; private set; }
 #nullable restore
 #else
-        public string OrderedByContactPersonFullName { get; set; }
+        public string OrderedByContactPersonFullName { get; private set; }
 #endif
         /// <summary>Name of customer who ordered the invoice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrderedByName { get; set; }
+        public string? OrderedByName { get; private set; }
 #nullable restore
 #else
-        public string OrderedByName { get; set; }
+        public string OrderedByName { get; private set; }
 #endif
         /// <summary>Number to identify the order. By default the number is based on a setting for the first free number, but you can post your own number.</summary>
-        public int? OrderNumber { get; set; }
+        public int? OrderNumber { get; private set; }
         /// <summary>The payment condition used for due date and discount calculation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentCondition { get; set; }
+        public string? PaymentCondition { get; private set; }
 #nullable restore
 #else
-        public string PaymentCondition { get; set; }
+        public string PaymentCondition { get; private set; }
 #endif
         /// <summary>Description of PaymentCondition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentConditionDescription { get; set; }
+        public string? PaymentConditionDescription { get; private set; }
 #nullable restore
 #else
-        public string PaymentConditionDescription { get; set; }
+        public string PaymentConditionDescription { get; private set; }
 #endif
         /// <summary>Payment reference for sales invoice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentReference { get; set; }
+        public string? PaymentReference { get; private set; }
 #nullable restore
 #else
-        public string PaymentReference { get; set; }
+        public string PaymentReference { get; private set; }
 #endif
         /// <summary>Extra remarks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Remarks { get; set; }
+        public string? Remarks { get; private set; }
 #nullable restore
 #else
-        public string Remarks { get; set; }
+        public string Remarks { get; private set; }
 #endif
         /// <summary>ID of Sales channel.</summary>
-        public Guid? SalesChannel { get; set; }
+        public Guid? SalesChannel { get; private set; }
         /// <summary>Code of Sales channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalesChannelCode { get; set; }
+        public string? SalesChannelCode { get; private set; }
 #nullable restore
 #else
-        public string SalesChannelCode { get; set; }
+        public string SalesChannelCode { get; private set; }
 #endif
         /// <summary>Description of Sales channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalesChannelDescription { get; set; }
+        public string? SalesChannelDescription { get; private set; }
 #nullable restore
 #else
-        public string SalesChannelDescription { get; set; }
+        public string SalesChannelDescription { get; private set; }
 #endif
         /// <summary>Collection of lines</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::ExactOnline.Api.Client.Models.SalesInvoiceSalesInvoiceLines>? SalesInvoiceLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.SalesInvoiceSalesInvoiceLines>? SalesInvoiceLines { get; private set; }
 #nullable restore
 #else
-        public List<global::ExactOnline.Api.Client.Models.SalesInvoiceSalesInvoiceLines> SalesInvoiceLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.SalesInvoiceSalesInvoiceLines> SalesInvoiceLines { get; private set; }
 #endif
         /// <summary>Sales representative</summary>
-        public Guid? Salesperson { get; set; }
+        public Guid? Salesperson { get; private set; }
         /// <summary>Name of sales representative</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalespersonFullName { get; set; }
+        public string? SalespersonFullName { get; private set; }
 #nullable restore
 #else
-        public string SalespersonFullName { get; set; }
+        public string SalespersonFullName { get; private set; }
 #endif
         /// <summary>ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale &amp;amp; Distribution and Manufacturing</summary>
-        public Guid? SelectionCode { get; set; }
+        public Guid? SelectionCode { get; private set; }
         /// <summary>Code of selection code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SelectionCodeCode { get; set; }
+        public string? SelectionCodeCode { get; private set; }
 #nullable restore
 #else
-        public string SelectionCodeCode { get; set; }
+        public string SelectionCodeCode { get; private set; }
 #endif
         /// <summary>Description of selection code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SelectionCodeDescription { get; set; }
+        public string? SelectionCodeDescription { get; private set; }
 #nullable restore
 #else
-        public string SelectionCodeDescription { get; set; }
+        public string SelectionCodeDescription { get; private set; }
 #endif
         /// <summary>Shipping method ID</summary>
-        public Guid? ShippingMethod { get; set; }
+        public Guid? ShippingMethod { get; private set; }
         /// <summary>Shipping method code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShippingMethodCode { get; set; }
+        public string? ShippingMethodCode { get; private set; }
 #nullable restore
 #else
-        public string ShippingMethodCode { get; set; }
+        public string ShippingMethodCode { get; private set; }
 #endif
         /// <summary>Shipping method description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShippingMethodDescription { get; set; }
+        public string? ShippingMethodDescription { get; private set; }
 #nullable restore
 #else
-        public string ShippingMethodDescription { get; set; }
+        public string ShippingMethodDescription { get; private set; }
 #endif
         /// <summary>Starter Sales invoice status (for starter functionality)</summary>
-        public int? StarterSalesInvoiceStatus { get; set; }
+        public int? StarterSalesInvoiceStatus { get; private set; }
         /// <summary>Description of StarterSalesInvoiceStatus</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StarterSalesInvoiceStatusDescription { get; set; }
+        public string? StarterSalesInvoiceStatusDescription { get; private set; }
 #nullable restore
 #else
-        public string StarterSalesInvoiceStatusDescription { get; set; }
+        public string StarterSalesInvoiceStatusDescription { get; private set; }
 #endif
         /// <summary>The status of the entry. 10 = draft. During the creation of an invoice draft records occur in the draft modus if during an invoice a new page with lines is triggered. If the user leaves the invoice in an abnormal way the draft invoices can be recovered. Draft invoices are not included in financial reports, balances etc. 20 = open. Open invoices can be changed. New invoices get the status open by default. 50 = processed. Processed invoices can&apos;t be changed anymore. Processing is done via printing. Processed invoices can&apos;t be reopened</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>Description of Status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusDescription { get; set; }
+        public string? StatusDescription { get; private set; }
 #nullable restore
 #else
-        public string StatusDescription { get; set; }
+        public string StatusDescription { get; private set; }
 #endif
         /// <summary>Obsolete</summary>
-        public Guid? TaxSchedule { get; set; }
+        public Guid? TaxSchedule { get; private set; }
         /// <summary>Obsolete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxScheduleCode { get; set; }
+        public string? TaxScheduleCode { get; private set; }
 #nullable restore
 #else
-        public string TaxScheduleCode { get; set; }
+        public string TaxScheduleCode { get; private set; }
 #endif
         /// <summary>Obsolete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxScheduleDescription { get; set; }
+        public string? TaxScheduleDescription { get; private set; }
 #nullable restore
 #else
-        public string TaxScheduleDescription { get; set; }
+        public string TaxScheduleDescription { get; private set; }
 #endif
         /// <summary>Indicates the type of invoice Values: 8020 - Sales invoices, 8021 - Sales credit note, 8023 - Direct sales invoice, 8024 - Direct credit note. Type 8023 and 8024 are only supported by the Plus, Professional and Premium editions for Wholesale &amp;amp; Distribution and Manufacturing</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>Description of the type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TypeDescription { get; set; }
+        public string? TypeDescription { get; private set; }
 #nullable restore
 #else
-        public string TypeDescription { get; set; }
+        public string TypeDescription { get; private set; }
 #endif
         /// <summary>Total VAT amount in the default currency of the company</summary>
-        public double? VATAmountDC { get; set; }
+        public double? VATAmountDC { get; private set; }
         /// <summary>Total VAT amount in the currency of the transaction</summary>
-        public double? VATAmountFC { get; set; }
+        public double? VATAmountFC { get; private set; }
         /// <summary>Mandatory for direct sales invoice/credit note, cannot be set for normal sales invoice/credit note.</summary>
-        public Guid? Warehouse { get; set; }
+        public Guid? Warehouse { get; private set; }
         /// <summary>Withholding tax amount applied to sales invoice. Not supported in The Netherlands.</summary>
-        public double? WithholdingTaxAmountFC { get; set; }
+        public double? WithholdingTaxAmountFC { get; private set; }
         /// <summary>Withholding tax base amount to calculate withholding amount. Not supported in The Netherlands.</summary>
-        public double? WithholdingTaxBaseAmount { get; set; }
+        public double? WithholdingTaxBaseAmount { get; private set; }
         /// <summary>Withholding tax percentage applied to sales invoice. Not supported in The Netherlands.</summary>
-        public double? WithholdingTaxPercentage { get; set; }
+        public double? WithholdingTaxPercentage { get; private set; }
         /// <summary>The invoice number of the customer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? YourRef { get; set; }
+        public string? YourRef { get; private set; }
 #nullable restore
 #else
-        public string YourRef { get; set; }
+        public string YourRef { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.BulkSalesInvoiceSalesInvoices"/> and sets the default values.
-        /// </summary>
-        public BulkSalesInvoiceSalesInvoices()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -489,86 +480,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("AmountDC", AmountDC);
-            writer.WriteDoubleValue("AmountDiscount", AmountDiscount);
-            writer.WriteDoubleValue("AmountDiscountExclVat", AmountDiscountExclVat);
-            writer.WriteDoubleValue("AmountFC", AmountFC);
-            writer.WriteDoubleValue("AmountFCExclVat", AmountFCExclVat);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Currency", Currency);
-            writer.WriteGuidValue("DeliverTo", DeliverTo);
-            writer.WriteGuidValue("DeliverToAddress", DeliverToAddress);
-            writer.WriteGuidValue("DeliverToContactPerson", DeliverToContactPerson);
-            writer.WriteStringValue("DeliverToContactPersonFullName", DeliverToContactPersonFullName);
-            writer.WriteStringValue("DeliverToName", DeliverToName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteDoubleValue("Discount", Discount);
-            writer.WriteIntValue("DiscountType", DiscountType);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Document", Document);
-            writer.WriteIntValue("DocumentNumber", DocumentNumber);
-            writer.WriteStringValue("DocumentSubject", DocumentSubject);
-            writer.WriteDateTimeOffsetValue("DueDate", DueDate);
-            writer.WriteDoubleValue("ExtraDutyAmountFC", ExtraDutyAmountFC);
-            writer.WriteDoubleValue("GAccountAmountFC", GAccountAmountFC);
-            writer.WriteStringValue("IncotermAddress", IncotermAddress);
-            writer.WriteStringValue("IncotermCode", IncotermCode);
-            writer.WriteIntValue("IncotermVersion", IncotermVersion);
-            writer.WriteDateTimeOffsetValue("InvoiceDate", InvoiceDate);
-            writer.WriteGuidValue("InvoiceID", InvoiceID);
-            writer.WriteIntValue("InvoiceNumber", InvoiceNumber);
-            writer.WriteGuidValue("InvoiceTo", InvoiceTo);
-            writer.WriteGuidValue("InvoiceToContactPerson", InvoiceToContactPerson);
-            writer.WriteStringValue("InvoiceToContactPersonFullName", InvoiceToContactPersonFullName);
-            writer.WriteStringValue("InvoiceToName", InvoiceToName);
-            writer.WriteBoolValue("IsExtraDuty", IsExtraDuty);
-            writer.WriteStringValue("Journal", Journal);
-            writer.WriteStringValue("JournalDescription", JournalDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteDateTimeOffsetValue("OrderDate", OrderDate);
-            writer.WriteGuidValue("OrderedBy", OrderedBy);
-            writer.WriteGuidValue("OrderedByContactPerson", OrderedByContactPerson);
-            writer.WriteStringValue("OrderedByContactPersonFullName", OrderedByContactPersonFullName);
-            writer.WriteStringValue("OrderedByName", OrderedByName);
-            writer.WriteIntValue("OrderNumber", OrderNumber);
-            writer.WriteStringValue("PaymentCondition", PaymentCondition);
-            writer.WriteStringValue("PaymentConditionDescription", PaymentConditionDescription);
-            writer.WriteStringValue("PaymentReference", PaymentReference);
-            writer.WriteStringValue("Remarks", Remarks);
-            writer.WriteGuidValue("SalesChannel", SalesChannel);
-            writer.WriteStringValue("SalesChannelCode", SalesChannelCode);
-            writer.WriteStringValue("SalesChannelDescription", SalesChannelDescription);
-            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SalesInvoiceSalesInvoiceLines>("SalesInvoiceLines", SalesInvoiceLines);
-            writer.WriteGuidValue("Salesperson", Salesperson);
-            writer.WriteStringValue("SalespersonFullName", SalespersonFullName);
-            writer.WriteGuidValue("SelectionCode", SelectionCode);
-            writer.WriteStringValue("SelectionCodeCode", SelectionCodeCode);
-            writer.WriteStringValue("SelectionCodeDescription", SelectionCodeDescription);
-            writer.WriteGuidValue("ShippingMethod", ShippingMethod);
-            writer.WriteStringValue("ShippingMethodCode", ShippingMethodCode);
-            writer.WriteStringValue("ShippingMethodDescription", ShippingMethodDescription);
-            writer.WriteIntValue("StarterSalesInvoiceStatus", StarterSalesInvoiceStatus);
-            writer.WriteStringValue("StarterSalesInvoiceStatusDescription", StarterSalesInvoiceStatusDescription);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteStringValue("StatusDescription", StatusDescription);
-            writer.WriteGuidValue("TaxSchedule", TaxSchedule);
-            writer.WriteStringValue("TaxScheduleCode", TaxScheduleCode);
-            writer.WriteStringValue("TaxScheduleDescription", TaxScheduleDescription);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteStringValue("TypeDescription", TypeDescription);
-            writer.WriteDoubleValue("VATAmountDC", VATAmountDC);
-            writer.WriteDoubleValue("VATAmountFC", VATAmountFC);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteDoubleValue("WithholdingTaxAmountFC", WithholdingTaxAmountFC);
-            writer.WriteDoubleValue("WithholdingTaxBaseAmount", WithholdingTaxBaseAmount);
-            writer.WriteDoubleValue("WithholdingTaxPercentage", WithholdingTaxPercentage);
-            writer.WriteStringValue("YourRef", YourRef);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

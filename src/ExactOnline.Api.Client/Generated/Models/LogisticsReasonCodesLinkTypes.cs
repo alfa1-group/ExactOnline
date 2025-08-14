@@ -9,40 +9,31 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LogisticsReasonCodesLinkTypes : IAdditionalDataHolder, IParsable
+    public partial class LogisticsReasonCodesLinkTypes : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The reason linked to the type</summary>
-        public Guid? Reason { get; set; }
+        public Guid? Reason { get; private set; }
         /// <summary>Type of the reason code.</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>Description of the type of the reason code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TypeDescription { get; set; }
+        public string? TypeDescription { get; private set; }
 #nullable restore
 #else
-        public string TypeDescription { get; set; }
+        public string TypeDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.LogisticsReasonCodesLinkTypes"/> and sets the default values.
-        /// </summary>
-        public LogisticsReasonCodesLinkTypes()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -75,12 +66,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteGuidValue("Reason", Reason);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteStringValue("TypeDescription", TypeDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

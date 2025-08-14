@@ -9,68 +9,59 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FinancialDeductibilityPercentages : IAdditionalDataHolder, IParsable
+    public partial class FinancialDeductibilityPercentages : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>End date of the date range during which this percentage is valid</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Expenses on this G/L account can not be used to reduce the incomes</summary>
-        public double? ExpenseNonDeductiblePercentage { get; set; }
+        public double? ExpenseNonDeductiblePercentage { get; private set; }
         /// <summary>G/L account ID</summary>
-        public Guid? GLAccount { get; set; }
+        public Guid? GLAccount { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Line number</summary>
-        public int? LineNumber { get; set; }
+        public int? LineNumber { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Specify the percentage of the cost that should be re-invoiced to the owner of the company as private use of the costs</summary>
-        public double? PrivateUsePercentage { get; set; }
+        public double? PrivateUsePercentage { get; private set; }
         /// <summary>Start date of the date range during which this percentage is valid</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>If not the full amount of the VAT is deductible, you can indicate a percentage for the non deductible part. This is used during the entry of purchase invoices</summary>
-        public double? VATNonDeductiblePercentage { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.FinancialDeductibilityPercentages"/> and sets the default values.
-        /// </summary>
-        public FinancialDeductibilityPercentages()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public double? VATNonDeductiblePercentage { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -114,23 +105,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteDoubleValue("ExpenseNonDeductiblePercentage", ExpenseNonDeductiblePercentage);
-            writer.WriteGuidValue("GLAccount", GLAccount);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("LineNumber", LineNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteDoubleValue("PrivateUsePercentage", PrivateUsePercentage);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteDoubleValue("VATNonDeductiblePercentage", VATNonDeductiblePercentage);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

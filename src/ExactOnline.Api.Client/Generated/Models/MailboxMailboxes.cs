@@ -9,7 +9,7 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MailboxMailboxes : IAdditionalDataHolder, IParsable
+    public partial class MailboxMailboxes : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account this mailbox belongs to. Can be empty if the owner of the mailbox isn&apos;t an Exact Online customer yet</summary>
@@ -22,8 +22,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountName { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>User ID of creator</summary>
@@ -67,10 +65,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -92,13 +90,6 @@ namespace ExactOnline.Api.Client.Models
         public DateTimeOffset? ValidFrom { get; set; }
         /// <summary>Date that this mailbox will not be valid anymore</summary>
         public DateTimeOffset? ValidTo { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.MailboxMailboxes"/> and sets the default values.
-        /// </summary>
-        public MailboxMailboxes()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -154,7 +145,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ForDivisionDescription", ForDivisionDescription);
             writer.WriteGuidValue("ID", ID);
             writer.WriteStringValue("Mailbox", Mailbox);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
@@ -162,7 +152,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("Type", Type);
             writer.WriteDateTimeOffsetValue("ValidFrom", ValidFrom);
             writer.WriteDateTimeOffsetValue("ValidTo", ValidTo);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

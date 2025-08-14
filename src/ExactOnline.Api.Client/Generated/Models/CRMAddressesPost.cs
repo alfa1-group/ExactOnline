@@ -9,13 +9,11 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CRMAddressesPost : IAdditionalDataHolder, IParsable
+    public partial class CRMAddressesPost : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Account linked to the address</summary>
         public Guid? Account { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>First address line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,10 +149,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last 5 digits of SIRET number which is an intern sequential number of 4 digits representing the identification of the localization of the office</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -208,13 +206,6 @@ namespace ExactOnline.Api.Client.Models
         public int? Type { get; set; }
         /// <summary>The warehouse linked to the address, if a warehouse is linked the account will be empty. Can only be filled for type=Delivery</summary>
         public Guid? Warehouse { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CRMAddressesPost"/> and sets the default values.
-        /// </summary>
-        public CRMAddressesPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -313,7 +304,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("ID", ID);
             writer.WriteStringValue("Mailbox", Mailbox);
             writer.WriteBoolValue("Main", Main);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("NicNumber", NicNumber);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteStringValue("Phone", Phone);
@@ -322,7 +312,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("State", State);
             writer.WriteIntValue("Type", Type);
             writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

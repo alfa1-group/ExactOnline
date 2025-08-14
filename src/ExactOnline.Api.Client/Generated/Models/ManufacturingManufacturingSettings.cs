@@ -9,40 +9,31 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManufacturingManufacturingSettings : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingManufacturingSettings : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This division.</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>What is the division&apos;s main inventory method? Standard=3,Average=4</summary>
-        public int? InventoryMainMethod { get; set; }
+        public int? InventoryMainMethod { get; private set; }
         /// <summary>What is the division&apos;s sub inventory method? Perpetual=1,NonPerpetual=2,AngloSaxon=3</summary>
-        public int? InventorySubMethod { get; set; }
+        public int? InventorySubMethod { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Does the current division allow negative stock?</summary>
-        public int? NegativeStockIsAllowed { get; set; }
+        public int? NegativeStockIsAllowed { get; private set; }
         /// <summary>Are serial numbers mandatory in this division?</summary>
-        public int? SerialNumbersAreMandatory { get; set; }
+        public int? SerialNumbersAreMandatory { get; private set; }
         /// <summary>This property is obsolete. Should ShopOrderMaterialPlans with Backflush=True be shown within Smart Shop Floor?</summary>
-        public int? ShowBackflushMaterials { get; set; }
+        public int? ShowBackflushMaterials { get; private set; }
         /// <summary>This property is obsolete. Should ShopOrderMaterialPlans linked to a SubOrder be shown within Smart Shop Floor?</summary>
-        public int? ShowSubOrderMaterials { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingManufacturingSettings"/> and sets the default values.
-        /// </summary>
-        public ManufacturingManufacturingSettings()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public int? ShowSubOrderMaterials { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,15 +69,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Division", Division);
-            writer.WriteIntValue("InventoryMainMethod", InventoryMainMethod);
-            writer.WriteIntValue("InventorySubMethod", InventorySubMethod);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteIntValue("NegativeStockIsAllowed", NegativeStockIsAllowed);
-            writer.WriteIntValue("SerialNumbersAreMandatory", SerialNumbersAreMandatory);
-            writer.WriteIntValue("ShowBackflushMaterials", ShowBackflushMaterials);
-            writer.WriteIntValue("ShowSubOrderMaterials", ShowSubOrderMaterials);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

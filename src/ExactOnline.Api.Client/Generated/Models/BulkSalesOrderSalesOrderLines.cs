@@ -9,212 +9,203 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BulkSalesOrderSalesOrderLines : IAdditionalDataHolder, IParsable
+    public partial class BulkSalesOrderSalesOrderLines : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount in the default currency of the company</summary>
-        public double? AmountDC { get; set; }
+        public double? AmountDC { get; private set; }
         /// <summary>Amount in the currency of the transaction</summary>
-        public double? AmountFC { get; set; }
+        public double? AmountFC { get; private set; }
         /// <summary>Reference to Cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenter { get; set; }
+        public string? CostCenter { get; private set; }
 #nullable restore
 #else
-        public string CostCenter { get; set; }
+        public string CostCenter { get; private set; }
 #endif
         /// <summary>Description of CostCenter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenterDescription { get; set; }
+        public string? CostCenterDescription { get; private set; }
 #nullable restore
 #else
-        public string CostCenterDescription { get; set; }
+        public string CostCenterDescription { get; private set; }
 #endif
         /// <summary>Item cost price</summary>
-        public double? CostPriceFC { get; set; }
+        public double? CostPriceFC { get; private set; }
         /// <summary>Reference to Cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnit { get; set; }
+        public string? CostUnit { get; private set; }
 #nullable restore
 #else
-        public string CostUnit { get; set; }
+        public string CostUnit { get; private set; }
 #endif
         /// <summary>Description of CostUnit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnitDescription { get; set; }
+        public string? CostUnitDescription { get; private set; }
 #nullable restore
 #else
-        public string CostUnitDescription { get; set; }
+        public string CostUnitDescription { get; private set; }
 #endif
         /// <summary>Code the customer uses for this item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerItemCode { get; set; }
+        public string? CustomerItemCode { get; private set; }
 #nullable restore
 #else
-        public string CustomerItemCode { get; set; }
+        public string CustomerItemCode { get; private set; }
 #endif
         /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>Delivery date of this line</summary>
-        public DateTimeOffset? DeliveryDate { get; set; }
+        public DateTimeOffset? DeliveryDate { get; private set; }
         /// <summary>Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Discount given on the default price. Discount = (DefaultPrice of Item - PriceItem in line) / DefaultPrice of Item</summary>
-        public double? Discount { get; set; }
+        public double? Discount { get; private set; }
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Reference to the item that is sold in this sales order line</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>Code of Item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Description of Item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>Item Version</summary>
-        public Guid? ItemVersion { get; set; }
+        public Guid? ItemVersion { get; private set; }
         /// <summary>Description of Item Version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemVersionDescription { get; set; }
+        public string? ItemVersionDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemVersionDescription { get; set; }
+        public string ItemVersionDescription { get; private set; }
 #endif
         /// <summary>Line number</summary>
-        public int? LineNumber { get; set; }
+        public int? LineNumber { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Net price of the sales order line</summary>
-        public double? NetPrice { get; set; }
+        public double? NetPrice { get; private set; }
         /// <summary>Extra notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>The OrderID identifies the sales order. All the lines of a sales order have the same OrderID</summary>
-        public Guid? OrderID { get; set; }
+        public Guid? OrderID { get; private set; }
         /// <summary>Number of sales order</summary>
-        public int? OrderNumber { get; set; }
+        public int? OrderNumber { get; private set; }
         /// <summary>Price list</summary>
-        public Guid? Pricelist { get; set; }
+        public Guid? Pricelist { get; private set; }
         /// <summary>Description of Pricelist</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PricelistDescription { get; set; }
+        public string? PricelistDescription { get; private set; }
 #nullable restore
 #else
-        public string PricelistDescription { get; set; }
+        public string PricelistDescription { get; private set; }
 #endif
         /// <summary>The project to which the sales order line is linked. The project can be different per line. Sometimes also the project in the header is filled although this is not really used</summary>
-        public Guid? Project { get; set; }
+        public Guid? Project { get; private set; }
         /// <summary>Description of Project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectDescription { get; set; }
+        public string? ProjectDescription { get; private set; }
 #nullable restore
 #else
-        public string ProjectDescription { get; set; }
+        public string ProjectDescription { get; private set; }
 #endif
         /// <summary>Purchase order that is linked to the sales order</summary>
-        public Guid? PurchaseOrder { get; set; }
+        public Guid? PurchaseOrder { get; private set; }
         /// <summary>Purchase order line of the purchase order that is linked to the sales order</summary>
-        public Guid? PurchaseOrderLine { get; set; }
+        public Guid? PurchaseOrderLine { get; private set; }
         /// <summary>Number of the purchase order line</summary>
-        public int? PurchaseOrderLineNumber { get; set; }
+        public int? PurchaseOrderLineNumber { get; private set; }
         /// <summary>Number of the purchase order</summary>
-        public int? PurchaseOrderNumber { get; set; }
+        public int? PurchaseOrderNumber { get; private set; }
         /// <summary>The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor</summary>
-        public double? Quantity { get; set; }
+        public double? Quantity { get; private set; }
         /// <summary>Reference to ShopOrder</summary>
-        public Guid? ShopOrder { get; set; }
+        public Guid? ShopOrder { get; private set; }
         /// <summary>Code of item unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitCode { get; set; }
+        public string? UnitCode { get; private set; }
 #nullable restore
 #else
-        public string UnitCode { get; set; }
+        public string UnitCode { get; private set; }
 #endif
         /// <summary>Description of Unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitDescription { get; set; }
+        public string? UnitDescription { get; private set; }
 #nullable restore
 #else
-        public string UnitDescription { get; set; }
+        public string UnitDescription { get; private set; }
 #endif
         /// <summary>Price per unit in the currency of the transaction</summary>
-        public double? UnitPrice { get; set; }
+        public double? UnitPrice { get; private set; }
         /// <summary>Indicates if drop shipment is used (delivery directly to customer, invoice to wholesaler)</summary>
-        public int? UseDropShipment { get; set; }
+        public int? UseDropShipment { get; private set; }
         /// <summary>VAT amount in the currency of the transaction</summary>
-        public double? VATAmount { get; set; }
+        public double? VATAmount { get; private set; }
         /// <summary>VAT code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VATCode { get; set; }
+        public string? VATCode { get; private set; }
 #nullable restore
 #else
-        public string VATCode { get; set; }
+        public string VATCode { get; private set; }
 #endif
         /// <summary>Description of VATCode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VATCodeDescription { get; set; }
+        public string? VATCodeDescription { get; private set; }
 #nullable restore
 #else
-        public string VATCodeDescription { get; set; }
+        public string VATCodeDescription { get; private set; }
 #endif
         /// <summary>The vat percentage of the VAT code. This is the percentage at the moment the sales order is created. It&apos;s also used for the default calculation of VAT amounts and VAT base amounts</summary>
-        public double? VATPercentage { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.BulkSalesOrderSalesOrderLines"/> and sets the default values.
-        /// </summary>
-        public BulkSalesOrderSalesOrderLines()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public double? VATPercentage { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -285,50 +276,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("AmountDC", AmountDC);
-            writer.WriteDoubleValue("AmountFC", AmountFC);
-            writer.WriteStringValue("CostCenter", CostCenter);
-            writer.WriteStringValue("CostCenterDescription", CostCenterDescription);
-            writer.WriteDoubleValue("CostPriceFC", CostPriceFC);
-            writer.WriteStringValue("CostUnit", CostUnit);
-            writer.WriteStringValue("CostUnitDescription", CostUnitDescription);
-            writer.WriteStringValue("CustomerItemCode", CustomerItemCode);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteDateTimeOffsetValue("DeliveryDate", DeliveryDate);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteDoubleValue("Discount", Discount);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteGuidValue("ItemVersion", ItemVersion);
-            writer.WriteStringValue("ItemVersionDescription", ItemVersionDescription);
-            writer.WriteIntValue("LineNumber", LineNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDoubleValue("NetPrice", NetPrice);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteGuidValue("OrderID", OrderID);
-            writer.WriteIntValue("OrderNumber", OrderNumber);
-            writer.WriteGuidValue("Pricelist", Pricelist);
-            writer.WriteStringValue("PricelistDescription", PricelistDescription);
-            writer.WriteGuidValue("Project", Project);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteGuidValue("PurchaseOrder", PurchaseOrder);
-            writer.WriteGuidValue("PurchaseOrderLine", PurchaseOrderLine);
-            writer.WriteIntValue("PurchaseOrderLineNumber", PurchaseOrderLineNumber);
-            writer.WriteIntValue("PurchaseOrderNumber", PurchaseOrderNumber);
-            writer.WriteDoubleValue("Quantity", Quantity);
-            writer.WriteGuidValue("ShopOrder", ShopOrder);
-            writer.WriteStringValue("UnitCode", UnitCode);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
-            writer.WriteDoubleValue("UnitPrice", UnitPrice);
-            writer.WriteIntValue("UseDropShipment", UseDropShipment);
-            writer.WriteDoubleValue("VATAmount", VATAmount);
-            writer.WriteStringValue("VATCode", VATCode);
-            writer.WriteStringValue("VATCodeDescription", VATCodeDescription);
-            writer.WriteDoubleValue("VATPercentage", VATPercentage);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

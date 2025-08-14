@@ -9,216 +9,207 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncProjectTimeCostTransactions : IAdditionalDataHolder, IParsable
+    public partial class SyncProjectTimeCostTransactions : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Account property</summary>
-        public Guid? Account { get; set; }
+        public Guid? Account { get; private set; }
         /// <summary>The AccountName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get; private set; }
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get; private set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AmountFC property</summary>
-        public double? AmountFC { get; set; }
+        public double? AmountFC { get; private set; }
         /// <summary>The Attachment property</summary>
-        public Guid? Attachment { get; set; }
+        public Guid? Attachment { get; private set; }
         /// <summary>The Created property</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>The Creator property</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>The CreatorFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>The Currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get; private set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get; private set; }
 #endif
         /// <summary>The CustomField property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>The Date property</summary>
-        public DateTimeOffset? Date { get; set; }
+        public DateTimeOffset? Date { get; private set; }
         /// <summary>The Division property</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>The DivisionDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DivisionDescription { get; set; }
+        public string? DivisionDescription { get; private set; }
 #nullable restore
 #else
-        public string DivisionDescription { get; set; }
+        public string DivisionDescription { get; private set; }
 #endif
         /// <summary>The Employee property</summary>
-        public Guid? Employee { get; set; }
+        public Guid? Employee { get; private set; }
         /// <summary>The EndTime property</summary>
-        public DateTimeOffset? EndTime { get; set; }
+        public DateTimeOffset? EndTime { get; private set; }
         /// <summary>The EntryNumber property</summary>
-        public int? EntryNumber { get; set; }
+        public int? EntryNumber { get; private set; }
         /// <summary>The ErrorText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorText { get; set; }
+        public string? ErrorText { get; private set; }
 #nullable restore
 #else
-        public string ErrorText { get; set; }
+        public string ErrorText { get; private set; }
 #endif
         /// <summary>The HourStatus property</summary>
-        public int? HourStatus { get; set; }
+        public int? HourStatus { get; private set; }
         /// <summary>The ID property</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The Item property</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>The ItemDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>The ItemDivisable property</summary>
-        public bool? ItemDivisable { get; set; }
+        public bool? ItemDivisable { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The Modified property</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>The Modifier property</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>The ModifierFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>The Notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>The PriceFC property</summary>
-        public double? PriceFC { get; set; }
+        public double? PriceFC { get; private set; }
         /// <summary>The Project property</summary>
-        public Guid? Project { get; set; }
+        public Guid? Project { get; private set; }
         /// <summary>The ProjectAccount property</summary>
-        public Guid? ProjectAccount { get; set; }
+        public Guid? ProjectAccount { get; private set; }
         /// <summary>The ProjectAccountCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectAccountCode { get; set; }
+        public string? ProjectAccountCode { get; private set; }
 #nullable restore
 #else
-        public string ProjectAccountCode { get; set; }
+        public string ProjectAccountCode { get; private set; }
 #endif
         /// <summary>The ProjectAccountName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectAccountName { get; set; }
+        public string? ProjectAccountName { get; private set; }
 #nullable restore
 #else
-        public string ProjectAccountName { get; set; }
+        public string ProjectAccountName { get; private set; }
 #endif
         /// <summary>The ProjectCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectCode { get; set; }
+        public string? ProjectCode { get; private set; }
 #nullable restore
 #else
-        public string ProjectCode { get; set; }
+        public string ProjectCode { get; private set; }
 #endif
         /// <summary>The ProjectDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectDescription { get; set; }
+        public string? ProjectDescription { get; private set; }
 #nullable restore
 #else
-        public string ProjectDescription { get; set; }
+        public string ProjectDescription { get; private set; }
 #endif
         /// <summary>The Quantity property</summary>
-        public double? Quantity { get; set; }
+        public double? Quantity { get; private set; }
         /// <summary>The StartTime property</summary>
-        public DateTimeOffset? StartTime { get; set; }
+        public DateTimeOffset? StartTime { get; private set; }
         /// <summary>The Subscription property</summary>
-        public Guid? Subscription { get; set; }
+        public Guid? Subscription { get; private set; }
         /// <summary>The SubscriptionAccount property</summary>
-        public Guid? SubscriptionAccount { get; set; }
+        public Guid? SubscriptionAccount { get; private set; }
         /// <summary>The SubscriptionAccountCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionAccountCode { get; set; }
+        public string? SubscriptionAccountCode { get; private set; }
 #nullable restore
 #else
-        public string SubscriptionAccountCode { get; set; }
+        public string SubscriptionAccountCode { get; private set; }
 #endif
         /// <summary>The SubscriptionAccountName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionAccountName { get; set; }
+        public string? SubscriptionAccountName { get; private set; }
 #nullable restore
 #else
-        public string SubscriptionAccountName { get; set; }
+        public string SubscriptionAccountName { get; private set; }
 #endif
         /// <summary>The SubscriptionDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionDescription { get; set; }
+        public string? SubscriptionDescription { get; private set; }
 #nullable restore
 #else
-        public string SubscriptionDescription { get; set; }
+        public string SubscriptionDescription { get; private set; }
 #endif
         /// <summary>The SubscriptionNumber property</summary>
-        public int? SubscriptionNumber { get; set; }
+        public int? SubscriptionNumber { get; private set; }
         /// <summary>The Timestamp property</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>The Type property</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>The WBS property</summary>
-        public Guid? WBS { get; set; }
+        public Guid? WBS { get; private set; }
         /// <summary>The WBSDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WBSDescription { get; set; }
+        public string? WBSDescription { get; private set; }
 #nullable restore
 #else
-        public string WBSDescription { get; set; }
+        public string WBSDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncProjectTimeCostTransactions"/> and sets the default values.
-        /// </summary>
-        public SyncProjectTimeCostTransactions()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -291,52 +282,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Account", Account);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteDoubleValue("AmountFC", AmountFC);
-            writer.WriteGuidValue("Attachment", Attachment);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Currency", Currency);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteDateTimeOffsetValue("Date", Date);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteStringValue("DivisionDescription", DivisionDescription);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteDateTimeOffsetValue("EndTime", EndTime);
-            writer.WriteIntValue("EntryNumber", EntryNumber);
-            writer.WriteStringValue("ErrorText", ErrorText);
-            writer.WriteIntValue("HourStatus", HourStatus);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteBoolValue("ItemDivisable", ItemDivisable);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteDoubleValue("PriceFC", PriceFC);
-            writer.WriteGuidValue("Project", Project);
-            writer.WriteGuidValue("ProjectAccount", ProjectAccount);
-            writer.WriteStringValue("ProjectAccountCode", ProjectAccountCode);
-            writer.WriteStringValue("ProjectAccountName", ProjectAccountName);
-            writer.WriteStringValue("ProjectCode", ProjectCode);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteDoubleValue("Quantity", Quantity);
-            writer.WriteDateTimeOffsetValue("StartTime", StartTime);
-            writer.WriteGuidValue("Subscription", Subscription);
-            writer.WriteGuidValue("SubscriptionAccount", SubscriptionAccount);
-            writer.WriteStringValue("SubscriptionAccountCode", SubscriptionAccountCode);
-            writer.WriteStringValue("SubscriptionAccountName", SubscriptionAccountName);
-            writer.WriteStringValue("SubscriptionDescription", SubscriptionDescription);
-            writer.WriteIntValue("SubscriptionNumber", SubscriptionNumber);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteGuidValue("WBS", WBS);
-            writer.WriteStringValue("WBSDescription", WBSDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

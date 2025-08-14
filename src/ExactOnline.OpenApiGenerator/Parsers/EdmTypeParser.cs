@@ -5,11 +5,12 @@ namespace ExactOnline.OpenApiGenerator.Parsers;
 
 internal static class EdmTypeParser
 {
-    internal static bool TryParse(string type, string name, string? description, [NotNullWhen(true)] out IOpenApiSchema? schema)
+    internal static bool TryParse(string type, string name, string? description, bool isSyncInterface, [NotNullWhen(true)] out IOpenApiSchema? schema)
     {
         var property = new OpenApiSchema
         {
-            Description = description
+            Description = description,
+            ReadOnly = isSyncInterface
         };
 
         switch (type)
@@ -76,17 +77,6 @@ internal static class EdmTypeParser
                 return true;
 
             case "Edm.Int64":
-                //if (name == "Timestamp")
-                //{
-                //    // Timestamp is a special case
-                //    property.OneOf = 
-                //    [
-                //        new OpenApiSchema { Type = JsonSchemaType.Integer, Format = "int64" },
-                //        new OpenApiSchema { Type = JsonSchemaType.String, }
-                //    ];
-                //    schema = property;
-                //    return true;
-                //}
                 property.Type = JsonSchemaType.Integer;
                 property.Format = "int64";
                 schema = property;

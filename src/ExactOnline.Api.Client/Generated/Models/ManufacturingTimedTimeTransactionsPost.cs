@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManufacturingTimedTimeTransactionsPost : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingTimedTimeTransactionsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of employee</summary>
         public Guid? Employee { get; set; }
         /// <summary>Time that operation was stopped</summary>
@@ -29,10 +27,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Notes - viewable in data collection</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,13 +78,6 @@ namespace ExactOnline.Api.Client.Models
         public int? Type { get; set; }
         /// <summary>Work center where work occurred</summary>
         public Guid? Workcenter { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingTimedTimeTransactionsPost"/> and sets the default values.
-        /// </summary>
-        public ManufacturingTimedTimeTransactionsPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -141,7 +132,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("IsOperationFinished", IsOperationFinished);
             writer.WriteDoubleValue("LaborHours", LaborHours);
             writer.WriteDoubleValue("MachineHours", MachineHours);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteDoubleValue("PercentComplete", PercentComplete);
             writer.WriteDoubleValue("ProducedQuantity", ProducedQuantity);
@@ -156,7 +146,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("Status", Status);
             writer.WriteIntValue("Type", Type);
             writer.WriteGuidValue("Workcenter", Workcenter);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

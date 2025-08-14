@@ -9,340 +9,331 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BulkCashflowReceivables : IAdditionalDataHolder, IParsable
+    public partial class BulkCashflowReceivables : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The customer from which the receivable will come.</summary>
-        public Guid? Account { get; set; }
+        public Guid? Account { get; private set; }
         /// <summary>The bank account of the customer, from which the receivable will come.</summary>
-        public Guid? AccountBankAccountID { get; set; }
+        public Guid? AccountBankAccountID { get; private set; }
         /// <summary>The bank account number of the customer, from which the receivable will come.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountBankAccountNumber { get; set; }
+        public string? AccountBankAccountNumber { get; private set; }
 #nullable restore
 #else
-        public string AccountBankAccountNumber { get; set; }
+        public string AccountBankAccountNumber { get; private set; }
 #endif
         /// <summary>The code of the customer from which the receivable will come.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCode { get; set; }
+        public string? AccountCode { get; private set; }
 #nullable restore
 #else
-        public string AccountCode { get; set; }
+        public string AccountCode { get; private set; }
 #endif
         /// <summary>Contact person copied from the purchase invoice linked to the related purchase entry.</summary>
-        public Guid? AccountContact { get; set; }
+        public Guid? AccountContact { get; private set; }
         /// <summary>Name of the contact person of the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountContactName { get; set; }
+        public string? AccountContactName { get; private set; }
 #nullable restore
 #else
-        public string AccountContactName { get; set; }
+        public string AccountContactName { get; private set; }
 #endif
         /// <summary>Country code of the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCountry { get; set; }
+        public string? AccountCountry { get; private set; }
 #nullable restore
 #else
-        public string AccountCountry { get; set; }
+        public string AccountCountry { get; private set; }
 #endif
         /// <summary>Name of the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get; private set; }
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get; private set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount in default currency (division currency). Receivables are matched on this amount.</summary>
-        public double? AmountDC { get; set; }
+        public double? AmountDC { get; private set; }
         /// <summary>The amount of the discount in the default currency.</summary>
-        public double? AmountDiscountDC { get; set; }
+        public double? AmountDiscountDC { get; private set; }
         /// <summary>The amount of the discount. This is in the amount of the selected currency.</summary>
-        public double? AmountDiscountFC { get; set; }
+        public double? AmountDiscountFC { get; private set; }
         /// <summary>The amount of the receivable. This is in the amount of the selected currency.</summary>
-        public double? AmountFC { get; set; }
+        public double? AmountFC { get; private set; }
         /// <summary>Own bank account to which the receivable will be done.</summary>
-        public Guid? BankAccountID { get; set; }
+        public Guid? BankAccountID { get; private set; }
         /// <summary>Own bank account number to which the receivable will be done.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankAccountNumber { get; set; }
+        public string? BankAccountNumber { get; private set; }
 #nullable restore
 #else
-        public string BankAccountNumber { get; set; }
+        public string BankAccountNumber { get; private set; }
 #endif
         /// <summary>When processing receivables, all receivable with the same processing data are put in a batch. This field contains the code of that batch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CashflowTransactionBatchCode { get; set; }
+        public string? CashflowTransactionBatchCode { get; private set; }
 #nullable restore
 #else
-        public string CashflowTransactionBatchCode { get; set; }
+        public string CashflowTransactionBatchCode { get; private set; }
 #endif
         /// <summary>Creation date.</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of the creator.</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of the creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>The currency of the receivable. This currency can only deviate from the division currency if the module Currency is in the license.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get; private set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get; private set; }
 #endif
         /// <summary>Description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Direct Debit Mandate used to collect the receivable.</summary>
-        public Guid? DirectDebitMandate { get; set; }
+        public Guid? DirectDebitMandate { get; private set; }
         /// <summary>Description of the mandate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectDebitMandateDescription { get; set; }
+        public string? DirectDebitMandateDescription { get; private set; }
 #nullable restore
 #else
-        public string DirectDebitMandateDescription { get; set; }
+        public string DirectDebitMandateDescription { get; private set; }
 #endif
         /// <summary>Payment type of the mandate. 0 = One off payment 1 = Recurrent payment.</summary>
-        public int? DirectDebitMandatePaymentType { get; set; }
+        public int? DirectDebitMandatePaymentType { get; private set; }
         /// <summary>Unique mandate reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectDebitMandateReference { get; set; }
+        public string? DirectDebitMandateReference { get; private set; }
 #nullable restore
 #else
-        public string DirectDebitMandateReference { get; set; }
+        public string DirectDebitMandateReference { get; private set; }
 #endif
         /// <summary>Type of the mandate. 0 = Core 1 = Business-to-business.</summary>
-        public int? DirectDebitMandateType { get; set; }
+        public int? DirectDebitMandateType { get; private set; }
         /// <summary>Date before which the payment by the customer must be done to be eligible for discount.</summary>
-        public DateTimeOffset? DiscountDueDate { get; set; }
+        public DateTimeOffset? DiscountDueDate { get; private set; }
         /// <summary>Division code.</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Document that is created when processing collections.  The bank export file is attached to the document.</summary>
-        public Guid? Document { get; set; }
+        public Guid? Document { get; private set; }
         /// <summary>Number of the document.</summary>
-        public int? DocumentNumber { get; set; }
+        public int? DocumentNumber { get; private set; }
         /// <summary>Subject of the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentSubject { get; set; }
+        public string? DocumentSubject { get; private set; }
 #nullable restore
 #else
-        public string DocumentSubject { get; set; }
+        public string DocumentSubject { get; private set; }
 #endif
         /// <summary>Date before which the payment by the customer must be done.</summary>
-        public DateTimeOffset? DueDate { get; set; }
+        public DateTimeOffset? DueDate { get; private set; }
         /// <summary>Date since when the receivable is no longer an outstanding item. This is the highest invoice date of all matched receivables.</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Period since when the receivable is no longer an outstanding item. This is the highest period of all matched receivables.</summary>
-        public int? EndPeriod { get; set; }
+        public int? EndPeriod { get; private set; }
         /// <summary>The value of the tag &apos;EndToEndID&apos; when generating a SEPA file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndToEndID { get; set; }
+        public string? EndToEndID { get; private set; }
 #nullable restore
 #else
-        public string EndToEndID { get; set; }
+        public string EndToEndID { get; private set; }
 #endif
         /// <summary>Year (of period) since when the receivable is no longer an outstanding item. This is the highest year of all matched receivables. Used in combination with EndPeriod.</summary>
-        public int? EndYear { get; set; }
+        public int? EndYear { get; private set; }
         /// <summary>Processing date of the receivable.</summary>
-        public DateTimeOffset? EntryDate { get; set; }
+        public DateTimeOffset? EntryDate { get; private set; }
         /// <summary>The unique identifier for a set of receivables. A receivable can be split so that one part is received on a different date. In that case the two records get a different EntryID.</summary>
-        public Guid? EntryID { get; set; }
+        public Guid? EntryID { get; private set; }
         /// <summary>Entry number of the linked transaction.</summary>
-        public int? EntryNumber { get; set; }
+        public int? EntryNumber { get; private set; }
         /// <summary>G/L account of the payment. Must be of type 20 (Accounts receivable).</summary>
-        public Guid? GLAccount { get; set; }
+        public Guid? GLAccount { get; private set; }
         /// <summary>Code of the G/L account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLAccountCode { get; set; }
+        public string? GLAccountCode { get; private set; }
 #nullable restore
 #else
-        public string GLAccountCode { get; set; }
+        public string GLAccountCode { get; private set; }
 #endif
         /// <summary>Description of the G/L account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLAccountDescription { get; set; }
+        public string? GLAccountDescription { get; private set; }
 #nullable restore
 #else
-        public string GLAccountDescription { get; set; }
+        public string GLAccountDescription { get; private set; }
 #endif
         /// <summary>Identifier of the receivable.</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Invoice date of the linked transaction.</summary>
-        public DateTimeOffset? InvoiceDate { get; set; }
+        public DateTimeOffset? InvoiceDate { get; private set; }
         /// <summary>Invoice number of the linked transaction.</summary>
-        public int? InvoiceNumber { get; set; }
+        public int? InvoiceNumber { get; private set; }
         /// <summary>Boolean indicating whether the receivable is part of a batch booking.</summary>
-        public int? IsBatchBooking { get; set; }
+        public int? IsBatchBooking { get; private set; }
         /// <summary>Boolean indicating whether the receivable was fully paid by the customer.</summary>
-        public bool? IsFullyPaid { get; set; }
+        public bool? IsFullyPaid { get; private set; }
         /// <summary>Journal of the linked transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Journal { get; set; }
+        public string? Journal { get; private set; }
 #nullable restore
 #else
-        public string Journal { get; set; }
+        public string Journal { get; private set; }
 #endif
         /// <summary>Description of the journal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JournalDescription { get; set; }
+        public string? JournalDescription { get; private set; }
 #nullable restore
 #else
-        public string JournalDescription { get; set; }
+        public string JournalDescription { get; private set; }
 #endif
         /// <summary>Last payment date.</summary>
-        public DateTimeOffset? LastPaymentDate { get; set; }
+        public DateTimeOffset? LastPaymentDate { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date.</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier.</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Order number of the linked transaction.</summary>
-        public int? OrderNumber { get; set; }
+        public int? OrderNumber { get; private set; }
         /// <summary>Payment condition of the linked transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentCondition { get; set; }
+        public string? PaymentCondition { get; private set; }
 #nullable restore
 #else
-        public string PaymentCondition { get; set; }
+        public string PaymentCondition { get; private set; }
 #endif
         /// <summary>Description of the payment condition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentConditionDescription { get; set; }
+        public string? PaymentConditionDescription { get; private set; }
 #nullable restore
 #else
-        public string PaymentConditionDescription { get; set; }
+        public string PaymentConditionDescription { get; private set; }
 #endif
         /// <summary>Number of days between invoice date and due date.</summary>
-        public int? PaymentDays { get; set; }
+        public int? PaymentDays { get; private set; }
         /// <summary>Number of days between invoice date and due date of the discount.</summary>
-        public int? PaymentDaysDiscount { get; set; }
+        public int? PaymentDaysDiscount { get; private set; }
         /// <summary>Payment discount percentage.</summary>
-        public double? PaymentDiscountPercentage { get; set; }
+        public double? PaymentDiscountPercentage { get; private set; }
         /// <summary>PaymentInformationID tag from the SEPA xml file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentInformationID { get; set; }
+        public string? PaymentInformationID { get; private set; }
 #nullable restore
 #else
-        public string PaymentInformationID { get; set; }
+        public string PaymentInformationID { get; private set; }
 #endif
         /// <summary>Method of payment. B = On credit (default) I = Collection K = Cash V = Credit card</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentMethod { get; set; }
+        public string? PaymentMethod { get; private set; }
 #nullable restore
 #else
-        public string PaymentMethod { get; set; }
+        public string PaymentMethod { get; private set; }
 #endif
         /// <summary>Payment reference for the receivable that may be included In the bank export file</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentReference { get; set; }
+        public string? PaymentReference { get; private set; }
 #nullable restore
 #else
-        public string PaymentReference { get; set; }
+        public string PaymentReference { get; private set; }
 #endif
         /// <summary>Exchange rate from receivable currency to division currency. AmountFC * RateFC = AmountDC.</summary>
-        public double? RateFC { get; set; }
+        public double? RateFC { get; private set; }
         /// <summary>Number assigned during the processing of receivables.</summary>
-        public int? ReceivableBatchNumber { get; set; }
+        public int? ReceivableBatchNumber { get; private set; }
         /// <summary>Date and time since when the receivable is selected to be collected.</summary>
-        public DateTimeOffset? ReceivableSelected { get; set; }
+        public DateTimeOffset? ReceivableSelected { get; private set; }
         /// <summary>User who selected the receivable to be collected.</summary>
-        public Guid? ReceivableSelector { get; set; }
+        public Guid? ReceivableSelector { get; private set; }
         /// <summary>Name of the receivable selector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReceivableSelectorFullName { get; set; }
+        public string? ReceivableSelectorFullName { get; private set; }
 #nullable restore
 #else
-        public string ReceivableSelectorFullName { get; set; }
+        public string ReceivableSelectorFullName { get; private set; }
 #endif
         /// <summary>The source of the receivable.</summary>
-        public int? Source { get; set; }
+        public int? Source { get; private set; }
         /// <summary>The status of the receivable. 20 = open 30 = selected - receivable is selected to be collected 40 = processed - collection has been done 50 = matched - receivable is matched with one or more other outstanding items or financial statement lines</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>Total amount of the linked transaction in default currency (division currency).</summary>
-        public double? TransactionAmountDC { get; set; }
+        public double? TransactionAmountDC { get; private set; }
         /// <summary>Total amount of the linked transaction in the selected currency.</summary>
-        public double? TransactionAmountFC { get; set; }
+        public double? TransactionAmountFC { get; private set; }
         /// <summary>Due date of the linked transaction.</summary>
-        public DateTimeOffset? TransactionDueDate { get; set; }
+        public DateTimeOffset? TransactionDueDate { get; private set; }
         /// <summary>Linked transaction. Use this as reference to SalesEntries.</summary>
-        public Guid? TransactionEntryID { get; set; }
+        public Guid? TransactionEntryID { get; private set; }
         /// <summary>Linked transaction line. Use this as reference to SalesEntryLines.</summary>
-        public Guid? TransactionID { get; set; }
+        public Guid? TransactionID { get; private set; }
         /// <summary>Indicates if the linked transaction is a reversal entry.</summary>
-        public bool? TransactionIsReversal { get; set; }
+        public bool? TransactionIsReversal { get; private set; }
         /// <summary>Period of the linked transaction.</summary>
-        public int? TransactionReportingPeriod { get; set; }
+        public int? TransactionReportingPeriod { get; private set; }
         /// <summary>Year of the linked transaction.</summary>
-        public int? TransactionReportingYear { get; set; }
+        public int? TransactionReportingYear { get; private set; }
         /// <summary>Status of the linked transaction.</summary>
-        public int? TransactionStatus { get; set; }
+        public int? TransactionStatus { get; private set; }
         /// <summary>Type of the linked transaction.</summary>
-        public int? TransactionType { get; set; }
+        public int? TransactionType { get; private set; }
         /// <summary>Invoice number. In case the receivable belongs to a bank entry line and is matched with one invoice, YourRef is filled with the YourRef of this invoice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? YourRef { get; set; }
+        public string? YourRef { get; private set; }
 #nullable restore
 #else
-        public string YourRef { get; set; }
+        public string YourRef { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.BulkCashflowReceivables"/> and sets the default values.
-        /// </summary>
-        public BulkCashflowReceivables()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -450,87 +441,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Account", Account);
-            writer.WriteGuidValue("AccountBankAccountID", AccountBankAccountID);
-            writer.WriteStringValue("AccountBankAccountNumber", AccountBankAccountNumber);
-            writer.WriteStringValue("AccountCode", AccountCode);
-            writer.WriteGuidValue("AccountContact", AccountContact);
-            writer.WriteStringValue("AccountContactName", AccountContactName);
-            writer.WriteStringValue("AccountCountry", AccountCountry);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteDoubleValue("AmountDC", AmountDC);
-            writer.WriteDoubleValue("AmountDiscountDC", AmountDiscountDC);
-            writer.WriteDoubleValue("AmountDiscountFC", AmountDiscountFC);
-            writer.WriteDoubleValue("AmountFC", AmountFC);
-            writer.WriteGuidValue("BankAccountID", BankAccountID);
-            writer.WriteStringValue("BankAccountNumber", BankAccountNumber);
-            writer.WriteStringValue("CashflowTransactionBatchCode", CashflowTransactionBatchCode);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Currency", Currency);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteGuidValue("DirectDebitMandate", DirectDebitMandate);
-            writer.WriteStringValue("DirectDebitMandateDescription", DirectDebitMandateDescription);
-            writer.WriteIntValue("DirectDebitMandatePaymentType", DirectDebitMandatePaymentType);
-            writer.WriteStringValue("DirectDebitMandateReference", DirectDebitMandateReference);
-            writer.WriteIntValue("DirectDebitMandateType", DirectDebitMandateType);
-            writer.WriteDateTimeOffsetValue("DiscountDueDate", DiscountDueDate);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Document", Document);
-            writer.WriteIntValue("DocumentNumber", DocumentNumber);
-            writer.WriteStringValue("DocumentSubject", DocumentSubject);
-            writer.WriteDateTimeOffsetValue("DueDate", DueDate);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteIntValue("EndPeriod", EndPeriod);
-            writer.WriteStringValue("EndToEndID", EndToEndID);
-            writer.WriteIntValue("EndYear", EndYear);
-            writer.WriteDateTimeOffsetValue("EntryDate", EntryDate);
-            writer.WriteGuidValue("EntryID", EntryID);
-            writer.WriteIntValue("EntryNumber", EntryNumber);
-            writer.WriteGuidValue("GLAccount", GLAccount);
-            writer.WriteStringValue("GLAccountCode", GLAccountCode);
-            writer.WriteStringValue("GLAccountDescription", GLAccountDescription);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("InvoiceDate", InvoiceDate);
-            writer.WriteIntValue("InvoiceNumber", InvoiceNumber);
-            writer.WriteIntValue("IsBatchBooking", IsBatchBooking);
-            writer.WriteBoolValue("IsFullyPaid", IsFullyPaid);
-            writer.WriteStringValue("Journal", Journal);
-            writer.WriteStringValue("JournalDescription", JournalDescription);
-            writer.WriteDateTimeOffsetValue("LastPaymentDate", LastPaymentDate);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteIntValue("OrderNumber", OrderNumber);
-            writer.WriteStringValue("PaymentCondition", PaymentCondition);
-            writer.WriteStringValue("PaymentConditionDescription", PaymentConditionDescription);
-            writer.WriteIntValue("PaymentDays", PaymentDays);
-            writer.WriteIntValue("PaymentDaysDiscount", PaymentDaysDiscount);
-            writer.WriteDoubleValue("PaymentDiscountPercentage", PaymentDiscountPercentage);
-            writer.WriteStringValue("PaymentInformationID", PaymentInformationID);
-            writer.WriteStringValue("PaymentMethod", PaymentMethod);
-            writer.WriteStringValue("PaymentReference", PaymentReference);
-            writer.WriteDoubleValue("RateFC", RateFC);
-            writer.WriteIntValue("ReceivableBatchNumber", ReceivableBatchNumber);
-            writer.WriteDateTimeOffsetValue("ReceivableSelected", ReceivableSelected);
-            writer.WriteGuidValue("ReceivableSelector", ReceivableSelector);
-            writer.WriteStringValue("ReceivableSelectorFullName", ReceivableSelectorFullName);
-            writer.WriteIntValue("Source", Source);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteDoubleValue("TransactionAmountDC", TransactionAmountDC);
-            writer.WriteDoubleValue("TransactionAmountFC", TransactionAmountFC);
-            writer.WriteDateTimeOffsetValue("TransactionDueDate", TransactionDueDate);
-            writer.WriteGuidValue("TransactionEntryID", TransactionEntryID);
-            writer.WriteGuidValue("TransactionID", TransactionID);
-            writer.WriteBoolValue("TransactionIsReversal", TransactionIsReversal);
-            writer.WriteIntValue("TransactionReportingPeriod", TransactionReportingPeriod);
-            writer.WriteIntValue("TransactionReportingYear", TransactionReportingYear);
-            writer.WriteIntValue("TransactionStatus", TransactionStatus);
-            writer.WriteIntValue("TransactionType", TransactionType);
-            writer.WriteStringValue("YourRef", YourRef);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

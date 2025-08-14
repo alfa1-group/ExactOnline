@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PurchaseEntryPurchaseEntryLinesPut : IAdditionalDataHolder, IParsable
+    public partial class PurchaseEntryPurchaseEntryLinesPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AmountFC property</summary>
         public double? AmountFC { get; set; }
         /// <summary>The Asset property</summary>
@@ -101,10 +99,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The Notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -174,13 +172,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string WithholdingTax { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PurchaseEntryPurchaseEntryLinesPut"/> and sets the default values.
-        /// </summary>
-        public PurchaseEntryPurchaseEntryLinesPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -258,7 +249,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("IntraStatTransactionA", IntraStatTransactionA);
             writer.WriteStringValue("IntraStatTransactionB", IntraStatTransactionB);
             writer.WriteStringValue("IntraStatTransportMethod", IntraStatTransportMethod);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteDoubleValue("PrivateUsePercentage", PrivateUsePercentage);
             writer.WriteGuidValue("Project", Project);
@@ -278,7 +268,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("VATPercentage", VATPercentage);
             writer.WriteDoubleValue("WithholdingAmountDC", WithholdingAmountDC);
             writer.WriteStringValue("WithholdingTax", WithholdingTax);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

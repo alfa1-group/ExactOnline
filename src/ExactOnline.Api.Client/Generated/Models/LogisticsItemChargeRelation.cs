@@ -9,130 +9,121 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LogisticsItemChargeRelation : IAdditionalDataHolder, IParsable
+    public partial class LogisticsItemChargeRelation : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Item charge amount per unit</summary>
-        public double? Amount { get; set; }
+        public double? Amount { get; private set; }
         /// <summary>Code of item charge</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChargeCode { get; set; }
+        public string? ChargeCode { get; private set; }
 #nullable restore
 #else
-        public string ChargeCode { get; set; }
+        public string ChargeCode { get; private set; }
 #endif
         /// <summary>Description of item charge</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChargeDescription { get; set; }
+        public string? ChargeDescription { get; private set; }
 #nullable restore
 #else
-        public string ChargeDescription { get; set; }
+        public string ChargeDescription { get; private set; }
 #endif
         /// <summary>Item charge ID</summary>
-        public Guid? ChargeID { get; set; }
+        public Guid? ChargeID { get; private set; }
         /// <summary>VAT code that is used when the item charge is registered</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChargeVATCode { get; set; }
+        public string? ChargeVATCode { get; private set; }
 #nullable restore
 #else
-        public string ChargeVATCode { get; set; }
+        public string ChargeVATCode { get; private set; }
 #endif
         /// <summary>Description of VAT Code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChargeVATDescription { get; set; }
+        public string? ChargeVATDescription { get; private set; }
 #nullable restore
 #else
-        public string ChargeVATDescription { get; set; }
+        public string ChargeVATDescription { get; private set; }
 #endif
         /// <summary>VAT percentage of the VAT code</summary>
-        public double? ChargeVATPercentage { get; set; }
+        public double? ChargeVATPercentage { get; private set; }
         /// <summary>Indicates how the VAT amount should be calculated in relation to the item charge amount. B = VAT 0% (Only base amount), E = Excluding, I = Including, N = No VAT</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChargeVATType { get; set; }
+        public string? ChargeVATType { get; private set; }
 #nullable restore
 #else
-        public string ChargeVATType { get; set; }
+        public string ChargeVATType { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Currency of the item charge</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get; private set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Primary key of relationship between item and item charge</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Code of item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Description of item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>Item ID</summary>
-        public Guid? ItemID { get; set; }
+        public Guid? ItemID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Quantity of the item charge requires in the item</summary>
-        public double? Quantity { get; set; }
+        public double? Quantity { get; private set; }
         /// <summary>Total of item charge amount per unit x quantity</summary>
-        public double? TotalAmount { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.LogisticsItemChargeRelation"/> and sets the default values.
-        /// </summary>
-        public LogisticsItemChargeRelation()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public double? TotalAmount { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -183,30 +174,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("Amount", Amount);
-            writer.WriteStringValue("ChargeCode", ChargeCode);
-            writer.WriteStringValue("ChargeDescription", ChargeDescription);
-            writer.WriteGuidValue("ChargeID", ChargeID);
-            writer.WriteStringValue("ChargeVATCode", ChargeVATCode);
-            writer.WriteStringValue("ChargeVATDescription", ChargeVATDescription);
-            writer.WriteDoubleValue("ChargeVATPercentage", ChargeVATPercentage);
-            writer.WriteStringValue("ChargeVATType", ChargeVATType);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Currency", Currency);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteGuidValue("ItemID", ItemID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteDoubleValue("Quantity", Quantity);
-            writer.WriteDoubleValue("TotalAmount", TotalAmount);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

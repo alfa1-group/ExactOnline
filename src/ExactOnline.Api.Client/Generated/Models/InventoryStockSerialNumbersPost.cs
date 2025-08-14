@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InventoryStockSerialNumbersPost : IAdditionalDataHolder, IParsable
+    public partial class InventoryStockSerialNumbersPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID representing a group of serial or batch number being reserved for use in a subsequent stock transaction</summary>
         public Guid? DraftStockTransactionID { get; set; }
         /// <summary>End date of effective period for serial or batch number</summary>
@@ -27,10 +25,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The main item’s serial number ID, which should be linked to the issued part’s item serial number for the shop order.</summary>
         public Guid? ParentID { get; set; }
@@ -66,13 +64,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? Warehouse { get; set; }
         /// <summary>ID of warehouse transfer associated with this serial or batch number.</summary>
         public Guid? WarehouseTransferLine { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbersPost"/> and sets the default values.
-        /// </summary>
-        public InventoryStockSerialNumbersPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -122,7 +113,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("ID", ID);
             writer.WriteIntValue("IsBlocked", IsBlocked);
             writer.WriteGuidValue("Item", Item);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("ParentID", ParentID);
             writer.WriteGuidValue("PickOrderLine", PickOrderLine);
             writer.WriteStringValue("Remarks", Remarks);
@@ -134,7 +124,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("StorageLocation", StorageLocation);
             writer.WriteGuidValue("Warehouse", Warehouse);
             writer.WriteGuidValue("WarehouseTransferLine", WarehouseTransferLine);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

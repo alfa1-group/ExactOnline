@@ -9,13 +9,11 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AccountancySolutionLinksPost : IAdditionalDataHolder, IParsable
+    public partial class AccountancySolutionLinksPost : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID of account to which solution is linked</summary>
         public Guid? Account { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If type is external predefined, represents ID of PracticeManagementExternalSolutions (mandatory for External solution)</summary>
         public int? ExternalSolutionCode { get; set; }
         /// <summary>Customer URl in external solution, like solution.com/id123 (mandatory for External and ExternalOther solution)</summary>
@@ -31,10 +29,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Name of the solution link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,13 +52,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>Type of solution: 0 - Internal(EOL), 1 - External(Wellknown solution), 2 - ExternalOther</summary>
         public int? SolutionType { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.AccountancySolutionLinksPost"/> and sets the default values.
-        /// </summary>
-        public AccountancySolutionLinksPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -100,11 +91,9 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("ExternalSolutionCode", ExternalSolutionCode);
             writer.WriteStringValue("ExternalSolutionUrl", ExternalSolutionUrl);
             writer.WriteIntValue("InternalSolutionDivision", InternalSolutionDivision);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("OtherExternalSolutionName", OtherExternalSolutionName);
             writer.WriteIntValue("SolutionType", SolutionType);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

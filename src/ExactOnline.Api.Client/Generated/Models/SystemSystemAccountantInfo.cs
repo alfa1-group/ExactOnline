@@ -9,118 +9,109 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SystemSystemAccountantInfo : IAdditionalDataHolder, IParsable
+    public partial class SystemSystemAccountantInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>First address line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLine1 { get; set; }
+        public string? AddressLine1 { get; private set; }
 #nullable restore
 #else
-        public string AddressLine1 { get; set; }
+        public string AddressLine1 { get; private set; }
 #endif
         /// <summary>Second address line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLine2 { get; set; }
+        public string? AddressLine2 { get; private set; }
 #nullable restore
 #else
-        public string AddressLine2 { get; set; }
+        public string AddressLine2 { get; private set; }
 #endif
         /// <summary>Third address line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLine3 { get; set; }
+        public string? AddressLine3 { get; private set; }
 #nullable restore
 #else
-        public string AddressLine3 { get; set; }
+        public string AddressLine3 { get; private set; }
 #endif
         /// <summary>City.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City { get; set; }
+        public string? City { get; private set; }
 #nullable restore
 #else
-        public string City { get; set; }
+        public string City { get; private set; }
 #endif
         /// <summary>Email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get; private set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get; private set; }
 #endif
         /// <summary>The account ID of the accountant.</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Indicates if the customer is an accountant himself.</summary>
-        public bool? IsAccountant { get; set; }
+        public bool? IsAccountant { get; private set; }
         /// <summary>Logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Logo { get; set; }
+        public byte[]? Logo { get; private set; }
 #nullable restore
 #else
-        public byte[] Logo { get; set; }
+        public byte[] Logo { get; private set; }
 #endif
         /// <summary>Url to retrieve the logo of the accountant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MenuLogoUrl { get; set; }
+        public string? MenuLogoUrl { get; private set; }
 #nullable restore
 #else
-        public string MenuLogoUrl { get; set; }
+        public string MenuLogoUrl { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The name of the accountant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get; private set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get; private set; }
 #endif
         /// <summary>Phone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phone { get; set; }
+        public string? Phone { get; private set; }
 #nullable restore
 #else
-        public string Phone { get; set; }
+        public string Phone { get; private set; }
 #endif
         /// <summary>Postcode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Postcode { get; set; }
+        public string? Postcode { get; private set; }
 #nullable restore
 #else
-        public string Postcode { get; set; }
+        public string Postcode { get; private set; }
 #endif
         /// <summary>Website.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get; set; }
+        public string? Website { get; private set; }
 #nullable restore
 #else
-        public string Website { get; set; }
+        public string Website { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SystemSystemAccountantInfo"/> and sets the default values.
-        /// </summary>
-        public SystemSystemAccountantInfo()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -162,21 +153,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("AddressLine1", AddressLine1);
-            writer.WriteStringValue("AddressLine2", AddressLine2);
-            writer.WriteStringValue("AddressLine3", AddressLine3);
-            writer.WriteStringValue("City", City);
-            writer.WriteStringValue("Email", Email);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteBoolValue("IsAccountant", IsAccountant);
-            writer.WriteByteArrayValue("Logo", Logo);
-            writer.WriteStringValue("MenuLogoUrl", MenuLogoUrl);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteStringValue("Name", Name);
-            writer.WriteStringValue("Phone", Phone);
-            writer.WriteStringValue("Postcode", Postcode);
-            writer.WriteStringValue("Website", Website);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

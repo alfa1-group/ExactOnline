@@ -9,162 +9,153 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncSalesOrderGoodsDeliveries : IAdditionalDataHolder, IParsable
+    public partial class SyncSalesOrderGoodsDeliveries : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Created property</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>The Creator property</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>The CreatorFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>The DeliveryAccount property</summary>
-        public Guid? DeliveryAccount { get; set; }
+        public Guid? DeliveryAccount { get; private set; }
         /// <summary>The DeliveryAccountCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAccountCode { get; set; }
+        public string? DeliveryAccountCode { get; private set; }
 #nullable restore
 #else
-        public string DeliveryAccountCode { get; set; }
+        public string DeliveryAccountCode { get; private set; }
 #endif
         /// <summary>The DeliveryAccountName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAccountName { get; set; }
+        public string? DeliveryAccountName { get; private set; }
 #nullable restore
 #else
-        public string DeliveryAccountName { get; set; }
+        public string DeliveryAccountName { get; private set; }
 #endif
         /// <summary>The DeliveryAddress property</summary>
-        public Guid? DeliveryAddress { get; set; }
+        public Guid? DeliveryAddress { get; private set; }
         /// <summary>The DeliveryContact property</summary>
-        public Guid? DeliveryContact { get; set; }
+        public Guid? DeliveryContact { get; private set; }
         /// <summary>The DeliveryContactPersonFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryContactPersonFullName { get; set; }
+        public string? DeliveryContactPersonFullName { get; private set; }
 #nullable restore
 #else
-        public string DeliveryContactPersonFullName { get; set; }
+        public string DeliveryContactPersonFullName { get; private set; }
 #endif
         /// <summary>The DeliveryDate property</summary>
-        public DateTimeOffset? DeliveryDate { get; set; }
+        public DateTimeOffset? DeliveryDate { get; private set; }
         /// <summary>The DeliveryNumber property</summary>
-        public int? DeliveryNumber { get; set; }
+        public int? DeliveryNumber { get; private set; }
         /// <summary>The Description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>The Division property</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>The Document property</summary>
-        public Guid? Document { get; set; }
+        public Guid? Document { get; private set; }
         /// <summary>The DocumentSubject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentSubject { get; set; }
+        public string? DocumentSubject { get; private set; }
 #nullable restore
 #else
-        public string DocumentSubject { get; set; }
+        public string DocumentSubject { get; private set; }
 #endif
         /// <summary>The EntryID property</summary>
-        public Guid? EntryID { get; set; }
+        public Guid? EntryID { get; private set; }
         /// <summary>The EntryNumber property</summary>
-        public int? EntryNumber { get; set; }
+        public int? EntryNumber { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The Modified property</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>The Modifier property</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>The ModifierFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>The Remarks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Remarks { get; set; }
+        public string? Remarks { get; private set; }
 #nullable restore
 #else
-        public string Remarks { get; set; }
+        public string Remarks { get; private set; }
 #endif
         /// <summary>The ShippingMethod property</summary>
-        public Guid? ShippingMethod { get; set; }
+        public Guid? ShippingMethod { get; private set; }
         /// <summary>The ShippingMethodCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShippingMethodCode { get; set; }
+        public string? ShippingMethodCode { get; private set; }
 #nullable restore
 #else
-        public string ShippingMethodCode { get; set; }
+        public string ShippingMethodCode { get; private set; }
 #endif
         /// <summary>The ShippingMethodDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShippingMethodDescription { get; set; }
+        public string? ShippingMethodDescription { get; private set; }
 #nullable restore
 #else
-        public string ShippingMethodDescription { get; set; }
+        public string ShippingMethodDescription { get; private set; }
 #endif
         /// <summary>The Timestamp property</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>The TrackingNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrackingNumber { get; set; }
+        public string? TrackingNumber { get; private set; }
 #nullable restore
 #else
-        public string TrackingNumber { get; set; }
+        public string TrackingNumber { get; private set; }
 #endif
         /// <summary>The Warehouse property</summary>
-        public Guid? Warehouse { get; set; }
+        public Guid? Warehouse { get; private set; }
         /// <summary>The WarehouseCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseCode { get; set; }
+        public string? WarehouseCode { get; private set; }
 #nullable restore
 #else
-        public string WarehouseCode { get; set; }
+        public string WarehouseCode { get; private set; }
 #endif
         /// <summary>The WarehouseDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseDescription { get; set; }
+        public string? WarehouseDescription { get; private set; }
 #nullable restore
 #else
-        public string WarehouseDescription { get; set; }
+        public string WarehouseDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncSalesOrderGoodsDeliveries"/> and sets the default values.
-        /// </summary>
-        public SyncSalesOrderGoodsDeliveries()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -222,37 +213,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteGuidValue("DeliveryAccount", DeliveryAccount);
-            writer.WriteStringValue("DeliveryAccountCode", DeliveryAccountCode);
-            writer.WriteStringValue("DeliveryAccountName", DeliveryAccountName);
-            writer.WriteGuidValue("DeliveryAddress", DeliveryAddress);
-            writer.WriteGuidValue("DeliveryContact", DeliveryContact);
-            writer.WriteStringValue("DeliveryContactPersonFullName", DeliveryContactPersonFullName);
-            writer.WriteDateTimeOffsetValue("DeliveryDate", DeliveryDate);
-            writer.WriteIntValue("DeliveryNumber", DeliveryNumber);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Document", Document);
-            writer.WriteStringValue("DocumentSubject", DocumentSubject);
-            writer.WriteGuidValue("EntryID", EntryID);
-            writer.WriteIntValue("EntryNumber", EntryNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Remarks", Remarks);
-            writer.WriteGuidValue("ShippingMethod", ShippingMethod);
-            writer.WriteStringValue("ShippingMethodCode", ShippingMethodCode);
-            writer.WriteStringValue("ShippingMethodDescription", ShippingMethodDescription);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteStringValue("TrackingNumber", TrackingNumber);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

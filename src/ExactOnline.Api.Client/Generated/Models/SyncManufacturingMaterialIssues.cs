@@ -9,154 +9,145 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncManufacturingMaterialIssues : IAdditionalDataHolder, IParsable
+    public partial class SyncManufacturingMaterialIssues : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of creating user</summary>
-        public Guid? CreatedBy { get; set; }
+        public Guid? CreatedBy { get; private set; }
         /// <summary>Name of the creating user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedByFullName { get; set; }
+        public string? CreatedByFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatedByFullName { get; set; }
+        public string CreatedByFullName { get; private set; }
 #endif
         /// <summary>Date this material issue was created</summary>
-        public DateTimeOffset? CreatedDate { get; set; }
+        public DateTimeOffset? CreatedDate { get; private set; }
         /// <summary>Serial or batch numbers are reserved prior to a POST to MaterialIssues. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.</summary>
-        public Guid? DraftStockTransactionID { get; set; }
+        public Guid? DraftStockTransactionID { get; private set; }
         /// <summary>Indicates if this MaterialIssue has a quantity eligible to be reversed via MaterialReversals</summary>
-        public bool? HasReversibleQuantity { get; set; }
+        public bool? HasReversibleQuantity { get; private set; }
         /// <summary>Boolean indicating if this material issue was the result of shop order backflushing</summary>
-        public int? IsBackflush { get; set; }
+        public int? IsBackflush { get; private set; }
         /// <summary>Does the material issue&apos;s item use batch numbers</summary>
-        public int? IsBatch { get; set; }
+        public int? IsBatch { get; private set; }
         /// <summary>Indicates if fractions (for example 0.35) are allowed for quantities of the material issue&apos;s item</summary>
-        public int? IsFractionAllowedItem { get; set; }
+        public int? IsFractionAllowedItem { get; private set; }
         /// <summary>Boolean indicating if this material issue was an issue to a parent shop order</summary>
-        public int? IsIssueFromChild { get; set; }
+        public int? IsIssueFromChild { get; private set; }
         /// <summary>Does the material issue&apos;s item use serial numbers</summary>
-        public int? IsSerial { get; set; }
+        public int? IsSerial { get; private set; }
         /// <summary>Item issued</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>Code of item issued</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Description of item issued</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>Picture url of item issued</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemPictureUrl { get; set; }
+        public string? ItemPictureUrl { get; private set; }
 #nullable restore
 #else
-        public string ItemPictureUrl { get; set; }
+        public string ItemPictureUrl { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Notes logged with this material issue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Note { get; set; }
+        public string? Note { get; private set; }
 #nullable restore
 #else
-        public string Note { get; set; }
+        public string Note { get; private set; }
 #endif
         /// <summary>Quantity of this material issue</summary>
-        public double? Quantity { get; set; }
+        public double? Quantity { get; private set; }
         /// <summary>If this transaction was part of a SubOrderReceipt, this ID is the related ShopOrderReceipt.StockTransactionID.</summary>
-        public Guid? RelatedStockTransaction { get; set; }
+        public Guid? RelatedStockTransaction { get; private set; }
         /// <summary>ID of shop order issued to</summary>
-        public Guid? ShopOrder { get; set; }
+        public Guid? ShopOrder { get; private set; }
         /// <summary>ID of shop order material plan</summary>
-        public Guid? ShopOrderMaterialPlan { get; set; }
+        public Guid? ShopOrderMaterialPlan { get; private set; }
         /// <summary>Number of shop order issued to</summary>
-        public int? ShopOrderNumber { get; set; }
+        public int? ShopOrderNumber { get; private set; }
         /// <summary>ID of stock transaction related to this material issue</summary>
-        public Guid? StockTransactionId { get; set; }
+        public Guid? StockTransactionId { get; private set; }
         /// <summary>ID of storage location issued from</summary>
-        public Guid? StorageLocation { get; set; }
+        public Guid? StorageLocation { get; private set; }
         /// <summary>Code of storage location issued from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StorageLocationCode { get; set; }
+        public string? StorageLocationCode { get; private set; }
 #nullable restore
 #else
-        public string StorageLocationCode { get; set; }
+        public string StorageLocationCode { get; private set; }
 #endif
         /// <summary>Description of storage location issued from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StorageLocationDescription { get; set; }
+        public string? StorageLocationDescription { get; private set; }
 #nullable restore
 #else
-        public string StorageLocationDescription { get; set; }
+        public string StorageLocationDescription { get; private set; }
 #endif
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>Effective date of this material issue</summary>
-        public DateTimeOffset? TransactionDate { get; set; }
+        public DateTimeOffset? TransactionDate { get; private set; }
         /// <summary>Unit of measurement abbreviation of item issued</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit { get; set; }
+        public string? Unit { get; private set; }
 #nullable restore
 #else
-        public string Unit { get; set; }
+        public string Unit { get; private set; }
 #endif
         /// <summary>Unit of measurement of item issued</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitDescription { get; set; }
+        public string? UnitDescription { get; private set; }
 #nullable restore
 #else
-        public string UnitDescription { get; set; }
+        public string UnitDescription { get; private set; }
 #endif
         /// <summary>ID of warehouse issued from</summary>
-        public Guid? Warehouse { get; set; }
+        public Guid? Warehouse { get; private set; }
         /// <summary>Code of warehouse issued from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseCode { get; set; }
+        public string? WarehouseCode { get; private set; }
 #nullable restore
 #else
-        public string WarehouseCode { get; set; }
+        public string WarehouseCode { get; private set; }
 #endif
         /// <summary>Description of warehouse issued from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseDescription { get; set; }
+        public string? WarehouseDescription { get; private set; }
 #nullable restore
 #else
-        public string WarehouseDescription { get; set; }
+        public string WarehouseDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncManufacturingMaterialIssues"/> and sets the default values.
-        /// </summary>
-        public SyncManufacturingMaterialIssues()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -216,39 +207,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("CreatedBy", CreatedBy);
-            writer.WriteStringValue("CreatedByFullName", CreatedByFullName);
-            writer.WriteDateTimeOffsetValue("CreatedDate", CreatedDate);
-            writer.WriteGuidValue("DraftStockTransactionID", DraftStockTransactionID);
-            writer.WriteBoolValue("HasReversibleQuantity", HasReversibleQuantity);
-            writer.WriteIntValue("IsBackflush", IsBackflush);
-            writer.WriteIntValue("IsBatch", IsBatch);
-            writer.WriteIntValue("IsFractionAllowedItem", IsFractionAllowedItem);
-            writer.WriteIntValue("IsIssueFromChild", IsIssueFromChild);
-            writer.WriteIntValue("IsSerial", IsSerial);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteStringValue("ItemPictureUrl", ItemPictureUrl);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteStringValue("Note", Note);
-            writer.WriteDoubleValue("Quantity", Quantity);
-            writer.WriteGuidValue("RelatedStockTransaction", RelatedStockTransaction);
-            writer.WriteGuidValue("ShopOrder", ShopOrder);
-            writer.WriteGuidValue("ShopOrderMaterialPlan", ShopOrderMaterialPlan);
-            writer.WriteIntValue("ShopOrderNumber", ShopOrderNumber);
-            writer.WriteGuidValue("StockTransactionId", StockTransactionId);
-            writer.WriteGuidValue("StorageLocation", StorageLocation);
-            writer.WriteStringValue("StorageLocationCode", StorageLocationCode);
-            writer.WriteStringValue("StorageLocationDescription", StorageLocationDescription);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteDateTimeOffsetValue("TransactionDate", TransactionDate);
-            writer.WriteStringValue("Unit", Unit);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

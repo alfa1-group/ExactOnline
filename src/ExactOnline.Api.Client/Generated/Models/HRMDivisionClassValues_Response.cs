@@ -11,25 +11,16 @@ namespace ExactOnline.Api.Client.Models
     /// A collection of HRMDivisionClassValues entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class HRMDivisionClassValues_Response : IAdditionalDataHolder, IParsable
+    public partial class HRMDivisionClassValues_Response : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The d property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.HRMDivisionClassValues_Response.HRMDivisionClassValues_Response_d? D { get; set; }
+        public global::ExactOnline.Api.Client.Models.HRMDivisionClassValues_Response.HRMDivisionClassValues_Response_d? D { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.HRMDivisionClassValues_Response.HRMDivisionClassValues_Response_d D { get; set; }
+        public global::ExactOnline.Api.Client.Models.HRMDivisionClassValues_Response.HRMDivisionClassValues_Response_d D { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.HRMDivisionClassValues_Response"/> and sets the default values.
-        /// </summary>
-        public HRMDivisionClassValues_Response()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,8 +49,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.HRMDivisionClassValues_Response.HRMDivisionClassValues_Response_d>("d", D);
-            writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::ExactOnline.Api.Client.Models.HRMDivisionClassValues_Results"/>, List&lt;global::ExactOnline.Api.Client.Models.HRMDivisionClassValues&gt;

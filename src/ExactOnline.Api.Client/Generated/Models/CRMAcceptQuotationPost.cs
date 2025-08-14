@@ -9,13 +9,11 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CRMAcceptQuotationPost : IAdditionalDataHolder, IParsable
+    public partial class CRMAcceptQuotationPost : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>0 = No action (Default), 1 = create sales order, 2 = create sales invoice, 3 = create project, 4 = add to existing project, 5 = create subscription, 99 = follow email with sign off action.For CRM standalone:Code 99 only applicable for quotation with status &apos;60 - Awaiting online acceptance&apos;.</summary>
         public int? Action { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains information if the quotation was successfully added to existing project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,10 +47,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Based on this layout the notification email is sent. In case it is not specified, then no email is sent.</summary>
         public Guid? NotificationLayout { get; set; }
@@ -165,13 +163,6 @@ namespace ExactOnline.Api.Client.Models
         public string YourRef { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CRMAcceptQuotationPost"/> and sets the default values.
-        /// </summary>
-        public CRMAcceptQuotationPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.CRMAcceptQuotationPost"/></returns>
@@ -238,7 +229,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("Division", Division);
             writer.WriteStringValue("ErrorMessage", ErrorMessage);
             writer.WriteStringValue("InvoiceJournal", InvoiceJournal);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("NotificationLayout", NotificationLayout);
             writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.CRMOptionalQuotationLineID>("OptionalQuotationLineIDs", OptionalQuotationLineIDs);
             writer.WriteIntValue("ProjectBudgetType", ProjectBudgetType);
@@ -264,7 +254,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("SuccessMessage", SuccessMessage);
             writer.WriteBoolValue("UpdateProjectBudgetAndPriceAgreement", UpdateProjectBudgetAndPriceAgreement);
             writer.WriteStringValue("YourRef", YourRef);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,102 +9,93 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadFinancialAgingPayablesListByAgeGroup : IAdditionalDataHolder, IParsable
+    public partial class ReadFinancialAgingPayablesListByAgeGroup : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Code of Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCode { get; set; }
+        public string? AccountCode { get; private set; }
 #nullable restore
 #else
-        public string AccountCode { get; set; }
+        public string AccountCode { get; private set; }
 #endif
         /// <summary>Primary key</summary>
-        public Guid? AccountId { get; set; }
+        public Guid? AccountId { get; private set; }
         /// <summary>Name of Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get; private set; }
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get; private set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Age group 1</summary>
-        public int? AgeGroup1 { get; set; }
+        public int? AgeGroup1 { get; private set; }
         /// <summary>Amount of age group 1</summary>
-        public double? AgeGroup1Amount { get; set; }
+        public double? AgeGroup1Amount { get; private set; }
         /// <summary>Description of AgeGroup1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgeGroup1Description { get; set; }
+        public string? AgeGroup1Description { get; private set; }
 #nullable restore
 #else
-        public string AgeGroup1Description { get; set; }
+        public string AgeGroup1Description { get; private set; }
 #endif
         /// <summary>Age group 2</summary>
-        public int? AgeGroup2 { get; set; }
+        public int? AgeGroup2 { get; private set; }
         /// <summary>Amount of age group 2</summary>
-        public double? AgeGroup2Amount { get; set; }
+        public double? AgeGroup2Amount { get; private set; }
         /// <summary>Description of AgeGroup2</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgeGroup2Description { get; set; }
+        public string? AgeGroup2Description { get; private set; }
 #nullable restore
 #else
-        public string AgeGroup2Description { get; set; }
+        public string AgeGroup2Description { get; private set; }
 #endif
         /// <summary>Age group 3</summary>
-        public int? AgeGroup3 { get; set; }
+        public int? AgeGroup3 { get; private set; }
         /// <summary>Amount of age group 3</summary>
-        public double? AgeGroup3Amount { get; set; }
+        public double? AgeGroup3Amount { get; private set; }
         /// <summary>Description of AgeGroup3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgeGroup3Description { get; set; }
+        public string? AgeGroup3Description { get; private set; }
 #nullable restore
 #else
-        public string AgeGroup3Description { get; set; }
+        public string AgeGroup3Description { get; private set; }
 #endif
         /// <summary>Age group 4</summary>
-        public int? AgeGroup4 { get; set; }
+        public int? AgeGroup4 { get; private set; }
         /// <summary>Amount of age group 4</summary>
-        public double? AgeGroup4Amount { get; set; }
+        public double? AgeGroup4Amount { get; private set; }
         /// <summary>Description of AgeGroup4</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgeGroup4Description { get; set; }
+        public string? AgeGroup4Description { get; private set; }
 #nullable restore
 #else
-        public string AgeGroup4Description { get; set; }
+        public string AgeGroup4Description { get; private set; }
 #endif
         /// <summary>Code of Currency</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode { get; set; }
+        public string? CurrencyCode { get; private set; }
 #nullable restore
 #else
-        public string CurrencyCode { get; set; }
+        public string CurrencyCode { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Total amount of all age groups</summary>
-        public double? TotalAmount { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialAgingPayablesListByAgeGroup"/> and sets the default values.
-        /// </summary>
-        public ReadFinancialAgingPayablesListByAgeGroup()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public double? TotalAmount { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -150,25 +141,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("AccountCode", AccountCode);
-            writer.WriteGuidValue("AccountId", AccountId);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteIntValue("AgeGroup1", AgeGroup1);
-            writer.WriteDoubleValue("AgeGroup1Amount", AgeGroup1Amount);
-            writer.WriteStringValue("AgeGroup1Description", AgeGroup1Description);
-            writer.WriteIntValue("AgeGroup2", AgeGroup2);
-            writer.WriteDoubleValue("AgeGroup2Amount", AgeGroup2Amount);
-            writer.WriteStringValue("AgeGroup2Description", AgeGroup2Description);
-            writer.WriteIntValue("AgeGroup3", AgeGroup3);
-            writer.WriteDoubleValue("AgeGroup3Amount", AgeGroup3Amount);
-            writer.WriteStringValue("AgeGroup3Description", AgeGroup3Description);
-            writer.WriteIntValue("AgeGroup4", AgeGroup4);
-            writer.WriteDoubleValue("AgeGroup4Amount", AgeGroup4Amount);
-            writer.WriteStringValue("AgeGroup4Description", AgeGroup4Description);
-            writer.WriteStringValue("CurrencyCode", CurrencyCode);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDoubleValue("TotalAmount", TotalAmount);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

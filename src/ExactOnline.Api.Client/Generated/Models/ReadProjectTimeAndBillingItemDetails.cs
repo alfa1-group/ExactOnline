@@ -9,58 +9,49 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadProjectTimeAndBillingItemDetails : IAdditionalDataHolder, IParsable
+    public partial class ReadProjectTimeAndBillingItemDetails : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code of the item used in time and billing projects</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get; private set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get; private set; }
 #endif
         /// <summary>The description of the item used in time and billing projects</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>A boolean field to indicated if this item&apos;s quantity is allowed to be used in fraction&apos;s, which changes the calculation of the total amount invoiced</summary>
-        public bool? IsFractionAllowedItem { get; set; }
+        public bool? IsFractionAllowedItem { get; private set; }
         /// <summary>A boolean field to indicated if this item is enabled to be used in a invoice proposal</summary>
-        public bool? IsSalesItem { get; set; }
+        public bool? IsSalesItem { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The code of the sales currency used in this item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalesCurrency { get; set; }
+        public string? SalesCurrency { get; private set; }
 #nullable restore
 #else
-        public string SalesCurrency { get; set; }
+        public string SalesCurrency { get; private set; }
 #endif
         /// <summary>Sales price of the item which is used when processing sales invoice</summary>
-        public double? SalesPrice { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingItemDetails"/> and sets the default values.
-        /// </summary>
-        public ReadProjectTimeAndBillingItemDetails()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public double? SalesPrice { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,15 +87,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Code", Code);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteBoolValue("IsFractionAllowedItem", IsFractionAllowedItem);
-            writer.WriteBoolValue("IsSalesItem", IsSalesItem);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteStringValue("SalesCurrency", SalesCurrency);
-            writer.WriteDoubleValue("SalesPrice", SalesPrice);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

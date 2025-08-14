@@ -9,50 +9,48 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AssetsAssets : IAdditionalDataHolder, IParsable
+    public partial class AssetsAssets : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if an asset was already depreciated before registering it in Exact Online</summary>
-        public int? AlreadyDepreciated { get; set; }
+        public int? AlreadyDepreciated { get; private set; }
         /// <summary>In case of a transfer or a split, the original asset ID is saved in this field. This is done to provide tracability of the Asset</summary>
-        public Guid? AssetFrom { get; set; }
+        public Guid? AssetFrom { get; private set; }
         /// <summary>Description of AssetFrom</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetFromDescription { get; set; }
+        public string? AssetFromDescription { get; private set; }
 #nullable restore
 #else
-        public string AssetFromDescription { get; set; }
+        public string AssetFromDescription { get; private set; }
 #endif
         /// <summary>Asset group identifies GLAccounts to be used for Asset transactions</summary>
-        public Guid? AssetGroup { get; set; }
+        public Guid? AssetGroup { get; private set; }
         /// <summary>Code of the asset group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetGroupCode { get; set; }
+        public string? AssetGroupCode { get; private set; }
 #nullable restore
 #else
-        public string AssetGroupCode { get; set; }
+        public string AssetGroupCode { get; private set; }
 #endif
         /// <summary>Description of the asset group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetGroupDescription { get; set; }
+        public string? AssetGroupDescription { get; private set; }
 #nullable restore
 #else
-        public string AssetGroupDescription { get; set; }
+        public string AssetGroupDescription { get; private set; }
 #endif
         /// <summary>The catalogue value of the asset</summary>
-        public double? CatalogueValue { get; set; }
+        public double? CatalogueValue { get; private set; }
         /// <summary>Code of the asset</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get; private set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get; private set; }
 #endif
         /// <summary>The CommercialBuildingValues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,238 +63,231 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>Assets can be linked to a cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Costcenter { get; set; }
+        public string? Costcenter { get; private set; }
 #nullable restore
 #else
-        public string Costcenter { get; set; }
+        public string Costcenter { get; private set; }
 #endif
         /// <summary>Description of Costcenter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostcenterDescription { get; set; }
+        public string? CostcenterDescription { get; private set; }
 #nullable restore
 #else
-        public string CostcenterDescription { get; set; }
+        public string CostcenterDescription { get; private set; }
 #endif
         /// <summary>Assets can be linked to a cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Costunit { get; set; }
+        public string? Costunit { get; private set; }
 #nullable restore
 #else
-        public string Costunit { get; set; }
+        public string Costunit { get; private set; }
 #endif
         /// <summary>Description of Costunit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostunitDescription { get; set; }
+        public string? CostunitDescription { get; private set; }
 #nullable restore
 #else
-        public string CostunitDescription { get; set; }
+        public string CostunitDescription { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Custom field endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>Used for Belgium legislation. Used to produce the official &apos;Investment deduction&apos; report</summary>
-        public double? DeductionPercentage { get; set; }
+        public double? DeductionPercentage { get; private set; }
         /// <summary>Amount that is already depreciated when adding an existing asset. Can only be filled when &apos;Alreadydepreciated&apos; is on</summary>
-        public double? DepreciatedAmount { get; set; }
+        public double? DepreciatedAmount { get; private set; }
         /// <summary>Number of periods that already have been depreciated for the asset. Can only be filled when &apos;Alreadydepreciated&apos; is on</summary>
-        public int? DepreciatedPeriods { get; set; }
+        public int? DepreciatedPeriods { get; private set; }
         /// <summary>StartDate of depreciating. Can only be filled when &apos;Alreadydepreciated&apos; is on</summary>
-        public DateTimeOffset? DepreciatedStartDate { get; set; }
+        public DateTimeOffset? DepreciatedStartDate { get; private set; }
         /// <summary>This is the description of the Asset</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Asset EndDate is filled when asset is Sold or Inactive</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Engine emission of the asset, needed to calculate the co² report</summary>
-        public int? EngineEmission { get; set; }
+        public int? EngineEmission { get; private set; }
         /// <summary>Engine type of the asset, Needed to generate a co² report</summary>
-        public int? EngineType { get; set; }
+        public int? EngineType { get; private set; }
         /// <summary>Links to the gltransactions.id. GL transaction line based on which the asset is created</summary>
-        public Guid? GLTransactionLine { get; set; }
+        public Guid? GLTransactionLine { get; private set; }
         /// <summary>Description of GLTransactionLine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLTransactionLineDescription { get; set; }
+        public string? GLTransactionLineDescription { get; private set; }
 #nullable restore
 #else
-        public string GLTransactionLineDescription { get; set; }
+        public string GLTransactionLineDescription { get; private set; }
 #endif
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Supplier of the asset</summary>
-        public Guid? InvestmentAccount { get; set; }
+        public Guid? InvestmentAccount { get; private set; }
         /// <summary>Code of InvestmentAccount</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvestmentAccountCode { get; set; }
+        public string? InvestmentAccountCode { get; private set; }
 #nullable restore
 #else
-        public string InvestmentAccountCode { get; set; }
+        public string InvestmentAccountCode { get; private set; }
 #endif
         /// <summary>Name of InvestmentAccount</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvestmentAccountName { get; set; }
+        public string? InvestmentAccountName { get; private set; }
 #nullable restore
 #else
-        public string InvestmentAccountName { get; set; }
+        public string InvestmentAccountName { get; private set; }
 #endif
         /// <summary>Investment amount in the default currency of the company</summary>
-        public double? InvestmentAmountDC { get; set; }
+        public double? InvestmentAmountDC { get; private set; }
         /// <summary>Investment value of the asset. Currently the field is filled with the PurchasePriceLocal. Can be status &apos;Not used&apos; after sources have been cleaned</summary>
-        public double? InvestmentAmountFC { get; set; }
+        public double? InvestmentAmountFC { get; private set; }
         /// <summary>Indicates the currency of the investment amount</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvestmentCurrency { get; set; }
+        public string? InvestmentCurrency { get; private set; }
 #nullable restore
 #else
-        public string InvestmentCurrency { get; set; }
+        public string InvestmentCurrency { get; private set; }
 #endif
         /// <summary>Description of InvestmentCurrency</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvestmentCurrencyDescription { get; set; }
+        public string? InvestmentCurrencyDescription { get; private set; }
 #nullable restore
 #else
-        public string InvestmentCurrencyDescription { get; set; }
+        public string InvestmentCurrencyDescription { get; private set; }
 #endif
         /// <summary>Refers to the original date when the asset was bought</summary>
-        public DateTimeOffset? InvestmentDate { get; set; }
+        public DateTimeOffset? InvestmentDate { get; private set; }
         /// <summary>Belgian functionality, to determine how a local legal report regarding investment deduction must be created</summary>
-        public int? InvestmentDeduction { get; set; }
+        public int? InvestmentDeduction { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Extra remarks for the asset</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Parent asset</summary>
-        public Guid? Parent { get; set; }
+        public Guid? Parent { get; private set; }
         /// <summary>Code of Parent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentCode { get; set; }
+        public string? ParentCode { get; private set; }
 #nullable restore
 #else
-        public string ParentCode { get; set; }
+        public string ParentCode { get; private set; }
 #endif
         /// <summary>Description of Parent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentDescription { get; set; }
+        public string? ParentDescription { get; private set; }
 #nullable restore
 #else
-        public string ParentDescription { get; set; }
+        public string ParentDescription { get; private set; }
 #endif
         /// <summary>Image for an asset</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Picture { get; set; }
+        public byte[]? Picture { get; private set; }
 #nullable restore
 #else
-        public byte[] Picture { get; set; }
+        public byte[] Picture { get; private set; }
 #endif
         /// <summary>Filename of the image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PictureFileName { get; set; }
+        public string? PictureFileName { get; private set; }
 #nullable restore
 #else
-        public string PictureFileName { get; set; }
+        public string PictureFileName { get; private set; }
 #endif
         /// <summary>First method of depreciation. Currently, it is the only one used</summary>
-        public Guid? PrimaryMethod { get; set; }
+        public Guid? PrimaryMethod { get; private set; }
         /// <summary>Code of PrimaryMethod</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryMethodCode { get; set; }
+        public string? PrimaryMethodCode { get; private set; }
 #nullable restore
 #else
-        public string PrimaryMethodCode { get; set; }
+        public string PrimaryMethodCode { get; private set; }
 #endif
         /// <summary>Description of PrimaryMethod</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryMethodDescription { get; set; }
+        public string? PrimaryMethodDescription { get; private set; }
 #nullable restore
 #else
-        public string PrimaryMethodDescription { get; set; }
+        public string PrimaryMethodDescription { get; private set; }
 #endif
         /// <summary>Indicates the residual value of the asset at the end of the depreciation</summary>
-        public double? ResidualValue { get; set; }
+        public double? ResidualValue { get; private set; }
         /// <summary>Asset Depreciation StartDate</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>Identifies the status of the Asset. (1 = Active, 2 = Not validated, 3 = Inactive, 4 = Depreciated, 5 = Blocked, 6 = Sold)</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>Reference to the transaction lines that make up the financial entry.</summary>
-        public Guid? TransactionEntryID { get; set; }
+        public Guid? TransactionEntryID { get; private set; }
         /// <summary>Entry number of transaction</summary>
-        public int? TransactionEntryNo { get; set; }
+        public int? TransactionEntryNo { get; private set; }
         /// <summary>Indicate if an asset is commercial building or other asset. (0 = Other Assets, 1 = Commercial Building)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get; private set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.AssetsAssets"/> and sets the default values.
-        /// </summary>
-        public AssetsAssets()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -381,64 +372,7 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("AlreadyDepreciated", AlreadyDepreciated);
-            writer.WriteGuidValue("AssetFrom", AssetFrom);
-            writer.WriteStringValue("AssetFromDescription", AssetFromDescription);
-            writer.WriteGuidValue("AssetGroup", AssetGroup);
-            writer.WriteStringValue("AssetGroupCode", AssetGroupCode);
-            writer.WriteStringValue("AssetGroupDescription", AssetGroupDescription);
-            writer.WriteDoubleValue("CatalogueValue", CatalogueValue);
-            writer.WriteStringValue("Code", Code);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.AssetsCommercialBuildingValues>("CommercialBuildingValues", CommercialBuildingValues);
-            writer.WriteStringValue("Costcenter", Costcenter);
-            writer.WriteStringValue("CostcenterDescription", CostcenterDescription);
-            writer.WriteStringValue("Costunit", Costunit);
-            writer.WriteStringValue("CostunitDescription", CostunitDescription);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteDoubleValue("DeductionPercentage", DeductionPercentage);
-            writer.WriteDoubleValue("DepreciatedAmount", DepreciatedAmount);
-            writer.WriteIntValue("DepreciatedPeriods", DepreciatedPeriods);
-            writer.WriteDateTimeOffsetValue("DepreciatedStartDate", DepreciatedStartDate);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteIntValue("EngineEmission", EngineEmission);
-            writer.WriteIntValue("EngineType", EngineType);
-            writer.WriteGuidValue("GLTransactionLine", GLTransactionLine);
-            writer.WriteStringValue("GLTransactionLineDescription", GLTransactionLineDescription);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("InvestmentAccount", InvestmentAccount);
-            writer.WriteStringValue("InvestmentAccountCode", InvestmentAccountCode);
-            writer.WriteStringValue("InvestmentAccountName", InvestmentAccountName);
-            writer.WriteDoubleValue("InvestmentAmountDC", InvestmentAmountDC);
-            writer.WriteDoubleValue("InvestmentAmountFC", InvestmentAmountFC);
-            writer.WriteStringValue("InvestmentCurrency", InvestmentCurrency);
-            writer.WriteStringValue("InvestmentCurrencyDescription", InvestmentCurrencyDescription);
-            writer.WriteDateTimeOffsetValue("InvestmentDate", InvestmentDate);
-            writer.WriteIntValue("InvestmentDeduction", InvestmentDeduction);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteGuidValue("Parent", Parent);
-            writer.WriteStringValue("ParentCode", ParentCode);
-            writer.WriteStringValue("ParentDescription", ParentDescription);
-            writer.WriteByteArrayValue("Picture", Picture);
-            writer.WriteStringValue("PictureFileName", PictureFileName);
-            writer.WriteGuidValue("PrimaryMethod", PrimaryMethod);
-            writer.WriteStringValue("PrimaryMethodCode", PrimaryMethodCode);
-            writer.WriteStringValue("PrimaryMethodDescription", PrimaryMethodDescription);
-            writer.WriteDoubleValue("ResidualValue", ResidualValue);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteGuidValue("TransactionEntryID", TransactionEntryID);
-            writer.WriteIntValue("TransactionEntryNo", TransactionEntryNo);
-            writer.WriteStringValue("Type", Type);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

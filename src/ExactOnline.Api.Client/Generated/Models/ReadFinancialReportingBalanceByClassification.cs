@@ -9,122 +9,113 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadFinancialReportingBalanceByClassification : IAdditionalDataHolder, IParsable
+    public partial class ReadFinancialReportingBalanceByClassification : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The sum of the amounts of all transactions in the grouping.</summary>
-        public double? Amount { get; set; }
+        public double? Amount { get; private set; }
         /// <summary>The sum of the amounts of all credit transactions in the grouping.</summary>
-        public double? AmountCredit { get; set; }
+        public double? AmountCredit { get; private set; }
         /// <summary>The sum of the amounts of all debit transactions in the grouping.</summary>
-        public double? AmountDebit { get; set; }
+        public double? AmountDebit { get; private set; }
         /// <summary>Balance type of the G/L account: B = Balance Sheet, W = Profit &amp;amp; Loss.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceType { get; set; }
+        public string? BalanceType { get; private set; }
 #nullable restore
 #else
-        public string BalanceType { get; set; }
+        public string BalanceType { get; private set; }
 #endif
         /// <summary>Classification code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClassificationCode { get; set; }
+        public string? ClassificationCode { get; private set; }
 #nullable restore
 #else
-        public string ClassificationCode { get; set; }
+        public string ClassificationCode { get; private set; }
 #endif
         /// <summary>Classification description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClassificationDescription { get; set; }
+        public string? ClassificationDescription { get; private set; }
 #nullable restore
 #else
-        public string ClassificationDescription { get; set; }
+        public string ClassificationDescription { get; private set; }
 #endif
         /// <summary>The code of the cost center.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenterCode { get; set; }
+        public string? CostCenterCode { get; private set; }
 #nullable restore
 #else
-        public string CostCenterCode { get; set; }
+        public string CostCenterCode { get; private set; }
 #endif
         /// <summary>The description of the cost center.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenterDescription { get; set; }
+        public string? CostCenterDescription { get; private set; }
 #nullable restore
 #else
-        public string CostCenterDescription { get; set; }
+        public string CostCenterDescription { get; private set; }
 #endif
         /// <summary>The code of the cost unit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnitCode { get; set; }
+        public string? CostUnitCode { get; private set; }
 #nullable restore
 #else
-        public string CostUnitCode { get; set; }
+        public string CostUnitCode { get; private set; }
 #endif
         /// <summary>The description of the cost unit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnitDescription { get; set; }
+        public string? CostUnitDescription { get; private set; }
 #nullable restore
 #else
-        public string CostUnitDescription { get; set; }
+        public string CostUnitDescription { get; private set; }
 #endif
         /// <summary>The number of transactions in the grouping.</summary>
-        public int? Count { get; set; }
+        public int? Count { get; private set; }
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>G/L account</summary>
-        public Guid? GLAccount { get; set; }
+        public Guid? GLAccount { get; private set; }
         /// <summary>The code of the G/L account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLAccountCode { get; set; }
+        public string? GLAccountCode { get; private set; }
 #nullable restore
 #else
-        public string GLAccountCode { get; set; }
+        public string GLAccountCode { get; private set; }
 #endif
         /// <summary>The description of the G/L account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLAccountDescription { get; set; }
+        public string? GLAccountDescription { get; private set; }
 #nullable restore
 #else
-        public string GLAccountDescription { get; set; }
+        public string GLAccountDescription { get; private set; }
 #endif
         /// <summary>G/L scheme</summary>
-        public Guid? GLScheme { get; set; }
+        public Guid? GLScheme { get; private set; }
         /// <summary>Record ID</summary>
-        public long? ID { get; set; }
+        public long? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The reporting period of the transactions in the grouping.</summary>
-        public int? ReportingPeriod { get; set; }
+        public int? ReportingPeriod { get; private set; }
         /// <summary>The reporting year of the transactions in the grouping.</summary>
-        public int? ReportingYear { get; set; }
+        public int? ReportingYear { get; private set; }
         /// <summary>Status: 20 = Open, 50 = Processed. To get &apos;after entry&apos; results, both Open and Processed amounts have to be included. This is by default, so it requires no extra filtering.</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>The type of the transactions in the grouping.</summary>
-        public int? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialReportingBalanceByClassification"/> and sets the default values.
-        /// </summary>
-        public ReadFinancialReportingBalanceByClassification()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public int? Type { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -174,29 +165,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("Amount", Amount);
-            writer.WriteDoubleValue("AmountCredit", AmountCredit);
-            writer.WriteDoubleValue("AmountDebit", AmountDebit);
-            writer.WriteStringValue("BalanceType", BalanceType);
-            writer.WriteStringValue("ClassificationCode", ClassificationCode);
-            writer.WriteStringValue("ClassificationDescription", ClassificationDescription);
-            writer.WriteStringValue("CostCenterCode", CostCenterCode);
-            writer.WriteStringValue("CostCenterDescription", CostCenterDescription);
-            writer.WriteStringValue("CostUnitCode", CostUnitCode);
-            writer.WriteStringValue("CostUnitDescription", CostUnitDescription);
-            writer.WriteIntValue("Count", Count);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("GLAccount", GLAccount);
-            writer.WriteStringValue("GLAccountCode", GLAccountCode);
-            writer.WriteStringValue("GLAccountDescription", GLAccountDescription);
-            writer.WriteGuidValue("GLScheme", GLScheme);
-            writer.WriteLongValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteIntValue("ReportingPeriod", ReportingPeriod);
-            writer.WriteIntValue("ReportingYear", ReportingYear);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

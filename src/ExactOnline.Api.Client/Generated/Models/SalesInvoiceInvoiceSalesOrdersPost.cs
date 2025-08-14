@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SalesInvoiceInvoiceSalesOrdersPost : IAdditionalDataHolder, IParsable
+    public partial class SalesInvoiceInvoiceSalesOrdersPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Invoice creation mode- 0: Per customer 1: Per sales order</summary>
         public int? CreateMode { get; set; }
         /// <summary>Stock entries entry number.</summary>
@@ -35,10 +33,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Collection of Sales order IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,13 +50,6 @@ namespace ExactOnline.Api.Client.Models
         public DateTimeOffset? StartDate { get; set; }
         /// <summary>Possibility to override the InvoiceDate during creation of sales invoice from sales orders. Works only for integration with Intuit QuickBooks.</summary>
         public DateTimeOffset? UserInvoiceDate { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesInvoiceInvoiceSalesOrdersPost"/> and sets the default values.
-        /// </summary>
-        public SalesInvoiceInvoiceSalesOrdersPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -102,11 +93,9 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("ID", ID);
             writer.WriteIntValue("InvoiceMode", InvoiceMode);
             writer.WriteStringValue("JournalCode", JournalCode);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SalesInvoiceSalesOrderID>("SalesOrderIDs", SalesOrderIDs);
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteDateTimeOffsetValue("UserInvoiceDate", UserInvoiceDate);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

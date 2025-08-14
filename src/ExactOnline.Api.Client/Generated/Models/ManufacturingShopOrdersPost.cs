@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManufacturingShopOrdersPost : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingShopOrdersPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>URL to CAD Drawing Specified on General tab shoporder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,10 +61,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Notes - only viewed internally</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,13 +98,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string YourRef { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingShopOrdersPost"/> and sets the default values.
-        /// </summary>
-        public ManufacturingShopOrdersPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -167,7 +158,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("IsReleased", IsReleased);
             writer.WriteGuidValue("Item", Item);
             writer.WriteGuidValue("ItemVersion", ItemVersion);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteDateTimeOffsetValue("PlannedDate", PlannedDate);
             writer.WriteDoubleValue("PlannedQuantity", PlannedQuantity);
@@ -178,7 +168,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("SelectionCode", SelectionCode);
             writer.WriteGuidValue("Warehouse", Warehouse);
             writer.WriteStringValue("YourRef", YourRef);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

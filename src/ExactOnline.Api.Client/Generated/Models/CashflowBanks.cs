@@ -9,88 +9,79 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CashflowBanks : IAdditionalDataHolder, IParsable
+    public partial class CashflowBanks : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the bank</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankName { get; set; }
+        public string? BankName { get; private set; }
 #nullable restore
 #else
-        public string BankName { get; set; }
+        public string BankName { get; private set; }
 #endif
         /// <summary>The bank identification code of the bank</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BICCode { get; set; }
+        public string? BICCode { get; private set; }
 #nullable restore
 #else
-        public string BICCode { get; set; }
+        public string BICCode { get; private set; }
 #endif
         /// <summary>The country in which the bank is based</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public string? Country { get; private set; }
 #nullable restore
 #else
-        public string Country { get; set; }
+        public string Country { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>The extended description of the bank</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>The account format used by the bank</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Format { get; set; }
+        public string? Format { get; private set; }
 #nullable restore
 #else
-        public string Format { get; set; }
+        public string Format { get; private set; }
 #endif
         /// <summary>The website of the bank</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HomePageAddress { get; set; }
+        public string? HomePageAddress { get; private set; }
 #nullable restore
 #else
-        public string HomePageAddress { get; set; }
+        public string HomePageAddress { get; private set; }
 #endif
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>The status of the bank. A = Active, P = Passive</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get; private set; }
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CashflowBanks"/> and sets the default values.
-        /// </summary>
-        public CashflowBanks()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -129,18 +120,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("BankName", BankName);
-            writer.WriteStringValue("BICCode", BICCode);
-            writer.WriteStringValue("Country", Country);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteStringValue("Format", Format);
-            writer.WriteStringValue("HomePageAddress", HomePageAddress);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteStringValue("Status", Status);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

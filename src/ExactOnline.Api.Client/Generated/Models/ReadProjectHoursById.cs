@@ -9,122 +9,113 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadProjectHoursById : IAdditionalDataHolder, IParsable
+    public partial class ReadProjectHoursById : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Code of account linked to the project that hours are being entered to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCode { get; set; }
+        public string? AccountCode { get; private set; }
 #nullable restore
 #else
-        public string AccountCode { get; set; }
+        public string AccountCode { get; private set; }
 #endif
         /// <summary>ID of account linked to the project that hours are being entered to</summary>
-        public Guid? AccountId { get; set; }
+        public Guid? AccountId { get; private set; }
         /// <summary>Name of account linked to the project that hours are being entered to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get; private set; }
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get; private set; }
 #endif
         /// <summary>The activity of the project that the hours are entered to</summary>
-        public Guid? Activity { get; set; }
+        public Guid? Activity { get; private set; }
         /// <summary>Name of activity of the project that the hours are entered to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivityDescription { get; set; }
+        public string? ActivityDescription { get; private set; }
 #nullable restore
 #else
-        public string ActivityDescription { get; set; }
+        public string ActivityDescription { get; private set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date of hour entry record by week</summary>
-        public DateTimeOffset? Date { get; set; }
+        public DateTimeOffset? Date { get; private set; }
         /// <summary>Entry ID of record</summary>
-        public Guid? EntryId { get; set; }
+        public Guid? EntryId { get; private set; }
         /// <summary>Hours approved</summary>
-        public double? HoursApproved { get; set; }
+        public double? HoursApproved { get; private set; }
         /// <summary>Billable hours that is approved</summary>
-        public double? HoursApprovedBillable { get; set; }
+        public double? HoursApprovedBillable { get; private set; }
         /// <summary>Hours saved as draft</summary>
-        public double? HoursDraft { get; set; }
+        public double? HoursDraft { get; private set; }
         /// <summary>Billable hours saved as draft</summary>
-        public double? HoursDraftBillable { get; set; }
+        public double? HoursDraftBillable { get; private set; }
         /// <summary>Hours that are rejected</summary>
-        public double? HoursRejected { get; set; }
+        public double? HoursRejected { get; private set; }
         /// <summary>Billable hours that are rejected</summary>
-        public double? HoursRejectedBillable { get; set; }
+        public double? HoursRejectedBillable { get; private set; }
         /// <summary>Hours that are submitted</summary>
-        public double? HoursSubmitted { get; set; }
+        public double? HoursSubmitted { get; private set; }
         /// <summary>Billable hours that are submitted</summary>
-        public double? HoursSubmittedBillable { get; set; }
+        public double? HoursSubmittedBillable { get; private set; }
         /// <summary>Primary key</summary>
-        public int? Id { get; set; }
+        public int? Id { get; private set; }
         /// <summary>Code of the item that is used for hours</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Description of the item that is used for hours</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>ID of the item that is used for hours</summary>
-        public Guid? ItemId { get; set; }
+        public Guid? ItemId { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Notes entered regarding the information of the hours entered</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Code of project that the hours are entered on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectCode { get; set; }
+        public string? ProjectCode { get; private set; }
 #nullable restore
 #else
-        public string ProjectCode { get; set; }
+        public string ProjectCode { get; private set; }
 #endif
         /// <summary>Description of project that the hours are entered on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectDescription { get; set; }
+        public string? ProjectDescription { get; private set; }
 #nullable restore
 #else
-        public string ProjectDescription { get; set; }
+        public string ProjectDescription { get; private set; }
 #endif
         /// <summary>ID of project that the hours are entered on</summary>
-        public Guid? ProjectId { get; set; }
+        public Guid? ProjectId { get; private set; }
         /// <summary>The week number that the hours are entered on</summary>
-        public int? WeekNumber { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadProjectHoursById"/> and sets the default values.
-        /// </summary>
-        public ReadProjectHoursById()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public int? WeekNumber { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -177,32 +168,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("AccountCode", AccountCode);
-            writer.WriteGuidValue("AccountId", AccountId);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteGuidValue("Activity", Activity);
-            writer.WriteStringValue("ActivityDescription", ActivityDescription);
-            writer.WriteDateTimeOffsetValue("Date", Date);
-            writer.WriteGuidValue("EntryId", EntryId);
-            writer.WriteDoubleValue("HoursApproved", HoursApproved);
-            writer.WriteDoubleValue("HoursApprovedBillable", HoursApprovedBillable);
-            writer.WriteDoubleValue("HoursDraft", HoursDraft);
-            writer.WriteDoubleValue("HoursDraftBillable", HoursDraftBillable);
-            writer.WriteDoubleValue("HoursRejected", HoursRejected);
-            writer.WriteDoubleValue("HoursRejectedBillable", HoursRejectedBillable);
-            writer.WriteDoubleValue("HoursSubmitted", HoursSubmitted);
-            writer.WriteDoubleValue("HoursSubmittedBillable", HoursSubmittedBillable);
-            writer.WriteIntValue("Id", Id);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteGuidValue("ItemId", ItemId);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteStringValue("ProjectCode", ProjectCode);
-            writer.WriteStringValue("ProjectDescription", ProjectDescription);
-            writer.WriteGuidValue("ProjectId", ProjectId);
-            writer.WriteIntValue("WeekNumber", WeekNumber);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

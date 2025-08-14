@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SalesOrderSalesOrderLinesPost : IAdditionalDataHolder, IParsable
+    public partial class SalesOrderSalesOrderLinesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount in the currency of the transaction</summary>
         public double? AmountFC { get; set; }
         /// <summary>Reference to Cost center</summary>
@@ -55,10 +53,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Net price of the sales order line</summary>
         public double? NetPrice { get; set; }
@@ -108,13 +106,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>The vat percentage of the VAT code. This is the percentage at the moment the sales order is created. It&apos;s also used for the default calculation of VAT amounts and VAT base amounts</summary>
         public double? VATPercentage { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesOrderSalesOrderLinesPost"/> and sets the default values.
-        /// </summary>
-        public SalesOrderSalesOrderLinesPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -178,7 +169,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("Item", Item);
             writer.WriteGuidValue("ItemVersion", ItemVersion);
             writer.WriteDoubleValue("Margin", Margin);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDoubleValue("NetPrice", NetPrice);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteGuidValue("OrderID", OrderID);
@@ -194,7 +184,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("VATAmount", VATAmount);
             writer.WriteStringValue("VATCode", VATCode);
             writer.WriteDoubleValue("VATPercentage", VATPercentage);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

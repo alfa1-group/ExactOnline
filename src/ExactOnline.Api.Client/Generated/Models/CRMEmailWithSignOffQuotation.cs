@@ -9,7 +9,7 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CRMEmailWithSignOffQuotation : IAdditionalDataHolder, IParsable
+    public partial class CRMEmailWithSignOffQuotation : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If you enter for this field, your customer receives an email with the quotation after approval of the quotation.</summary>
@@ -18,8 +18,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? AcceptOpportunityStage { get; set; }
         /// <summary>0 = No action (Default), 1 = create sales order, 2 = create sales invoice, 3 = create project, 4 = add to existing project, 5 = create subscription.For CRM standalone:If the value is not provided, the default value will set to &apos;2 - create sales invoice&apos;.If the value is provided, the value must be &apos;2 - create sales invoice&apos;. Otherwise, the error message will be thrown.</summary>
         public int? Action { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow customers to enter their purchase order number.</summary>
         public bool? AllowProvideYourRef { get; set; }
         /// <summary>Create a project item price agreement. Only needed when Action = 3 or Action = 4. Default = True.</summary>
@@ -59,10 +57,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The budget type of the project that will be created. 0 = None (Default), 1 = Hours per hour type, 2 = Work breakdown structure (WBS).</summary>
         public int? ProjectBudgetType { get; set; }
@@ -153,13 +151,6 @@ namespace ExactOnline.Api.Client.Models
         public string YourRef { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CRMEmailWithSignOffQuotation"/> and sets the default values.
-        /// </summary>
-        public CRMEmailWithSignOffQuotation()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.CRMEmailWithSignOffQuotation"/></returns>
@@ -234,7 +225,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ErrorMessage", ErrorMessage);
             writer.WriteStringValue("ExtraText", ExtraText);
             writer.WriteStringValue("InvoiceJournal", InvoiceJournal);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteIntValue("ProjectBudgetType", ProjectBudgetType);
             writer.WriteGuidValue("ProjectClassification", ProjectClassification);
             writer.WriteStringValue("ProjectCode", ProjectCode);
@@ -258,7 +248,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("SuccessMessage", SuccessMessage);
             writer.WriteBoolValue("UpdateProjectBudgetAndPriceAgreement", UpdateProjectBudgetAndPriceAgreement);
             writer.WriteStringValue("YourRef", YourRef);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

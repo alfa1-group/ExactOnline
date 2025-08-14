@@ -9,38 +9,29 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadProjectCostEntryRecentAccountsByProject : IAdditionalDataHolder, IParsable
+    public partial class ReadProjectCostEntryRecentAccountsByProject : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Guid ID of the account used for hour entries</summary>
-        public Guid? AccountId { get; set; }
+        public Guid? AccountId { get; private set; }
         /// <summary>Name of account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get; private set; }
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get; private set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The last date that the account has been used for hour entry</summary>
-        public DateTimeOffset? DateLastUsed { get; set; }
+        public DateTimeOffset? DateLastUsed { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentAccountsByProject"/> and sets the default values.
-        /// </summary>
-        public ReadProjectCostEntryRecentAccountsByProject()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -72,11 +63,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("AccountId", AccountId);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteDateTimeOffsetValue("DateLastUsed", DateLastUsed);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

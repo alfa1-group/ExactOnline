@@ -9,13 +9,11 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VATVATCodesPost : IAdditionalDataHolder, IParsable
+    public partial class VATVATCodesPost : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Tax account</summary>
         public Guid? Account { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates how to calculate the tax. 0 = based on the gross amount, 1 = based on the gross amount + another tax</summary>
         public int? CalculationBasis { get; set; }
         /// <summary>Indicates if transactions using the VAT code are transactions of the domestic VAT charging regulation (such as those for subcontractors) or transactions that are registered within the EU. If Charged=1 and linked to a purchase invoice, both a line for the VAT to pay and a line for the VAT to claim are being created</summary>
@@ -79,10 +77,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>OSS country. Available when OneStopShop featureset is enabled in the administration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,13 +128,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATTransactionType { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.VATVATCodesPost"/> and sets the default values.
-        /// </summary>
-        public VATVATCodesPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -205,7 +196,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("IntrastatType", IntrastatType);
             writer.WriteBoolValue("IsBlocked", IsBlocked);
             writer.WriteStringValue("LegalText", LegalText);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("OssCountry", OssCountry);
             writer.WriteIntValue("TaxReturnType", TaxReturnType);
             writer.WriteStringValue("Type", Type);
@@ -214,7 +204,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("VATPartialRatio", VATPartialRatio);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.VATVatPercentages>("VATPercentages", VATPercentages);
             writer.WriteStringValue("VATTransactionType", VATTransactionType);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,130 +9,121 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncInventoryItemWarehouses : IAdditionalDataHolder, IParsable
+    public partial class SyncInventoryItemWarehouses : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the number of days for next cycle count.</summary>
-        public int? CountingCycle { get; set; }
+        public int? CountingCycle { get; private set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>This is a default storage location</summary>
-        public Guid? DefaultStorageLocation { get; set; }
+        public Guid? DefaultStorageLocation { get; private set; }
         /// <summary>Default storage location&apos;s code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultStorageLocationCode { get; set; }
+        public string? DefaultStorageLocationCode { get; private set; }
 #nullable restore
 #else
-        public string DefaultStorageLocationCode { get; set; }
+        public string DefaultStorageLocationCode { get; private set; }
 #endif
         /// <summary>Default storage location&apos;s description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultStorageLocationDescription { get; set; }
+        public string? DefaultStorageLocationDescription { get; private set; }
 #nullable restore
 #else
-        public string DefaultStorageLocationDescription { get; set; }
+        public string DefaultStorageLocationDescription { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>A guid that is the unique identifier of the linkage between item and warehouse</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Item ID</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>Code of item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Description of item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>Maximum quantity of items that you want in warehouse</summary>
-        public double? MaximumStock { get; set; }
+        public double? MaximumStock { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Order Policy options: 1-Lot for lot, 2-Fixed order quantity, 3-Min / Max, 4-Order</summary>
-        public int? OrderPolicy { get; set; }
+        public int? OrderPolicy { get; private set; }
         /// <summary>Period that work together with replenishment in MRP</summary>
-        public int? Period { get; set; }
+        public int? Period { get; private set; }
         /// <summary>Quantity of items as an indication of when you need to reorder more stock for the warehouse</summary>
-        public double? ReorderPoint { get; set; }
+        public double? ReorderPoint { get; private set; }
         /// <summary>Reorder quantity that work together with replenishment in MRP</summary>
-        public double? ReorderQuantity { get; set; }
+        public double? ReorderQuantity { get; private set; }
         /// <summary>Replenishment options: 1-Purchase, 2-Assemble, 3-Make, 4-Transfer, 5-No replenishment advice</summary>
-        public int? ReplenishmentType { get; set; }
+        public int? ReplenishmentType { get; private set; }
         /// <summary>The quantity in a back to back order process which is already received from the purchase order, but not yet delivered for the sales order.</summary>
-        public double? ReservedStock { get; set; }
+        public double? ReservedStock { get; private set; }
         /// <summary>Minimum quantity of items you must have in stock</summary>
-        public double? SafetyStock { get; set; }
+        public double? SafetyStock { get; private set; }
         /// <summary>Sequence number of the item (Premium Only)</summary>
-        public int? StorageLocationSequenceNumber { get; set; }
+        public int? StorageLocationSequenceNumber { get; private set; }
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>Warehouse ID</summary>
-        public Guid? Warehouse { get; set; }
+        public Guid? Warehouse { get; private set; }
         /// <summary>Code of warehouse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseCode { get; set; }
+        public string? WarehouseCode { get; private set; }
 #nullable restore
 #else
-        public string WarehouseCode { get; set; }
+        public string WarehouseCode { get; private set; }
 #endif
         /// <summary>Description of warehouse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseDescription { get; set; }
+        public string? WarehouseDescription { get; private set; }
 #nullable restore
 #else
-        public string WarehouseDescription { get; set; }
+        public string WarehouseDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncInventoryItemWarehouses"/> and sets the default values.
-        /// </summary>
-        public SyncInventoryItemWarehouses()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -189,36 +180,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("CountingCycle", CountingCycle);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteGuidValue("DefaultStorageLocation", DefaultStorageLocation);
-            writer.WriteStringValue("DefaultStorageLocationCode", DefaultStorageLocationCode);
-            writer.WriteStringValue("DefaultStorageLocationDescription", DefaultStorageLocationDescription);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteDoubleValue("MaximumStock", MaximumStock);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteIntValue("OrderPolicy", OrderPolicy);
-            writer.WriteIntValue("Period", Period);
-            writer.WriteDoubleValue("ReorderPoint", ReorderPoint);
-            writer.WriteDoubleValue("ReorderQuantity", ReorderQuantity);
-            writer.WriteIntValue("ReplenishmentType", ReplenishmentType);
-            writer.WriteDoubleValue("ReservedStock", ReservedStock);
-            writer.WriteDoubleValue("SafetyStock", SafetyStock);
-            writer.WriteIntValue("StorageLocationSequenceNumber", StorageLocationSequenceNumber);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

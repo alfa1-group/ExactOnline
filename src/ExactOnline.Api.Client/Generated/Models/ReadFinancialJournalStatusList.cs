@@ -9,66 +9,57 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadFinancialJournalStatusList : IAdditionalDataHolder, IParsable
+    public partial class ReadFinancialJournalStatusList : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Journal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Journal { get; set; }
+        public string? Journal { get; private set; }
 #nullable restore
 #else
-        public string Journal { get; set; }
+        public string Journal { get; private set; }
 #endif
         /// <summary>The JournalDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JournalDescription { get; set; }
+        public string? JournalDescription { get; private set; }
 #nullable restore
 #else
-        public string JournalDescription { get; set; }
+        public string JournalDescription { get; private set; }
 #endif
         /// <summary>The JournalType property</summary>
-        public int? JournalType { get; set; }
+        public int? JournalType { get; private set; }
         /// <summary>The JournalTypeDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JournalTypeDescription { get; set; }
+        public string? JournalTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string JournalTypeDescription { get; set; }
+        public string JournalTypeDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The Period property</summary>
-        public int? Period { get; set; }
+        public int? Period { get; private set; }
         /// <summary>The Status property</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>The StatusDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusDescription { get; set; }
+        public string? StatusDescription { get; private set; }
 #nullable restore
 #else
-        public string StatusDescription { get; set; }
+        public string StatusDescription { get; private set; }
 #endif
         /// <summary>The Year property</summary>
-        public int? Year { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialJournalStatusList"/> and sets the default values.
-        /// </summary>
-        public ReadFinancialJournalStatusList()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public int? Year { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -105,16 +96,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Journal", Journal);
-            writer.WriteStringValue("JournalDescription", JournalDescription);
-            writer.WriteIntValue("JournalType", JournalType);
-            writer.WriteStringValue("JournalTypeDescription", JournalTypeDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteIntValue("Period", Period);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteStringValue("StatusDescription", StatusDescription);
-            writer.WriteIntValue("Year", Year);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

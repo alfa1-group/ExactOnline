@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SalesInvoiceSalesInvoiceLines : IAdditionalDataHolder, IParsable
+    public partial class SalesInvoiceSalesInvoiceLines : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount in the default currency of the company. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC</summary>
         public double? AmountDC { get; set; }
         /// <summary>For normal lines it&apos;s the amount excluding VAT</summary>
@@ -133,10 +131,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Net price of the sales invoice line</summary>
         public double? NetPrice { get; set; }
@@ -259,13 +257,6 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The vat percentage of the VAT code. This is the percentage at the moment the invoice is created. It&apos;s also used for the default calculation of VAT amounts and VAT base amounts</summary>
         public double? VATPercentage { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SalesInvoiceSalesInvoiceLines"/> and sets the default values.
-        /// </summary>
-        public SalesInvoiceSalesInvoiceLines()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.SalesInvoiceSalesInvoiceLines"/></returns>
@@ -370,7 +361,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ItemCode", ItemCode);
             writer.WriteStringValue("ItemDescription", ItemDescription);
             writer.WriteIntValue("LineNumber", LineNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDoubleValue("NetPrice", NetPrice);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteGuidValue("Pricelist", Pricelist);
@@ -398,7 +388,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("VATCode", VATCode);
             writer.WriteStringValue("VATCodeDescription", VATCodeDescription);
             writer.WriteDoubleValue("VATPercentage", VATPercentage);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

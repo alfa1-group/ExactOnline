@@ -9,110 +9,101 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InventoryItemWarehouseStorageLocations : IAdditionalDataHolder, IParsable
+    public partial class InventoryItemWarehouseStorageLocations : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Uniquely identifies the item, warehouse, storage location combination</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Does the item allow partial quantities (1.75 meters)</summary>
-        public int? IsFractionAllowedItem { get; set; }
+        public int? IsFractionAllowedItem { get; private set; }
         /// <summary>Indicates if this is a stock item</summary>
-        public int? IsStockItem { get; set; }
+        public int? IsStockItem { get; private set; }
         /// <summary>Item</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>Code of the item of this stock quantity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Description of the item of this stock quantity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>Together with ItemStartDate this determines if the item is active</summary>
-        public DateTimeOffset? ItemEndDate { get; set; }
+        public DateTimeOffset? ItemEndDate { get; private set; }
         /// <summary>Together with ItemEndDate this determines if the item is active</summary>
-        public DateTimeOffset? ItemStartDate { get; set; }
+        public DateTimeOffset? ItemStartDate { get; private set; }
         /// <summary>Unit of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemUnit { get; set; }
+        public string? ItemUnit { get; private set; }
 #nullable restore
 #else
-        public string ItemUnit { get; set; }
+        public string ItemUnit { get; private set; }
 #endif
         /// <summary>Unit description of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemUnitDescription { get; set; }
+        public string? ItemUnitDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemUnitDescription { get; set; }
+        public string ItemUnitDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Number of items in stock</summary>
-        public double? Stock { get; set; }
+        public double? Stock { get; private set; }
         /// <summary>Storage location of this stock</summary>
-        public Guid? StorageLocation { get; set; }
+        public Guid? StorageLocation { get; private set; }
         /// <summary>Code of the storage location of this stock quantity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StorageLocationCode { get; set; }
+        public string? StorageLocationCode { get; private set; }
 #nullable restore
 #else
-        public string StorageLocationCode { get; set; }
+        public string StorageLocationCode { get; private set; }
 #endif
         /// <summary>Description of the storage location of this stock quantity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StorageLocationDescription { get; set; }
+        public string? StorageLocationDescription { get; private set; }
 #nullable restore
 #else
-        public string StorageLocationDescription { get; set; }
+        public string StorageLocationDescription { get; private set; }
 #endif
         /// <summary>Sequence number of this stock quantity (Premium Only)</summary>
-        public int? StorageLocationSequenceNumber { get; set; }
+        public int? StorageLocationSequenceNumber { get; private set; }
         /// <summary>ID of Warehouse</summary>
-        public Guid? Warehouse { get; set; }
+        public Guid? Warehouse { get; private set; }
         /// <summary>Code of the warehouse of this stock quantity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseCode { get; set; }
+        public string? WarehouseCode { get; private set; }
 #nullable restore
 #else
-        public string WarehouseCode { get; set; }
+        public string WarehouseCode { get; private set; }
 #endif
         /// <summary>Description of the warehouse of this stock quantity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseDescription { get; set; }
+        public string? WarehouseDescription { get; private set; }
 #nullable restore
 #else
-        public string WarehouseDescription { get; set; }
+        public string WarehouseDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryItemWarehouseStorageLocations"/> and sets the default values.
-        /// </summary>
-        public InventoryItemWarehouseStorageLocations()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -159,26 +150,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("IsFractionAllowedItem", IsFractionAllowedItem);
-            writer.WriteIntValue("IsStockItem", IsStockItem);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteDateTimeOffsetValue("ItemEndDate", ItemEndDate);
-            writer.WriteDateTimeOffsetValue("ItemStartDate", ItemStartDate);
-            writer.WriteStringValue("ItemUnit", ItemUnit);
-            writer.WriteStringValue("ItemUnitDescription", ItemUnitDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDoubleValue("Stock", Stock);
-            writer.WriteGuidValue("StorageLocation", StorageLocation);
-            writer.WriteStringValue("StorageLocationCode", StorageLocationCode);
-            writer.WriteStringValue("StorageLocationDescription", StorageLocationDescription);
-            writer.WriteIntValue("StorageLocationSequenceNumber", StorageLocationSequenceNumber);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

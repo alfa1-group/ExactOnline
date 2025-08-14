@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ProjectWBSDeliverables : IAdditionalDataHolder, IParsable
+    public partial class ProjectWBSDeliverables : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>To indicated if the WBS deliverable is completed. WBS deliverable can only be set to completed when an invoice term is linked</summary>
         public bool? Completed { get; set; }
         /// <summary>The date and time when the WBS deliverable was created</summary>
@@ -51,10 +49,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>To indicated if this is a milestone</summary>
         public bool? Milestone { get; set; }
@@ -115,13 +113,6 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>Sequence number of the WBS deliverable. Last sequence will be selected if not specified</summary>
         public int? SequenceNumber { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ProjectWBSDeliverables"/> and sets the default values.
-        /// </summary>
-        public ProjectWBSDeliverables()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ProjectWBSDeliverables"/></returns>
@@ -179,7 +170,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("Description", Description);
             writer.WriteIntValue("Division", Division);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteBoolValue("Milestone", Milestone);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
@@ -194,7 +184,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteBoolValue("ReleaseInvoiceTerm", ReleaseInvoiceTerm);
             writer.WriteDateTimeOffsetValue("ReleaseInvoiceTermDate", ReleaseInvoiceTermDate);
             writer.WriteIntValue("SequenceNumber", SequenceNumber);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

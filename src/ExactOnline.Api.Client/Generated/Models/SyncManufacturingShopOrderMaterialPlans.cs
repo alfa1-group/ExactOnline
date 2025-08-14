@@ -9,166 +9,157 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncManufacturingShopOrderMaterialPlans : IAdditionalDataHolder, IParsable
+    public partial class SyncManufacturingShopOrderMaterialPlans : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if this is a backflush step</summary>
-        public int? Backflush { get; set; }
+        public int? Backflush { get; private set; }
         /// <summary>Barcode of the item (numeric string)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Barcode { get; set; }
+        public string? Barcode { get; private set; }
 #nullable restore
 #else
-        public string Barcode { get; set; }
+        public string Barcode { get; private set; }
 #endif
         /// <summary>Calculator type</summary>
-        public int? CalculatorType { get; set; }
+        public int? CalculatorType { get; private set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Description of the material</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Detail drawing reference</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DetailDrawing { get; set; }
+        public string? DetailDrawing { get; private set; }
 #nullable restore
 #else
-        public string DetailDrawing { get; set; }
+        public string DetailDrawing { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Reference to Items table</summary>
-        public Guid? Item { get; set; }
+        public Guid? Item { get; private set; }
         /// <summary>Item Code (material)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCode { get; set; }
+        public string? ItemCode { get; private set; }
 #nullable restore
 #else
-        public string ItemCode { get; set; }
+        public string ItemCode { get; private set; }
 #endif
         /// <summary>Description of Item (material)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemDescription { get; set; }
+        public string? ItemDescription { get; private set; }
 #nullable restore
 #else
-        public string ItemDescription { get; set; }
+        public string ItemDescription { get; private set; }
 #endif
         /// <summary>Reference to BillOfMaterialMaterials</summary>
-        public Guid? ItemMaterial { get; set; }
+        public Guid? ItemMaterial { get; private set; }
         /// <summary>URL of the material item&apos;s picture</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemPictureUrl { get; set; }
+        public string? ItemPictureUrl { get; private set; }
 #nullable restore
 #else
-        public string ItemPictureUrl { get; set; }
+        public string ItemPictureUrl { get; private set; }
 #endif
         /// <summary>Line number</summary>
-        public int? LineNumber { get; set; }
+        public int? LineNumber { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Line notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Planned amount in the currency of the transaction</summary>
-        public double? PlannedAmountFC { get; set; }
+        public double? PlannedAmountFC { get; private set; }
         /// <summary>Date that the material is required.</summary>
-        public DateTimeOffset? PlannedDate { get; set; }
+        public DateTimeOffset? PlannedDate { get; private set; }
         /// <summary>Planned price of the material</summary>
-        public double? PlannedPriceFC { get; set; }
+        public double? PlannedPriceFC { get; private set; }
         /// <summary>Intended total planned quantity of the material including waste</summary>
-        public double? PlannedQuantity { get; set; }
+        public double? PlannedQuantity { get; private set; }
         /// <summary>Intended quantity of the material per unit excluding waste</summary>
-        public double? PlannedQuantityFactor { get; set; }
+        public double? PlannedQuantityFactor { get; private set; }
         /// <summary>ID of the routing step.</summary>
-        public Guid? RoutingStepID { get; set; }
+        public Guid? RoutingStepID { get; private set; }
         /// <summary>Reference to ShopOrders table</summary>
-        public Guid? ShopOrder { get; set; }
+        public Guid? ShopOrder { get; private set; }
         /// <summary>Line status: 5 = Draft, 10 = Open, 20 = On order, 25 = Partial, 30 = Finished</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>Description of Status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusDescription { get; set; }
+        public string? StatusDescription { get; private set; }
 #nullable restore
 #else
-        public string StatusDescription { get; set; }
+        public string StatusDescription { get; private set; }
 #endif
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>Type: 1 = Material, 2 = By-product</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>Unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit { get; set; }
+        public string? Unit { get; private set; }
 #nullable restore
 #else
-        public string Unit { get; set; }
+        public string Unit { get; private set; }
 #endif
         /// <summary>Unit description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitDescription { get; set; }
+        public string? UnitDescription { get; private set; }
 #nullable restore
 #else
-        public string UnitDescription { get; set; }
+        public string UnitDescription { get; private set; }
 #endif
         /// <summary>Waste percentage must be null or integer from 1 to 9999 (only available in Manufacturing Professional and Premium)</summary>
-        public double? WastePercentage { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncManufacturingShopOrderMaterialPlans"/> and sets the default values.
-        /// </summary>
-        public SyncManufacturingShopOrderMaterialPlans()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public double? WastePercentage { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -231,42 +222,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Backflush", Backflush);
-            writer.WriteStringValue("Barcode", Barcode);
-            writer.WriteIntValue("CalculatorType", CalculatorType);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteStringValue("DetailDrawing", DetailDrawing);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("Item", Item);
-            writer.WriteStringValue("ItemCode", ItemCode);
-            writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteGuidValue("ItemMaterial", ItemMaterial);
-            writer.WriteStringValue("ItemPictureUrl", ItemPictureUrl);
-            writer.WriteIntValue("LineNumber", LineNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteDoubleValue("PlannedAmountFC", PlannedAmountFC);
-            writer.WriteDateTimeOffsetValue("PlannedDate", PlannedDate);
-            writer.WriteDoubleValue("PlannedPriceFC", PlannedPriceFC);
-            writer.WriteDoubleValue("PlannedQuantity", PlannedQuantity);
-            writer.WriteDoubleValue("PlannedQuantityFactor", PlannedQuantityFactor);
-            writer.WriteGuidValue("RoutingStepID", RoutingStepID);
-            writer.WriteGuidValue("ShopOrder", ShopOrder);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteStringValue("StatusDescription", StatusDescription);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteStringValue("Unit", Unit);
-            writer.WriteStringValue("UnitDescription", UnitDescription);
-            writer.WriteDoubleValue("WastePercentage", WastePercentage);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

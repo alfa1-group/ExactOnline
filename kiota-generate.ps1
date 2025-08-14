@@ -3,6 +3,7 @@
 Write-Output "⚙️ Generating C# client code..."
 kiota generate `
     --cc `
+    --ad false `
     --openapi "./resources/exactonline-openapi.json" `
     --clean-output `
     --language CSharp `

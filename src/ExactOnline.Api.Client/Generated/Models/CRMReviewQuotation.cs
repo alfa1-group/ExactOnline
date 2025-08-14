@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CRMReviewQuotation : IAdditionalDataHolder, IParsable
+    public partial class CRMReviewQuotation : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the item prices should be copied from the original quotation or the default item prices should be used.</summary>
         public bool? CopyItemPrices { get; set; }
         /// <summary>The description of the new quotation.</summary>
@@ -39,10 +37,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Identifier of the newly created quotation.</summary>
         public Guid? NewQuotationID { get; set; }
@@ -70,13 +68,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SuccessMessage { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CRMReviewQuotation"/> and sets the default values.
-        /// </summary>
-        public CRMReviewQuotation()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -122,7 +113,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("Division", Division);
             writer.WriteGuidValue("Document", Document);
             writer.WriteStringValue("ErrorMessage", ErrorMessage);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("NewQuotationID", NewQuotationID);
             writer.WriteGuidValue("OrderAccount", OrderAccount);
             writer.WriteGuidValue("OrderAccountContact", OrderAccountContact);
@@ -130,7 +120,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDateTimeOffsetValue("QuotationDate", QuotationDate);
             writer.WriteGuidValue("QuotationID", QuotationID);
             writer.WriteStringValue("SuccessMessage", SuccessMessage);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

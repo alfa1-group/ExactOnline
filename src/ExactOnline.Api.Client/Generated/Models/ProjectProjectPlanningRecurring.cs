@@ -9,7 +9,7 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ProjectProjectPlanningRecurring : IAdditionalDataHolder, IParsable
+    public partial class ProjectProjectPlanningRecurring : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Account linked to the recurring planning</summary>
@@ -30,8 +30,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountName { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Status of the project planning process, 1 = To be processed, 2 = Processed, 3 = Failed</summary>
         public int? BGTStatus { get; set; }
         /// <summary>Creation date</summary>
@@ -109,10 +107,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Date modified</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -198,13 +196,6 @@ namespace ExactOnline.Api.Client.Models
         public bool? WeekPatternTuesday { get; set; }
         /// <summary>Create planning on Wednesday, apply to weekly pattern recurring planning only</summary>
         public bool? WeekPatternWednesday { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ProjectProjectPlanningRecurring"/> and sets the default values.
-        /// </summary>
-        public ProjectProjectPlanningRecurring()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -304,7 +295,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("HourTypeCode", HourTypeCode);
             writer.WriteStringValue("HourTypeDescription", HourTypeDescription);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
@@ -332,7 +322,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteBoolValue("WeekPatternThursday", WeekPatternThursday);
             writer.WriteBoolValue("WeekPatternTuesday", WeekPatternTuesday);
             writer.WriteBoolValue("WeekPatternWednesday", WeekPatternWednesday);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,156 +9,147 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncManufacturingBillOfMaterialMaterials : IAdditionalDataHolder, IParsable
+    public partial class SyncManufacturingBillOfMaterialMaterials : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if this is a backflush item</summary>
-        public int? Backflush { get; set; }
+        public int? Backflush { get; private set; }
         /// <summary>Calculator type</summary>
-        public int? CalculatorType { get; set; }
+        public int? CalculatorType { get; private set; }
         /// <summary>Cost batch</summary>
-        public double? CostBatch { get; set; }
+        public double? CostBatch { get; private set; }
         /// <summary>Cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenter { get; set; }
+        public string? CostCenter { get; private set; }
 #nullable restore
 #else
-        public string CostCenter { get; set; }
+        public string CostCenter { get; private set; }
 #endif
         /// <summary>Cost center description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenterDescription { get; set; }
+        public string? CostCenterDescription { get; private set; }
 #nullable restore
 #else
-        public string CostCenterDescription { get; set; }
+        public string CostCenterDescription { get; private set; }
 #endif
         /// <summary>Cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnit { get; set; }
+        public string? CostUnit { get; private set; }
 #nullable restore
 #else
-        public string CostUnit { get; set; }
+        public string CostUnit { get; private set; }
 #endif
         /// <summary>Cost unit description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnitDescription { get; set; }
+        public string? CostUnitDescription { get; private set; }
 #nullable restore
 #else
-        public string CostUnitDescription { get; set; }
+        public string CostUnitDescription { get; private set; }
 #endif
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Description of the material</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Detail drawing reference</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DetailDrawing { get; set; }
+        public string? DetailDrawing { get; private set; }
 #nullable restore
 #else
-        public string DetailDrawing { get; set; }
+        public string DetailDrawing { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Bill of material version</summary>
-        public Guid? ItemVersion { get; set; }
+        public Guid? ItemVersion { get; private set; }
         /// <summary>Line number</summary>
-        public int? LineNumber { get; set; }
+        public int? LineNumber { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Net weight</summary>
-        public double? NetWeight { get; set; }
+        public double? NetWeight { get; private set; }
         /// <summary>Net weight unit of measure</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetWeightUnit { get; set; }
+        public string? NetWeightUnit { get; private set; }
 #nullable restore
 #else
-        public string NetWeightUnit { get; set; }
+        public string NetWeightUnit { get; private set; }
 #endif
         /// <summary>Notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Key of part item</summary>
-        public Guid? PartItem { get; set; }
+        public Guid? PartItem { get; private set; }
         /// <summary>Item average cost available when average cost method is used</summary>
-        public double? PartItemAverageCost { get; set; }
+        public double? PartItemAverageCost { get; private set; }
         /// <summary>Part item code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartItemCode { get; set; }
+        public string? PartItemCode { get; private set; }
 #nullable restore
 #else
-        public string PartItemCode { get; set; }
+        public string PartItemCode { get; private set; }
 #endif
         /// <summary>Item standard cost available when standard cost method is used</summary>
-        public double? PartItemCostPriceStandard { get; set; }
+        public double? PartItemCostPriceStandard { get; private set; }
         /// <summary>Part item description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartItemDescription { get; set; }
+        public string? PartItemDescription { get; private set; }
 #nullable restore
 #else
-        public string PartItemDescription { get; set; }
+        public string PartItemDescription { get; private set; }
 #endif
         /// <summary>Quantity of the material that ends up in the produced item</summary>
-        public double? Quantity { get; set; }
+        public double? Quantity { get; private set; }
         /// <summary>Quantity of the material needed to produce the batch including the waste</summary>
-        public double? QuantityBatch { get; set; }
+        public double? QuantityBatch { get; private set; }
         /// <summary>ID of the routing step</summary>
-        public Guid? RoutingStepID { get; set; }
+        public Guid? RoutingStepID { get; private set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Syscreated { get; set; }
+        public DateTimeOffset? Syscreated { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Syscreator { get; set; }
+        public Guid? Syscreator { get; private set; }
         /// <summary>Modified date</summary>
-        public DateTimeOffset? Sysmodified { get; set; }
+        public DateTimeOffset? Sysmodified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Sysmodifier { get; set; }
+        public Guid? Sysmodifier { get; private set; }
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>Material type 1 indicates material, 2 indicates byproduct</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>Waste percentage must be null or integer from 1 to 9999 (only available in Manufacturing Professional and Premium)</summary>
-        public double? WastePercentage { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncManufacturingBillOfMaterialMaterials"/> and sets the default values.
-        /// </summary>
-        public SyncManufacturingBillOfMaterialMaterials()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public double? WastePercentage { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -219,40 +210,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Backflush", Backflush);
-            writer.WriteIntValue("CalculatorType", CalculatorType);
-            writer.WriteDoubleValue("CostBatch", CostBatch);
-            writer.WriteStringValue("CostCenter", CostCenter);
-            writer.WriteStringValue("CostCenterDescription", CostCenterDescription);
-            writer.WriteStringValue("CostUnit", CostUnit);
-            writer.WriteStringValue("CostUnitDescription", CostUnitDescription);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteStringValue("DetailDrawing", DetailDrawing);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteGuidValue("ItemVersion", ItemVersion);
-            writer.WriteIntValue("LineNumber", LineNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDoubleValue("NetWeight", NetWeight);
-            writer.WriteStringValue("NetWeightUnit", NetWeightUnit);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteGuidValue("PartItem", PartItem);
-            writer.WriteDoubleValue("PartItemAverageCost", PartItemAverageCost);
-            writer.WriteStringValue("PartItemCode", PartItemCode);
-            writer.WriteDoubleValue("PartItemCostPriceStandard", PartItemCostPriceStandard);
-            writer.WriteStringValue("PartItemDescription", PartItemDescription);
-            writer.WriteDoubleValue("Quantity", Quantity);
-            writer.WriteDoubleValue("QuantityBatch", QuantityBatch);
-            writer.WriteGuidValue("RoutingStepID", RoutingStepID);
-            writer.WriteDateTimeOffsetValue("syscreated", Syscreated);
-            writer.WriteGuidValue("syscreator", Syscreator);
-            writer.WriteDateTimeOffsetValue("sysmodified", Sysmodified);
-            writer.WriteGuidValue("sysmodifier", Sysmodifier);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteDoubleValue("WastePercentage", WastePercentage);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

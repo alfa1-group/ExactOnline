@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FinancialGLAccountsPost : IAdditionalDataHolder, IParsable
+    public partial class FinancialGLAccountsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AllowCostsInSales property</summary>
         public int? AllowCostsInSales { get; set; }
         /// <summary>The AssimilatedVATBox property</summary>
@@ -91,10 +89,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The PrivateGLAccount property</summary>
         public Guid? PrivateGLAccount { get; set; }
@@ -156,13 +154,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? YearEndCostGLAccount { get; set; }
         /// <summary>The YearEndReflectionGLAccount property</summary>
         public Guid? YearEndReflectionGLAccount { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.FinancialGLAccountsPost"/> and sets the default values.
-        /// </summary>
-        public FinancialGLAccountsPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -238,7 +229,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("ID", ID);
             writer.WriteBoolValue("IsBlocked", IsBlocked);
             writer.WriteBoolValue("Matching", Matching);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("PrivateGLAccount", PrivateGLAccount);
             writer.WriteDoubleValue("PrivatePercentage", PrivatePercentage);
             writer.WriteStringValue("ReportingCode", ReportingCode);
@@ -254,7 +244,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("VATSystem", VATSystem);
             writer.WriteGuidValue("YearEndCostGLAccount", YearEndCostGLAccount);
             writer.WriteGuidValue("YearEndReflectionGLAccount", YearEndReflectionGLAccount);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,288 +9,279 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BulkCashflowPayments : IAdditionalDataHolder, IParsable
+    public partial class BulkCashflowPayments : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The supplier to which the payment has to be done.</summary>
-        public Guid? Account { get; set; }
+        public Guid? Account { get; private set; }
         /// <summary>The bank account of the supplier, to which the payment has to be done.</summary>
-        public Guid? AccountBankAccountID { get; set; }
+        public Guid? AccountBankAccountID { get; private set; }
         /// <summary>The bank account number of the supplier, to which the payment has to be done.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountBankAccountNumber { get; set; }
+        public string? AccountBankAccountNumber { get; private set; }
 #nullable restore
 #else
-        public string AccountBankAccountNumber { get; set; }
+        public string AccountBankAccountNumber { get; private set; }
 #endif
         /// <summary>The code of the supplier to which the payment has to be done.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCode { get; set; }
+        public string? AccountCode { get; private set; }
 #nullable restore
 #else
-        public string AccountCode { get; set; }
+        public string AccountCode { get; private set; }
 #endif
         /// <summary>Contact person copied from the purchase invoice linked to the related purchase entry. Used as prefered contact when sending reminders.</summary>
-        public Guid? AccountContact { get; set; }
+        public Guid? AccountContact { get; private set; }
         /// <summary>Name of the contact person of the supplier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountContactName { get; set; }
+        public string? AccountContactName { get; private set; }
 #nullable restore
 #else
-        public string AccountContactName { get; set; }
+        public string AccountContactName { get; private set; }
 #endif
         /// <summary>Name of the supplier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get; private set; }
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get; private set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount in default currency (division currency). Payments are matched on this amount.</summary>
-        public double? AmountDC { get; set; }
+        public double? AmountDC { get; private set; }
         /// <summary>The amount of the discount in the default currency.</summary>
-        public double? AmountDiscountDC { get; set; }
+        public double? AmountDiscountDC { get; private set; }
         /// <summary>The amount of the discount. This is in the amount of the selected currency.</summary>
-        public double? AmountDiscountFC { get; set; }
+        public double? AmountDiscountFC { get; private set; }
         /// <summary>The amount of the payment. This is in the amount of the selected currency.</summary>
-        public double? AmountFC { get; set; }
+        public double? AmountFC { get; private set; }
         /// <summary>Own bank account from which the payment must be done.</summary>
-        public Guid? BankAccountID { get; set; }
+        public Guid? BankAccountID { get; private set; }
         /// <summary>Own bank account number from which the payment must be done.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankAccountNumber { get; set; }
+        public string? BankAccountNumber { get; private set; }
 #nullable restore
 #else
-        public string BankAccountNumber { get; set; }
+        public string BankAccountNumber { get; private set; }
 #endif
         /// <summary>When processing payments, all payments with the same processing data are put in a batch. This field contains the code of that batch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CashflowTransactionBatchCode { get; set; }
+        public string? CashflowTransactionBatchCode { get; private set; }
 #nullable restore
 #else
-        public string CashflowTransactionBatchCode { get; set; }
+        public string CashflowTransactionBatchCode { get; private set; }
 #endif
         /// <summary>Creation date.</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of the creator.</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of the creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>The currency of the payment. This currency can only deviate from the division currency if the module Currency is in the license.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get; private set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get; private set; }
 #endif
         /// <summary>Extra description for the payment that may be included in the bank export file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Date before which the payment must be done to be eligible for discount.</summary>
-        public DateTimeOffset? DiscountDueDate { get; set; }
+        public DateTimeOffset? DiscountDueDate { get; private set; }
         /// <summary>Division code.</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Document that is created when processing payments.  The bank export file is attached to the document.</summary>
-        public Guid? Document { get; set; }
+        public Guid? Document { get; private set; }
         /// <summary>Number of the document.</summary>
-        public int? DocumentNumber { get; set; }
+        public int? DocumentNumber { get; private set; }
         /// <summary>Subject of the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentSubject { get; set; }
+        public string? DocumentSubject { get; private set; }
 #nullable restore
 #else
-        public string DocumentSubject { get; set; }
+        public string DocumentSubject { get; private set; }
 #endif
         /// <summary>Date before which the payment must be done.</summary>
-        public DateTimeOffset? DueDate { get; set; }
+        public DateTimeOffset? DueDate { get; private set; }
         /// <summary>Date since when the payment is no longer an outstanding item. This is the highest invoice date of all matched payments.</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>Period since when the payment is no longer an outstanding item. This is the highest period of all matched payments.</summary>
-        public int? EndPeriod { get; set; }
+        public int? EndPeriod { get; private set; }
         /// <summary>Year (of period) since when the payment is no longer an outstanding item. This is the highest year of all matched payments. Used in combination with EndPeriod.</summary>
-        public int? EndYear { get; set; }
+        public int? EndYear { get; private set; }
         /// <summary>Processing date of the payment.</summary>
-        public DateTimeOffset? EntryDate { get; set; }
+        public DateTimeOffset? EntryDate { get; private set; }
         /// <summary>The unique identifier for a set of payments. A payment can be split so that one part is paid on a different date. In that case the two records get a different EntryID.</summary>
-        public Guid? EntryID { get; set; }
+        public Guid? EntryID { get; private set; }
         /// <summary>Entry number of the linked transaction.</summary>
-        public int? EntryNumber { get; set; }
+        public int? EntryNumber { get; private set; }
         /// <summary>G/L account of the payment. Must be of type 22 (Accounts payable).</summary>
-        public Guid? GLAccount { get; set; }
+        public Guid? GLAccount { get; private set; }
         /// <summary>Code of the G/L account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLAccountCode { get; set; }
+        public string? GLAccountCode { get; private set; }
 #nullable restore
 #else
-        public string GLAccountCode { get; set; }
+        public string GLAccountCode { get; private set; }
 #endif
         /// <summary>Description of the G/L account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLAccountDescription { get; set; }
+        public string? GLAccountDescription { get; private set; }
 #nullable restore
 #else
-        public string GLAccountDescription { get; set; }
+        public string GLAccountDescription { get; private set; }
 #endif
         /// <summary>Identifier of the payment.</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Invoice date of the linked transaction.</summary>
-        public DateTimeOffset? InvoiceDate { get; set; }
+        public DateTimeOffset? InvoiceDate { get; private set; }
         /// <summary>Invoice number of the linked transaction.</summary>
-        public int? InvoiceNumber { get; set; }
+        public int? InvoiceNumber { get; private set; }
         /// <summary>Boolean indicating whether the payment is part of a batch booking.</summary>
-        public int? IsBatchBooking { get; set; }
+        public int? IsBatchBooking { get; private set; }
         /// <summary>Journal of the linked transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Journal { get; set; }
+        public string? Journal { get; private set; }
 #nullable restore
 #else
-        public string Journal { get; set; }
+        public string Journal { get; private set; }
 #endif
         /// <summary>Description of the journal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JournalDescription { get; set; }
+        public string? JournalDescription { get; private set; }
 #nullable restore
 #else
-        public string JournalDescription { get; set; }
+        public string JournalDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date.</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier.</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Number assigned during the of processing payments. When payments are processed a bank export file is created. This file contains one or more batches that contain one or more payments. Each batch gets a sequence number that is stored for each payment in that batch.</summary>
-        public int? PaymentBatchNumber { get; set; }
+        public int? PaymentBatchNumber { get; private set; }
         /// <summary>Payment condition of the linked transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentCondition { get; set; }
+        public string? PaymentCondition { get; private set; }
 #nullable restore
 #else
-        public string PaymentCondition { get; set; }
+        public string PaymentCondition { get; private set; }
 #endif
         /// <summary>Description of the payment condition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentConditionDescription { get; set; }
+        public string? PaymentConditionDescription { get; private set; }
 #nullable restore
 #else
-        public string PaymentConditionDescription { get; set; }
+        public string PaymentConditionDescription { get; private set; }
 #endif
         /// <summary>Number of days between invoice date and due date.</summary>
-        public int? PaymentDays { get; set; }
+        public int? PaymentDays { get; private set; }
         /// <summary>Number of days between invoice date and due date of the discount.</summary>
-        public int? PaymentDaysDiscount { get; set; }
+        public int? PaymentDaysDiscount { get; private set; }
         /// <summary>Payment discount percentage.</summary>
-        public double? PaymentDiscountPercentage { get; set; }
+        public double? PaymentDiscountPercentage { get; private set; }
         /// <summary>Method of payment. B = On credit (default) I = Collection K = Cash V = Credit card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentMethod { get; set; }
+        public string? PaymentMethod { get; private set; }
 #nullable restore
 #else
-        public string PaymentMethod { get; set; }
+        public string PaymentMethod { get; private set; }
 #endif
         /// <summary>Payment reference for the payment that may be included in the bank export file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentReference { get; set; }
+        public string? PaymentReference { get; private set; }
 #nullable restore
 #else
-        public string PaymentReference { get; set; }
+        public string PaymentReference { get; private set; }
 #endif
         /// <summary>Date and time since when the payment is selected to be paid.</summary>
-        public DateTimeOffset? PaymentSelected { get; set; }
+        public DateTimeOffset? PaymentSelected { get; private set; }
         /// <summary>User who selected the payment to be paid.</summary>
-        public Guid? PaymentSelector { get; set; }
+        public Guid? PaymentSelector { get; private set; }
         /// <summary>Name of the payment selector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentSelectorFullName { get; set; }
+        public string? PaymentSelectorFullName { get; private set; }
 #nullable restore
 #else
-        public string PaymentSelectorFullName { get; set; }
+        public string PaymentSelectorFullName { get; private set; }
 #endif
         /// <summary>Exchange rate from payment currency to division currency. AmountFC * RateFC = AmountDC.</summary>
-        public double? RateFC { get; set; }
+        public double? RateFC { get; private set; }
         /// <summary>The source of the payment.</summary>
-        public int? Source { get; set; }
+        public int? Source { get; private set; }
         /// <summary>The status of the payment. 20 = open 30 = selected - payment is selected to be paid 40 = processed - payment has been done 50 = matched - payment is matched with one or more other outstanding items or financial statement lines</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>Total amount of the linked transaction in default currency (division currency).</summary>
-        public double? TransactionAmountDC { get; set; }
+        public double? TransactionAmountDC { get; private set; }
         /// <summary>Total amount of the linked transaction in the selected currency.</summary>
-        public double? TransactionAmountFC { get; set; }
+        public double? TransactionAmountFC { get; private set; }
         /// <summary>Due date of the linked transaction.</summary>
-        public DateTimeOffset? TransactionDueDate { get; set; }
+        public DateTimeOffset? TransactionDueDate { get; private set; }
         /// <summary>Linked transaction. Use this as reference to PurchaseEntries.</summary>
-        public Guid? TransactionEntryID { get; set; }
+        public Guid? TransactionEntryID { get; private set; }
         /// <summary>Linked transaction line. Use this as reference to PurchaseEntryLines</summary>
-        public Guid? TransactionID { get; set; }
+        public Guid? TransactionID { get; private set; }
         /// <summary>Indicates if the linked transaction is a reversal entry.</summary>
-        public bool? TransactionIsReversal { get; set; }
+        public bool? TransactionIsReversal { get; private set; }
         /// <summary>Period of the linked transaction.</summary>
-        public int? TransactionReportingPeriod { get; set; }
+        public int? TransactionReportingPeriod { get; private set; }
         /// <summary>Year of the linked transaction.</summary>
-        public int? TransactionReportingYear { get; set; }
+        public int? TransactionReportingYear { get; private set; }
         /// <summary>Status of the linked transaction.</summary>
-        public int? TransactionStatus { get; set; }
+        public int? TransactionStatus { get; private set; }
         /// <summary>Type of the linked transaction.</summary>
-        public int? TransactionType { get; set; }
+        public int? TransactionType { get; private set; }
         /// <summary>Invoice number of the supplier. In case the payment belongs to a bank entry line and is matched with one invoice, YourRef is filled with the YourRef of this invoice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? YourRef { get; set; }
+        public string? YourRef { get; private set; }
 #nullable restore
 #else
-        public string YourRef { get; set; }
+        public string YourRef { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.BulkCashflowPayments"/> and sets the default values.
-        /// </summary>
-        public BulkCashflowPayments()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -387,76 +378,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Account", Account);
-            writer.WriteGuidValue("AccountBankAccountID", AccountBankAccountID);
-            writer.WriteStringValue("AccountBankAccountNumber", AccountBankAccountNumber);
-            writer.WriteStringValue("AccountCode", AccountCode);
-            writer.WriteGuidValue("AccountContact", AccountContact);
-            writer.WriteStringValue("AccountContactName", AccountContactName);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteDoubleValue("AmountDC", AmountDC);
-            writer.WriteDoubleValue("AmountDiscountDC", AmountDiscountDC);
-            writer.WriteDoubleValue("AmountDiscountFC", AmountDiscountFC);
-            writer.WriteDoubleValue("AmountFC", AmountFC);
-            writer.WriteGuidValue("BankAccountID", BankAccountID);
-            writer.WriteStringValue("BankAccountNumber", BankAccountNumber);
-            writer.WriteStringValue("CashflowTransactionBatchCode", CashflowTransactionBatchCode);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Currency", Currency);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteDateTimeOffsetValue("DiscountDueDate", DiscountDueDate);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Document", Document);
-            writer.WriteIntValue("DocumentNumber", DocumentNumber);
-            writer.WriteStringValue("DocumentSubject", DocumentSubject);
-            writer.WriteDateTimeOffsetValue("DueDate", DueDate);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteIntValue("EndPeriod", EndPeriod);
-            writer.WriteIntValue("EndYear", EndYear);
-            writer.WriteDateTimeOffsetValue("EntryDate", EntryDate);
-            writer.WriteGuidValue("EntryID", EntryID);
-            writer.WriteIntValue("EntryNumber", EntryNumber);
-            writer.WriteGuidValue("GLAccount", GLAccount);
-            writer.WriteStringValue("GLAccountCode", GLAccountCode);
-            writer.WriteStringValue("GLAccountDescription", GLAccountDescription);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteDateTimeOffsetValue("InvoiceDate", InvoiceDate);
-            writer.WriteIntValue("InvoiceNumber", InvoiceNumber);
-            writer.WriteIntValue("IsBatchBooking", IsBatchBooking);
-            writer.WriteStringValue("Journal", Journal);
-            writer.WriteStringValue("JournalDescription", JournalDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteIntValue("PaymentBatchNumber", PaymentBatchNumber);
-            writer.WriteStringValue("PaymentCondition", PaymentCondition);
-            writer.WriteStringValue("PaymentConditionDescription", PaymentConditionDescription);
-            writer.WriteIntValue("PaymentDays", PaymentDays);
-            writer.WriteIntValue("PaymentDaysDiscount", PaymentDaysDiscount);
-            writer.WriteDoubleValue("PaymentDiscountPercentage", PaymentDiscountPercentage);
-            writer.WriteStringValue("PaymentMethod", PaymentMethod);
-            writer.WriteStringValue("PaymentReference", PaymentReference);
-            writer.WriteDateTimeOffsetValue("PaymentSelected", PaymentSelected);
-            writer.WriteGuidValue("PaymentSelector", PaymentSelector);
-            writer.WriteStringValue("PaymentSelectorFullName", PaymentSelectorFullName);
-            writer.WriteDoubleValue("RateFC", RateFC);
-            writer.WriteIntValue("Source", Source);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteDoubleValue("TransactionAmountDC", TransactionAmountDC);
-            writer.WriteDoubleValue("TransactionAmountFC", TransactionAmountFC);
-            writer.WriteDateTimeOffsetValue("TransactionDueDate", TransactionDueDate);
-            writer.WriteGuidValue("TransactionEntryID", TransactionEntryID);
-            writer.WriteGuidValue("TransactionID", TransactionID);
-            writer.WriteBoolValue("TransactionIsReversal", TransactionIsReversal);
-            writer.WriteIntValue("TransactionReportingPeriod", TransactionReportingPeriod);
-            writer.WriteIntValue("TransactionReportingYear", TransactionReportingYear);
-            writer.WriteIntValue("TransactionStatus", TransactionStatus);
-            writer.WriteIntValue("TransactionType", TransactionType);
-            writer.WriteStringValue("YourRef", YourRef);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

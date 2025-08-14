@@ -9,50 +9,41 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadFinancialOutstandingInvoicesOverview : IAdditionalDataHolder, IParsable
+    public partial class ReadFinancialOutstandingInvoicesOverview : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Primary key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode { get; set; }
+        public string? CurrencyCode { get; private set; }
 #nullable restore
 #else
-        public string CurrencyCode { get; set; }
+        public string CurrencyCode { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Total invoice amount to be paid</summary>
-        public double? OutstandingPayableInvoiceAmount { get; set; }
+        public double? OutstandingPayableInvoiceAmount { get; private set; }
         /// <summary>Number of invoices to be paid</summary>
-        public double? OutstandingPayableInvoiceCount { get; set; }
+        public double? OutstandingPayableInvoiceCount { get; private set; }
         /// <summary>Total invoice amount to be received</summary>
-        public double? OutstandingReceivableInvoiceAmount { get; set; }
+        public double? OutstandingReceivableInvoiceAmount { get; private set; }
         /// <summary>Number of invoices to be received</summary>
-        public double? OutstandingReceivableInvoiceCount { get; set; }
+        public double? OutstandingReceivableInvoiceCount { get; private set; }
         /// <summary>Total payable invoice amount that is overdue</summary>
-        public double? OverduePayableInvoiceAmount { get; set; }
+        public double? OverduePayableInvoiceAmount { get; private set; }
         /// <summary>Number of payable invoices that are overdue</summary>
-        public double? OverduePayableInvoiceCount { get; set; }
+        public double? OverduePayableInvoiceCount { get; private set; }
         /// <summary>Total receivable invoice amount that is overdue</summary>
-        public double? OverdueReceivableInvoiceAmount { get; set; }
+        public double? OverdueReceivableInvoiceAmount { get; private set; }
         /// <summary>Number of receivable invoices that are overdue</summary>
-        public double? OverdueReceivableInvoiceCount { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialOutstandingInvoicesOverview"/> and sets the default values.
-        /// </summary>
-        public ReadFinancialOutstandingInvoicesOverview()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public double? OverdueReceivableInvoiceCount { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -90,17 +81,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("CurrencyCode", CurrencyCode);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDoubleValue("OutstandingPayableInvoiceAmount", OutstandingPayableInvoiceAmount);
-            writer.WriteDoubleValue("OutstandingPayableInvoiceCount", OutstandingPayableInvoiceCount);
-            writer.WriteDoubleValue("OutstandingReceivableInvoiceAmount", OutstandingReceivableInvoiceAmount);
-            writer.WriteDoubleValue("OutstandingReceivableInvoiceCount", OutstandingReceivableInvoiceCount);
-            writer.WriteDoubleValue("OverduePayableInvoiceAmount", OverduePayableInvoiceAmount);
-            writer.WriteDoubleValue("OverduePayableInvoiceCount", OverduePayableInvoiceCount);
-            writer.WriteDoubleValue("OverdueReceivableInvoiceAmount", OverdueReceivableInvoiceAmount);
-            writer.WriteDoubleValue("OverdueReceivableInvoiceCount", OverdueReceivableInvoiceCount);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

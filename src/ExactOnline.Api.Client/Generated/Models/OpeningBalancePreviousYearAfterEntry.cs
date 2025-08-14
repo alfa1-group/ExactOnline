@@ -9,58 +9,49 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OpeningBalancePreviousYearAfterEntry : IAdditionalDataHolder, IParsable
+    public partial class OpeningBalancePreviousYearAfterEntry : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The opening balance amount of the G/L account.</summary>
-        public double? Amount { get; set; }
+        public double? Amount { get; private set; }
         /// <summary>Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceSide { get; set; }
+        public string? BalanceSide { get; private set; }
 #nullable restore
 #else
-        public string BalanceSide { get; set; }
+        public string BalanceSide { get; private set; }
 #endif
         /// <summary>Division code.</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>The balance sheet account.</summary>
-        public Guid? GLAccount { get; set; }
+        public Guid? GLAccount { get; private set; }
         /// <summary>The code of the G/L account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLAccountCode { get; set; }
+        public string? GLAccountCode { get; private set; }
 #nullable restore
 #else
-        public string GLAccountCode { get; set; }
+        public string GLAccountCode { get; private set; }
 #endif
         /// <summary>The description of the G/L account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLAccountDescription { get; set; }
+        public string? GLAccountDescription { get; private set; }
 #nullable restore
 #else
-        public string GLAccountDescription { get; set; }
+        public string GLAccountDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The reporting year of the opening balance.</summary>
-        public int? ReportingYear { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.OpeningBalancePreviousYearAfterEntry"/> and sets the default values.
-        /// </summary>
-        public OpeningBalancePreviousYearAfterEntry()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public int? ReportingYear { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,15 +87,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("Amount", Amount);
-            writer.WriteStringValue("BalanceSide", BalanceSide);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("GLAccount", GLAccount);
-            writer.WriteStringValue("GLAccountCode", GLAccountCode);
-            writer.WriteStringValue("GLAccountDescription", GLAccountDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteIntValue("ReportingYear", ReportingYear);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

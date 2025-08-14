@@ -9,66 +9,57 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class HRMLeaveAbsenceHoursByDay : IAdditionalDataHolder, IParsable
+    public partial class HRMLeaveAbsenceHoursByDay : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>Date of leave or absence</summary>
-        public DateTimeOffset? Date { get; set; }
+        public DateTimeOffset? Date { get; private set; }
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>ID of employee linked to the leave or absence</summary>
-        public Guid? Employee { get; set; }
+        public Guid? Employee { get; private set; }
         /// <summary>Employee full name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeFullName { get; set; }
+        public string? EmployeeFullName { get; private set; }
 #nullable restore
 #else
-        public string EmployeeFullName { get; set; }
+        public string EmployeeFullName { get; private set; }
 #endif
         /// <summary>Numeric ID of the employee</summary>
-        public int? EmployeeHID { get; set; }
+        public int? EmployeeHID { get; private set; }
         /// <summary>Employment ID</summary>
-        public Guid? Employment { get; set; }
+        public Guid? Employment { get; private set; }
         /// <summary>Numeric ID of the employment</summary>
-        public int? EmploymentHID { get; set; }
+        public int? EmploymentHID { get; private set; }
         /// <summary>End time of leave or absence</summary>
-        public DateTimeOffset? EndTime { get; set; }
+        public DateTimeOffset? EndTime { get; private set; }
         /// <summary>Unique ID from external source. Eg. Exact Online HR</summary>
-        public long? ExternalIDInt { get; set; }
+        public long? ExternalIDInt { get; private set; }
         /// <summary>Unique leave or absence type from external source. Eg. Exact Online HR</summary>
-        public long? ExternalLeaveAbsenceType { get; set; }
+        public long? ExternalLeaveAbsenceType { get; private set; }
         /// <summary>Hours of leave or absence</summary>
-        public double? Hours { get; set; }
+        public double? Hours { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>Start time of leave or absence</summary>
-        public DateTimeOffset? StartTime { get; set; }
+        public DateTimeOffset? StartTime { get; private set; }
         /// <summary>Status, 1 = Submitted, 2 = ApprovedNote: Submitted status is only applicable for Type = Leave</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>Type, 0 = Leave, 1 = AbsenceNote: Absence type is only allow for Status = Approved</summary>
-        public int? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.HRMLeaveAbsenceHoursByDay"/> and sets the default values.
-        /// </summary>
-        public HRMLeaveAbsenceHoursByDay()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public int? Type { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -114,25 +105,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteDateTimeOffsetValue("Date", Date);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteStringValue("EmployeeFullName", EmployeeFullName);
-            writer.WriteIntValue("EmployeeHID", EmployeeHID);
-            writer.WriteGuidValue("Employment", Employment);
-            writer.WriteIntValue("EmploymentHID", EmploymentHID);
-            writer.WriteDateTimeOffsetValue("EndTime", EndTime);
-            writer.WriteLongValue("ExternalIDInt", ExternalIDInt);
-            writer.WriteLongValue("ExternalLeaveAbsenceType", ExternalLeaveAbsenceType);
-            writer.WriteDoubleValue("Hours", Hours);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteDateTimeOffsetValue("StartTime", StartTime);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

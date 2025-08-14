@@ -9,13 +9,11 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManufacturingBillOfMaterialRoutings : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingBillOfMaterialRoutings : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Reference to Account providing the Outsourced item</summary>
         public Guid? Account { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Attended Percentage</summary>
         public double? AttendedPercentage { get; set; }
         /// <summary>Indicates if this is a backflush step</summary>
@@ -63,10 +61,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>User ID of modifier</summary>
         public Guid? ModifiedBy { get; set; }
@@ -155,13 +153,6 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>Reference to Workcenters</summary>
         public Guid? Workcenter { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingBillOfMaterialRoutings"/> and sets the default values.
-        /// </summary>
-        public ManufacturingBillOfMaterialRoutings()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ManufacturingBillOfMaterialRoutings"/></returns>
@@ -248,7 +239,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("ItemVersion", ItemVersion);
             writer.WriteIntValue("LineNumber", LineNumber);
             writer.WriteDoubleValue("MachineBurden", MachineBurden);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("ModifiedBy", ModifiedBy);
             writer.WriteDateTimeOffsetValue("ModifiedDate", ModifiedDate);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
@@ -274,7 +264,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("SubcontractedLeadDays", SubcontractedLeadDays);
             writer.WriteDoubleValue("TotalCostDC", TotalCostDC);
             writer.WriteGuidValue("Workcenter", Workcenter);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

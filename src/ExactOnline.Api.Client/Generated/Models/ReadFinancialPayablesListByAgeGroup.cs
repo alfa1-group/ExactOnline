@@ -9,110 +9,101 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadFinancialPayablesListByAgeGroup : IAdditionalDataHolder, IParsable
+    public partial class ReadFinancialPayablesListByAgeGroup : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Code of Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCode { get; set; }
+        public string? AccountCode { get; private set; }
 #nullable restore
 #else
-        public string AccountCode { get; set; }
+        public string AccountCode { get; private set; }
 #endif
         /// <summary>Reference to the account</summary>
-        public Guid? AccountId { get; set; }
+        public Guid? AccountId { get; private set; }
         /// <summary>Name of Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get; private set; }
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get; private set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount</summary>
-        public double? Amount { get; set; }
+        public double? Amount { get; private set; }
         /// <summary>Amount in transit - The amount that you have requested your bank to pay</summary>
-        public double? AmountInTransit { get; set; }
+        public double? AmountInTransit { get; private set; }
         /// <summary>Approval status:null - Invoice was entered before approval functionality was activated (treated as Approved for payments)1 - N/A (used for non-electronic payment methods)2 - Awaiting review3 - Awaiting approval4 - Approved</summary>
-        public int? ApprovalStatus { get; set; }
+        public int? ApprovalStatus { get; private set; }
         /// <summary>Code of Currency</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode { get; set; }
+        public string? CurrencyCode { get; private set; }
 #nullable restore
 #else
-        public string CurrencyCode { get; set; }
+        public string CurrencyCode { get; private set; }
 #endif
         /// <summary>Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Date the invoice is due (This due date is not the discount due date)</summary>
-        public DateTimeOffset? DueDate { get; set; }
+        public DateTimeOffset? DueDate { get; private set; }
         /// <summary>The entry number of this payment term corresponding purchase/cashflow entry</summary>
-        public int? EntryNumber { get; set; }
+        public int? EntryNumber { get; private set; }
         /// <summary>Primary key, human readable ID</summary>
-        public long? HID { get; set; }
+        public long? HID { get; private set; }
         /// <summary>Obsolete</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get; private set; }
         /// <summary>The date of the invoice or the date when money is paid to the supplier</summary>
-        public DateTimeOffset? InvoiceDate { get; set; }
+        public DateTimeOffset? InvoiceDate { get; private set; }
         /// <summary>For purchase entry, it would be the entrynumber. For the cashflow entry, it will be entrynumber of an invoice which this payment is for</summary>
-        public int? InvoiceNumber { get; set; }
+        public int? InvoiceNumber { get; private set; }
         /// <summary>Code of Journal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JournalCode { get; set; }
+        public string? JournalCode { get; private set; }
 #nullable restore
 #else
-        public string JournalCode { get; set; }
+        public string JournalCode { get; private set; }
 #endif
         /// <summary>Description of Journal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JournalDescription { get; set; }
+        public string? JournalDescription { get; private set; }
 #nullable restore
 #else
-        public string JournalDescription { get; set; }
+        public string JournalDescription { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Notes collection</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ReadFinancialPayablesListByAgeGroup_Notes? Notes { get; set; }
+        public global::ExactOnline.Api.Client.Models.ReadFinancialPayablesListByAgeGroup_Notes? Notes { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ReadFinancialPayablesListByAgeGroup_Notes Notes { get; set; }
+        public global::ExactOnline.Api.Client.Models.ReadFinancialPayablesListByAgeGroup_Notes Notes { get; private set; }
 #endif
         /// <summary>Purchase invoice Your Reference number. Will be null if it is a cashflow entry</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? YourRef { get; set; }
+        public string? YourRef { get; private set; }
 #nullable restore
 #else
-        public string YourRef { get; set; }
+        public string YourRef { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialPayablesListByAgeGroup"/> and sets the default values.
-        /// </summary>
-        public ReadFinancialPayablesListByAgeGroup()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -159,26 +150,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("AccountCode", AccountCode);
-            writer.WriteGuidValue("AccountId", AccountId);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteDoubleValue("Amount", Amount);
-            writer.WriteDoubleValue("AmountInTransit", AmountInTransit);
-            writer.WriteIntValue("ApprovalStatus", ApprovalStatus);
-            writer.WriteStringValue("CurrencyCode", CurrencyCode);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteDateTimeOffsetValue("DueDate", DueDate);
-            writer.WriteIntValue("EntryNumber", EntryNumber);
-            writer.WriteLongValue("HID", HID);
-            writer.WriteGuidValue("Id", Id);
-            writer.WriteDateTimeOffsetValue("InvoiceDate", InvoiceDate);
-            writer.WriteIntValue("InvoiceNumber", InvoiceNumber);
-            writer.WriteStringValue("JournalCode", JournalCode);
-            writer.WriteStringValue("JournalDescription", JournalDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ReadFinancialPayablesListByAgeGroup_Notes>("Notes", Notes);
-            writer.WriteStringValue("YourRef", YourRef);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

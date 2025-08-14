@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManufacturingBillOfMaterialVersions : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingBillOfMaterialVersions : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Batch Quantity of Item Version</summary>
         public double? BatchQuantity { get; set; }
         /// <summary>Cad drawing URL</summary>
@@ -65,10 +63,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -118,13 +116,6 @@ namespace ExactOnline.Api.Client.Models
         public DateTimeOffset? VersionDate { get; set; }
         /// <summary>Version Number</summary>
         public int? VersionNumber { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingBillOfMaterialVersions"/> and sets the default values.
-        /// </summary>
-        public ManufacturingBillOfMaterialVersions()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -189,7 +180,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("IsDefault", IsDefault);
             writer.WriteGuidValue("Item", Item);
             writer.WriteStringValue("ItemDescription", ItemDescription);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
@@ -202,7 +192,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("TypeDescription", TypeDescription);
             writer.WriteDateTimeOffsetValue("VersionDate", VersionDate);
             writer.WriteIntValue("VersionNumber", VersionNumber);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

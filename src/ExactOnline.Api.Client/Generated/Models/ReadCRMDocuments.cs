@@ -9,13 +9,11 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadCRMDocuments : IAdditionalDataHolder, IParsable
+    public partial class ReadCRMDocuments : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID of the related account of this document</summary>
-        public Guid? Account { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public Guid? Account { get; private set; }
         /// <summary>The Attachments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,110 +23,103 @@ namespace ExactOnline.Api.Client.Models
         public global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachments Attachments { get; set; }
 #endif
         /// <summary>ID of the related contact of this document</summary>
-        public Guid? Contact { get; set; }
+        public Guid? Contact { get; private set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Entry date of the incoming document</summary>
-        public DateTimeOffset? DocumentDate { get; set; }
+        public DateTimeOffset? DocumentDate { get; private set; }
         /// <summary>Id of document folder</summary>
-        public Guid? DocumentFolder { get; set; }
+        public Guid? DocumentFolder { get; private set; }
         /// <summary>Url to view the document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentViewUrl { get; set; }
+        public string? DocumentViewUrl { get; private set; }
 #nullable restore
 #else
-        public string DocumentViewUrl { get; set; }
+        public string DocumentViewUrl { get; private set; }
 #endif
         /// <summary>Indicates that the document body is empty</summary>
-        public bool? HasEmptyBody { get; set; }
+        public bool? HasEmptyBody { get; private set; }
         /// <summary>Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero</summary>
-        public int? HID { get; set; }
+        public int? HID { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>The opportunity linked to the document</summary>
-        public Guid? Opportunity { get; set; }
+        public Guid? Opportunity { get; private set; }
         /// <summary>Purchase invoice number.</summary>
-        public int? PurchaseInvoiceNumber { get; set; }
+        public int? PurchaseInvoiceNumber { get; private set; }
         /// <summary>Purchase order number.</summary>
-        public int? PurchaseOrderNumber { get; set; }
+        public int? PurchaseOrderNumber { get; private set; }
         /// <summary>&apos;Our reference&apos; of the transaction that belongs to this document</summary>
-        public int? SalesInvoiceNumber { get; set; }
+        public int? SalesInvoiceNumber { get; private set; }
         /// <summary>Number of the sales order</summary>
-        public int? SalesOrderNumber { get; set; }
+        public int? SalesOrderNumber { get; private set; }
         /// <summary>Send Method</summary>
-        public int? SendMethod { get; set; }
+        public int? SendMethod { get; private set; }
         /// <summary>The Share property</summary>
-        public int? Share { get; set; }
+        public int? Share { get; private set; }
         /// <summary>SharePointConnectionStatus of this document</summary>
-        public int? SharePointConnectionStatus { get; set; }
+        public int? SharePointConnectionStatus { get; private set; }
         /// <summary>SharePointID of this document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SharePointID { get; set; }
+        public string? SharePointID { get; private set; }
 #nullable restore
 #else
-        public string SharePointID { get; set; }
+        public string SharePointID { get; private set; }
 #endif
         /// <summary>Source</summary>
-        public int? Source { get; set; }
+        public int? Source { get; private set; }
         /// <summary>Translated description of the Source type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceDescription { get; set; }
+        public string? SourceDescription { get; private set; }
 #nullable restore
 #else
-        public string SourceDescription { get; set; }
+        public string SourceDescription { get; private set; }
 #endif
         /// <summary>Subject of this document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get; set; }
+        public string? Subject { get; private set; }
 #nullable restore
 #else
-        public string Subject { get; set; }
+        public string Subject { get; private set; }
 #endif
         /// <summary>The document type</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>Translated description of the document type. $filter and $orderby are not supported for this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TypeDescription { get; set; }
+        public string? TypeDescription { get; private set; }
 #nullable restore
 #else
-        public string TypeDescription { get; set; }
+        public string TypeDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadCRMDocuments"/> and sets the default values.
-        /// </summary>
-        public ReadCRMDocuments()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -186,37 +177,7 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Account", Account);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachments>("Attachments", Attachments);
-            writer.WriteGuidValue("Contact", Contact);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteDateTimeOffsetValue("DocumentDate", DocumentDate);
-            writer.WriteGuidValue("DocumentFolder", DocumentFolder);
-            writer.WriteStringValue("DocumentViewUrl", DocumentViewUrl);
-            writer.WriteBoolValue("HasEmptyBody", HasEmptyBody);
-            writer.WriteIntValue("HID", HID);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteGuidValue("Opportunity", Opportunity);
-            writer.WriteIntValue("PurchaseInvoiceNumber", PurchaseInvoiceNumber);
-            writer.WriteIntValue("PurchaseOrderNumber", PurchaseOrderNumber);
-            writer.WriteIntValue("SalesInvoiceNumber", SalesInvoiceNumber);
-            writer.WriteIntValue("SalesOrderNumber", SalesOrderNumber);
-            writer.WriteIntValue("SendMethod", SendMethod);
-            writer.WriteIntValue("Share", Share);
-            writer.WriteIntValue("SharePointConnectionStatus", SharePointConnectionStatus);
-            writer.WriteStringValue("SharePointID", SharePointID);
-            writer.WriteIntValue("Source", Source);
-            writer.WriteStringValue("SourceDescription", SourceDescription);
-            writer.WriteStringValue("Subject", Subject);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteStringValue("TypeDescription", TypeDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

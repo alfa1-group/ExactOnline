@@ -9,240 +9,231 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PayrollPayrollTransactionsByPayrollYear : IAdditionalDataHolder, IParsable
+    public partial class PayrollPayrollTransactionsByPayrollYear : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Calculated amount</summary>
-        public double? CalculatedAmount { get; set; }
+        public double? CalculatedAmount { get; private set; }
         /// <summary>Calculated base value</summary>
-        public double? CalculatedBaseValue { get; set; }
+        public double? CalculatedBaseValue { get; private set; }
         /// <summary>Calculated franchise</summary>
-        public double? CalculatedFranchise { get; set; }
+        public double? CalculatedFranchise { get; private set; }
         /// <summary>Calculated maximum</summary>
-        public double? CalculatedMaximum { get; set; }
+        public double? CalculatedMaximum { get; private set; }
         /// <summary>Calculated number</summary>
-        public double? CalculatedNumber { get; set; }
+        public double? CalculatedNumber { get; private set; }
         /// <summary>Cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenter { get; set; }
+        public string? CostCenter { get; private set; }
 #nullable restore
 #else
-        public string CostCenter { get; set; }
+        public string CostCenter { get; private set; }
 #endif
         /// <summary>Cost center code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenterCode { get; set; }
+        public string? CostCenterCode { get; private set; }
 #nullable restore
 #else
-        public string CostCenterCode { get; set; }
+        public string CostCenterCode { get; private set; }
 #endif
         /// <summary>Cost center description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenterDescription { get; set; }
+        public string? CostCenterDescription { get; private set; }
 #nullable restore
 #else
-        public string CostCenterDescription { get; set; }
+        public string CostCenterDescription { get; private set; }
 #endif
         /// <summary>Cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnit { get; set; }
+        public string? CostUnit { get; private set; }
 #nullable restore
 #else
-        public string CostUnit { get; set; }
+        public string CostUnit { get; private set; }
 #endif
         /// <summary>Cost unit code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnitCode { get; set; }
+        public string? CostUnitCode { get; private set; }
 #nullable restore
 #else
-        public string CostUnitCode { get; set; }
+        public string CostUnitCode { get; private set; }
 #endif
         /// <summary>Cost unit description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostUnitDescription { get; set; }
+        public string? CostUnitDescription { get; private set; }
 #nullable restore
 #else
-        public string CostUnitDescription { get; set; }
+        public string CostUnitDescription { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>Creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Creator full name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Date</summary>
-        public DateTimeOffset? Date { get; set; }
+        public DateTimeOffset? Date { get; private set; }
         /// <summary>Department</summary>
-        public Guid? Department { get; set; }
+        public Guid? Department { get; private set; }
         /// <summary>Department code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DepartmentCode { get; set; }
+        public string? DepartmentCode { get; private set; }
 #nullable restore
 #else
-        public string DepartmentCode { get; set; }
+        public string DepartmentCode { get; private set; }
 #endif
         /// <summary>Department description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DepartmentDescription { get; set; }
+        public string? DepartmentDescription { get; private set; }
 #nullable restore
 #else
-        public string DepartmentDescription { get; set; }
+        public string DepartmentDescription { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Employee</summary>
-        public Guid? Employee { get; set; }
+        public Guid? Employee { get; private set; }
         /// <summary>Employee number</summary>
-        public int? EmployeeHID { get; set; }
+        public int? EmployeeHID { get; private set; }
         /// <summary>Employment</summary>
-        public Guid? Employment { get; set; }
+        public Guid? Employment { get; private set; }
         /// <summary>Employment condition group</summary>
-        public Guid? EmploymentConditionGroup { get; set; }
+        public Guid? EmploymentConditionGroup { get; private set; }
         /// <summary>Employment condition group code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmploymentConditionGroupCode { get; set; }
+        public string? EmploymentConditionGroupCode { get; private set; }
 #nullable restore
 #else
-        public string EmploymentConditionGroupCode { get; set; }
+        public string EmploymentConditionGroupCode { get; private set; }
 #endif
         /// <summary>Employment condition group description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmploymentConditionGroupDescription { get; set; }
+        public string? EmploymentConditionGroupDescription { get; private set; }
 #nullable restore
 #else
-        public string EmploymentConditionGroupDescription { get; set; }
+        public string EmploymentConditionGroupDescription { get; private set; }
 #endif
         /// <summary>Entry amount</summary>
-        public double? EntryAmount { get; set; }
+        public double? EntryAmount { get; private set; }
         /// <summary>Entry base</summary>
-        public double? EntryBase { get; set; }
+        public double? EntryBase { get; private set; }
         /// <summary>Entry number</summary>
-        public double? EntryNumber { get; set; }
+        public double? EntryNumber { get; private set; }
         /// <summary>Entry percentage</summary>
-        public double? EntryPercentage { get; set; }
+        public double? EntryPercentage { get; private set; }
         /// <summary>Second entry percentage</summary>
-        public double? EntryPercentage2 { get; set; }
+        public double? EntryPercentage2 { get; private set; }
         /// <summary>Entry type</summary>
-        public int? EntryType { get; set; }
+        public int? EntryType { get; private set; }
         /// <summary>Entry type description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntryTypeDescription { get; set; }
+        public string? EntryTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string EntryTypeDescription { get; set; }
+        public string EntryTypeDescription { get; private set; }
 #endif
         /// <summary>Frequency: 1 - Yearly, 2 - Quarterly, 3 - Monthly, 4 - 4-weekly, 5 - Weekly, 11 - Yearly (Pro forma), 12 - Quarterly (Pro forma), 13 - Monthly (Pro forma), 14 - 4-Weekly (Pro forma), 15 - Weekly (Pro forma)</summary>
-        public int? Frequency { get; set; }
+        public int? Frequency { get; private set; }
         /// <summary>Name of employee</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FullName { get; set; }
+        public string? FullName { get; private set; }
 #nullable restore
 #else
-        public string FullName { get; set; }
+        public string FullName { get; private set; }
 #endif
         /// <summary>Transaction</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? ModifiedDate { get; set; }
+        public DateTimeOffset? ModifiedDate { get; private set; }
         /// <summary>Modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Modifier full name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Payroll component</summary>
-        public Guid? PayrollComponent { get; set; }
+        public Guid? PayrollComponent { get; private set; }
         /// <summary>Payroll component code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayrollComponentCode { get; set; }
+        public string? PayrollComponentCode { get; private set; }
 #nullable restore
 #else
-        public string PayrollComponentCode { get; set; }
+        public string PayrollComponentCode { get; private set; }
 #endif
         /// <summary>Payroll component description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayrollComponentDescription { get; set; }
+        public string? PayrollComponentDescription { get; private set; }
 #nullable restore
 #else
-        public string PayrollComponentDescription { get; set; }
+        public string PayrollComponentDescription { get; private set; }
 #endif
         /// <summary>Payroll component type</summary>
-        public int? PayrollComponentType { get; set; }
+        public int? PayrollComponentType { get; private set; }
         /// <summary>Payroll component type description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayrollComponentTypeDescription { get; set; }
+        public string? PayrollComponentTypeDescription { get; private set; }
 #nullable restore
 #else
-        public string PayrollComponentTypeDescription { get; set; }
+        public string PayrollComponentTypeDescription { get; private set; }
 #endif
         /// <summary>Payroll run</summary>
-        public Guid? PayrollRun { get; set; }
+        public Guid? PayrollRun { get; private set; }
         /// <summary>Payroll run code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayrollRunCode { get; set; }
+        public string? PayrollRunCode { get; private set; }
 #nullable restore
 #else
-        public string PayrollRunCode { get; set; }
+        public string PayrollRunCode { get; private set; }
 #endif
         /// <summary>Payroll year</summary>
-        public int? PayrollYear { get; set; }
+        public int? PayrollYear { get; private set; }
         /// <summary>Period</summary>
-        public int? Period { get; set; }
+        public int? Period { get; private set; }
         /// <summary>Transaction status: 1 - Not entered, 2 - Entered, 3 - Open, 4 - Calculated, 5 - Approved, 6 - Finalized, 7 - Deleted</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>Transaction type</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>Transaction type description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TypeDescription { get; set; }
+        public string? TypeDescription { get; private set; }
 #nullable restore
 #else
-        public string TypeDescription { get; set; }
+        public string TypeDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PayrollPayrollTransactionsByPayrollYear"/> and sets the default values.
-        /// </summary>
-        public PayrollPayrollTransactionsByPayrollYear()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -321,58 +312,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("CalculatedAmount", CalculatedAmount);
-            writer.WriteDoubleValue("CalculatedBaseValue", CalculatedBaseValue);
-            writer.WriteDoubleValue("CalculatedFranchise", CalculatedFranchise);
-            writer.WriteDoubleValue("CalculatedMaximum", CalculatedMaximum);
-            writer.WriteDoubleValue("CalculatedNumber", CalculatedNumber);
-            writer.WriteStringValue("CostCenter", CostCenter);
-            writer.WriteStringValue("CostCenterCode", CostCenterCode);
-            writer.WriteStringValue("CostCenterDescription", CostCenterDescription);
-            writer.WriteStringValue("CostUnit", CostUnit);
-            writer.WriteStringValue("CostUnitCode", CostUnitCode);
-            writer.WriteStringValue("CostUnitDescription", CostUnitDescription);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteDateTimeOffsetValue("Date", Date);
-            writer.WriteGuidValue("Department", Department);
-            writer.WriteStringValue("DepartmentCode", DepartmentCode);
-            writer.WriteStringValue("DepartmentDescription", DepartmentDescription);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("Employee", Employee);
-            writer.WriteIntValue("EmployeeHID", EmployeeHID);
-            writer.WriteGuidValue("Employment", Employment);
-            writer.WriteGuidValue("EmploymentConditionGroup", EmploymentConditionGroup);
-            writer.WriteStringValue("EmploymentConditionGroupCode", EmploymentConditionGroupCode);
-            writer.WriteStringValue("EmploymentConditionGroupDescription", EmploymentConditionGroupDescription);
-            writer.WriteDoubleValue("EntryAmount", EntryAmount);
-            writer.WriteDoubleValue("EntryBase", EntryBase);
-            writer.WriteDoubleValue("EntryNumber", EntryNumber);
-            writer.WriteDoubleValue("EntryPercentage", EntryPercentage);
-            writer.WriteDoubleValue("EntryPercentage2", EntryPercentage2);
-            writer.WriteIntValue("EntryType", EntryType);
-            writer.WriteStringValue("EntryTypeDescription", EntryTypeDescription);
-            writer.WriteIntValue("Frequency", Frequency);
-            writer.WriteStringValue("FullName", FullName);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("ModifiedDate", ModifiedDate);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteGuidValue("PayrollComponent", PayrollComponent);
-            writer.WriteStringValue("PayrollComponentCode", PayrollComponentCode);
-            writer.WriteStringValue("PayrollComponentDescription", PayrollComponentDescription);
-            writer.WriteIntValue("PayrollComponentType", PayrollComponentType);
-            writer.WriteStringValue("PayrollComponentTypeDescription", PayrollComponentTypeDescription);
-            writer.WriteGuidValue("PayrollRun", PayrollRun);
-            writer.WriteStringValue("PayrollRunCode", PayrollRunCode);
-            writer.WriteIntValue("PayrollYear", PayrollYear);
-            writer.WriteIntValue("Period", Period);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteStringValue("TypeDescription", TypeDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

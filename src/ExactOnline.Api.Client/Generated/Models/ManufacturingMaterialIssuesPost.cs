@@ -9,20 +9,18 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManufacturingMaterialIssuesPost : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingMaterialIssuesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Serial or batch numbers are reserved prior to a POST to MaterialIssues. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.</summary>
         public Guid? DraftStockTransactionID { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Notes logged with this material issue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,13 +38,6 @@ namespace ExactOnline.Api.Client.Models
         public Guid? StorageLocation { get; set; }
         /// <summary>Effective date of this material issue</summary>
         public DateTimeOffset? TransactionDate { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingMaterialIssuesPost"/> and sets the default values.
-        /// </summary>
-        public ManufacturingMaterialIssuesPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -82,13 +73,11 @@ namespace ExactOnline.Api.Client.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("DraftStockTransactionID", DraftStockTransactionID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("Note", Note);
             writer.WriteDoubleValue("Quantity", Quantity);
             writer.WriteGuidValue("ShopOrderMaterialPlan", ShopOrderMaterialPlan);
             writer.WriteGuidValue("StorageLocation", StorageLocation);
             writer.WriteDateTimeOffsetValue("TransactionDate", TransactionDate);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

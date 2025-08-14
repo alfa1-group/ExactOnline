@@ -9,436 +9,427 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncPayrollEmployees : IAdditionalDataHolder, IParsable
+    public partial class SyncPayrollEmployees : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Second address lineNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLine2 { get; set; }
+        public string? AddressLine2 { get; private set; }
 #nullable restore
 #else
-        public string AddressLine2 { get; set; }
+        public string AddressLine2 { get; private set; }
 #endif
         /// <summary>Third address lineNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLine3 { get; set; }
+        public string? AddressLine3 { get; private set; }
 #nullable restore
 #else
-        public string AddressLine3 { get; set; }
+        public string AddressLine3 { get; private set; }
 #endif
         /// <summary>Street of addressNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressStreet { get; set; }
+        public string? AddressStreet { get; private set; }
 #nullable restore
 #else
-        public string AddressStreet { get; set; }
+        public string AddressStreet { get; private set; }
 #endif
         /// <summary>Street number of addressNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressStreetNumber { get; set; }
+        public string? AddressStreetNumber { get; private set; }
 #nullable restore
 #else
-        public string AddressStreetNumber { get; set; }
+        public string AddressStreetNumber { get; private set; }
 #endif
         /// <summary>Street number suffix of addressNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressStreetNumberSuffix { get; set; }
+        public string? AddressStreetNumberSuffix { get; private set; }
 #nullable restore
 #else
-        public string AddressStreetNumberSuffix { get; set; }
+        public string AddressStreetNumberSuffix { get; private set; }
 #endif
         /// <summary>Birth dateNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
-        public DateTimeOffset? BirthDate { get; set; }
+        public DateTimeOffset? BirthDate { get; private set; }
         /// <summary>Birth name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BirthName { get; set; }
+        public string? BirthName { get; private set; }
 #nullable restore
 #else
-        public string BirthName { get; set; }
+        public string BirthName { get; private set; }
 #endif
         /// <summary>Birth middle name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BirthNamePrefix { get; set; }
+        public string? BirthNamePrefix { get; private set; }
 #nullable restore
 #else
-        public string BirthNamePrefix { get; set; }
+        public string BirthNamePrefix { get; private set; }
 #endif
         /// <summary>Birth placeNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BirthPlace { get; set; }
+        public string? BirthPlace { get; private set; }
 #nullable restore
 #else
-        public string BirthPlace { get; set; }
+        public string BirthPlace { get; private set; }
 #endif
         /// <summary>Email of the employee at the office</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessEmail { get; set; }
+        public string? BusinessEmail { get; private set; }
 #nullable restore
 #else
-        public string BusinessEmail { get; set; }
+        public string BusinessEmail { get; private set; }
 #endif
         /// <summary>Fax number of the employee at the office</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessFax { get; set; }
+        public string? BusinessFax { get; private set; }
 #nullable restore
 #else
-        public string BusinessFax { get; set; }
+        public string BusinessFax { get; private set; }
 #endif
         /// <summary>Office mobile number of the employee</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessMobile { get; set; }
+        public string? BusinessMobile { get; private set; }
 #nullable restore
 #else
-        public string BusinessMobile { get; set; }
+        public string BusinessMobile { get; private set; }
 #endif
         /// <summary>Phone number of the employee at the office</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessPhone { get; set; }
+        public string? BusinessPhone { get; private set; }
 #nullable restore
 #else
-        public string BusinessPhone { get; set; }
+        public string BusinessPhone { get; private set; }
 #endif
         /// <summary>Phone extension of the employee at the office</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessPhoneExtension { get; set; }
+        public string? BusinessPhoneExtension { get; private set; }
 #nullable restore
 #else
-        public string BusinessPhoneExtension { get; set; }
+        public string BusinessPhoneExtension { get; private set; }
 #endif
         /// <summary>CityNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City { get; set; }
+        public string? City { get; private set; }
 #nullable restore
 #else
-        public string City { get; set; }
+        public string City { get; private set; }
 #endif
         /// <summary>Code of the employee</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get; private set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get; private set; }
 #endif
         /// <summary>Country codeNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public string? Country { get; private set; }
 #nullable restore
 #else
-        public string Country { get; set; }
+        public string Country { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Customer ID</summary>
-        public Guid? Customer { get; set; }
+        public Guid? Customer { get; private set; }
         /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Page: User maintenance page; Section: PersonalE-mail address of a user. If employee is linked to a user, the user email is stored in this property.Note:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employeesUsers created in Exact Online can access the company or companies in an administration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get; private set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get; private set; }
 #endif
         /// <summary>Employee number</summary>
-        public int? EmployeeHID { get; set; }
+        public int? EmployeeHID { get; private set; }
         /// <summary>End date of the employee</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>First name of the employee</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get; set; }
+        public string? FirstName { get; private set; }
 #nullable restore
 #else
-        public string FirstName { get; set; }
+        public string FirstName { get; private set; }
 #endif
         /// <summary>Full name of the employee</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FullName { get; set; }
+        public string? FullName { get; private set; }
 #nullable restore
 #else
-        public string FullName { get; set; }
+        public string FullName { get; private set; }
 #endif
         /// <summary>Gender</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Gender { get; set; }
+        public string? Gender { get; private set; }
 #nullable restore
 #else
-        public string Gender { get; set; }
+        public string Gender { get; private set; }
 #endif
         /// <summary>Numeric ID of the employee</summary>
-        public int? HID { get; set; }
+        public int? HID { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Initials</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Initials { get; set; }
+        public string? Initials { get; private set; }
 #nullable restore
 #else
-        public string Initials { get; set; }
+        public string Initials { get; private set; }
 #endif
         /// <summary>IsActive</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive { get; private set; }
         /// <summary>Indicates whether the employee is anonymised.</summary>
-        public int? IsAnonymised { get; set; }
+        public int? IsAnonymised { get; private set; }
         /// <summary>Language code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get; private set; }
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get; private set; }
 #endif
         /// <summary>Last name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get; set; }
+        public string? LastName { get; private set; }
 #nullable restore
 #else
-        public string LastName { get; set; }
+        public string LastName { get; private set; }
 #endif
         /// <summary>Description of the location of the employee (where am I?)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationDescription { get; set; }
+        public string? LocationDescription { get; private set; }
 #nullable restore
 #else
-        public string LocationDescription { get; set; }
+        public string LocationDescription { get; private set; }
 #endif
         /// <summary>Direct manager of the employeeNote:  The manager must  be in the same division as the employeeThe manager should not  be subordinate of their employee</summary>
-        public Guid? Manager { get; set; }
+        public Guid? Manager { get; private set; }
         /// <summary>Date of marriageNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
-        public DateTimeOffset? MaritalDate { get; set; }
+        public DateTimeOffset? MaritalDate { get; private set; }
         /// <summary>Marital statusNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
-        public int? MaritalStatus { get; set; }
+        public int? MaritalStatus { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Middle name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MiddleName { get; set; }
+        public string? MiddleName { get; private set; }
 #nullable restore
 #else
-        public string MiddleName { get; set; }
+        public string MiddleName { get; private set; }
 #endif
         /// <summary>Mobile phoneNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mobile { get; set; }
+        public string? Mobile { get; private set; }
 #nullable restore
 #else
-        public string Mobile { get; set; }
+        public string Mobile { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>The NameComposition property</summary>
-        public int? NameComposition { get; set; }
+        public int? NameComposition { get; private set; }
         /// <summary>NationalityNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Nationality { get; set; }
+        public string? Nationality { get; private set; }
 #nullable restore
 #else
-        public string Nationality { get; set; }
+        public string Nationality { get; private set; }
 #endif
         /// <summary>Nick name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NickName { get; set; }
+        public string? NickName { get; private set; }
 #nullable restore
 #else
-        public string NickName { get; set; }
+        public string NickName { get; private set; }
 #endif
         /// <summary>Additional notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Name of partnerNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerName { get; set; }
+        public string? PartnerName { get; private set; }
 #nullable restore
 #else
-        public string PartnerName { get; set; }
+        public string PartnerName { get; private set; }
 #endif
         /// <summary>Middle name of partnerNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerNamePrefix { get; set; }
+        public string? PartnerNamePrefix { get; private set; }
 #nullable restore
 #else
-        public string PartnerNamePrefix { get; set; }
+        public string PartnerNamePrefix { get; private set; }
 #endif
         /// <summary>Reference to the persons table in which the personal data of the employee is stored</summary>
-        public Guid? Person { get; set; }
+        public Guid? Person { get; private set; }
         /// <summary>Phone numberNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phone { get; set; }
+        public string? Phone { get; private set; }
 #nullable restore
 #else
-        public string Phone { get; set; }
+        public string Phone { get; private set; }
 #endif
         /// <summary>Phone number extensionNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneExtension { get; set; }
+        public string? PhoneExtension { get; private set; }
 #nullable restore
 #else
-        public string PhoneExtension { get; set; }
+        public string PhoneExtension { get; private set; }
 #endif
         /// <summary>Bytes of the logo image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Picture { get; set; }
+        public byte[]? Picture { get; private set; }
 #nullable restore
 #else
-        public byte[] Picture { get; set; }
+        public byte[] Picture { get; private set; }
 #endif
         /// <summary>Filename of picture</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PictureFileName { get; set; }
+        public string? PictureFileName { get; private set; }
 #nullable restore
 #else
-        public string PictureFileName { get; set; }
+        public string PictureFileName { get; private set; }
 #endif
         /// <summary>Thumbnail url of the picture</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PictureThumbnailUrl { get; set; }
+        public string? PictureThumbnailUrl { get; private set; }
 #nullable restore
 #else
-        public string PictureThumbnailUrl { get; set; }
+        public string PictureThumbnailUrl { get; private set; }
 #endif
         /// <summary>Url of picture</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PictureUrl { get; set; }
+        public string? PictureUrl { get; private set; }
 #nullable restore
 #else
-        public string PictureUrl { get; set; }
+        public string PictureUrl { get; private set; }
 #endif
         /// <summary>PostcodeNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Postcode { get; set; }
+        public string? Postcode { get; private set; }
 #nullable restore
 #else
-        public string Postcode { get; set; }
+        public string Postcode { get; private set; }
 #endif
         /// <summary>Section: Personal Personal e-mail address of the employee.Note:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivateEmail { get; set; }
+        public string? PrivateEmail { get; private set; }
 #nullable restore
 #else
-        public string PrivateEmail { get; set; }
+        public string PrivateEmail { get; private set; }
 #endif
         /// <summary>Social security numberNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SocialSecurityNumber { get; set; }
+        public string? SocialSecurityNumber { get; private set; }
 #nullable restore
 #else
-        public string SocialSecurityNumber { get; set; }
+        public string SocialSecurityNumber { get; private set; }
 #endif
         /// <summary>Start date of the employee</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>StateNote:  The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? State { get; private set; }
 #nullable restore
 #else
-        public string State { get; set; }
+        public string State { get; private set; }
 #endif
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get; private set; }
         /// <summary>Title</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get; private set; }
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get; private set; }
 #endif
         /// <summary>User ID of employee</summary>
-        public Guid? User { get; set; }
+        public Guid? User { get; private set; }
         /// <summary>Name of user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserFullName { get; set; }
+        public string? UserFullName { get; private set; }
 #nullable restore
 #else
-        public string UserFullName { get; set; }
+        public string UserFullName { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncPayrollEmployees"/> and sets the default values.
-        /// </summary>
-        public SyncPayrollEmployees()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -534,75 +525,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("AddressLine2", AddressLine2);
-            writer.WriteStringValue("AddressLine3", AddressLine3);
-            writer.WriteStringValue("AddressStreet", AddressStreet);
-            writer.WriteStringValue("AddressStreetNumber", AddressStreetNumber);
-            writer.WriteStringValue("AddressStreetNumberSuffix", AddressStreetNumberSuffix);
-            writer.WriteDateTimeOffsetValue("BirthDate", BirthDate);
-            writer.WriteStringValue("BirthName", BirthName);
-            writer.WriteStringValue("BirthNamePrefix", BirthNamePrefix);
-            writer.WriteStringValue("BirthPlace", BirthPlace);
-            writer.WriteStringValue("BusinessEmail", BusinessEmail);
-            writer.WriteStringValue("BusinessFax", BusinessFax);
-            writer.WriteStringValue("BusinessMobile", BusinessMobile);
-            writer.WriteStringValue("BusinessPhone", BusinessPhone);
-            writer.WriteStringValue("BusinessPhoneExtension", BusinessPhoneExtension);
-            writer.WriteStringValue("City", City);
-            writer.WriteStringValue("Code", Code);
-            writer.WriteStringValue("Country", Country);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteGuidValue("Customer", Customer);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteStringValue("Email", Email);
-            writer.WriteIntValue("EmployeeHID", EmployeeHID);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteStringValue("FirstName", FirstName);
-            writer.WriteStringValue("FullName", FullName);
-            writer.WriteStringValue("Gender", Gender);
-            writer.WriteIntValue("HID", HID);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteStringValue("Initials", Initials);
-            writer.WriteBoolValue("IsActive", IsActive);
-            writer.WriteIntValue("IsAnonymised", IsAnonymised);
-            writer.WriteStringValue("Language", Language);
-            writer.WriteStringValue("LastName", LastName);
-            writer.WriteStringValue("LocationDescription", LocationDescription);
-            writer.WriteGuidValue("Manager", Manager);
-            writer.WriteDateTimeOffsetValue("MaritalDate", MaritalDate);
-            writer.WriteIntValue("MaritalStatus", MaritalStatus);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteStringValue("MiddleName", MiddleName);
-            writer.WriteStringValue("Mobile", Mobile);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteIntValue("NameComposition", NameComposition);
-            writer.WriteStringValue("Nationality", Nationality);
-            writer.WriteStringValue("NickName", NickName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteStringValue("PartnerName", PartnerName);
-            writer.WriteStringValue("PartnerNamePrefix", PartnerNamePrefix);
-            writer.WriteGuidValue("Person", Person);
-            writer.WriteStringValue("Phone", Phone);
-            writer.WriteStringValue("PhoneExtension", PhoneExtension);
-            writer.WriteByteArrayValue("Picture", Picture);
-            writer.WriteStringValue("PictureFileName", PictureFileName);
-            writer.WriteStringValue("PictureThumbnailUrl", PictureThumbnailUrl);
-            writer.WriteStringValue("PictureUrl", PictureUrl);
-            writer.WriteStringValue("Postcode", Postcode);
-            writer.WriteStringValue("PrivateEmail", PrivateEmail);
-            writer.WriteStringValue("SocialSecurityNumber", SocialSecurityNumber);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteStringValue("State", State);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteStringValue("Title", Title);
-            writer.WriteGuidValue("User", User);
-            writer.WriteStringValue("UserFullName", UserFullName);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

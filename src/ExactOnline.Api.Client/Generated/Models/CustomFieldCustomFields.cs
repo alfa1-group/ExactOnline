@@ -9,76 +9,67 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CustomFieldCustomFields : IAdditionalDataHolder, IParsable
+    public partial class CustomFieldCustomFields : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Business component name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessComponentName { get; set; }
+        public string? BusinessComponentName { get; private set; }
 #nullable restore
 #else
-        public string BusinessComponentName { get; set; }
+        public string BusinessComponentName { get; private set; }
 #endif
         /// <summary>Custom field description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Caption { get; set; }
+        public string? Caption { get; private set; }
 #nullable restore
 #else
-        public string Caption { get; set; }
+        public string Caption { get; private set; }
 #endif
         /// <summary>Entity id</summary>
-        public Guid? LinkId { get; set; }
+        public Guid? LinkId { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Custom business property name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PropertyName { get; set; }
+        public string? PropertyName { get; private set; }
 #nullable restore
 #else
-        public string PropertyName { get; set; }
+        public string PropertyName { get; private set; }
 #endif
         /// <summary>The name of the referencing entity. The supported values are Item, Account, Project, Opportunity, SalesOrder, Contact,User, Employee, Document, Team, CostUnit, CostCenter and Journal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RefersTo { get; set; }
+        public string? RefersTo { get; private set; }
 #nullable restore
 #else
-        public string RefersTo { get; set; }
+        public string RefersTo { get; private set; }
 #endif
         /// <summary>Represents the data type of the custom field. The supported datatypes are boolean, integer, string, double, date and GUID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get; private set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get; private set; }
 #endif
         /// <summary>Custom field data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public string? Value { get; private set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public string Value { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CustomFieldCustomFields"/> and sets the default values.
-        /// </summary>
-        public CustomFieldCustomFields()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -114,15 +105,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("BusinessComponentName", BusinessComponentName);
-            writer.WriteStringValue("Caption", Caption);
-            writer.WriteGuidValue("LinkId", LinkId);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteStringValue("PropertyName", PropertyName);
-            writer.WriteStringValue("RefersTo", RefersTo);
-            writer.WriteStringValue("Type", Type);
-            writer.WriteStringValue("Value", Value);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

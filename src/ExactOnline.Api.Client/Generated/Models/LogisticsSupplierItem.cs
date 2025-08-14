@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LogisticsSupplierItem : IAdditionalDataHolder, IParsable
+    public partial class LogisticsSupplierItem : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This is the barcode for the unit other than standard unit of the item. Only supported by the Premium for Wholesale &amp;amp; Distribution and Manufacturing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,10 +115,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Minimum quantity of the item for purchase, only available for Wholesale &amp;amp; Distribution (Professional and Premium only)</summary>
         public double? MinimumQuantity { get; set; }
@@ -213,13 +211,6 @@ namespace ExactOnline.Api.Client.Models
         public string SupplierItemCode { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.LogisticsSupplierItem"/> and sets the default values.
-        /// </summary>
-        public LogisticsSupplierItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.LogisticsSupplierItem"/></returns>
@@ -305,7 +296,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ItemUnitCode", ItemUnitCode);
             writer.WriteStringValue("ItemUnitDescription", ItemUnitDescription);
             writer.WriteBoolValue("MainSupplier", MainSupplier);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDoubleValue("MinimumQuantity", MinimumQuantity);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
@@ -324,7 +314,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("SupplierCode", SupplierCode);
             writer.WriteStringValue("SupplierDescription", SupplierDescription);
             writer.WriteStringValue("SupplierItemCode", SupplierItemCode);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

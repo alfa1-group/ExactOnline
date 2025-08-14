@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InventoryProcessStockCount : IAdditionalDataHolder, IParsable
+    public partial class InventoryProcessStockCount : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Division code</summary>
         public int? Division { get; set; }
         /// <summary>Contains the error message if an error occurred during the processing of the stock count.</summary>
@@ -27,10 +25,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>A guid that is the unique identifier of the stock count.</summary>
         public Guid? StockCountID { get; set; }
@@ -42,13 +40,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SuccessMessage { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryProcessStockCount"/> and sets the default values.
-        /// </summary>
-        public InventoryProcessStockCount()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,10 +74,8 @@ namespace ExactOnline.Api.Client.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("Division", Division);
             writer.WriteStringValue("ErrorMessage", ErrorMessage);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("StockCountID", StockCountID);
             writer.WriteStringValue("SuccessMessage", SuccessMessage);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

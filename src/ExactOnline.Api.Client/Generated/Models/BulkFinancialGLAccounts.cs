@@ -9,94 +9,92 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BulkFinancialGLAccounts : IAdditionalDataHolder, IParsable
+    public partial class BulkFinancialGLAccounts : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AllowCostsInSales property</summary>
-        public int? AllowCostsInSales { get; set; }
+        public int? AllowCostsInSales { get; private set; }
         /// <summary>The AssimilatedVATBox property</summary>
-        public int? AssimilatedVATBox { get; set; }
+        public int? AssimilatedVATBox { get; private set; }
         /// <summary>The BalanceSide property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceSide { get; set; }
+        public string? BalanceSide { get; private set; }
 #nullable restore
 #else
-        public string BalanceSide { get; set; }
+        public string BalanceSide { get; private set; }
 #endif
         /// <summary>The BalanceType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceType { get; set; }
+        public string? BalanceType { get; private set; }
 #nullable restore
 #else
-        public string BalanceType { get; set; }
+        public string BalanceType { get; private set; }
 #endif
         /// <summary>The BelcotaxType property</summary>
-        public int? BelcotaxType { get; set; }
+        public int? BelcotaxType { get; private set; }
         /// <summary>The Code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get; private set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get; private set; }
 #endif
         /// <summary>The Compress property</summary>
-        public bool? Compress { get; set; }
+        public bool? Compress { get; private set; }
         /// <summary>The Costcenter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Costcenter { get; set; }
+        public string? Costcenter { get; private set; }
 #nullable restore
 #else
-        public string Costcenter { get; set; }
+        public string Costcenter { get; private set; }
 #endif
         /// <summary>The CostcenterDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostcenterDescription { get; set; }
+        public string? CostcenterDescription { get; private set; }
 #nullable restore
 #else
-        public string CostcenterDescription { get; set; }
+        public string CostcenterDescription { get; private set; }
 #endif
         /// <summary>The Costunit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Costunit { get; set; }
+        public string? Costunit { get; private set; }
 #nullable restore
 #else
-        public string Costunit { get; set; }
+        public string Costunit { get; private set; }
 #endif
         /// <summary>The CostunitDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostunitDescription { get; set; }
+        public string? CostunitDescription { get; private set; }
 #nullable restore
 #else
-        public string CostunitDescription { get; set; }
+        public string CostunitDescription { get; private set; }
 #endif
         /// <summary>The Created property</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>The Creator property</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>The CreatorFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>The CustomField property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>The DeductibilityPercentages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,126 +107,119 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The Description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>The Division property</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>The ExcludeVATListing property</summary>
-        public int? ExcludeVATListing { get; set; }
+        public int? ExcludeVATListing { get; private set; }
         /// <summary>The ExpenseNonDeductiblePercentage property</summary>
-        public double? ExpenseNonDeductiblePercentage { get; set; }
+        public double? ExpenseNonDeductiblePercentage { get; private set; }
         /// <summary>The ID property</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The IsBlocked property</summary>
-        public bool? IsBlocked { get; set; }
+        public bool? IsBlocked { get; private set; }
         /// <summary>The Matching property</summary>
-        public bool? Matching { get; set; }
+        public bool? Matching { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The Modified property</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>The Modifier property</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>The ModifierFullName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>The PrivateGLAccount property</summary>
-        public Guid? PrivateGLAccount { get; set; }
+        public Guid? PrivateGLAccount { get; private set; }
         /// <summary>The PrivatePercentage property</summary>
-        public double? PrivatePercentage { get; set; }
+        public double? PrivatePercentage { get; private set; }
         /// <summary>The ReportingCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportingCode { get; set; }
+        public string? ReportingCode { get; private set; }
 #nullable restore
 #else
-        public string ReportingCode { get; set; }
+        public string ReportingCode { get; private set; }
 #endif
         /// <summary>The RevalueCurrency property</summary>
-        public bool? RevalueCurrency { get; set; }
+        public bool? RevalueCurrency { get; private set; }
         /// <summary>The SearchCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SearchCode { get; set; }
+        public string? SearchCode { get; private set; }
 #nullable restore
 #else
-        public string SearchCode { get; set; }
+        public string SearchCode { get; private set; }
 #endif
         /// <summary>The Type property</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>The TypeDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TypeDescription { get; set; }
+        public string? TypeDescription { get; private set; }
 #nullable restore
 #else
-        public string TypeDescription { get; set; }
+        public string TypeDescription { get; private set; }
 #endif
         /// <summary>The UseCostcenter property</summary>
-        public int? UseCostcenter { get; set; }
+        public int? UseCostcenter { get; private set; }
         /// <summary>The UseCostunit property</summary>
-        public int? UseCostunit { get; set; }
+        public int? UseCostunit { get; private set; }
         /// <summary>The VATCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VATCode { get; set; }
+        public string? VATCode { get; private set; }
 #nullable restore
 #else
-        public string VATCode { get; set; }
+        public string VATCode { get; private set; }
 #endif
         /// <summary>The VATDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VATDescription { get; set; }
+        public string? VATDescription { get; private set; }
 #nullable restore
 #else
-        public string VATDescription { get; set; }
+        public string VATDescription { get; private set; }
 #endif
         /// <summary>The VATGLAccountType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VATGLAccountType { get; set; }
+        public string? VATGLAccountType { get; private set; }
 #nullable restore
 #else
-        public string VATGLAccountType { get; set; }
+        public string VATGLAccountType { get; private set; }
 #endif
         /// <summary>The VATNonDeductibleGLAccount property</summary>
-        public Guid? VATNonDeductibleGLAccount { get; set; }
+        public Guid? VATNonDeductibleGLAccount { get; private set; }
         /// <summary>The VATNonDeductiblePercentage property</summary>
-        public double? VATNonDeductiblePercentage { get; set; }
+        public double? VATNonDeductiblePercentage { get; private set; }
         /// <summary>The VATSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VATSystem { get; set; }
+        public string? VATSystem { get; private set; }
 #nullable restore
 #else
-        public string VATSystem { get; set; }
+        public string VATSystem { get; private set; }
 #endif
         /// <summary>The YearEndCostGLAccount property</summary>
-        public Guid? YearEndCostGLAccount { get; set; }
+        public Guid? YearEndCostGLAccount { get; private set; }
         /// <summary>The YearEndReflectionGLAccount property</summary>
-        public Guid? YearEndReflectionGLAccount { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.BulkFinancialGLAccounts"/> and sets the default values.
-        /// </summary>
-        public BulkFinancialGLAccounts()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public Guid? YearEndReflectionGLAccount { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -300,51 +291,7 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("AllowCostsInSales", AllowCostsInSales);
-            writer.WriteIntValue("AssimilatedVATBox", AssimilatedVATBox);
-            writer.WriteStringValue("BalanceSide", BalanceSide);
-            writer.WriteStringValue("BalanceType", BalanceType);
-            writer.WriteIntValue("BelcotaxType", BelcotaxType);
-            writer.WriteStringValue("Code", Code);
-            writer.WriteBoolValue("Compress", Compress);
-            writer.WriteStringValue("Costcenter", Costcenter);
-            writer.WriteStringValue("CostcenterDescription", CostcenterDescription);
-            writer.WriteStringValue("Costunit", Costunit);
-            writer.WriteStringValue("CostunitDescription", CostunitDescription);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("CustomField", CustomField);
             writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.FinancialDeductibilityPercentages>("DeductibilityPercentages", DeductibilityPercentages);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteIntValue("ExcludeVATListing", ExcludeVATListing);
-            writer.WriteDoubleValue("ExpenseNonDeductiblePercentage", ExpenseNonDeductiblePercentage);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteBoolValue("IsBlocked", IsBlocked);
-            writer.WriteBoolValue("Matching", Matching);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteGuidValue("PrivateGLAccount", PrivateGLAccount);
-            writer.WriteDoubleValue("PrivatePercentage", PrivatePercentage);
-            writer.WriteStringValue("ReportingCode", ReportingCode);
-            writer.WriteBoolValue("RevalueCurrency", RevalueCurrency);
-            writer.WriteStringValue("SearchCode", SearchCode);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteStringValue("TypeDescription", TypeDescription);
-            writer.WriteIntValue("UseCostcenter", UseCostcenter);
-            writer.WriteIntValue("UseCostunit", UseCostunit);
-            writer.WriteStringValue("VATCode", VATCode);
-            writer.WriteStringValue("VATDescription", VATDescription);
-            writer.WriteStringValue("VATGLAccountType", VATGLAccountType);
-            writer.WriteGuidValue("VATNonDeductibleGLAccount", VATNonDeductibleGLAccount);
-            writer.WriteDoubleValue("VATNonDeductiblePercentage", VATNonDeductiblePercentage);
-            writer.WriteStringValue("VATSystem", VATSystem);
-            writer.WriteGuidValue("YearEndCostGLAccount", YearEndCostGLAccount);
-            writer.WriteGuidValue("YearEndReflectionGLAccount", YearEndReflectionGLAccount);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

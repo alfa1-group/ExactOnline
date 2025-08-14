@@ -9,216 +9,207 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PayrollPayrollComponents : IAdditionalDataHolder, IParsable
+    public partial class PayrollPayrollComponents : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Calculate</summary>
-        public int? Calculate { get; set; }
+        public int? Calculate { get; private set; }
         /// <summary>Category</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category { get; set; }
+        public string? Category { get; private set; }
 #nullable restore
 #else
-        public string Category { get; set; }
+        public string Category { get; private set; }
 #endif
         /// <summary>Category description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CategoryDescription { get; set; }
+        public string? CategoryDescription { get; private set; }
 #nullable restore
 #else
-        public string CategoryDescription { get; set; }
+        public string CategoryDescription { get; private set; }
 #endif
         /// <summary>Code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get; private set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get; private set; }
 #endif
         /// <summary>Created</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>Creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Creator full name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Division</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Employment condition group code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmploymentConditionGroupCode { get; set; }
+        public string? EmploymentConditionGroupCode { get; private set; }
 #nullable restore
 #else
-        public string EmploymentConditionGroupCode { get; set; }
+        public string EmploymentConditionGroupCode { get; private set; }
 #endif
         /// <summary>Employment condition group description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmploymentConditionGroupDescription { get; set; }
+        public string? EmploymentConditionGroupDescription { get; private set; }
 #nullable restore
 #else
-        public string EmploymentConditionGroupDescription { get; set; }
+        public string EmploymentConditionGroupDescription { get; private set; }
 #endif
         /// <summary>End date</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; private set; }
         /// <summary>GL classification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLClassification { get; set; }
+        public string? GLClassification { get; private set; }
 #nullable restore
 #else
-        public string GLClassification { get; set; }
+        public string GLClassification { get; private set; }
 #endif
         /// <summary>GL classification description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLClassificationDescription { get; set; }
+        public string? GLClassificationDescription { get; private set; }
 #nullable restore
 #else
-        public string GLClassificationDescription { get; set; }
+        public string GLClassificationDescription { get; private set; }
 #endif
         /// <summary>ID</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Modified</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>Modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Modifier full name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Pension declaration classification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PensionDeclarationClassification { get; set; }
+        public string? PensionDeclarationClassification { get; private set; }
 #nullable restore
 #else
-        public string PensionDeclarationClassification { get; set; }
+        public string PensionDeclarationClassification { get; private set; }
 #endif
         /// <summary>Pension declaration classification description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PensionDeclarationClassificationDescription { get; set; }
+        public string? PensionDeclarationClassificationDescription { get; private set; }
 #nullable restore
 #else
-        public string PensionDeclarationClassificationDescription { get; set; }
+        public string PensionDeclarationClassificationDescription { get; private set; }
 #endif
         /// <summary>Pension declaration subclassification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PensionDeclarationSubclassification { get; set; }
+        public string? PensionDeclarationSubclassification { get; private set; }
 #nullable restore
 #else
-        public string PensionDeclarationSubclassification { get; set; }
+        public string PensionDeclarationSubclassification { get; private set; }
 #endif
         /// <summary>Pension declaration subclassification description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PensionDeclarationSubclassificationDescription { get; set; }
+        public string? PensionDeclarationSubclassificationDescription { get; private set; }
 #nullable restore
 #else
-        public string PensionDeclarationSubclassificationDescription { get; set; }
+        public string PensionDeclarationSubclassificationDescription { get; private set; }
 #endif
         /// <summary>Search code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SearchCode { get; set; }
+        public string? SearchCode { get; private set; }
 #nullable restore
 #else
-        public string SearchCode { get; set; }
+        public string SearchCode { get; private set; }
 #endif
         /// <summary>Start date</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; private set; }
         /// <summary>Subcategory</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subcategory { get; set; }
+        public string? Subcategory { get; private set; }
 #nullable restore
 #else
-        public string Subcategory { get; set; }
+        public string Subcategory { get; private set; }
 #endif
         /// <summary>Subcategory description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubcategoryDescription { get; set; }
+        public string? SubcategoryDescription { get; private set; }
 #nullable restore
 #else
-        public string SubcategoryDescription { get; set; }
+        public string SubcategoryDescription { get; private set; }
 #endif
         /// <summary>Tax declaration classification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxDeclarationClassification { get; set; }
+        public string? TaxDeclarationClassification { get; private set; }
 #nullable restore
 #else
-        public string TaxDeclarationClassification { get; set; }
+        public string TaxDeclarationClassification { get; private set; }
 #endif
         /// <summary>Tax declaration classification description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxDeclarationClassificationDescription { get; set; }
+        public string? TaxDeclarationClassificationDescription { get; private set; }
 #nullable restore
 #else
-        public string TaxDeclarationClassificationDescription { get; set; }
+        public string TaxDeclarationClassificationDescription { get; private set; }
 #endif
         /// <summary>Transaction type: 1 - Normal, 2- Special, 3 - Normal and special</summary>
-        public int? TransactionType { get; set; }
+        public int? TransactionType { get; private set; }
         /// <summary>Type: 1 - Allowance, 2- Deduction, 3 - Subtotal</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>Wage list classification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WageListClassification { get; set; }
+        public string? WageListClassification { get; private set; }
 #nullable restore
 #else
-        public string WageListClassification { get; set; }
+        public string WageListClassification { get; private set; }
 #endif
         /// <summary>Wage list classification description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WageListClassificationDescription { get; set; }
+        public string? WageListClassificationDescription { get; private set; }
 #nullable restore
 #else
-        public string WageListClassificationDescription { get; set; }
+        public string WageListClassificationDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PayrollPayrollComponents"/> and sets the default values.
-        /// </summary>
-        public PayrollPayrollComponents()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -279,40 +270,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Calculate", Calculate);
-            writer.WriteStringValue("Category", Category);
-            writer.WriteStringValue("CategoryDescription", CategoryDescription);
-            writer.WriteStringValue("Code", Code);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteStringValue("EmploymentConditionGroupCode", EmploymentConditionGroupCode);
-            writer.WriteStringValue("EmploymentConditionGroupDescription", EmploymentConditionGroupDescription);
-            writer.WriteDateTimeOffsetValue("EndDate", EndDate);
-            writer.WriteStringValue("GLClassification", GLClassification);
-            writer.WriteStringValue("GLClassificationDescription", GLClassificationDescription);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("PensionDeclarationClassification", PensionDeclarationClassification);
-            writer.WriteStringValue("PensionDeclarationClassificationDescription", PensionDeclarationClassificationDescription);
-            writer.WriteStringValue("PensionDeclarationSubclassification", PensionDeclarationSubclassification);
-            writer.WriteStringValue("PensionDeclarationSubclassificationDescription", PensionDeclarationSubclassificationDescription);
-            writer.WriteStringValue("SearchCode", SearchCode);
-            writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteStringValue("Subcategory", Subcategory);
-            writer.WriteStringValue("SubcategoryDescription", SubcategoryDescription);
-            writer.WriteStringValue("TaxDeclarationClassification", TaxDeclarationClassification);
-            writer.WriteStringValue("TaxDeclarationClassificationDescription", TaxDeclarationClassificationDescription);
-            writer.WriteIntValue("TransactionType", TransactionType);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteStringValue("WageListClassification", WageListClassification);
-            writer.WriteStringValue("WageListClassificationDescription", WageListClassificationDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ProjectProjectRestrictionEmployeesPost : IAdditionalDataHolder, IParsable
+    public partial class ProjectProjectRestrictionEmployeesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The guid ID of the employee restricted to the project for hour entry</summary>
         public Guid? Employee { get; set; }
         /// <summary>Primary key</summary>
@@ -21,20 +19,13 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Project ID that the restriction is referenced to</summary>
         public Guid? Project { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ProjectProjectRestrictionEmployeesPost"/> and sets the default values.
-        /// </summary>
-        public ProjectProjectRestrictionEmployeesPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,9 +59,7 @@ namespace ExactOnline.Api.Client.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("Employee", Employee);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("Project", Project);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

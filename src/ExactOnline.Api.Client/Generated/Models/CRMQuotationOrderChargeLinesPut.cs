@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CRMQuotationOrderChargeLinesPut : IAdditionalDataHolder, IParsable
+    public partial class CRMQuotationOrderChargeLinesPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount excluded VAT in trading currency for shipping cost or order charges</summary>
         public double? AmountFCExclVAT { get; set; }
         /// <summary>Amount included VAT in trading currency for shipping cost or order charges</summary>
@@ -23,10 +21,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>ID of order charges is mandatory for order charge. However, it is not required for shipping cost</summary>
         public Guid? OrderCharge { get; set; }
@@ -38,13 +36,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string OrderChargesLineDescription { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CRMQuotationOrderChargeLinesPut"/> and sets the default values.
-        /// </summary>
-        public CRMQuotationOrderChargeLinesPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,10 +72,8 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("AmountFCExclVAT", AmountFCExclVAT);
             writer.WriteDoubleValue("AmountFCInclVAT", AmountFCInclVAT);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("OrderCharge", OrderCharge);
             writer.WriteStringValue("OrderChargesLineDescription", OrderChargesLineDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

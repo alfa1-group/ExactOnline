@@ -9,296 +9,287 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadCRMDefaultAddressForAccount : IAdditionalDataHolder, IParsable
+    public partial class ReadCRMDefaultAddressForAccount : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Account linked to the address</summary>
-        public Guid? Account { get; set; }
+        public Guid? Account { get; private set; }
         /// <summary>Indicates if the account is a supplier</summary>
-        public bool? AccountIsSupplier { get; set; }
+        public bool? AccountIsSupplier { get; private set; }
         /// <summary>Name of the account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get; private set; }
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get; private set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>First address line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLine1 { get; set; }
+        public string? AddressLine1 { get; private set; }
 #nullable restore
 #else
-        public string AddressLine1 { get; set; }
+        public string AddressLine1 { get; private set; }
 #endif
         /// <summary>Second address line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLine2 { get; set; }
+        public string? AddressLine2 { get; private set; }
 #nullable restore
 #else
-        public string AddressLine2 { get; set; }
+        public string AddressLine2 { get; private set; }
 #endif
         /// <summary>Third address line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLine3 { get; set; }
+        public string? AddressLine3 { get; private set; }
 #nullable restore
 #else
-        public string AddressLine3 { get; set; }
+        public string AddressLine3 { get; private set; }
 #endif
         /// <summary>City</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City { get; set; }
+        public string? City { get; private set; }
 #nullable restore
 #else
-        public string City { get; set; }
+        public string City { get; private set; }
 #endif
         /// <summary>Contact linked to Address</summary>
-        public Guid? Contact { get; set; }
+        public Guid? Contact { get; private set; }
         /// <summary>Contact name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactName { get; set; }
+        public string? ContactName { get; private set; }
 #nullable restore
 #else
-        public string ContactName { get; set; }
+        public string ContactName { get; private set; }
 #endif
         /// <summary>Country code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public string? Country { get; private set; }
 #nullable restore
 #else
-        public string Country { get; set; }
+        public string Country { get; private set; }
 #endif
         /// <summary>Country name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryName { get; set; }
+        public string? CountryName { get; private set; }
 #nullable restore
 #else
-        public string CountryName { get; set; }
+        public string CountryName { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Fax number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fax { get; set; }
+        public string? Fax { get; private set; }
 #nullable restore
 #else
-        public string Fax { get; set; }
+        public string Fax { get; private set; }
 #endif
         /// <summary>Free boolean field 1</summary>
-        public bool? FreeBoolField01 { get; set; }
+        public bool? FreeBoolField01 { get; private set; }
         /// <summary>Free boolean field 2</summary>
-        public bool? FreeBoolField02 { get; set; }
+        public bool? FreeBoolField02 { get; private set; }
         /// <summary>Free boolean field 3</summary>
-        public bool? FreeBoolField03 { get; set; }
+        public bool? FreeBoolField03 { get; private set; }
         /// <summary>Free boolean field 4</summary>
-        public bool? FreeBoolField04 { get; set; }
+        public bool? FreeBoolField04 { get; private set; }
         /// <summary>Free boolean field 5</summary>
-        public bool? FreeBoolField05 { get; set; }
+        public bool? FreeBoolField05 { get; private set; }
         /// <summary>Free date field 1</summary>
-        public DateTimeOffset? FreeDateField01 { get; set; }
+        public DateTimeOffset? FreeDateField01 { get; private set; }
         /// <summary>Free date field 2</summary>
-        public DateTimeOffset? FreeDateField02 { get; set; }
+        public DateTimeOffset? FreeDateField02 { get; private set; }
         /// <summary>Free date field 3</summary>
-        public DateTimeOffset? FreeDateField03 { get; set; }
+        public DateTimeOffset? FreeDateField03 { get; private set; }
         /// <summary>Free date field 4</summary>
-        public DateTimeOffset? FreeDateField04 { get; set; }
+        public DateTimeOffset? FreeDateField04 { get; private set; }
         /// <summary>Free date field 5</summary>
-        public DateTimeOffset? FreeDateField05 { get; set; }
+        public DateTimeOffset? FreeDateField05 { get; private set; }
         /// <summary>Free number field 1</summary>
-        public double? FreeNumberField01 { get; set; }
+        public double? FreeNumberField01 { get; private set; }
         /// <summary>Free number field 2</summary>
-        public double? FreeNumberField02 { get; set; }
+        public double? FreeNumberField02 { get; private set; }
         /// <summary>Free number field 3</summary>
-        public double? FreeNumberField03 { get; set; }
+        public double? FreeNumberField03 { get; private set; }
         /// <summary>Free number field 4</summary>
-        public double? FreeNumberField04 { get; set; }
+        public double? FreeNumberField04 { get; private set; }
         /// <summary>Free number field 5</summary>
-        public double? FreeNumberField05 { get; set; }
+        public double? FreeNumberField05 { get; private set; }
         /// <summary>Free text field 1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FreeTextField01 { get; set; }
+        public string? FreeTextField01 { get; private set; }
 #nullable restore
 #else
-        public string FreeTextField01 { get; set; }
+        public string FreeTextField01 { get; private set; }
 #endif
         /// <summary>Free text field 2</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FreeTextField02 { get; set; }
+        public string? FreeTextField02 { get; private set; }
 #nullable restore
 #else
-        public string FreeTextField02 { get; set; }
+        public string FreeTextField02 { get; private set; }
 #endif
         /// <summary>Free text field 3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FreeTextField03 { get; set; }
+        public string? FreeTextField03 { get; private set; }
 #nullable restore
 #else
-        public string FreeTextField03 { get; set; }
+        public string FreeTextField03 { get; private set; }
 #endif
         /// <summary>Free text field 4</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FreeTextField04 { get; set; }
+        public string? FreeTextField04 { get; private set; }
 #nullable restore
 #else
-        public string FreeTextField04 { get; set; }
+        public string FreeTextField04 { get; private set; }
 #endif
         /// <summary>Free text field 5</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FreeTextField05 { get; set; }
+        public string? FreeTextField05 { get; private set; }
 #nullable restore
 #else
-        public string FreeTextField05 { get; set; }
+        public string FreeTextField05 { get; private set; }
 #endif
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>MailboxTake notes: The &apos;Mailbox&apos; functionality required the Mailbox feature set in the licence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mailbox { get; set; }
+        public string? Mailbox { get; private set; }
 #nullable restore
 #else
-        public string Mailbox { get; set; }
+        public string Mailbox { get; private set; }
 #endif
         /// <summary>Indicates if the address is the main address for this type</summary>
-        public bool? Main { get; set; }
+        public bool? Main { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Last 5 digits of SIRET number which is an intern sequential number of 4 digits representing the identification of the localization of the office</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NicNumber { get; set; }
+        public string? NicNumber { get; private set; }
 #nullable restore
 #else
-        public string NicNumber { get; set; }
+        public string NicNumber { get; private set; }
 #endif
         /// <summary>Notes for an address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phone { get; set; }
+        public string? Phone { get; private set; }
 #nullable restore
 #else
-        public string Phone { get; set; }
+        public string Phone { get; private set; }
 #endif
         /// <summary>Phone extension</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneExtension { get; set; }
+        public string? PhoneExtension { get; private set; }
 #nullable restore
 #else
-        public string PhoneExtension { get; set; }
+        public string PhoneExtension { get; private set; }
 #endif
         /// <summary>Postcode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Postcode { get; set; }
+        public string? Postcode { get; private set; }
 #nullable restore
 #else
-        public string Postcode { get; set; }
+        public string Postcode { get; private set; }
 #endif
         /// <summary>State</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? State { get; private set; }
 #nullable restore
 #else
-        public string State { get; set; }
+        public string State { get; private set; }
 #endif
         /// <summary>Name of the State</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StateDescription { get; set; }
+        public string? StateDescription { get; private set; }
 #nullable restore
 #else
-        public string StateDescription { get; set; }
+        public string StateDescription { get; private set; }
 #endif
         /// <summary>The type of address. Visit=1, Postal=2, Invoice=3, Delivery=4</summary>
-        public int? Type { get; set; }
+        public int? Type { get; private set; }
         /// <summary>The warehouse linked to the address, if a warehouse is linked the account will be empty. Can only be filled for type=Delivery</summary>
-        public Guid? Warehouse { get; set; }
+        public Guid? Warehouse { get; private set; }
         /// <summary>Code of the warehoude</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseCode { get; set; }
+        public string? WarehouseCode { get; private set; }
 #nullable restore
 #else
-        public string WarehouseCode { get; set; }
+        public string WarehouseCode { get; private set; }
 #endif
         /// <summary>Description of the warehouse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarehouseDescription { get; set; }
+        public string? WarehouseDescription { get; private set; }
 #nullable restore
 #else
-        public string WarehouseDescription { get; set; }
+        public string WarehouseDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadCRMDefaultAddressForAccount"/> and sets the default values.
-        /// </summary>
-        public ReadCRMDefaultAddressForAccount()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -381,62 +372,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("Account", Account);
-            writer.WriteBoolValue("AccountIsSupplier", AccountIsSupplier);
-            writer.WriteStringValue("AccountName", AccountName);
-            writer.WriteStringValue("AddressLine1", AddressLine1);
-            writer.WriteStringValue("AddressLine2", AddressLine2);
-            writer.WriteStringValue("AddressLine3", AddressLine3);
-            writer.WriteStringValue("City", City);
-            writer.WriteGuidValue("Contact", Contact);
-            writer.WriteStringValue("ContactName", ContactName);
-            writer.WriteStringValue("Country", Country);
-            writer.WriteStringValue("CountryName", CountryName);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteStringValue("Fax", Fax);
-            writer.WriteBoolValue("FreeBoolField_01", FreeBoolField01);
-            writer.WriteBoolValue("FreeBoolField_02", FreeBoolField02);
-            writer.WriteBoolValue("FreeBoolField_03", FreeBoolField03);
-            writer.WriteBoolValue("FreeBoolField_04", FreeBoolField04);
-            writer.WriteBoolValue("FreeBoolField_05", FreeBoolField05);
-            writer.WriteDateTimeOffsetValue("FreeDateField_01", FreeDateField01);
-            writer.WriteDateTimeOffsetValue("FreeDateField_02", FreeDateField02);
-            writer.WriteDateTimeOffsetValue("FreeDateField_03", FreeDateField03);
-            writer.WriteDateTimeOffsetValue("FreeDateField_04", FreeDateField04);
-            writer.WriteDateTimeOffsetValue("FreeDateField_05", FreeDateField05);
-            writer.WriteDoubleValue("FreeNumberField_01", FreeNumberField01);
-            writer.WriteDoubleValue("FreeNumberField_02", FreeNumberField02);
-            writer.WriteDoubleValue("FreeNumberField_03", FreeNumberField03);
-            writer.WriteDoubleValue("FreeNumberField_04", FreeNumberField04);
-            writer.WriteDoubleValue("FreeNumberField_05", FreeNumberField05);
-            writer.WriteStringValue("FreeTextField_01", FreeTextField01);
-            writer.WriteStringValue("FreeTextField_02", FreeTextField02);
-            writer.WriteStringValue("FreeTextField_03", FreeTextField03);
-            writer.WriteStringValue("FreeTextField_04", FreeTextField04);
-            writer.WriteStringValue("FreeTextField_05", FreeTextField05);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteStringValue("Mailbox", Mailbox);
-            writer.WriteBoolValue("Main", Main);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("NicNumber", NicNumber);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteStringValue("Phone", Phone);
-            writer.WriteStringValue("PhoneExtension", PhoneExtension);
-            writer.WriteStringValue("Postcode", Postcode);
-            writer.WriteStringValue("State", State);
-            writer.WriteStringValue("StateDescription", StateDescription);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteGuidValue("Warehouse", Warehouse);
-            writer.WriteStringValue("WarehouseCode", WarehouseCode);
-            writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

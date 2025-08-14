@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManufacturingSubOrderReversals : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingSubOrderReversals : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of creating user</summary>
         public Guid? CreatedBy { get; set; }
         /// <summary>Name of the creating user</summary>
@@ -63,10 +61,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Notes logged with this reversal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,13 +126,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string WarehouseDescription { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingSubOrderReversals"/> and sets the default values.
-        /// </summary>
-        public ManufacturingSubOrderReversals()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -200,7 +191,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ItemDescription", ItemDescription);
             writer.WriteStringValue("ItemPictureUrl", ItemPictureUrl);
             writer.WriteGuidValue("MaterialReversalStockTransactionId", MaterialReversalStockTransactionId);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("Note", Note);
             writer.WriteGuidValue("OriginalMaterialIssueStockTransactionId", OriginalMaterialIssueStockTransactionId);
             writer.WriteGuidValue("OriginalShopOrderReceiptStockTransactionId", OriginalShopOrderReceiptStockTransactionId);
@@ -216,7 +206,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("Warehouse", Warehouse);
             writer.WriteStringValue("WarehouseCode", WarehouseCode);
             writer.WriteStringValue("WarehouseDescription", WarehouseDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

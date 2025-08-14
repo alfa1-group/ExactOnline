@@ -9,84 +9,75 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GeneralLayouts : IAdditionalDataHolder, IParsable
+    public partial class GeneralLayouts : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Category of the layout. Supported values are:0 = SalesInvoice1 = Reminder3 = Quotation5 = SalesOrder7 = Subscription9 = DeliveryNote11 = SalesReturnNote13 = PurchaseOrder15 = ItemLabel17 = PurchaseReceipt19 = PurchaseReturnNote20 = SalesInvoiceSpecification21 = ShopPaper22 = DebtorStatement23 = AssemblyOrder24 = ChequeRemittanceAdvice25 = PickingList26 = ShopOrderStockReceiptSlip27 = StockCount28 = RemittanceAdvice29 = ClusterPickingList30 = WarehouseTransferDeliveryNote31 = DebtorStatementOutstanding32 = Timesheet33 = AccountMail34 = Deposit35 = ProcessedStockCount36 = OfficialReturnAnnualAccounts37 = IssueSlip38 = ManufacturingPickingList39 = ManufacturingClusterPickingList40 = PlannedSalesReturn41 = BackOfficeContract42 = PaymentAgreement43 = TimeCostEntryRejection45 = WarehouseTransfer</summary>
-        public int? Category { get; set; }
+        public int? Category { get; private set; }
         /// <summary>Name of the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CategoryName { get; set; }
+        public string? CategoryName { get; private set; }
 #nullable restore
 #else
-        public string CategoryName { get; set; }
+        public string CategoryName { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of the creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of the creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Language of the layout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get; private set; }
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of the last modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of the last modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Status of the layout. 1 = Inactive, 2 = Active</summary>
-        public int? Status { get; set; }
+        public int? Status { get; private set; }
         /// <summary>Layout name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get; set; }
+        public string? Subject { get; private set; }
 #nullable restore
 #else
-        public string Subject { get; set; }
+        public string Subject { get; private set; }
 #endif
         /// <summary>Type: 1=Layout, 2=E-mail text layout</summary>
-        public int? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.GeneralLayouts"/> and sets the default values.
-        /// </summary>
-        public GeneralLayouts()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public int? Type { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -129,22 +120,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Category", Category);
-            writer.WriteStringValue("CategoryName", CategoryName);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteStringValue("Language", Language);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteIntValue("Status", Status);
-            writer.WriteStringValue("Subject", Subject);
-            writer.WriteIntValue("Type", Type);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

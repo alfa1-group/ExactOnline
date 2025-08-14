@@ -9,50 +9,41 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DocumentsDocumentTypes : IAdditionalDataHolder, IParsable
+    public partial class DocumentsDocumentTypes : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>Document type description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Indicates if documents of this type can be created</summary>
-        public bool? DocumentIsCreatable { get; set; }
+        public bool? DocumentIsCreatable { get; private set; }
         /// <summary>Indicates if documents of this type can be deleted</summary>
-        public bool? DocumentIsDeletable { get; set; }
+        public bool? DocumentIsDeletable { get; private set; }
         /// <summary>Indicates if documents of this type can be updated</summary>
-        public bool? DocumentIsUpdatable { get; set; }
+        public bool? DocumentIsUpdatable { get; private set; }
         /// <summary>Indicates if documents of this type can be retrieved</summary>
-        public bool? DocumentIsViewable { get; set; }
+        public bool? DocumentIsViewable { get; private set; }
         /// <summary>Primary key</summary>
-        public int? ID { get; set; }
+        public int? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>ID of the document type category</summary>
-        public int? TypeCategory { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.DocumentsDocumentTypes"/> and sets the default values.
-        /// </summary>
-        public DocumentsDocumentTypes()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public int? TypeCategory { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -90,17 +81,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteBoolValue("DocumentIsCreatable", DocumentIsCreatable);
-            writer.WriteBoolValue("DocumentIsDeletable", DocumentIsDeletable);
-            writer.WriteBoolValue("DocumentIsUpdatable", DocumentIsUpdatable);
-            writer.WriteBoolValue("DocumentIsViewable", DocumentIsViewable);
-            writer.WriteIntValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteIntValue("TypeCategory", TypeCategory);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

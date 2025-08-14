@@ -9,48 +9,39 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadFinancialAgingOverviewByAccount : IAdditionalDataHolder, IParsable
+    public partial class ReadFinancialAgingOverviewByAccount : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Primary key</summary>
-        public int? AgeGroup { get; set; }
+        public int? AgeGroup { get; private set; }
         /// <summary>Description of AgeGroup</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgeGroupDescription { get; set; }
+        public string? AgeGroupDescription { get; private set; }
 #nullable restore
 #else
-        public string AgeGroupDescription { get; set; }
+        public string AgeGroupDescription { get; private set; }
 #endif
         /// <summary>Amount payable</summary>
-        public double? AmountPayable { get; set; }
+        public double? AmountPayable { get; private set; }
         /// <summary>Amount receivable</summary>
-        public double? AmountReceivable { get; set; }
+        public double? AmountReceivable { get; private set; }
         /// <summary>Code of Currency</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode { get; set; }
+        public string? CurrencyCode { get; private set; }
 #nullable restore
 #else
-        public string CurrencyCode { get; set; }
+        public string CurrencyCode { get; private set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadFinancialAgingOverviewByAccount"/> and sets the default values.
-        /// </summary>
-        public ReadFinancialAgingOverviewByAccount()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,13 +75,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("AgeGroup", AgeGroup);
-            writer.WriteStringValue("AgeGroupDescription", AgeGroupDescription);
-            writer.WriteDoubleValue("AmountPayable", AmountPayable);
-            writer.WriteDoubleValue("AmountReceivable", AmountReceivable);
-            writer.WriteStringValue("CurrencyCode", CurrencyCode);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

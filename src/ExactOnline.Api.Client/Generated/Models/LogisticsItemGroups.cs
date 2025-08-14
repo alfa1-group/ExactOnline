@@ -9,188 +9,179 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LogisticsItemGroups : IAdditionalDataHolder, IParsable
+    public partial class LogisticsItemGroups : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Code of the item group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get; private set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get; private set; }
 #endif
         /// <summary>Creation date</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>User ID of creator</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Description of the item group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>GL account on which the costs of items of this group will be booked</summary>
-        public Guid? GLCosts { get; set; }
+        public Guid? GLCosts { get; private set; }
         /// <summary>Code of GLCosts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLCostsCode { get; set; }
+        public string? GLCostsCode { get; private set; }
 #nullable restore
 #else
-        public string GLCostsCode { get; set; }
+        public string GLCostsCode { get; private set; }
 #endif
         /// <summary>Description of GLCosts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLCostsDescription { get; set; }
+        public string? GLCostsDescription { get; private set; }
 #nullable restore
 #else
-        public string GLCostsDescription { get; set; }
+        public string GLCostsDescription { get; private set; }
 #endif
         /// <summary>GL Purchase account for purchase invoicing according to (non-) perpetual inventory method</summary>
-        public Guid? GLPurchaseAccount { get; set; }
+        public Guid? GLPurchaseAccount { get; private set; }
         /// <summary>Code of GLPurchase</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLPurchaseAccountCode { get; set; }
+        public string? GLPurchaseAccountCode { get; private set; }
 #nullable restore
 #else
-        public string GLPurchaseAccountCode { get; set; }
+        public string GLPurchaseAccountCode { get; private set; }
 #endif
         /// <summary>Description of GLPurchaseAccount</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLPurchaseAccountDescription { get; set; }
+        public string? GLPurchaseAccountDescription { get; private set; }
 #nullable restore
 #else
-        public string GLPurchaseAccountDescription { get; set; }
+        public string GLPurchaseAccountDescription { get; private set; }
 #endif
         /// <summary>GL account that will be used for the &apos;Standard cost price&apos; valuation method to balance the difference between purchase price and cost price</summary>
-        public Guid? GLPurchasePriceDifference { get; set; }
+        public Guid? GLPurchasePriceDifference { get; private set; }
         /// <summary>Code of GLPurchasePriceDifference</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLPurchasePriceDifferenceCode { get; set; }
+        public string? GLPurchasePriceDifferenceCode { get; private set; }
 #nullable restore
 #else
-        public string GLPurchasePriceDifferenceCode { get; set; }
+        public string GLPurchasePriceDifferenceCode { get; private set; }
 #endif
         /// <summary>Description of GLPurchasePriceDifference</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLPurchasePriceDifferenceDescr { get; set; }
+        public string? GLPurchasePriceDifferenceDescr { get; private set; }
 #nullable restore
 #else
-        public string GLPurchasePriceDifferenceDescr { get; set; }
+        public string GLPurchasePriceDifferenceDescr { get; private set; }
 #endif
         /// <summary>GL account on which the revenue for items of this group will be booked</summary>
-        public Guid? GLRevenue { get; set; }
+        public Guid? GLRevenue { get; private set; }
         /// <summary>Code of GLRevenue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLRevenueCode { get; set; }
+        public string? GLRevenueCode { get; private set; }
 #nullable restore
 #else
-        public string GLRevenueCode { get; set; }
+        public string GLRevenueCode { get; private set; }
 #endif
         /// <summary>Description of GLRevenue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLRevenueDescription { get; set; }
+        public string? GLRevenueDescription { get; private set; }
 #nullable restore
 #else
-        public string GLRevenueDescription { get; set; }
+        public string GLRevenueDescription { get; private set; }
 #endif
         /// <summary>GL account on which stock entries will be booked for items of this group</summary>
-        public Guid? GLStock { get; set; }
+        public Guid? GLStock { get; private set; }
         /// <summary>Code of GLStock</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLStockCode { get; set; }
+        public string? GLStockCode { get; private set; }
 #nullable restore
 #else
-        public string GLStockCode { get; set; }
+        public string GLStockCode { get; private set; }
 #endif
         /// <summary>Description of GLStock</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLStockDescription { get; set; }
+        public string? GLStockDescription { get; private set; }
 #nullable restore
 #else
-        public string GLStockDescription { get; set; }
+        public string GLStockDescription { get; private set; }
 #endif
         /// <summary>GL stock variance account for perpetual inventory</summary>
-        public Guid? GLStockVariance { get; set; }
+        public Guid? GLStockVariance { get; private set; }
         /// <summary>Code of GLStockVariance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLStockVarianceCode { get; set; }
+        public string? GLStockVarianceCode { get; private set; }
 #nullable restore
 #else
-        public string GLStockVarianceCode { get; set; }
+        public string GLStockVarianceCode { get; private set; }
 #endif
         /// <summary>Description of GLStockVariance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GLStockVarianceDescription { get; set; }
+        public string? GLStockVarianceDescription { get; private set; }
 #nullable restore
 #else
-        public string GLStockVarianceDescription { get; set; }
+        public string GLStockVarianceDescription { get; private set; }
 #endif
         /// <summary>A guid that is the unique identifier of the item group</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Indicates if this is the default item group that will be assigned when a new item is created</summary>
-        public int? IsDefault { get; set; }
+        public int? IsDefault { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>User ID of modifier</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.LogisticsItemGroups"/> and sets the default values.
-        /// </summary>
-        public LogisticsItemGroups()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -249,38 +240,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Code", Code);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("GLCosts", GLCosts);
-            writer.WriteStringValue("GLCostsCode", GLCostsCode);
-            writer.WriteStringValue("GLCostsDescription", GLCostsDescription);
-            writer.WriteGuidValue("GLPurchaseAccount", GLPurchaseAccount);
-            writer.WriteStringValue("GLPurchaseAccountCode", GLPurchaseAccountCode);
-            writer.WriteStringValue("GLPurchaseAccountDescription", GLPurchaseAccountDescription);
-            writer.WriteGuidValue("GLPurchasePriceDifference", GLPurchasePriceDifference);
-            writer.WriteStringValue("GLPurchasePriceDifferenceCode", GLPurchasePriceDifferenceCode);
-            writer.WriteStringValue("GLPurchasePriceDifferenceDescr", GLPurchasePriceDifferenceDescr);
-            writer.WriteGuidValue("GLRevenue", GLRevenue);
-            writer.WriteStringValue("GLRevenueCode", GLRevenueCode);
-            writer.WriteStringValue("GLRevenueDescription", GLRevenueDescription);
-            writer.WriteGuidValue("GLStock", GLStock);
-            writer.WriteStringValue("GLStockCode", GLStockCode);
-            writer.WriteStringValue("GLStockDescription", GLStockDescription);
-            writer.WriteGuidValue("GLStockVariance", GLStockVariance);
-            writer.WriteStringValue("GLStockVarianceCode", GLStockVarianceCode);
-            writer.WriteStringValue("GLStockVarianceDescription", GLStockVarianceDescription);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("IsDefault", IsDefault);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,64 +9,55 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadProjectCostEntryRecentExpensesByProject : IAdditionalDataHolder, IParsable
+    public partial class ReadProjectCostEntryRecentExpensesByProject : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date last used</summary>
-        public DateTimeOffset? DateLastUsed { get; set; }
+        public DateTimeOffset? DateLastUsed { get; private set; }
         /// <summary>ID of the defaultItem</summary>
-        public Guid? DefaultItem { get; set; }
+        public Guid? DefaultItem { get; private set; }
         /// <summary>Item code of the defaultItem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultItemCode { get; set; }
+        public string? DefaultItemCode { get; private set; }
 #nullable restore
 #else
-        public string DefaultItemCode { get; set; }
+        public string DefaultItemCode { get; private set; }
 #endif
         /// <summary>Description of the defaultItem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultItemDescription { get; set; }
+        public string? DefaultItemDescription { get; private set; }
 #nullable restore
 #else
-        public string DefaultItemDescription { get; set; }
+        public string DefaultItemDescription { get; private set; }
 #endif
         /// <summary>Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Description of Parent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentDescription { get; set; }
+        public string? ParentDescription { get; private set; }
 #nullable restore
 #else
-        public string ParentDescription { get; set; }
+        public string ParentDescription { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentExpensesByProject"/> and sets the default values.
-        /// </summary>
-        public ReadProjectCostEntryRecentExpensesByProject()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -102,15 +93,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("DateLastUsed", DateLastUsed);
-            writer.WriteGuidValue("DefaultItem", DefaultItem);
-            writer.WriteStringValue("DefaultItemCode", DefaultItemCode);
-            writer.WriteStringValue("DefaultItemDescription", DefaultItemDescription);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteStringValue("ParentDescription", ParentDescription);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

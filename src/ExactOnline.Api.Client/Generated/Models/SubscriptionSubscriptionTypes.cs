@@ -9,166 +9,157 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SubscriptionSubscriptionTypes : IAdditionalDataHolder, IParsable
+    public partial class SubscriptionSubscriptionTypes : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of days before or after generating the subscription invoice. Company settings and automatic generate invoice type need to be enabled before subscription invoice generated automatically</summary>
-        public int? AutomaticGenerateInvoiceDays { get; set; }
+        public int? AutomaticGenerateInvoiceDays { get; private set; }
         /// <summary>Description of the automatic generated invoice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AutomaticGenerateInvoiceDescription { get; set; }
+        public string? AutomaticGenerateInvoiceDescription { get; private set; }
 #nullable restore
 #else
-        public string AutomaticGenerateInvoiceDescription { get; set; }
+        public string AutomaticGenerateInvoiceDescription { get; private set; }
 #endif
         /// <summary>Type of automatic generate invoice: 1=Never, 2=Before the subscription period, 3=After the subscription period. Company settings need to be enabled before subscription invoice generated automatically</summary>
-        public int? AutomaticGenerateInvoiceType { get; set; }
+        public int? AutomaticGenerateInvoiceType { get; private set; }
         /// <summary>Number of days after sending the subscription invoice. Company settings and automatic sending invoice type need to be enabled before subscription invoice sent automatically</summary>
-        public int? AutomaticSendInvoiceDays { get; set; }
+        public int? AutomaticSendInvoiceDays { get; private set; }
         /// <summary>Method of automatic send invoice: 1=Send based on account, 2=Send via email, 3=Create documents, 4=Send via digital postbox, 5=Send and track, 6=Send via peppol. Company settings need to be enabled before subscription invoice sent automatically</summary>
-        public int? AutomaticSendInvoiceMethod { get; set; }
+        public int? AutomaticSendInvoiceMethod { get; private set; }
         /// <summary>Sender&apos;s email of automatic send invoice: 1=Company email address, 2=Main user email address. Company settings need to be enabled before subscription invoice sent automatically</summary>
-        public int? AutomaticSendInvoiceSender { get; set; }
+        public int? AutomaticSendInvoiceSender { get; private set; }
         /// <summary>ID of automatic send invoice sender&apos;s mailbox. Company settings need to be enabled before subscription invoice sent automatically</summary>
-        public Guid? AutomaticSendInvoiceSenderMailbox { get; set; }
+        public Guid? AutomaticSendInvoiceSenderMailbox { get; private set; }
         /// <summary>Type of automatic send invoice: 1=Never, 2=When available. Company settings need to be enabled before subscription invoice sent automatically</summary>
-        public int? AutomaticSendInvoiceType { get; set; }
+        public int? AutomaticSendInvoiceType { get; private set; }
         /// <summary>Cancellation period of subscription type</summary>
-        public int? CancellationPeriod { get; set; }
+        public int? CancellationPeriod { get; private set; }
         /// <summary>Unit of cancellation period: wk=Week, mm=Month, yy=Year, hy=Half-year, qt=Quarter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CancellationPeriodUnit { get; set; }
+        public string? CancellationPeriodUnit { get; private set; }
 #nullable restore
 #else
-        public string CancellationPeriodUnit { get; set; }
+        public string CancellationPeriodUnit { get; private set; }
 #endif
         /// <summary>Code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get; private set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get; private set; }
 #endif
         /// <summary>Date and time when the subscription type was created</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>ID of user that created the subscription type</summary>
-        public Guid? Creator { get; set; }
+        public Guid? Creator { get; private set; }
         /// <summary>Full name of user that created the subscription type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorFullName { get; set; }
+        public string? CreatorFullName { get; private set; }
 #nullable restore
 #else
-        public string CreatorFullName { get; set; }
+        public string CreatorFullName { get; private set; }
 #endif
         /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomField { get; set; }
+        public string? CustomField { get; private set; }
 #nullable restore
 #else
-        public string CustomField { get; set; }
+        public string CustomField { get; private set; }
 #endif
         /// <summary>Description of subscription type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Enable payment link: 0=Never, 1=Always, 2=Based on account</summary>
-        public int? EnablePaymentLink { get; set; }
+        public int? EnablePaymentLink { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>Invoice correction method: 1=Ratio based, 2=Zero Invoice, 3=Never invoiced</summary>
-        public int? InvoiceCorrectionMethod { get; set; }
+        public int? InvoiceCorrectionMethod { get; private set; }
         /// <summary>Invoice period of subscription type</summary>
-        public int? InvoicePeriod { get; set; }
+        public int? InvoicePeriod { get; private set; }
         /// <summary>Unit of invoice period: wk=Week, mm=Month, yy=Year, hy=Half-year, qt=Quarter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoicePeriodUnit { get; set; }
+        public string? InvoicePeriodUnit { get; private set; }
 #nullable restore
 #else
-        public string InvoicePeriodUnit { get; set; }
+        public string InvoicePeriodUnit { get; private set; }
 #endif
         /// <summary>Manual renewal method: 1=Use item prices, 2=Use current subscription prices</summary>
-        public int? ManualRenewalMethod { get; set; }
+        public int? ManualRenewalMethod { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date of subscription type</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>ID of user that modified the subscription type</summary>
-        public Guid? Modifier { get; set; }
+        public Guid? Modifier { get; private set; }
         /// <summary>Full name of user that modified the subscription type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifierFullName { get; set; }
+        public string? ModifierFullName { get; private set; }
 #nullable restore
 #else
-        public string ModifierFullName { get; set; }
+        public string ModifierFullName { get; private set; }
 #endif
         /// <summary>Additional information about subscription type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get; private set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get; private set; }
 #endif
         /// <summary>Prolongation type: 0=No, 1=Manual, 2=Automatic</summary>
-        public int? ProlongationType { get; set; }
+        public int? ProlongationType { get; private set; }
         /// <summary>Renewal cancellation period of subscription type</summary>
-        public int? RenewalCancellationPeriod { get; set; }
+        public int? RenewalCancellationPeriod { get; private set; }
         /// <summary>Unit of renewal cancellation period: wk=Week, mm=Month, yy=Year, hy=Half-year, qt=Quarter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RenewalCancellationPeriodUnit { get; set; }
+        public string? RenewalCancellationPeriodUnit { get; private set; }
 #nullable restore
 #else
-        public string RenewalCancellationPeriodUnit { get; set; }
+        public string RenewalCancellationPeriodUnit { get; private set; }
 #endif
         /// <summary>Renewal period of subscription type</summary>
-        public int? RenewalPeriod { get; set; }
+        public int? RenewalPeriod { get; private set; }
         /// <summary>Unit of renewal period: wk=Week, mm=Month, yy=Year, hy=Half-year, qt=Quarter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RenewalPeriodUnit { get; set; }
+        public string? RenewalPeriodUnit { get; private set; }
 #nullable restore
 #else
-        public string RenewalPeriodUnit { get; set; }
+        public string RenewalPeriodUnit { get; private set; }
 #endif
         /// <summary>Subscription period of subscription type</summary>
-        public int? SubscriptionPeriod { get; set; }
+        public int? SubscriptionPeriod { get; private set; }
         /// <summary>Unit of subscription period: wk=Week, mm=Month, yy=Year, hy=Half-year, qt=Quarter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionPeriodUnit { get; set; }
+        public string? SubscriptionPeriodUnit { get; private set; }
 #nullable restore
 #else
-        public string SubscriptionPeriodUnit { get; set; }
+        public string SubscriptionPeriodUnit { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionTypes"/> and sets the default values.
-        /// </summary>
-        public SubscriptionSubscriptionTypes()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -231,42 +222,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("AutomaticGenerateInvoiceDays", AutomaticGenerateInvoiceDays);
-            writer.WriteStringValue("AutomaticGenerateInvoiceDescription", AutomaticGenerateInvoiceDescription);
-            writer.WriteIntValue("AutomaticGenerateInvoiceType", AutomaticGenerateInvoiceType);
-            writer.WriteIntValue("AutomaticSendInvoiceDays", AutomaticSendInvoiceDays);
-            writer.WriteIntValue("AutomaticSendInvoiceMethod", AutomaticSendInvoiceMethod);
-            writer.WriteIntValue("AutomaticSendInvoiceSender", AutomaticSendInvoiceSender);
-            writer.WriteGuidValue("AutomaticSendInvoiceSenderMailbox", AutomaticSendInvoiceSenderMailbox);
-            writer.WriteIntValue("AutomaticSendInvoiceType", AutomaticSendInvoiceType);
-            writer.WriteIntValue("CancellationPeriod", CancellationPeriod);
-            writer.WriteStringValue("CancellationPeriodUnit", CancellationPeriodUnit);
-            writer.WriteStringValue("Code", Code);
-            writer.WriteDateTimeOffsetValue("Created", Created);
-            writer.WriteGuidValue("Creator", Creator);
-            writer.WriteStringValue("CreatorFullName", CreatorFullName);
-            writer.WriteStringValue("CustomField", CustomField);
-            writer.WriteStringValue("Description", Description);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteIntValue("EnablePaymentLink", EnablePaymentLink);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteIntValue("InvoiceCorrectionMethod", InvoiceCorrectionMethod);
-            writer.WriteIntValue("InvoicePeriod", InvoicePeriod);
-            writer.WriteStringValue("InvoicePeriodUnit", InvoicePeriodUnit);
-            writer.WriteIntValue("ManualRenewalMethod", ManualRenewalMethod);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("Modified", Modified);
-            writer.WriteGuidValue("Modifier", Modifier);
-            writer.WriteStringValue("ModifierFullName", ModifierFullName);
-            writer.WriteStringValue("Notes", Notes);
-            writer.WriteIntValue("ProlongationType", ProlongationType);
-            writer.WriteIntValue("RenewalCancellationPeriod", RenewalCancellationPeriod);
-            writer.WriteStringValue("RenewalCancellationPeriodUnit", RenewalCancellationPeriodUnit);
-            writer.WriteIntValue("RenewalPeriod", RenewalPeriod);
-            writer.WriteStringValue("RenewalPeriodUnit", RenewalPeriodUnit);
-            writer.WriteIntValue("SubscriptionPeriod", SubscriptionPeriod);
-            writer.WriteStringValue("SubscriptionPeriodUnit", SubscriptionPeriodUnit);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

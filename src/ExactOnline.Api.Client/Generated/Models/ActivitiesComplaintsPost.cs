@@ -9,13 +9,11 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ActivitiesComplaintsPost : IAdditionalDataHolder, IParsable
+    public partial class ActivitiesComplaintsPost : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account that is related to the complaint</summary>
         public Guid? Account { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The user that the complaint is assigned to</summary>
         public Guid? AssignedTo { get; set; }
         /// <summary>The user name</summary>
@@ -53,10 +51,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The date indicating by when the next action has to be taken</summary>
         public DateTimeOffset? NextAction { get; set; }
@@ -70,13 +68,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>The date the complaint was received</summary>
         public DateTimeOffset? ReceiptDate { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ActivitiesComplaintsPost"/> and sets the default values.
-        /// </summary>
-        public ActivitiesComplaintsPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -126,11 +117,9 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("DocumentSubject", DocumentSubject);
             writer.WriteIntValue("HID", HID);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("NextAction", NextAction);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteDateTimeOffsetValue("ReceiptDate", ReceiptDate);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

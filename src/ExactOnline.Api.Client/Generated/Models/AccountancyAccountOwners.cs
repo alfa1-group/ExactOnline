@@ -9,7 +9,7 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AccountancyAccountOwners : IAdditionalDataHolder, IParsable
+    public partial class AccountancyAccountOwners : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID of the account that is owned</summary>
@@ -30,8 +30,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountName { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>User ID of the creator</summary>
@@ -51,10 +49,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -88,13 +86,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>Percentage of shares that is owned. 1 is 100%, 0.5 is 50%</summary>
         public double? Shares { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.AccountancyAccountOwners"/> and sets the default values.
-        /// </summary>
-        public AccountancyAccountOwners()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -146,7 +137,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("CreatorFullName", CreatorFullName);
             writer.WriteIntValue("Division", Division);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteGuidValue("Modifier", Modifier);
             writer.WriteStringValue("ModifierFullName", ModifierFullName);
@@ -154,7 +144,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("OwnerAccountCode", OwnerAccountCode);
             writer.WriteStringValue("OwnerAccountName", OwnerAccountName);
             writer.WriteDoubleValue("Shares", Shares);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

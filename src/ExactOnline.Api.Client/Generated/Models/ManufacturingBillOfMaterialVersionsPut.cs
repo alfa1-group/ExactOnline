@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManufacturingBillOfMaterialVersionsPut : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingBillOfMaterialVersionsPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Batch Quantity of Item Version</summary>
         public double? BatchQuantity { get; set; }
         /// <summary>Cad drawing URL</summary>
@@ -43,10 +41,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Line notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,13 +66,6 @@ namespace ExactOnline.Api.Client.Models
         public DateTimeOffset? VersionDate { get; set; }
         /// <summary>Version Number</summary>
         public int? VersionNumber { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingBillOfMaterialVersionsPut"/> and sets the default values.
-        /// </summary>
-        public ManufacturingBillOfMaterialVersionsPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -124,7 +115,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("ID", ID);
             writer.WriteIntValue("IsDefault", IsDefault);
             writer.WriteGuidValue("Item", Item);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteIntValue("OrderLeadDays", OrderLeadDays);
             writer.WriteIntValue("ProductionLeadDays", ProductionLeadDays);
@@ -132,7 +122,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("Type", Type);
             writer.WriteDateTimeOffsetValue("VersionDate", VersionDate);
             writer.WriteIntValue("VersionNumber", VersionNumber);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

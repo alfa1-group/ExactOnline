@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PurchaseOrderPurchaseOrderLinesPost : IAdditionalDataHolder, IParsable
+    public partial class PurchaseOrderPurchaseOrderLinesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The CostCenter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,10 +45,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>The NetPrice property</summary>
         public double? NetPrice { get; set; }
@@ -84,13 +82,6 @@ namespace ExactOnline.Api.Client.Models
 #endif
         /// <summary>The VATPercentage property</summary>
         public double? VATPercentage { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLinesPost"/> and sets the default values.
-        /// </summary>
-        public PurchaseOrderPurchaseOrderLinesPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -141,7 +132,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("Discount", Discount);
             writer.WriteGuidValue("ID", ID);
             writer.WriteGuidValue("Item", Item);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteDoubleValue("NetPrice", NetPrice);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteGuidValue("Project", Project);
@@ -152,7 +142,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("UnitPrice", UnitPrice);
             writer.WriteStringValue("VATCode", VATCode);
             writer.WriteDoubleValue("VATPercentage", VATPercentage);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

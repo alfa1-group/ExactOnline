@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InventoryAssemblyBillOfMaterialMaterialsPut : IAdditionalDataHolder, IParsable
+    public partial class InventoryAssemblyBillOfMaterialMaterialsPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Main item</summary>
         public Guid? AssembledItem { get; set; }
         /// <summary>Primary key</summary>
@@ -21,10 +19,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Key of part item</summary>
         public Guid? PartItem { get; set; }
@@ -32,13 +30,6 @@ namespace ExactOnline.Api.Client.Models
         public double? Quantity { get; set; }
         /// <summary>Indicates if cost price is updated</summary>
         public bool? UpdateCostPrice { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialMaterialsPut"/> and sets the default values.
-        /// </summary>
-        public InventoryAssemblyBillOfMaterialMaterialsPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,11 +65,9 @@ namespace ExactOnline.Api.Client.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("AssembledItem", AssembledItem);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("PartItem", PartItem);
             writer.WriteDoubleValue("Quantity", Quantity);
             writer.WriteBoolValue("UpdateCostPrice", UpdateCostPrice);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

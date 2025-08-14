@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CashflowPaymentConditionsPost : IAdditionalDataHolder, IParsable
+    public partial class CashflowPaymentConditionsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Code of the payment condition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,10 +47,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Number of days to be included in the due date calculation. Example: invoice date = 17/01 PaymentEndOfMonths = 2 =&amp;gt; 31/03 PaymentDays = 15 =&amp;gt; 15/04</summary>
         public int? PaymentDays { get; set; }
@@ -84,13 +82,6 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCalculation { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.CashflowPaymentConditionsPost"/> and sets the default values.
-        /// </summary>
-        public CashflowPaymentConditionsPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -139,14 +130,12 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("DiscountPaymentDays", DiscountPaymentDays);
             writer.WriteDoubleValue("DiscountPercentage", DiscountPercentage);
             writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteIntValue("PaymentDays", PaymentDays);
             writer.WriteStringValue("PaymentDiscountType", PaymentDiscountType);
             writer.WriteIntValue("PaymentEndOfMonths", PaymentEndOfMonths);
             writer.WriteStringValue("PaymentMethod", PaymentMethod);
             writer.WriteDoubleValue("Percentage", Percentage);
             writer.WriteStringValue("VATCalculation", VATCalculation);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

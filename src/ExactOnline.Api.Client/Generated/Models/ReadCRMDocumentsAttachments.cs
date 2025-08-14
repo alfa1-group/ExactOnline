@@ -9,48 +9,39 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReadCRMDocumentsAttachments : IAdditionalDataHolder, IParsable
+    public partial class ReadCRMDocumentsAttachments : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Filename of the attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttachmentFileName { get; set; }
+        public string? AttachmentFileName { get; private set; }
 #nullable restore
 #else
-        public string AttachmentFileName { get; set; }
+        public string AttachmentFileName { get; private set; }
 #endif
         /// <summary>File size of the attachment</summary>
-        public double? AttachmentFileSize { get; set; }
+        public double? AttachmentFileSize { get; private set; }
         /// <summary>Url for downloading the attachment. To get the file in its original format (xml, jpg, pdf, etc.) append &amp;amp;Download=1 to the url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttachmentUrl { get; set; }
+        public string? AttachmentUrl { get; private set; }
 #nullable restore
 #else
-        public string AttachmentUrl { get; set; }
+        public string AttachmentUrl { get; private set; }
 #endif
         /// <summary>The CanShowInWebView property</summary>
-        public bool? CanShowInWebView { get; set; }
+        public bool? CanShowInWebView { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ReadCRMDocumentsAttachments"/> and sets the default values.
-        /// </summary>
-        public ReadCRMDocumentsAttachments()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,13 +75,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("AttachmentFileName", AttachmentFileName);
-            writer.WriteDoubleValue("AttachmentFileSize", AttachmentFileSize);
-            writer.WriteStringValue("AttachmentUrl", AttachmentUrl);
-            writer.WriteBoolValue("CanShowInWebView", CanShowInWebView);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

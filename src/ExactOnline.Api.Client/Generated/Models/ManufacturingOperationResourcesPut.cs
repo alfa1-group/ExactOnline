@@ -9,13 +9,11 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManufacturingOperationResourcesPut : IAdditionalDataHolder, IParsable
+    public partial class ManufacturingOperationResourcesPut : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Reference to Accounts</summary>
         public Guid? Account { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Attended percentage</summary>
         public double? AttendedPercentage { get; set; }
         /// <summary>Reference to Currencies</summary>
@@ -35,10 +33,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Reference to Operations</summary>
         public Guid? Operation { get; set; }
@@ -78,13 +76,6 @@ namespace ExactOnline.Api.Client.Models
         public int? Type { get; set; }
         /// <summary>Reference to Workcenter</summary>
         public Guid? Workcenter { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ManufacturingOperationResourcesPut"/> and sets the default values.
-        /// </summary>
-        public ManufacturingOperationResourcesPut()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -135,7 +126,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("EfficiencyPercentage", EfficiencyPercentage);
             writer.WriteGuidValue("ID", ID);
             writer.WriteIntValue("IsPrimary", IsPrimary);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteGuidValue("Operation", Operation);
             writer.WriteIntValue("PurchaseLeadDays", PurchaseLeadDays);
             writer.WriteStringValue("PurchaseUnit", PurchaseUnit);
@@ -146,7 +136,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("SetupUnit", SetupUnit);
             writer.WriteIntValue("Type", Type);
             writer.WriteGuidValue("Workcenter", Workcenter);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

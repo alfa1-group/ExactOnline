@@ -9,11 +9,9 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ProjectWBSActivitiesPost : IAdditionalDataHolder, IParsable
+    public partial class ProjectWBSActivitiesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>To indicated auto create invoice term when invoice method is Fixed price</summary>
         public bool? AutoCreateInvoiceTerm { get; set; }
         /// <summary>To indicated if time and cost entries is blocked</summary>
@@ -53,10 +51,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>For additional information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,13 +78,6 @@ namespace ExactOnline.Api.Client.Models
         public DateTimeOffset? StartDate { get; set; }
         /// <summary>Alert when exceeding this time quantity</summary>
         public double? TimeQuantityToAlert { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.ProjectWBSActivitiesPost"/> and sets the default values.
-        /// </summary>
-        public ProjectWBSActivitiesPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -153,7 +144,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDateTimeOffsetValue("InvoiceDate", InvoiceDate);
             writer.WriteIntValue("InvoiceMethod", InvoiceMethod);
             writer.WriteBoolValue("InvoiceSeparately", InvoiceSeparately);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteGuidValue("PartOf", PartOf);
             writer.WriteGuidValue("Project", Project);
@@ -162,7 +152,6 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteIntValue("SequenceNumber", SequenceNumber);
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteDoubleValue("TimeQuantityToAlert", TimeQuantityToAlert);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

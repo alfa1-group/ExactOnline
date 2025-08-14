@@ -9,40 +9,31 @@ namespace ExactOnline.Api.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SyncDeleted : IAdditionalDataHolder, IParsable
+    public partial class SyncDeleted : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>UserID of person who deleted record</summary>
-        public Guid? DeletedBy { get; set; }
+        public Guid? DeletedBy { get; private set; }
         /// <summary>Deleted date</summary>
-        public DateTimeOffset? DeletedDate { get; set; }
+        public DateTimeOffset? DeletedDate { get; private set; }
         /// <summary>Division code</summary>
-        public int? Division { get; set; }
+        public int? Division { get; private set; }
         /// <summary>Entity key</summary>
-        public Guid? EntityKey { get; set; }
+        public Guid? EntityKey { get; private set; }
         /// <summary>Entity Types:1= TransactionLines2= Accounts3= Addresses4= Attachments5= Contacts6= Documents7= GLAccounts8= ItemPrices9= Items10= PaymentTerms12= SalesOrders (This entity is going to be removed. Please refer to the new entity SalesOrderHeaders, SalesOrderLines.)13= SalesInvoices14= TimeCostTransactions15= StockPositions16= GoodsDeliveries17= GoodsDeliveryLines18= GLClassifications19= ItemWarehouses20= StorageLocationStockPositions21= Projects22= PurchaseOrders23= Subscriptions24= SubscriptionLines25= ProjectWBS26= ProjectPlanning27= LeaveAbsenceHoursByDay28= SerialBatchNumbers29= StockSerialBatchNumbers30= ItemAccounts31= DiscountTables32= SalesOrderHeaders33= SalesOrderLines34= QuotationHeaders35= QuotationLines36= ShopOrders37= ShopOrderMaterialPlans38= ShopOrderRoutingStepPlans39= Schedules40= ScheduleEntries41= ItemStorageLocations42= Employees43= Employments44= EmploymentContracts45= EmploymentOrganizations46= EmploymentCLAs47= EmploymentSalaries48= BankAccounts49= EmploymentTaxAuthoritiesGeneral50= ShopOrderPurchasePlanning51= ShopOrderSubOrders53= RequirementIssues54= BillOfMaterialMaterials55= BillOfMaterialVersions56= LeaveRegistrations57= LeaveBuildUpRegistrations58= AbsenceRegistrationTransactions59= AbsenceRegistrations</summary>
-        public int? EntityType { get; set; }
+        public int? EntityType { get; private set; }
         /// <summary>Primary key</summary>
-        public Guid? ID { get; set; }
+        public Guid? ID { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; set; }
+        public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
         /// <summary>Timestamp</summary>
-        public long? Timestamp { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Models.SyncDeleted"/> and sets the default values.
-        /// </summary>
-        public SyncDeleted()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        public long? Timestamp { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,15 +69,6 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("DeletedBy", DeletedBy);
-            writer.WriteDateTimeOffsetValue("DeletedDate", DeletedDate);
-            writer.WriteIntValue("Division", Division);
-            writer.WriteGuidValue("EntityKey", EntityKey);
-            writer.WriteIntValue("EntityType", EntityType);
-            writer.WriteGuidValue("ID", ID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>("__metadata", Metadata);
-            writer.WriteLongValue("Timestamp", Timestamp);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
