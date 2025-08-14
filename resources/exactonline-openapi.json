@@ -52480,7 +52480,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -52496,9 +52497,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -52582,7 +52585,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -52598,9 +52602,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -52684,7 +52690,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -52700,9 +52707,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -52786,7 +52795,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -52802,9 +52812,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -52888,7 +52900,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -52904,9 +52917,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -52990,7 +53005,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -53006,9 +53022,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -53092,7 +53110,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -53108,9 +53127,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -53194,7 +53215,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -53210,9 +53232,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -53296,7 +53320,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -53312,9 +53337,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -53398,7 +53425,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -53414,9 +53442,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -53500,7 +53530,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -53516,9 +53547,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -53602,7 +53635,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -53618,9 +53652,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -53704,7 +53740,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -53720,9 +53757,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -53806,7 +53845,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -53822,9 +53862,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -53908,7 +53950,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -53924,9 +53967,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -54010,7 +54055,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -54026,9 +54072,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -54112,7 +54160,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -54128,9 +54177,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -54214,7 +54265,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -54230,9 +54282,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -54316,7 +54370,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -54332,9 +54387,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -54418,7 +54475,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -54434,9 +54492,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -54520,7 +54580,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -54536,9 +54597,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -54622,7 +54685,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -54638,9 +54702,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -54724,7 +54790,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -54740,9 +54807,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -54826,7 +54895,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -54842,9 +54912,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -54928,7 +55000,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -54944,9 +55017,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -55030,7 +55105,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -55046,9 +55122,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -55132,7 +55210,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -55148,9 +55227,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -55234,7 +55315,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -55250,9 +55332,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -55336,7 +55420,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -55352,9 +55437,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -55438,7 +55525,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -55454,9 +55542,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -55540,7 +55630,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -55556,9 +55647,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -55642,7 +55735,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -55658,9 +55752,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -55744,7 +55840,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -55760,9 +55857,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -55846,7 +55945,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -55862,9 +55962,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -55948,7 +56050,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -55964,9 +56067,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -56050,7 +56155,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -56066,9 +56172,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -56152,7 +56260,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -56168,9 +56277,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -56254,7 +56365,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -56270,9 +56382,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -56356,7 +56470,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -56372,9 +56487,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -56458,7 +56575,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -56474,9 +56592,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -56560,7 +56680,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -56576,9 +56697,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -56662,7 +56785,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -56678,9 +56802,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -56764,7 +56890,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -56780,9 +56907,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -56866,7 +56995,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -56882,9 +57012,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -56968,7 +57100,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -56984,9 +57117,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -57070,7 +57205,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -57086,9 +57222,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -57172,7 +57310,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -57188,9 +57327,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -57274,7 +57415,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -57290,9 +57432,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -57376,7 +57520,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -57392,9 +57537,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -57478,7 +57625,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -57494,9 +57642,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -57580,7 +57730,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -57596,9 +57747,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -57682,7 +57835,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -57698,9 +57852,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -57784,7 +57940,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -57800,9 +57957,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -57886,7 +58045,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -57902,9 +58062,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -57988,7 +58150,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -58004,9 +58167,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -58090,7 +58255,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -58106,9 +58272,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -58192,7 +58360,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -58208,9 +58377,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {
@@ -58294,7 +58465,8 @@
           {
             "name": "$filter",
             "in": "query",
-            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "description": "OData filter, e.g., `Timestamp gt 5`",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -58310,9 +58482,11 @@
           {
             "name": "$top",
             "in": "query",
-            "description": "Number of records to return, e.g., `100`",
+            "description": "Number of records to return, e.g., `1`",
+            "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "default": 1
             }
           },
           {

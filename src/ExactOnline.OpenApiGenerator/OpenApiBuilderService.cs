@@ -45,7 +45,7 @@ public class OpenApiBuilderService
         using (var progressBar = new ProgressBar(pages.Count, "Processing documentation", options))
         {
             var crawler = new EndpointCrawler(pages);
-            openApiDoc = await crawler.CrawlAsync(endpoint =>
+            openApiDoc = await crawler.CrawlAndProcessAsync(endpoint =>
             {
                 progressBar.Tick($"Processing {endpoint.Substring(_detailsPageStringLength)}");
             }, cancellationToken);

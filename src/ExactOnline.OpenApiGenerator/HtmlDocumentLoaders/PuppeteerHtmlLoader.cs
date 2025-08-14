@@ -1,9 +1,8 @@
-﻿using HtmlAgilityPack;
-using PuppeteerSharp;
+﻿using PuppeteerSharp;
 
 namespace ExactOnline.OpenApiGenerator.HtmlDocumentLoaders;
 
-internal class PuppeteerHtmlDocumentLoader : IAsyncDisposable
+internal class PuppeteerHtmlLoader : IAsyncDisposable
 {
     private readonly Lazy<Task<IBrowser>> _browserAsLazy = new(async () =>
     {
@@ -12,16 +11,16 @@ internal class PuppeteerHtmlDocumentLoader : IAsyncDisposable
         return await Puppeteer.LaunchAsync(new LaunchOptions { Headless = true });
     });
 
-    public async Task<IDictionary<HttpMethod, HtmlDocument>> LoadAsync(string url, CancellationToken cancellationToken)
+    public async Task<IDictionary<HttpMethod, string>> LoadAsync(string url, CancellationToken cancellationToken)
     {
         var browser = await _browserAsLazy.Value;
 
         await using var page = await browser.NewPageAsync();
         await page.GoToAsync(url);
 
-        var docs = new Dictionary<HttpMethod, HtmlDocument>
+        var contentDictionary = new Dictionary<HttpMethod, string>
         {
-            { HttpMethod.Get, await LoadPageAsDocumentAsync(page) }
+            { HttpMethod.Get, await page.GetContentAsync() }
         };
 
         foreach (var httpMethod in new[] { HttpMethod.Post, HttpMethod.Put, HttpMethod.Delete })
@@ -34,19 +33,10 @@ internal class PuppeteerHtmlDocumentLoader : IAsyncDisposable
 
             await radioButton.ClickAsync();
             await page.WaitForNetworkIdleAsync();
-            docs.Add(httpMethod, await LoadPageAsDocumentAsync(page));
+            contentDictionary.Add(httpMethod, await page.GetContentAsync());
         }
 
-        return docs;
-    }
-
-    private static async Task<HtmlDocument> LoadPageAsDocumentAsync(IPage page)
-    {
-        var content = await page.GetContentAsync();
-
-        var doc = new HtmlDocument();
-        doc.LoadHtml(content);
-        return doc;
+        return contentDictionary;
     }
 
     public async ValueTask DisposeAsync()

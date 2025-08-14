@@ -98,9 +98,9 @@ internal class EndpointCrawler
         };
     }
 
-    internal async Task<OpenApiDocument> CrawlAsync(Action<string> onEndpointCrawling, CancellationToken cancellationToken)
+    internal async Task<OpenApiDocument> CrawlAndProcessAsync(Action<string> onEndpointCrawling, CancellationToken cancellationToken)
     {
-        await using var htmlLoader = new PuppeteerHtmlDocumentLoader();
+        await using var htmlLoader = new PuppeteerHtmlLoader();
 
         foreach (var url in _urls)
         {
@@ -111,18 +111,20 @@ internal class EndpointCrawler
 
             onEndpointCrawling(url);
 
+            IDictionary<HttpMethod, string> contentDictionary;
+
             var retries = 0;
-            while (retries < MaxRetries)
+            while (true)
             {
                 try
                 {
-                    var docs = await htmlLoader.LoadAsync(url, cancellationToken);
-                    Process(url, docs, _openApiDoc);
+                    contentDictionary = await htmlLoader.LoadAsync(url, cancellationToken);
                     break;
                 }
                 catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException)
                 {
                     retries++;
+
                     if (retries >= MaxRetries)
                     {
                         Console.WriteLine($"Failed to load {url} after {MaxRetries} attempts.");
@@ -131,15 +133,24 @@ internal class EndpointCrawler
 
                     await Task.Delay((int)Math.Pow(2, retries) * 1000, cancellationToken);
                 }
-
-                retries++;
             }
+
+            var docs = contentDictionary.ToDictionary(
+                pair => pair.Key,
+                pair =>
+                {
+                    var doc = new HtmlDocument();
+                    doc.LoadHtml(pair.Value);
+                    return doc;
+                });
+
+            Process(url, docs, _openApiDoc);
         }
 
         return _openApiDoc;
     }
 
-    private static void Process(string pageUrl, IDictionary<HttpMethod, HtmlDocument> docs, OpenApiDocument openApiDoc)
+    private static void Process(string pageUrl, Dictionary<HttpMethod, HtmlDocument> docs, OpenApiDocument openApiDoc)
     {
         var docGet = docs[HttpMethod.Get];
 
@@ -148,6 +159,7 @@ internal class EndpointCrawler
         var schemaIsCollection = IsCollection(baseSchemaName, endpointDescription);
         var responseDescription = schemaIsCollection ? $"A collection of {baseSchemaName} entities." : $"The {baseSchemaName} entity.";
         var (baseEndpointUri, queryParameters) = GetEndpointUriDetails(docGet);
+        var isSyncInterface = baseSchemaName.StartsWith("Sync");
 
         foreach (var (httpMethod, document) in docs)
         {
@@ -354,7 +366,7 @@ internal class EndpointCrawler
                     operation.Parameters.Add(queryParameter);
                 }
 
-                AddODataQueryParameters(operation.Parameters);
+                AddODataQueryParameters(operation.Parameters, isSyncInterface);
             }
 
             if (httpMethod == HttpMethod.Put || httpMethod == HttpMethod.Delete)
@@ -467,7 +479,7 @@ internal class EndpointCrawler
         }
     }
 
-    private static void AddODataQueryParameters(IList<IOpenApiParameter> parameters)
+    private static void AddODataQueryParameters(IList<IOpenApiParameter> parameters, bool isSyncInterface)
     {
         if (parameters.All(p => p.Name != "$filter"))
         {
@@ -475,12 +487,12 @@ internal class EndpointCrawler
             {
                 Name = "$filter",
                 In = ParameterLocation.Query,
-                Required = false,
+                Required = isSyncInterface,
                 Schema = new OpenApiSchema
                 {
                     Type = JsonSchemaType.String
                 },
-                Description = "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`"
+                Description = isSyncInterface ? "OData filter, e.g., `Timestamp gt 5`" : "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`"
             });
         }
 
@@ -505,12 +517,13 @@ internal class EndpointCrawler
             {
                 Name = "$top",
                 In = ParameterLocation.Query,
-                Required = false,
+                Required = isSyncInterface,
                 Schema = new OpenApiSchema
                 {
-                    Type = JsonSchemaType.Integer
+                    Type = JsonSchemaType.Integer,
+                    Default = isSyncInterface ? 1 : null
                 },
-                Description = "Number of records to return, e.g., `100`"
+                Description = isSyncInterface ? "Number of records to return, e.g., `1`" : "Number of records to return, e.g., `100`"
             });
         }
 

@@ -81,7 +81,7 @@ await RunAsync(async () =>
         Topic = "StockPositions"
     }).AsItem();
 
-    Console.WriteLine($"Post WebHook ID: {postResult.ID}");
+    Console.WriteLine($"Post WebHook ID: {postResult?.ID}");
 
     return true;
 });
@@ -106,7 +106,6 @@ await RunAsync(async () =>
 
     return true;
 });
-
 
 await RunAsync(async () =>
 {

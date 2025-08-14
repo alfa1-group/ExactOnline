@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Documents.Documents
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DocumentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Documents/Documents{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", pathParameters)
+        public DocumentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Documents/Documents?$filter={%24filter}&$top={%24top}{&%24count*,%24expand*,%24inlinecount*,%24orderby*,%24select*,%24skip*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Documents.Documents
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DocumentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Documents/Documents{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", rawUrl)
+        public DocumentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Documents/Documents?$filter={%24filter}&$top={%24top}{&%24count*,%24expand*,%24inlinecount*,%24orderby*,%24select*,%24skip*}", rawUrl)
         {
         }
         /// <summary>
@@ -103,7 +103,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Documents.Documents
             [QueryParameter("%24expand")]
             public string Expand { get; set; }
 #endif
-            /// <summary>OData filter, e.g., `ID eq guid&apos;00000000-0000-0000-0000-000000000000&apos;`</summary>
+            /// <summary>OData filter, e.g., `Timestamp gt 5`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24filter")]
@@ -146,7 +146,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Documents.Documents
             /// <summary>Number of records to skip, e.g., `10`</summary>
             [QueryParameter("%24skip")]
             public int? Skip { get; set; }
-            /// <summary>Number of records to return, e.g., `100`</summary>
+            /// <summary>Number of records to return, e.g., `1`</summary>
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
