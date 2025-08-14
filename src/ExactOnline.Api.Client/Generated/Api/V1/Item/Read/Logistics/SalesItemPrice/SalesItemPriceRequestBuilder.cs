@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesItemPriceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/logistics/SalesItemPrice?accountId={accountId}&currencyCode={currencyCode}&date={date}&employeeId={employeeId}&itemId={itemId}&projectId={projectId}&quantity={quantity}&unitCode={unitCode}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", pathParameters)
+        public SalesItemPriceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/logistics/SalesItemPrice?accountId={accountId}&currencyCode={currencyCode}&date={date}&employeeId={employeeId}&itemId={itemId}&projectId={projectId}&quantity={quantity}&unitCode={unitCode}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24top*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesItemPriceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/logistics/SalesItemPrice?accountId={accountId}&currencyCode={currencyCode}&date={date}&employeeId={employeeId}&itemId={itemId}&projectId={projectId}&quantity={quantity}&unitCode={unitCode}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", rawUrl)
+        public SalesItemPriceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/logistics/SalesItemPrice?accountId={accountId}&currencyCode={currencyCode}&date={date}&employeeId={employeeId}&itemId={itemId}&projectId={projectId}&quantity={quantity}&unitCode={unitCode}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24top*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,7 +90,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SalesItemPriceRequestBuilderGetQueryParameters 
         {
-            /// <summary>Query parameter of type Edm.Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("accountId")]
@@ -103,7 +102,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
             /// <summary>Include count of items, e.g., `true`</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
-            /// <summary>Query parameter of type Edm.String</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("currencyCode")]
@@ -113,7 +111,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
             [QueryParameter("currencyCode")]
             public string CurrencyCode { get; set; }
 #endif
-            /// <summary>Query parameter of type Edm.DateTime</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("date")]
@@ -123,7 +120,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
             [QueryParameter("date")]
             public string Date { get; set; }
 #endif
-            /// <summary>Query parameter of type Edm.Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("employeeId")]
@@ -163,7 +159,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
             [QueryParameter("%24inlinecount")]
             public string Inlinecount { get; set; }
 #endif
-            /// <summary>Query parameter of type Edm.Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("itemId")]
@@ -183,7 +178,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
             [QueryParameter("%24orderby")]
             public string Orderby { get; set; }
 #endif
-            /// <summary>Query parameter of type Edm.Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("projectId")]
@@ -193,7 +187,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
             [QueryParameter("projectId")]
             public string ProjectId { get; set; }
 #endif
-            /// <summary>Query parameter of type Edm.Double</summary>
             [QueryParameter("quantity")]
             public double? Quantity { get; set; }
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
@@ -206,13 +199,9 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPrice
             [QueryParameter("%24select")]
             public string Select { get; set; }
 #endif
-            /// <summary>Number of records to skip, e.g., `10`</summary>
-            [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
             /// <summary>Number of records to return, e.g., `100`</summary>
             [QueryParameter("%24top")]
             public int? Top { get; set; }
-            /// <summary>Query parameter of type Edm.String</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("unitCode")]

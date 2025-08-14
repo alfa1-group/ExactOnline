@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccoun
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayablesListByAccountAndAgeGroupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/PayablesListByAccountAndAgeGroup?accountId={accountId}&ageGroup={ageGroup}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", pathParameters)
+        public PayablesListByAccountAndAgeGroupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/PayablesListByAccountAndAgeGroup?accountId={accountId}&ageGroup={ageGroup}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24top*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccoun
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayablesListByAccountAndAgeGroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/PayablesListByAccountAndAgeGroup?accountId={accountId}&ageGroup={ageGroup}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", rawUrl)
+        public PayablesListByAccountAndAgeGroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/PayablesListByAccountAndAgeGroup?accountId={accountId}&ageGroup={ageGroup}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24top*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,7 +90,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccoun
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PayablesListByAccountAndAgeGroupRequestBuilderGetQueryParameters 
         {
-            /// <summary>Query parameter of type Edm.Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("accountId")]
@@ -100,7 +99,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccoun
             [QueryParameter("accountId")]
             public string AccountId { get; set; }
 #endif
-            /// <summary>Query parameter of type Edm.Int32</summary>
             [QueryParameter("ageGroup")]
             public int? AgeGroup { get; set; }
             /// <summary>Include count of items, e.g., `true`</summary>
@@ -156,9 +154,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccoun
             [QueryParameter("%24select")]
             public string Select { get; set; }
 #endif
-            /// <summary>Number of records to skip, e.g., `10`</summary>
-            [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
             /// <summary>Number of records to return, e.g., `100`</summary>
             [QueryParameter("%24top")]
             public int? Top { get; set; }

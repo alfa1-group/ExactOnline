@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReportingBalanceByCl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportingBalanceByClassificationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/ReportingBalanceByClassification?glScheme={glScheme}&reportingYear={reportingYear}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", pathParameters)
+        public ReportingBalanceByClassificationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/ReportingBalanceByClassification?glScheme={glScheme}&reportingYear={reportingYear}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24top*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReportingBalanceByCl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportingBalanceByClassificationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/ReportingBalanceByClassification?glScheme={glScheme}&reportingYear={reportingYear}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", rawUrl)
+        public ReportingBalanceByClassificationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/ReportingBalanceByClassification?glScheme={glScheme}&reportingYear={reportingYear}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24top*}", rawUrl)
         {
         }
         /// <summary>
@@ -113,7 +113,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReportingBalanceByCl
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
-            /// <summary>Query parameter of type Edm.Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("glScheme")]
@@ -143,7 +142,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReportingBalanceByCl
             [QueryParameter("%24orderby")]
             public string Orderby { get; set; }
 #endif
-            /// <summary>Query parameter of type Edm.Int32</summary>
             [QueryParameter("reportingYear")]
             public int? ReportingYear { get; set; }
             /// <summary>Comma-separated list of fields to return, e.g., `ID`</summary>
@@ -156,9 +154,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReportingBalanceByCl
             [QueryParameter("%24select")]
             public string Select { get; set; }
 #endif
-            /// <summary>Number of records to skip, e.g., `10`</summary>
-            [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
             /// <summary>Number of records to return, e.g., `100`</summary>
             [QueryParameter("%24top")]
             public int? Top { get; set; }

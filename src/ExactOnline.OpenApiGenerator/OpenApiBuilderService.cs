@@ -42,12 +42,12 @@ internal class OpenApiBuilderService
         }
 
         var pages = (await MainPageCrawler.ExtractEndpointUrlsAsync(MainPage))
-            .Where(x =>
-                x.Contains("SystemSystemMe") ||
-                x.Contains("WebhooksWebhookSubscriptions") ||
-                x.Contains("TimeTransactions") ||
-                x.Contains("SyncProjectTimeCostTransactions")
-            )
+            //.Where(x =>
+            //    x.Contains("SystemSystemMe") ||
+            //    x.Contains("WebhooksWebhookSubscriptions") ||
+            //    x.Contains("TimeTransactions") ||
+            //    x.Contains("SyncProjectTimeCostTransactions")
+            //)
             .ToList();
 
         var crawler = new EndpointCrawler(_puppeteerHtmlLoader, pages, _useCache);

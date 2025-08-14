@@ -178,6 +178,24 @@ await RunAsync(async () =>
 
 await RunAsync(async () =>
 {
+    Console.WriteLine("Getting Sync.Project.TimeCostTransactions - skiptoken");
+    var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAsync(p =>
+    {
+        p.QueryParameters.Skiptoken = 2;
+        p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransactions>.Build(t => t.ID, t => t.Timestamp, t => t.Type, t => t.Created);
+        p.QueryParameters.Filter = syncFilter;
+    }).AsItems();
+
+    foreach (var tt in list)
+    {
+        Console.WriteLine($"Sync.Project.TimeCostTransactions TS: {tt.Timestamp} ID: {tt.ID}, Type: {tt.Type}, Created: {tt.Created}");
+    }
+
+    return list;
+});
+
+await RunAsync(async () =>
+{
     Console.WriteLine("Testing API limits per minute");
     for (var i = 0; i < 130; i++)
     {

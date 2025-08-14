@@ -14,6 +14,14 @@ namespace ExactOnline.Api.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The __next property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Next { get; set; }
+#nullable restore
+#else
+        public string Next { get; set; }
+#endif
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +55,7 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "__next", n => { Next = n.GetStringValue(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotes>(global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotes.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -57,6 +66,7 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("__next", Next);
             writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotes>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
         }

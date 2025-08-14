@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponents
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayrollComponentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollComponents?employmentConditionGroupCode={employmentConditionGroupCode}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", pathParameters)
+        public PayrollComponentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollComponents?employmentConditionGroupCode={employmentConditionGroupCode}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24top*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponents
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayrollComponentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollComponents?employmentConditionGroupCode={employmentConditionGroupCode}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24top*}", rawUrl)
+        public PayrollComponentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollComponents?employmentConditionGroupCode={employmentConditionGroupCode}{&%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24top*}", rawUrl)
         {
         }
         /// <summary>
@@ -93,7 +93,6 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponents
             /// <summary>Include count of items, e.g., `true`</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
-            /// <summary>Query parameter of type Edm.String</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("employmentConditionGroupCode")]
@@ -153,9 +152,6 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponents
             [QueryParameter("%24select")]
             public string Select { get; set; }
 #endif
-            /// <summary>Number of records to skip, e.g., `10`</summary>
-            [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
             /// <summary>Number of records to return, e.g., `100`</summary>
             [QueryParameter("%24top")]
             public int? Top { get; set; }

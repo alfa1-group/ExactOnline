@@ -301,7 +301,8 @@ internal class EndpointCrawler
                     Type = JsonSchemaType.Object,
                     Properties = new Dictionary<string, IOpenApiSchema>
                     {
-                        { "results", arrayReference }
+                        { "results", arrayReference },
+                        { "__next", new OpenApiSchema { Type = JsonSchemaType.String } }
                     },
                     Required = new HashSet<string> { "results" }
                 };
@@ -544,19 +545,23 @@ internal class EndpointCrawler
             });
         }
 
-        if (parameters.All(p => p.Name != "$skip"))
+        if (isSyncInterface)
         {
-            parameters.Add(new OpenApiParameter
+            if (parameters.All(p => p.Name != "$skiptoken"))
             {
-                Name = "$skip",
-                In = ParameterLocation.Query,
-                Required = false,
-                Schema = new OpenApiSchema
+                parameters.Add(new OpenApiParameter
                 {
-                    Type = JsonSchemaType.Integer
-                },
-                Description = "Number of records to skip, e.g., `10`"
-            });
+                    Name = "$skiptoken",
+                    In = ParameterLocation.Query,
+                    Required = false,
+                    Schema = new OpenApiSchema
+                    {
+                        Type = JsonSchemaType.Integer,
+                        Format = "int64"
+                    },
+                    Description = "Number of records to skip, e.g., `10`"
+                });
+            }
         }
 
         if (parameters.All(p => p.Name != "$orderby"))
@@ -664,18 +669,18 @@ internal class EndpointCrawler
 
             EdmTypeParser.TryParse(edmType, null, out var schema);
 
-            var description = paramName switch
-            {
-                "$filter" => "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
-                "$select" => "Comma-separated list of fields to return, e.g., `ID`",
-                "$top" => "Number of records to return, e.g., `100`",
-                "$skip" => "Number of records to skip, e.g., `10`",
-                "$orderby" => "Order by field, e.g., `ID desc`",
-                "$count" => "Include count of items, e.g., `true`",
-                "$inlinecount" => "Include inline count, e.g., `allpages`",
-                "$expand" => "Expand related entities, e.g., `ParentEntity`",
-                _ => $"Query parameter of type {edmType}"
-            };
+            //var description = paramName switch
+            //{
+            //    "$filter" => "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            //    "$select" => "Comma-separated list of fields to return, e.g., `ID`",
+            //    "$top" => "Number of records to return, e.g., `100`",
+            //    "$skiptoken" => "Number of records to skip, e.g., `10`",
+            //    "$orderby" => "Order by field, e.g., `ID desc`",
+            //    "$count" => "Include count of items, e.g., `true`",
+            //    "$inlinecount" => "Include inline count, e.g., `allpages`",
+            //    "$expand" => "Expand related entities, e.g., `ParentEntity`",
+            //    _ => $"Query parameter of type {edmType}"
+            //};
 
             var parameter = new OpenApiParameter
             {
@@ -686,7 +691,7 @@ internal class EndpointCrawler
                 {
                     Type = schema?.Type ?? JsonSchemaType.String
                 },
-                Description = description
+                // Description = description
             };
 
             parameters.Add(parameter);
