@@ -4,6 +4,7 @@ using ExactOnline.OpenApiGenerator.HtmlDocumentLoaders;
 using ExactOnline.OpenApiGenerator.Parsers;
 using HtmlAgilityPack;
 using Microsoft.OpenApi;
+using MonkeyCache.FileStore;
 
 namespace ExactOnline.OpenApiGenerator.Crawlers;
 
@@ -14,11 +15,15 @@ internal class EndpointCrawler
     private static readonly Regex EndpointUriEdmTypeRegex = new(@"(\w+)=\{([^}]+)\}", RegexOptions.Compiled);
 
     private readonly OpenApiDocument _openApiDoc;
+    private readonly PuppeteerHtmlLoader _puppeteerHtmlLoader;
     private readonly IReadOnlyList<string> _urls;
+    private readonly bool _useCache;
 
-    internal EndpointCrawler(IReadOnlyList<string> urls)
+    internal EndpointCrawler(PuppeteerHtmlLoader puppeteerHtmlLoader, IReadOnlyList<string> urls, bool useCache)
     {
+        _puppeteerHtmlLoader = puppeteerHtmlLoader;
         _urls = urls;
+        _useCache = useCache;
 
         var metadata = new OpenApiSchema
         {
@@ -98,7 +103,7 @@ internal class EndpointCrawler
         };
     }
 
-    internal async Task<OpenApiDocument> CrawlAndProcessAsync(Action<string> onEndpointCrawling, CancellationToken cancellationToken)
+    internal async Task<OpenApiDocument> CrawlAndProcessAsync(Action<string> onEndpointProcessing, CancellationToken cancellationToken)
     {
         await using var htmlLoader = new PuppeteerHtmlLoader();
 
@@ -109,34 +114,12 @@ internal class EndpointCrawler
                 break;
             }
 
-            onEndpointCrawling(url);
+            onEndpointProcessing(url);
 
-            IDictionary<HttpMethod, string> contentDictionary;
-
-            var retries = 0;
-            while (true)
-            {
-                try
-                {
-                    contentDictionary = await htmlLoader.LoadAsync(url, cancellationToken);
-                    break;
-                }
-                catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException)
-                {
-                    retries++;
-
-                    if (retries >= MaxRetries)
-                    {
-                        Console.WriteLine($"Failed to load {url} after {MaxRetries} attempts.");
-                        throw;
-                    }
-
-                    await Task.Delay((int)Math.Pow(2, retries) * 1000, cancellationToken);
-                }
-            }
+            var contentDictionary = await GetDocsAsync(url, cancellationToken);
 
             var docs = contentDictionary.ToDictionary(
-                pair => pair.Key,
+                pair => HttpMethod.Parse(pair.Key),
                 pair =>
                 {
                     var doc = new HtmlDocument();
@@ -150,7 +133,42 @@ internal class EndpointCrawler
         return _openApiDoc;
     }
 
-    private static void Process(string pageUrl, Dictionary<HttpMethod, HtmlDocument> docs, OpenApiDocument openApiDoc)
+    private async Task<IDictionary<string, string>> GetDocsAsync(string url, CancellationToken cancellationToken)
+    {
+        if (!Barrel.Current.IsExpired(key: url))
+        {
+            return Barrel.Current.Get<IDictionary<string, string>>(key: url);
+        }
+
+        IDictionary<string, string> contentDictionary;
+        var retries = 0;
+        while (true)
+        {
+            try
+            {
+                contentDictionary = await _puppeteerHtmlLoader.LoadAsync(url, cancellationToken);
+                break;
+            }
+            catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException)
+            {
+                retries++;
+
+                if (retries >= MaxRetries)
+                {
+                    Console.WriteLine($"Failed to load {url} after {MaxRetries} attempts.");
+                    throw;
+                }
+
+                await Task.Delay((int)Math.Pow(2, retries) * 1000, cancellationToken);
+            }
+        }
+
+        Barrel.Current.Add(key: url, data: contentDictionary, expireIn: TimeSpan.FromDays(365));
+
+        return contentDictionary;
+    }
+
+    private static void Process(string pageUrl, IDictionary<HttpMethod, HtmlDocument> docs, OpenApiDocument openApiDoc)
     {
         var docGet = docs[HttpMethod.Get];
 

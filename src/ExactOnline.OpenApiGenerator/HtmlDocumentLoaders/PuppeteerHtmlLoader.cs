@@ -11,16 +11,16 @@ internal class PuppeteerHtmlLoader : IAsyncDisposable
         return await Puppeteer.LaunchAsync(new LaunchOptions { Headless = true });
     });
 
-    public async Task<IDictionary<HttpMethod, string>> LoadAsync(string url, CancellationToken cancellationToken)
+    public async Task<IDictionary<string, string>> LoadAsync(string url, CancellationToken cancellationToken)
     {
         var browser = await _browserAsLazy.Value;
 
         await using var page = await browser.NewPageAsync();
         await page.GoToAsync(url);
 
-        var contentDictionary = new Dictionary<HttpMethod, string>
+        var contentDictionary = new Dictionary<string, string>
         {
-            { HttpMethod.Get, await page.GetContentAsync() }
+            { HttpMethod.Get.ToString(), await page.GetContentAsync() }
         };
 
         foreach (var httpMethod in new[] { HttpMethod.Post, HttpMethod.Put, HttpMethod.Delete })
@@ -33,7 +33,7 @@ internal class PuppeteerHtmlLoader : IAsyncDisposable
 
             await radioButton.ClickAsync();
             await page.WaitForNetworkIdleAsync();
-            contentDictionary.Add(httpMethod, await page.GetContentAsync());
+            contentDictionary.Add(httpMethod.ToString(), await page.GetContentAsync());
         }
 
         return contentDictionary;
