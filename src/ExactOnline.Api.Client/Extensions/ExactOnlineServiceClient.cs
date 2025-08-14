@@ -69,7 +69,6 @@ public partial class ExactOnlineServiceClient
         var kiotaJsonSerializationContext = new KiotaJsonSerializationContext(customOptions);
 
         // 3. Create the JsonParseNodeFactory with the KiotaJsonSerializationContext.
-        var jsonParseNodeFactory = new JsonParseNodeFactory(kiotaJsonSerializationContext);
-        return jsonParseNodeFactory;
+        return new JsonParseNodeFactory(kiotaJsonSerializationContext);
     }
 }
