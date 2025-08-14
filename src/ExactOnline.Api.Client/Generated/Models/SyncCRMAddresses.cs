@@ -370,7 +370,7 @@ namespace ExactOnline.Api.Client.Models
                 { "Postcode", n => { Postcode = n.GetStringValue(); } },
                 { "State", n => { State = n.GetStringValue(); } },
                 { "StateDescription", n => { StateDescription = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
                 { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
                 { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
@@ -445,3 +445,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

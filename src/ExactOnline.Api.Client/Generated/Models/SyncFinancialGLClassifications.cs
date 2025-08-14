@@ -166,7 +166,7 @@ namespace ExactOnline.Api.Client.Models
                 { "SubstitutionGroup", n => { SubstitutionGroup = n.GetStringValue(); } },
                 { "TaxonomyNamespace", n => { TaxonomyNamespace = n.GetGuidValue(); } },
                 { "TaxonomyNamespaceDescription", n => { TaxonomyNamespaceDescription = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetGuidValue(); } },
             };
         }
@@ -205,3 +205,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="JsonConverters\NullLongValueAsStringConverter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="kiota-lock.json" />
   </ItemGroup>
 

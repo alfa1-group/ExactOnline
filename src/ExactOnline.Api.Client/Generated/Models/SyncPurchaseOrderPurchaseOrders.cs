@@ -600,7 +600,7 @@ namespace ExactOnline.Api.Client.Models
                 { "SupplierItemCode", n => { SupplierItemCode = n.GetStringValue(); } },
                 { "SupplierItemCopyRemarks", n => { SupplierItemCopyRemarks = n.GetIntValue(); } },
                 { "SupplierName", n => { SupplierName = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Unit", n => { Unit = n.GetStringValue(); } },
                 { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
                 { "UnitPrice", n => { UnitPrice = n.GetDoubleValue(); } },
@@ -729,3 +729,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

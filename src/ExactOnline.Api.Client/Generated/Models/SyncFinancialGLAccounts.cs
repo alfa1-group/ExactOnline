@@ -272,7 +272,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ReportingCode", n => { ReportingCode = n.GetStringValue(); } },
                 { "RevalueCurrency", n => { RevalueCurrency = n.GetBoolValue(); } },
                 { "SearchCode", n => { SearchCode = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
                 { "TypeDescription", n => { TypeDescription = n.GetStringValue(); } },
                 { "UseCostcenter", n => { UseCostcenter = n.GetIntValue(); } },
@@ -343,3 +343,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

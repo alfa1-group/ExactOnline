@@ -200,7 +200,7 @@ namespace ExactOnline.Api.Client.Models
                 { "StorageLocation", n => { StorageLocation = n.GetGuidValue(); } },
                 { "StorageLocationCode", n => { StorageLocationCode = n.GetStringValue(); } },
                 { "StorageLocationDescription", n => { StorageLocationDescription = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "TransactionDate", n => { TransactionDate = n.GetDateTimeOffsetValue(); } },
                 { "Unit", n => { Unit = n.GetStringValue(); } },
                 { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
@@ -253,3 +253,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

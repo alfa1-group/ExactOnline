@@ -132,7 +132,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ProjectedStock", n => { ProjectedStock = n.GetDoubleValue(); } },
                 { "ReorderPoint", n => { ReorderPoint = n.GetDoubleValue(); } },
                 { "ReservedStock", n => { ReservedStock = n.GetDoubleValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "UnitCode", n => { UnitCode = n.GetStringValue(); } },
                 { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
                 { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
@@ -171,3 +171,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

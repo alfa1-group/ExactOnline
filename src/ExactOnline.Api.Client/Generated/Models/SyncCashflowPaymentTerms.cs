@@ -456,7 +456,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ReceivableSelectorFullName", n => { ReceivableSelectorFullName = n.GetStringValue(); } },
                 { "Source", n => { Source = n.GetIntValue(); } },
                 { "Status", n => { Status = n.GetIntValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "TransactionAmountDC", n => { TransactionAmountDC = n.GetDoubleValue(); } },
                 { "TransactionAmountFC", n => { TransactionAmountFC = n.GetDoubleValue(); } },
                 { "TransactionDueDate", n => { TransactionDueDate = n.GetDateTimeOffsetValue(); } },
@@ -569,3 +569,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

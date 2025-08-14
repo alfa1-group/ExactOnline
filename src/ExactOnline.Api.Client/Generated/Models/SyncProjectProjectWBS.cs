@@ -214,7 +214,7 @@ namespace ExactOnline.Api.Client.Models
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "Supplier", n => { Supplier = n.GetGuidValue(); } },
                 { "TimeQuantityToAlert", n => { TimeQuantityToAlert = n.GetDoubleValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
             };
         }
@@ -271,3 +271,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

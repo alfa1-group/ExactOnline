@@ -177,7 +177,7 @@ namespace ExactOnline.Api.Client.Models
                 { "NatureOfWorkRelationshipDescription", n => { NatureOfWorkRelationshipDescription = n.GetStringValue(); } },
                 { "PayrollTaxesNumber", n => { PayrollTaxesNumber = n.GetStringValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "TypeOfIncome", n => { TypeOfIncome = n.GetStringValue(); } },
                 { "TypeOfIncomeDescription", n => { TypeOfIncomeDescription = n.GetStringValue(); } },
             };
@@ -219,3 +219,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

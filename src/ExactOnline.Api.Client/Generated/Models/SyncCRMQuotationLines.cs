@@ -241,7 +241,7 @@ namespace ExactOnline.Api.Client.Models
                 { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "QuotationID", n => { QuotationID = n.GetGuidValue(); } },
                 { "QuotationNumber", n => { QuotationNumber = n.GetIntValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "UnitCode", n => { UnitCode = n.GetStringValue(); } },
                 { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
                 { "UnitPrice", n => { UnitPrice = n.GetDoubleValue(); } },
@@ -301,3 +301,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

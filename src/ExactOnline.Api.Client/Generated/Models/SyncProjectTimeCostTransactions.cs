@@ -278,7 +278,7 @@ namespace ExactOnline.Api.Client.Models
                 { "SubscriptionAccountName", n => { SubscriptionAccountName = n.GetStringValue(); } },
                 { "SubscriptionDescription", n => { SubscriptionDescription = n.GetStringValue(); } },
                 { "SubscriptionNumber", n => { SubscriptionNumber = n.GetIntValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
                 { "WBS", n => { WBS = n.GetGuidValue(); } },
                 { "WBSDescription", n => { WBSDescription = n.GetStringValue(); } },
@@ -341,3 +341,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

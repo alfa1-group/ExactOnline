@@ -502,7 +502,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ShippingMethodDescription", n => { ShippingMethodDescription = n.GetStringValue(); } },
                 { "Status", n => { Status = n.GetIntValue(); } },
                 { "StatusDescription", n => { StatusDescription = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "VATAmount", n => { VATAmount = n.GetDoubleValue(); } },
                 { "VATCode", n => { VATCode = n.GetStringValue(); } },
                 { "VATCodeDescription", n => { VATCodeDescription = n.GetStringValue(); } },
@@ -603,3 +603,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

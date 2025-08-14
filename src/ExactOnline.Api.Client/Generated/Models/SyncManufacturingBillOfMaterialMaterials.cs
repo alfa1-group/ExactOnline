@@ -207,7 +207,7 @@ namespace ExactOnline.Api.Client.Models
                 { "syscreator", n => { Syscreator = n.GetGuidValue(); } },
                 { "sysmodified", n => { Sysmodified = n.GetDateTimeOffsetValue(); } },
                 { "sysmodifier", n => { Sysmodifier = n.GetGuidValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
                 { "WastePercentage", n => { WastePercentage = n.GetDoubleValue(); } },
             };
@@ -257,3 +257,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

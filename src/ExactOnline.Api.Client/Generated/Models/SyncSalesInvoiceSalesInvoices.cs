@@ -650,7 +650,7 @@ namespace ExactOnline.Api.Client.Models
                 { "TaxSchedule", n => { TaxSchedule = n.GetGuidValue(); } },
                 { "TaxScheduleCode", n => { TaxScheduleCode = n.GetStringValue(); } },
                 { "TaxScheduleDescription", n => { TaxScheduleDescription = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
                 { "TypeDescription", n => { TypeDescription = n.GetStringValue(); } },
                 { "UnitCode", n => { UnitCode = n.GetStringValue(); } },
@@ -793,3 +793,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

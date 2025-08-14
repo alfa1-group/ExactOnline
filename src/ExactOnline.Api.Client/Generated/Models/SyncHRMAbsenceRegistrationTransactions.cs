@@ -128,7 +128,7 @@ namespace ExactOnline.Api.Client.Models
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "StartTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
                 { "Status", n => { Status = n.GetIntValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
             };
         }
         /// <summary>
@@ -165,3 +165,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

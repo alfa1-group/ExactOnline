@@ -152,7 +152,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ScheduleTypeDescription", n => { ScheduleTypeDescription = n.GetStringValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "StartWeek", n => { StartWeek = n.GetIntValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
             };
         }
         /// <summary>
@@ -193,3 +193,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

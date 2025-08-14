@@ -245,7 +245,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ScheduleCode", n => { ScheduleCode = n.GetStringValue(); } },
                 { "ScheduleDescription", n => { ScheduleDescription = n.GetStringValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "WageScale", n => { WageScale = n.GetGuidValue(); } },
                 { "WageScalePeriod", n => { WageScalePeriod = n.GetIntValue(); } },
                 { "WageScaleStep", n => { WageScaleStep = n.GetStringValue(); } },
@@ -307,3 +307,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

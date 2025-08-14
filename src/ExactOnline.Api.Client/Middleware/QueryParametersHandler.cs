@@ -8,7 +8,7 @@ public class QueryParametersHandler : DelegatingHandler
     private static readonly Dictionary<string, Func<string?, string?>> Transformations = new()
     {
         // ExactOnline API requires that the $skiptoken has "L" appended if it exceeds int.MaxValue.
-        ["$skiptoken"] = value => long.TryParse(value, out var longValue) ? LongValueTransformer.Transform(longValue) : value
+        ["$skiptoken"] = value => long.TryParse(value, out var longValue) ? LongValueTransformer.ToString(longValue) : value
     };
 
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)

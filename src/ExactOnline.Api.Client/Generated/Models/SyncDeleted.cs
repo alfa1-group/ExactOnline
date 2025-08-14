@@ -68,7 +68,7 @@ namespace ExactOnline.Api.Client.Models
                 { "EntityType", n => { EntityType = n.GetIntValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
             };
         }
         /// <summary>
@@ -91,3 +91,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

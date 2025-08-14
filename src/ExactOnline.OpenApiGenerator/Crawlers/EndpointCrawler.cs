@@ -222,7 +222,7 @@ internal class EndpointCrawler
                             continue;
                         }
 
-                        if (!EdmTypeParser.TryParse(type, description, out var property))
+                        if (!EdmTypeParser.TryParse(type, name, description, out var property))
                         {
                             if (!string.IsNullOrEmpty(linkedSchemaName))
                             {
@@ -681,7 +681,7 @@ internal class EndpointCrawler
                 continue;
             }
 
-            EdmTypeParser.TryParse(edmType, null, out var schema);
+            EdmTypeParser.TryParse(edmType, paramName, description: null, out var schema);
 
             //var description = paramName switch
             //{

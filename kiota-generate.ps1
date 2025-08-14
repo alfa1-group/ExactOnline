@@ -12,6 +12,22 @@ kiota generate `
 
 $modelsPath = "./src/ExactOnline.Api.Client/Generated/Models"
 
+Write-Output "🔧 Patching models..."
+$modelFiles = Get-ChildItem -Path $modelsPath -Filter "*.cs" | Where-Object {
+    $_.Name -notlike "*Post.cs" -and $_.Name -notlike "*Put.cs" -and $_.Name -notlike "*_Response.cs" -and $_.Name -notlike "*Post_Response.cs" -and $_.Name -notlike "*Put_Response.cs" -and $_.Name -notlike "*_Results.cs" -and $_.Name -notlike "ExactOnlineMetadata*.cs" -and $_.Name -notlike "ODataError*.cs"
+}
+
+foreach ($file in $modelFiles) {
+    $content = Get-Content -Path $file.FullName -Raw
+    $oldString = 'Timestamp = n.GetLongValue();'
+    $newString = 'Timestamp = n.GetTimestampAsLongValue();'
+    
+    if ($content -match [regex]::Escape($oldString)) {
+        $newContent = $content.Replace($oldString, $newString)
+        Set-Content -Path $file.FullName -Value $newContent -Encoding UTF8
+    }
+}
+
 Write-Output "🔧 Patching response models..."
 $responseModelFiles = Get-ChildItem -Path $modelsPath -Filter "*_Response.cs"
 
@@ -42,7 +58,7 @@ if (!(Test-Path $extensionsPath)) {
 
 Write-Output "🔄 Generating response extension classes..."
 
-# Find all 'Get' / default model files in the models directory
+# Find all normal model files in the models directory
 $modelFiles = Get-ChildItem -Path $modelsPath -Filter "*.cs" | Where-Object {
     $_.Name -notlike "*Post.cs" -and $_.Name -notlike "*Put.cs" -and $_.Name -notlike "*_Response.cs" -and $_.Name -notlike "*Post_Response.cs" -and $_.Name -notlike "*Put_Response.cs" -and $_.Name -notlike "*_Results.cs" -and $_.Name -notlike "ExactOnlineMetadata*.cs" -and $_.Name -notlike "ODataError*.cs"
 }

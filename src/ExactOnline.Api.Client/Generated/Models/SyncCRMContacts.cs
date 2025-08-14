@@ -533,7 +533,7 @@ namespace ExactOnline.Api.Client.Models
                 { "SocialSecurityNumber", n => { SocialSecurityNumber = n.GetStringValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "State", n => { State = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Title", n => { Title = n.GetStringValue(); } },
                 { "TitleAbbreviation", n => { TitleAbbreviation = n.GetStringValue(); } },
                 { "TitleDescription", n => { TitleDescription = n.GetStringValue(); } },
@@ -623,3 +623,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

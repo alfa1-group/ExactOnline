@@ -339,7 +339,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ShopOrderRoutingStepPlanCount", n => { ShopOrderRoutingStepPlanCount = n.GetIntValue(); } },
                 { "Status", n => { Status = n.GetIntValue(); } },
                 { "SubShopOrderCount", n => { SubShopOrderCount = n.GetIntValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
                 { "Unit", n => { Unit = n.GetStringValue(); } },
                 { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
@@ -419,3 +419,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

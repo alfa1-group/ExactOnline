@@ -193,7 +193,7 @@ namespace ExactOnline.Api.Client.Models
                 { "Notes", n => { Notes = n.GetStringValue(); } },
                 { "Quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "SubscriptionNumber", n => { SubscriptionNumber = n.GetIntValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "ToDate", n => { ToDate = n.GetDateTimeOffsetValue(); } },
                 { "UnitCode", n => { UnitCode = n.GetStringValue(); } },
                 { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
@@ -245,3 +245,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

@@ -232,7 +232,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ProjectWBSDescription", n => { ProjectWBSDescription = n.GetStringValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "Status", n => { Status = n.GetIntValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
             };
         }
@@ -285,3 +285,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

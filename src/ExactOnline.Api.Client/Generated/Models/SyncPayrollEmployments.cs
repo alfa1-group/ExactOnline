@@ -137,7 +137,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ReasonEndFlexDescription", n => { ReasonEndFlexDescription = n.GetStringValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "StartDateOrganization", n => { StartDateOrganization = n.GetDateTimeOffsetValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
             };
         }
         /// <summary>
@@ -173,3 +173,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

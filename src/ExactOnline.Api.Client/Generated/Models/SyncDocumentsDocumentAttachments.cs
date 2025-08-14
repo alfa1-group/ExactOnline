@@ -85,7 +85,7 @@ namespace ExactOnline.Api.Client.Models
                 { "FileSize", n => { FileSize = n.GetDoubleValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -109,3 +109,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

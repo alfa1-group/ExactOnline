@@ -169,7 +169,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ScheduleActivityType", n => { ScheduleActivityType = n.GetIntValue(); } },
                 { "ScheduleType", n => { ScheduleType = n.GetIntValue(); } },
                 { "StartTime", n => { StartTime = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "WeekNumber", n => { WeekNumber = n.GetIntValue(); } },
             };
         }
@@ -211,3 +211,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

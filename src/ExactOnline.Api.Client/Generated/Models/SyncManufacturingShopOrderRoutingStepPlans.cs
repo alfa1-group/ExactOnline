@@ -271,7 +271,7 @@ namespace ExactOnline.Api.Client.Models
                 { "Status", n => { Status = n.GetIntValue(); } },
                 { "StatusDescription", n => { StatusDescription = n.GetStringValue(); } },
                 { "SubcontractedLeadDays", n => { SubcontractedLeadDays = n.GetIntValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "TotalCostDC", n => { TotalCostDC = n.GetDoubleValue(); } },
                 { "Workcenter", n => { Workcenter = n.GetGuidValue(); } },
                 { "WorkcenterCode", n => { WorkcenterCode = n.GetStringValue(); } },
@@ -339,3 +339,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

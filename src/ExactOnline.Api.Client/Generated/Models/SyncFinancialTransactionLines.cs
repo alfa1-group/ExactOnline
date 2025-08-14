@@ -459,7 +459,7 @@ namespace ExactOnline.Api.Client.Models
                 { "Status", n => { Status = n.GetIntValue(); } },
                 { "Subscription", n => { Subscription = n.GetGuidValue(); } },
                 { "SubscriptionDescription", n => { SubscriptionDescription = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "TrackingNumber", n => { TrackingNumber = n.GetStringValue(); } },
                 { "TrackingNumberDescription", n => { TrackingNumberDescription = n.GetStringValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
@@ -555,3 +555,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

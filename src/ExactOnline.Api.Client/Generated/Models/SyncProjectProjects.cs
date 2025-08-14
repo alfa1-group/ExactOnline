@@ -350,7 +350,7 @@ namespace ExactOnline.Api.Client.Models
                 { "SourceQuotation", n => { SourceQuotation = n.GetGuidValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "TimeQuantityToAlert", n => { TimeQuantityToAlert = n.GetDoubleValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
                 { "TypeDescription", n => { TypeDescription = n.GetStringValue(); } },
                 { "UseBillingMilestones", n => { UseBillingMilestones = n.GetBoolValue(); } },
@@ -431,3 +431,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

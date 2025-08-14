@@ -278,7 +278,7 @@ namespace ExactOnline.Api.Client.Models
                 { "SupplierCode", n => { SupplierCode = n.GetStringValue(); } },
                 { "SupplierDescription", n => { SupplierDescription = n.GetStringValue(); } },
                 { "SupplierItemCode", n => { SupplierItemCode = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
             };
         }
         /// <summary>
@@ -333,3 +333,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

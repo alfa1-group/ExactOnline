@@ -281,7 +281,7 @@ namespace ExactOnline.Api.Client.Models
                 { "SubscriptionType", n => { SubscriptionType = n.GetGuidValue(); } },
                 { "SubscriptionTypeCode", n => { SubscriptionTypeCode = n.GetStringValue(); } },
                 { "SubscriptionTypeDescription", n => { SubscriptionTypeDescription = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
             };
         }
         /// <summary>
@@ -339,3 +339,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

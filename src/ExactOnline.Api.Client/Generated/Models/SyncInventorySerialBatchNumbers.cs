@@ -136,7 +136,7 @@ namespace ExactOnline.Api.Client.Models
                 { "Remarks", n => { Remarks = n.GetStringValue(); } },
                 { "SerialBatchNumber", n => { SerialBatchNumber = n.GetStringValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
             };
         }
@@ -171,3 +171,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

@@ -191,7 +191,7 @@ namespace ExactOnline.Api.Client.Models
                 { "Modifier", n => { Modifier = n.GetGuidValue(); } },
                 { "ModifierFullName", n => { ModifierFullName = n.GetStringValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
             };
         }
         /// <summary>
@@ -233,3 +233,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

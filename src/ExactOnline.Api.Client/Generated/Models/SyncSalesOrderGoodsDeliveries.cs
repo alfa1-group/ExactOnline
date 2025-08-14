@@ -208,7 +208,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ShippingMethod", n => { ShippingMethod = n.GetGuidValue(); } },
                 { "ShippingMethodCode", n => { ShippingMethodCode = n.GetStringValue(); } },
                 { "ShippingMethodDescription", n => { ShippingMethodDescription = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "TrackingNumber", n => { TrackingNumber = n.GetStringValue(); } },
                 { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
                 { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
@@ -257,3 +257,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

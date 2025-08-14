@@ -1004,7 +1004,7 @@ namespace ExactOnline.Api.Client.Models
                 { "StateName", n => { StateName = n.GetStringValue(); } },
                 { "Status", n => { Status = n.GetStringValue(); } },
                 { "StatusSince", n => { StatusSince = n.GetDateTimeOffsetValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "TradeName", n => { TradeName = n.GetStringValue(); } },
                 { "Type", n => { Type = n.GetStringValue(); } },
                 { "UniqueTaxpayerReference", n => { UniqueTaxpayerReference = n.GetStringValue(); } },
@@ -1187,3 +1187,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

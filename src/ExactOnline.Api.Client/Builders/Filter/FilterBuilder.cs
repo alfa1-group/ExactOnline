@@ -92,7 +92,7 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
                 break;
 
             case long longValue:
-                _filter.Append(LongValueTransformer.Transform(longValue));
+                _filter.Append(LongValueTransformer.ToString(longValue));
                 break;
 
             case Guid guidValue:

@@ -166,7 +166,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ProductionLeadDays", n => { ProductionLeadDays = n.GetIntValue(); } },
                 { "Status", n => { Status = n.GetIntValue(); } },
                 { "StatusDescription", n => { StatusDescription = n.GetStringValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
                 { "TypeDescription", n => { TypeDescription = n.GetStringValue(); } },
                 { "VersionDate", n => { VersionDate = n.GetDateTimeOffsetValue(); } },
@@ -211,3 +211,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

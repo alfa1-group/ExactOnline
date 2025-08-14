@@ -113,7 +113,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ShopOrderMaterialPlan", n => { ShopOrderMaterialPlan = n.GetGuidValue(); } },
                 { "ShopOrderNumber", n => { ShopOrderNumber = n.GetIntValue(); } },
                 { "ShopOrderRoutingStepPlan", n => { ShopOrderRoutingStepPlan = n.GetGuidValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
             };
         }
         /// <summary>
@@ -147,3 +147,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

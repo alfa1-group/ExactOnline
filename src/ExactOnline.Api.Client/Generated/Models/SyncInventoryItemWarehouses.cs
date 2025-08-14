@@ -176,7 +176,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ReservedStock", n => { ReservedStock = n.GetDoubleValue(); } },
                 { "SafetyStock", n => { SafetyStock = n.GetDoubleValue(); } },
                 { "StorageLocationSequenceNumber", n => { StorageLocationSequenceNumber = n.GetIntValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Warehouse", n => { Warehouse = n.GetGuidValue(); } },
                 { "WarehouseCode", n => { WarehouseCode = n.GetStringValue(); } },
                 { "WarehouseDescription", n => { WarehouseDescription = n.GetStringValue(); } },
@@ -223,3 +223,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

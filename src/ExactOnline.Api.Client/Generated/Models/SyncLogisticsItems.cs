@@ -653,7 +653,7 @@ namespace ExactOnline.Api.Client.Models
                 { "StatisticalUnits", n => { StatisticalUnits = n.GetDoubleValue(); } },
                 { "StatisticalValue", n => { StatisticalValue = n.GetDoubleValue(); } },
                 { "Stock", n => { Stock = n.GetDoubleValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Unit", n => { Unit = n.GetStringValue(); } },
                 { "UnitDescription", n => { UnitDescription = n.GetStringValue(); } },
                 { "UnitType", n => { UnitType = n.GetStringValue(); } },
@@ -777,3 +777,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

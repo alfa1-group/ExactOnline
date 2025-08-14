@@ -180,7 +180,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ReasonContractDescription", n => { ReasonContractDescription = n.GetStringValue(); } },
                 { "Sequence", n => { Sequence = n.GetIntValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetTimestampAsLongValue(); } },
                 { "Type", n => { Type = n.GetIntValue(); } },
                 { "TypeDescription", n => { TypeDescription = n.GetStringValue(); } },
             };
@@ -227,3 +227,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+
