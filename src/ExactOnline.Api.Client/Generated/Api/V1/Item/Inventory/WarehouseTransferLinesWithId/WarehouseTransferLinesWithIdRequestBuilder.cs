@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehouseTransferLinesWit
         /// <param name="id">Unique identifier (GUID) of the InventoryWarehouseTransferLines</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WarehouseTransferLinesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/inventory/WarehouseTransferLines({id})", pathParameters)
+        public WarehouseTransferLinesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/inventory/WarehouseTransferLines(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehouseTransferLinesWit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WarehouseTransferLinesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/inventory/WarehouseTransferLines({id})", rawUrl)
+        public WarehouseTransferLinesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/inventory/WarehouseTransferLines(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -154,3 +154,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehouseTransferLinesWit
     }
 }
 #pragma warning restore CS0618
+

@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v1\{division}\crm\BankAccounts({id})
+    /// Builds and executes requests for operations under \api\v1\{division}\crm\BankAccounts(guid'{id}')
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BankAccountsWithIdRequestBuilder : BaseRequestBuilder
@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId
         /// <param name="id">Unique identifier (GUID) of the CRMBankAccounts</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BankAccountsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/crm/BankAccounts({id})", pathParameters)
+        public BankAccountsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/crm/BankAccounts(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BankAccountsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/crm/BankAccounts({id})", rawUrl)
+        public BankAccountsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/crm/BankAccounts(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -154,3 +154,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId
     }
 }
 #pragma warning restore CS0618
+

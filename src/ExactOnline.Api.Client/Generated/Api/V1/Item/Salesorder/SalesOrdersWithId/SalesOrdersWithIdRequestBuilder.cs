@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithId
         /// <param name="id">Unique identifier (GUID) of the SalesOrderSalesOrders</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesOrdersWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/SalesOrders({id})", pathParameters)
+        public SalesOrdersWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/SalesOrders(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesOrdersWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/SalesOrders({id})", rawUrl)
+        public SalesOrdersWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/SalesOrders(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -154,3 +154,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithId
     }
 }
 #pragma warning restore CS0618
+

@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.EmployeeRestrictionItemsWit
         /// <param name="id">Unique identifier (GUID) of the ProjectEmployeeRestrictionItems</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmployeeRestrictionItemsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/project/EmployeeRestrictionItems({id})", pathParameters)
+        public EmployeeRestrictionItemsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/project/EmployeeRestrictionItems(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.EmployeeRestrictionItemsWit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmployeeRestrictionItemsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/project/EmployeeRestrictionItems({id})", rawUrl)
+        public EmployeeRestrictionItemsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/project/EmployeeRestrictionItems(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -154,3 +154,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.EmployeeRestrictionItemsWit
     }
 }
 #pragma warning restore CS0618
+

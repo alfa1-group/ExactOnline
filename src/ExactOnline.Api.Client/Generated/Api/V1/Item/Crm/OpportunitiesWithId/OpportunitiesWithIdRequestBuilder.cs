@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Crm.OpportunitiesWithId
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v1\{division}\crm\Opportunities({id})
+    /// Builds and executes requests for operations under \api\v1\{division}\crm\Opportunities(guid'{id}')
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OpportunitiesWithIdRequestBuilder : BaseRequestBuilder
@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.OpportunitiesWithId
         /// <param name="id">Unique identifier (GUID) of the CRMOpportunities</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OpportunitiesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/crm/Opportunities({id})", pathParameters)
+        public OpportunitiesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/crm/Opportunities(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.OpportunitiesWithId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OpportunitiesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/crm/Opportunities({id})", rawUrl)
+        public OpportunitiesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/crm/Opportunities(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -154,3 +154,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.OpportunitiesWithId
     }
 }
 #pragma warning restore CS0618
+

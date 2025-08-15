@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.VariableMutationsWithId
         /// <param name="id">Unique identifier (GUID) of the PayrollVariableMutations</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VariableMutationsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/payroll/VariableMutations({id})", pathParameters)
+        public VariableMutationsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/payroll/VariableMutations(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.VariableMutationsWithId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VariableMutationsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/payroll/VariableMutations({id})", rawUrl)
+        public VariableMutationsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/payroll/VariableMutations(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -103,3 +103,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.VariableMutationsWithId
     }
 }
 #pragma warning restore CS0618
+

@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictio
         /// <param name="id">Unique identifier (GUID) of the SubscriptionSubscriptionRestrictionEmployees</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionRestrictionEmployeesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/subscription/SubscriptionRestrictionEmployees({id})", pathParameters)
+        public SubscriptionRestrictionEmployeesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/subscription/SubscriptionRestrictionEmployees(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionRestrictionEmployeesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/subscription/SubscriptionRestrictionEmployees({id})", rawUrl)
+        public SubscriptionRestrictionEmployeesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/subscription/SubscriptionRestrictionEmployees(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -98,3 +98,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictio
     }
 }
 #pragma warning restore CS0618
+

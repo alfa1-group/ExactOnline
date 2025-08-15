@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Webhooks.WebhookSubscriptionsWithId
         /// <param name="id">Unique identifier (GUID) of the WebhooksWebhookSubscriptions</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WebhookSubscriptionsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/webhooks/WebhookSubscriptions({id})", pathParameters)
+        public WebhookSubscriptionsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/webhooks/WebhookSubscriptions(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Webhooks.WebhookSubscriptionsWithId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WebhookSubscriptionsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/webhooks/WebhookSubscriptions({id})", rawUrl)
+        public WebhookSubscriptionsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/webhooks/WebhookSubscriptions(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -154,3 +154,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Webhooks.WebhookSubscriptionsWithId
     }
 }
 #pragma warning restore CS0618
+

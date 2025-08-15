@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeFoldersWithId
         /// <param name="id">Unique identifier (GUID) of the DocumentsDocumentTypeFolders</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DocumentTypeFoldersWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/documents/DocumentTypeFolders({id})", pathParameters)
+        public DocumentTypeFoldersWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/documents/DocumentTypeFolders(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeFoldersWithId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DocumentTypeFoldersWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/documents/DocumentTypeFolders({id})", rawUrl)
+        public DocumentTypeFoldersWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/documents/DocumentTypeFolders(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -154,3 +154,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeFoldersWithId
     }
 }
 #pragma warning restore CS0618
+

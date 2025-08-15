@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialVersionsWithId
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v1\{division}\manufacturing\BillOfMaterialVersions({id})
+    /// Builds and executes requests for operations under \api\v1\{division}\manufacturing\BillOfMaterialVersions(guid'{id}')
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BillOfMaterialVersionsWithIdRequestBuilder : BaseRequestBuilder
@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialVersion
         /// <param name="id">Unique identifier (GUID) of the ManufacturingBillOfMaterialVersions</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BillOfMaterialVersionsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/manufacturing/BillOfMaterialVersions({id})", pathParameters)
+        public BillOfMaterialVersionsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/manufacturing/BillOfMaterialVersions(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialVersion
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BillOfMaterialVersionsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/manufacturing/BillOfMaterialVersions({id})", rawUrl)
+        public BillOfMaterialVersionsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/manufacturing/BillOfMaterialVersions(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -154,3 +154,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialVersion
     }
 }
 #pragma warning restore CS0618
+

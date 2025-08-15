@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow.PaymentsWithId
         /// <param name="id">Unique identifier (GUID) of the CashflowPayments</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PaymentsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/cashflow/Payments({id})", pathParameters)
+        public PaymentsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/cashflow/Payments(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow.PaymentsWithId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PaymentsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/cashflow/Payments({id})", rawUrl)
+        public PaymentsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/cashflow/Payments(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -103,3 +103,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow.PaymentsWithId
     }
 }
 #pragma warning restore CS0618
+

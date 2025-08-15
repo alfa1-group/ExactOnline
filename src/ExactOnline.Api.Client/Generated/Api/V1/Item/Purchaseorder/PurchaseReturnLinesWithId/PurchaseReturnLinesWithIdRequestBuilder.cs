@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLinesWi
         /// <param name="id">Unique identifier (GUID) of the PurchaseOrderPurchaseReturnLines</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PurchaseReturnLinesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/purchaseorder/PurchaseReturnLines({id})", pathParameters)
+        public PurchaseReturnLinesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/purchaseorder/PurchaseReturnLines(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLinesWi
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PurchaseReturnLinesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/purchaseorder/PurchaseReturnLines({id})", rawUrl)
+        public PurchaseReturnLinesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/purchaseorder/PurchaseReturnLines(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -103,3 +103,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLinesWi
     }
 }
 #pragma warning restore CS0618
+

@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveryLinesWithId
         /// <param name="id">Unique identifier (GUID) of the SalesOrderGoodsDeliveryLines</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GoodsDeliveryLinesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/GoodsDeliveryLines({id})", pathParameters)
+        public GoodsDeliveryLinesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/GoodsDeliveryLines(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveryLinesWithId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GoodsDeliveryLinesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/GoodsDeliveryLines({id})", rawUrl)
+        public GoodsDeliveryLinesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/GoodsDeliveryLines(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -103,3 +103,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveryLinesWithId
     }
 }
 #pragma warning restore CS0618
+

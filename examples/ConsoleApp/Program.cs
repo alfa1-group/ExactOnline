@@ -107,7 +107,7 @@ await RunAsync(async () =>
     return true;
 });
 
-await RunAsync(async () =>
+var projectTimeTransaction = await RunAsync(async () =>
 {
     Console.WriteLine("Getting ProjectTimeTransactions");
     var list = await client.Api.V1[division].Project.TimeTransactions.GetAsync(p =>
@@ -121,8 +121,20 @@ await RunAsync(async () =>
         Console.WriteLine($"TimeTransaction ID: {tt.ID}, Created: {tt.Created}");
     }
 
-    return list;
+    return list.FirstOrDefault();
 });
+
+await RunAsync(async () =>
+{
+    Console.WriteLine("Updating Project.TimeTransaction with ID {0}", projectTimeTransaction?.ID);
+    await client.Api.V1[division].Project.TimeTransactionsWithId(projectTimeTransaction?.ID).PutAsync(new ProjectTimeTransactionsPut
+    {
+        Notes = "Updated via API at " + TimeProvider.System.GetUtcNow().ToString("o")
+    });
+
+    return true;
+});
+
 
 await RunAsync(async () =>
 {

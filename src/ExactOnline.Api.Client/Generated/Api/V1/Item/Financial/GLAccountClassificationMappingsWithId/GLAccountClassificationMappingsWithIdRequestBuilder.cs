@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountClassificationMappingsWithId
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v1\{division}\financial\GLAccountClassificationMappings({id})
+    /// Builds and executes requests for operations under \api\v1\{division}\financial\GLAccountClassificationMappings(guid'{id}')
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GLAccountClassificationMappingsWithIdRequestBuilder : BaseRequestBuilder
@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountClassificationMa
         /// <param name="id">Unique identifier (GUID) of the FinancialGLAccountClassificationMappings</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GLAccountClassificationMappingsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financial/GLAccountClassificationMappings({id})", pathParameters)
+        public GLAccountClassificationMappingsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financial/GLAccountClassificationMappings(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountClassificationMa
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GLAccountClassificationMappingsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financial/GLAccountClassificationMappings({id})", rawUrl)
+        public GLAccountClassificationMappingsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financial/GLAccountClassificationMappings(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -154,3 +154,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountClassificationMa
     }
 }
 #pragma warning restore CS0618
+

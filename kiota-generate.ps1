@@ -44,6 +44,19 @@ foreach ($file in $responseModelFiles) {
     }
 }
 
+Write-Output "🔧 Patching WithId request builders ..."
+$withIdRequestBuilderFiles = Get-ChildItem -Path $buildersGeneratedPath -Recurse -Filter "*WithIdRequestBuilder.cs"
+foreach ($file in $withIdRequestBuilderFiles) {
+    $content = Get-Content -Path $file.FullName -Raw
+    $oldString = '({id})'
+    $newString = '(guid''{id}'')'
+    
+    if ($content -match [regex]::Escape($oldString)) {
+        $newContent = $content.Replace($oldString, $newString)
+        Set-Content -Path $file.FullName -Value $newContent -Encoding UTF8
+    }
+}
+
 $requestBuildersPath = "./src/ExactOnline.Api.Client/Extensions/RequestBuilders"
 Write-Output "🧹 Cleaning RequestBuilders directory..."
 Remove-Item -Path "$requestBuildersPath\*" -Recurse -Force
@@ -54,8 +67,7 @@ foreach ($file in $requestBuilderFiles) {
     $className = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
     $partialFilePath = Join-Path $requestBuildersPath $file.Name
 
-    $sourcePath = $file.FullName
-    $sourceContent = Get-Content -Path $sourcePath -Raw
+    $sourceContent = Get-Content -Path $file.FullName -Raw
 
     $line = $sourceContent | Where-Object { $_ -match '_Response\?> GetAsync\(Action<RequestConfiguration<' }
     if ($line -match 'Task<global::ExactOnline\.Api\.Client\.Models\.([A-Za-z0-9_]+)_Response\?>') {
@@ -70,7 +82,6 @@ foreach ($file in $requestBuilderFiles) {
         $namespace = $Matches[1].Trim()
     }
     else {
-        Write-Warning "No namespace found in $sourcePath"
         continue
     }
             

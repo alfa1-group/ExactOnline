@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Remove="JsonConverters\NullLongValueAsStringConverter.cs" />
+    <Compile Remove="Middleware\GuidWrappingHandler.cs" />
   </ItemGroup>
 
   <ItemGroup>

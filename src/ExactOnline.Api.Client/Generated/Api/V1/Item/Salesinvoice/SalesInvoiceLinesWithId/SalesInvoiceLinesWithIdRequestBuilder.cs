@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceLinesWithI
         /// <param name="id">Unique identifier (GUID) of the SalesInvoiceSalesInvoiceLines</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesInvoiceLinesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesinvoice/SalesInvoiceLines({id})", pathParameters)
+        public SalesInvoiceLinesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesinvoice/SalesInvoiceLines(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceLinesWithI
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesInvoiceLinesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesinvoice/SalesInvoiceLines({id})", rawUrl)
+        public SalesInvoiceLinesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesinvoice/SalesInvoiceLines(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -154,3 +154,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceLinesWithI
     }
 }
 #pragma warning restore CS0618
+

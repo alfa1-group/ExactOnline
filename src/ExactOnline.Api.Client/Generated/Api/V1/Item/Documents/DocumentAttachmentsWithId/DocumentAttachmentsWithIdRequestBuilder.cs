@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId
         /// <param name="id">Unique identifier (GUID) of the DocumentsDocumentAttachments</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DocumentAttachmentsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/documents/DocumentAttachments({id})", pathParameters)
+        public DocumentAttachmentsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/documents/DocumentAttachments(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DocumentAttachmentsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/documents/DocumentAttachments({id})", rawUrl)
+        public DocumentAttachmentsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/documents/DocumentAttachments(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -98,3 +98,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId
     }
 }
 #pragma warning restore CS0618
+

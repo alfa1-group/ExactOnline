@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderRoutingStepPlansWithId
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v1\{division}\manufacturing\ShopOrderRoutingStepPlans({id})
+    /// Builds and executes requests for operations under \api\v1\{division}\manufacturing\ShopOrderRoutingStepPlans(guid'{id}')
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ShopOrderRoutingStepPlansWithIdRequestBuilder : BaseRequestBuilder
@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderRoutingStepP
         /// <param name="id">Unique identifier (GUID) of the ManufacturingShopOrderRoutingStepPlans</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShopOrderRoutingStepPlansWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/manufacturing/ShopOrderRoutingStepPlans({id})", pathParameters)
+        public ShopOrderRoutingStepPlansWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/manufacturing/ShopOrderRoutingStepPlans(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderRoutingStepP
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShopOrderRoutingStepPlansWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/manufacturing/ShopOrderRoutingStepPlans({id})", rawUrl)
+        public ShopOrderRoutingStepPlansWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/manufacturing/ShopOrderRoutingStepPlans(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -154,3 +154,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderRoutingStepP
     }
 }
 #pragma warning restore CS0618
+

@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.BankEntriesWit
         /// <param name="id">Unique identifier (GUID) of the FinancialTransactionBankEntries</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BankEntriesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financialtransaction/BankEntries({id})", pathParameters)
+        public BankEntriesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financialtransaction/BankEntries(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.BankEntriesWit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BankEntriesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financialtransaction/BankEntries({id})", rawUrl)
+        public BankEntriesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financialtransaction/BankEntries(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -98,3 +98,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.BankEntriesWit
     }
 }
 #pragma warning restore CS0618
+
