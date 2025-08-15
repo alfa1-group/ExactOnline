@@ -71313,8 +71313,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/AccountancyAccountInvolvedAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of AccountancyAccountInvolvedAccounts entities.",
@@ -71635,8 +71634,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/AccountancyAccountOwners_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of AccountancyAccountOwners entities.",
@@ -71859,8 +71857,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/AccountancyInvolvedUserRoles_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of AccountancyInvolvedUserRoles entities.",
@@ -72113,8 +72110,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/AccountancyInvolvedUsers_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of AccountancyInvolvedUsers entities.",
@@ -72355,8 +72351,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/AccountancySolutionLinks_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of AccountancySolutionLinks entities.",
@@ -72573,8 +72568,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/AccountancyTaskTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of AccountancyTaskTypes entities.",
@@ -72856,8 +72850,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ActivitiesCommunicationNotes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ActivitiesCommunicationNotes entities.",
@@ -73116,8 +73109,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ActivitiesComplaints_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ActivitiesComplaints entities.",
@@ -73394,8 +73386,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ActivitiesEvents_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ActivitiesEvents entities.",
@@ -73668,8 +73659,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ActivitiesServiceRequests_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ActivitiesServiceRequests entities.",
@@ -73951,8 +73941,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ActivitiesTasks_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ActivitiesTasks entities.",
@@ -74262,8 +74251,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/AssetsAssetGroups_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of AssetsAssetGroups entities.",
@@ -74635,8 +74623,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/AssetsAssets_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of AssetsAssets entities.",
@@ -74785,8 +74772,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/AssetsCommercialBuildingValues_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of AssetsCommercialBuildingValues entities.",
@@ -74938,8 +74924,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/AssetsDepreciationMethods_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of AssetsDepreciationMethods entities.",
@@ -75298,8 +75283,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BudgetBudgets_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BudgetBudgets entities.",
@@ -75428,8 +75412,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BudgetBudgetScenarios_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BudgetBudgetScenarios entities.",
@@ -75878,8 +75861,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkCashflowPayments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkCashflowPayments entities.",
@@ -76388,8 +76370,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkCashflowReceivables_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkCashflowReceivables entities.",
@@ -77338,8 +77319,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkCRMAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkCRMAccounts entities.",
@@ -77690,8 +77670,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkCRMAddresses_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkCRMAddresses entities.",
@@ -78128,8 +78107,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkCRMContacts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkCRMContacts entities.",
@@ -78352,8 +78330,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkCRMQuotationLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkCRMQuotationLines entities.",
@@ -78768,8 +78745,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkCRMQuotations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkCRMQuotations entities.",
@@ -78867,8 +78843,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkDocumentsDocumentAttachments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkDocumentsDocumentAttachments entities.",
@@ -79202,8 +79177,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkDocumentsDocuments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkDocumentsDocuments entities.",
@@ -79507,8 +79481,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkFinancialGLAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkFinancialGLAccounts entities.",
@@ -79683,8 +79656,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkFinancialGLClassifications_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkFinancialGLClassifications entities.",
@@ -80144,8 +80116,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkFinancialTransactionLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkFinancialTransactionLines entities.",
@@ -80794,8 +80765,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkLogisticsItems_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkLogisticsItems entities.",
@@ -81006,8 +80976,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkLogisticsSalesItemPrices_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkLogisticsSalesItemPrices entities.",
@@ -81286,8 +81255,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkProjectProjectWBS_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The BulkProjectProjectWBS entity.",
@@ -81641,8 +81609,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkSalesInvoiceSalesInvoiceLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkSalesInvoiceSalesInvoiceLines entities.",
@@ -82143,8 +82110,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkSalesInvoiceSalesInvoices_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkSalesInvoiceSalesInvoices entities.",
@@ -82365,8 +82331,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkSalesOrderGoodsDeliveries_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkSalesOrderGoodsDeliveries entities.",
@@ -82586,8 +82551,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkSalesOrderGoodsDeliveryLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkSalesOrderGoodsDeliveryLines entities.",
@@ -82887,8 +82851,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkSalesOrderSalesOrderLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkSalesOrderSalesOrderLines entities.",
@@ -83351,8 +83314,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/BulkSalesOrderSalesOrders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of BulkSalesOrderSalesOrders entities.",
@@ -83473,8 +83435,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CashflowAllocationRule_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The CashflowAllocationRule entity.",
@@ -83709,8 +83670,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CashflowBanks_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CashflowBanks entities.",
@@ -83872,8 +83832,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CashflowDirectDebitMandates_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CashflowDirectDebitMandates entities.",
@@ -84223,8 +84182,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CashflowPaymentConditions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CashflowPaymentConditions entities.",
@@ -84690,8 +84648,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CashflowPayments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CashflowPayments entities.",
@@ -84810,8 +84767,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CashflowProcessPayments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CashflowProcessPayments entities.",
@@ -85290,8 +85246,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CashflowReceivables_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CashflowReceivables entities.",
@@ -85527,8 +85482,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMAcceptQuotation_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The CRMAcceptQuotation entity.",
@@ -85822,8 +85776,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMAccountClasses_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMAccountClasses entities.",
@@ -85941,8 +85894,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMAccountClassificationNames_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMAccountClassificationNames entities.",
@@ -86070,8 +86022,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMAccountClassifications_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMAccountClassifications entities.",
@@ -86860,8 +86811,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMAccounts entities.",
@@ -88267,8 +88217,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMAddresses_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMAddresses entities.",
@@ -88760,8 +88709,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMAddressStates_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMAddressStates entities.",
@@ -88929,8 +88877,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMBankAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMBankAccounts entities.",
@@ -89420,8 +89367,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMContacts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMContacts entities.",
@@ -90025,8 +89971,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMEmailWithSignOffQuotation_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The CRMEmailWithSignOffQuotation entity.",
@@ -90289,8 +90234,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMLeadPurposes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMLeadPurposes entities.",
@@ -90367,8 +90311,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMLeadSources_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMLeadSources entities.",
@@ -90616,8 +90559,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMOpportunities_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMOpportunities entities.",
@@ -90926,8 +90868,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMOptionalQuotationLineID_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The CRMOptionalQuotationLineID entity.",
@@ -91071,8 +91012,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMPrintQuotation_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The CRMPrintQuotation entity.",
@@ -91344,8 +91284,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMQuotationLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMQuotationLines entities.",
@@ -91656,8 +91595,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMQuotationOrderChargeLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMQuotationOrderChargeLines entities.",
@@ -92142,8 +92080,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMQuotations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMQuotations entities.",
@@ -92604,8 +92541,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMReasonCodes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CRMReasonCodes entities.",
@@ -92694,8 +92630,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMRejectQuotation_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The CRMRejectQuotation entity.",
@@ -92826,8 +92761,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMReopenQuotation_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The CRMReopenQuotation entity.",
@@ -92985,8 +92919,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CRMReviewQuotation_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The CRMReviewQuotation entity.",
@@ -93165,8 +93098,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CustomFieldCustomFields_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of CustomFieldCustomFields entities.",
@@ -93259,8 +93191,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/CustomFieldUpdateCustomField_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The CustomFieldUpdateCustomField entity.",
@@ -93408,8 +93339,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/DocumentsDocumentAttachments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of DocumentsDocumentAttachments entities.",
@@ -93555,8 +93485,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/DocumentsDocumentCategories_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of DocumentsDocumentCategories entities.",
@@ -93675,8 +93604,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/DocumentsDocumentFolders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of DocumentsDocumentFolders entities.",
@@ -94062,8 +93990,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/DocumentsDocuments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of DocumentsDocuments entities.",
@@ -94456,8 +94383,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/DocumentsDocumentTypeCategories_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of DocumentsDocumentTypeCategories entities.",
@@ -94558,8 +94484,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/DocumentsDocumentTypeFolders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of DocumentsDocumentTypeFolders entities.",
@@ -94790,8 +94715,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/DocumentsDocumentTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of DocumentsDocumentTypes entities.",
@@ -94941,8 +94865,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialDeductibilityPercentages_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialDeductibilityPercentages entities.",
@@ -95068,8 +94991,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialExchangeRates_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialExchangeRates entities.",
@@ -95291,8 +95213,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialFinancialPeriods_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialFinancialPeriods entities.",
@@ -95405,8 +95326,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialGLAccountClassificationMappings_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialGLAccountClassificationMappings entities.",
@@ -95765,8 +95685,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialGLAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialGLAccounts entities.",
@@ -96285,8 +96204,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialGLClassifications_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialGLClassifications entities.",
@@ -96416,8 +96334,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialGLSchemes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialGLSchemes entities.",
@@ -96494,8 +96411,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialGLTransactionSources_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialGLTransactionSources entities.",
@@ -96572,8 +96488,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialGLTransactionTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialGLTransactionTypes entities.",
@@ -96795,8 +96710,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialJournals_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialJournals entities.",
@@ -97182,8 +97096,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialOfficialReturns_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialOfficialReturns entities.",
@@ -97357,8 +97270,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialProcessReturn_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The FinancialProcessReturn entity.",
@@ -97559,8 +97471,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialReportingBalance_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The FinancialReportingBalance entity.",
@@ -97710,8 +97621,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialTransactionBankEntries_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialTransactionBankEntries entities.",
@@ -98067,8 +97977,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialTransactionBankEntryLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialTransactionBankEntryLines entities.",
@@ -98319,8 +98228,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialTransactionCashEntries_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialTransactionCashEntries entities.",
@@ -98671,8 +98579,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialTransactionCashEntryLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialTransactionCashEntryLines entities.",
@@ -99247,8 +99154,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/FinancialTransactionTransactionLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of FinancialTransactionTransactionLines entities.",
@@ -99343,8 +99249,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/GeneralCurrencies_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of GeneralCurrencies entities.",
@@ -99488,8 +99393,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/GeneralJournalEntryGeneralJournalEntries_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of GeneralJournalEntryGeneralJournalEntries entities.",
@@ -99848,8 +99752,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/GeneralJournalEntryGeneralJournalEntryLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of GeneralJournalEntryGeneralJournalEntryLines entities.",
@@ -100105,8 +100008,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/GeneralLayouts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of GeneralLayouts entities.",
@@ -100275,8 +100177,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMAbsenceRegistrations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMAbsenceRegistrations entities.",
@@ -100454,8 +100355,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMAbsenceRegistrationTransactions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMAbsenceRegistrationTransactions entities.",
@@ -100577,8 +100477,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMCostcenters_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMCostcenters entities.",
@@ -100790,8 +100689,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMCostunits_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMCostunits entities.",
@@ -101009,8 +100907,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMDepartments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMDepartments entities.",
@@ -101150,8 +101047,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMDivisionClasses_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMDivisionClasses entities.",
@@ -101275,8 +101171,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMDivisionClassNames_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMDivisionClassNames entities.",
@@ -101434,8 +101329,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMDivisionClassValues_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMDivisionClassValues entities.",
@@ -101662,8 +101556,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMDivisions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMDivisions entities.",
@@ -101785,8 +101678,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMJobGroups_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMJobGroups entities.",
@@ -101941,8 +101833,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMJobTitles_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMJobTitles entities.",
@@ -102109,8 +102000,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMLeaveAbsenceHoursByDay_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The HRMLeaveAbsenceHoursByDay entity.",
@@ -102278,8 +102168,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMLeaveBuildUpRegistrations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMLeaveBuildUpRegistrations entities.",
@@ -102477,8 +102366,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMLeaveRegistrations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMLeaveRegistrations entities.",
@@ -102723,8 +102611,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/HRMSchedules_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of HRMSchedules entities.",
@@ -102869,8 +102756,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryAssemblyBillOfMaterialHeader_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The InventoryAssemblyBillOfMaterialHeader entity.",
@@ -103136,8 +103022,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryAssemblyBillOfMaterialMaterials_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryAssemblyBillOfMaterialMaterials entities.",
@@ -103449,8 +103334,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryAssemblyOrders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryAssemblyOrders entities.",
@@ -103618,8 +103502,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryBatchNumbers_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryBatchNumbers entities.",
@@ -103723,8 +103606,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryFinishAssemblyOrder_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The InventoryFinishAssemblyOrder entity.",
@@ -103941,8 +103823,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryItemWarehousePlanningDetails_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryItemWarehousePlanningDetails entities.",
@@ -104186,8 +104067,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryItemWarehouses_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryItemWarehouses entities.",
@@ -104515,8 +104395,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryItemWarehouseStorageLocations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryItemWarehouseStorageLocations entities.",
@@ -104595,8 +104474,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryProcessStockCount_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The InventoryProcessStockCount entity.",
@@ -104709,8 +104587,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryProcessWarehouseTransfer_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The InventoryProcessWarehouseTransfer entity.",
@@ -104942,8 +104819,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventorySerialNumbers_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventorySerialNumbers entities.",
@@ -105168,8 +105044,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryStockBatchNumbers_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryStockBatchNumbers entities.",
@@ -105518,8 +105393,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryStockCountLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryStockCountLines entities.",
@@ -105803,8 +105677,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryStockCounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryStockCounts entities.",
@@ -106138,8 +106011,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryStockSerialNumbers_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryStockSerialNumbers entities.",
@@ -106432,8 +106304,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryStorageLocations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryStorageLocations entities.",
@@ -106576,8 +106447,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryWarehouses_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryWarehouses entities.",
@@ -106892,8 +106762,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryWarehouseTransferLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryWarehouseTransferLines entities.",
@@ -107205,8 +107074,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/InventoryWarehouseTransfers_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of InventoryWarehouseTransfers entities.",
@@ -107471,8 +107339,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsCustomerItems_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of LogisticsCustomerItems entities.",
@@ -107636,8 +107503,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsIncoterms_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of LogisticsIncoterms entities.",
@@ -107724,8 +107590,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsItemAssortment_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The LogisticsItemAssortment entity.",
@@ -107814,8 +107679,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsItemAssortmentProperty_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The LogisticsItemAssortmentProperty entity.",
@@ -107998,8 +107862,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsItemChargeRelation_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The LogisticsItemChargeRelation entity.",
@@ -108225,8 +108088,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsItemGroups_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of LogisticsItemGroups entities.",
@@ -108770,8 +108632,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsItems_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of LogisticsItems entities.",
@@ -109732,8 +109593,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsItemVersions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of LogisticsItemVersions entities.",
@@ -109871,8 +109731,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsReasonCodes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of LogisticsReasonCodes entities.",
@@ -109956,8 +109815,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsReasonCodesLinkTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of LogisticsReasonCodesLinkTypes entities.",
@@ -110141,8 +109999,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsSalesItemPrices_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of LogisticsSalesItemPrices entities.",
@@ -110439,8 +110296,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsSelectionCodes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of LogisticsSelectionCodes entities.",
@@ -110680,8 +110536,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsSupplierItem_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The LogisticsSupplierItem entity.",
@@ -111022,8 +110877,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/LogisticsUnits_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of LogisticsUnits entities.",
@@ -111166,8 +111020,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/MailboxMailboxes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of MailboxMailboxes entities.",
@@ -111425,8 +111278,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/MailboxMailMessageAttachments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of MailboxMailMessageAttachments entities.",
@@ -111701,8 +111553,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/MailboxMailMessagesSent_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The MailboxMailMessagesSent entity.",
@@ -112041,8 +111892,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingBillOfMaterialMaterials_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingBillOfMaterialMaterials entities.",
@@ -112508,8 +112358,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingBillOfMaterialRoutings_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingBillOfMaterialRoutings entities.",
@@ -112903,8 +112752,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingBillOfMaterialVersions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingBillOfMaterialVersions entities.",
@@ -113290,8 +113138,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingByProductReceipts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingByProductReceipts entities.",
@@ -113534,8 +113381,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingByProductReversals_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingByProductReversals entities.",
@@ -113685,8 +113531,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingManufacturingSettings_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingManufacturingSettings entities.",
@@ -113898,8 +113743,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingMaterialIssues_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingMaterialIssues entities.",
@@ -114160,8 +114004,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingMaterialReversals_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingMaterialReversals entities.",
@@ -114405,8 +114248,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingOperationResources_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingOperationResources entities.",
@@ -114753,8 +114595,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingOperations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingOperations entities.",
@@ -115021,8 +114862,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingProductionAreas_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingProductionAreas entities.",
@@ -115499,8 +115339,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingShopOrderMaterialPlanDetails_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingShopOrderMaterialPlanDetails entities.",
@@ -115713,8 +115552,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingShopOrderMaterialPlans_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingShopOrderMaterialPlans entities.",
@@ -116034,8 +115872,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingShopOrderPriorities_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingShopOrderPriorities entities.",
@@ -116264,8 +116101,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingShopOrderReceipts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingShopOrderReceipts entities.",
@@ -116499,8 +116335,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingShopOrderReversals_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingShopOrderReversals entities.",
@@ -116827,8 +116662,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingShopOrderRoutingStepPlans_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingShopOrderRoutingStepPlans entities.",
@@ -117584,8 +117418,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingShopOrders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingShopOrders entities.",
@@ -118021,8 +117854,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingStageForDeliveryReceipts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingStageForDeliveryReceipts entities.",
@@ -118231,8 +118063,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingStageForDeliveryReversals_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingStageForDeliveryReversals entities.",
@@ -118470,8 +118301,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingSubOrderReceipts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingSubOrderReceipts entities.",
@@ -118707,8 +118537,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingSubOrderReversals_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingSubOrderReversals entities.",
@@ -118985,8 +118814,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingTimedTimeTransactions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingTimedTimeTransactions entities.",
@@ -119411,8 +119239,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingTimeTransactions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingTimeTransactions entities.",
@@ -119806,8 +119633,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ManufacturingWorkcenters_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ManufacturingWorkcenters entities.",
@@ -120130,8 +119956,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/OpeningBalanceCurrentYearAfterEntry_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The OpeningBalanceCurrentYearAfterEntry entity.",
@@ -120233,8 +120058,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/OpeningBalanceCurrentYearProcessed_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The OpeningBalanceCurrentYearProcessed entity.",
@@ -120336,8 +120160,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/OpeningBalancePreviousYearAfterEntry_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The OpeningBalancePreviousYearAfterEntry entity.",
@@ -120439,8 +120262,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/OpeningBalancePreviousYearProcessed_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The OpeningBalancePreviousYearProcessed entity.",
@@ -120754,8 +120576,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollActiveEmployments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PayrollActiveEmployments entities.",
@@ -121186,8 +121007,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollEmployees_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PayrollEmployees entities.",
@@ -121342,8 +121162,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollEmploymentConditionGroups_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PayrollEmploymentConditionGroups entities.",
@@ -121415,8 +121234,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollEmploymentContractFlexPhases_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PayrollEmploymentContractFlexPhases entities.",
@@ -121659,8 +121477,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollEmploymentContracts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PayrollEmploymentContracts entities.",
@@ -121732,8 +121549,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollEmploymentEndReasons_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PayrollEmploymentEndReasons entities.",
@@ -121947,8 +121763,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollEmploymentOrganizations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PayrollEmploymentOrganizations entities.",
@@ -122124,8 +121939,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollEmployments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PayrollEmployments entities.",
@@ -122437,8 +122251,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollEmploymentSalaries_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PayrollEmploymentSalaries entities.",
@@ -122633,8 +122446,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollEmploymentTaxAuthoritiesGeneral_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The PayrollEmploymentTaxAuthoritiesGeneral entity.",
@@ -122868,8 +122680,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollPayrollComponents_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PayrollPayrollComponents entities.",
@@ -123211,8 +123022,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollPayrollTransactionsByPayrollYear_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The PayrollPayrollTransactionsByPayrollYear entity.",
@@ -123335,8 +123145,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollTaxEmploymentEndFlexCodes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PayrollTaxEmploymentEndFlexCodes entities.",
@@ -123459,8 +123268,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PayrollVariableMutations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PayrollVariableMutations entities.",
@@ -123845,8 +123653,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectCostTransactions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectCostTransactions entities.",
@@ -124208,8 +124015,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectEmployeeRestrictionItems_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectEmployeeRestrictionItems entities.",
@@ -124448,8 +124254,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectEmploymentInternalRates_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectEmploymentInternalRates entities.",
@@ -124633,8 +124438,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectInvoiceTerms_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectInvoiceTerms entities.",
@@ -124929,8 +124733,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectProjectAccountMutations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectProjectAccountMutations entities.",
@@ -125089,8 +124892,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectProjectBudgetTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectProjectBudgetTypes entities.",
@@ -125223,8 +125025,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectProjectClassifications_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectProjectClassifications entities.",
@@ -125462,8 +125263,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectProjectHourBudgets_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectProjectHourBudgets entities.",
@@ -125787,8 +125587,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectProjectPlanning_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ProjectProjectPlanning entity.",
@@ -126277,8 +126076,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectProjectPlanningRecurring_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ProjectProjectPlanningRecurring entity.",
@@ -126768,8 +126566,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectProjectRestrictionEmployeeItems_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectProjectRestrictionEmployeeItems entities.",
@@ -126994,8 +126791,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectProjectRestrictionEmployees_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectProjectRestrictionEmployees entities.",
@@ -127214,8 +127010,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectProjectRestrictionItems_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectProjectRestrictionItems entities.",
@@ -127427,8 +127222,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectProjectRestrictionRebillings_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectProjectRestrictionRebillings entities.",
@@ -127885,8 +127679,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectProjects_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectProjects entities.",
@@ -128412,8 +128205,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectTimeCorrections_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectTimeCorrections entities.",
@@ -128757,8 +128549,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectTimeTransactions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectTimeTransactions entities.",
@@ -129209,8 +129000,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectWBSActivities_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectWBSActivities entities.",
@@ -129639,8 +129429,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectWBSDeliverables_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectWBSDeliverables entities.",
@@ -130014,8 +129803,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ProjectWBSExpenses_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ProjectWBSExpenses entities.",
@@ -130561,8 +130349,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PurchaseEntryPurchaseEntries_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PurchaseEntryPurchaseEntries entities.",
@@ -131125,8 +130912,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PurchaseEntryPurchaseEntryLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PurchaseEntryPurchaseEntryLines entities.",
@@ -131713,8 +131499,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PurchaseOrderGoodsReceiptLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PurchaseOrderGoodsReceiptLines entities.",
@@ -131966,8 +131751,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PurchaseOrderGoodsReceipts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PurchaseOrderGoodsReceipts entities.",
@@ -132398,8 +132182,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PurchaseOrderPurchaseOrderLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PurchaseOrderPurchaseOrderLines entities.",
@@ -132942,8 +132725,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PurchaseOrderPurchaseOrders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PurchaseOrderPurchaseOrders entities.",
@@ -133403,8 +133185,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PurchaseOrderPurchaseReturnLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PurchaseOrderPurchaseReturnLines entities.",
@@ -133683,8 +133464,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PurchaseOrderPurchaseReturns_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PurchaseOrderPurchaseReturns entities.",
@@ -133962,8 +133742,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PurchasePurchaseInvoiceLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PurchasePurchaseInvoiceLines entities.",
@@ -134251,8 +134030,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/PurchasePurchaseInvoices_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of PurchasePurchaseInvoices entities.",
@@ -134613,8 +134391,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadCRMAccountDocumentFolders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadCRMAccountDocumentFolders entities.",
@@ -134839,8 +134616,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadCRMAccountDocuments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadCRMAccountDocuments entities.",
@@ -134898,8 +134674,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadCRMAccountDocumentsCount_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadCRMAccountDocumentsCount entity.",
@@ -135250,8 +135025,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadCRMDefaultAddressForAccount_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadCRMDefaultAddressForAccount entity.",
@@ -135476,8 +135250,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadCRMDocuments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadCRMDocuments entities.",
@@ -135565,8 +135338,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadCRMDocumentsAttachments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadCRMDocumentsAttachments entities.",
@@ -136015,8 +135787,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadCRMOpportunityContacts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadCRMOpportunityContacts entities.",
@@ -136241,8 +136012,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadCRMOpportunityDocuments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadCRMOpportunityDocuments entities.",
@@ -136300,8 +136070,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadCRMOpportunityDocumentsCount_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadCRMOpportunityDocumentsCount entity.",
@@ -136390,8 +136159,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialAgingOverview_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialAgingOverview entity.",
@@ -136480,8 +136248,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialAgingOverviewByAccount_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialAgingOverviewByAccount entity.",
@@ -136637,8 +136404,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialAgingPayablesList_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadFinancialAgingPayablesList entities.",
@@ -136794,8 +136560,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialAgingPayablesListByAgeGroup_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialAgingPayablesListByAgeGroup entity.",
@@ -136951,8 +136716,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialAgingReceivablesList_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadFinancialAgingReceivablesList entities.",
@@ -137108,8 +136872,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialAgingReceivablesListByAgeGroup_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialAgingReceivablesListByAgeGroup entity.",
@@ -137216,8 +136979,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialJournalStatusByFinancialPeriod_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialJournalStatusByFinancialPeriod entity.",
@@ -137324,8 +137086,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialJournalStatusList_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadFinancialJournalStatusList entities.",
@@ -137439,8 +137200,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialOutstandingInvoicesOverview_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialOutstandingInvoicesOverview entity.",
@@ -137601,8 +137361,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialPayablesList_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadFinancialPayablesList entities.",
@@ -137763,8 +137522,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialPayablesListByAccount_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialPayablesListByAccount entity.",
@@ -137925,8 +137683,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialPayablesListByAccountAndAgeGroup_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialPayablesListByAccountAndAgeGroup entity.",
@@ -138087,8 +137844,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialPayablesListByAgeGroup_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialPayablesListByAgeGroup entity.",
@@ -138250,8 +138006,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialProfitLossOverview_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialProfitLossOverview entity.",
@@ -138406,8 +138161,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialReceivablesList_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadFinancialReceivablesList entities.",
@@ -138562,8 +138316,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialReceivablesListByAccount_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialReceivablesListByAccount entity.",
@@ -138718,8 +138471,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialReceivablesListByAccountAndAgeGroup_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialReceivablesListByAccountAndAgeGroup entity.",
@@ -138874,8 +138626,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialReceivablesListByAgeGroup_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialReceivablesListByAgeGroup entity.",
@@ -139053,8 +138804,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialReportingBalanceByClassification_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialReportingBalanceByClassification entity.",
@@ -139204,8 +138954,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialReturns_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadFinancialReturns entities.",
@@ -139285,8 +139034,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialRevenueList_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadFinancialRevenueList entities.",
@@ -139366,8 +139114,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialRevenueListByYear_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadFinancialRevenueListByYear entity.",
@@ -139447,8 +139194,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadFinancialRevenueListByYearAndStatus_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadFinancialRevenueListByYearAndStatus entities.",
@@ -139780,8 +139526,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadLogisticsAccountItems_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadLogisticsAccountItems entities.",
@@ -139879,8 +139624,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadLogisticsItemDetailsByID_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadLogisticsItemDetailsByID entity.",
@@ -139966,8 +139710,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadLogisticsItemExtraField_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadLogisticsItemExtraField entity.",
@@ -140073,8 +139816,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadLogisticsSalesItemPrice_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadLogisticsSalesItemPrice entity.",
@@ -140174,8 +139916,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadLogisticsStockPosition_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadLogisticsStockPosition entity.",
@@ -140299,8 +140040,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadMailboxDefaultMailbox_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadMailboxDefaultMailbox entity.",
@@ -140424,8 +140164,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadMailboxPreferredMailbox_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadMailboxPreferredMailbox entity.",
@@ -140549,8 +140288,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadMailboxPreferredMailboxForOperation_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadMailboxPreferredMailboxForOperation entity.",
@@ -140855,8 +140593,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadManufacturingRecentTimeTransactions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadManufacturingRecentTimeTransactions entities.",
@@ -141238,8 +140975,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadManufacturingShopOrderRoutingStepPlansAvailableToWork_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadManufacturingShopOrderRoutingStepPlansAvailableToWork entity.",
@@ -141574,8 +141310,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadManufacturingStartedTimedTimeTransactions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadManufacturingStartedTimedTimeTransactions entities.",
@@ -141662,8 +141397,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadPayrollEmploymentContractFlexPhasesOnFocusDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadPayrollEmploymentContractFlexPhasesOnFocusDate entity.",
@@ -141749,8 +141483,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadPayrollEmploymentEndReasonsOnFocusDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadPayrollEmploymentEndReasonsOnFocusDate entity.",
@@ -141843,8 +141576,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectCostEntryExpensesByProject_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectCostEntryExpensesByProject entity.",
@@ -141922,8 +141654,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectCostEntryRecentAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectCostEntryRecentAccounts entities.",
@@ -142001,8 +141732,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectCostEntryRecentAccountsByProject_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectCostEntryRecentAccountsByProject entity.",
@@ -142090,8 +141820,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectCostEntryRecentCostTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectCostEntryRecentCostTypes entities.",
@@ -142179,8 +141908,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectCostEntryRecentCostTypesByProject_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectCostEntryRecentCostTypesByProject entity.",
@@ -142279,8 +142007,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectCostEntryRecentExpensesByProject_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectCostEntryRecentExpensesByProject entity.",
@@ -142363,8 +142090,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectCostEntryRecentProjects_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectCostEntryRecentProjects entities.",
@@ -142566,8 +142292,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectCostsByDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectCostsByDate entity.",
@@ -142769,8 +142494,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectCostsById_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectCostsById entity.",
@@ -142847,8 +142571,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectCostTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectCostTypes entities.",
@@ -142925,8 +142648,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectCostTypesByDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectCostTypesByDate entity.",
@@ -143003,8 +142725,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectCostTypesByProjectAndDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectCostTypesByProjectAndDate entity.",
@@ -143081,8 +142802,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHourCostTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectHourCostTypes entities.",
@@ -143175,8 +142895,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHourEntryActivitiesByProject_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectHourEntryActivitiesByProject entity.",
@@ -143254,8 +142973,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHourEntryRecentAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectHourEntryRecentAccounts entities.",
@@ -143333,8 +143051,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHourEntryRecentAccountsByProject_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectHourEntryRecentAccountsByProject entity.",
@@ -143433,8 +143150,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHourEntryRecentActivitiesByProject_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectHourEntryRecentActivitiesByProject entity.",
@@ -143522,8 +143238,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHourEntryRecentHourTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectHourEntryRecentHourTypes entities.",
@@ -143611,8 +143326,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHourEntryRecentHourTypesByProject_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectHourEntryRecentHourTypesByProject entity.",
@@ -143695,8 +143409,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHourEntryRecentProjects_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectHourEntryRecentProjects entities.",
@@ -143893,8 +143606,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHoursByDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectHoursByDate entity.",
@@ -144091,8 +143803,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHoursById_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectHoursById entity.",
@@ -144169,8 +143880,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHourTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectHourTypes entities.",
@@ -144247,8 +143957,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHourTypesByDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectHourTypesByDate entity.",
@@ -144325,8 +144034,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectHourTypesByProjectAndDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectHourTypesByProjectAndDate entity.",
@@ -144599,8 +144307,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectProjectWBSByProject_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectProjectWBSByProject entity.",
@@ -144873,8 +144580,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectProjectWBSByProjectAndWBS_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectProjectWBSByProjectAndWBS entity.",
@@ -145076,8 +144782,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectRecentCosts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectRecentCosts entities.",
@@ -145279,8 +144984,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectRecentCostsByNumberOfWeeks_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectRecentCostsByNumberOfWeeks entities.",
@@ -145482,8 +145186,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectRecentCostsByNumberOfWeeksByDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectRecentCostsByNumberOfWeeksByDate entity.",
@@ -145680,8 +145383,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectRecentHours_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectRecentHours entities.",
@@ -145878,8 +145580,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectRecentHoursByNumberOfWeeks_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectRecentHoursByNumberOfWeeks entities.",
@@ -146076,8 +145777,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectRecentHoursByNumberOfWeeksByDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectRecentHoursByNumberOfWeeksByDate entity.",
@@ -146149,8 +145849,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingAccountDetails_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectTimeAndBillingAccountDetails entities.",
@@ -146222,8 +145921,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingAccountDetailsByID_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectTimeAndBillingAccountDetailsByID entity.",
@@ -146316,8 +146014,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingActivitiesAndExpenses_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectTimeAndBillingActivitiesAndExpenses entities.",
@@ -146389,8 +146086,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingEntryAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectTimeAndBillingEntryAccounts entities.",
@@ -146462,8 +146158,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingEntryAccountsByDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectTimeAndBillingEntryAccountsByDate entity.",
@@ -146535,8 +146230,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingEntryAccountsByProjectAndDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectTimeAndBillingEntryAccountsByProjectAndDate entity.",
@@ -146613,8 +146307,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingEntryProjects_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectTimeAndBillingEntryProjects entities.",
@@ -146691,8 +146384,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingEntryProjectsByAccountAndDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectTimeAndBillingEntryProjectsByAccountAndDate entity.",
@@ -146769,8 +146461,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingEntryProjectsByDate_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectTimeAndBillingEntryProjectsByDate entity.",
@@ -146848,8 +146539,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingEntryRecentAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectTimeAndBillingEntryRecentAccounts entities.",
@@ -146948,8 +146638,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses entities.",
@@ -147037,8 +146726,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingEntryRecentHourCostTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectTimeAndBillingEntryRecentHourCostTypes entities.",
@@ -147121,8 +146809,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingEntryRecentProjects_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectTimeAndBillingEntryRecentProjects entities.",
@@ -147220,8 +146907,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingItemDetails_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectTimeAndBillingItemDetails entities.",
@@ -147319,8 +147005,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingItemDetailsByID_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectTimeAndBillingItemDetailsByID entity.",
@@ -147414,8 +147099,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingProjectDetails_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectTimeAndBillingProjectDetails entities.",
@@ -147509,8 +147193,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingProjectDetailsByID_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadProjectTimeAndBillingProjectDetailsByID entity.",
@@ -147593,8 +147276,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadProjectTimeAndBillingRecentProjects_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of ReadProjectTimeAndBillingRecentProjects entities.",
@@ -147672,8 +147354,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/ReadSyncSyncSyncTimestamp_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The ReadSyncSyncSyncTimestamp entity.",
@@ -147965,8 +147646,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesEntrySalesEntries_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesEntrySalesEntries entities.",
@@ -148563,8 +148243,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesEntrySalesEntryLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesEntrySalesEntryLines entities.",
@@ -149046,8 +148725,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesInvoiceInvoiceSalesOrders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesInvoiceInvoiceSalesOrders entities.",
@@ -149239,8 +148917,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesInvoiceLayouts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesInvoiceLayouts entities.",
@@ -149402,8 +149079,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesInvoicePrintedSalesInvoices_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesInvoicePrintedSalesInvoices entities.",
@@ -149830,8 +149506,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesInvoiceSalesInvoiceLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesInvoiceSalesInvoiceLines entities.",
@@ -150293,8 +149968,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesInvoiceSalesInvoiceOrderChargeLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesInvoiceSalesInvoiceOrderChargeLines entities.",
@@ -150837,8 +150511,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesInvoiceSalesInvoices_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesInvoiceSalesInvoices entities.",
@@ -151308,8 +150981,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesInvoiceSalesOrderID_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The SalesInvoiceSalesOrderID entity.",
@@ -151498,8 +151170,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderCharges_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesOrderCharges entities.",
@@ -151586,8 +151257,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderCompleteSalesOrder_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The SalesOrderCompleteSalesOrder entity.",
@@ -151724,8 +151394,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderCompleteSalesOrderLine_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The SalesOrderCompleteSalesOrderLine entity.",
@@ -151969,8 +151638,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderDropShipmentLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesOrderDropShipmentLines entities.",
@@ -152256,8 +151924,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderDropShipments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesOrderDropShipments entities.",
@@ -152544,8 +152211,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderGoodsDeliveries_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesOrderGoodsDeliveries entities.",
@@ -152828,8 +152494,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderGoodsDeliveryLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesOrderGoodsDeliveryLines entities.",
@@ -153151,8 +152816,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderPlannedSalesReturnLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesOrderPlannedSalesReturnLines entities.",
@@ -153479,8 +153143,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderPlannedSalesReturns_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesOrderPlannedSalesReturns entities.",
@@ -153727,8 +153390,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderPrintedSalesOrders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesOrderPrintedSalesOrders entities.",
@@ -154106,8 +153768,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderSalesOrderLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesOrderSalesOrderLines entities.",
@@ -154540,8 +154201,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderSalesOrderOrderChargeLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesOrderSalesOrderOrderChargeLines entities.",
@@ -155052,8 +154712,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesOrderSalesOrders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesOrderSalesOrders entities.",
@@ -155509,8 +155168,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesSalesChannels_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesSalesChannels entities.",
@@ -155726,8 +155384,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesSalesPriceListLinkedAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesSalesPriceListLinkedAccounts entities.",
@@ -155863,8 +155520,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesSalesPriceListPeriods_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesSalesPriceListPeriods entities.",
@@ -156003,8 +155659,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesSalesPriceLists_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesSalesPriceLists entities.",
@@ -156216,8 +155871,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesSalesPriceListVolumeDiscounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesSalesPriceListVolumeDiscounts entities.",
@@ -156376,8 +156030,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SalesShippingMethods_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SalesShippingMethods entities.",
@@ -156569,8 +156222,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SubscriptionSubscriptionLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SubscriptionSubscriptionLines entities.",
@@ -156870,8 +156522,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SubscriptionSubscriptionLineTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SubscriptionSubscriptionLineTypes entities.",
@@ -157003,8 +156654,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SubscriptionSubscriptionReasonCodes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SubscriptionSubscriptionReasonCodes entities.",
@@ -157133,8 +156783,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SubscriptionSubscriptionRestrictionEmployees_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SubscriptionSubscriptionRestrictionEmployees entities.",
@@ -157318,8 +156967,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SubscriptionSubscriptionRestrictionItems_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SubscriptionSubscriptionRestrictionItems entities.",
@@ -157636,8 +157284,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SubscriptionSubscriptions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SubscriptionSubscriptions entities.",
@@ -158153,8 +157800,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SubscriptionSubscriptionTypes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SubscriptionSubscriptionTypes entities.",
@@ -158704,8 +158350,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncCashflowPaymentTerms_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncCashflowPaymentTerms entities.",
@@ -159655,8 +159300,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncCRMAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncCRMAccounts entities.",
@@ -160013,8 +159657,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncCRMAddresses_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncCRMAddresses entities.",
@@ -160457,8 +160100,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncCRMContacts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncCRMContacts entities.",
@@ -160892,8 +160534,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncCRMQuotationHeaders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncCRMQuotationHeaders entities.",
@@ -161162,8 +160803,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncCRMQuotationLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncCRMQuotationLines entities.",
@@ -161266,8 +160906,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncDeleted_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The SyncDeleted entity.",
@@ -161371,8 +161010,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncDocumentsDocumentAttachments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncDocumentsDocumentAttachments entities.",
@@ -161724,8 +161362,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncDocumentsDocuments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncDocumentsDocuments entities.",
@@ -162032,8 +161669,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncFinancialGLAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncFinancialGLAccounts entities.",
@@ -162214,8 +161850,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncFinancialGLClassifications_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncFinancialGLClassifications entities.",
@@ -162675,8 +162310,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncFinancialTransactionLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncFinancialTransactionLines entities.",
@@ -162851,8 +162485,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncHRMAbsenceRegistrations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncHRMAbsenceRegistrations entities.",
@@ -163036,8 +162669,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncHRMAbsenceRegistrationTransactions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncHRMAbsenceRegistrationTransactions entities.",
@@ -163210,8 +162842,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncHRMLeaveAbsenceHoursByDay_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The SyncHRMLeaveAbsenceHoursByDay entity.",
@@ -163385,8 +163016,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncHRMLeaveBuildUpRegistrations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncHRMLeaveBuildUpRegistrations entities.",
@@ -163590,8 +163220,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncHRMLeaveRegistrations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncHRMLeaveRegistrations entities.",
@@ -163795,8 +163424,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncHRMScheduleEntries_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncHRMScheduleEntries entities.",
@@ -164008,8 +163636,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncHRMSchedules_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncHRMSchedules entities.",
@@ -164190,8 +163817,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncInventoryItemStorageLocations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncInventoryItemStorageLocations entities.",
@@ -164414,8 +164040,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncInventoryItemWarehouses_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncInventoryItemWarehouses entities.",
@@ -164580,8 +164205,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncInventorySerialBatchNumbers_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncInventorySerialBatchNumbers entities.",
@@ -164744,8 +164368,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncInventoryStockPositions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncInventoryStockPositions entities.",
@@ -165016,8 +164639,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncInventoryStockSerialBatchNumbers_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncInventoryStockSerialBatchNumbers entities.",
@@ -165178,8 +164800,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncInventoryStorageLocationStockPositions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncInventoryStorageLocationStockPositions entities.",
@@ -165828,8 +165449,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncLogisticsItems_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncLogisticsItems entities.",
@@ -166029,8 +165649,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncLogisticsPurchaseItemPrices_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncLogisticsPurchaseItemPrices entities.",
@@ -166247,8 +165866,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncLogisticsSalesItemPrices_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncLogisticsSalesItemPrices entities.",
@@ -166532,8 +166150,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncLogisticsSupplierItem_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The SyncLogisticsSupplierItem entity.",
@@ -166779,8 +166396,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncManufacturingBillOfMaterialMaterials_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncManufacturingBillOfMaterialMaterials entities.",
@@ -166988,8 +166604,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncManufacturingBillOfMaterialVersions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncManufacturingBillOfMaterialVersions entities.",
@@ -167237,8 +166852,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncManufacturingMaterialIssues_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncManufacturingMaterialIssues entities.",
@@ -167495,8 +167109,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncManufacturingShopOrderMaterialPlans_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncManufacturingShopOrderMaterialPlans entities.",
@@ -167663,8 +167276,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncManufacturingShopOrderPurchasePlanning_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The SyncManufacturingShopOrderPurchasePlanning entity.",
@@ -168001,8 +167613,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncManufacturingShopOrderRoutingStepPlans_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncManufacturingShopOrderRoutingStepPlans entities.",
@@ -168411,8 +168022,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncManufacturingShopOrders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncManufacturingShopOrders entities.",
@@ -168573,8 +168183,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncManufacturingShopOrderSubOrders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncManufacturingShopOrderSubOrders entities.",
@@ -168725,8 +168334,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncPayrollBankAccounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncPayrollBankAccounts entities.",
@@ -169145,8 +168753,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncPayrollEmployees_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncPayrollEmployees entities.",
@@ -169311,8 +168918,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncPayrollEmploymentCLAs_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncPayrollEmploymentCLAs entities.",
@@ -169540,8 +169146,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncPayrollEmploymentContracts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncPayrollEmploymentContracts entities.",
@@ -169750,8 +169355,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncPayrollEmploymentOrganizations_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncPayrollEmploymentOrganizations entities.",
@@ -169927,8 +169531,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncPayrollEmployments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncPayrollEmployments entities.",
@@ -170235,8 +169838,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncPayrollEmploymentSalaries_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncPayrollEmploymentSalaries entities.",
@@ -170431,8 +170033,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncPayrollEmploymentTaxAuthoritiesGeneral_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The SyncPayrollEmploymentTaxAuthoritiesGeneral entity.",
@@ -170700,8 +170301,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncProjectProjectPlanning_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The SyncProjectProjectPlanning entity.",
@@ -171109,8 +170709,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncProjectProjects_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncProjectProjects entities.",
@@ -171417,8 +171016,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncProjectProjectWBS_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The SyncProjectProjectWBS entity.",
@@ -171725,8 +171323,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncProjectTimeCostTransactions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncProjectTimeCostTransactions entities.",
@@ -172363,8 +171960,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncPurchaseOrderPurchaseOrders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncPurchaseOrderPurchaseOrders entities.",
@@ -173054,8 +172650,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncSalesInvoiceSalesInvoices_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncSalesInvoiceSalesInvoices entities.",
@@ -173278,8 +172873,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncSalesOrderGoodsDeliveries_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncSalesOrderGoodsDeliveries entities.",
@@ -173505,8 +173099,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncSalesOrderGoodsDeliveryLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncSalesOrderGoodsDeliveryLines entities.",
@@ -173997,8 +173590,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncSalesOrderSalesOrderHeaders_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncSalesOrderSalesOrderHeaders entities.",
@@ -174398,8 +173990,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncSalesOrderSalesOrderLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncSalesOrderSalesOrderLines entities.",
@@ -174612,8 +174203,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncSalesSalesPriceListVolumeDiscounts_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncSalesSalesPriceListVolumeDiscounts entities.",
@@ -174839,8 +174429,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncSubscriptionSubscriptionLines_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncSubscriptionSubscriptionLines entities.",
@@ -175138,8 +174727,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SyncSubscriptionSubscriptions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SyncSubscriptionSubscriptions entities.",
@@ -175267,8 +174855,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SystemSystemAccountantInfo_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The SystemSystemAccountantInfo entity.",
@@ -175643,8 +175230,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SystemSystemAllDivisions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SystemSystemAllDivisions entities.",
@@ -175716,8 +175302,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SystemSystemAvailableFeatures_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SystemSystemAvailableFeatures entities.",
@@ -176035,8 +175620,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SystemSystemDivisions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SystemSystemDivisions entities.",
@@ -176427,8 +176011,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SystemSystemGetMostRecentlyUsedDivisions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of SystemSystemGetMostRecentlyUsedDivisions entities.",
@@ -176693,8 +176276,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/SystemSystemMe_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "The SystemSystemMe entity.",
@@ -176752,8 +176334,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/UsersUserHasRights_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of UsersUserHasRights entities.",
@@ -176889,8 +176470,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/UsersUserRoles_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of UsersUserRoles entities.",
@@ -177032,8 +176612,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/UsersUserRolesPerDivision_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of UsersUserRolesPerDivision entities.",
@@ -177294,8 +176873,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/VATVATCodes_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of VATVATCodes entities.",
@@ -177715,8 +177293,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/VATVatPercentages_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of VATVatPercentages entities.",
@@ -177825,8 +177402,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/WebhooksWebhookSubscriptions_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of WebhooksWebhookSubscriptions entities.",
@@ -178013,8 +177589,7 @@
               "mapping": {
                 "_Results": "#/components/schemas/WorkflowRequestAttachments_Results"
               }
-            },
-            "readOnly": true
+            }
           }
         },
         "description": "A collection of WorkflowRequestAttachments entities.",

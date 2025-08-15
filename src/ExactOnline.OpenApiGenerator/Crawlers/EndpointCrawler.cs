@@ -339,7 +339,6 @@ internal class EndpointCrawler
                     {
                         { "d", new OpenApiSchema
                             {
-                                ReadOnly = true,
                                 OneOf =
                                 [
                                     arrayResponseRef,

@@ -20,4 +20,8 @@
     <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.19.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Extensions\RequestBuilders\" />
+  </ItemGroup>
+
 </Project>

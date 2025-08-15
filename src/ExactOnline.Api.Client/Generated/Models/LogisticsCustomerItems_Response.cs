@@ -16,10 +16,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The d property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.LogisticsCustomerItems_Response.LogisticsCustomerItems_Response_d? D { get; private set; }
+        public global::ExactOnline.Api.Client.Models.LogisticsCustomerItems_Response.LogisticsCustomerItems_Response_d? D { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.LogisticsCustomerItems_Response.LogisticsCustomerItems_Response_d D { get; private set; }
+        public global::ExactOnline.Api.Client.Models.LogisticsCustomerItems_Response.LogisticsCustomerItems_Response_d D { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +49,7 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.LogisticsCustomerItems_Response.LogisticsCustomerItems_Response_d>("d", D);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::ExactOnline.Api.Client.Models.LogisticsCustomerItems_Results"/>, List&lt;global::ExactOnline.Api.Client.Models.LogisticsCustomerItems&gt;
