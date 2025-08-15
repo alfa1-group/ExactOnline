@@ -12,7 +12,7 @@ namespace ExactOnline.Api.Client.Models
     public partial class ReadFinancialReceivablesListByAgeGroup_Results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The __next property</summary>
+        /// <summary>This property contains a link to request the next set of records including the option which are passed in the initial request with a $skiptoken option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Next { get; private set; }

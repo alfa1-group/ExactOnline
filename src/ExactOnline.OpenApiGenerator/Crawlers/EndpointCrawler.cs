@@ -322,7 +322,7 @@ internal class EndpointCrawler
                     Properties = new Dictionary<string, IOpenApiSchema>
                     {
                         { "results", arrayResponseRef },
-                        { "__next", new OpenApiSchema { Type = JsonSchemaType.String, ReadOnly = true } }
+                        { "__next", new OpenApiSchema { Type = JsonSchemaType.String, ReadOnly = true, Description = "This property contains a link to request the next set of records including the option which are passed in the initial request with a $skiptoken option." } }
                     },
                     Required = new HashSet<string> { "results" }
                 };
@@ -577,23 +577,34 @@ internal class EndpointCrawler
             });
         }
 
-        if (isSyncInterface)
+        if (parameters.All(p => p.Name != "$skip"))
         {
-            if (parameters.All(p => p.Name != "$skiptoken"))
+            parameters.Add(new OpenApiParameter
             {
-                parameters.Add(new OpenApiParameter
+                Name = "$skip",
+                In = ParameterLocation.Query,
+                Required = false,
+                Schema = new OpenApiSchema
                 {
-                    Name = "$skiptoken",
-                    In = ParameterLocation.Query,
-                    Required = false,
-                    Schema = new OpenApiSchema
-                    {
-                        Type = JsonSchemaType.Integer,
-                        Format = "int64"
-                    },
-                    Description = "Number of records to skip, e.g., `10`"
-                });
-            }
+                    Type = JsonSchemaType.Integer
+                },
+                Description = "Number of records to skip, e.g., `10`"
+            });
+        }
+
+        if (parameters.All(p => p.Name != "$skiptoken"))
+        {
+            parameters.Add(new OpenApiParameter
+            {
+                Name = "$skiptoken",
+                In = ParameterLocation.Query,
+                Required = false,
+                Schema = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.String
+                },
+                Description = "A server-generated token used to fetch the next page of results in a paginated query."
+            });
         }
 
         if (parameters.All(p => p.Name != "$orderby"))
@@ -701,19 +712,6 @@ internal class EndpointCrawler
 
             EdmTypeParser.TryParse(edmType, paramName, description: null, isSyncInterface: false, out var schema);
 
-            //var description = paramName switch
-            //{
-            //    "$filter" => "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
-            //    "$select" => "Comma-separated list of fields to return, e.g., `ID`",
-            //    "$top" => "Number of records to return, e.g., `100`",
-            //    "$skiptoken" => "Number of records to skip, e.g., `10`",
-            //    "$orderby" => "Order by field, e.g., `ID desc`",
-            //    "$count" => "Include count of items, e.g., `true`",
-            //    "$inlinecount" => "Include inline count, e.g., `allpages`",
-            //    "$expand" => "Expand related entities, e.g., `ParentEntity`",
-            //    _ => $"Query parameter of type {edmType}"
-            //};
-
             var parameter = new OpenApiParameter
             {
                 Name = paramName,
@@ -722,8 +720,7 @@ internal class EndpointCrawler
                 Schema = new OpenApiSchema
                 {
                     Type = schema?.Type ?? JsonSchemaType.String
-                },
-                // Description = description
+                }
             };
 
             parameters.Add(parameter);

@@ -160,13 +160,9 @@ await RunAsync(async () =>
 
 await RunAsync(async () =>
 {
-    Console.WriteLine("Getting Sync.Project.TimeCostTransactions - select & top");
-    var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAsync(p =>
-    {
-        p.QueryParameters.Top = 2;
-        p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransactions>.Build(t => t.ID, t => t.Timestamp, t => t.Type, t => t.Created);
-        p.QueryParameters.Filter = syncFilter;
-    }).AsItems();
+    Console.WriteLine("Getting Sync.Project.TimeCostTransactions - select WithUrl");
+    var url = "https://start.exactonline.nl/api/v1/3137281/sync/project/TimeCostTransactions?$filter=(Timestamp%20ge%202)&$select=Timestamp,%20ID,%20Type,%20Created&$skiptoken=13419952052L";
+    var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.WithUrl(url).GetAsync().AsItems();
 
     foreach (var tt in list)
     {
@@ -178,10 +174,10 @@ await RunAsync(async () =>
 
 await RunAsync(async () =>
 {
-    Console.WriteLine("Getting Sync.Project.TimeCostTransactions - skiptoken");
+    Console.WriteLine("Getting Sync.Project.TimeCostTransactions - select & top");
     var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAsync(p =>
     {
-        p.QueryParameters.Skiptoken = 2;
+        p.QueryParameters.Top = 2;
         p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransactions>.Build(t => t.ID, t => t.Timestamp, t => t.Type, t => t.Created);
         p.QueryParameters.Filter = syncFilter;
     }).AsItems();

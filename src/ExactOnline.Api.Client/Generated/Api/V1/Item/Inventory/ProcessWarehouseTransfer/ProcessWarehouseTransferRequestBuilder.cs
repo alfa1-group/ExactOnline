@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessWarehouseTransfer
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProcessWarehouseTransferRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/inventory/ProcessWarehouseTransfer{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24top*}", pathParameters)
+        public ProcessWarehouseTransferRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/inventory/ProcessWarehouseTransfer{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessWarehouseTransfer
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProcessWarehouseTransferRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/inventory/ProcessWarehouseTransfer{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24top*}", rawUrl)
+        public ProcessWarehouseTransferRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/inventory/ProcessWarehouseTransfer{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", rawUrl)
         {
         }
         /// <summary>
@@ -193,6 +193,19 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessWarehouseTransfer
 #else
             [QueryParameter("%24select")]
             public string Select { get; set; }
+#endif
+            /// <summary>Number of records to skip, e.g., `10`</summary>
+            [QueryParameter("%24skip")]
+            public int? Skip { get; set; }
+            /// <summary>A server-generated token used to fetch the next page of results in a paginated query.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24skiptoken")]
+            public string? Skiptoken { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24skiptoken")]
+            public string Skiptoken { get; set; }
 #endif
             /// <summary>Number of records to return, e.g., `100`</summary>
             [QueryParameter("%24top")]
