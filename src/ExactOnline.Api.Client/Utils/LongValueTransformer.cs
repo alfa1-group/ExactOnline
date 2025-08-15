@@ -1,38 +1,36 @@
-﻿using System.Globalization;
+﻿namespace ExactOnline.Api.Client.Utils;
 
-namespace ExactOnline.Api.Client.Utils;
-
-internal static class LongValueTransformer
+public static class LongValueTransformer
 {
     /// <summary>
     /// If the value exceeds int.MaxValue, append "L" to indicate it's a long.
     /// </summary>
-    internal static string? ToString(long? value)
+    public static string? ToString(long? value)
     {
         if (value == null)
         {
             return null;
         }
 
-        return value > int.MaxValue ? $"{value}L" : value.Value.ToString(CultureInfo.InvariantCulture);
+        return value > int.MaxValue ? $"{value}L" : $"{value}";
     }
 
     /// <summary>
     /// Parses a string value to a long. If the string ends with "L", it is removed before parsing.
     /// </summary>
-    internal static bool TryParse(string? value, out long valueAsLong)
+    public static bool TryParse(string? str, out long value)
     {
-        if (value == null)
+        if (str == null)
         {
-            valueAsLong = default;
+            value = default;
             return false;
         }
 
-        if (value.EndsWith("L", StringComparison.OrdinalIgnoreCase))
+        if (str.EndsWith("L", StringComparison.OrdinalIgnoreCase))
         {
-            value = value[..^1];
+            str = str[..^1];
         }
 
-        return long.TryParse(value, out valueAsLong);
+        return long.TryParse(str, out value);
     }
 }
