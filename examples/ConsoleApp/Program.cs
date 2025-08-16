@@ -126,15 +126,31 @@ var projectTimeTransaction = await RunAsync(async () =>
 
 await RunAsync(async () =>
 {
-    Console.WriteLine("Updating Project.TimeTransaction with ID {0}", projectTimeTransaction?.ID);
-    await client.Api.V1[division].Project.TimeTransactionsWithId(projectTimeTransaction?.ID).PutAsync(new ProjectTimeTransactionsPut
+    Console.WriteLine("Getting ProjectTimeTransactions - GetAll");
+    var list = await client.Api.V1[division].Project.TimeTransactions.GetAllAsync(p =>
     {
-        Notes = "Updated via API at " + TimeProvider.System.GetUtcNow().ToString("o")
-    });
+        p.QueryParameters.Top = 70;
+        p.QueryParameters.Filter = FilterBuilder<ProjectTimeTransactions>.Build(t => t.Created >= TimeProvider.System.GetUtcNow().AddDays(-30));
+    }).AsItems();
 
-    return true;
+    foreach (var tt in list)
+    {
+        Console.WriteLine($"TimeTransaction ID: {tt.ID}, Created: {tt.Created}");
+    }
+
+    return list.FirstOrDefault();
 });
 
+//await RunAsync(async () =>
+//{
+//    Console.WriteLine("Updating Project.TimeTransaction with ID {0}", projectTimeTransaction?.ID);
+//    await client.Api.V1[division].Project.TimeTransactionsWithId(projectTimeTransaction?.ID).PutAsync(new ProjectTimeTransactionsPut
+//    {
+//        Notes = "Updated via API at " + TimeProvider.System.GetUtcNow().ToString("o")
+//    });
+
+//    return true;
+//});
 
 await RunAsync(async () =>
 {
@@ -189,6 +205,7 @@ await RunAsync(async () =>
     Console.WriteLine("Getting Sync.Project.TimeCostTransactions - select - ALL");
     var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAllAsync(p =>
     {
+        p.QueryParameters.Top = 1100;
         p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransactions>.Build(t => t.ID, t => t.Timestamp, t => t.Type, t => t.Created);
         p.QueryParameters.Filter = syncFilter;
     }).AsItems();
