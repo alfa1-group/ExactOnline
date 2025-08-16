@@ -4,7 +4,7 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class PurchasePurchaseInvoiceLinesPost_ResponseExtensions
 {
-    public static async Task<PurchasePurchaseInvoiceLines?> AsItem(this Task<PurchasePurchaseInvoiceLinesPost_Response?> task)
+    public static async Task<PurchasePurchaseInvoiceLinesPost?> AsItem(this Task<PurchasePurchaseInvoiceLinesPost_Response?> task)
     {
         return (await task)?.D;
     }

@@ -3,6 +3,7 @@
 using ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntries;
 using ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntriesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntryLines;
+using ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntryLinesWithId;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -52,6 +53,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntriesWithId.GeneralJournalEntriesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to create and read general entries not created in bank, cash, purchase or sales journal.  Journals for general journal entries can be set up with and without VAT functionality (VAT checkbox in Journals). Specifying any VAT related property in a POST request is only useful if supported by the general journal of the entry.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntryLinesWithId.GeneralJournalEntryLinesWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the GeneralJournalEntryGeneralJournalEntryLines</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntryLinesWithId.GeneralJournalEntryLinesWithIdRequestBuilder GeneralJournalEntryLinesWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntryLinesWithId.GeneralJournalEntryLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using ExactOnline.Api.Client;
+using ExactOnline.Api.Client.Authentication.Options;
 using ExactOnline.Api.Client.Builders.Filter;
 using ExactOnline.Api.Client.Builders.OrderBy;
 using ExactOnline.Api.Client.Builders.Select;
 using ExactOnline.Api.Client.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.Kiota.Abstractions;
 
 var builder = Host.CreateDefaultBuilder(args)
@@ -19,6 +21,10 @@ var builder = Host.CreateDefaultBuilder(args)
 var host = builder.Build();
 
 using var scope = host.Services.CreateScope();
+
+var options = scope.ServiceProvider.GetRequiredService<IOptions<ExactOnlineOptions>>();
+bool isDevelopment = !options.Value.ClientId.StartsWith("e4a2");
+
 var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>();
 
 var s1 = SelectBuilder<SystemSystemMe>.Build(s => s.UserID, s => s.CurrentDivision, s => s.Email);
@@ -74,6 +80,12 @@ await RunAsync(async () =>
 
 await RunAsync(async () =>
 {
+    if (!isDevelopment)
+    {
+        Console.WriteLine("Skipping WebHook tests in production environment.");
+        return true;
+    }
+
     Console.WriteLine("Post WebHook");
     var postResult = await client.Api.V1[division].Webhooks.WebhookSubscriptions.PostAsync(new WebhooksWebhookSubscriptionsPost
     {
@@ -89,20 +101,25 @@ await RunAsync(async () =>
 await RunAsync(async () =>
 {
     var webhookSubscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync(w =>
-        {
-            w.QueryParameters.Top = 100;
-            w.QueryParameters.Orderby = orderBy;
-        })
-        .AsItems();
+    {
+        w.QueryParameters.Top = 100;
+        w.QueryParameters.Orderby = orderBy;
+    }).AsItems();
+
     if (!webhookSubscriptions.Any())
     {
         Console.WriteLine("No WebhookSubscriptions found.");
+    }
+    else
+    {
+        var firstById = await client.Api.V1[division].Webhooks.WebhookSubscriptionsWithId(webhookSubscriptions.First().ID).GetAsync().AsItem();
+        Console.WriteLine($"Subscription ID: {firstById?.ID}, CallbackURL: {firstById?.CallbackURL}");
     }
 
     foreach (var webhookSubscription in webhookSubscriptions)
     {
         Console.WriteLine($"Subscription ID: {webhookSubscription.ID}, CallbackURL: {webhookSubscription.CallbackURL}");
-    }
+    }    
 
     return true;
 });
@@ -141,16 +158,22 @@ await RunAsync(async () =>
     return list.FirstOrDefault();
 });
 
-//await RunAsync(async () =>
-//{
-//    Console.WriteLine("Updating Project.TimeTransaction with ID {0}", projectTimeTransaction?.ID);
-//    await client.Api.V1[division].Project.TimeTransactionsWithId(projectTimeTransaction?.ID).PutAsync(new ProjectTimeTransactionsPut
-//    {
-//        Notes = "Updated via API at " + TimeProvider.System.GetUtcNow().ToString("o")
-//    });
+await RunAsync(async () =>
+{
+    if (!isDevelopment)
+    {
+        Console.WriteLine("Skipping Project.TimeTransaction tests in production environment.");
+        return false;
+    }
 
-//    return true;
-//});
+    Console.WriteLine("Updating Project.TimeTransaction with ID {0}", projectTimeTransaction?.ID);
+    await client.Api.V1[division].Project.TimeTransactionsWithId(projectTimeTransaction?.ID).PutAsync(new ProjectTimeTransactionsPut
+    {
+        Notes = "Updated via API at " + TimeProvider.System.GetUtcNow().ToString("o")
+    });
+
+    return true;
+});
 
 await RunAsync(async () =>
 {

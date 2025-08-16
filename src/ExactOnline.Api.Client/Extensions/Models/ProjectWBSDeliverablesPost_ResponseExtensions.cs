@@ -4,7 +4,7 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ProjectWBSDeliverablesPost_ResponseExtensions
 {
-    public static async Task<ProjectWBSDeliverables?> AsItem(this Task<ProjectWBSDeliverablesPost_Response?> task)
+    public static async Task<ProjectWBSDeliverablesPost?> AsItem(this Task<ProjectWBSDeliverablesPost_Response?> task)
     {
         return (await task)?.D;
     }

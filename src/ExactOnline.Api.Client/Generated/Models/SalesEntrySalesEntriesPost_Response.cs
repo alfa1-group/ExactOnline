@@ -16,10 +16,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The d property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.SalesEntrySalesEntries? D { get; set; }
+        public global::ExactOnline.Api.Client.Models.SalesEntrySalesEntriesPost? D { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.SalesEntrySalesEntries D { get; set; }
+        public global::ExactOnline.Api.Client.Models.SalesEntrySalesEntriesPost D { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "d", n => { D = n.GetObjectValue<global::ExactOnline.Api.Client.Models.SalesEntrySalesEntries>(global::ExactOnline.Api.Client.Models.SalesEntrySalesEntries.CreateFromDiscriminatorValue); } },
+                { "d", n => { D = n.GetObjectValue<global::ExactOnline.Api.Client.Models.SalesEntrySalesEntriesPost>(global::ExactOnline.Api.Client.Models.SalesEntrySalesEntriesPost.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.SalesEntrySalesEntries>("d", D);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.SalesEntrySalesEntriesPost>("d", D);
         }
     }
 }

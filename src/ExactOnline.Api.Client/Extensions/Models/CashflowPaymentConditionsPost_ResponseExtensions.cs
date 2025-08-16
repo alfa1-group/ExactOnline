@@ -4,7 +4,7 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class CashflowPaymentConditionsPost_ResponseExtensions
 {
-    public static async Task<CashflowPaymentConditions?> AsItem(this Task<CashflowPaymentConditionsPost_Response?> task)
+    public static async Task<CashflowPaymentConditionsPost?> AsItem(this Task<CashflowPaymentConditionsPost_Response?> task)
     {
         return (await task)?.D;
     }

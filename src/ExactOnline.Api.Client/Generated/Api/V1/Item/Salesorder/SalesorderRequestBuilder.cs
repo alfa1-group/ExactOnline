@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrder;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderLine;
+using ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderLineWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLines;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipments;
@@ -15,6 +17,7 @@ using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnLinesWithI
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturns;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrders;
+using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderLines;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderLinesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderOrderChargeLines;
@@ -96,6 +99,26 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrders.SalesOrdersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
+        /// Use this endpoint to : • Complete a sales order line for - Goods delivery and/or - Sales invoiceYou can no longer perform the remaining delivery and invoice the outstanding amount for the sales order line.Once completed, this action cannot be undone.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderLineWithId.CompleteSalesOrderLineWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the SalesOrderCompleteSalesOrderLine</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderLineWithId.CompleteSalesOrderLineWithIdRequestBuilder CompleteSalesOrderLineWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderLineWithId.CompleteSalesOrderLineWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to complete a sales order either the remaining goods delivery, the outstanding invoice or both. The sales order will be completed without further goods deliveries, invoice or both.Once completed, this action cannot be undone.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithId.CompleteSalesOrderWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the SalesOrderCompleteSalesOrder</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithId.CompleteSalesOrderWithIdRequestBuilder CompleteSalesOrderWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithId.CompleteSalesOrderWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesorderRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -170,6 +193,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnsWithId.PlannedSalesReturnsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to print or send a sales order document.The document is created through the given &apos;OrderId&apos;, and is sent to the respective receiver based on the given &apos;SendEmailToCustomer&apos; and &apos;SenderEmailAddress&apos;.An existing sales order entry must be located to create a sales order document. When you have created a sales order, you can print it for internal use or to send it to a customer. You cannot print sales orders that have been cancelled.For more information about the sales order functionality in Exact Online, see Print sales orders.To view an example of the business use of this endpoint, see Rest API - Business example API sales order.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithId.PrintedSalesOrdersWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the SalesOrderPrintedSalesOrders</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithId.PrintedSalesOrdersWithIdRequestBuilder PrintedSalesOrdersWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithId.PrintedSalesOrdersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// Use this endpoint to create, read, update and delete sales order lines.Sales order lines support trade-in lines. For more details, please refer description under properties QuantitySales orders describe the items that you plan to sell to your customers.For more information about the sales order functionality in Exact Online, see About sales orders.To view an example of the business use of this endpoint, see Rest API - Business example API sales order.

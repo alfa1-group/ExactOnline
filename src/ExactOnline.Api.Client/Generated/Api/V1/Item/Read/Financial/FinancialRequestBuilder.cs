@@ -2,27 +2,50 @@
 #pragma warning disable CS0618
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverview;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewByAccount;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewByAccountWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesList;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListByAgeGroup;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListByAgeGroupWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesList;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListByAgeGroup;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListByAgeGroupWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusByFinancialPeriod;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusByFinancialPeriodWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusList;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusListWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.OutstandingInvoicesOverview;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.OutstandingInvoicesOverviewWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesList;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccount;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountAndAgeGroup;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountAndAgeGroupWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAgeGroup;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAgeGroupWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ProfitLossOverview;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ProfitLossOverviewWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesList;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccount;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountAndAgeGroup;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountAndAgeGroupWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAgeGroup;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAgeGroupWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReportingBalanceByClassification;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReportingBalanceByClassificationWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.Returns;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReturnsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueList;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYear;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearAndStatus;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearAndStatusWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListWithId;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -153,6 +176,66 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearAndStatus.RevenueListByYearAndStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
+        /// Use this endpoint to get an overview of specific suppliers/customers outstanding items amount that is group by their age (e.g. How many days after creation).You can view this information in the Ageing Analysis Report - A/P, Ageing Analysis Report - A/R as well.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewByAccountWithId.AgingOverviewByAccountWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialAgingOverviewByAccount</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewByAccountWithId.AgingOverviewByAccountWithIdRequestBuilder AgingOverviewByAccountWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewByAccountWithId.AgingOverviewByAccountWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get an overview of your suppliers/customers outstanding items amount that is group by their age (e.g. How many days after creation).You can view this information in the Ageing Analysis Report - A/R, Ageing Analysis Report - A/P as well.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewWithId.AgingOverviewWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialAgingOverview</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewWithId.AgingOverviewWithIdRequestBuilder AgingOverviewWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewWithId.AgingOverviewWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get an overview of all your suppliers outstanding items amount in a specific age group.You can view this information in the Ageing Analysis Report - A/P as well.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListByAgeGroupWithId.AgingPayablesListByAgeGroupWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialAgingPayablesListByAgeGroup</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListByAgeGroupWithId.AgingPayablesListByAgeGroupWithIdRequestBuilder AgingPayablesListByAgeGroupWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListByAgeGroupWithId.AgingPayablesListByAgeGroupWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get an overview of all your suppliers outstanding items amount that is group by their age group.You can view this information in the Ageing Analysis Report - A/P as well.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListWithId.AgingPayablesListWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialAgingPayablesList</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListWithId.AgingPayablesListWithIdRequestBuilder AgingPayablesListWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListWithId.AgingPayablesListWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get an overview of all your customers outstanding items amount in a specific age group.You can view this information in the Ageing Analysis Report - A/R as well.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListByAgeGroupWithId.AgingReceivablesListByAgeGroupWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialAgingReceivablesListByAgeGroup</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListByAgeGroupWithId.AgingReceivablesListByAgeGroupWithIdRequestBuilder AgingReceivablesListByAgeGroupWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListByAgeGroupWithId.AgingReceivablesListByAgeGroupWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get an overview of all your customers outstanding items amount that is group by their age group.You can view this information in the Ageing Analysis Report - A/R as well.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListWithId.AgingReceivablesListWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialAgingReceivablesList</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListWithId.AgingReceivablesListWithIdRequestBuilder AgingReceivablesListWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListWithId.AgingReceivablesListWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.FinancialRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -167,6 +250,176 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public FinancialRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial", rawUrl)
         {
+        }
+        /// <summary>
+        /// Obsolete, please use JournalStatusList instead.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusByFinancialPeriodWithId.JournalStatusByFinancialPeriodWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialJournalStatusByFinancialPeriod</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusByFinancialPeriodWithId.JournalStatusByFinancialPeriodWithIdRequestBuilder JournalStatusByFinancialPeriodWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusByFinancialPeriodWithId.JournalStatusByFinancialPeriodWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// This resource will provide you information on the status of a Journal in a certain period. Are you interested in when a status of a Journal changes? You can get notifications via webhooks.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusListWithId.JournalStatusListWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialJournalStatusList</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusListWithId.JournalStatusListWithIdRequestBuilder JournalStatusListWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusListWithId.JournalStatusListWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get an overall stastictic of your Suppliers or Customers outstanding items. From this API, you can know1. The total number of invoices and the amount that needs to be paid2. The total number of invoices and the amount that needs to be collected3. The total number of overdue invoices and the  amount that needs to be paid4. The total number of overdue invoices and the amount that needs to be collected
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.OutstandingInvoicesOverviewWithId.OutstandingInvoicesOverviewWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialOutstandingInvoicesOverview</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.OutstandingInvoicesOverviewWithId.OutstandingInvoicesOverviewWithIdRequestBuilder OutstandingInvoicesOverviewWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.OutstandingInvoicesOverviewWithId.OutstandingInvoicesOverviewWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get a specific suppliers payment terms information that falls under a specific age group. Payment term are created when an purchase invoice is created or when money is paid to the supplier.Below are the values for the age group 1 = for invoice that age between 0-30 days2 = for invoice that age between 31-60 days3 = for invoice that age between 61-90 days4 = for invoice that age more than 90 daysYou can view this information in the Outstanding items report, Ageing Analysis Report as well.For this function to work correctly, you must supply all parameters.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountAndAgeGroupWithId.PayablesListByAccountAndAgeGroupWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialPayablesListByAccountAndAgeGroup</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountAndAgeGroupWithId.PayablesListByAccountAndAgeGroupWithIdRequestBuilder PayablesListByAccountAndAgeGroupWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountAndAgeGroupWithId.PayablesListByAccountAndAgeGroupWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get a specific suppliers payment terms information. Payment term are created when an purchase invoice is created or when money is paid to the supplier. You can view this information in the Outstanding items report as well.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountWithId.PayablesListByAccountWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialPayablesListByAccount</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountWithId.PayablesListByAccountWithIdRequestBuilder PayablesListByAccountWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountWithId.PayablesListByAccountWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get all your suppliers payment terms information that falls under a specific age group. Payment term are created when an purchase invoice is created or when money is paid to the supplier.Below are the values for the age group 1 = for invoice that age between 0-30 days2 = for invoice that age between 31-60 days 3 = for invoice that age between 61-90 days4 = for invoice that age more than 90 daysYou can view this information in the Outstanding items report, Ageing Analysis Report as well.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAgeGroupWithId.PayablesListByAgeGroupWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialPayablesListByAgeGroup</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAgeGroupWithId.PayablesListByAgeGroupWithIdRequestBuilder PayablesListByAgeGroupWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAgeGroupWithId.PayablesListByAgeGroupWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get all your suppliers payment terms information. Payment term are created when an purchase invoice is created or when money is paid to the supplier.You can view this information in the Outstanding items report as well.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListWithId.PayablesListWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialPayablesList</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListWithId.PayablesListWithIdRequestBuilder PayablesListWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListWithId.PayablesListWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint if you want to know the financial result of the current and previous year. The current period is determined by checking the date of the endpoint execution against the Financial Year/Period setup.  E.g. Date of Endpoint execution = 24-oct-2019. In your administration, the financial year 2019 period 10 has the following setup of 01-10-2019 till 31-10-2019. Current year is 2019,  current period is 10. Previous year is 2018. previous period is 10. Only P&amp;amp;L G/L Accounts are considered for this endpoint. Costs are balances of all G/L Account of type Costs. Revenue are balances of all G/L Account of type Revenue. Results are calculated by subtracting cost from revenue.  For more information about profit and loss, kindly refer to the following help file Balance Sheet/Profit &amp;amp; Loss.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ProfitLossOverviewWithId.ProfitLossOverviewWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialProfitLossOverview</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ProfitLossOverviewWithId.ProfitLossOverviewWithIdRequestBuilder ProfitLossOverviewWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ProfitLossOverviewWithId.ProfitLossOverviewWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get a specific customers payment terms information that falls under a specific age group. Payment term are created when an sales invoice is created or when money is collected from the customer.Below are the values for the age group1 = for invoice that age between 0-30 days2 = for invoice that age between 31-60 days3 = for invoice that age between 61-90 days4 = for invoice that age more than 90 daysYou can view this information in the Outstanding items report, Ageing analysis report as well.For this function to work correctly, you must supply all parameters.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountAndAgeGroupWithId.ReceivablesListByAccountAndAgeGroupWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialReceivablesListByAccountAndAgeGroup</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountAndAgeGroupWithId.ReceivablesListByAccountAndAgeGroupWithIdRequestBuilder ReceivablesListByAccountAndAgeGroupWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountAndAgeGroupWithId.ReceivablesListByAccountAndAgeGroupWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get a specifics customers payment terms information. Payment term are created when an sales invoice is created or when money is collected from the customer.You can view this information in the Outstanding items report as well.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountWithId.ReceivablesListByAccountWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialReceivablesListByAccount</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountWithId.ReceivablesListByAccountWithIdRequestBuilder ReceivablesListByAccountWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountWithId.ReceivablesListByAccountWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get all your customers payment terms information that falls under a specific age group. Payment term are created when an sales invoice is created or when money is collected from the customer.Below are the values for the age group1 = for invoice that age between 0-30 days2 = for invoice that age between 31-60 days3 = for invoice that age between 61-90 days4 = for invoice that age more than 90 daysYou can view this information in the Outstanding items report, Ageing analysis report as well.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAgeGroupWithId.ReceivablesListByAgeGroupWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialReceivablesListByAgeGroup</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAgeGroupWithId.ReceivablesListByAgeGroupWithIdRequestBuilder ReceivablesListByAgeGroupWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAgeGroupWithId.ReceivablesListByAgeGroupWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get all your customers payment terms information. Payment term are created when an sales invoice is created or when money is collected from the customer.You can view this information in the Outstanding items report as well.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListWithId.ReceivablesListWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialReceivablesList</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListWithId.ReceivablesListWithIdRequestBuilder ReceivablesListWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListWithId.ReceivablesListWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// This service returns summarized data of financial transactions by classification. It&apos;s intended for reporting balances and period totals. The summarized amounts are grouped by: Division, ReportingYear, ReportingPeriod, G/L account, Cost center, Cost unit, Type, Status.For this function to work correctly, you must supply all parameters.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReportingBalanceByClassificationWithId.ReportingBalanceByClassificationWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialReportingBalanceByClassification</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReportingBalanceByClassificationWithId.ReportingBalanceByClassificationWithIdRequestBuilder ReportingBalanceByClassificationWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReportingBalanceByClassificationWithId.ReportingBalanceByClassificationWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to retrieve information regarding to VAT, EC Sales List or Payroll declaration document of an administration.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReturnsWithId.ReturnsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialReturns</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReturnsWithId.ReturnsWithIdRequestBuilder ReturnsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReturnsWithId.ReturnsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get an overview of the revenue per period in a chosen year. Revenue amount is calculated from all G/L accounts of type revenue. AfterEntry parameter helps to decide whether calculation should be done on entered entries or only on finally processed entries.For this function to work correctly, you must supply all parameters.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearAndStatusWithId.RevenueListByYearAndStatusWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialRevenueListByYearAndStatus</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearAndStatusWithId.RevenueListByYearAndStatusWithIdRequestBuilder RevenueListByYearAndStatusWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearAndStatusWithId.RevenueListByYearAndStatusWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get an overview of the revenue per period in a chosen year. Revenue amount is calculated from all G/L accounts of type revenue. If you want get the revenue for finally processed entries only, check RevenueListByYearAndStatus instead.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearWithId.RevenueListByYearWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialRevenueListByYear</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearWithId.RevenueListByYearWithIdRequestBuilder RevenueListByYearWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearWithId.RevenueListByYearWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to get an overview of the revenue per period in the current year. Revenue amount is calculated from all G/L accounts of type revenue. If you want get the revenue for a specific year only, check RevenueListByYear instead.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListWithId.RevenueListWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ReadFinancialRevenueList</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListWithId.RevenueListWithIdRequestBuilder RevenueListWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListWithId.RevenueListWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }
 }

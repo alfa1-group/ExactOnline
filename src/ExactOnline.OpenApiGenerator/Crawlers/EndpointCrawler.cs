@@ -303,161 +303,185 @@ internal class EndpointCrawler
             var schemaName = httpMethod == HttpMethod.Get ? baseSchemaName : baseSchemaName + httpMethod.ToString().ToPascalCase();
             openApiDoc.Components!.Schemas!.Add(schemaName, entityComponent);
 
-            if (httpMethod == HttpMethod.Get)
+            AddOperations(openApiDoc, httpMethod, baseEndpointUri, baseSchemaName, endpointDescription, responseDescription, queryParameters, isSyncInterface);
+        }
+    }
+
+    private static OpenApiOperation CreateDefaultOperation(HttpMethod httpMethod, string baseSchemaName, string baseEndpointUri)
+    {
+        var oDataErrorRef = new OpenApiSchemaReference("ODataError")
+        {
+            ReadOnly = true
+        };
+
+        var errorContent = new Dictionary<string, OpenApiMediaType>
+        {
+            { MediaTypeNames.Application.Json, new OpenApiMediaType { Schema = oDataErrorRef } }
+        };
+
+        var error400Response = new OpenApiResponse
+        {
+            Description = $"Bad request: {httpMethod} operation failed",
+            Content = errorContent
+        };
+
+        var error500Response = new OpenApiResponse
+        {
+            Description = $"Internal server error: {httpMethod} operation failed",
+            Content = errorContent
+        };
+
+        var operation = new OpenApiOperation
+        {
+            Summary = $"{httpMethod} {baseSchemaName}",
+            // Description = $"{httpMethod} {baseSchemaName}",
+            Parameters = new List<IOpenApiParameter>(),
+            Responses = new OpenApiResponses
             {
-                var arrayResponse = new OpenApiSchema
-                {
-                    Type = JsonSchemaType.Array,
-                    ReadOnly = true,
-                    Items = new OpenApiSchemaReference(schemaName)
-                };
-                openApiDoc.Components!.Schemas!.Add(schemaName + "_Array", arrayResponse);
+                { "400", error400Response },
+                { "500", error500Response }
+            }
+        };
 
-                var arrayResponseRef = new OpenApiSchemaReference(schemaName + "_Array");
-
-                var resultsResponse = new OpenApiSchema
+        var matches = EndpointUriRegex.Matches(baseEndpointUri);
+        foreach (Match match in matches)
+        {
+            var name = match.Groups[1].Value;
+            operation.Parameters.Add(new OpenApiParameter
+            {
+                Name = name,
+                In = ParameterLocation.Path,
+                Required = true,
+                Schema = new OpenApiSchema
                 {
-                    Type = JsonSchemaType.Object,
-                    ReadOnly = true,
-                    Properties = new Dictionary<string, IOpenApiSchema>
+                    Type = name == "division" ? JsonSchemaType.Integer : JsonSchemaType.String
+                }
+            });
+        }
+
+        return operation;
+    }
+
+    private static void AddOperations(
+        OpenApiDocument openApiDoc,
+        HttpMethod httpMethod,
+        string baseEndpointUri,
+        string baseSchemaName,
+        string endpointDescription,
+        string responseDescription,
+        HashSet<OpenApiParameter> queryParameters,
+        bool isSyncInterface
+    )
+    {
+        var schemaNameWithHttpMethod = baseSchemaName + httpMethod.ToString().ToPascalCase();
+
+        if (httpMethod == HttpMethod.Get)
+        {
+            var schemaRef = new OpenApiSchemaReference(baseSchemaName)
+            {
+                ReadOnly = true
+            };
+
+            var arrayResponse = new OpenApiSchema
+            {
+                Type = JsonSchemaType.Array,
+                ReadOnly = true,
+                Items = schemaRef
+            };
+            openApiDoc.Components!.Schemas!.Add(baseSchemaName + "_Array", arrayResponse);
+
+            var arrayResponseRef = new OpenApiSchemaReference(baseSchemaName + "_Array");
+
+            var resultsResponse = new OpenApiSchema
+            {
+                Type = JsonSchemaType.Object,
+                ReadOnly = true,
+                Properties = new Dictionary<string, IOpenApiSchema>
                     {
                         { "results", arrayResponseRef },
-                        { "__next", new OpenApiSchema { Type = JsonSchemaType.String, ReadOnly = true, Description = "This property contains a link to request the next set of records including the option which are passed in the initial request with a $skiptoken option." } }
-                    },
-                    Required = new HashSet<string> { "results" }
-                };
-                openApiDoc.Components!.Schemas!.Add(schemaName + "_Results", resultsResponse);
-
-                var resultsResponseRef = new OpenApiSchemaReference(schemaName + "_Results");
-
-                var responseSchema = new OpenApiSchema
-                {
-                    Description = responseDescription,
-                    Type = JsonSchemaType.Object,
-                    ReadOnly = true,
-                    Properties = new Dictionary<string, IOpenApiSchema>
-                    {
-                        { "d", new OpenApiSchema
+                        { "__next", new OpenApiSchema
                             {
-                                OneOf =
-                                [
-                                    arrayResponseRef,
-                                    resultsResponseRef
-                                ],
-                                Discriminator = new OpenApiDiscriminator
+                                Type = JsonSchemaType.String,
+                                ReadOnly = true,
+                                Description = "This property contains a link to request the next set of records including the option which are passed in the initial request with a $skiptoken option."
+                            }
+                        }
+                    },
+                Required = new HashSet<string> { "results" }
+            };
+            openApiDoc.Components!.Schemas!.Add(baseSchemaName + "_Results", resultsResponse);
+
+            var resultsResponseRef = new OpenApiSchemaReference(baseSchemaName + "_Results");
+
+            var getResponseSchema = new OpenApiSchema
+            {
+                Description = responseDescription,
+                Type = JsonSchemaType.Object,
+                ReadOnly = true,
+                Properties = new Dictionary<string, IOpenApiSchema>
+                {
+                    { "d", new OpenApiSchema
+                        {
+                            OneOf =
+                            [
+                                arrayResponseRef,
+                                resultsResponseRef
+                            ],
+                            Discriminator = new OpenApiDiscriminator
+                            {
+                                PropertyName = "results",
+                                Mapping = new Dictionary<string, OpenApiSchemaReference>
                                 {
-                                    PropertyName = "results",
-                                    Mapping = new Dictionary<string, OpenApiSchemaReference>
-                                    {
-                                        { "_Results", resultsResponseRef }
-                                    }
+                                    { "_Results", resultsResponseRef }
                                 }
                             }
                         }
-                    },
-                    Required = new HashSet<string> { "d" }
-                };
-                openApiDoc.Components!.Schemas!.Add(schemaName + "_Response", responseSchema);
-            }
-            else if (httpMethod == HttpMethod.Post)
-            {
-                var responseSchema = new OpenApiSchema
-                {
-                    Description = responseDescription,
-                    Type = JsonSchemaType.Object,
-                    ReadOnly = true,
-                    Properties = new Dictionary<string, IOpenApiSchema>
-                    {
-                        { "d", new OpenApiSchemaReference(baseSchemaName)
-                            {
-                                ReadOnly = true
-                            }
-                        }
-                    },
-                    Required = new HashSet<string> { "d" }
-                };
-                openApiDoc.Components!.Schemas!.Add(schemaName + "_Response", responseSchema);
-            }
-
-            var endpointUri = baseEndpointUri;
-
-            var operation = new OpenApiOperation
-            {
-                Summary = $"{httpMethod} {baseSchemaName}",
-                Parameters = new List<IOpenApiParameter>(),
-                Responses = new OpenApiResponses()
+                    }
+                },
+                Required = new HashSet<string> { "d" }
             };
-
-            var matches = EndpointUriRegex.Matches(baseEndpointUri);
-            foreach (Match match in matches)
+            openApiDoc.Components!.Schemas!.Add(baseSchemaName + "_Response", getResponseSchema);
+        }
+        else if (httpMethod == HttpMethod.Post)
+        {
+            var schemaRef = new OpenApiSchemaReference(schemaNameWithHttpMethod)
             {
-                var name = match.Groups[1].Value;
-                operation.Parameters.Add(new OpenApiParameter
+                ReadOnly = true
+            };
+            var postResponseSchema = new OpenApiSchema
+            {
+                Description = responseDescription,
+                Type = JsonSchemaType.Object,
+                ReadOnly = true,
+                Properties = new Dictionary<string, IOpenApiSchema>
                 {
-                    Name = name,
-                    In = ParameterLocation.Path,
-                    Required = true,
-                    Schema = new OpenApiSchema
-                    {
-                        Type = name == "division" ? JsonSchemaType.Integer : JsonSchemaType.String
-                    }
-                });
+                    { "d", schemaRef }
+                },
+                Required = new HashSet<string> { "d" }
+            };
+            openApiDoc.Components!.Schemas!.Add(schemaNameWithHttpMethod + "_Response", postResponseSchema);
+        }
+
+        if (httpMethod == HttpMethod.Get)
+        {
+            var getOperation = CreateDefaultOperation(httpMethod, baseSchemaName, baseEndpointUri);
+
+            foreach (var queryParameter in queryParameters)
+            {
+                getOperation.Parameters!.Add(queryParameter);
             }
 
-            if (httpMethod == HttpMethod.Get)
+            AddODataQueryParameters(getOperation.Parameters!, isSyncInterface);
+
+            var getResponse = new OpenApiResponse
             {
-                foreach (var queryParameter in queryParameters)
-                {
-                    operation.Parameters.Add(queryParameter);
-                }
-
-                AddODataQueryParameters(operation.Parameters, isSyncInterface);
-            }
-
-            if (httpMethod == HttpMethod.Put || httpMethod == HttpMethod.Delete)
-            {
-                endpointUri = baseEndpointUri + "({id})";
-
-                operation.Parameters.Add(new OpenApiParameter
-                {
-                    Name = "id",
-                    In = ParameterLocation.Path,
-                    Required = true,
-                    Schema = new OpenApiSchema
-                    {
-                        Type = JsonSchemaType.String,
-                        Format = "uuid"
-                    },
-                    Description = $"Unique identifier (GUID) of the {baseSchemaName}"
-                });
-            }
-
-            if (httpMethod == HttpMethod.Put || httpMethod == HttpMethod.Post)
-            {
-                operation.RequestBody = new OpenApiRequestBody
-                {
-                    Description = $"The {baseSchemaName} entity to create or update.",
-                    Required = true,
-                    Content = new Dictionary<string, OpenApiMediaType>
-                    {
-                        {
-                            MediaTypeNames.Application.Json, new OpenApiMediaType
-                            {
-                                Schema = new OpenApiSchemaReference(schemaName)
-                            }
-                        }
-                    }
-                };
-            }
-
-            var response = new OpenApiResponse
-            {
+                Description = $"{httpMethod} operation successful",
                 Content = new Dictionary<string, OpenApiMediaType>
                 {
                     {
                         MediaTypeNames.Application.Json, new OpenApiMediaType
                         {
-                            Schema = new OpenApiSchemaReference(schemaName + "_Response")
+                            Schema = new OpenApiSchemaReference(baseSchemaName + "_Response")
                             {
                                 ReadOnly = true
                             }
@@ -465,69 +489,154 @@ internal class EndpointCrawler
                     }
                 }
             };
+            getOperation.Responses!.Add("200", getResponse);
+
+            AddOperationToPath(openApiDoc, httpMethod, baseEndpointUri, endpointDescription, getOperation);
+        }
+        else if (httpMethod == HttpMethod.Post)
+        {
+            var schemaRef = new OpenApiSchemaReference(schemaNameWithHttpMethod)
+            {
+                ReadOnly = true
+            };
+            var postOperation = CreateDefaultOperation(httpMethod, baseSchemaName, baseEndpointUri);
+            postOperation.RequestBody = new OpenApiRequestBody
+            {
+                Description = $"The {baseSchemaName} entity to create.",
+                Required = true,
+                Content = new Dictionary<string, OpenApiMediaType>
+                {
+                    { MediaTypeNames.Application.Json, new OpenApiMediaType { Schema = schemaRef } }
+                }
+            };
+
+            var postResponse = new OpenApiResponse
+            {
+                Description = $"{httpMethod} operation successful",
+                Content = new Dictionary<string, OpenApiMediaType>
+                {
+                    {
+                        MediaTypeNames.Application.Json, new OpenApiMediaType
+                        {
+                            Schema = new OpenApiSchemaReference(schemaNameWithHttpMethod + "_Response")
+                            {
+                                ReadOnly = true
+                            }
+                        }
+                    }
+                }
+            };
+            postOperation.Responses!.Add("201", postResponse);
+
+            AddOperationToPath(openApiDoc, httpMethod, baseEndpointUri, endpointDescription, postOperation);
+        }
+
+        // WithId
+        if (httpMethod == HttpMethod.Get || httpMethod == HttpMethod.Put || httpMethod == HttpMethod.Delete)
+        {
+            var withIdOperation = CreateDefaultOperation(httpMethod, baseSchemaName, baseEndpointUri);
+            withIdOperation.Parameters!.Add(new OpenApiParameter
+            {
+                Name = "id",
+                In = ParameterLocation.Path,
+                Required = true,
+                Schema = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.String,
+                    Format = "uuid"
+                },
+                Description = $"Unique identifier (GUID) of the {baseSchemaName}"
+            });
 
             if (httpMethod == HttpMethod.Get)
             {
-                response.Description = responseDescription;
-                operation.Responses.Add("200", response);
+                var schemaRef = new OpenApiSchemaReference(baseSchemaName)
+                {
+                    ReadOnly = true
+                };
+
+                var getResponseSchema = new OpenApiSchema
+                {
+                    Description = responseDescription,
+                    Type = JsonSchemaType.Object,
+                    ReadOnly = true,
+                    Properties = new Dictionary<string, IOpenApiSchema>
+                    {
+                        { "d", schemaRef }
+                    },
+                    Required = new HashSet<string> { "d" }
+                };
+                openApiDoc.Components!.Schemas!.Add(schemaNameWithHttpMethod + "_Response", getResponseSchema);
+
+                var responseRef = new OpenApiSchemaReference(schemaNameWithHttpMethod + "_Response")
+                {
+                    ReadOnly = true
+                };
+
+                var getResponse = new OpenApiResponse
+                {
+                    Description = $"{httpMethod} operation successful",
+                    Content = new Dictionary<string, OpenApiMediaType>
+                    {
+                        { MediaTypeNames.Application.Json, new OpenApiMediaType { Schema = responseRef } }
+                    }
+                };
+                withIdOperation.Responses!.Add("200", getResponse);
             }
-            else if (httpMethod == HttpMethod.Post)
+            else if (httpMethod == HttpMethod.Put)
             {
-                response.Description = $"{httpMethod} operation successful";
-                operation.Responses.Add("201", response);
+                var schemaRef = new OpenApiSchemaReference(schemaNameWithHttpMethod)
+                {
+                    ReadOnly = true
+                };
+
+                withIdOperation.RequestBody = new OpenApiRequestBody
+                {
+                    Description = $"The {baseSchemaName} entity to update.",
+                    Required = true,
+                    Content = new Dictionary<string, OpenApiMediaType>
+                    {
+                        { MediaTypeNames.Application.Json, new OpenApiMediaType { Schema = schemaRef } }
+                    }
+                };
+
+                withIdOperation.Responses!.Add("204", new OpenApiResponse
+                {
+                    Description = $"{httpMethod} operation successful"
+                });
             }
             else
             {
-                // For Put and Delete operations, use 204.
-                operation.Responses.Add("204", new OpenApiResponse
+                withIdOperation.Responses!.Add("204", new OpenApiResponse
                 {
                     Description = $"{httpMethod} operation successful"
                 });
             }
 
-            var errorContent = new Dictionary<string, OpenApiMediaType>
-            {
-                {
-                    MediaTypeNames.Application.Json, new OpenApiMediaType
-                    {
-                        Schema = new OpenApiSchemaReference("ODataError")
-                        {
-                            ReadOnly = true
-                        }
-                    }
-                }
-            };
-
-            operation.Responses.Add("400", new OpenApiResponse
-            {
-                Description = $"Bad request: {httpMethod} operation failed",
-                Content = errorContent
-            });
-
-            operation.Responses.Add("500", new OpenApiResponse
-            {
-                Description = $"Internal server error: {httpMethod} operation failed",
-                Content = errorContent
-            });
-
-            if (openApiDoc.Paths.TryGetValue(endpointUri, out var existingPath))
-            {
-                existingPath.Operations!.Add(httpMethod, operation);
-            }
-            else
-            {
-                var pathItem = new OpenApiPathItem
-                {
-                    Description = endpointDescription,
-                    Operations = new Dictionary<HttpMethod, OpenApiOperation>
-                    {
-                        { httpMethod, operation }
-                    }
-                };
-                openApiDoc.Paths.Add(endpointUri, pathItem);
-            }
+            AddOperationToPath(openApiDoc, httpMethod, baseEndpointUri + "({id})", endpointDescription, withIdOperation);
         }
     }
+
+    private static void AddOperationToPath(OpenApiDocument openApiDoc, HttpMethod httpMethod, string endpointUri, string endpointDescription, OpenApiOperation operation)
+    {
+        if (openApiDoc.Paths.TryGetValue(endpointUri, out var existingPath))
+        {
+            existingPath.Operations!.Add(httpMethod, operation);
+        }
+        else
+        {
+            var pathItem = new OpenApiPathItem
+            {
+                Description = endpointDescription,
+                Operations = new Dictionary<HttpMethod, OpenApiOperation>
+                {
+                    { httpMethod, operation }
+                }
+            };
+            openApiDoc.Paths.Add(endpointUri, pathItem);
+        }
+    }
+
 
     private static void AddODataQueryParameters(IList<IOpenApiParameter> parameters, bool isSyncInterface)
     {

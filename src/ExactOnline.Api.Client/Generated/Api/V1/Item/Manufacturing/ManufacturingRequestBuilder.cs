@@ -7,10 +7,15 @@ using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialRoutingsWit
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialVersions;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialVersionsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReceipts;
+using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReceiptsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversals;
+using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversalsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ManufacturingSettings;
+using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ManufacturingSettingsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialIssues;
+using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialIssuesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialReversals;
+using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialReversalsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationResources;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationResourcesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.Operations;
@@ -18,20 +23,27 @@ using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ProductionAreas;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ProductionAreasWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlanDetails;
+using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlanDetailsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlans;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlansWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderPriorities;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderPrioritiesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReceipts;
+using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReceiptsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReversals;
+using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReversalsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderRoutingStepPlans;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderRoutingStepPlansWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrders;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrdersWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReceipts;
+using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReceiptsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReversals;
+using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReversalsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReceipts;
+using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReceiptsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReversals;
+using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReversalsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.TimeTransactions;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.TimeTransactionsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Manufacturing.TimedTimeTransactions;
@@ -208,6 +220,26 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialVersionsWithId.BillOfMaterialVersionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
+        /// Prior to POSTing to this endpoint, if Item.IsBatchItem=1 or Item.IsSerialItem=1, then the batch or serial numbers must be reserved using the StockBatchNumbers or StockSerialNumbers endpoint respectively. Use StockTransactionType of &apos;147&apos; when reserving these batch or serial numbers.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReceiptsWithId.ByProductReceiptsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ManufacturingByProductReceipts</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReceiptsWithId.ByProductReceiptsWithIdRequestBuilder ByProductReceiptsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReceiptsWithId.ByProductReceiptsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// POSTing a reversal requires an original stock transaction with HasReversibleQuantity=true. Batch or serial numbers will be reversed automatically using the original stock transaction&apos;s data. This POST will reverse the entire reversible quantity from the original stock transaction. If a partial reversal has been completed in EOL&apos;s UI, this POST will reverse only the remaining quantity.Partial reversal can be done by include quantity in post bodyBatch or serial numbers will be require for serial/batch item when post with partial reversal.If the MaterialIssue or ByProductReceipt has property IsBackflush=True, then this transaction can only be reversed by reversing the originating ShopOrderReceipt Or SubOrderReceipt.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversalsWithId.ByProductReversalsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ManufacturingByProductReversals</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversalsWithId.ByProductReversalsWithIdRequestBuilder ByProductReversalsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversalsWithId.ByProductReversalsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ManufacturingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -222,6 +254,36 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ManufacturingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/manufacturing", rawUrl)
         {
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \api\v1\{division}\manufacturing\ManufacturingSettings({id})
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ManufacturingSettingsWithId.ManufacturingSettingsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ManufacturingManufacturingSettings</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ManufacturingSettingsWithId.ManufacturingSettingsWithIdRequestBuilder ManufacturingSettingsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ManufacturingSettingsWithId.ManufacturingSettingsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Prior to POSTing to this endpoint, if Item.IsBatchItem=1 or Item.IsSerialItem=1, then the batch or serial numbers must be reserved using the StockBatchNumbers or StockSerialNumbers endpoint respectively. Use StockTransactionType of &apos;150&apos; when reserving these batch or serial numbers.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialIssuesWithId.MaterialIssuesWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ManufacturingMaterialIssues</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialIssuesWithId.MaterialIssuesWithIdRequestBuilder MaterialIssuesWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialIssuesWithId.MaterialIssuesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// POSTing a reversal requires an original stock transaction with HasReversibleQuantity=true. Batch or serial numbers will be reversed automatically using the original stock transaction&apos;s data. This POST will reverse the entire reversible quantity from the original stock transaction. If a partial reversal has been completed in EOL&apos;s UI, this POST will reverse only the remaining quantity.Partial reversal can be done by include quantity in post bodyBatch or serial numbers will be require for serial/batch item when post with partial reversal.If the MaterialIssue or ByProductReceipt has property IsBackflush=True, then this transaction can only be reversed by reversing the originating ShopOrderReceipt Or SubOrderReceipt.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialReversalsWithId.MaterialReversalsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ManufacturingMaterialReversals</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialReversalsWithId.MaterialReversalsWithIdRequestBuilder MaterialReversalsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialReversalsWithId.MaterialReversalsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// Builds and executes requests for operations under \api\v1\{division}\manufacturing\OperationResources({id})
@@ -254,6 +316,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ProductionAreasWithId.ProductionAreasWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
+        /// Builds and executes requests for operations under \api\v1\{division}\manufacturing\ShopOrderMaterialPlanDetails({id})
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlanDetailsWithId.ShopOrderMaterialPlanDetailsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ManufacturingShopOrderMaterialPlanDetails</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlanDetailsWithId.ShopOrderMaterialPlanDetailsWithIdRequestBuilder ShopOrderMaterialPlanDetailsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlanDetailsWithId.ShopOrderMaterialPlanDetailsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
         /// Use this endpoint to create, read, update and delete materials in a Shop order.You must use previously created Shop order with an item to be produced as a reference to add the materials to.For more information On Shop orders In Exact Online, see Shop order | Create orders for make items.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlansWithId.ShopOrderMaterialPlansWithIdRequestBuilder"/></returns>
@@ -274,6 +346,26 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderPrioritiesWithId.ShopOrderPrioritiesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
+        /// Prior to POSTing to this endpoint, if Item.IsBatchItem=1 or Item.IsSerialItem=1, then the batch or serial numbers must be reserved using the StockBatchNumbers or StockSerialNumbers endpoint respectively. Use StockTransactionType of &apos;140&apos; when reserving these batch or serial numbers.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReceiptsWithId.ShopOrderReceiptsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ManufacturingShopOrderReceipts</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReceiptsWithId.ShopOrderReceiptsWithIdRequestBuilder ShopOrderReceiptsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReceiptsWithId.ShopOrderReceiptsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// POSTing a reversal requires an original stock transaction with HasReversibleQuantity=true. Batch or serial numbers will be reversed automatically using the original stock transaction&apos;s data. This POST will reverse the entire reversible quantity from the original stock transaction. If a partial reversal has been completed in EOL&apos;s UI, this POST will reverse only the remaining quantity.Partial reversal can be done by include quantity in post bodyBatch or serial numbers will be require for serial/batch item when post with partial reversal.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReversalsWithId.ShopOrderReversalsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ManufacturingShopOrderReversals</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReversalsWithId.ShopOrderReversalsWithIdRequestBuilder ShopOrderReversalsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReversalsWithId.ShopOrderReversalsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
         /// Builds and executes requests for operations under \api\v1\{division}\manufacturing\ShopOrderRoutingStepPlans({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderRoutingStepPlansWithId.ShopOrderRoutingStepPlansWithIdRequestBuilder"/></returns>
@@ -292,6 +384,46 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrdersWithId.ShopOrdersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \api\v1\{division}\manufacturing\StageForDeliveryReceipts({id})
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReceiptsWithId.StageForDeliveryReceiptsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ManufacturingStageForDeliveryReceipts</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReceiptsWithId.StageForDeliveryReceiptsWithIdRequestBuilder StageForDeliveryReceiptsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReceiptsWithId.StageForDeliveryReceiptsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \api\v1\{division}\manufacturing\StageForDeliveryReversals({id})
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReversalsWithId.StageForDeliveryReversalsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ManufacturingStageForDeliveryReversals</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReversalsWithId.StageForDeliveryReversalsWithIdRequestBuilder StageForDeliveryReversalsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReversalsWithId.StageForDeliveryReversalsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Prior to POSTing to this endpoint, if Item.IsBatchItem=1 or Item.IsSerialItem=1, then the batch or serial numbers must be reserved using the StockBatchNumbers or StockSerialNumbers endpoint respectively. Use StockTransactionType of &apos;140&apos; when reserving these batch or serial numbers.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReceiptsWithId.SubOrderReceiptsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ManufacturingSubOrderReceipts</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReceiptsWithId.SubOrderReceiptsWithIdRequestBuilder SubOrderReceiptsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReceiptsWithId.SubOrderReceiptsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// POSTing a reversal requires an original stock transaction with HasReversibleQuantity=true. Batch or serial numbers will be reversed automatically using the original stock transaction&apos;s data. This POST will reverse the entire reversible quantity from the original stock transaction. If a partial reversal has been completed in EOL&apos;s UI, this POST will reverse only the remaining quantity.Partial reversal can be done by include quantity in post bodyBatch or serial numbers will be require for serial/batch item when post with partial reversal.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReversalsWithId.SubOrderReversalsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ManufacturingSubOrderReversals</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReversalsWithId.SubOrderReversalsWithIdRequestBuilder SubOrderReversalsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReversalsWithId.SubOrderReversalsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// This endpoint enables user to start, stop and delete an operation for a shop order.

@@ -4,7 +4,7 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class AssetsDepreciationMethodsPost_ResponseExtensions
 {
-    public static async Task<AssetsDepreciationMethods?> AsItem(this Task<AssetsDepreciationMethodsPost_Response?> task)
+    public static async Task<AssetsDepreciationMethodsPost?> AsItem(this Task<AssetsDepreciationMethodsPost_Response?> task)
     {
         return (await task)?.D;
     }

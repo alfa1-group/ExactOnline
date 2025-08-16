@@ -4,7 +4,7 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ProjectProjectRestrictionRebillingsPost_ResponseExtensions
 {
-    public static async Task<ProjectProjectRestrictionRebillings?> AsItem(this Task<ProjectProjectRestrictionRebillingsPost_Response?> task)
+    public static async Task<ProjectProjectRestrictionRebillingsPost?> AsItem(this Task<ProjectProjectRestrictionRebillingsPost_Response?> task)
     {
         return (await task)?.D;
     }

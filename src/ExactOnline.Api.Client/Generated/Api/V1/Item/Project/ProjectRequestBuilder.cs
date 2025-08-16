@@ -5,11 +5,13 @@ using ExactOnline.Api.Client.Api.V1.Item.Project.CostTransactionsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Project.EmployeeRestrictionItems;
 using ExactOnline.Api.Client.Api.V1.Item.Project.EmployeeRestrictionItemsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Project.EmploymentInternalRates;
+using ExactOnline.Api.Client.Api.V1.Item.Project.EmploymentInternalRatesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Project.InvoiceTerms;
 using ExactOnline.Api.Client.Api.V1.Item.Project.InvoiceTermsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Project.ProjectAccountMutations;
 using ExactOnline.Api.Client.Api.V1.Item.Project.ProjectAccountMutationsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypes;
+using ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Project.ProjectClassifications;
 using ExactOnline.Api.Client.Api.V1.Item.Project.ProjectClassificationsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Project.ProjectHourBudgets;
@@ -189,6 +191,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.EmployeeRestrictionItemsWithId.EmployeeRestrictionItemsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
+        /// Use this endpoint to retrieve internal rates of employees.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.EmploymentInternalRatesWithId.EmploymentInternalRatesWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ProjectEmploymentInternalRates</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Project.EmploymentInternalRatesWithId.EmploymentInternalRatesWithIdRequestBuilder EmploymentInternalRatesWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Project.EmploymentInternalRatesWithId.EmploymentInternalRatesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
         /// Use this endpoint to create, read, update and delete invoice terms for Fixed price/Prepaid project.Invoice terms are agreed-upon amounts that must be paid by certain dates. Invoice terms can be created for Fixed price and Prepaid projects.Note: For creating invoice term, it is mandatory to supply Project Id and Amount.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.InvoiceTermsWithId.InvoiceTermsWithIdRequestBuilder"/></returns>
@@ -207,6 +219,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectAccountMutationsWithId.ProjectAccountMutationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// This endpoint enables users to retrieve a list of project budget types.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypesWithId.ProjectBudgetTypesWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the ProjectProjectBudgetTypes</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypesWithId.ProjectBudgetTypesWithIdRequestBuilder ProjectBudgetTypesWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypesWithId.ProjectBudgetTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// Use this endpoint to create, read, update and delete project classifications.Note: For creating a project classifications, it is mandatory to supply Code and Description.

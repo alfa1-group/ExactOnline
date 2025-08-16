@@ -5,15 +5,23 @@ using ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyBillOfMaterialHeaderW
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyBillOfMaterialMaterials;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyBillOfMaterialMaterialsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyOrders;
+using ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyOrdersWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.BatchNumbers;
+using ExactOnline.Api.Client.Api.V1.Item.Inventory.BatchNumbersWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.FinishAssemblyOrder;
+using ExactOnline.Api.Client.Api.V1.Item.Inventory.FinishAssemblyOrderWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousePlanningDetails;
+using ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousePlanningDetailsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehouseStorageLocations;
+using ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehouseStorageLocationsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehouses;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessStockCount;
+using ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessStockCountWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessWarehouseTransfer;
+using ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessWarehouseTransferWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.SerialNumbers;
+using ExactOnline.Api.Client.Api.V1.Item.Inventory.SerialNumbersWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.StockBatchNumbers;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.StockBatchNumbersWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.StockCountLines;
@@ -23,6 +31,7 @@ using ExactOnline.Api.Client.Api.V1.Item.Inventory.StockCountsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.StockSerialNumbers;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.StockSerialNumbersWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.StorageLocations;
+using ExactOnline.Api.Client.Api.V1.Item.Inventory.StorageLocationsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehouseTransferLines;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehouseTransferLinesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehouseTransfers;
@@ -159,6 +168,26 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyBillOfMaterialMaterialsWithId.AssemblyBillOfMaterialMaterialsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
+        /// Use this endpoint to read assembly order.Assembly orders allow you to create assembled items and keep them in stock. The assembled item has a bill of material of one or more parts. When you create an assembly order, the stock position of the parts will be adjusted as Planned out and the assembled item will be Planned in stock.For more information about the assembly order functionality in Exact Online, see Introducing Assembly orders.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyOrdersWithId.AssemblyOrdersWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the InventoryAssemblyOrders</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyOrdersWithId.AssemblyOrdersWithIdRequestBuilder AssemblyOrdersWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyOrdersWithId.AssemblyOrdersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to read batch number.A batch number is a number or code assigned to multiple items so the whole group can be identified. For example, if an item in a batch is faulty the other items in that batch can be found and checked.For more information about the batch number functionality in Exact Online, see About serial and batch numbers.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Inventory.BatchNumbersWithId.BatchNumbersWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the InventoryBatchNumbers</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.BatchNumbersWithId.BatchNumbersWithIdRequestBuilder BatchNumbersWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.BatchNumbersWithId.BatchNumbersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Inventory.InventoryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -175,6 +204,36 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         {
         }
         /// <summary>
+        /// Use this endpoint to process assembly order.Finishing assembly orders means that you can receive the assembly order. When an assembly order is received, the stock of the assembled item will increase and the stock for the parts it is built from will decrease.When using the BatchNumbers or SerialNumbers, the ParentID property for the part items (StockTransactionType = 165 or StockTransactionType = 166 (disassembly)) must be the same as the ID property for assembled item (StockTransactionType = 160 or StockTransactionType = 161 (disassembly)).The ID or ParentID for StockBatchNumbers or StockSerialNumbers will be regenerated during finishing assembly order. Example of JSON body:
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Inventory.FinishAssemblyOrderWithId.FinishAssemblyOrderWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the InventoryFinishAssemblyOrder</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.FinishAssemblyOrderWithId.FinishAssemblyOrderWithIdRequestBuilder FinishAssemblyOrderWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.FinishAssemblyOrderWithId.FinishAssemblyOrderWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to read the planning details of an item within a warehouse. The data returned will display the stock movement of an item in a warehouse based on different types of stock transaction that are still open.This endpoint will display the general information of a stock transaction that is due to happen. The movement of stock of a transaction can be traced down to the line number of the respective transaction.For more information about the projected stock functionality in Exact Online, see Projected stock.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousePlanningDetailsWithId.ItemWarehousePlanningDetailsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the InventoryItemWarehousePlanningDetails</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousePlanningDetailsWithId.ItemWarehousePlanningDetailsWithIdRequestBuilder ItemWarehousePlanningDetailsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousePlanningDetailsWithId.ItemWarehousePlanningDetailsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to read the general information of a specified item and the respective warehouse(s) and storage location(s).A warehouse is a physical site (address) that includes one or more storage locations where all logistic handlingof goods take place. Storage locations are containers in the warehouse that hold stock and are used to optimise stockhandling throughout a warehouse.For more information about the management of item storage at different physical locations functionality in Exact Online, see Introducing Multi warehousing.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehouseStorageLocationsWithId.ItemWarehouseStorageLocationsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the InventoryItemWarehouseStorageLocations</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehouseStorageLocationsWithId.ItemWarehouseStorageLocationsWithIdRequestBuilder ItemWarehouseStorageLocationsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehouseStorageLocationsWithId.ItemWarehouseStorageLocationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
         /// Use this endpoint to : • Create a link between an item and a warehouse. • Retrieve an existing linked item warehouse record. • Update item information such as MaximumStock, ReorderPoint, SafetyStock, and more in a warehouse. • Delete the link between an item and a warehouse.This endpoint gives an insight on the current stock levels and look ahead to the projected stock level with planned movements of stock.An item can be linked to a warehouse to keep inventory organised. An item can be linked to multiple warehouses. Storage locations can also be specified if the warehouse supports storage locations.For more information about the items by warehouses functionality in Exact Online, see Overview: Items by warehouses.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousesWithId.ItemWarehousesWithIdRequestBuilder"/></returns>
@@ -183,6 +242,36 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousesWithId.ItemWarehousesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to process existing draft stock count.A stock count is used in the warehouse to record counted quantities.For more information about the stock count functionality in Exact Online, see Stock Count - New.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessStockCountWithId.ProcessStockCountWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the InventoryProcessStockCount</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessStockCountWithId.ProcessStockCountWithIdRequestBuilder ProcessStockCountWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessStockCountWithId.ProcessStockCountWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to process existing draft warehouse transfer.To use this endpoint please take note that: - For professional and premium package, if warehouse is using storage location, please make sure location assigned to all lines - Process warehouse transfer only support normal items, serial and batch item is not supportedFor more information about the warehouse transfer functionality in Exact Online, see Warehouse Transfer - New.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessWarehouseTransferWithId.ProcessWarehouseTransferWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the InventoryProcessWarehouseTransfer</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessWarehouseTransferWithId.ProcessWarehouseTransferWithIdRequestBuilder ProcessWarehouseTransferWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessWarehouseTransferWithId.ProcessWarehouseTransferWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to read serial numbers.A serial number is a number or code assigned to an individual item so that it can be uniquely identified. Serial numbers are often used for warranty or servicing purposes.For more information about the serial numbers functionality in Exact Online, see About serial and batch numbers.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Inventory.SerialNumbersWithId.SerialNumbersWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the InventorySerialNumbers</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.SerialNumbersWithId.SerialNumbersWithIdRequestBuilder SerialNumbersWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.SerialNumbersWithId.SerialNumbersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// Use this endpoint to : • Create a draft stock transaction for a batch number. • Retrieve an existing stock transaction for a batch number. • Update the quantity of the draft stock transaction for a batch number. • Delete the draft stock transaction for a batch number.Note:  • In order to POST the following StockTransactionType [140, 141, 147, 148, 150, 151], it is required to have a Manufacturing solution. • Draft stock transaction for batch number is not supported for StockTransactionType [124, 125]. • The batch number of part item (StockTransactionType = 165 or StockTransactionType = 166) can be linked via POST using the ParentID property which is the same as the ID property for assembled item (StockTransactionType = 160 or StockTransactionType = 161). • The DraftStockTransactionID must be the same if multiple batch number is used for one pick order line.  Example of JSON body: When linking a batch number to a stock count line via POST:You can either create a new batch number for incoming quantity, or link an existing batch number for outgoing/incoming quantity. • StockCountLine is mandatory. • StockTransactionType should be Stock Count which is 195. • If StorageLocation is provided, this value will be validated. If StorageLocation is not provided, then the value for this field will be taken from StockCountLine. • The sign of Quantity stored will be set to be the same as the sign of quantity difference of the StockCountLine. • The DraftStockTransactionID provided should be the same as the DraftStockTransactionID ofanother existing stock batch number record linked to the particular StockCountLine.When updating the quantity via PUT: • Quantity update is only supported for Stock count (StockTransactionType [195]) which is in draft. • The sign of Quantity stored will be set to be the same as the sign of quantity difference of the StockCountLine.This endpoint describes the in or out movement of the batch item stock in a warehouse or storage location.For more information about the batch numbers functionality in Exact Online, see About serial and batch numbers.
@@ -223,6 +312,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StockSerialNumbersWithId.StockSerialNumbersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to read storage locations.Retrieve storage locations linked to warehouse.For more information about the storage locations functionality in Exact Online, see Working with storage locations.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StorageLocationsWithId.StorageLocationsWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the InventoryStorageLocations</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StorageLocationsWithId.StorageLocationsWithIdRequestBuilder StorageLocationsWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StorageLocationsWithId.StorageLocationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// Use this endpoint to create, read, update and delete warehouses.You can assign items to your warehouses.For more information about the warehouses functionality in Exact Online, see Working with warehouses.

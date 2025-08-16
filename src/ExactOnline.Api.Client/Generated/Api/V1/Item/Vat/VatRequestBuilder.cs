@@ -3,6 +3,7 @@
 using ExactOnline.Api.Client.Api.V1.Item.Vat.VATCodes;
 using ExactOnline.Api.Client.Api.V1.Item.Vat.VATCodesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Vat.VatPercentages;
+using ExactOnline.Api.Client.Api.V1.Item.Vat.VatPercentagesWithId;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -52,6 +53,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Vat
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Vat.VATCodesWithId.VATCodesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// VAT rates change from time to time, use this endpoint to get all the VAT percentages of all the VAT codes of an administration.If there is an old VAT percentage linked to the VAT code, it will also be retrieved. To POST VAT percentages, please use VAT Codes endpoint.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Vat.VatPercentagesWithId.VatPercentagesWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the VATVatPercentages</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Vat.VatPercentagesWithId.VatPercentagesWithIdRequestBuilder VatPercentagesWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Vat.VatPercentagesWithId.VatPercentagesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }
 }

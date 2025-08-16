@@ -16,10 +16,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The d property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.ManufacturingTimedTimeTransactions? D { get; set; }
+        public global::ExactOnline.Api.Client.Models.ManufacturingTimedTimeTransactionsPost? D { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.ManufacturingTimedTimeTransactions D { get; set; }
+        public global::ExactOnline.Api.Client.Models.ManufacturingTimedTimeTransactionsPost D { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "d", n => { D = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ManufacturingTimedTimeTransactions>(global::ExactOnline.Api.Client.Models.ManufacturingTimedTimeTransactions.CreateFromDiscriminatorValue); } },
+                { "d", n => { D = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ManufacturingTimedTimeTransactionsPost>(global::ExactOnline.Api.Client.Models.ManufacturingTimedTimeTransactionsPost.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ManufacturingTimedTimeTransactions>("d", D);
+            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.ManufacturingTimedTimeTransactionsPost>("d", D);
         }
     }
 }

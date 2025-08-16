@@ -4,7 +4,7 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class MailboxMailMessageAttachmentsPost_ResponseExtensions
 {
-    public static async Task<MailboxMailMessageAttachments?> AsItem(this Task<MailboxMailMessageAttachmentsPost_Response?> task)
+    public static async Task<MailboxMailMessageAttachmentsPost?> AsItem(this Task<MailboxMailMessageAttachmentsPost_Response?> task)
     {
         return (await task)?.D;
     }

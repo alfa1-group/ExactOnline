@@ -4,7 +4,7 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class InventoryAssemblyBillOfMaterialHeaderPost_ResponseExtensions
 {
-    public static async Task<InventoryAssemblyBillOfMaterialHeader?> AsItem(this Task<InventoryAssemblyBillOfMaterialHeaderPost_Response?> task)
+    public static async Task<InventoryAssemblyBillOfMaterialHeaderPost?> AsItem(this Task<InventoryAssemblyBillOfMaterialHeaderPost_Response?> task)
     {
         return (await task)?.D;
     }

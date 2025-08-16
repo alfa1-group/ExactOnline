@@ -4,7 +4,7 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SubscriptionSubscriptionRestrictionEmployeesPost_ResponseExtensions
 {
-    public static async Task<SubscriptionSubscriptionRestrictionEmployees?> AsItem(this Task<SubscriptionSubscriptionRestrictionEmployeesPost_Response?> task)
+    public static async Task<SubscriptionSubscriptionRestrictionEmployeesPost?> AsItem(this Task<SubscriptionSubscriptionRestrictionEmployeesPost_Response?> task)
     {
         return (await task)?.D;
     }

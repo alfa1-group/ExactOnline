@@ -3,12 +3,15 @@
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachments;
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentCategories;
+using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentCategoriesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFolders;
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFoldersWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeCategories;
+using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeCategoriesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeFolders;
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeFoldersWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypes;
+using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentsWithId;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
@@ -86,6 +89,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents
             return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId.DocumentAttachmentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
+        /// This end point returns a list of document categories.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentCategoriesWithId.DocumentCategoriesWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the DocumentsDocumentCategories</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentCategoriesWithId.DocumentCategoriesWithIdRequestBuilder DocumentCategoriesWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentCategoriesWithId.DocumentCategoriesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
         /// Use this endpoint to create, read, update and delete document folders.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFoldersWithId.DocumentFoldersWithIdRequestBuilder"/></returns>
@@ -106,6 +119,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents
             return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentsWithId.DocumentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
+        /// Document type catogories can be used to search for or filter on a specific document type. This end point returns a list of those categories.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeCategoriesWithId.DocumentTypeCategoriesWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the DocumentsDocumentTypeCategories</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeCategoriesWithId.DocumentTypeCategoriesWithIdRequestBuilder DocumentTypeCategoriesWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeCategoriesWithId.DocumentTypeCategoriesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
         /// Use this endpoint to create, read, update and delete document type folders.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeFoldersWithId.DocumentTypeFoldersWithIdRequestBuilder"/></returns>
@@ -114,6 +137,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeFoldersWithId.DocumentTypeFoldersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to retrieve a list of document types
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypesWithId.DocumentTypesWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier (GUID) of the DocumentsDocumentTypes</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypesWithId.DocumentTypesWithIdRequestBuilder DocumentTypesWithId(Guid? id)
+        {
+            _ = id ?? throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypesWithId.DocumentTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }
 }
