@@ -95644,7 +95644,7 @@
             "$ref": "#/components/schemas/AccountancyAccountInvolvedAccounts"
           }
         },
-        "description": "A collection of AccountancyAccountInvolvedAccounts entities.",
+        "description": "The AccountancyAccountInvolvedAccounts entity.",
         "readOnly": true
       },
       "AccountancyAccountInvolvedAccountsPost": {
@@ -95738,7 +95738,7 @@
             "$ref": "#/components/schemas/AccountancyAccountInvolvedAccountsPost"
           }
         },
-        "description": "A collection of AccountancyAccountInvolvedAccounts entities.",
+        "description": "The AccountancyAccountInvolvedAccounts entity.",
         "readOnly": true
       },
       "AccountancyAccountInvolvedAccountsPut": {
@@ -95978,7 +95978,7 @@
             "$ref": "#/components/schemas/AccountancyAccountOwners"
           }
         },
-        "description": "A collection of AccountancyAccountOwners entities.",
+        "description": "The AccountancyAccountOwners entity.",
         "readOnly": true
       },
       "AccountancyAccountOwnersPost": {
@@ -96032,7 +96032,7 @@
             "$ref": "#/components/schemas/AccountancyAccountOwnersPost"
           }
         },
-        "description": "A collection of AccountancyAccountOwners entities.",
+        "description": "The AccountancyAccountOwners entity.",
         "readOnly": true
       },
       "AccountancyAccountOwnersPut": {
@@ -96214,7 +96214,7 @@
             "$ref": "#/components/schemas/AccountancyInvolvedUserRoles"
           }
         },
-        "description": "A collection of AccountancyInvolvedUserRoles entities.",
+        "description": "The AccountancyInvolvedUserRoles entity.",
         "readOnly": true
       },
       "AccountancyInvolvedUserRolesPost": {
@@ -96256,7 +96256,7 @@
             "$ref": "#/components/schemas/AccountancyInvolvedUserRolesPost"
           }
         },
-        "description": "A collection of AccountancyInvolvedUserRoles entities.",
+        "description": "The AccountancyInvolvedUserRoles entity.",
         "readOnly": true
       },
       "AccountancyInvolvedUserRolesPut": {
@@ -96480,7 +96480,7 @@
             "$ref": "#/components/schemas/AccountancyInvolvedUsers"
           }
         },
-        "description": "A collection of AccountancyInvolvedUsers entities.",
+        "description": "The AccountancyInvolvedUsers entity.",
         "readOnly": true
       },
       "AccountancyInvolvedUsersPost": {
@@ -96532,7 +96532,7 @@
             "$ref": "#/components/schemas/AccountancyInvolvedUsersPost"
           }
         },
-        "description": "A collection of AccountancyInvolvedUsers entities.",
+        "description": "The AccountancyInvolvedUsers entity.",
         "readOnly": true
       },
       "AccountancyInvolvedUsersPut": {
@@ -96734,7 +96734,7 @@
             "$ref": "#/components/schemas/AccountancySolutionLinks"
           }
         },
-        "description": "A collection of AccountancySolutionLinks entities.",
+        "description": "The AccountancySolutionLinks entity.",
         "readOnly": true
       },
       "AccountancySolutionLinksPost": {
@@ -96791,7 +96791,7 @@
             "$ref": "#/components/schemas/AccountancySolutionLinksPost"
           }
         },
-        "description": "A collection of AccountancySolutionLinks entities.",
+        "description": "The AccountancySolutionLinks entity.",
         "readOnly": true
       },
       "AccountancySolutionLinksPut": {
@@ -96964,7 +96964,7 @@
             "$ref": "#/components/schemas/AccountancyTaskTypes"
           }
         },
-        "description": "A collection of AccountancyTaskTypes entities.",
+        "description": "The AccountancyTaskTypes entity.",
         "readOnly": true
       },
       "AccountancyTaskTypesPost": {
@@ -97012,7 +97012,7 @@
             "$ref": "#/components/schemas/AccountancyTaskTypesPost"
           }
         },
-        "description": "A collection of AccountancyTaskTypes entities.",
+        "description": "The AccountancyTaskTypes entity.",
         "readOnly": true
       },
       "AccountancyTaskTypesPut": {
@@ -97259,7 +97259,7 @@
             "$ref": "#/components/schemas/ActivitiesCommunicationNotes"
           }
         },
-        "description": "A collection of ActivitiesCommunicationNotes entities.",
+        "description": "The ActivitiesCommunicationNotes entity.",
         "readOnly": true
       },
       "ActivitiesCommunicationNotesPost": {
@@ -97348,7 +97348,7 @@
             "$ref": "#/components/schemas/ActivitiesCommunicationNotesPost"
           }
         },
-        "description": "A collection of ActivitiesCommunicationNotes entities.",
+        "description": "The ActivitiesCommunicationNotes entity.",
         "readOnly": true
       },
       "ActivitiesComplaints": {
@@ -97531,7 +97531,7 @@
             "$ref": "#/components/schemas/ActivitiesComplaints"
           }
         },
-        "description": "A collection of ActivitiesComplaints entities.",
+        "description": "The ActivitiesComplaints entity.",
         "readOnly": true
       },
       "ActivitiesComplaintsPost": {
@@ -97611,7 +97611,7 @@
             "$ref": "#/components/schemas/ActivitiesComplaintsPost"
           }
         },
-        "description": "A collection of ActivitiesComplaints entities.",
+        "description": "The ActivitiesComplaints entity.",
         "readOnly": true
       },
       "ActivitiesEvents": {
@@ -97821,7 +97821,7 @@
             "$ref": "#/components/schemas/ActivitiesEvents"
           }
         },
-        "description": "A collection of ActivitiesEvents entities.",
+        "description": "The ActivitiesEvents entity.",
         "readOnly": true
       },
       "ActivitiesEventsPost": {
@@ -97924,7 +97924,7 @@
             "$ref": "#/components/schemas/ActivitiesEventsPost"
           }
         },
-        "description": "A collection of ActivitiesEvents entities.",
+        "description": "The ActivitiesEvents entity.",
         "readOnly": true
       },
       "ActivitiesServiceRequests": {
@@ -98107,7 +98107,7 @@
             "$ref": "#/components/schemas/ActivitiesServiceRequests"
           }
         },
-        "description": "A collection of ActivitiesServiceRequests entities.",
+        "description": "The ActivitiesServiceRequests entity.",
         "readOnly": true
       },
       "ActivitiesServiceRequestsPost": {
@@ -98187,7 +98187,7 @@
             "$ref": "#/components/schemas/ActivitiesServiceRequestsPost"
           }
         },
-        "description": "A collection of ActivitiesServiceRequests entities.",
+        "description": "The ActivitiesServiceRequests entity.",
         "readOnly": true
       },
       "ActivitiesTasks": {
@@ -98402,7 +98402,7 @@
             "$ref": "#/components/schemas/ActivitiesTasks"
           }
         },
-        "description": "A collection of ActivitiesTasks entities.",
+        "description": "The ActivitiesTasks entity.",
         "readOnly": true
       },
       "ActivitiesTasksPost": {
@@ -98510,7 +98510,7 @@
             "$ref": "#/components/schemas/ActivitiesTasksPost"
           }
         },
-        "description": "A collection of ActivitiesTasks entities.",
+        "description": "The ActivitiesTasks entity.",
         "readOnly": true
       },
       "AssetsAssetGroups": {
@@ -98725,7 +98725,7 @@
             "$ref": "#/components/schemas/AssetsAssetGroups"
           }
         },
-        "description": "A collection of AssetsAssetGroups entities.",
+        "description": "The AssetsAssetGroups entity.",
         "readOnly": true
       },
       "AssetsAssets": {
@@ -99110,7 +99110,7 @@
             "$ref": "#/components/schemas/AssetsAssets"
           }
         },
-        "description": "A collection of AssetsAssets entities.",
+        "description": "The AssetsAssets entity.",
         "readOnly": true
       },
       "AssetsCommercialBuildingValues": {
@@ -99272,7 +99272,7 @@
             "$ref": "#/components/schemas/AssetsCommercialBuildingValues"
           }
         },
-        "description": "A collection of AssetsCommercialBuildingValues entities.",
+        "description": "The AssetsCommercialBuildingValues entity.",
         "readOnly": true
       },
       "AssetsDepreciationMethods": {
@@ -99437,7 +99437,7 @@
             "$ref": "#/components/schemas/AssetsDepreciationMethods"
           }
         },
-        "description": "A collection of AssetsDepreciationMethods entities.",
+        "description": "The AssetsDepreciationMethods entity.",
         "readOnly": true
       },
       "AssetsDepreciationMethodsPost": {
@@ -99515,7 +99515,7 @@
             "$ref": "#/components/schemas/AssetsDepreciationMethodsPost"
           }
         },
-        "description": "A collection of AssetsDepreciationMethods entities.",
+        "description": "The AssetsDepreciationMethods entity.",
         "readOnly": true
       },
       "AssetsDepreciationMethodsPut": {
@@ -99809,7 +99809,7 @@
             "$ref": "#/components/schemas/BudgetBudgets"
           }
         },
-        "description": "A collection of BudgetBudgets entities.",
+        "description": "The BudgetBudgets entity.",
         "readOnly": true
       },
       "BudgetBudgetScenarios": {
@@ -99951,7 +99951,7 @@
             "$ref": "#/components/schemas/BudgetBudgetScenarios"
           }
         },
-        "description": "A collection of BudgetBudgetScenarios entities.",
+        "description": "The BudgetBudgetScenarios entity.",
         "readOnly": true
       },
       "BulkCashflowPayments": {
@@ -100413,7 +100413,7 @@
             "$ref": "#/components/schemas/BulkCashflowPayments"
           }
         },
-        "description": "A collection of BulkCashflowPayments entities.",
+        "description": "The BulkCashflowPayments entity.",
         "readOnly": true
       },
       "BulkCashflowReceivables": {
@@ -100935,7 +100935,7 @@
             "$ref": "#/components/schemas/BulkCashflowReceivables"
           }
         },
-        "description": "A collection of BulkCashflowReceivables entities.",
+        "description": "The BulkCashflowReceivables entity.",
         "readOnly": true
       },
       "BulkCRMAccounts": {
@@ -101897,7 +101897,7 @@
             "$ref": "#/components/schemas/BulkCRMAccounts"
           }
         },
-        "description": "A collection of BulkCRMAccounts entities.",
+        "description": "The BulkCRMAccounts entity.",
         "readOnly": true
       },
       "BulkCRMAddresses": {
@@ -102261,7 +102261,7 @@
             "$ref": "#/components/schemas/BulkCRMAddresses"
           }
         },
-        "description": "A collection of BulkCRMAddresses entities.",
+        "description": "The BulkCRMAddresses entity.",
         "readOnly": true
       },
       "BulkCRMContacts": {
@@ -102711,7 +102711,7 @@
             "$ref": "#/components/schemas/BulkCRMContacts"
           }
         },
-        "description": "A collection of BulkCRMContacts entities.",
+        "description": "The BulkCRMContacts entity.",
         "readOnly": true
       },
       "BulkCRMQuotationLines": {
@@ -102947,7 +102947,7 @@
             "$ref": "#/components/schemas/BulkCRMQuotationLines"
           }
         },
-        "description": "A collection of BulkCRMQuotationLines entities.",
+        "description": "The BulkCRMQuotationLines entity.",
         "readOnly": true
       },
       "BulkCRMQuotations": {
@@ -103375,7 +103375,7 @@
             "$ref": "#/components/schemas/BulkCRMQuotations"
           }
         },
-        "description": "A collection of BulkCRMQuotations entities.",
+        "description": "The BulkCRMQuotations entity.",
         "readOnly": true
       },
       "BulkDocumentsDocumentAttachments": {
@@ -103486,7 +103486,7 @@
             "$ref": "#/components/schemas/BulkDocumentsDocumentAttachments"
           }
         },
-        "description": "A collection of BulkDocumentsDocumentAttachments entities.",
+        "description": "The BulkDocumentsDocumentAttachments entity.",
         "readOnly": true
       },
       "BulkDocumentsDocuments": {
@@ -103833,7 +103833,7 @@
             "$ref": "#/components/schemas/BulkDocumentsDocuments"
           }
         },
-        "description": "A collection of BulkDocumentsDocuments entities.",
+        "description": "The BulkDocumentsDocuments entity.",
         "readOnly": true
       },
       "BulkFinancialGLAccounts": {
@@ -104150,7 +104150,7 @@
             "$ref": "#/components/schemas/BulkFinancialGLAccounts"
           }
         },
-        "description": "A collection of BulkFinancialGLAccounts entities.",
+        "description": "The BulkFinancialGLAccounts entity.",
         "readOnly": true
       },
       "BulkFinancialGLClassifications": {
@@ -104338,7 +104338,7 @@
             "$ref": "#/components/schemas/BulkFinancialGLClassifications"
           }
         },
-        "description": "A collection of BulkFinancialGLClassifications entities.",
+        "description": "The BulkFinancialGLClassifications entity.",
         "readOnly": true
       },
       "BulkFinancialTransactionLines": {
@@ -104811,7 +104811,7 @@
             "$ref": "#/components/schemas/BulkFinancialTransactionLines"
           }
         },
-        "description": "A collection of BulkFinancialTransactionLines entities.",
+        "description": "The BulkFinancialTransactionLines entity.",
         "readOnly": true
       },
       "BulkLogisticsItems": {
@@ -105473,7 +105473,7 @@
             "$ref": "#/components/schemas/BulkLogisticsItems"
           }
         },
-        "description": "A collection of BulkLogisticsItems entities.",
+        "description": "The BulkLogisticsItems entity.",
         "readOnly": true
       },
       "BulkLogisticsSalesItemPrices": {
@@ -105697,7 +105697,7 @@
             "$ref": "#/components/schemas/BulkLogisticsSalesItemPrices"
           }
         },
-        "description": "A collection of BulkLogisticsSalesItemPrices entities.",
+        "description": "The BulkLogisticsSalesItemPrices entity.",
         "readOnly": true
       },
       "BulkProjectProjectWBS": {
@@ -106356,7 +106356,7 @@
             "$ref": "#/components/schemas/BulkSalesInvoiceSalesInvoiceLines"
           }
         },
-        "description": "A collection of BulkSalesInvoiceSalesInvoiceLines entities.",
+        "description": "The BulkSalesInvoiceSalesInvoiceLines entity.",
         "readOnly": true
       },
       "BulkSalesInvoiceSalesInvoices": {
@@ -106870,7 +106870,7 @@
             "$ref": "#/components/schemas/BulkSalesInvoiceSalesInvoices"
           }
         },
-        "description": "A collection of BulkSalesInvoiceSalesInvoices entities.",
+        "description": "The BulkSalesInvoiceSalesInvoices entity.",
         "readOnly": true
       },
       "BulkSalesOrderGoodsDeliveries": {
@@ -107104,7 +107104,7 @@
             "$ref": "#/components/schemas/BulkSalesOrderGoodsDeliveries"
           }
         },
-        "description": "A collection of BulkSalesOrderGoodsDeliveries entities.",
+        "description": "The BulkSalesOrderGoodsDeliveries entity.",
         "readOnly": true
       },
       "BulkSalesOrderGoodsDeliveryLines": {
@@ -107337,7 +107337,7 @@
             "$ref": "#/components/schemas/BulkSalesOrderGoodsDeliveryLines"
           }
         },
-        "description": "A collection of BulkSalesOrderGoodsDeliveryLines entities.",
+        "description": "The BulkSalesOrderGoodsDeliveryLines entity.",
         "readOnly": true
       },
       "BulkSalesOrderSalesOrderLines": {
@@ -107650,7 +107650,7 @@
             "$ref": "#/components/schemas/BulkSalesOrderSalesOrderLines"
           }
         },
-        "description": "A collection of BulkSalesOrderSalesOrderLines entities.",
+        "description": "The BulkSalesOrderSalesOrderLines entity.",
         "readOnly": true
       },
       "BulkSalesOrderSalesOrders": {
@@ -108126,7 +108126,7 @@
             "$ref": "#/components/schemas/BulkSalesOrderSalesOrders"
           }
         },
-        "description": "A collection of BulkSalesOrderSalesOrders entities.",
+        "description": "The BulkSalesOrderSalesOrders entity.",
         "readOnly": true
       },
       "CashflowAllocationRule": {
@@ -108508,7 +108508,7 @@
             "$ref": "#/components/schemas/CashflowBanks"
           }
         },
-        "description": "A collection of CashflowBanks entities.",
+        "description": "The CashflowBanks entity.",
         "readOnly": true
       },
       "CashflowDirectDebitMandates": {
@@ -108683,7 +108683,7 @@
             "$ref": "#/components/schemas/CashflowDirectDebitMandates"
           }
         },
-        "description": "A collection of CashflowDirectDebitMandates entities.",
+        "description": "The CashflowDirectDebitMandates entity.",
         "readOnly": true
       },
       "CashflowDirectDebitMandatesPost": {
@@ -108775,7 +108775,7 @@
             "$ref": "#/components/schemas/CashflowDirectDebitMandatesPost"
           }
         },
-        "description": "A collection of CashflowDirectDebitMandates entities.",
+        "description": "The CashflowDirectDebitMandates entity.",
         "readOnly": true
       },
       "CashflowDirectDebitMandatesPut": {
@@ -109046,7 +109046,7 @@
             "$ref": "#/components/schemas/CashflowPaymentConditions"
           }
         },
-        "description": "A collection of CashflowPaymentConditions entities.",
+        "description": "The CashflowPaymentConditions entity.",
         "readOnly": true
       },
       "CashflowPaymentConditionsPost": {
@@ -109131,7 +109131,7 @@
             "$ref": "#/components/schemas/CashflowPaymentConditionsPost"
           }
         },
-        "description": "A collection of CashflowPaymentConditions entities.",
+        "description": "The CashflowPaymentConditions entity.",
         "readOnly": true
       },
       "CashflowPayments": {
@@ -109525,7 +109525,7 @@
             "$ref": "#/components/schemas/CashflowPayments"
           }
         },
-        "description": "A collection of CashflowPayments entities.",
+        "description": "The CashflowPayments entity.",
         "readOnly": true
       },
       "CashflowPaymentsPut": {
@@ -109657,7 +109657,7 @@
             "$ref": "#/components/schemas/CashflowProcessPayments"
           }
         },
-        "description": "A collection of CashflowProcessPayments entities.",
+        "description": "The CashflowProcessPayments entity.",
         "readOnly": true
       },
       "CashflowProcessPaymentsPost": {
@@ -109706,7 +109706,7 @@
             "$ref": "#/components/schemas/CashflowProcessPaymentsPost"
           }
         },
-        "description": "A collection of CashflowProcessPayments entities.",
+        "description": "The CashflowProcessPayments entity.",
         "readOnly": true
       },
       "CashflowReceivables": {
@@ -110149,7 +110149,7 @@
             "$ref": "#/components/schemas/CashflowReceivables"
           }
         },
-        "description": "A collection of CashflowReceivables entities.",
+        "description": "The CashflowReceivables entity.",
         "readOnly": true
       },
       "CashflowReceivablesPut": {
@@ -110705,7 +110705,7 @@
             "$ref": "#/components/schemas/CRMAccountClasses"
           }
         },
-        "description": "A collection of CRMAccountClasses entities.",
+        "description": "The CRMAccountClasses entity.",
         "readOnly": true
       },
       "CRMAccountClassificationNames": {
@@ -110836,7 +110836,7 @@
             "$ref": "#/components/schemas/CRMAccountClassificationNames"
           }
         },
-        "description": "A collection of CRMAccountClassificationNames entities.",
+        "description": "The CRMAccountClassificationNames entity.",
         "readOnly": true
       },
       "CRMAccountClassifications": {
@@ -110977,7 +110977,7 @@
             "$ref": "#/components/schemas/CRMAccountClassifications"
           }
         },
-        "description": "A collection of CRMAccountClassifications entities.",
+        "description": "The CRMAccountClassifications entity.",
         "readOnly": true
       },
       "CRMAccounts": {
@@ -111779,7 +111779,7 @@
             "$ref": "#/components/schemas/CRMAccounts"
           }
         },
-        "description": "A collection of CRMAccounts entities.",
+        "description": "The CRMAccounts entity.",
         "readOnly": true
       },
       "CRMAccountsPost": {
@@ -112332,7 +112332,7 @@
             "$ref": "#/components/schemas/CRMAccountsPost"
           }
         },
-        "description": "A collection of CRMAccounts entities.",
+        "description": "The CRMAccounts entity.",
         "readOnly": true
       },
       "CRMAccountsPut": {
@@ -113198,7 +113198,7 @@
             "$ref": "#/components/schemas/CRMAddresses"
           }
         },
-        "description": "A collection of CRMAddresses entities.",
+        "description": "The CRMAddresses entity.",
         "readOnly": true
       },
       "CRMAddressesPost": {
@@ -113393,7 +113393,7 @@
             "$ref": "#/components/schemas/CRMAddressesPost"
           }
         },
-        "description": "A collection of CRMAddresses entities.",
+        "description": "The CRMAddresses entity.",
         "readOnly": true
       },
       "CRMAddressesPut": {
@@ -113703,7 +113703,7 @@
             "$ref": "#/components/schemas/CRMAddressStates"
           }
         },
-        "description": "A collection of CRMAddressStates entities.",
+        "description": "The CRMAddressStates entity.",
         "readOnly": true
       },
       "CRMBankAccounts": {
@@ -113884,7 +113884,7 @@
             "$ref": "#/components/schemas/CRMBankAccounts"
           }
         },
-        "description": "A collection of CRMBankAccounts entities.",
+        "description": "The CRMBankAccounts entity.",
         "readOnly": true
       },
       "CRMBankAccountsPost": {
@@ -113944,7 +113944,7 @@
             "$ref": "#/components/schemas/CRMBankAccountsPost"
           }
         },
-        "description": "A collection of CRMBankAccounts entities.",
+        "description": "The CRMBankAccounts entity.",
         "readOnly": true
       },
       "CRMBankAccountsPut": {
@@ -114387,7 +114387,7 @@
             "$ref": "#/components/schemas/CRMContacts"
           }
         },
-        "description": "A collection of CRMContacts entities.",
+        "description": "The CRMContacts entity.",
         "readOnly": true
       },
       "CRMContactsPost": {
@@ -114579,7 +114579,7 @@
             "$ref": "#/components/schemas/CRMContactsPost"
           }
         },
-        "description": "A collection of CRMContacts entities.",
+        "description": "The CRMContacts entity.",
         "readOnly": true
       },
       "CRMContactsPut": {
@@ -115280,7 +115280,7 @@
             "$ref": "#/components/schemas/CRMLeadPurposes"
           }
         },
-        "description": "A collection of CRMLeadPurposes entities.",
+        "description": "The CRMLeadPurposes entity.",
         "readOnly": true
       },
       "CRMLeadSources": {
@@ -115370,7 +115370,7 @@
             "$ref": "#/components/schemas/CRMLeadSources"
           }
         },
-        "description": "A collection of CRMLeadSources entities.",
+        "description": "The CRMLeadSources entity.",
         "readOnly": true
       },
       "CRMOpportunities": {
@@ -115631,7 +115631,7 @@
             "$ref": "#/components/schemas/CRMOpportunities"
           }
         },
-        "description": "A collection of CRMOpportunities entities.",
+        "description": "The CRMOpportunities entity.",
         "readOnly": true
       },
       "CRMOpportunitiesPost": {
@@ -115751,7 +115751,7 @@
             "$ref": "#/components/schemas/CRMOpportunitiesPost"
           }
         },
-        "description": "A collection of CRMOpportunities entities.",
+        "description": "The CRMOpportunities entity.",
         "readOnly": true
       },
       "CRMOpportunitiesPut": {
@@ -116395,7 +116395,7 @@
             "$ref": "#/components/schemas/CRMQuotationLines"
           }
         },
-        "description": "A collection of CRMQuotationLines entities.",
+        "description": "The CRMQuotationLines entity.",
         "readOnly": true
       },
       "CRMQuotationLinesPost": {
@@ -116484,7 +116484,7 @@
             "$ref": "#/components/schemas/CRMQuotationLinesPost"
           }
         },
-        "description": "A collection of CRMQuotationLines entities.",
+        "description": "The CRMQuotationLines entity.",
         "readOnly": true
       },
       "CRMQuotationLinesPut": {
@@ -116719,7 +116719,7 @@
             "$ref": "#/components/schemas/CRMQuotationOrderChargeLines"
           }
         },
-        "description": "A collection of CRMQuotationOrderChargeLines entities.",
+        "description": "The CRMQuotationOrderChargeLines entity.",
         "readOnly": true
       },
       "CRMQuotationOrderChargeLinesPost": {
@@ -116781,7 +116781,7 @@
             "$ref": "#/components/schemas/CRMQuotationOrderChargeLinesPost"
           }
         },
-        "description": "A collection of CRMQuotationOrderChargeLines entities.",
+        "description": "The CRMQuotationOrderChargeLines entity.",
         "readOnly": true
       },
       "CRMQuotationOrderChargeLinesPut": {
@@ -117217,7 +117217,7 @@
             "$ref": "#/components/schemas/CRMQuotations"
           }
         },
-        "description": "A collection of CRMQuotations entities.",
+        "description": "The CRMQuotations entity.",
         "readOnly": true
       },
       "CRMQuotationsPost": {
@@ -117387,7 +117387,7 @@
             "$ref": "#/components/schemas/CRMQuotationsPost"
           }
         },
-        "description": "A collection of CRMQuotations entities.",
+        "description": "The CRMQuotations entity.",
         "readOnly": true
       },
       "CRMQuotationsPut": {
@@ -117691,7 +117691,7 @@
             "$ref": "#/components/schemas/CRMReasonCodes"
           }
         },
-        "description": "A collection of CRMReasonCodes entities.",
+        "description": "The CRMReasonCodes entity.",
         "readOnly": true
       },
       "CRMRejectQuotation": {
@@ -118300,7 +118300,7 @@
             "$ref": "#/components/schemas/CustomFieldCustomFields"
           }
         },
-        "description": "A collection of CustomFieldCustomFields entities.",
+        "description": "The CustomFieldCustomFields entity.",
         "readOnly": true
       },
       "CustomFieldUpdateCustomField": {
@@ -118567,7 +118567,7 @@
             "$ref": "#/components/schemas/DocumentsDocumentAttachments"
           }
         },
-        "description": "A collection of DocumentsDocumentAttachments entities.",
+        "description": "The DocumentsDocumentAttachments entity.",
         "readOnly": true
       },
       "DocumentsDocumentAttachmentsPost": {
@@ -118613,7 +118613,7 @@
             "$ref": "#/components/schemas/DocumentsDocumentAttachmentsPost"
           }
         },
-        "description": "A collection of DocumentsDocumentAttachments entities.",
+        "description": "The DocumentsDocumentAttachments entity.",
         "readOnly": true
       },
       "DocumentsDocumentAttachmentsDelete": {
@@ -118726,7 +118726,7 @@
             "$ref": "#/components/schemas/DocumentsDocumentCategories"
           }
         },
-        "description": "A collection of DocumentsDocumentCategories entities.",
+        "description": "The DocumentsDocumentCategories entity.",
         "readOnly": true
       },
       "DocumentsDocumentFolders": {
@@ -118858,7 +118858,7 @@
             "$ref": "#/components/schemas/DocumentsDocumentFolders"
           }
         },
-        "description": "A collection of DocumentsDocumentFolders entities.",
+        "description": "The DocumentsDocumentFolders entity.",
         "readOnly": true
       },
       "DocumentsDocumentFoldersPost": {
@@ -118907,7 +118907,7 @@
             "$ref": "#/components/schemas/DocumentsDocumentFoldersPost"
           }
         },
-        "description": "A collection of DocumentsDocumentFolders entities.",
+        "description": "The DocumentsDocumentFolders entity.",
         "readOnly": true
       },
       "DocumentsDocumentFoldersPut": {
@@ -119257,7 +119257,7 @@
             "$ref": "#/components/schemas/DocumentsDocuments"
           }
         },
-        "description": "A collection of DocumentsDocuments entities.",
+        "description": "The DocumentsDocuments entity.",
         "readOnly": true
       },
       "DocumentsDocumentsPost": {
@@ -119410,7 +119410,7 @@
             "$ref": "#/components/schemas/DocumentsDocumentsPost"
           }
         },
-        "description": "A collection of DocumentsDocuments entities.",
+        "description": "The DocumentsDocuments entity.",
         "readOnly": true
       },
       "DocumentsDocumentsPut": {
@@ -119663,7 +119663,7 @@
             "$ref": "#/components/schemas/DocumentsDocumentTypeCategories"
           }
         },
-        "description": "A collection of DocumentsDocumentTypeCategories entities.",
+        "description": "The DocumentsDocumentTypeCategories entity.",
         "readOnly": true
       },
       "DocumentsDocumentTypeFolders": {
@@ -119777,7 +119777,7 @@
             "$ref": "#/components/schemas/DocumentsDocumentTypeFolders"
           }
         },
-        "description": "A collection of DocumentsDocumentTypeFolders entities.",
+        "description": "The DocumentsDocumentTypeFolders entity.",
         "readOnly": true
       },
       "DocumentsDocumentTypeFoldersPost": {
@@ -119836,7 +119836,7 @@
             "$ref": "#/components/schemas/DocumentsDocumentTypeFoldersPost"
           }
         },
-        "description": "A collection of DocumentsDocumentTypeFolders entities.",
+        "description": "The DocumentsDocumentTypeFolders entity.",
         "readOnly": true
       },
       "DocumentsDocumentTypeFoldersPut": {
@@ -120021,7 +120021,7 @@
             "$ref": "#/components/schemas/DocumentsDocumentTypes"
           }
         },
-        "description": "A collection of DocumentsDocumentTypes entities.",
+        "description": "The DocumentsDocumentTypes entity.",
         "readOnly": true
       },
       "FinancialDeductibilityPercentages": {
@@ -120184,7 +120184,7 @@
             "$ref": "#/components/schemas/FinancialDeductibilityPercentages"
           }
         },
-        "description": "A collection of FinancialDeductibilityPercentages entities.",
+        "description": "The FinancialDeductibilityPercentages entity.",
         "readOnly": true
       },
       "FinancialExchangeRates": {
@@ -120323,7 +120323,7 @@
             "$ref": "#/components/schemas/FinancialExchangeRates"
           }
         },
-        "description": "A collection of FinancialExchangeRates entities.",
+        "description": "The FinancialExchangeRates entity.",
         "readOnly": true
       },
       "FinancialExchangeRatesPost": {
@@ -120367,7 +120367,7 @@
             "$ref": "#/components/schemas/FinancialExchangeRatesPost"
           }
         },
-        "description": "A collection of FinancialExchangeRates entities.",
+        "description": "The FinancialExchangeRates entity.",
         "readOnly": true
       },
       "FinancialExchangeRatesPut": {
@@ -120558,7 +120558,7 @@
             "$ref": "#/components/schemas/FinancialFinancialPeriods"
           }
         },
-        "description": "A collection of FinancialFinancialPeriods entities.",
+        "description": "The FinancialFinancialPeriods entity.",
         "readOnly": true
       },
       "FinancialGLAccountClassificationMappings": {
@@ -120684,7 +120684,7 @@
             "$ref": "#/components/schemas/FinancialGLAccountClassificationMappings"
           }
         },
-        "description": "A collection of FinancialGLAccountClassificationMappings entities.",
+        "description": "The FinancialGLAccountClassificationMappings entity.",
         "readOnly": true
       },
       "FinancialGLAccountClassificationMappingsPost": {
@@ -120731,7 +120731,7 @@
             "$ref": "#/components/schemas/FinancialGLAccountClassificationMappingsPost"
           }
         },
-        "description": "A collection of FinancialGLAccountClassificationMappings entities.",
+        "description": "The FinancialGLAccountClassificationMappings entity.",
         "readOnly": true
       },
       "FinancialGLAccountClassificationMappingsPut": {
@@ -121056,7 +121056,7 @@
             "$ref": "#/components/schemas/FinancialGLAccounts"
           }
         },
-        "description": "A collection of FinancialGLAccounts entities.",
+        "description": "The FinancialGLAccounts entity.",
         "readOnly": true
       },
       "FinancialGLAccountsPost": {
@@ -121228,7 +121228,7 @@
             "$ref": "#/components/schemas/FinancialGLAccountsPost"
           }
         },
-        "description": "A collection of FinancialGLAccounts entities.",
+        "description": "The FinancialGLAccounts entity.",
         "readOnly": true
       },
       "FinancialGLAccountsPut": {
@@ -121588,7 +121588,7 @@
             "$ref": "#/components/schemas/FinancialGLClassifications"
           }
         },
-        "description": "A collection of FinancialGLClassifications entities.",
+        "description": "The FinancialGLClassifications entity.",
         "readOnly": true
       },
       "FinancialGLSchemes": {
@@ -121731,7 +121731,7 @@
             "$ref": "#/components/schemas/FinancialGLSchemes"
           }
         },
-        "description": "A collection of FinancialGLSchemes entities.",
+        "description": "The FinancialGLSchemes entity.",
         "readOnly": true
       },
       "FinancialGLTransactionSources": {
@@ -121821,7 +121821,7 @@
             "$ref": "#/components/schemas/FinancialGLTransactionSources"
           }
         },
-        "description": "A collection of FinancialGLTransactionSources entities.",
+        "description": "The FinancialGLTransactionSources entity.",
         "readOnly": true
       },
       "FinancialGLTransactionTypes": {
@@ -121911,7 +121911,7 @@
             "$ref": "#/components/schemas/FinancialGLTransactionTypes"
           }
         },
-        "description": "A collection of FinancialGLTransactionTypes entities.",
+        "description": "The FinancialGLTransactionTypes entity.",
         "readOnly": true
       },
       "FinancialJournals": {
@@ -122146,7 +122146,7 @@
             "$ref": "#/components/schemas/FinancialJournals"
           }
         },
-        "description": "A collection of FinancialJournals entities.",
+        "description": "The FinancialJournals entity.",
         "readOnly": true
       },
       "FinancialJournalsPost": {
@@ -122245,7 +122245,7 @@
             "$ref": "#/components/schemas/FinancialJournalsPost"
           }
         },
-        "description": "A collection of FinancialJournals entities.",
+        "description": "The FinancialJournals entity.",
         "readOnly": true
       },
       "FinancialJournalsPut": {
@@ -122545,7 +122545,7 @@
             "$ref": "#/components/schemas/FinancialOfficialReturns"
           }
         },
-        "description": "A collection of FinancialOfficialReturns entities.",
+        "description": "The FinancialOfficialReturns entity.",
         "readOnly": true
       },
       "FinancialOfficialReturnsPost": {
@@ -122643,7 +122643,7 @@
             "$ref": "#/components/schemas/FinancialOfficialReturnsPost"
           }
         },
-        "description": "A collection of FinancialOfficialReturns entities.",
+        "description": "The FinancialOfficialReturns entity.",
         "readOnly": true
       },
       "FinancialProcessReturn": {
@@ -123109,7 +123109,7 @@
             "$ref": "#/components/schemas/FinancialTransactionBankEntries"
           }
         },
-        "description": "A collection of FinancialTransactionBankEntries entities.",
+        "description": "The FinancialTransactionBankEntries entity.",
         "readOnly": true
       },
       "FinancialTransactionBankEntriesPost": {
@@ -123181,7 +123181,7 @@
             "$ref": "#/components/schemas/FinancialTransactionBankEntriesPost"
           }
         },
-        "description": "A collection of FinancialTransactionBankEntries entities.",
+        "description": "The FinancialTransactionBankEntries entity.",
         "readOnly": true
       },
       "FinancialTransactionBankEntriesDelete": {
@@ -123478,7 +123478,7 @@
             "$ref": "#/components/schemas/FinancialTransactionBankEntryLines"
           }
         },
-        "description": "A collection of FinancialTransactionBankEntryLines entities.",
+        "description": "The FinancialTransactionBankEntryLines entity.",
         "readOnly": true
       },
       "FinancialTransactionBankEntryLinesPost": {
@@ -123593,7 +123593,7 @@
             "$ref": "#/components/schemas/FinancialTransactionBankEntryLinesPost"
           }
         },
-        "description": "A collection of FinancialTransactionBankEntryLines entities.",
+        "description": "The FinancialTransactionBankEntryLines entity.",
         "readOnly": true
       },
       "FinancialTransactionCashEntries": {
@@ -123742,7 +123742,7 @@
             "$ref": "#/components/schemas/FinancialTransactionCashEntries"
           }
         },
-        "description": "A collection of FinancialTransactionCashEntries entities.",
+        "description": "The FinancialTransactionCashEntries entity.",
         "readOnly": true
       },
       "FinancialTransactionCashEntriesPost": {
@@ -123809,7 +123809,7 @@
             "$ref": "#/components/schemas/FinancialTransactionCashEntriesPost"
           }
         },
-        "description": "A collection of FinancialTransactionCashEntries entities.",
+        "description": "The FinancialTransactionCashEntries entity.",
         "readOnly": true
       },
       "FinancialTransactionCashEntriesDelete": {
@@ -124106,7 +124106,7 @@
             "$ref": "#/components/schemas/FinancialTransactionCashEntryLines"
           }
         },
-        "description": "A collection of FinancialTransactionCashEntryLines entities.",
+        "description": "The FinancialTransactionCashEntryLines entity.",
         "readOnly": true
       },
       "FinancialTransactionCashEntryLinesPost": {
@@ -124221,7 +124221,7 @@
             "$ref": "#/components/schemas/FinancialTransactionCashEntryLinesPost"
           }
         },
-        "description": "A collection of FinancialTransactionCashEntryLines entities.",
+        "description": "The FinancialTransactionCashEntryLines entity.",
         "readOnly": true
       },
       "FinancialTransactionTransactionLines": {
@@ -124694,7 +124694,7 @@
             "$ref": "#/components/schemas/FinancialTransactionTransactionLines"
           }
         },
-        "description": "A collection of FinancialTransactionTransactionLines entities.",
+        "description": "The FinancialTransactionTransactionLines entity.",
         "readOnly": true
       },
       "GeneralCurrencies": {
@@ -124802,7 +124802,7 @@
             "$ref": "#/components/schemas/GeneralCurrencies"
           }
         },
-        "description": "A collection of GeneralCurrencies entities.",
+        "description": "The GeneralCurrencies entity.",
         "readOnly": true
       },
       "GeneralJournalEntryGeneralJournalEntries": {
@@ -124959,7 +124959,7 @@
             "$ref": "#/components/schemas/GeneralJournalEntryGeneralJournalEntries"
           }
         },
-        "description": "A collection of GeneralJournalEntryGeneralJournalEntries entities.",
+        "description": "The GeneralJournalEntryGeneralJournalEntries entity.",
         "readOnly": true
       },
       "GeneralJournalEntryGeneralJournalEntriesPost": {
@@ -125025,7 +125025,7 @@
             "$ref": "#/components/schemas/GeneralJournalEntryGeneralJournalEntriesPost"
           }
         },
-        "description": "A collection of GeneralJournalEntryGeneralJournalEntries entities.",
+        "description": "The GeneralJournalEntryGeneralJournalEntries entity.",
         "readOnly": true
       },
       "GeneralJournalEntryGeneralJournalEntriesDelete": {
@@ -125331,7 +125331,7 @@
             "$ref": "#/components/schemas/GeneralJournalEntryGeneralJournalEntryLines"
           }
         },
-        "description": "A collection of GeneralJournalEntryGeneralJournalEntryLines entities.",
+        "description": "The GeneralJournalEntryGeneralJournalEntryLines entity.",
         "readOnly": true
       },
       "GeneralJournalEntryGeneralJournalEntryLinesPost": {
@@ -125447,7 +125447,7 @@
             "$ref": "#/components/schemas/GeneralJournalEntryGeneralJournalEntryLinesPost"
           }
         },
-        "description": "A collection of GeneralJournalEntryGeneralJournalEntryLines entities.",
+        "description": "The GeneralJournalEntryGeneralJournalEntryLines entity.",
         "readOnly": true
       },
       "GeneralLayouts": {
@@ -125600,7 +125600,7 @@
             "$ref": "#/components/schemas/GeneralLayouts"
           }
         },
-        "description": "A collection of GeneralLayouts entities.",
+        "description": "The GeneralLayouts entity.",
         "readOnly": true
       },
       "HRMAbsenceRegistrations": {
@@ -125782,7 +125782,7 @@
             "$ref": "#/components/schemas/HRMAbsenceRegistrations"
           }
         },
-        "description": "A collection of HRMAbsenceRegistrations entities.",
+        "description": "The HRMAbsenceRegistrations entity.",
         "readOnly": true
       },
       "HRMAbsenceRegistrationTransactions": {
@@ -125973,7 +125973,7 @@
             "$ref": "#/components/schemas/HRMAbsenceRegistrationTransactions"
           }
         },
-        "description": "A collection of HRMAbsenceRegistrationTransactions entities.",
+        "description": "The HRMAbsenceRegistrationTransactions entity.",
         "readOnly": true
       },
       "HRMCostcenters": {
@@ -126108,7 +126108,7 @@
             "$ref": "#/components/schemas/HRMCostcenters"
           }
         },
-        "description": "A collection of HRMCostcenters entities.",
+        "description": "The HRMCostcenters entity.",
         "readOnly": true
       },
       "HRMCostcentersPost": {
@@ -126156,7 +126156,7 @@
             "$ref": "#/components/schemas/HRMCostcentersPost"
           }
         },
-        "description": "A collection of HRMCostcenters entities.",
+        "description": "The HRMCostcenters entity.",
         "readOnly": true
       },
       "HRMCostcentersPut": {
@@ -126333,7 +126333,7 @@
             "$ref": "#/components/schemas/HRMCostunits"
           }
         },
-        "description": "A collection of HRMCostunits entities.",
+        "description": "The HRMCostunits entity.",
         "readOnly": true
       },
       "HRMCostunitsPost": {
@@ -126377,7 +126377,7 @@
             "$ref": "#/components/schemas/HRMCostunitsPost"
           }
         },
-        "description": "A collection of HRMCostunits entities.",
+        "description": "The HRMCostunits entity.",
         "readOnly": true
       },
       "HRMCostunitsPut": {
@@ -126564,7 +126564,7 @@
             "$ref": "#/components/schemas/HRMDepartments"
           }
         },
-        "description": "A collection of HRMDepartments entities.",
+        "description": "The HRMDepartments entity.",
         "readOnly": true
       },
       "HRMDivisionClasses": {
@@ -126717,7 +126717,7 @@
             "$ref": "#/components/schemas/HRMDivisionClasses"
           }
         },
-        "description": "A collection of HRMDivisionClasses entities.",
+        "description": "The HRMDivisionClasses entity.",
         "readOnly": true
       },
       "HRMDivisionClassNames": {
@@ -126854,7 +126854,7 @@
             "$ref": "#/components/schemas/HRMDivisionClassNames"
           }
         },
-        "description": "A collection of HRMDivisionClassNames entities.",
+        "description": "The HRMDivisionClassNames entity.",
         "readOnly": true
       },
       "HRMDivisionClassValues": {
@@ -127025,7 +127025,7 @@
             "$ref": "#/components/schemas/HRMDivisionClassValues"
           }
         },
-        "description": "A collection of HRMDivisionClassValues entities.",
+        "description": "The HRMDivisionClassValues entity.",
         "readOnly": true
       },
       "HRMDivisions": {
@@ -127265,7 +127265,7 @@
             "$ref": "#/components/schemas/HRMDivisions"
           }
         },
-        "description": "A collection of HRMDivisions entities.",
+        "description": "The HRMDivisions entity.",
         "readOnly": true
       },
       "HRMJobGroups": {
@@ -127400,7 +127400,7 @@
             "$ref": "#/components/schemas/HRMJobGroups"
           }
         },
-        "description": "A collection of HRMJobGroups entities.",
+        "description": "The HRMJobGroups entity.",
         "readOnly": true
       },
       "HRMJobTitles": {
@@ -127568,7 +127568,7 @@
             "$ref": "#/components/schemas/HRMJobTitles"
           }
         },
-        "description": "A collection of HRMJobTitles entities.",
+        "description": "The HRMJobTitles entity.",
         "readOnly": true
       },
       "HRMLeaveAbsenceHoursByDay": {
@@ -127929,7 +127929,7 @@
             "$ref": "#/components/schemas/HRMLeaveBuildUpRegistrations"
           }
         },
-        "description": "A collection of HRMLeaveBuildUpRegistrations entities.",
+        "description": "The HRMLeaveBuildUpRegistrations entity.",
         "readOnly": true
       },
       "HRMLeaveRegistrations": {
@@ -128140,7 +128140,7 @@
             "$ref": "#/components/schemas/HRMLeaveRegistrations"
           }
         },
-        "description": "A collection of HRMLeaveRegistrations entities.",
+        "description": "The HRMLeaveRegistrations entity.",
         "readOnly": true
       },
       "HRMSchedules": {
@@ -128398,7 +128398,7 @@
             "$ref": "#/components/schemas/HRMSchedules"
           }
         },
-        "description": "A collection of HRMSchedules entities.",
+        "description": "The HRMSchedules entity.",
         "readOnly": true
       },
       "InventoryAssemblyBillOfMaterialHeader": {
@@ -128835,7 +128835,7 @@
             "$ref": "#/components/schemas/InventoryAssemblyBillOfMaterialMaterials"
           }
         },
-        "description": "A collection of InventoryAssemblyBillOfMaterialMaterials entities.",
+        "description": "The InventoryAssemblyBillOfMaterialMaterials entity.",
         "readOnly": true
       },
       "InventoryAssemblyBillOfMaterialMaterialsPost": {
@@ -128885,7 +128885,7 @@
             "$ref": "#/components/schemas/InventoryAssemblyBillOfMaterialMaterialsPost"
           }
         },
-        "description": "A collection of InventoryAssemblyBillOfMaterialMaterials entities.",
+        "description": "The InventoryAssemblyBillOfMaterialMaterials entity.",
         "readOnly": true
       },
       "InventoryAssemblyBillOfMaterialMaterialsPut": {
@@ -129160,7 +129160,7 @@
             "$ref": "#/components/schemas/InventoryAssemblyOrders"
           }
         },
-        "description": "A collection of InventoryAssemblyOrders entities.",
+        "description": "The InventoryAssemblyOrders entity.",
         "readOnly": true
       },
       "InventoryBatchNumbers": {
@@ -129341,7 +129341,7 @@
             "$ref": "#/components/schemas/InventoryBatchNumbers"
           }
         },
-        "description": "A collection of InventoryBatchNumbers entities.",
+        "description": "The InventoryBatchNumbers entity.",
         "readOnly": true
       },
       "InventoryFinishAssemblyOrder": {
@@ -129688,7 +129688,7 @@
             "$ref": "#/components/schemas/InventoryItemWarehousePlanningDetails"
           }
         },
-        "description": "A collection of InventoryItemWarehousePlanningDetails entities.",
+        "description": "The InventoryItemWarehousePlanningDetails entity.",
         "readOnly": true
       },
       "InventoryItemWarehouses": {
@@ -129945,7 +129945,7 @@
             "$ref": "#/components/schemas/InventoryItemWarehouses"
           }
         },
-        "description": "A collection of InventoryItemWarehouses entities.",
+        "description": "The InventoryItemWarehouses entity.",
         "readOnly": true
       },
       "InventoryItemWarehousesPost": {
@@ -130031,7 +130031,7 @@
             "$ref": "#/components/schemas/InventoryItemWarehousesPost"
           }
         },
-        "description": "A collection of InventoryItemWarehouses entities.",
+        "description": "The InventoryItemWarehouses entity.",
         "readOnly": true
       },
       "InventoryItemWarehousesPut": {
@@ -130286,7 +130286,7 @@
             "$ref": "#/components/schemas/InventoryItemWarehouseStorageLocations"
           }
         },
-        "description": "A collection of InventoryItemWarehouseStorageLocations entities.",
+        "description": "The InventoryItemWarehouseStorageLocations entity.",
         "readOnly": true
       },
       "InventoryProcessStockCount": {
@@ -130749,7 +130749,7 @@
             "$ref": "#/components/schemas/InventorySerialNumbers"
           }
         },
-        "description": "A collection of InventorySerialNumbers entities.",
+        "description": "The InventorySerialNumbers entity.",
         "readOnly": true
       },
       "InventoryStockBatchNumbers": {
@@ -130987,7 +130987,7 @@
             "$ref": "#/components/schemas/InventoryStockBatchNumbers"
           }
         },
-        "description": "A collection of InventoryStockBatchNumbers entities.",
+        "description": "The InventoryStockBatchNumbers entity.",
         "readOnly": true
       },
       "InventoryStockBatchNumbersPost": {
@@ -131096,7 +131096,7 @@
             "$ref": "#/components/schemas/InventoryStockBatchNumbersPost"
           }
         },
-        "description": "A collection of InventoryStockBatchNumbers entities.",
+        "description": "The InventoryStockBatchNumbers entity.",
         "readOnly": true
       },
       "InventoryStockBatchNumbersPut": {
@@ -131349,7 +131349,7 @@
             "$ref": "#/components/schemas/InventoryStockCountLines"
           }
         },
-        "description": "A collection of InventoryStockCountLines entities.",
+        "description": "The InventoryStockCountLines entity.",
         "readOnly": true
       },
       "InventoryStockCountLinesPost": {
@@ -131423,7 +131423,7 @@
             "$ref": "#/components/schemas/InventoryStockCountLinesPost"
           }
         },
-        "description": "A collection of InventoryStockCountLines entities.",
+        "description": "The InventoryStockCountLines entity.",
         "readOnly": true
       },
       "InventoryStockCountLinesPut": {
@@ -131646,7 +131646,7 @@
             "$ref": "#/components/schemas/InventoryStockCounts"
           }
         },
-        "description": "A collection of InventoryStockCounts entities.",
+        "description": "The InventoryStockCounts entity.",
         "readOnly": true
       },
       "InventoryStockCountsPost": {
@@ -131709,7 +131709,7 @@
             "$ref": "#/components/schemas/InventoryStockCountsPost"
           }
         },
-        "description": "A collection of InventoryStockCounts entities.",
+        "description": "The InventoryStockCounts entity.",
         "readOnly": true
       },
       "InventoryStockCountsPut": {
@@ -131993,7 +131993,7 @@
             "$ref": "#/components/schemas/InventoryStockSerialNumbers"
           }
         },
-        "description": "A collection of InventoryStockSerialNumbers entities.",
+        "description": "The InventoryStockSerialNumbers entity.",
         "readOnly": true
       },
       "InventoryStockSerialNumbersPost": {
@@ -132101,7 +132101,7 @@
             "$ref": "#/components/schemas/InventoryStockSerialNumbersPost"
           }
         },
-        "description": "A collection of InventoryStockSerialNumbers entities.",
+        "description": "The InventoryStockSerialNumbers entity.",
         "readOnly": true
       },
       "InventoryStockSerialNumbersPut": {
@@ -132299,7 +132299,7 @@
             "$ref": "#/components/schemas/InventoryStorageLocations"
           }
         },
-        "description": "A collection of InventoryStorageLocations entities.",
+        "description": "The InventoryStorageLocations entity.",
         "readOnly": true
       },
       "InventoryWarehouses": {
@@ -132455,7 +132455,7 @@
             "$ref": "#/components/schemas/InventoryWarehouses"
           }
         },
-        "description": "A collection of InventoryWarehouses entities.",
+        "description": "The InventoryWarehouses entity.",
         "readOnly": true
       },
       "InventoryWarehousesPost": {
@@ -132515,7 +132515,7 @@
             "$ref": "#/components/schemas/InventoryWarehousesPost"
           }
         },
-        "description": "A collection of InventoryWarehouses entities.",
+        "description": "The InventoryWarehouses entity.",
         "readOnly": true
       },
       "InventoryWarehousesPut": {
@@ -132783,7 +132783,7 @@
             "$ref": "#/components/schemas/InventoryWarehouseTransferLines"
           }
         },
-        "description": "A collection of InventoryWarehouseTransferLines entities.",
+        "description": "The InventoryWarehouseTransferLines entity.",
         "readOnly": true
       },
       "InventoryWarehouseTransferLinesPost": {
@@ -132858,7 +132858,7 @@
             "$ref": "#/components/schemas/InventoryWarehouseTransferLinesPost"
           }
         },
-        "description": "A collection of InventoryWarehouseTransferLines entities.",
+        "description": "The InventoryWarehouseTransferLines entity.",
         "readOnly": true
       },
       "InventoryWarehouseTransferLinesPut": {
@@ -133108,7 +133108,7 @@
             "$ref": "#/components/schemas/InventoryWarehouseTransfers"
           }
         },
-        "description": "A collection of InventoryWarehouseTransfers entities.",
+        "description": "The InventoryWarehouseTransfers entity.",
         "readOnly": true
       },
       "InventoryWarehouseTransfersPost": {
@@ -133186,7 +133186,7 @@
             "$ref": "#/components/schemas/InventoryWarehouseTransfersPost"
           }
         },
-        "description": "A collection of InventoryWarehouseTransfers entities.",
+        "description": "The InventoryWarehouseTransfers entity.",
         "readOnly": true
       },
       "InventoryWarehouseTransfersPut": {
@@ -133386,7 +133386,7 @@
             "$ref": "#/components/schemas/LogisticsCustomerItems"
           }
         },
-        "description": "A collection of LogisticsCustomerItems entities.",
+        "description": "The LogisticsCustomerItems entity.",
         "readOnly": true
       },
       "LogisticsCustomerItemsPost": {
@@ -133431,7 +133431,7 @@
             "$ref": "#/components/schemas/LogisticsCustomerItemsPost"
           }
         },
-        "description": "A collection of LogisticsCustomerItems entities.",
+        "description": "The LogisticsCustomerItems entity.",
         "readOnly": true
       },
       "LogisticsCustomerItemsPut": {
@@ -133563,7 +133563,7 @@
             "$ref": "#/components/schemas/LogisticsIncoterms"
           }
         },
-        "description": "A collection of LogisticsIncoterms entities.",
+        "description": "The LogisticsIncoterms entity.",
         "readOnly": true
       },
       "LogisticsItemAssortment": {
@@ -134200,7 +134200,7 @@
             "$ref": "#/components/schemas/LogisticsItemGroups"
           }
         },
-        "description": "A collection of LogisticsItemGroups entities.",
+        "description": "The LogisticsItemGroups entity.",
         "readOnly": true
       },
       "LogisticsItems": {
@@ -134757,7 +134757,7 @@
             "$ref": "#/components/schemas/LogisticsItems"
           }
         },
-        "description": "A collection of LogisticsItems entities.",
+        "description": "The LogisticsItems entity.",
         "readOnly": true
       },
       "LogisticsItemsPost": {
@@ -135146,7 +135146,7 @@
             "$ref": "#/components/schemas/LogisticsItemsPost"
           }
         },
-        "description": "A collection of LogisticsItems entities.",
+        "description": "The LogisticsItems entity.",
         "readOnly": true
       },
       "LogisticsItemsPut": {
@@ -135731,7 +135731,7 @@
             "$ref": "#/components/schemas/LogisticsItemVersions"
           }
         },
-        "description": "A collection of LogisticsItemVersions entities.",
+        "description": "The LogisticsItemVersions entity.",
         "readOnly": true
       },
       "LogisticsReasonCodes": {
@@ -135882,7 +135882,7 @@
             "$ref": "#/components/schemas/LogisticsReasonCodes"
           }
         },
-        "description": "A collection of LogisticsReasonCodes entities.",
+        "description": "The LogisticsReasonCodes entity.",
         "readOnly": true
       },
       "LogisticsReasonCodesLinkTypes": {
@@ -135979,7 +135979,7 @@
             "$ref": "#/components/schemas/LogisticsReasonCodesLinkTypes"
           }
         },
-        "description": "A collection of LogisticsReasonCodesLinkTypes entities.",
+        "description": "The LogisticsReasonCodesLinkTypes entity.",
         "readOnly": true
       },
       "LogisticsSalesItemPrices": {
@@ -136176,7 +136176,7 @@
             "$ref": "#/components/schemas/LogisticsSalesItemPrices"
           }
         },
-        "description": "A collection of LogisticsSalesItemPrices entities.",
+        "description": "The LogisticsSalesItemPrices entity.",
         "readOnly": true
       },
       "LogisticsSalesItemPricesPost": {
@@ -136258,7 +136258,7 @@
             "$ref": "#/components/schemas/LogisticsSalesItemPricesPost"
           }
         },
-        "description": "A collection of LogisticsSalesItemPrices entities.",
+        "description": "The LogisticsSalesItemPrices entity.",
         "readOnly": true
       },
       "LogisticsSalesItemPricesPut": {
@@ -136486,7 +136486,7 @@
             "$ref": "#/components/schemas/LogisticsSelectionCodes"
           }
         },
-        "description": "A collection of LogisticsSelectionCodes entities.",
+        "description": "The LogisticsSelectionCodes entity.",
         "readOnly": true
       },
       "LogisticsSupplierItem": {
@@ -137093,7 +137093,7 @@
             "$ref": "#/components/schemas/LogisticsUnits"
           }
         },
-        "description": "A collection of LogisticsUnits entities.",
+        "description": "The LogisticsUnits entity.",
         "readOnly": true
       },
       "MailboxMailboxes": {
@@ -137249,7 +137249,7 @@
             "$ref": "#/components/schemas/MailboxMailboxes"
           }
         },
-        "description": "A collection of MailboxMailboxes entities.",
+        "description": "The MailboxMailboxes entity.",
         "readOnly": true
       },
       "MailboxMailboxesPost": {
@@ -137319,7 +137319,7 @@
             "$ref": "#/components/schemas/MailboxMailboxesPost"
           }
         },
-        "description": "A collection of MailboxMailboxes entities.",
+        "description": "The MailboxMailboxes entity.",
         "readOnly": true
       },
       "MailboxMailboxesPut": {
@@ -137520,7 +137520,7 @@
             "$ref": "#/components/schemas/MailboxMailMessageAttachments"
           }
         },
-        "description": "A collection of MailboxMailMessageAttachments entities.",
+        "description": "The MailboxMailMessageAttachments entity.",
         "readOnly": true
       },
       "MailboxMailMessageAttachmentsPost": {
@@ -137571,7 +137571,7 @@
             "$ref": "#/components/schemas/MailboxMailMessageAttachmentsPost"
           }
         },
-        "description": "A collection of MailboxMailMessageAttachments entities.",
+        "description": "The MailboxMailMessageAttachments entity.",
         "readOnly": true
       },
       "MailboxMailMessagesSent": {
@@ -138160,7 +138160,7 @@
             "$ref": "#/components/schemas/ManufacturingBillOfMaterialMaterials"
           }
         },
-        "description": "A collection of ManufacturingBillOfMaterialMaterials entities.",
+        "description": "The ManufacturingBillOfMaterialMaterials entity.",
         "readOnly": true
       },
       "ManufacturingBillOfMaterialMaterialsPost": {
@@ -138258,7 +138258,7 @@
             "$ref": "#/components/schemas/ManufacturingBillOfMaterialMaterialsPost"
           }
         },
-        "description": "A collection of ManufacturingBillOfMaterialMaterials entities.",
+        "description": "The ManufacturingBillOfMaterialMaterials entity.",
         "readOnly": true
       },
       "ManufacturingBillOfMaterialMaterialsPut": {
@@ -138639,7 +138639,7 @@
             "$ref": "#/components/schemas/ManufacturingBillOfMaterialRoutings"
           }
         },
-        "description": "A collection of ManufacturingBillOfMaterialRoutings entities.",
+        "description": "The ManufacturingBillOfMaterialRoutings entity.",
         "readOnly": true
       },
       "ManufacturingBillOfMaterialRoutingsPost": {
@@ -138749,7 +138749,7 @@
             "$ref": "#/components/schemas/ManufacturingBillOfMaterialRoutingsPost"
           }
         },
-        "description": "A collection of ManufacturingBillOfMaterialRoutings entities.",
+        "description": "The ManufacturingBillOfMaterialRoutings entity.",
         "readOnly": true
       },
       "ManufacturingBillOfMaterialRoutingsPut": {
@@ -139046,7 +139046,7 @@
             "$ref": "#/components/schemas/ManufacturingBillOfMaterialVersions"
           }
         },
-        "description": "A collection of ManufacturingBillOfMaterialVersions entities.",
+        "description": "The ManufacturingBillOfMaterialVersions entity.",
         "readOnly": true
       },
       "ManufacturingBillOfMaterialVersionsPost": {
@@ -139141,7 +139141,7 @@
             "$ref": "#/components/schemas/ManufacturingBillOfMaterialVersionsPost"
           }
         },
-        "description": "A collection of ManufacturingBillOfMaterialVersions entities.",
+        "description": "The ManufacturingBillOfMaterialVersions entity.",
         "readOnly": true
       },
       "ManufacturingBillOfMaterialVersionsPut": {
@@ -139445,7 +139445,7 @@
             "$ref": "#/components/schemas/ManufacturingByProductReceipts"
           }
         },
-        "description": "A collection of ManufacturingByProductReceipts entities.",
+        "description": "The ManufacturingByProductReceipts entity.",
         "readOnly": true
       },
       "ManufacturingByProductReceiptsPost": {
@@ -139496,7 +139496,7 @@
             "$ref": "#/components/schemas/ManufacturingByProductReceiptsPost"
           }
         },
-        "description": "A collection of ManufacturingByProductReceipts entities.",
+        "description": "The ManufacturingByProductReceipts entity.",
         "readOnly": true
       },
       "ManufacturingByProductReversals": {
@@ -139701,7 +139701,7 @@
             "$ref": "#/components/schemas/ManufacturingByProductReversals"
           }
         },
-        "description": "A collection of ManufacturingByProductReversals entities.",
+        "description": "The ManufacturingByProductReversals entity.",
         "readOnly": true
       },
       "ManufacturingByProductReversalsPost": {
@@ -139740,7 +139740,7 @@
             "$ref": "#/components/schemas/ManufacturingByProductReversalsPost"
           }
         },
-        "description": "A collection of ManufacturingByProductReversals entities.",
+        "description": "The ManufacturingByProductReversals entity.",
         "readOnly": true
       },
       "ManufacturingManufacturingSettings": {
@@ -139864,7 +139864,7 @@
             "$ref": "#/components/schemas/ManufacturingManufacturingSettings"
           }
         },
-        "description": "A collection of ManufacturingManufacturingSettings entities.",
+        "description": "The ManufacturingManufacturingSettings entity.",
         "readOnly": true
       },
       "ManufacturingMaterialIssues": {
@@ -140089,7 +140089,7 @@
             "$ref": "#/components/schemas/ManufacturingMaterialIssues"
           }
         },
-        "description": "A collection of ManufacturingMaterialIssues entities.",
+        "description": "The ManufacturingMaterialIssues entity.",
         "readOnly": true
       },
       "ManufacturingMaterialIssuesPost": {
@@ -140144,7 +140144,7 @@
             "$ref": "#/components/schemas/ManufacturingMaterialIssuesPost"
           }
         },
-        "description": "A collection of ManufacturingMaterialIssues entities.",
+        "description": "The ManufacturingMaterialIssues entity.",
         "readOnly": true
       },
       "ManufacturingMaterialReversals": {
@@ -140363,7 +140363,7 @@
             "$ref": "#/components/schemas/ManufacturingMaterialReversals"
           }
         },
-        "description": "A collection of ManufacturingMaterialReversals entities.",
+        "description": "The ManufacturingMaterialReversals entity.",
         "readOnly": true
       },
       "ManufacturingMaterialReversalsPost": {
@@ -140426,7 +140426,7 @@
             "$ref": "#/components/schemas/ManufacturingMaterialReversalsPost"
           }
         },
-        "description": "A collection of ManufacturingMaterialReversals entities.",
+        "description": "The ManufacturingMaterialReversals entity.",
         "readOnly": true
       },
       "ManufacturingOperationResources": {
@@ -140620,7 +140620,7 @@
             "$ref": "#/components/schemas/ManufacturingOperationResources"
           }
         },
-        "description": "A collection of ManufacturingOperationResources entities.",
+        "description": "The ManufacturingOperationResources entity.",
         "readOnly": true
       },
       "ManufacturingOperationResourcesPost": {
@@ -140723,7 +140723,7 @@
             "$ref": "#/components/schemas/ManufacturingOperationResourcesPost"
           }
         },
-        "description": "A collection of ManufacturingOperationResources entities.",
+        "description": "The ManufacturingOperationResources entity.",
         "readOnly": true
       },
       "ManufacturingOperationResourcesPut": {
@@ -140980,7 +140980,7 @@
             "$ref": "#/components/schemas/ManufacturingOperations"
           }
         },
-        "description": "A collection of ManufacturingOperations entities.",
+        "description": "The ManufacturingOperations entity.",
         "readOnly": true
       },
       "ManufacturingOperationsPost": {
@@ -141044,7 +141044,7 @@
             "$ref": "#/components/schemas/ManufacturingOperationsPost"
           }
         },
-        "description": "A collection of ManufacturingOperations entities.",
+        "description": "The ManufacturingOperations entity.",
         "readOnly": true
       },
       "ManufacturingOperationsPut": {
@@ -141260,7 +141260,7 @@
             "$ref": "#/components/schemas/ManufacturingProductionAreas"
           }
         },
-        "description": "A collection of ManufacturingProductionAreas entities.",
+        "description": "The ManufacturingProductionAreas entity.",
         "readOnly": true
       },
       "ManufacturingProductionAreasPost": {
@@ -141318,7 +141318,7 @@
             "$ref": "#/components/schemas/ManufacturingProductionAreasPost"
           }
         },
-        "description": "A collection of ManufacturingProductionAreas entities.",
+        "description": "The ManufacturingProductionAreas entity.",
         "readOnly": true
       },
       "ManufacturingProductionAreasPut": {
@@ -141750,7 +141750,7 @@
             "$ref": "#/components/schemas/ManufacturingShopOrderMaterialPlanDetails"
           }
         },
-        "description": "A collection of ManufacturingShopOrderMaterialPlanDetails entities.",
+        "description": "The ManufacturingShopOrderMaterialPlanDetails entity.",
         "readOnly": true
       },
       "ManufacturingShopOrderMaterialPlans": {
@@ -141976,7 +141976,7 @@
             "$ref": "#/components/schemas/ManufacturingShopOrderMaterialPlans"
           }
         },
-        "description": "A collection of ManufacturingShopOrderMaterialPlans entities.",
+        "description": "The ManufacturingShopOrderMaterialPlans entity.",
         "readOnly": true
       },
       "ManufacturingShopOrderMaterialPlansPost": {
@@ -142091,7 +142091,7 @@
             "$ref": "#/components/schemas/ManufacturingShopOrderMaterialPlansPost"
           }
         },
-        "description": "A collection of ManufacturingShopOrderMaterialPlans entities.",
+        "description": "The ManufacturingShopOrderMaterialPlans entity.",
         "readOnly": true
       },
       "ManufacturingShopOrderMaterialPlansPut": {
@@ -142309,7 +142309,7 @@
             "$ref": "#/components/schemas/ManufacturingShopOrderPriorities"
           }
         },
-        "description": "A collection of ManufacturingShopOrderPriorities entities.",
+        "description": "The ManufacturingShopOrderPriorities entity.",
         "readOnly": true
       },
       "ManufacturingShopOrderPrioritiesPut": {
@@ -142551,7 +142551,7 @@
             "$ref": "#/components/schemas/ManufacturingShopOrderReceipts"
           }
         },
-        "description": "A collection of ManufacturingShopOrderReceipts entities.",
+        "description": "The ManufacturingShopOrderReceipts entity.",
         "readOnly": true
       },
       "ManufacturingShopOrderReceiptsPost": {
@@ -142602,7 +142602,7 @@
             "$ref": "#/components/schemas/ManufacturingShopOrderReceiptsPost"
           }
         },
-        "description": "A collection of ManufacturingShopOrderReceipts entities.",
+        "description": "The ManufacturingShopOrderReceipts entity.",
         "readOnly": true
       },
       "ManufacturingShopOrderReversals": {
@@ -142798,7 +142798,7 @@
             "$ref": "#/components/schemas/ManufacturingShopOrderReversals"
           }
         },
-        "description": "A collection of ManufacturingShopOrderReversals entities.",
+        "description": "The ManufacturingShopOrderReversals entity.",
         "readOnly": true
       },
       "ManufacturingShopOrderReversalsPost": {
@@ -142837,7 +142837,7 @@
             "$ref": "#/components/schemas/ManufacturingShopOrderReversalsPost"
           }
         },
-        "description": "A collection of ManufacturingShopOrderReversals entities.",
+        "description": "The ManufacturingShopOrderReversals entity.",
         "readOnly": true
       },
       "ManufacturingShopOrderRoutingStepPlans": {
@@ -143138,7 +143138,7 @@
             "$ref": "#/components/schemas/ManufacturingShopOrderRoutingStepPlans"
           }
         },
-        "description": "A collection of ManufacturingShopOrderRoutingStepPlans entities.",
+        "description": "The ManufacturingShopOrderRoutingStepPlans entity.",
         "readOnly": true
       },
       "ManufacturingShopOrderRoutingStepPlansPost": {
@@ -143324,7 +143324,7 @@
             "$ref": "#/components/schemas/ManufacturingShopOrderRoutingStepPlansPost"
           }
         },
-        "description": "A collection of ManufacturingShopOrderRoutingStepPlans entities.",
+        "description": "The ManufacturingShopOrderRoutingStepPlans entity.",
         "readOnly": true
       },
       "ManufacturingShopOrderRoutingStepPlansPut": {
@@ -143907,7 +143907,7 @@
             "$ref": "#/components/schemas/ManufacturingShopOrders"
           }
         },
-        "description": "A collection of ManufacturingShopOrders entities.",
+        "description": "The ManufacturingShopOrders entity.",
         "readOnly": true
       },
       "ManufacturingShopOrdersPost": {
@@ -144038,7 +144038,7 @@
             "$ref": "#/components/schemas/ManufacturingShopOrdersPost"
           }
         },
-        "description": "A collection of ManufacturingShopOrders entities.",
+        "description": "The ManufacturingShopOrders entity.",
         "readOnly": true
       },
       "ManufacturingShopOrdersPut": {
@@ -144356,7 +144356,7 @@
             "$ref": "#/components/schemas/ManufacturingStageForDeliveryReceipts"
           }
         },
-        "description": "A collection of ManufacturingStageForDeliveryReceipts entities.",
+        "description": "The ManufacturingStageForDeliveryReceipts entity.",
         "readOnly": true
       },
       "ManufacturingStageForDeliveryReceiptsPost": {
@@ -144397,7 +144397,7 @@
             "$ref": "#/components/schemas/ManufacturingStageForDeliveryReceiptsPost"
           }
         },
-        "description": "A collection of ManufacturingStageForDeliveryReceipts entities.",
+        "description": "The ManufacturingStageForDeliveryReceipts entity.",
         "readOnly": true
       },
       "ManufacturingStageForDeliveryReversals": {
@@ -144578,7 +144578,7 @@
             "$ref": "#/components/schemas/ManufacturingStageForDeliveryReversals"
           }
         },
-        "description": "A collection of ManufacturingStageForDeliveryReversals entities.",
+        "description": "The ManufacturingStageForDeliveryReversals entity.",
         "readOnly": true
       },
       "ManufacturingStageForDeliveryReversalsPost": {
@@ -144625,7 +144625,7 @@
             "$ref": "#/components/schemas/ManufacturingStageForDeliveryReversalsPost"
           }
         },
-        "description": "A collection of ManufacturingStageForDeliveryReversals entities.",
+        "description": "The ManufacturingStageForDeliveryReversals entity.",
         "readOnly": true
       },
       "ManufacturingSubOrderReceipts": {
@@ -144829,7 +144829,7 @@
             "$ref": "#/components/schemas/ManufacturingSubOrderReceipts"
           }
         },
-        "description": "A collection of ManufacturingSubOrderReceipts entities.",
+        "description": "The ManufacturingSubOrderReceipts entity.",
         "readOnly": true
       },
       "ManufacturingSubOrderReceiptsPost": {
@@ -144875,7 +144875,7 @@
             "$ref": "#/components/schemas/ManufacturingSubOrderReceiptsPost"
           }
         },
-        "description": "A collection of ManufacturingSubOrderReceipts entities.",
+        "description": "The ManufacturingSubOrderReceipts entity.",
         "readOnly": true
       },
       "ManufacturingSubOrderReversals": {
@@ -145078,7 +145078,7 @@
             "$ref": "#/components/schemas/ManufacturingSubOrderReversals"
           }
         },
-        "description": "A collection of ManufacturingSubOrderReversals entities.",
+        "description": "The ManufacturingSubOrderReversals entity.",
         "readOnly": true
       },
       "ManufacturingSubOrderReversalsPost": {
@@ -145117,7 +145117,7 @@
             "$ref": "#/components/schemas/ManufacturingSubOrderReversalsPost"
           }
         },
-        "description": "A collection of ManufacturingSubOrderReversals entities.",
+        "description": "The ManufacturingSubOrderReversals entity.",
         "readOnly": true
       },
       "ManufacturingTimedTimeTransactions": {
@@ -145368,7 +145368,7 @@
             "$ref": "#/components/schemas/ManufacturingTimedTimeTransactions"
           }
         },
-        "description": "A collection of ManufacturingTimedTimeTransactions entities.",
+        "description": "The ManufacturingTimedTimeTransactions entity.",
         "readOnly": true
       },
       "ManufacturingTimedTimeTransactionsPost": {
@@ -145493,7 +145493,7 @@
             "$ref": "#/components/schemas/ManufacturingTimedTimeTransactionsPost"
           }
         },
-        "description": "A collection of ManufacturingTimedTimeTransactions entities.",
+        "description": "The ManufacturingTimedTimeTransactions entity.",
         "readOnly": true
       },
       "ManufacturingTimedTimeTransactionsPut": {
@@ -145806,7 +145806,7 @@
             "$ref": "#/components/schemas/ManufacturingTimeTransactions"
           }
         },
-        "description": "A collection of ManufacturingTimeTransactions entities.",
+        "description": "The ManufacturingTimeTransactions entity.",
         "readOnly": true
       },
       "ManufacturingTimeTransactionsPost": {
@@ -145908,7 +145908,7 @@
             "$ref": "#/components/schemas/ManufacturingTimeTransactionsPost"
           }
         },
-        "description": "A collection of ManufacturingTimeTransactions entities.",
+        "description": "The ManufacturingTimeTransactions entity.",
         "readOnly": true
       },
       "ManufacturingTimeTransactionsPut": {
@@ -146213,7 +146213,7 @@
             "$ref": "#/components/schemas/ManufacturingWorkcenters"
           }
         },
-        "description": "A collection of ManufacturingWorkcenters entities.",
+        "description": "The ManufacturingWorkcenters entity.",
         "readOnly": true
       },
       "ManufacturingWorkcentersPost": {
@@ -146322,7 +146322,7 @@
             "$ref": "#/components/schemas/ManufacturingWorkcentersPost"
           }
         },
-        "description": "A collection of ManufacturingWorkcenters entities.",
+        "description": "The ManufacturingWorkcenters entity.",
         "readOnly": true
       },
       "ManufacturingWorkcentersPut": {
@@ -147221,7 +147221,7 @@
             "$ref": "#/components/schemas/PayrollActiveEmployments"
           }
         },
-        "description": "A collection of PayrollActiveEmployments entities.",
+        "description": "The PayrollActiveEmployments entity.",
         "readOnly": true
       },
       "PayrollEmployees": {
@@ -147665,7 +147665,7 @@
             "$ref": "#/components/schemas/PayrollEmployees"
           }
         },
-        "description": "A collection of PayrollEmployees entities.",
+        "description": "The PayrollEmployees entity.",
         "readOnly": true
       },
       "PayrollEmploymentConditionGroups": {
@@ -147833,7 +147833,7 @@
             "$ref": "#/components/schemas/PayrollEmploymentConditionGroups"
           }
         },
-        "description": "A collection of PayrollEmploymentConditionGroups entities.",
+        "description": "The PayrollEmploymentConditionGroups entity.",
         "readOnly": true
       },
       "PayrollEmploymentContractFlexPhases": {
@@ -147918,7 +147918,7 @@
             "$ref": "#/components/schemas/PayrollEmploymentContractFlexPhases"
           }
         },
-        "description": "A collection of PayrollEmploymentContractFlexPhases entities.",
+        "description": "The PayrollEmploymentContractFlexPhases entity.",
         "readOnly": true
       },
       "PayrollEmploymentContracts": {
@@ -148174,7 +148174,7 @@
             "$ref": "#/components/schemas/PayrollEmploymentContracts"
           }
         },
-        "description": "A collection of PayrollEmploymentContracts entities.",
+        "description": "The PayrollEmploymentContracts entity.",
         "readOnly": true
       },
       "PayrollEmploymentEndReasons": {
@@ -148259,7 +148259,7 @@
             "$ref": "#/components/schemas/PayrollEmploymentEndReasons"
           }
         },
-        "description": "A collection of PayrollEmploymentEndReasons entities.",
+        "description": "The PayrollEmploymentEndReasons entity.",
         "readOnly": true
       },
       "PayrollEmploymentOrganizations": {
@@ -148486,7 +148486,7 @@
             "$ref": "#/components/schemas/PayrollEmploymentOrganizations"
           }
         },
-        "description": "A collection of PayrollEmploymentOrganizations entities.",
+        "description": "The PayrollEmploymentOrganizations entity.",
         "readOnly": true
       },
       "PayrollEmployments": {
@@ -148675,7 +148675,7 @@
             "$ref": "#/components/schemas/PayrollEmployments"
           }
         },
-        "description": "A collection of PayrollEmployments entities.",
+        "description": "The PayrollEmployments entity.",
         "readOnly": true
       },
       "PayrollEmploymentSalaries": {
@@ -149000,7 +149000,7 @@
             "$ref": "#/components/schemas/PayrollEmploymentSalaries"
           }
         },
-        "description": "A collection of PayrollEmploymentSalaries entities.",
+        "description": "The PayrollEmploymentSalaries entity.",
         "readOnly": true
       },
       "PayrollEmploymentTaxAuthoritiesGeneral": {
@@ -149455,7 +149455,7 @@
             "$ref": "#/components/schemas/PayrollPayrollComponents"
           }
         },
-        "description": "A collection of PayrollPayrollComponents entities.",
+        "description": "The PayrollPayrollComponents entity.",
         "readOnly": true
       },
       "PayrollPayrollTransactionsByPayrollYear": {
@@ -149946,7 +149946,7 @@
             "$ref": "#/components/schemas/PayrollTaxEmploymentEndFlexCodes"
           }
         },
-        "description": "A collection of PayrollTaxEmploymentEndFlexCodes entities.",
+        "description": "The PayrollTaxEmploymentEndFlexCodes entity.",
         "readOnly": true
       },
       "PayrollVariableMutations": {
@@ -150082,7 +150082,7 @@
             "$ref": "#/components/schemas/PayrollVariableMutations"
           }
         },
-        "description": "A collection of PayrollVariableMutations entities.",
+        "description": "The PayrollVariableMutations entity.",
         "readOnly": true
       },
       "PayrollVariableMutationsPost": {
@@ -150158,7 +150158,7 @@
             "$ref": "#/components/schemas/PayrollVariableMutationsPost"
           }
         },
-        "description": "A collection of PayrollVariableMutations entities.",
+        "description": "The PayrollVariableMutations entity.",
         "readOnly": true
       },
       "PayrollVariableMutationsPut": {
@@ -150480,7 +150480,7 @@
             "$ref": "#/components/schemas/ProjectCostTransactions"
           }
         },
-        "description": "A collection of ProjectCostTransactions entities.",
+        "description": "The ProjectCostTransactions entity.",
         "readOnly": true
       },
       "ProjectCostTransactionsPost": {
@@ -150592,7 +150592,7 @@
             "$ref": "#/components/schemas/ProjectCostTransactionsPost"
           }
         },
-        "description": "A collection of ProjectCostTransactions entities.",
+        "description": "The ProjectCostTransactions entity.",
         "readOnly": true
       },
       "ProjectCostTransactionsPut": {
@@ -150855,7 +150855,7 @@
             "$ref": "#/components/schemas/ProjectEmployeeRestrictionItems"
           }
         },
-        "description": "A collection of ProjectEmployeeRestrictionItems entities.",
+        "description": "The ProjectEmployeeRestrictionItems entity.",
         "readOnly": true
       },
       "ProjectEmployeeRestrictionItemsPost": {
@@ -150896,7 +150896,7 @@
             "$ref": "#/components/schemas/ProjectEmployeeRestrictionItemsPost"
           }
         },
-        "description": "A collection of ProjectEmployeeRestrictionItems entities.",
+        "description": "The ProjectEmployeeRestrictionItems entity.",
         "readOnly": true
       },
       "ProjectEmployeeRestrictionItemsPut": {
@@ -151107,7 +151107,7 @@
             "$ref": "#/components/schemas/ProjectEmploymentInternalRates"
           }
         },
-        "description": "A collection of ProjectEmploymentInternalRates entities.",
+        "description": "The ProjectEmploymentInternalRates entity.",
         "readOnly": true
       },
       "ProjectInvoiceTerms": {
@@ -151304,7 +151304,7 @@
             "$ref": "#/components/schemas/ProjectInvoiceTerms"
           }
         },
-        "description": "A collection of ProjectInvoiceTerms entities.",
+        "description": "The ProjectInvoiceTerms entity.",
         "readOnly": true
       },
       "ProjectInvoiceTermsPost": {
@@ -151377,7 +151377,7 @@
             "$ref": "#/components/schemas/ProjectInvoiceTermsPost"
           }
         },
-        "description": "A collection of ProjectInvoiceTerms entities.",
+        "description": "The ProjectInvoiceTerms entity.",
         "readOnly": true
       },
       "ProjectInvoiceTermsPut": {
@@ -151612,7 +151612,7 @@
             "$ref": "#/components/schemas/ProjectProjectAccountMutations"
           }
         },
-        "description": "A collection of ProjectProjectAccountMutations entities.",
+        "description": "The ProjectProjectAccountMutations entity.",
         "readOnly": true
       },
       "ProjectProjectAccountMutationsPost": {
@@ -151663,7 +151663,7 @@
             "$ref": "#/components/schemas/ProjectProjectAccountMutationsPost"
           }
         },
-        "description": "A collection of ProjectProjectAccountMutations entities.",
+        "description": "The ProjectProjectAccountMutations entity.",
         "readOnly": true
       },
       "ProjectProjectAccountMutationsPut": {
@@ -151784,7 +151784,7 @@
             "$ref": "#/components/schemas/ProjectProjectBudgetTypes"
           }
         },
-        "description": "A collection of ProjectProjectBudgetTypes entities.",
+        "description": "The ProjectProjectBudgetTypes entity.",
         "readOnly": true
       },
       "ProjectProjectClassifications": {
@@ -151930,7 +151930,7 @@
             "$ref": "#/components/schemas/ProjectProjectClassifications"
           }
         },
-        "description": "A collection of ProjectProjectClassifications entities.",
+        "description": "The ProjectProjectClassifications entity.",
         "readOnly": true
       },
       "ProjectProjectClassificationsPost": {
@@ -151981,7 +151981,7 @@
             "$ref": "#/components/schemas/ProjectProjectClassificationsPost"
           }
         },
-        "description": "A collection of ProjectProjectClassifications entities.",
+        "description": "The ProjectProjectClassifications entity.",
         "readOnly": true
       },
       "ProjectProjectClassificationsPut": {
@@ -152181,7 +152181,7 @@
             "$ref": "#/components/schemas/ProjectProjectHourBudgets"
           }
         },
-        "description": "A collection of ProjectProjectHourBudgets entities.",
+        "description": "The ProjectProjectHourBudgets entity.",
         "readOnly": true
       },
       "ProjectProjectHourBudgetsPost": {
@@ -152228,7 +152228,7 @@
             "$ref": "#/components/schemas/ProjectProjectHourBudgetsPost"
           }
         },
-        "description": "A collection of ProjectProjectHourBudgets entities.",
+        "description": "The ProjectProjectHourBudgets entity.",
         "readOnly": true
       },
       "ProjectProjectHourBudgetsPut": {
@@ -153523,7 +153523,7 @@
             "$ref": "#/components/schemas/ProjectProjectRestrictionEmployeeItems"
           }
         },
-        "description": "A collection of ProjectProjectRestrictionEmployeeItems entities.",
+        "description": "The ProjectProjectRestrictionEmployeeItems entity.",
         "readOnly": true
       },
       "ProjectProjectRestrictionEmployeeItemsPost": {
@@ -153570,7 +153570,7 @@
             "$ref": "#/components/schemas/ProjectProjectRestrictionEmployeeItemsPost"
           }
         },
-        "description": "A collection of ProjectProjectRestrictionEmployeeItems entities.",
+        "description": "The ProjectProjectRestrictionEmployeeItems entity.",
         "readOnly": true
       },
       "ProjectProjectRestrictionEmployeeItemsPut": {
@@ -153761,7 +153761,7 @@
             "$ref": "#/components/schemas/ProjectProjectRestrictionEmployees"
           }
         },
-        "description": "A collection of ProjectProjectRestrictionEmployees entities.",
+        "description": "The ProjectProjectRestrictionEmployees entity.",
         "readOnly": true
       },
       "ProjectProjectRestrictionEmployeesPost": {
@@ -153802,7 +153802,7 @@
             "$ref": "#/components/schemas/ProjectProjectRestrictionEmployeesPost"
           }
         },
-        "description": "A collection of ProjectProjectRestrictionEmployees entities.",
+        "description": "The ProjectProjectRestrictionEmployees entity.",
         "readOnly": true
       },
       "ProjectProjectRestrictionEmployeesPut": {
@@ -153993,7 +153993,7 @@
             "$ref": "#/components/schemas/ProjectProjectRestrictionItems"
           }
         },
-        "description": "A collection of ProjectProjectRestrictionItems entities.",
+        "description": "The ProjectProjectRestrictionItems entity.",
         "readOnly": true
       },
       "ProjectProjectRestrictionItemsPost": {
@@ -154034,7 +154034,7 @@
             "$ref": "#/components/schemas/ProjectProjectRestrictionItemsPost"
           }
         },
-        "description": "A collection of ProjectProjectRestrictionItems entities.",
+        "description": "The ProjectProjectRestrictionItems entity.",
         "readOnly": true
       },
       "ProjectProjectRestrictionItemsPut": {
@@ -154218,7 +154218,7 @@
             "$ref": "#/components/schemas/ProjectProjectRestrictionRebillings"
           }
         },
-        "description": "A collection of ProjectProjectRestrictionRebillings entities.",
+        "description": "The ProjectProjectRestrictionRebillings entity.",
         "readOnly": true
       },
       "ProjectProjectRestrictionRebillingsPost": {
@@ -154259,7 +154259,7 @@
             "$ref": "#/components/schemas/ProjectProjectRestrictionRebillingsPost"
           }
         },
-        "description": "A collection of ProjectProjectRestrictionRebillings entities.",
+        "description": "The ProjectProjectRestrictionRebillings entity.",
         "readOnly": true
       },
       "ProjectProjectRestrictionRebillingsPut": {
@@ -154688,7 +154688,7 @@
             "$ref": "#/components/schemas/ProjectProjects"
           }
         },
-        "description": "A collection of ProjectProjects entities.",
+        "description": "The ProjectProjects entity.",
         "readOnly": true
       },
       "ProjectProjectsPost": {
@@ -154893,7 +154893,7 @@
             "$ref": "#/components/schemas/ProjectProjectsPost"
           }
         },
-        "description": "A collection of ProjectProjects entities.",
+        "description": "The ProjectProjects entity.",
         "readOnly": true
       },
       "ProjectProjectsPut": {
@@ -155227,7 +155227,7 @@
             "$ref": "#/components/schemas/ProjectTimeCorrections"
           }
         },
-        "description": "A collection of ProjectTimeCorrections entities.",
+        "description": "The ProjectTimeCorrections entity.",
         "readOnly": true
       },
       "ProjectTimeCorrectionsPost": {
@@ -155270,7 +155270,7 @@
             "$ref": "#/components/schemas/ProjectTimeCorrectionsPost"
           }
         },
-        "description": "A collection of ProjectTimeCorrections entities.",
+        "description": "The ProjectTimeCorrections entity.",
         "readOnly": true
       },
       "ProjectTimeCorrectionsPut": {
@@ -155584,7 +155584,7 @@
             "$ref": "#/components/schemas/ProjectTimeTransactions"
           }
         },
-        "description": "A collection of ProjectTimeTransactions entities.",
+        "description": "The ProjectTimeTransactions entity.",
         "readOnly": true
       },
       "ProjectTimeTransactionsPost": {
@@ -155697,7 +155697,7 @@
             "$ref": "#/components/schemas/ProjectTimeTransactionsPost"
           }
         },
-        "description": "A collection of ProjectTimeTransactions entities.",
+        "description": "The ProjectTimeTransactions entity.",
         "readOnly": true
       },
       "ProjectTimeTransactionsPut": {
@@ -156048,7 +156048,7 @@
             "$ref": "#/components/schemas/ProjectWBSActivities"
           }
         },
-        "description": "A collection of ProjectWBSActivities entities.",
+        "description": "The ProjectWBSActivities entity.",
         "readOnly": true
       },
       "ProjectWBSActivitiesPost": {
@@ -156183,7 +156183,7 @@
             "$ref": "#/components/schemas/ProjectWBSActivitiesPost"
           }
         },
-        "description": "A collection of ProjectWBSActivities entities.",
+        "description": "The ProjectWBSActivities entity.",
         "readOnly": true
       },
       "ProjectWBSActivitiesPut": {
@@ -156490,7 +156490,7 @@
             "$ref": "#/components/schemas/ProjectWBSDeliverables"
           }
         },
-        "description": "A collection of ProjectWBSDeliverables entities.",
+        "description": "The ProjectWBSDeliverables entity.",
         "readOnly": true
       },
       "ProjectWBSDeliverablesPost": {
@@ -156566,7 +156566,7 @@
             "$ref": "#/components/schemas/ProjectWBSDeliverablesPost"
           }
         },
-        "description": "A collection of ProjectWBSDeliverables entities.",
+        "description": "The ProjectWBSDeliverables entity.",
         "readOnly": true
       },
       "ProjectWBSDeliverablesPut": {
@@ -156877,7 +156877,7 @@
             "$ref": "#/components/schemas/ProjectWBSExpenses"
           }
         },
-        "description": "A collection of ProjectWBSExpenses entities.",
+        "description": "The ProjectWBSExpenses entity.",
         "readOnly": true
       },
       "ProjectWBSExpensesPost": {
@@ -157015,7 +157015,7 @@
             "$ref": "#/components/schemas/ProjectWBSExpensesPost"
           }
         },
-        "description": "A collection of ProjectWBSExpenses entities.",
+        "description": "The ProjectWBSExpenses entity.",
         "readOnly": true
       },
       "ProjectWBSExpensesPut": {
@@ -157436,7 +157436,7 @@
             "$ref": "#/components/schemas/PurchaseEntryPurchaseEntries"
           }
         },
-        "description": "A collection of PurchaseEntryPurchaseEntries entities.",
+        "description": "The PurchaseEntryPurchaseEntries entity.",
         "readOnly": true
       },
       "PurchaseEntryPurchaseEntriesPost": {
@@ -157573,7 +157573,7 @@
             "$ref": "#/components/schemas/PurchaseEntryPurchaseEntriesPost"
           }
         },
-        "description": "A collection of PurchaseEntryPurchaseEntries entities.",
+        "description": "The PurchaseEntryPurchaseEntries entity.",
         "readOnly": true
       },
       "PurchaseEntryPurchaseEntriesPut": {
@@ -158012,7 +158012,7 @@
             "$ref": "#/components/schemas/PurchaseEntryPurchaseEntryLines"
           }
         },
-        "description": "A collection of PurchaseEntryPurchaseEntryLines entities.",
+        "description": "The PurchaseEntryPurchaseEntryLines entity.",
         "readOnly": true
       },
       "PurchaseEntryPurchaseEntryLinesPost": {
@@ -158195,7 +158195,7 @@
             "$ref": "#/components/schemas/PurchaseEntryPurchaseEntryLinesPost"
           }
         },
-        "description": "A collection of PurchaseEntryPurchaseEntryLines entities.",
+        "description": "The PurchaseEntryPurchaseEntryLines entity.",
         "readOnly": true
       },
       "PurchaseEntryPurchaseEntryLinesPut": {
@@ -158612,7 +158612,7 @@
             "$ref": "#/components/schemas/PurchaseOrderGoodsReceiptLines"
           }
         },
-        "description": "A collection of PurchaseOrderGoodsReceiptLines entities.",
+        "description": "The PurchaseOrderGoodsReceiptLines entity.",
         "readOnly": true
       },
       "PurchaseOrderGoodsReceiptLinesPost": {
@@ -158680,7 +158680,7 @@
             "$ref": "#/components/schemas/PurchaseOrderGoodsReceiptLinesPost"
           }
         },
-        "description": "A collection of PurchaseOrderGoodsReceiptLines entities.",
+        "description": "The PurchaseOrderGoodsReceiptLines entity.",
         "readOnly": true
       },
       "PurchaseOrderGoodsReceipts": {
@@ -158877,7 +158877,7 @@
             "$ref": "#/components/schemas/PurchaseOrderGoodsReceipts"
           }
         },
-        "description": "A collection of PurchaseOrderGoodsReceipts entities.",
+        "description": "The PurchaseOrderGoodsReceipts entity.",
         "readOnly": true
       },
       "PurchaseOrderGoodsReceiptsPost": {
@@ -158931,7 +158931,7 @@
             "$ref": "#/components/schemas/PurchaseOrderGoodsReceiptsPost"
           }
         },
-        "description": "A collection of PurchaseOrderGoodsReceipts entities.",
+        "description": "The PurchaseOrderGoodsReceipts entity.",
         "readOnly": true
       },
       "PurchaseOrderGoodsReceiptsPut": {
@@ -159321,7 +159321,7 @@
             "$ref": "#/components/schemas/PurchaseOrderPurchaseOrderLines"
           }
         },
-        "description": "A collection of PurchaseOrderPurchaseOrderLines entities.",
+        "description": "The PurchaseOrderPurchaseOrderLines entity.",
         "readOnly": true
       },
       "PurchaseOrderPurchaseOrderLinesPost": {
@@ -159422,7 +159422,7 @@
             "$ref": "#/components/schemas/PurchaseOrderPurchaseOrderLinesPost"
           }
         },
-        "description": "A collection of PurchaseOrderPurchaseOrderLines entities.",
+        "description": "The PurchaseOrderPurchaseOrderLines entity.",
         "readOnly": true
       },
       "PurchaseOrderPurchaseOrderLinesPut": {
@@ -159877,7 +159877,7 @@
             "$ref": "#/components/schemas/PurchaseOrderPurchaseOrders"
           }
         },
-        "description": "A collection of PurchaseOrderPurchaseOrders entities.",
+        "description": "The PurchaseOrderPurchaseOrders entity.",
         "readOnly": true
       },
       "PurchaseOrderPurchaseOrdersPost": {
@@ -160003,7 +160003,7 @@
             "$ref": "#/components/schemas/PurchaseOrderPurchaseOrdersPost"
           }
         },
-        "description": "A collection of PurchaseOrderPurchaseOrders entities.",
+        "description": "The PurchaseOrderPurchaseOrders entity.",
         "readOnly": true
       },
       "PurchaseOrderPurchaseOrdersPut": {
@@ -160350,7 +160350,7 @@
             "$ref": "#/components/schemas/PurchaseOrderPurchaseReturnLines"
           }
         },
-        "description": "A collection of PurchaseOrderPurchaseReturnLines entities.",
+        "description": "The PurchaseOrderPurchaseReturnLines entity.",
         "readOnly": true
       },
       "PurchaseOrderPurchaseReturnLinesPost": {
@@ -160429,7 +160429,7 @@
             "$ref": "#/components/schemas/PurchaseOrderPurchaseReturnLinesPost"
           }
         },
-        "description": "A collection of PurchaseOrderPurchaseReturnLines entities.",
+        "description": "The PurchaseOrderPurchaseReturnLines entity.",
         "readOnly": true
       },
       "PurchaseOrderPurchaseReturnLinesPut": {
@@ -160642,7 +160642,7 @@
             "$ref": "#/components/schemas/PurchaseOrderPurchaseReturns"
           }
         },
-        "description": "A collection of PurchaseOrderPurchaseReturns entities.",
+        "description": "The PurchaseOrderPurchaseReturns entity.",
         "readOnly": true
       },
       "PurchaseOrderPurchaseReturnsPost": {
@@ -160706,7 +160706,7 @@
             "$ref": "#/components/schemas/PurchaseOrderPurchaseReturnsPost"
           }
         },
-        "description": "A collection of PurchaseOrderPurchaseReturns entities.",
+        "description": "The PurchaseOrderPurchaseReturns entity.",
         "readOnly": true
       },
       "PurchaseOrderPurchaseReturnsPut": {
@@ -160933,7 +160933,7 @@
             "$ref": "#/components/schemas/PurchasePurchaseInvoiceLines"
           }
         },
-        "description": "A collection of PurchasePurchaseInvoiceLines entities.",
+        "description": "The PurchasePurchaseInvoiceLines entity.",
         "readOnly": true
       },
       "PurchasePurchaseInvoiceLinesPost": {
@@ -161036,7 +161036,7 @@
             "$ref": "#/components/schemas/PurchasePurchaseInvoiceLinesPost"
           }
         },
-        "description": "A collection of PurchasePurchaseInvoiceLines entities.",
+        "description": "The PurchasePurchaseInvoiceLines entity.",
         "readOnly": true
       },
       "PurchasePurchaseInvoices": {
@@ -161234,7 +161234,7 @@
             "$ref": "#/components/schemas/PurchasePurchaseInvoices"
           }
         },
-        "description": "A collection of PurchasePurchaseInvoices entities.",
+        "description": "The PurchasePurchaseInvoices entity.",
         "readOnly": true
       },
       "PurchasePurchaseInvoicesPost": {
@@ -161352,7 +161352,7 @@
             "$ref": "#/components/schemas/PurchasePurchaseInvoicesPost"
           }
         },
-        "description": "A collection of PurchasePurchaseInvoices entities.",
+        "description": "The PurchasePurchaseInvoices entity.",
         "readOnly": true
       },
       "PurchasePurchaseInvoicesPut": {
@@ -161608,7 +161608,7 @@
             "$ref": "#/components/schemas/ReadCRMAccountDocumentFolders"
           }
         },
-        "description": "A collection of ReadCRMAccountDocumentFolders entities.",
+        "description": "The ReadCRMAccountDocumentFolders entity.",
         "readOnly": true
       },
       "ReadCRMAccountDocuments": {
@@ -161846,7 +161846,7 @@
             "$ref": "#/components/schemas/ReadCRMAccountDocuments"
           }
         },
-        "description": "A collection of ReadCRMAccountDocuments entities.",
+        "description": "The ReadCRMAccountDocuments entity.",
         "readOnly": true
       },
       "ReadCRMAccountDocumentsCount": {
@@ -162519,7 +162519,7 @@
             "$ref": "#/components/schemas/ReadCRMDocuments"
           }
         },
-        "description": "A collection of ReadCRMDocuments entities.",
+        "description": "The ReadCRMDocuments entity.",
         "readOnly": true
       },
       "ReadCRMDocumentsAttachments": {
@@ -162620,7 +162620,7 @@
             "$ref": "#/components/schemas/ReadCRMDocumentsAttachments"
           }
         },
-        "description": "A collection of ReadCRMDocumentsAttachments entities.",
+        "description": "The ReadCRMDocumentsAttachments entity.",
         "readOnly": true
       },
       "ReadCRMOpportunityContacts": {
@@ -163082,7 +163082,7 @@
             "$ref": "#/components/schemas/ReadCRMOpportunityContacts"
           }
         },
-        "description": "A collection of ReadCRMOpportunityContacts entities.",
+        "description": "The ReadCRMOpportunityContacts entity.",
         "readOnly": true
       },
       "ReadCRMOpportunityDocuments": {
@@ -163320,7 +163320,7 @@
             "$ref": "#/components/schemas/ReadCRMOpportunityDocuments"
           }
         },
-        "description": "A collection of ReadCRMOpportunityDocuments entities.",
+        "description": "The ReadCRMOpportunityDocuments entity.",
         "readOnly": true
       },
       "ReadCRMOpportunityDocumentsCount": {
@@ -163764,7 +163764,7 @@
             "$ref": "#/components/schemas/ReadFinancialAgingPayablesList"
           }
         },
-        "description": "A collection of ReadFinancialAgingPayablesList entities.",
+        "description": "The ReadFinancialAgingPayablesList entity.",
         "readOnly": true
       },
       "ReadFinancialAgingPayablesListByAgeGroup": {
@@ -164102,7 +164102,7 @@
             "$ref": "#/components/schemas/ReadFinancialAgingReceivablesList"
           }
         },
-        "description": "A collection of ReadFinancialAgingReceivablesList entities.",
+        "description": "The ReadFinancialAgingReceivablesList entity.",
         "readOnly": true
       },
       "ReadFinancialAgingReceivablesListByAgeGroup": {
@@ -164511,7 +164511,7 @@
             "$ref": "#/components/schemas/ReadFinancialJournalStatusList"
           }
         },
-        "description": "A collection of ReadFinancialJournalStatusList entities.",
+        "description": "The ReadFinancialJournalStatusList entity.",
         "readOnly": true
       },
       "ReadFinancialOutstandingInvoicesOverview": {
@@ -164812,7 +164812,7 @@
             "$ref": "#/components/schemas/ReadFinancialPayablesList"
           }
         },
-        "description": "A collection of ReadFinancialPayablesList entities.",
+        "description": "The ReadFinancialPayablesList entity.",
         "readOnly": true
       },
       "ReadFinancialPayablesListByAccount": {
@@ -165677,7 +165677,7 @@
             "$ref": "#/components/schemas/ReadFinancialReceivablesList"
           }
         },
-        "description": "A collection of ReadFinancialReceivablesList entities.",
+        "description": "The ReadFinancialReceivablesList entity.",
         "readOnly": true
       },
       "ReadFinancialReceivablesListByAccount": {
@@ -166535,7 +166535,7 @@
             "$ref": "#/components/schemas/ReadFinancialReturns"
           }
         },
-        "description": "A collection of ReadFinancialReturns entities.",
+        "description": "The ReadFinancialReturns entity.",
         "readOnly": true
       },
       "ReadFinancialRevenueList": {
@@ -166628,7 +166628,7 @@
             "$ref": "#/components/schemas/ReadFinancialRevenueList"
           }
         },
-        "description": "A collection of ReadFinancialRevenueList entities.",
+        "description": "The ReadFinancialRevenueList entity.",
         "readOnly": true
       },
       "ReadFinancialRevenueListByYear": {
@@ -166814,7 +166814,7 @@
             "$ref": "#/components/schemas/ReadFinancialRevenueListByYearAndStatus"
           }
         },
-        "description": "A collection of ReadFinancialRevenueListByYearAndStatus entities.",
+        "description": "The ReadFinancialRevenueListByYearAndStatus entity.",
         "readOnly": true
       },
       "ReadLogisticsAccountItems": {
@@ -167159,7 +167159,7 @@
             "$ref": "#/components/schemas/ReadLogisticsAccountItems"
           }
         },
-        "description": "A collection of ReadLogisticsAccountItems entities.",
+        "description": "The ReadLogisticsAccountItems entity.",
         "readOnly": true
       },
       "ReadLogisticsItemDetailsByID": {
@@ -168330,7 +168330,7 @@
             "$ref": "#/components/schemas/ReadManufacturingRecentTimeTransactions"
           }
         },
-        "description": "A collection of ReadManufacturingRecentTimeTransactions entities.",
+        "description": "The ReadManufacturingRecentTimeTransactions entity.",
         "readOnly": true
       },
       "ReadManufacturingShopOrderRoutingStepPlansAvailableToWork": {
@@ -169073,7 +169073,7 @@
             "$ref": "#/components/schemas/ReadManufacturingStartedTimedTimeTransactions"
           }
         },
-        "description": "A collection of ReadManufacturingStartedTimedTimeTransactions entities.",
+        "description": "The ReadManufacturingStartedTimedTimeTransactions entity.",
         "readOnly": true
       },
       "ReadPayrollEmploymentContractFlexPhasesOnFocusDate": {
@@ -169469,7 +169469,7 @@
             "$ref": "#/components/schemas/ReadProjectCostEntryRecentAccounts"
           }
         },
-        "description": "A collection of ReadProjectCostEntryRecentAccounts entities.",
+        "description": "The ReadProjectCostEntryRecentAccounts entity.",
         "readOnly": true
       },
       "ReadProjectCostEntryRecentAccountsByProject": {
@@ -169661,7 +169661,7 @@
             "$ref": "#/components/schemas/ReadProjectCostEntryRecentCostTypes"
           }
         },
-        "description": "A collection of ReadProjectCostEntryRecentCostTypes entities.",
+        "description": "The ReadProjectCostEntryRecentCostTypes entity.",
         "readOnly": true
       },
       "ReadProjectCostEntryRecentCostTypesByProject": {
@@ -169970,7 +169970,7 @@
             "$ref": "#/components/schemas/ReadProjectCostEntryRecentProjects"
           }
         },
-        "description": "A collection of ReadProjectCostEntryRecentProjects entities.",
+        "description": "The ReadProjectCostEntryRecentProjects entity.",
         "readOnly": true
       },
       "ReadProjectCostsByDate": {
@@ -170490,7 +170490,7 @@
             "$ref": "#/components/schemas/ReadProjectCostTypes"
           }
         },
-        "description": "A collection of ReadProjectCostTypes entities.",
+        "description": "The ReadProjectCostTypes entity.",
         "readOnly": true
       },
       "ReadProjectCostTypesByDate": {
@@ -170760,7 +170760,7 @@
             "$ref": "#/components/schemas/ReadProjectHourCostTypes"
           }
         },
-        "description": "A collection of ReadProjectHourCostTypes entities.",
+        "description": "The ReadProjectHourCostTypes entity.",
         "readOnly": true
       },
       "ReadProjectHourEntryActivitiesByProject": {
@@ -170957,7 +170957,7 @@
             "$ref": "#/components/schemas/ReadProjectHourEntryRecentAccounts"
           }
         },
-        "description": "A collection of ReadProjectHourEntryRecentAccounts entities.",
+        "description": "The ReadProjectHourEntryRecentAccounts entity.",
         "readOnly": true
       },
       "ReadProjectHourEntryRecentAccountsByProject": {
@@ -171261,7 +171261,7 @@
             "$ref": "#/components/schemas/ReadProjectHourEntryRecentHourTypes"
           }
         },
-        "description": "A collection of ReadProjectHourEntryRecentHourTypes entities.",
+        "description": "The ReadProjectHourEntryRecentHourTypes entity.",
         "readOnly": true
       },
       "ReadProjectHourEntryRecentHourTypesByProject": {
@@ -171458,7 +171458,7 @@
             "$ref": "#/components/schemas/ReadProjectHourEntryRecentProjects"
           }
         },
-        "description": "A collection of ReadProjectHourEntryRecentProjects entities.",
+        "description": "The ReadProjectHourEntryRecentProjects entity.",
         "readOnly": true
       },
       "ReadProjectHoursByDate": {
@@ -171968,7 +171968,7 @@
             "$ref": "#/components/schemas/ReadProjectHourTypes"
           }
         },
-        "description": "A collection of ReadProjectHourTypes entities.",
+        "description": "The ReadProjectHourTypes entity.",
         "readOnly": true
       },
       "ReadProjectHourTypesByDate": {
@@ -172935,7 +172935,7 @@
             "$ref": "#/components/schemas/ReadProjectRecentCosts"
           }
         },
-        "description": "A collection of ReadProjectRecentCosts entities.",
+        "description": "The ReadProjectRecentCosts entity.",
         "readOnly": true
       },
       "ReadProjectRecentCostsByNumberOfWeeks": {
@@ -173150,7 +173150,7 @@
             "$ref": "#/components/schemas/ReadProjectRecentCostsByNumberOfWeeks"
           }
         },
-        "description": "A collection of ReadProjectRecentCostsByNumberOfWeeks entities.",
+        "description": "The ReadProjectRecentCostsByNumberOfWeeks entity.",
         "readOnly": true
       },
       "ReadProjectRecentCostsByNumberOfWeeksByDate": {
@@ -173575,7 +173575,7 @@
             "$ref": "#/components/schemas/ReadProjectRecentHours"
           }
         },
-        "description": "A collection of ReadProjectRecentHours entities.",
+        "description": "The ReadProjectRecentHours entity.",
         "readOnly": true
       },
       "ReadProjectRecentHoursByNumberOfWeeks": {
@@ -173785,7 +173785,7 @@
             "$ref": "#/components/schemas/ReadProjectRecentHoursByNumberOfWeeks"
           }
         },
-        "description": "A collection of ReadProjectRecentHoursByNumberOfWeeks entities.",
+        "description": "The ReadProjectRecentHoursByNumberOfWeeks entity.",
         "readOnly": true
       },
       "ReadProjectRecentHoursByNumberOfWeeksByDate": {
@@ -174080,7 +174080,7 @@
             "$ref": "#/components/schemas/ReadProjectTimeAndBillingAccountDetails"
           }
         },
-        "description": "A collection of ReadProjectTimeAndBillingAccountDetails entities.",
+        "description": "The ReadProjectTimeAndBillingAccountDetails entity.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingAccountDetailsByID": {
@@ -174271,7 +174271,7 @@
             "$ref": "#/components/schemas/ReadProjectTimeAndBillingActivitiesAndExpenses"
           }
         },
-        "description": "A collection of ReadProjectTimeAndBillingActivitiesAndExpenses entities.",
+        "description": "The ReadProjectTimeAndBillingActivitiesAndExpenses entity.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingEntryAccounts": {
@@ -174356,7 +174356,7 @@
             "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryAccounts"
           }
         },
-        "description": "A collection of ReadProjectTimeAndBillingEntryAccounts entities.",
+        "description": "The ReadProjectTimeAndBillingEntryAccounts entity.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingEntryAccountsByDate": {
@@ -174616,7 +174616,7 @@
             "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryProjects"
           }
         },
-        "description": "A collection of ReadProjectTimeAndBillingEntryProjects entities.",
+        "description": "The ReadProjectTimeAndBillingEntryProjects entity.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingEntryProjectsByAccountAndDate": {
@@ -174887,7 +174887,7 @@
             "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryRecentAccounts"
           }
         },
-        "description": "A collection of ReadProjectTimeAndBillingEntryRecentAccounts entities.",
+        "description": "The ReadProjectTimeAndBillingEntryRecentAccounts entity.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses": {
@@ -174999,7 +174999,7 @@
             "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses"
           }
         },
-        "description": "A collection of ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses entities.",
+        "description": "The ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses entity.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingEntryRecentHourCostTypes": {
@@ -175100,7 +175100,7 @@
             "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryRecentHourCostTypes"
           }
         },
-        "description": "A collection of ReadProjectTimeAndBillingEntryRecentHourCostTypes entities.",
+        "description": "The ReadProjectTimeAndBillingEntryRecentHourCostTypes entity.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingEntryRecentProjects": {
@@ -175196,7 +175196,7 @@
             "$ref": "#/components/schemas/ReadProjectTimeAndBillingEntryRecentProjects"
           }
         },
-        "description": "A collection of ReadProjectTimeAndBillingEntryRecentProjects entities.",
+        "description": "The ReadProjectTimeAndBillingEntryRecentProjects entity.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingItemDetails": {
@@ -175307,7 +175307,7 @@
             "$ref": "#/components/schemas/ReadProjectTimeAndBillingItemDetails"
           }
         },
-        "description": "A collection of ReadProjectTimeAndBillingItemDetails entities.",
+        "description": "The ReadProjectTimeAndBillingItemDetails entity.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingItemDetailsByID": {
@@ -175525,7 +175525,7 @@
             "$ref": "#/components/schemas/ReadProjectTimeAndBillingProjectDetails"
           }
         },
-        "description": "A collection of ReadProjectTimeAndBillingProjectDetails entities.",
+        "description": "The ReadProjectTimeAndBillingProjectDetails entity.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingProjectDetailsByID": {
@@ -175728,7 +175728,7 @@
             "$ref": "#/components/schemas/ReadProjectTimeAndBillingRecentProjects"
           }
         },
-        "description": "A collection of ReadProjectTimeAndBillingRecentProjects entities.",
+        "description": "The ReadProjectTimeAndBillingRecentProjects entity.",
         "readOnly": true
       },
       "ReadSyncSyncSyncTimestamp": {
@@ -176124,7 +176124,7 @@
             "$ref": "#/components/schemas/SalesEntrySalesEntries"
           }
         },
-        "description": "A collection of SalesEntrySalesEntries entities.",
+        "description": "The SalesEntrySalesEntries entity.",
         "readOnly": true
       },
       "SalesEntrySalesEntriesPost": {
@@ -176280,7 +176280,7 @@
             "$ref": "#/components/schemas/SalesEntrySalesEntriesPost"
           }
         },
-        "description": "A collection of SalesEntrySalesEntries entities.",
+        "description": "The SalesEntrySalesEntries entity.",
         "readOnly": true
       },
       "SalesEntrySalesEntriesPut": {
@@ -176734,7 +176734,7 @@
             "$ref": "#/components/schemas/SalesEntrySalesEntryLines"
           }
         },
-        "description": "A collection of SalesEntrySalesEntryLines entities.",
+        "description": "The SalesEntrySalesEntryLines entity.",
         "readOnly": true
       },
       "SalesEntrySalesEntryLinesPost": {
@@ -176918,7 +176918,7 @@
             "$ref": "#/components/schemas/SalesEntrySalesEntryLinesPost"
           }
         },
-        "description": "A collection of SalesEntrySalesEntryLines entities.",
+        "description": "The SalesEntrySalesEntryLines entity.",
         "readOnly": true
       },
       "SalesEntrySalesEntryLinesPut": {
@@ -177229,7 +177229,7 @@
             "$ref": "#/components/schemas/SalesInvoiceInvoiceSalesOrders"
           }
         },
-        "description": "A collection of SalesInvoiceInvoiceSalesOrders entities.",
+        "description": "The SalesInvoiceInvoiceSalesOrders entity.",
         "readOnly": true
       },
       "SalesInvoiceInvoiceSalesOrdersPost": {
@@ -177303,7 +177303,7 @@
             "$ref": "#/components/schemas/SalesInvoiceInvoiceSalesOrdersPost"
           }
         },
-        "description": "A collection of SalesInvoiceInvoiceSalesOrders entities.",
+        "description": "The SalesInvoiceInvoiceSalesOrders entity.",
         "readOnly": true
       },
       "SalesInvoiceLayouts": {
@@ -177434,7 +177434,7 @@
             "$ref": "#/components/schemas/SalesInvoiceLayouts"
           }
         },
-        "description": "A collection of SalesInvoiceLayouts entities.",
+        "description": "The SalesInvoiceLayouts entity.",
         "readOnly": true
       },
       "SalesInvoicePrintedSalesInvoices": {
@@ -177609,7 +177609,7 @@
             "$ref": "#/components/schemas/SalesInvoicePrintedSalesInvoices"
           }
         },
-        "description": "A collection of SalesInvoicePrintedSalesInvoices entities.",
+        "description": "The SalesInvoicePrintedSalesInvoices entity.",
         "readOnly": true
       },
       "SalesInvoicePrintedSalesInvoicesPost": {
@@ -177734,7 +177734,7 @@
             "$ref": "#/components/schemas/SalesInvoicePrintedSalesInvoicesPost"
           }
         },
-        "description": "A collection of SalesInvoicePrintedSalesInvoices entities.",
+        "description": "The SalesInvoicePrintedSalesInvoices entity.",
         "readOnly": true
       },
       "SalesInvoiceSalesInvoiceLines": {
@@ -178049,7 +178049,7 @@
             "$ref": "#/components/schemas/SalesInvoiceSalesInvoiceLines"
           }
         },
-        "description": "A collection of SalesInvoiceSalesInvoiceLines entities.",
+        "description": "The SalesInvoiceSalesInvoiceLines entity.",
         "readOnly": true
       },
       "SalesInvoiceSalesInvoiceLinesPost": {
@@ -178210,7 +178210,7 @@
             "$ref": "#/components/schemas/SalesInvoiceSalesInvoiceLinesPost"
           }
         },
-        "description": "A collection of SalesInvoiceSalesInvoiceLines entities.",
+        "description": "The SalesInvoiceSalesInvoiceLines entity.",
         "readOnly": true
       },
       "SalesInvoiceSalesInvoiceLinesPut": {
@@ -178524,7 +178524,7 @@
             "$ref": "#/components/schemas/SalesInvoiceSalesInvoiceOrderChargeLines"
           }
         },
-        "description": "A collection of SalesInvoiceSalesInvoiceOrderChargeLines entities.",
+        "description": "The SalesInvoiceSalesInvoiceOrderChargeLines entity.",
         "readOnly": true
       },
       "SalesInvoiceSalesInvoiceOrderChargeLinesPost": {
@@ -178586,7 +178586,7 @@
             "$ref": "#/components/schemas/SalesInvoiceSalesInvoiceOrderChargeLinesPost"
           }
         },
-        "description": "A collection of SalesInvoiceSalesInvoiceOrderChargeLines entities.",
+        "description": "The SalesInvoiceSalesInvoiceOrderChargeLines entity.",
         "readOnly": true
       },
       "SalesInvoiceSalesInvoiceOrderChargeLinesPut": {
@@ -179080,7 +179080,7 @@
             "$ref": "#/components/schemas/SalesInvoiceSalesInvoices"
           }
         },
-        "description": "A collection of SalesInvoiceSalesInvoices entities.",
+        "description": "The SalesInvoiceSalesInvoices entity.",
         "readOnly": true
       },
       "SalesInvoiceSalesInvoicesPost": {
@@ -179301,7 +179301,7 @@
             "$ref": "#/components/schemas/SalesInvoiceSalesInvoicesPost"
           }
         },
-        "description": "A collection of SalesInvoiceSalesInvoices entities.",
+        "description": "The SalesInvoiceSalesInvoices entity.",
         "readOnly": true
       },
       "SalesInvoiceSalesInvoicesPut": {
@@ -179765,7 +179765,7 @@
             "$ref": "#/components/schemas/SalesOrderCharges"
           }
         },
-        "description": "A collection of SalesOrderCharges entities.",
+        "description": "The SalesOrderCharges entity.",
         "readOnly": true
       },
       "SalesOrderCompleteSalesOrder": {
@@ -180272,7 +180272,7 @@
             "$ref": "#/components/schemas/SalesOrderDropShipmentLines"
           }
         },
-        "description": "A collection of SalesOrderDropShipmentLines entities.",
+        "description": "The SalesOrderDropShipmentLines entity.",
         "readOnly": true
       },
       "SalesOrderDropShipmentLinesPost": {
@@ -180350,7 +180350,7 @@
             "$ref": "#/components/schemas/SalesOrderDropShipmentLinesPost"
           }
         },
-        "description": "A collection of SalesOrderDropShipmentLines entities.",
+        "description": "The SalesOrderDropShipmentLines entity.",
         "readOnly": true
       },
       "SalesOrderDropShipmentLinesPut": {
@@ -180571,7 +180571,7 @@
             "$ref": "#/components/schemas/SalesOrderDropShipments"
           }
         },
-        "description": "A collection of SalesOrderDropShipments entities.",
+        "description": "The SalesOrderDropShipments entity.",
         "readOnly": true
       },
       "SalesOrderDropShipmentsPost": {
@@ -180636,7 +180636,7 @@
             "$ref": "#/components/schemas/SalesOrderDropShipmentsPost"
           }
         },
-        "description": "A collection of SalesOrderDropShipments entities.",
+        "description": "The SalesOrderDropShipments entity.",
         "readOnly": true
       },
       "SalesOrderDropShipmentsPut": {
@@ -180871,7 +180871,7 @@
             "$ref": "#/components/schemas/SalesOrderGoodsDeliveries"
           }
         },
-        "description": "A collection of SalesOrderGoodsDeliveries entities.",
+        "description": "The SalesOrderGoodsDeliveries entity.",
         "readOnly": true
       },
       "SalesOrderGoodsDeliveriesPost": {
@@ -180932,7 +180932,7 @@
             "$ref": "#/components/schemas/SalesOrderGoodsDeliveriesPost"
           }
         },
-        "description": "A collection of SalesOrderGoodsDeliveries entities.",
+        "description": "The SalesOrderGoodsDeliveries entity.",
         "readOnly": true
       },
       "SalesOrderGoodsDeliveriesPut": {
@@ -181167,7 +181167,7 @@
             "$ref": "#/components/schemas/SalesOrderGoodsDeliveryLines"
           }
         },
-        "description": "A collection of SalesOrderGoodsDeliveryLines entities.",
+        "description": "The SalesOrderGoodsDeliveryLines entity.",
         "readOnly": true
       },
       "SalesOrderGoodsDeliveryLinesPost": {
@@ -181244,7 +181244,7 @@
             "$ref": "#/components/schemas/SalesOrderGoodsDeliveryLinesPost"
           }
         },
-        "description": "A collection of SalesOrderGoodsDeliveryLines entities.",
+        "description": "The SalesOrderGoodsDeliveryLines entity.",
         "readOnly": true
       },
       "SalesOrderGoodsDeliveryLinesPut": {
@@ -181502,7 +181502,7 @@
             "$ref": "#/components/schemas/SalesOrderPlannedSalesReturnLines"
           }
         },
-        "description": "A collection of SalesOrderPlannedSalesReturnLines entities.",
+        "description": "The SalesOrderPlannedSalesReturnLines entity.",
         "readOnly": true
       },
       "SalesOrderPlannedSalesReturnLinesPost": {
@@ -181586,7 +181586,7 @@
             "$ref": "#/components/schemas/SalesOrderPlannedSalesReturnLinesPost"
           }
         },
-        "description": "A collection of SalesOrderPlannedSalesReturnLines entities.",
+        "description": "The SalesOrderPlannedSalesReturnLines entity.",
         "readOnly": true
       },
       "SalesOrderPlannedSalesReturnLinesPut": {
@@ -181842,7 +181842,7 @@
             "$ref": "#/components/schemas/SalesOrderPlannedSalesReturns"
           }
         },
-        "description": "A collection of SalesOrderPlannedSalesReturns entities.",
+        "description": "The SalesOrderPlannedSalesReturns entity.",
         "readOnly": true
       },
       "SalesOrderPlannedSalesReturnsPost": {
@@ -181914,7 +181914,7 @@
             "$ref": "#/components/schemas/SalesOrderPlannedSalesReturnsPost"
           }
         },
-        "description": "A collection of SalesOrderPlannedSalesReturns entities.",
+        "description": "The SalesOrderPlannedSalesReturns entity.",
         "readOnly": true
       },
       "SalesOrderPlannedSalesReturnsPut": {
@@ -182102,7 +182102,7 @@
             "$ref": "#/components/schemas/SalesOrderPrintedSalesOrders"
           }
         },
-        "description": "A collection of SalesOrderPrintedSalesOrders entities.",
+        "description": "The SalesOrderPrintedSalesOrders entity.",
         "readOnly": true
       },
       "SalesOrderPrintedSalesOrdersPost": {
@@ -182179,7 +182179,7 @@
             "$ref": "#/components/schemas/SalesOrderPrintedSalesOrdersPost"
           }
         },
-        "description": "A collection of SalesOrderPrintedSalesOrders entities.",
+        "description": "The SalesOrderPrintedSalesOrders entity.",
         "readOnly": true
       },
       "SalesOrderSalesOrderLines": {
@@ -182493,7 +182493,7 @@
             "$ref": "#/components/schemas/SalesOrderSalesOrderLines"
           }
         },
-        "description": "A collection of SalesOrderSalesOrderLines entities.",
+        "description": "The SalesOrderSalesOrderLines entity.",
         "readOnly": true
       },
       "SalesOrderSalesOrderLinesPost": {
@@ -182640,7 +182640,7 @@
             "$ref": "#/components/schemas/SalesOrderSalesOrderLinesPost"
           }
         },
-        "description": "A collection of SalesOrderSalesOrderLines entities.",
+        "description": "The SalesOrderSalesOrderLines entity.",
         "readOnly": true
       },
       "SalesOrderSalesOrderLinesPut": {
@@ -182939,7 +182939,7 @@
             "$ref": "#/components/schemas/SalesOrderSalesOrderOrderChargeLines"
           }
         },
-        "description": "A collection of SalesOrderSalesOrderOrderChargeLines entities.",
+        "description": "The SalesOrderSalesOrderOrderChargeLines entity.",
         "readOnly": true
       },
       "SalesOrderSalesOrderOrderChargeLinesPost": {
@@ -183001,7 +183001,7 @@
             "$ref": "#/components/schemas/SalesOrderSalesOrderOrderChargeLinesPost"
           }
         },
-        "description": "A collection of SalesOrderSalesOrderOrderChargeLines entities.",
+        "description": "The SalesOrderSalesOrderOrderChargeLines entity.",
         "readOnly": true
       },
       "SalesOrderSalesOrderOrderChargeLinesPut": {
@@ -183463,7 +183463,7 @@
             "$ref": "#/components/schemas/SalesOrderSalesOrders"
           }
         },
-        "description": "A collection of SalesOrderSalesOrders entities.",
+        "description": "The SalesOrderSalesOrders entity.",
         "readOnly": true
       },
       "SalesOrderSalesOrdersPost": {
@@ -183650,7 +183650,7 @@
             "$ref": "#/components/schemas/SalesOrderSalesOrdersPost"
           }
         },
-        "description": "A collection of SalesOrderSalesOrders entities.",
+        "description": "The SalesOrderSalesOrders entity.",
         "readOnly": true
       },
       "SalesOrderSalesOrdersPut": {
@@ -183932,7 +183932,7 @@
             "$ref": "#/components/schemas/SalesSalesChannels"
           }
         },
-        "description": "A collection of SalesSalesChannels entities.",
+        "description": "The SalesSalesChannels entity.",
         "readOnly": true
       },
       "SalesSalesChannelsPost": {
@@ -183977,7 +183977,7 @@
             "$ref": "#/components/schemas/SalesSalesChannelsPost"
           }
         },
-        "description": "A collection of SalesSalesChannels entities.",
+        "description": "The SalesSalesChannels entity.",
         "readOnly": true
       },
       "SalesSalesChannelsPut": {
@@ -184161,7 +184161,7 @@
             "$ref": "#/components/schemas/SalesSalesPriceListLinkedAccounts"
           }
         },
-        "description": "A collection of SalesSalesPriceListLinkedAccounts entities.",
+        "description": "The SalesSalesPriceListLinkedAccounts entity.",
         "readOnly": true
       },
       "SalesSalesPriceListPeriods": {
@@ -184310,7 +184310,7 @@
             "$ref": "#/components/schemas/SalesSalesPriceListPeriods"
           }
         },
-        "description": "A collection of SalesSalesPriceListPeriods entities.",
+        "description": "The SalesSalesPriceListPeriods entity.",
         "readOnly": true
       },
       "SalesSalesPriceLists": {
@@ -184462,7 +184462,7 @@
             "$ref": "#/components/schemas/SalesSalesPriceLists"
           }
         },
-        "description": "A collection of SalesSalesPriceLists entities.",
+        "description": "The SalesSalesPriceLists entity.",
         "readOnly": true
       },
       "SalesSalesPriceListVolumeDiscounts": {
@@ -184687,7 +184687,7 @@
             "$ref": "#/components/schemas/SalesSalesPriceListVolumeDiscounts"
           }
         },
-        "description": "A collection of SalesSalesPriceListVolumeDiscounts entities.",
+        "description": "The SalesSalesPriceListVolumeDiscounts entity.",
         "readOnly": true
       },
       "SalesShippingMethods": {
@@ -184859,7 +184859,7 @@
             "$ref": "#/components/schemas/SalesShippingMethods"
           }
         },
-        "description": "A collection of SalesShippingMethods entities.",
+        "description": "The SalesShippingMethods entity.",
         "readOnly": true
       },
       "SubscriptionSubscriptionLines": {
@@ -185064,7 +185064,7 @@
             "$ref": "#/components/schemas/SubscriptionSubscriptionLines"
           }
         },
-        "description": "A collection of SubscriptionSubscriptionLines entities.",
+        "description": "The SubscriptionSubscriptionLines entity.",
         "readOnly": true
       },
       "SubscriptionSubscriptionLinesPost": {
@@ -185179,7 +185179,7 @@
             "$ref": "#/components/schemas/SubscriptionSubscriptionLinesPost"
           }
         },
-        "description": "A collection of SubscriptionSubscriptionLines entities.",
+        "description": "The SubscriptionSubscriptionLines entity.",
         "readOnly": true
       },
       "SubscriptionSubscriptionLinesPut": {
@@ -185377,7 +185377,7 @@
             "$ref": "#/components/schemas/SubscriptionSubscriptionLineTypes"
           }
         },
-        "description": "A collection of SubscriptionSubscriptionLineTypes entities.",
+        "description": "The SubscriptionSubscriptionLineTypes entity.",
         "readOnly": true
       },
       "SubscriptionSubscriptionReasonCodes": {
@@ -185522,7 +185522,7 @@
             "$ref": "#/components/schemas/SubscriptionSubscriptionReasonCodes"
           }
         },
-        "description": "A collection of SubscriptionSubscriptionReasonCodes entities.",
+        "description": "The SubscriptionSubscriptionReasonCodes entity.",
         "readOnly": true
       },
       "SubscriptionSubscriptionRestrictionEmployees": {
@@ -185664,7 +185664,7 @@
             "$ref": "#/components/schemas/SubscriptionSubscriptionRestrictionEmployees"
           }
         },
-        "description": "A collection of SubscriptionSubscriptionRestrictionEmployees entities.",
+        "description": "The SubscriptionSubscriptionRestrictionEmployees entity.",
         "readOnly": true
       },
       "SubscriptionSubscriptionRestrictionEmployeesPost": {
@@ -185705,7 +185705,7 @@
             "$ref": "#/components/schemas/SubscriptionSubscriptionRestrictionEmployeesPost"
           }
         },
-        "description": "A collection of SubscriptionSubscriptionRestrictionEmployees entities.",
+        "description": "The SubscriptionSubscriptionRestrictionEmployees entity.",
         "readOnly": true
       },
       "SubscriptionSubscriptionRestrictionEmployeesDelete": {
@@ -185861,7 +185861,7 @@
             "$ref": "#/components/schemas/SubscriptionSubscriptionRestrictionItems"
           }
         },
-        "description": "A collection of SubscriptionSubscriptionRestrictionItems entities.",
+        "description": "The SubscriptionSubscriptionRestrictionItems entity.",
         "readOnly": true
       },
       "SubscriptionSubscriptionRestrictionItemsPost": {
@@ -185901,7 +185901,7 @@
             "$ref": "#/components/schemas/SubscriptionSubscriptionRestrictionItemsPost"
           }
         },
-        "description": "A collection of SubscriptionSubscriptionRestrictionItems entities.",
+        "description": "The SubscriptionSubscriptionRestrictionItems entity.",
         "readOnly": true
       },
       "SubscriptionSubscriptionRestrictionItemsDelete": {
@@ -186191,7 +186191,7 @@
             "$ref": "#/components/schemas/SubscriptionSubscriptions"
           }
         },
-        "description": "A collection of SubscriptionSubscriptions entities.",
+        "description": "The SubscriptionSubscriptions entity.",
         "readOnly": true
       },
       "SubscriptionSubscriptionsPost": {
@@ -186322,7 +186322,7 @@
             "$ref": "#/components/schemas/SubscriptionSubscriptionsPost"
           }
         },
-        "description": "A collection of SubscriptionSubscriptions entities.",
+        "description": "The SubscriptionSubscriptions entity.",
         "readOnly": true
       },
       "SubscriptionSubscriptionsPut": {
@@ -186720,7 +186720,7 @@
             "$ref": "#/components/schemas/SubscriptionSubscriptionTypes"
           }
         },
-        "description": "A collection of SubscriptionSubscriptionTypes entities.",
+        "description": "The SubscriptionSubscriptionTypes entity.",
         "readOnly": true
       },
       "SyncCashflowPaymentTerms": {
@@ -187283,7 +187283,7 @@
             "$ref": "#/components/schemas/SyncCashflowPaymentTerms"
           }
         },
-        "description": "A collection of SyncCashflowPaymentTerms entities.",
+        "description": "The SyncCashflowPaymentTerms entity.",
         "readOnly": true
       },
       "SyncCRMAccounts": {
@@ -188246,7 +188246,7 @@
             "$ref": "#/components/schemas/SyncCRMAccounts"
           }
         },
-        "description": "A collection of SyncCRMAccounts entities.",
+        "description": "The SyncCRMAccounts entity.",
         "readOnly": true
       },
       "SyncCRMAddresses": {
@@ -188616,7 +188616,7 @@
             "$ref": "#/components/schemas/SyncCRMAddresses"
           }
         },
-        "description": "A collection of SyncCRMAddresses entities.",
+        "description": "The SyncCRMAddresses entity.",
         "readOnly": true
       },
       "SyncCRMContacts": {
@@ -189072,7 +189072,7 @@
             "$ref": "#/components/schemas/SyncCRMContacts"
           }
         },
-        "description": "A collection of SyncCRMContacts entities.",
+        "description": "The SyncCRMContacts entity.",
         "readOnly": true
       },
       "SyncCRMQuotationHeaders": {
@@ -189519,7 +189519,7 @@
             "$ref": "#/components/schemas/SyncCRMQuotationHeaders"
           }
         },
-        "description": "A collection of SyncCRMQuotationHeaders entities.",
+        "description": "The SyncCRMQuotationHeaders entity.",
         "readOnly": true
       },
       "SyncCRMQuotationLines": {
@@ -189801,7 +189801,7 @@
             "$ref": "#/components/schemas/SyncCRMQuotationLines"
           }
         },
-        "description": "A collection of SyncCRMQuotationLines entities.",
+        "description": "The SyncCRMQuotationLines entity.",
         "readOnly": true
       },
       "SyncDeleted": {
@@ -190034,7 +190034,7 @@
             "$ref": "#/components/schemas/SyncDocumentsDocumentAttachments"
           }
         },
-        "description": "A collection of SyncDocumentsDocumentAttachments entities.",
+        "description": "The SyncDocumentsDocumentAttachments entity.",
         "readOnly": true
       },
       "SyncDocumentsDocuments": {
@@ -190399,7 +190399,7 @@
             "$ref": "#/components/schemas/SyncDocumentsDocuments"
           }
         },
-        "description": "A collection of SyncDocumentsDocuments entities.",
+        "description": "The SyncDocumentsDocuments entity.",
         "readOnly": true
       },
       "SyncFinancialGLAccounts": {
@@ -190719,7 +190719,7 @@
             "$ref": "#/components/schemas/SyncFinancialGLAccounts"
           }
         },
-        "description": "A collection of SyncFinancialGLAccounts entities.",
+        "description": "The SyncFinancialGLAccounts entity.",
         "readOnly": true
       },
       "SyncFinancialGLClassifications": {
@@ -190913,7 +190913,7 @@
             "$ref": "#/components/schemas/SyncFinancialGLClassifications"
           }
         },
-        "description": "A collection of SyncFinancialGLClassifications entities.",
+        "description": "The SyncFinancialGLClassifications entity.",
         "readOnly": true
       },
       "SyncFinancialTransactionLines": {
@@ -191386,7 +191386,7 @@
             "$ref": "#/components/schemas/SyncFinancialTransactionLines"
           }
         },
-        "description": "A collection of SyncFinancialTransactionLines entities.",
+        "description": "The SyncFinancialTransactionLines entity.",
         "readOnly": true
       },
       "SyncHRMAbsenceRegistrations": {
@@ -191574,7 +191574,7 @@
             "$ref": "#/components/schemas/SyncHRMAbsenceRegistrations"
           }
         },
-        "description": "A collection of SyncHRMAbsenceRegistrations entities.",
+        "description": "The SyncHRMAbsenceRegistrations entity.",
         "readOnly": true
       },
       "SyncHRMAbsenceRegistrationTransactions": {
@@ -191771,7 +191771,7 @@
             "$ref": "#/components/schemas/SyncHRMAbsenceRegistrationTransactions"
           }
         },
-        "description": "A collection of SyncHRMAbsenceRegistrationTransactions entities.",
+        "description": "The SyncHRMAbsenceRegistrationTransactions entity.",
         "readOnly": true
       },
       "SyncHRMLeaveAbsenceHoursByDay": {
@@ -192144,7 +192144,7 @@
             "$ref": "#/components/schemas/SyncHRMLeaveBuildUpRegistrations"
           }
         },
-        "description": "A collection of SyncHRMLeaveBuildUpRegistrations entities.",
+        "description": "The SyncHRMLeaveBuildUpRegistrations entity.",
         "readOnly": true
       },
       "SyncHRMLeaveRegistrations": {
@@ -192361,7 +192361,7 @@
             "$ref": "#/components/schemas/SyncHRMLeaveRegistrations"
           }
         },
-        "description": "A collection of SyncHRMLeaveRegistrations entities.",
+        "description": "The SyncHRMLeaveRegistrations entity.",
         "readOnly": true
       },
       "SyncHRMScheduleEntries": {
@@ -192578,7 +192578,7 @@
             "$ref": "#/components/schemas/SyncHRMScheduleEntries"
           }
         },
-        "description": "A collection of SyncHRMScheduleEntries entities.",
+        "description": "The SyncHRMScheduleEntries entity.",
         "readOnly": true
       },
       "SyncHRMSchedules": {
@@ -192803,7 +192803,7 @@
             "$ref": "#/components/schemas/SyncHRMSchedules"
           }
         },
-        "description": "A collection of SyncHRMSchedules entities.",
+        "description": "The SyncHRMSchedules entity.",
         "readOnly": true
       },
       "SyncInventoryItemStorageLocations": {
@@ -192997,7 +192997,7 @@
             "$ref": "#/components/schemas/SyncInventoryItemStorageLocations"
           }
         },
-        "description": "A collection of SyncInventoryItemStorageLocations entities.",
+        "description": "The SyncInventoryItemStorageLocations entity.",
         "readOnly": true
       },
       "SyncInventoryItemWarehouses": {
@@ -193233,7 +193233,7 @@
             "$ref": "#/components/schemas/SyncInventoryItemWarehouses"
           }
         },
-        "description": "A collection of SyncInventoryItemWarehouses entities.",
+        "description": "The SyncInventoryItemWarehouses entity.",
         "readOnly": true
       },
       "SyncInventorySerialBatchNumbers": {
@@ -193411,7 +193411,7 @@
             "$ref": "#/components/schemas/SyncInventorySerialBatchNumbers"
           }
         },
-        "description": "A collection of SyncInventorySerialBatchNumbers entities.",
+        "description": "The SyncInventorySerialBatchNumbers entity.",
         "readOnly": true
       },
       "SyncInventoryStockPositions": {
@@ -193587,7 +193587,7 @@
             "$ref": "#/components/schemas/SyncInventoryStockPositions"
           }
         },
-        "description": "A collection of SyncInventoryStockPositions entities.",
+        "description": "The SyncInventoryStockPositions entity.",
         "readOnly": true
       },
       "SyncInventoryStockSerialBatchNumbers": {
@@ -193871,7 +193871,7 @@
             "$ref": "#/components/schemas/SyncInventoryStockSerialBatchNumbers"
           }
         },
-        "description": "A collection of SyncInventoryStockSerialBatchNumbers entities.",
+        "description": "The SyncInventoryStockSerialBatchNumbers entity.",
         "readOnly": true
       },
       "SyncInventoryStorageLocationStockPositions": {
@@ -194045,7 +194045,7 @@
             "$ref": "#/components/schemas/SyncInventoryStorageLocationStockPositions"
           }
         },
-        "description": "A collection of SyncInventoryStorageLocationStockPositions entities.",
+        "description": "The SyncInventoryStorageLocationStockPositions entity.",
         "readOnly": true
       },
       "SyncLogisticsItems": {
@@ -194707,7 +194707,7 @@
             "$ref": "#/components/schemas/SyncLogisticsItems"
           }
         },
-        "description": "A collection of SyncLogisticsItems entities.",
+        "description": "The SyncLogisticsItems entity.",
         "readOnly": true
       },
       "SyncLogisticsPurchaseItemPrices": {
@@ -194920,7 +194920,7 @@
             "$ref": "#/components/schemas/SyncLogisticsPurchaseItemPrices"
           }
         },
-        "description": "A collection of SyncLogisticsPurchaseItemPrices entities.",
+        "description": "The SyncLogisticsPurchaseItemPrices entity.",
         "readOnly": true
       },
       "SyncLogisticsSalesItemPrices": {
@@ -195150,7 +195150,7 @@
             "$ref": "#/components/schemas/SyncLogisticsSalesItemPrices"
           }
         },
-        "description": "A collection of SyncLogisticsSalesItemPrices entities.",
+        "description": "The SyncLogisticsSalesItemPrices entity.",
         "readOnly": true
       },
       "SyncLogisticsSupplierItem": {
@@ -195706,7 +195706,7 @@
             "$ref": "#/components/schemas/SyncManufacturingBillOfMaterialMaterials"
           }
         },
-        "description": "A collection of SyncManufacturingBillOfMaterialMaterials entities.",
+        "description": "The SyncManufacturingBillOfMaterialMaterials entity.",
         "readOnly": true
       },
       "SyncManufacturingBillOfMaterialVersions": {
@@ -195927,7 +195927,7 @@
             "$ref": "#/components/schemas/SyncManufacturingBillOfMaterialVersions"
           }
         },
-        "description": "A collection of SyncManufacturingBillOfMaterialVersions entities.",
+        "description": "The SyncManufacturingBillOfMaterialVersions entity.",
         "readOnly": true
       },
       "SyncManufacturingMaterialIssues": {
@@ -196188,7 +196188,7 @@
             "$ref": "#/components/schemas/SyncManufacturingMaterialIssues"
           }
         },
-        "description": "A collection of SyncManufacturingMaterialIssues entities.",
+        "description": "The SyncManufacturingMaterialIssues entity.",
         "readOnly": true
       },
       "SyncManufacturingShopOrderMaterialPlans": {
@@ -196458,7 +196458,7 @@
             "$ref": "#/components/schemas/SyncManufacturingShopOrderMaterialPlans"
           }
         },
-        "description": "A collection of SyncManufacturingShopOrderMaterialPlans entities.",
+        "description": "The SyncManufacturingShopOrderMaterialPlans entity.",
         "readOnly": true
       },
       "SyncManufacturingShopOrderPurchasePlanning": {
@@ -196988,7 +196988,7 @@
             "$ref": "#/components/schemas/SyncManufacturingShopOrderRoutingStepPlans"
           }
         },
-        "description": "A collection of SyncManufacturingShopOrderRoutingStepPlans entities.",
+        "description": "The SyncManufacturingShopOrderRoutingStepPlans entity.",
         "readOnly": true
       },
       "SyncManufacturingShopOrders": {
@@ -197410,7 +197410,7 @@
             "$ref": "#/components/schemas/SyncManufacturingShopOrders"
           }
         },
-        "description": "A collection of SyncManufacturingShopOrders entities.",
+        "description": "The SyncManufacturingShopOrders entity.",
         "readOnly": true
       },
       "SyncManufacturingShopOrderSubOrders": {
@@ -197584,7 +197584,7 @@
             "$ref": "#/components/schemas/SyncManufacturingShopOrderSubOrders"
           }
         },
-        "description": "A collection of SyncManufacturingShopOrderSubOrders entities.",
+        "description": "The SyncManufacturingShopOrderSubOrders entity.",
         "readOnly": true
       },
       "SyncPayrollBankAccounts": {
@@ -197748,7 +197748,7 @@
             "$ref": "#/components/schemas/SyncPayrollBankAccounts"
           }
         },
-        "description": "A collection of SyncPayrollBankAccounts entities.",
+        "description": "The SyncPayrollBankAccounts entity.",
         "readOnly": true
       },
       "SyncPayrollEmployees": {
@@ -198180,7 +198180,7 @@
             "$ref": "#/components/schemas/SyncPayrollEmployees"
           }
         },
-        "description": "A collection of SyncPayrollEmployees entities.",
+        "description": "The SyncPayrollEmployees entity.",
         "readOnly": true
       },
       "SyncPayrollEmploymentCLAs": {
@@ -198358,7 +198358,7 @@
             "$ref": "#/components/schemas/SyncPayrollEmploymentCLAs"
           }
         },
-        "description": "A collection of SyncPayrollEmploymentCLAs entities.",
+        "description": "The SyncPayrollEmploymentCLAs entity.",
         "readOnly": true
       },
       "SyncPayrollEmploymentContracts": {
@@ -198599,7 +198599,7 @@
             "$ref": "#/components/schemas/SyncPayrollEmploymentContracts"
           }
         },
-        "description": "A collection of SyncPayrollEmploymentContracts entities.",
+        "description": "The SyncPayrollEmploymentContracts entity.",
         "readOnly": true
       },
       "SyncPayrollEmploymentOrganizations": {
@@ -198821,7 +198821,7 @@
             "$ref": "#/components/schemas/SyncPayrollEmploymentOrganizations"
           }
         },
-        "description": "A collection of SyncPayrollEmploymentOrganizations entities.",
+        "description": "The SyncPayrollEmploymentOrganizations entity.",
         "readOnly": true
       },
       "SyncPayrollEmployments": {
@@ -199010,7 +199010,7 @@
             "$ref": "#/components/schemas/SyncPayrollEmployments"
           }
         },
-        "description": "A collection of SyncPayrollEmployments entities.",
+        "description": "The SyncPayrollEmployments entity.",
         "readOnly": true
       },
       "SyncPayrollEmploymentSalaries": {
@@ -199330,7 +199330,7 @@
             "$ref": "#/components/schemas/SyncPayrollEmploymentSalaries"
           }
         },
-        "description": "A collection of SyncPayrollEmploymentSalaries entities.",
+        "description": "The SyncPayrollEmploymentSalaries entity.",
         "readOnly": true
       },
       "SyncPayrollEmploymentTaxAuthoritiesGeneral": {
@@ -200240,7 +200240,7 @@
             "$ref": "#/components/schemas/SyncProjectProjects"
           }
         },
-        "description": "A collection of SyncProjectProjects entities.",
+        "description": "The SyncProjectProjects entity.",
         "readOnly": true
       },
       "SyncProjectProjectWBS": {
@@ -200880,7 +200880,7 @@
             "$ref": "#/components/schemas/SyncProjectTimeCostTransactions"
           }
         },
-        "description": "A collection of SyncProjectTimeCostTransactions entities.",
+        "description": "The SyncProjectTimeCostTransactions entity.",
         "readOnly": true
       },
       "SyncPurchaseOrderPurchaseOrders": {
@@ -201530,7 +201530,7 @@
             "$ref": "#/components/schemas/SyncPurchaseOrderPurchaseOrders"
           }
         },
-        "description": "A collection of SyncPurchaseOrderPurchaseOrders entities.",
+        "description": "The SyncPurchaseOrderPurchaseOrders entity.",
         "readOnly": true
       },
       "SyncSalesInvoiceSalesInvoices": {
@@ -202233,7 +202233,7 @@
             "$ref": "#/components/schemas/SyncSalesInvoiceSalesInvoices"
           }
         },
-        "description": "A collection of SyncSalesInvoiceSalesInvoices entities.",
+        "description": "The SyncSalesInvoiceSalesInvoices entity.",
         "readOnly": true
       },
       "SyncSalesOrderGoodsDeliveries": {
@@ -202469,7 +202469,7 @@
             "$ref": "#/components/schemas/SyncSalesOrderGoodsDeliveries"
           }
         },
-        "description": "A collection of SyncSalesOrderGoodsDeliveries entities.",
+        "description": "The SyncSalesOrderGoodsDeliveries entity.",
         "readOnly": true
       },
       "SyncSalesOrderGoodsDeliveryLines": {
@@ -202708,7 +202708,7 @@
             "$ref": "#/components/schemas/SyncSalesOrderGoodsDeliveryLines"
           }
         },
-        "description": "A collection of SyncSalesOrderGoodsDeliveryLines entities.",
+        "description": "The SyncSalesOrderGoodsDeliveryLines entity.",
         "readOnly": true
       },
       "SyncSalesOrderSalesOrderHeaders": {
@@ -203212,7 +203212,7 @@
             "$ref": "#/components/schemas/SyncSalesOrderSalesOrderHeaders"
           }
         },
-        "description": "A collection of SyncSalesOrderSalesOrderHeaders entities.",
+        "description": "The SyncSalesOrderSalesOrderHeaders entity.",
         "readOnly": true
       },
       "SyncSalesOrderSalesOrderLines": {
@@ -203625,7 +203625,7 @@
             "$ref": "#/components/schemas/SyncSalesOrderSalesOrderLines"
           }
         },
-        "description": "A collection of SyncSalesOrderSalesOrderLines entities.",
+        "description": "The SyncSalesOrderSalesOrderLines entity.",
         "readOnly": true
       },
       "SyncSalesSalesPriceListVolumeDiscounts": {
@@ -203851,7 +203851,7 @@
             "$ref": "#/components/schemas/SyncSalesSalesPriceListVolumeDiscounts"
           }
         },
-        "description": "A collection of SyncSalesSalesPriceListVolumeDiscounts entities.",
+        "description": "The SyncSalesSalesPriceListVolumeDiscounts entity.",
         "readOnly": true
       },
       "SyncSubscriptionSubscriptionLines": {
@@ -204090,7 +204090,7 @@
             "$ref": "#/components/schemas/SyncSubscriptionSubscriptionLines"
           }
         },
-        "description": "A collection of SyncSubscriptionSubscriptionLines entities.",
+        "description": "The SyncSubscriptionSubscriptionLines entity.",
         "readOnly": true
       },
       "SyncSubscriptionSubscriptions": {
@@ -204401,7 +204401,7 @@
             "$ref": "#/components/schemas/SyncSubscriptionSubscriptions"
           }
         },
-        "description": "A collection of SyncSubscriptionSubscriptions entities.",
+        "description": "The SyncSubscriptionSubscriptions entity.",
         "readOnly": true
       },
       "SystemSystemAccountantInfo": {
@@ -204930,7 +204930,7 @@
             "$ref": "#/components/schemas/SystemSystemAllDivisions"
           }
         },
-        "description": "A collection of SystemSystemAllDivisions entities.",
+        "description": "The SystemSystemAllDivisions entity.",
         "readOnly": true
       },
       "SystemSystemAvailableFeatures": {
@@ -205015,7 +205015,7 @@
             "$ref": "#/components/schemas/SystemSystemAvailableFeatures"
           }
         },
-        "description": "A collection of SystemSystemAvailableFeatures entities.",
+        "description": "The SystemSystemAvailableFeatures entity.",
         "readOnly": true
       },
       "SystemSystemDivisions": {
@@ -205346,7 +205346,7 @@
             "$ref": "#/components/schemas/SystemSystemDivisions"
           }
         },
-        "description": "A collection of SystemSystemDivisions entities.",
+        "description": "The SystemSystemDivisions entity.",
         "readOnly": true
       },
       "SystemSystemDivisionsDelete": {
@@ -205750,7 +205750,7 @@
             "$ref": "#/components/schemas/SystemSystemGetMostRecentlyUsedDivisions"
           }
         },
-        "description": "A collection of SystemSystemGetMostRecentlyUsedDivisions entities.",
+        "description": "The SystemSystemGetMostRecentlyUsedDivisions entity.",
         "readOnly": true
       },
       "SystemSystemMe": {
@@ -206099,7 +206099,7 @@
             "$ref": "#/components/schemas/UsersUserHasRights"
           }
         },
-        "description": "A collection of UsersUserHasRights entities.",
+        "description": "The UsersUserHasRights entity.",
         "readOnly": true
       },
       "UsersUserRoles": {
@@ -206248,7 +206248,7 @@
             "$ref": "#/components/schemas/UsersUserRoles"
           }
         },
-        "description": "A collection of UsersUserRoles entities.",
+        "description": "The UsersUserRoles entity.",
         "readOnly": true
       },
       "UsersUserRolesPerDivision": {
@@ -206403,7 +206403,7 @@
             "$ref": "#/components/schemas/UsersUserRolesPerDivision"
           }
         },
-        "description": "A collection of UsersUserRolesPerDivision entities.",
+        "description": "The UsersUserRolesPerDivision entity.",
         "readOnly": true
       },
       "VATVATCodes": {
@@ -206677,7 +206677,7 @@
             "$ref": "#/components/schemas/VATVATCodes"
           }
         },
-        "description": "A collection of VATVATCodes entities.",
+        "description": "The VATVATCodes entity.",
         "readOnly": true
       },
       "VATVATCodesPost": {
@@ -206815,7 +206815,7 @@
             "$ref": "#/components/schemas/VATVATCodesPost"
           }
         },
-        "description": "A collection of VATVATCodes entities.",
+        "description": "The VATVATCodes entity.",
         "readOnly": true
       },
       "VATVATCodesPut": {
@@ -207110,7 +207110,7 @@
             "$ref": "#/components/schemas/VATVatPercentages"
           }
         },
-        "description": "A collection of VATVatPercentages entities.",
+        "description": "The VATVatPercentages entity.",
         "readOnly": true
       },
       "WebhooksWebhookSubscriptions": {
@@ -207232,7 +207232,7 @@
             "$ref": "#/components/schemas/WebhooksWebhookSubscriptions"
           }
         },
-        "description": "A collection of WebhooksWebhookSubscriptions entities.",
+        "description": "The WebhooksWebhookSubscriptions entity.",
         "readOnly": true
       },
       "WebhooksWebhookSubscriptionsPost": {
@@ -207276,7 +207276,7 @@
             "$ref": "#/components/schemas/WebhooksWebhookSubscriptionsPost"
           }
         },
-        "description": "A collection of WebhooksWebhookSubscriptions entities.",
+        "description": "The WebhooksWebhookSubscriptions entity.",
         "readOnly": true
       },
       "WebhooksWebhookSubscriptionsPut": {
@@ -207432,7 +207432,7 @@
             "$ref": "#/components/schemas/WorkflowRequestAttachments"
           }
         },
-        "description": "A collection of WorkflowRequestAttachments entities.",
+        "description": "The WorkflowRequestAttachments entity.",
         "readOnly": true
       }
     }

@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// A collection of PayrollEmploymentOrganizations entities.
+    /// The PayrollEmploymentOrganizations entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayrollEmploymentOrganizationsGet_Response : IParsable

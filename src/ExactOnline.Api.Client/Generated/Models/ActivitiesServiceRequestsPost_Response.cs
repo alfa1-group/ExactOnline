@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// A collection of ActivitiesServiceRequests entities.
+    /// The ActivitiesServiceRequests entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivitiesServiceRequestsPost_Response : IParsable

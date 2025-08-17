@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// A collection of InventoryBatchNumbers entities.
+    /// The InventoryBatchNumbers entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InventoryBatchNumbersGet_Response : IParsable

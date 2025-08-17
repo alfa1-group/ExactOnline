@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// A collection of ProjectProjectRestrictionEmployees entities.
+    /// The ProjectProjectRestrictionEmployees entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProjectProjectRestrictionEmployeesPost_Response : IParsable

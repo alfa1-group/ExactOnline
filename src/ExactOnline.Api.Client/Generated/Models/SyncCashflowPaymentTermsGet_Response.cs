@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// A collection of SyncCashflowPaymentTerms entities.
+    /// The SyncCashflowPaymentTerms entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SyncCashflowPaymentTermsGet_Response : IParsable

@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// A collection of ReadProjectRecentHoursByNumberOfWeeks entities.
+    /// The ReadProjectRecentHoursByNumberOfWeeks entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadProjectRecentHoursByNumberOfWeeksGet_Response : IParsable

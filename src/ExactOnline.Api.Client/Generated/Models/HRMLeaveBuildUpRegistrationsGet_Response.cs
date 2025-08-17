@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// A collection of HRMLeaveBuildUpRegistrations entities.
+    /// The HRMLeaveBuildUpRegistrations entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HRMLeaveBuildUpRegistrationsGet_Response : IParsable

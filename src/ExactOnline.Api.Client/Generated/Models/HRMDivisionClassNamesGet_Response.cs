@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// A collection of HRMDivisionClassNames entities.
+    /// The HRMDivisionClassNames entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HRMDivisionClassNamesGet_Response : IParsable

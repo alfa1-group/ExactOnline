@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// A collection of PurchaseOrderPurchaseReturns entities.
+    /// The PurchaseOrderPurchaseReturns entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PurchaseOrderPurchaseReturnsPost_Response : IParsable

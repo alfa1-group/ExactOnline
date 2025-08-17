@@ -175,6 +175,11 @@ internal class EndpointCrawler
         return contentDictionary;
     }
 
+    private static string GetResponseDescription(string baseSchemaName, bool schemaIsCollection)
+    {
+        return schemaIsCollection ? $"A collection of {baseSchemaName} entities." : $"The {baseSchemaName} entity.";
+    }
+
     private static void Process(string pageUrl, IDictionary<HttpMethod, HtmlDocument> docs, OpenApiDocument openApiDoc)
     {
         var docGet = docs[HttpMethod.Get];
@@ -182,20 +187,20 @@ internal class EndpointCrawler
         var baseSchemaName = pageUrl.Split("?name=").Last().Trim();
         var endpointDescription = docGet.DocumentNode.SelectSingleNode("//p[@id='goodToKnow']")?.InnerText.Trim() ?? string.Empty;
         var schemaIsCollection = IsCollection(baseSchemaName, endpointDescription);
-        var responseDescription = schemaIsCollection ? $"A collection of {baseSchemaName} entities." : $"The {baseSchemaName} entity.";
         var (baseEndpointUri, queryParameters) = GetEndpointUriDetails(docGet);
         var isSyncInterface = baseSchemaName.StartsWith("Sync");
-        var isGetOnly = docs.Count == 1 && docs.ContainsKey(HttpMethod.Get);
+        var isGetOnly = docs.Count == 1;
+
+        var metaDataRef = new OpenApiSchemaReference("ExactOnlineMetadata")
+        {
+            ReadOnly = isGetOnly
+        };
 
         foreach (var (httpMethod, document) in docs)
         {
             var properties = new Dictionary<string, IOpenApiSchema>
             {
-                { "__metadata", new OpenApiSchemaReference("ExactOnlineMetadata")
-                    {
-                        ReadOnly = isGetOnly
-                    }
-                }
+                { "__metadata", metaDataRef }
             };
 
             var requiredProperties = new HashSet<string>();
@@ -303,7 +308,7 @@ internal class EndpointCrawler
             var schemaName = httpMethod == HttpMethod.Get ? baseSchemaName : baseSchemaName + httpMethod.ToString().ToPascalCase();
             openApiDoc.Components!.Schemas!.Add(schemaName, entityComponent);
 
-            AddOperations(openApiDoc, httpMethod, baseEndpointUri, baseSchemaName, endpointDescription, responseDescription, queryParameters, isSyncInterface);
+            AddOperations(openApiDoc, httpMethod, baseEndpointUri, baseSchemaName, endpointDescription, queryParameters, isSyncInterface, schemaIsCollection);
         }
     }
 
@@ -368,9 +373,9 @@ internal class EndpointCrawler
         string baseEndpointUri,
         string baseSchemaName,
         string endpointDescription,
-        string responseDescription,
         HashSet<OpenApiParameter> queryParameters,
-        bool isSyncInterface
+        bool isSyncInterface,
+        bool isCollection
     )
     {
         var schemaNameWithHttpMethod = baseSchemaName + httpMethod.ToString().ToPascalCase();
@@ -415,7 +420,7 @@ internal class EndpointCrawler
 
             var getResponseSchema = new OpenApiSchema
             {
-                Description = responseDescription,
+                Description = GetResponseDescription(baseSchemaName, isCollection),
                 Type = JsonSchemaType.Object,
                 ReadOnly = true,
                 Properties = new Dictionary<string, IOpenApiSchema>
@@ -450,7 +455,7 @@ internal class EndpointCrawler
             };
             var postResponseSchema = new OpenApiSchema
             {
-                Description = responseDescription,
+                Description = GetResponseDescription(baseSchemaName, false),
                 Type = JsonSchemaType.Object,
                 ReadOnly = true,
                 Properties = new Dictionary<string, IOpenApiSchema>
@@ -557,7 +562,7 @@ internal class EndpointCrawler
 
                 var getResponseSchema = new OpenApiSchema
                 {
-                    Description = responseDescription,
+                    Description = GetResponseDescription(baseSchemaName, false),
                     Type = JsonSchemaType.Object,
                     ReadOnly = true,
                     Properties = new Dictionary<string, IOpenApiSchema>
