@@ -30,6 +30,7 @@ var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>(
 
 var someLogisticsItems = SelectBuilder<LogisticsItems>.Build(l => l.Description, l => l.FreeTextField01);
 var selectAllLogisticsItems = SelectBuilder<LogisticsItems>.Build();
+var filterLogisticsItems = FilterBuilder<LogisticsItems>.Build(l => l.Description == "abc" && l.FreeNumberField07 == 1);
 var s1 = SelectBuilder<SystemSystemMe>.Build(s => s.UserID, s => s.CurrentDivision, s => s.Email);
 var s2 = SelectBuilder<SystemSystemMe>.Build(s => new { s.UserID, s.CurrentDivision, s.Email });
 var orderBy = OrderByBuilder<WebhooksWebhookSubscriptions>

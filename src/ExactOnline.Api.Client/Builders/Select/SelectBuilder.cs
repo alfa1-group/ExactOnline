@@ -1,11 +1,14 @@
 using System.Linq.Expressions;
 using System.Reflection;
-using Microsoft.Kiota.Abstractions.Serialization;
 
 namespace ExactOnline.Api.Client.Builders.Select;
 
-public static class SelectBuilder<T> where T : IParsable, new()
+public static class SelectBuilder<T>
 {
+    private static readonly Dictionary<string, string>? _propertyMapping = (typeof(T).GetField("PropertyMapping", BindingFlags.NonPublic | BindingFlags.Static)?.GetValue(null) as Dictionary<string, string>)?
+        .Where(p => p.Key != "Metadata")
+        .ToDictionary(pair => pair.Key, pair => pair.Value);
+
     /// <summary>
     /// Creates a CSV string of property names from the provided lambda expressions. When no expressions are provided, it returns all instance public properties with a getter.
     /// </summary>
@@ -14,31 +17,18 @@ public static class SelectBuilder<T> where T : IParsable, new()
     /// <returns>A comma-separated string of property names</returns>
     public static string Build(params Expression<Func<T, object?>>[] expressions)
     {
-        var instance = Activator.CreateInstance<T>();
-        var fields = instance.GetFieldDeserializers()
-            .Where(f => f.Key != "__metadata")
-            .ToDictionary(pair => pair.Key, pair => pair.Value);
-
         if (expressions.Length == 0)
         {
-            return string.Join(", ", fields.Select(f => f.Key));
+            return string.Join(", ", _propertyMapping?.Select(f => f.Key) ?? []);
         }
 
-        var propertyMapping = typeof(T).GetField("PropertyMapping", BindingFlags.NonPublic | BindingFlags.Static)?.GetValue(null) as Dictionary<string, string>;
         var propertyNames = new List<string>();
         foreach (var expression in expressions)
         {
             var propertyName = GetPropertyName(expression);
-            if (!string.IsNullOrEmpty(propertyName) && propertyName != "Metadata")
+            if (!string.IsNullOrEmpty(propertyName))
             {
-                if (propertyMapping?.TryGetValue(propertyName, out var mappedName) == true)
-                {
-                    propertyNames.Add(mappedName);
-                }
-                else
-                {
-                    propertyNames.Add(propertyName);
-                }
+                propertyNames.Add(propertyName);
             }
         }
 
@@ -83,11 +73,18 @@ public static class SelectBuilder<T> where T : IParsable, new()
 
     internal static string GetPropertyName(Expression<Func<T, object?>> expression)
     {
-        return expression.Body switch
+        var name = expression.Body switch
         {
             MemberExpression memberExpression => memberExpression.Member.Name,
             UnaryExpression { Operand: MemberExpression memberExpr } => memberExpr.Member.Name,
             _ => throw new ArgumentException($"Expression must be a property access. Found {expression.Body.GetType().Name} instead. Example: x => x.PropertyName", nameof(expression))
         };
+
+        if (_propertyMapping?.TryGetValue(name, out var mappedName) == true)
+        {
+            return mappedName;
+        }
+
+        return name;
     }
 }
