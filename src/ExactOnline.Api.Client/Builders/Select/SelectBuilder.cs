@@ -5,7 +5,7 @@ namespace ExactOnline.Api.Client.Builders.Select;
 
 public static class SelectBuilder<T>
 {
-    private static readonly Dictionary<string, string>? _propertyMapping = (typeof(T).GetField("PropertyMapping", BindingFlags.NonPublic | BindingFlags.Static)?.GetValue(null) as Dictionary<string, string>)?
+    private static readonly Dictionary<string, string>? PropertyMapping = (typeof(T).GetField("PropertyMapping", BindingFlags.NonPublic | BindingFlags.Static)?.GetValue(null) as Dictionary<string, string>)?
         .Where(p => p.Key != "Metadata")
         .ToDictionary(pair => pair.Key, pair => pair.Value);
 
@@ -19,7 +19,7 @@ public static class SelectBuilder<T>
     {
         if (expressions.Length == 0)
         {
-            return string.Join(", ", _propertyMapping?.Select(f => f.Key) ?? []);
+            return string.Join(", ", PropertyMapping?.Select(f => f.Value) ?? []);
         }
 
         var propertyNames = new List<string>();
@@ -80,7 +80,7 @@ public static class SelectBuilder<T>
             _ => throw new ArgumentException($"Expression must be a property access. Found {expression.Body.GetType().Name} instead. Example: x => x.PropertyName", nameof(expression))
         };
 
-        if (_propertyMapping?.TryGetValue(name, out var mappedName) == true)
+        if (PropertyMapping?.TryGetValue(name, out var mappedName) == true)
         {
             return mappedName;
         }
