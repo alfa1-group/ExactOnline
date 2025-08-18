@@ -5,7 +5,7 @@ public class ExactOnlineEvent
     public EventContent Content { get; set; } = null!;
 
     /// <summary>
-    /// Hash code is a byte array of length 40.
+    /// Hash code (HMAC SHA256) is a byte array of length 40.
     /// </summary>
     public byte[] HashCode { get; set; } = null!;
 }

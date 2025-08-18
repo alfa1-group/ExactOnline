@@ -1,6 +1,6 @@
 ﻿namespace ExactOnline.Api.Client.Builders.Filter;
 
-public class SyncFilter
+public class TimestampFilter
 {
     /// <summary>
     /// Timestamp of the last synchronization.
