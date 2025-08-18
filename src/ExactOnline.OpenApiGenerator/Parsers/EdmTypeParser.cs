@@ -5,9 +5,21 @@ namespace ExactOnline.OpenApiGenerator.Parsers;
 
 internal static class EdmTypeParser
 {
-    internal static bool TryParse(string type, string name, string? description, bool isSyncInterface, [NotNullWhen(true)] out IOpenApiSchema? schema)
+    internal static bool TryParse(string type, string? description, bool isSyncInterface, [NotNullWhen(true)] out IOpenApiSchema? schema)
     {
-        var property = new OpenApiSchema
+        if (TryParse(type, description, isSyncInterface, out (Type Type, IOpenApiSchema Schema) typeWithSchema))
+        {
+            schema = typeWithSchema.Schema;
+            return true;
+        }
+
+        schema = null;
+        return false;
+    }
+
+    internal static bool TryParse(string type, string? description, bool isSyncInterface, out (Type Type, IOpenApiSchema Schema) typeWithSchema)
+    {
+        var edmSchema = new OpenApiSchema
         {
             Description = description,
             ReadOnly = isSyncInterface
@@ -16,79 +28,79 @@ internal static class EdmTypeParser
         switch (type)
         {
             case "Edm.Binary":
-                property.Type = JsonSchemaType.String;
-                property.Format = "byte";
-                schema = property;
+                edmSchema.Type = JsonSchemaType.String;
+                edmSchema.Format = "byte";
+                typeWithSchema = (typeof(byte[]), edmSchema);
                 return true;
 
             case "Edm.Byte":
-                property.Type = JsonSchemaType.Integer;
-                property.Format = "int32";
-                property.Minimum = "0";
-                property.Maximum = "255";
-                schema = property;
+                edmSchema.Type = JsonSchemaType.Integer;
+                edmSchema.Format = "int32";
+                edmSchema.Minimum = "0";
+                edmSchema.Maximum = "255";
+                typeWithSchema = (typeof(byte), edmSchema);
                 return true;
 
             case "Edm.Boolean":
-                property.Type = JsonSchemaType.Boolean;
-                schema = property;
+                edmSchema.Type = JsonSchemaType.Boolean;
+                typeWithSchema = (typeof(bool), edmSchema);
                 return true;
 
             case "Edm.DateTime":
-                property.Type = JsonSchemaType.String;
-                property.Format = "date-time";
-                schema = property;
+                edmSchema.Type = JsonSchemaType.String;
+                edmSchema.Format = "date-time";
+                typeWithSchema = (typeof(DateTimeOffset), edmSchema);
                 return true;
 
             case "Edm.Decimal":
-                property.Type = JsonSchemaType.Number;
-                property.Format = "decimal";
-                schema = property;
+                edmSchema.Type = JsonSchemaType.Number;
+                edmSchema.Format = "decimal";
+                typeWithSchema = (typeof(decimal), edmSchema);
                 return true;
 
             case "Edm.Double":
-                property.Type = JsonSchemaType.Number;
-                property.Format = "double";
-                schema = property;
+                edmSchema.Type = JsonSchemaType.Number;
+                edmSchema.Format = "double";
+                typeWithSchema = (typeof(double), edmSchema);
                 return true;
 
             case "Edm.Float":
-                property.Type = JsonSchemaType.Number;
-                property.Format = "float";
-                schema = property;
+                edmSchema.Type = JsonSchemaType.Number;
+                edmSchema.Format = "float";
+                typeWithSchema = (typeof(float), edmSchema);
                 return true;
 
             case "Edm.Guid":
-                property.Type = JsonSchemaType.String;
-                property.Format = "uuid";
-                schema = property;
+                edmSchema.Type = JsonSchemaType.String;
+                edmSchema.Format = "uuid";
+                typeWithSchema = (typeof(Guid), edmSchema);
                 return true;
 
             case "Edm.Int16":
-                property.Type = JsonSchemaType.Integer;
-                property.Format = "int16";
-                schema = property;
+                edmSchema.Type = JsonSchemaType.Integer;
+                edmSchema.Format = "int16";
+                typeWithSchema = (typeof(short), edmSchema);
                 return true;
 
             case "Edm.Int32":
-                property.Type = JsonSchemaType.Integer;
-                property.Format = "int32";
-                schema = property;
+                edmSchema.Type = JsonSchemaType.Integer;
+                edmSchema.Format = "int32";
+                typeWithSchema = (typeof(int), edmSchema);
                 return true;
 
             case "Edm.Int64":
-                property.Type = JsonSchemaType.Integer;
-                property.Format = "int64";
-                schema = property;
+                edmSchema.Type = JsonSchemaType.Integer;
+                edmSchema.Format = "int64";
+                typeWithSchema = (typeof(long), edmSchema);
                 return true;
 
             case "Edm.String":
-                property.Type = JsonSchemaType.String;
-                schema = property;
+                edmSchema.Type = JsonSchemaType.String;
+                typeWithSchema = (typeof(string), edmSchema);
                 return true;
 
             default:
-                schema = null;
+                typeWithSchema = default;
                 return false;
         }
     }

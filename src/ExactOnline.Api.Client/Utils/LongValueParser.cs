@@ -1,20 +1,7 @@
 ﻿namespace ExactOnline.Api.Client.Utils;
 
-public static class LongValueTransformer
+public static class LongValueParser
 {
-    /// <summary>
-    /// If the value exceeds int.MaxValue, append "L" to indicate it's a long.
-    /// </summary>
-    public static string? ToString(long? value)
-    {
-        if (value == null)
-        {
-            return null;
-        }
-
-        return value > int.MaxValue ? $"{value}L" : $"{value}";
-    }
-
     /// <summary>
     /// Parses a string value to a long. If the string ends with "L", it is removed before parsing.
     /// </summary>

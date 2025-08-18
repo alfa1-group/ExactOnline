@@ -239,7 +239,7 @@ internal class EndpointCrawler
                             continue;
                         }
 
-                        if (!EdmTypeParser.TryParse(type, name, description, isGetOnly, out var property))
+                        if (!EdmTypeParser.TryParse(type, description, isGetOnly, out IOpenApiSchema? property))
                         {
                             if (!string.IsNullOrEmpty(linkedSchemaName))
                             {
@@ -823,17 +823,12 @@ internal class EndpointCrawler
                 continue;
             }
 
-            EdmTypeParser.TryParse(edmType, paramName, description: null, isSyncInterface: false, out var schema);
-
             var parameter = new OpenApiParameter
             {
                 Name = paramName,
                 In = ParameterLocation.Query,
                 Required = requiredParamNames.Contains(paramName),
-                Schema = new OpenApiSchema
-                {
-                    Type = schema?.Type ?? JsonSchemaType.String
-                }
+                Schema = GetQueryParameterScheme(edmType)
             };
 
             parameters.Add(parameter);
@@ -841,5 +836,24 @@ internal class EndpointCrawler
 
         var serviceUri = serviceUriNode.InnerText.Trim();
         return (serviceUri.Contains('?') ? serviceUri.Split('?')[0] : serviceUri, parameters);
+    }
+
+    private static IOpenApiSchema GetQueryParameterScheme(string edmType)
+    {
+        var fixedStringType = new HashSet<Type>
+        {
+            typeof(DateTimeOffset),
+            typeof(Guid)
+        };
+
+        if (EdmTypeParser.TryParse(edmType, description: null, isSyncInterface: false, out (Type Type, IOpenApiSchema Schema) typeWithSchema) && !fixedStringType.Contains(typeWithSchema.Type))
+        {
+            return typeWithSchema.Schema;
+        }
+
+        return new OpenApiSchema
+        {
+            Type = JsonSchemaType.String
+        };
     }
 }

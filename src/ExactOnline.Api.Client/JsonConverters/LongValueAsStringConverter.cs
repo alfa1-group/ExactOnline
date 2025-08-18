@@ -9,7 +9,7 @@ public class LongValueAsStringConverter : JsonConverter<long>
 {
     public override long Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        if (reader.TokenType == JsonTokenType.String && LongValueTransformer.TryParse(reader.GetString(), out var valueAsLong))
+        if (reader.TokenType == JsonTokenType.String && LongValueParser.TryParse(reader.GetString(), out var valueAsLong))
         {
             return valueAsLong;
         }

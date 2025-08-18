@@ -1,6 +1,6 @@
 using System.Linq.Expressions;
 using System.Text;
-using ExactOnline.Api.Client.Utils;
+using ExactOnline.Api.Client.Extensions;
 
 namespace ExactOnline.Api.Client.Builders.Filter;
 
@@ -84,7 +84,7 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
         switch (node.Value)
         {
             case string stringValue:
-                _filter.Append($"'{stringValue}'");
+                _filter.Append(stringValue.ToODataFormat());
                 break;
 
             case bool boolValue:
@@ -92,19 +92,19 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
                 break;
 
             case long longValue:
-                _filter.Append(LongValueTransformer.ToString(longValue));
+                _filter.Append(longValue.ToODataFormat());
                 break;
 
             case Guid guidValue:
-                _filter.Append($"guid'{guidValue}'");
+                _filter.Append(guidValue.ToODataFormat());
                 break;
 
             case DateTimeOffset dateTimeOffsetValue:
-                _filter.Append($"datetime'{dateTimeOffsetValue:yyyy-MM-ddTHH:mm:ss}'");
+                _filter.Append(dateTimeOffsetValue.ToODataFormat());
                 break;
 
             case DateTime dateTimeValue:
-                _filter.Append($"datetime'{dateTimeValue:yyyy-MM-ddTHH:mm:ss}'");
+                _filter.Append(dateTimeValue.ToODataFormat());
                 break;
 
             default:

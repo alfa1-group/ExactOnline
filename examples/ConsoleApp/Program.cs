@@ -3,6 +3,7 @@ using ExactOnline.Api.Client.Authentication.Options;
 using ExactOnline.Api.Client.Builders.Filter;
 using ExactOnline.Api.Client.Builders.OrderBy;
 using ExactOnline.Api.Client.Builders.Select;
+using ExactOnline.Api.Client.Extensions;
 using ExactOnline.Api.Client.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -56,15 +57,26 @@ var me = await RunAsync(async () =>
 
 var division = me!.CurrentDivision!.Value;
 
-Console.WriteLine("Waiting 3 seconds");
-await Task.Delay(TimeSpan.FromSeconds(3));
-
 await RunAsync(async () =>
 {
     var meTop = await client.Api.V1.Current.Me.GetAsync(m => m.QueryParameters.Top = 1).AsItem();
     Console.WriteLine($"After waiting: {meTop?.Email}");
 
     return true;
+});
+
+await RunAsync(async () =>
+{
+    Console.WriteLine("Getting Sync/SyncTimestamp");
+    var ts = await client.Api.V1[division].Read.Sync.Sync.SyncTimestamp.GetAsync(s =>
+    {
+        s.QueryParameters.Modified = new DateTimeOffset(2025, 1, 1, 0, 0, 0, TimeSpan.Zero).ToODataFormat();
+        s.QueryParameters.EndPoint = "TimeCostTransactions".ToODataFormat();
+    }).AsItem();
+
+    Console.WriteLine($"Timestamp: {ts?.Modified} {ts?.TimeStampAsBigInt} {ts?.API}");
+
+    return ts;
 });
 
 await RunAsync(async () =>
@@ -119,7 +131,7 @@ await RunAsync(async () =>
     foreach (var webhookSubscription in webhookSubscriptions)
     {
         Console.WriteLine($"Subscription ID: {webhookSubscription.ID}, CallbackURL: {webhookSubscription.CallbackURL}");
-    }    
+    }
 
     return true;
 });

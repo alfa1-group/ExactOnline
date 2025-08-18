@@ -53,7 +53,7 @@ namespace ExactOnline.Api.Client.Models
                 { "API", n => { API = n.GetStringValue(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
                 { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
-                { "TimeStampAsBigInt", n => { TimeStampAsBigInt = n.GetLongValue(); } },
+                { "TimeStampAsBigInt", n => { TimeStampAsBigInt = n.GetTimestampAsLongValue(); } },
             };
         }
         /// <summary>
@@ -67,3 +67,4 @@ namespace ExactOnline.Api.Client.Models
     }
 }
 #pragma warning restore CS0618
+

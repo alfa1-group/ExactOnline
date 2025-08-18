@@ -30,6 +30,17 @@ foreach ($file in $modelFiles) {
     }
 }
 
+foreach ($file in $modelFiles) {
+    $content = Get-Content -Path $file.FullName -Raw
+    $oldString = 'TimeStampAsBigInt = n.GetLongValue();'
+    $newString = 'TimeStampAsBigInt = n.GetTimestampAsLongValue();'
+    
+    if ($content -match [regex]::Escape($oldString)) {
+        $newContent = $content.Replace($oldString, $newString)
+        Set-Content -Path $file.FullName -Value $newContent -Encoding UTF8
+    }
+}
+
 Write-Output "🔧 Patching response models..."
 $responseModelFiles = Get-ChildItem -Path $modelsPath -Filter "*_Response.cs"
 

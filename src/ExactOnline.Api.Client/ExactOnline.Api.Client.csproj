@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="JsonConverters\NullLongValueAsStringConverter.cs" />
-    <Compile Remove="Middleware\GuidWrappingHandler.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="kiota-lock.json" />
   </ItemGroup>
 
@@ -20,9 +15,4 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.3" />
     <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.19.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Extensions\RequestBuilders\" />
-  </ItemGroup>
-
 </Project>

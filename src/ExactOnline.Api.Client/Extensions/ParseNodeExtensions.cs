@@ -14,7 +14,7 @@ internal static class ParseNodeExtensions
         }
 
         var value = parseNode.GetStringValue();
-        if (LongValueTransformer.TryParse(value, out var parsedValueAsLong))
+        if (LongValueParser.TryParse(value, out var parsedValueAsLong))
         {
             return parsedValueAsLong;
         }
