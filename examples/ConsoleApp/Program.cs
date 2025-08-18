@@ -36,6 +36,7 @@ var orderBy = OrderByBuilder<WebhooksWebhookSubscriptions>
     .Build();
 var filter = FilterBuilder<WebhooksWebhookSubscriptions>.Build(a => a.CallbackURL!.Equals("abc") && (a.Division > 100 || a.Created > TimeProvider.System.GetUtcNow().AddDays(-30)));
 var syncFilter = TimestampFilterBuilder.Build(t => t.Timestamp >= 13361108664);
+var selectAll = SelectBuilder<SyncProjectTimeCostTransactions>.Build();
 
 await RunAsync(async () =>
 {

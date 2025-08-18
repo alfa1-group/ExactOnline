@@ -1,11 +1,12 @@
 using System.Linq.Expressions;
+using System.Reflection;
 
 namespace ExactOnline.Api.Client.Builders.Select;
 
 public static class SelectBuilder<T>
 {
     /// <summary>
-    /// Creates a CSV string of property names from the provided lambda expressions.
+    /// Creates a CSV string of property names from the provided lambda expressions. When no expressions are provided, it returns all instance public properties with a getter.
     /// </summary>
     /// <typeparam name="T">The type to extract property names from</typeparam>
     /// <param name="expressions">Lambda expressions pointing to properties</param>
@@ -14,7 +15,10 @@ public static class SelectBuilder<T>
     {
         if (expressions.Length == 0)
         {
-            return string.Join(", ", typeof(T).GetProperties().Select(p => p.Name));
+            return string.Join(", ", typeof(T)
+                .GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                .Where(p => p.GetMethod != null)
+                .Select(p => p.Name));
         }
 
         var propertyNames = new List<string>();
