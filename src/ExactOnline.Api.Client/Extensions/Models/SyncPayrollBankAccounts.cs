@@ -1,0 +1,24 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class SyncPayrollBankAccounts
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(BICCode), "BICCode" },
+        { nameof(BankAccountHolderName), "BankAccountHolderName" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Description), "Description" },
+        { nameof(Employee), "Employee" },
+        { nameof(EmployeeFullName), "EmployeeFullName" },
+        { nameof(EmployeeHID), "EmployeeHID" },
+        { nameof(ID), "ID" },
+        { nameof(Main), "Main" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Number), "Number" },
+        { nameof(Timestamp), "Timestamp" }
+    };
+}

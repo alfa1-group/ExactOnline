@@ -1,0 +1,13 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ManufacturingShopOrderPriorities
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Division), "Division" },
+        { nameof(ID), "ID" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Mode), "Mode" },
+        { nameof(Priority), "Priority" },
+        { nameof(ShopOrder), "ShopOrder" }
+    };
+}

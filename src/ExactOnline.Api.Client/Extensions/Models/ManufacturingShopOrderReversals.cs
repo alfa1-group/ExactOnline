@@ -1,0 +1,33 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ManufacturingShopOrderReversals
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(CreatedBy), "CreatedBy" },
+        { nameof(CreatedByFullName), "CreatedByFullName" },
+        { nameof(CreatedDate), "CreatedDate" },
+        { nameof(IsBatch), "IsBatch" },
+        { nameof(IsFractionAllowedItem), "IsFractionAllowedItem" },
+        { nameof(IsSerial), "IsSerial" },
+        { nameof(Item), "Item" },
+        { nameof(ItemCode), "ItemCode" },
+        { nameof(ItemDescription), "ItemDescription" },
+        { nameof(ItemPictureUrl), "ItemPictureUrl" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Note), "Note" },
+        { nameof(OriginalStockTransactionId), "OriginalStockTransactionId" },
+        { nameof(Quantity), "Quantity" },
+        { nameof(ReversalStockTransactionId), "ReversalStockTransactionId" },
+        { nameof(ShopOrder), "ShopOrder" },
+        { nameof(ShopOrderNumber), "ShopOrderNumber" },
+        { nameof(StorageLocation), "StorageLocation" },
+        { nameof(StorageLocationCode), "StorageLocationCode" },
+        { nameof(StorageLocationDescription), "StorageLocationDescription" },
+        { nameof(TransactionDate), "TransactionDate" },
+        { nameof(Unit), "Unit" },
+        { nameof(UnitDescription), "UnitDescription" },
+        { nameof(Warehouse), "Warehouse" },
+        { nameof(WarehouseCode), "WarehouseCode" },
+        { nameof(WarehouseDescription), "WarehouseDescription" }
+    };
+}

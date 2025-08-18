@@ -1,0 +1,8 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ReadFinancialReceivablesList_Notes
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+
+    };
+}

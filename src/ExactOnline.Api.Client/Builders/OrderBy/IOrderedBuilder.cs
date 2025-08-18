@@ -1,8 +1,9 @@
 using System.Linq.Expressions;
+using Microsoft.Kiota.Abstractions.Serialization;
 
 namespace ExactOnline.Api.Client.Builders.OrderBy;
 
-public interface IOrderedBuilder<T>
+public interface IOrderedBuilder<T> where T : IParsable, new()
 {
     IOrderedBuilder<T> ThenBy(Expression<Func<T, object?>> expression);
 

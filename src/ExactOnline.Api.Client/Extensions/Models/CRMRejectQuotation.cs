@@ -1,0 +1,14 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class CRMRejectQuotation
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Division), "Division" },
+        { nameof(ErrorMessage), "ErrorMessage" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(NotificationLayout), "NotificationLayout" },
+        { nameof(QuotationID), "QuotationID" },
+        { nameof(ReasonCode), "ReasonCode" },
+        { nameof(SuccessMessage), "SuccessMessage" }
+    };
+}

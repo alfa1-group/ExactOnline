@@ -1,0 +1,45 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ManufacturingTimedTimeTransactions
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Division), "Division" },
+        { nameof(Employee), "Employee" },
+        { nameof(EmployeeFullName), "EmployeeFullName" },
+        { nameof(EndTime), "EndTime" },
+        { nameof(ID), "ID" },
+        { nameof(IsOperationFinished), "IsOperationFinished" },
+        { nameof(LaborHours), "LaborHours" },
+        { nameof(MachineHours), "MachineHours" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Notes), "Notes" },
+        { nameof(Operation), "Operation" },
+        { nameof(OperationCode), "OperationCode" },
+        { nameof(OperationDescription), "OperationDescription" },
+        { nameof(PercentComplete), "PercentComplete" },
+        { nameof(ProducedQuantity), "ProducedQuantity" },
+        { nameof(ProductionArea), "ProductionArea" },
+        { nameof(ProductionAreaCode), "ProductionAreaCode" },
+        { nameof(ProductionAreaDescription), "ProductionAreaDescription" },
+        { nameof(ShopOrder), "ShopOrder" },
+        { nameof(ShopOrderDescription), "ShopOrderDescription" },
+        { nameof(ShopOrderNumber), "ShopOrderNumber" },
+        { nameof(ShopOrderRoutingStepPlan), "ShopOrderRoutingStepPlan" },
+        { nameof(ShopOrderRoutingStepPlanDescription), "ShopOrderRoutingStepPlanDescription" },
+        { nameof(ShopOrderRoutingStepPlanRemainingRunHours), "ShopOrderRoutingStepPlanRemainingRunHours" },
+        { nameof(ShopOrderRoutingStepPlanRemainingSetupHours), "ShopOrderRoutingStepPlanRemainingSetupHours" },
+        { nameof(Source), "Source" },
+        { nameof(StartTime), "StartTime" },
+        { nameof(Status), "Status" },
+        { nameof(Type), "Type" },
+        { nameof(Workcenter), "Workcenter" },
+        { nameof(WorkcenterCode), "WorkcenterCode" },
+        { nameof(WorkcenterDescription), "WorkcenterDescription" }
+    };
+}

@@ -1,0 +1,43 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class CRMEmailWithSignOffQuotation
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(AcceptEmailLayout), "AcceptEmailLayout" },
+        { nameof(AcceptOpportunityStage), "AcceptOpportunityStage" },
+        { nameof(Action), "Action" },
+        { nameof(AllowProvideYourRef), "AllowProvideYourRef" },
+        { nameof(CreateItemPriceAgreement), "CreateItemPriceAgreement" },
+        { nameof(CreateProjectWBS), "CreateProjectWBS" },
+        { nameof(Division), "Division" },
+        { nameof(DocumentLayout), "DocumentLayout" },
+        { nameof(EmailLayout), "EmailLayout" },
+        { nameof(ErrorMessage), "ErrorMessage" },
+        { nameof(ExtraText), "ExtraText" },
+        { nameof(InvoiceJournal), "InvoiceJournal" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(ProjectBudgetType), "ProjectBudgetType" },
+        { nameof(ProjectClassification), "ProjectClassification" },
+        { nameof(ProjectCode), "ProjectCode" },
+        { nameof(ProjectDescription), "ProjectDescription" },
+        { nameof(ProjectID), "ProjectID" },
+        { nameof(ProjectInvoiceDate), "ProjectInvoiceDate" },
+        { nameof(ProjectInvoicingAction), "ProjectInvoicingAction" },
+        { nameof(ProjectPrepaidTypes), "ProjectPrepaidTypes" },
+        { nameof(ProjectPriceAgreement), "ProjectPriceAgreement" },
+        { nameof(ProjectType), "ProjectType" },
+        { nameof(ProjectWBSPartOf), "ProjectWBSPartOf" },
+        { nameof(QuotationDate), "QuotationDate" },
+        { nameof(QuotationID), "QuotationID" },
+        { nameof(RejectEmailLayout), "RejectEmailLayout" },
+        { nameof(RejectOpportunityStage), "RejectOpportunityStage" },
+        { nameof(SenderEmailAddress), "SenderEmailAddress" },
+        { nameof(Subject), "Subject" },
+        { nameof(SubscriptionDate), "SubscriptionDate" },
+        { nameof(SubscriptionDescription), "SubscriptionDescription" },
+        { nameof(SubscriptionType), "SubscriptionType" },
+        { nameof(SuccessMessage), "SuccessMessage" },
+        { nameof(UpdateProjectBudgetAndPriceAgreement), "UpdateProjectBudgetAndPriceAgreement" },
+        { nameof(YourRef), "YourRef" }
+    };
+}

@@ -1,0 +1,44 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class SyncProjectProjectPlanning
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Account), "Account" },
+        { nameof(AccountCode), "AccountCode" },
+        { nameof(AccountName), "AccountName" },
+        { nameof(BGTStatus), "BGTStatus" },
+        { nameof(CommunicationErrorStatus), "CommunicationErrorStatus" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(CustomField), "CustomField" },
+        { nameof(Description), "Description" },
+        { nameof(Division), "Division" },
+        { nameof(Employee), "Employee" },
+        { nameof(EmployeeCode), "EmployeeCode" },
+        { nameof(EmployeeHID), "EmployeeHID" },
+        { nameof(EndDate), "EndDate" },
+        { nameof(HourType), "HourType" },
+        { nameof(HourTypeCode), "HourTypeCode" },
+        { nameof(HourTypeDescription), "HourTypeDescription" },
+        { nameof(Hours), "Hours" },
+        { nameof(ID), "ID" },
+        { nameof(IsBrokenRecurrence), "IsBrokenRecurrence" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Notes), "Notes" },
+        { nameof(OverAllocate), "OverAllocate" },
+        { nameof(Project), "Project" },
+        { nameof(ProjectCode), "ProjectCode" },
+        { nameof(ProjectDescription), "ProjectDescription" },
+        { nameof(ProjectPlanningRecurring), "ProjectPlanningRecurring" },
+        { nameof(ProjectWBS), "ProjectWBS" },
+        { nameof(ProjectWBSDescription), "ProjectWBSDescription" },
+        { nameof(StartDate), "StartDate" },
+        { nameof(Status), "Status" },
+        { nameof(Timestamp), "Timestamp" },
+        { nameof(Type), "Type" }
+    };
+}

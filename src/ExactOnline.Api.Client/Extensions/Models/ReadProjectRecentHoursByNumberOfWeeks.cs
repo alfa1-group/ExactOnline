@@ -1,0 +1,32 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ReadProjectRecentHoursByNumberOfWeeks
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(AccountCode), "AccountCode" },
+        { nameof(AccountId), "AccountId" },
+        { nameof(AccountName), "AccountName" },
+        { nameof(Activity), "Activity" },
+        { nameof(ActivityDescription), "ActivityDescription" },
+        { nameof(Date), "Date" },
+        { nameof(EntryId), "EntryId" },
+        { nameof(HoursApproved), "HoursApproved" },
+        { nameof(HoursApprovedBillable), "HoursApprovedBillable" },
+        { nameof(HoursDraft), "HoursDraft" },
+        { nameof(HoursDraftBillable), "HoursDraftBillable" },
+        { nameof(HoursRejected), "HoursRejected" },
+        { nameof(HoursRejectedBillable), "HoursRejectedBillable" },
+        { nameof(HoursSubmitted), "HoursSubmitted" },
+        { nameof(HoursSubmittedBillable), "HoursSubmittedBillable" },
+        { nameof(Id), "Id" },
+        { nameof(ItemCode), "ItemCode" },
+        { nameof(ItemDescription), "ItemDescription" },
+        { nameof(ItemId), "ItemId" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Notes), "Notes" },
+        { nameof(ProjectCode), "ProjectCode" },
+        { nameof(ProjectDescription), "ProjectDescription" },
+        { nameof(ProjectId), "ProjectId" },
+        { nameof(WeekNumber), "WeekNumber" }
+    };
+}

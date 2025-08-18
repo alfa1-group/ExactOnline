@@ -1,0 +1,22 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class VATVatPercentages
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Division), "Division" },
+        { nameof(EndDate), "EndDate" },
+        { nameof(ID), "ID" },
+        { nameof(LineNumber), "LineNumber" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Percentage), "Percentage" },
+        { nameof(StartDate), "StartDate" },
+        { nameof(Type), "Type" },
+        { nameof(VATCodeID), "VATCodeID" }
+    };
+}

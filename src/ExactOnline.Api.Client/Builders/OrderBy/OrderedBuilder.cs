@@ -1,10 +1,11 @@
 using System.Linq.Expressions;
 using System.Text;
 using ExactOnline.Api.Client.Builders.Select;
+using Microsoft.Kiota.Abstractions.Serialization;
 
 namespace ExactOnline.Api.Client.Builders.OrderBy;
 
-internal class OrderedBuilder<T> : IOrderedBuilder<T>
+internal class OrderedBuilder<T> : IOrderedBuilder<T> where T : IParsable, new()
 {
     private readonly StringBuilder _builder;
 

@@ -1,0 +1,16 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class InventoryFinishAssemblyOrder
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(AssembledItemStorageLocation), "AssembledItemStorageLocation" },
+        { nameof(AssemblyDate), "AssemblyDate" },
+        { nameof(AssemblyOrder), "AssemblyOrder" },
+        { nameof(BatchNumbers), "BatchNumbers" },
+        { nameof(Description), "Description" },
+        { nameof(FinishOrderQuantity), "FinishOrderQuantity" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Notes), "Notes" },
+        { nameof(SerialNumbers), "SerialNumbers" }
+    };
+}

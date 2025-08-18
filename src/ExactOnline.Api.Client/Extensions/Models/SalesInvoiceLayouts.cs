@@ -1,0 +1,18 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class SalesInvoiceLayouts
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Division), "Division" },
+        { nameof(ID), "ID" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Subject), "Subject" },
+        { nameof(Type), "Type" }
+    };
+}

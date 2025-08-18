@@ -1,0 +1,37 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class SyncPayrollEmploymentContracts
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(ContractFlexPhase), "ContractFlexPhase" },
+        { nameof(ContractFlexPhaseDescription), "ContractFlexPhaseDescription" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Division), "Division" },
+        { nameof(Document), "Document" },
+        { nameof(Employee), "Employee" },
+        { nameof(EmployeeFullName), "EmployeeFullName" },
+        { nameof(EmployeeHID), "EmployeeHID" },
+        { nameof(EmployeeType), "EmployeeType" },
+        { nameof(EmployeeTypeDescription), "EmployeeTypeDescription" },
+        { nameof(Employment), "Employment" },
+        { nameof(EmploymentNumber), "EmploymentNumber" },
+        { nameof(EndDate), "EndDate" },
+        { nameof(ID), "ID" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(ProbationEndDate), "ProbationEndDate" },
+        { nameof(ProbationPeriod), "ProbationPeriod" },
+        { nameof(ProbationPeriodDescription), "ProbationPeriodDescription" },
+        { nameof(ReasonContract), "ReasonContract" },
+        { nameof(ReasonContractDescription), "ReasonContractDescription" },
+        { nameof(Sequence), "Sequence" },
+        { nameof(StartDate), "StartDate" },
+        { nameof(Timestamp), "Timestamp" },
+        { nameof(Type), "Type" },
+        { nameof(TypeDescription), "TypeDescription" }
+    };
+}

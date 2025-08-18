@@ -1,0 +1,16 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ReadFinancialJournalStatusByFinancialPeriod
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Journal), "Journal" },
+        { nameof(JournalDescription), "JournalDescription" },
+        { nameof(JournalType), "JournalType" },
+        { nameof(JournalTypeDescription), "JournalTypeDescription" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Period), "Period" },
+        { nameof(Status), "Status" },
+        { nameof(StatusDescription), "StatusDescription" },
+        { nameof(Year), "Year" }
+    };
+}

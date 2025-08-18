@@ -1,0 +1,24 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class CRMQuotationOrderChargeLines
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(AmountDC), "AmountDC" },
+        { nameof(AmountFCExclVAT), "AmountFCExclVAT" },
+        { nameof(AmountFCInclVAT), "AmountFCInclVAT" },
+        { nameof(AmountVATFC), "AmountVATFC" },
+        { nameof(Division), "Division" },
+        { nameof(ID), "ID" },
+        { nameof(IsShippingCost), "IsShippingCost" },
+        { nameof(LineNumber), "LineNumber" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(OrderCharge), "OrderCharge" },
+        { nameof(OrderChargeCode), "OrderChargeCode" },
+        { nameof(OrderChargeDescription), "OrderChargeDescription" },
+        { nameof(OrderChargesLineDescription), "OrderChargesLineDescription" },
+        { nameof(QuotationID), "QuotationID" },
+        { nameof(VATCode), "VATCode" },
+        { nameof(VATDescription), "VATDescription" },
+        { nameof(VATPercentage), "VATPercentage" }
+    };
+}

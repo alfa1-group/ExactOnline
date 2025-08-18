@@ -1,0 +1,34 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ProjectInvoiceTerms
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Amount), "Amount" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Deliverable), "Deliverable" },
+        { nameof(Description), "Description" },
+        { nameof(Division), "Division" },
+        { nameof(ExecutionFromDate), "ExecutionFromDate" },
+        { nameof(ExecutionToDate), "ExecutionToDate" },
+        { nameof(ID), "ID" },
+        { nameof(InvoiceDate), "InvoiceDate" },
+        { nameof(InvoiceId), "InvoiceId" },
+        { nameof(InvoiceStatus), "InvoiceStatus" },
+        { nameof(Item), "Item" },
+        { nameof(ItemDescription), "ItemDescription" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Notes), "Notes" },
+        { nameof(Percentage), "Percentage" },
+        { nameof(Project), "Project" },
+        { nameof(ProjectDescription), "ProjectDescription" },
+        { nameof(VATCode), "VATCode" },
+        { nameof(VATCodeDescription), "VATCodeDescription" },
+        { nameof(VATPercentage), "VATPercentage" },
+        { nameof(WBS), "WBS" }
+    };
+}

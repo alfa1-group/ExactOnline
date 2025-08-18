@@ -1,0 +1,23 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class FinancialDeductibilityPercentages
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Division), "Division" },
+        { nameof(EndDate), "EndDate" },
+        { nameof(ExpenseNonDeductiblePercentage), "ExpenseNonDeductiblePercentage" },
+        { nameof(GLAccount), "GLAccount" },
+        { nameof(ID), "ID" },
+        { nameof(LineNumber), "LineNumber" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(PrivateUsePercentage), "PrivateUsePercentage" },
+        { nameof(StartDate), "StartDate" },
+        { nameof(VATNonDeductiblePercentage), "VATNonDeductiblePercentage" }
+    };
+}

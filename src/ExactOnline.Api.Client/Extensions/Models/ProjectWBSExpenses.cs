@@ -1,0 +1,43 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ProjectWBSExpenses
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(AutoCreateInvoiceTerm), "AutoCreateInvoiceTerm" },
+        { nameof(BlockEntry), "BlockEntry" },
+        { nameof(BlockRebilling), "BlockRebilling" },
+        { nameof(BudgetedCost), "BudgetedCost" },
+        { nameof(BudgetedRevenue), "BudgetedRevenue" },
+        { nameof(Completed), "Completed" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(CustomField), "CustomField" },
+        { nameof(Description), "Description" },
+        { nameof(Division), "Division" },
+        { nameof(EndDate), "EndDate" },
+        { nameof(ID), "ID" },
+        { nameof(InvoiceDate), "InvoiceDate" },
+        { nameof(InvoiceMethod), "InvoiceMethod" },
+        { nameof(InvoiceSeparately), "InvoiceSeparately" },
+        { nameof(InvoiceTerm), "InvoiceTerm" },
+        { nameof(Item), "Item" },
+        { nameof(MarkupPercentage), "MarkupPercentage" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Notes), "Notes" },
+        { nameof(PartOf), "PartOf" },
+        { nameof(PartOfDescription), "PartOfDescription" },
+        { nameof(Project), "Project" },
+        { nameof(ProjectDescription), "ProjectDescription" },
+        { nameof(PurchasePrice), "PurchasePrice" },
+        { nameof(Quantity), "Quantity" },
+        { nameof(ReleaseInvoiceTerm), "ReleaseInvoiceTerm" },
+        { nameof(ReleaseInvoiceTermDate), "ReleaseInvoiceTermDate" },
+        { nameof(SequenceNumber), "SequenceNumber" },
+        { nameof(StartDate), "StartDate" },
+        { nameof(Supplier), "Supplier" }
+    };
+}

@@ -1,0 +1,37 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class BulkCRMQuotationLines
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(AmountDC), "AmountDC" },
+        { nameof(AmountFC), "AmountFC" },
+        { nameof(CostCenter), "CostCenter" },
+        { nameof(CostCenterDescription), "CostCenterDescription" },
+        { nameof(CostUnit), "CostUnit" },
+        { nameof(CostUnitDescription), "CostUnitDescription" },
+        { nameof(CustomField), "CustomField" },
+        { nameof(CustomerItemCode), "CustomerItemCode" },
+        { nameof(Description), "Description" },
+        { nameof(Discount), "Discount" },
+        { nameof(Division), "Division" },
+        { nameof(ID), "ID" },
+        { nameof(Item), "Item" },
+        { nameof(ItemDescription), "ItemDescription" },
+        { nameof(LineNumber), "LineNumber" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(NetPrice), "NetPrice" },
+        { nameof(Notes), "Notes" },
+        { nameof(Optional), "Optional" },
+        { nameof(Quantity), "Quantity" },
+        { nameof(QuotationID), "QuotationID" },
+        { nameof(QuotationNumber), "QuotationNumber" },
+        { nameof(UnitCode), "UnitCode" },
+        { nameof(UnitDescription), "UnitDescription" },
+        { nameof(UnitPrice), "UnitPrice" },
+        { nameof(VATAmountFC), "VATAmountFC" },
+        { nameof(VATCode), "VATCode" },
+        { nameof(VATDescription), "VATDescription" },
+        { nameof(VATPercentage), "VATPercentage" },
+        { nameof(VersionNumber), "VersionNumber" }
+    };
+}

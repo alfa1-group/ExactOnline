@@ -24,10 +24,12 @@ var host = builder.Build();
 using var scope = host.Services.CreateScope();
 
 var options = scope.ServiceProvider.GetRequiredService<IOptions<ExactOnlineOptions>>();
-bool isDevelopment = !options.Value.ClientId.StartsWith("e4a2");
+var isDevelopment = !options.Value.ClientId.StartsWith("e4a2");
 
 var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>();
 
+var someLogisticsItems = SelectBuilder<LogisticsItems>.Build(l => l.Description, l => l.FreeTextField01);
+var selectAllLogisticsItems = SelectBuilder<LogisticsItems>.Build();
 var s1 = SelectBuilder<SystemSystemMe>.Build(s => s.UserID, s => s.CurrentDivision, s => s.Email);
 var s2 = SelectBuilder<SystemSystemMe>.Build(s => new { s.UserID, s.CurrentDivision, s.Email });
 var orderBy = OrderByBuilder<WebhooksWebhookSubscriptions>

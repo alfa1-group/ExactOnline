@@ -1,0 +1,28 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class SyncHRMAbsenceRegistrations
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(AbsenceRegistrationTransactions), "AbsenceRegistrationTransactions" },
+        { nameof(Cause), "Cause" },
+        { nameof(CauseCode), "CauseCode" },
+        { nameof(CauseDescription), "CauseDescription" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Division), "Division" },
+        { nameof(Employee), "Employee" },
+        { nameof(EmployeeFullName), "EmployeeFullName" },
+        { nameof(EmployeeHID), "EmployeeHID" },
+        { nameof(ID), "ID" },
+        { nameof(Kind), "Kind" },
+        { nameof(KindCode), "KindCode" },
+        { nameof(KindDescription), "KindDescription" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Notes), "Notes" },
+        { nameof(Timestamp), "Timestamp" }
+    };
+}

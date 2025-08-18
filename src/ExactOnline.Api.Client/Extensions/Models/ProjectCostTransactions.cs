@@ -1,0 +1,48 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ProjectCostTransactions
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Account), "Account" },
+        { nameof(AccountName), "AccountName" },
+        { nameof(AmountFC), "AmountFC" },
+        { nameof(Attachment), "Attachment" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Currency), "Currency" },
+        { nameof(CustomField), "CustomField" },
+        { nameof(Date), "Date" },
+        { nameof(Division), "Division" },
+        { nameof(DivisionDescription), "DivisionDescription" },
+        { nameof(Employee), "Employee" },
+        { nameof(EntryNumber), "EntryNumber" },
+        { nameof(ErrorText), "ErrorText" },
+        { nameof(Expense), "Expense" },
+        { nameof(ExpenseDescription), "ExpenseDescription" },
+        { nameof(HourStatus), "HourStatus" },
+        { nameof(ID), "ID" },
+        { nameof(Item), "Item" },
+        { nameof(ItemDescription), "ItemDescription" },
+        { nameof(ItemDivisable), "ItemDivisable" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Notes), "Notes" },
+        { nameof(PriceFC), "PriceFC" },
+        { nameof(Project), "Project" },
+        { nameof(ProjectAccount), "ProjectAccount" },
+        { nameof(ProjectAccountCode), "ProjectAccountCode" },
+        { nameof(ProjectAccountName), "ProjectAccountName" },
+        { nameof(ProjectDescription), "ProjectDescription" },
+        { nameof(Quantity), "Quantity" },
+        { nameof(Subscription), "Subscription" },
+        { nameof(SubscriptionAccount), "SubscriptionAccount" },
+        { nameof(SubscriptionAccountCode), "SubscriptionAccountCode" },
+        { nameof(SubscriptionAccountName), "SubscriptionAccountName" },
+        { nameof(SubscriptionDescription), "SubscriptionDescription" },
+        { nameof(SubscriptionNumber), "SubscriptionNumber" },
+        { nameof(Type), "Type" }
+    };
+}

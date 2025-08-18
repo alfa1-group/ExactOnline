@@ -1,9 +1,10 @@
 using System.Linq.Expressions;
 using ExactOnline.Api.Client.Builders.Select;
+using Microsoft.Kiota.Abstractions.Serialization;
 
 namespace ExactOnline.Api.Client.Builders.OrderBy;
 
-public static class OrderByBuilder<T>
+public static class OrderByBuilder<T> where T : IParsable, new()
 {
     public static IOrderedBuilder<T> OrderBy(Expression<Func<T, object?>> expression)
     {

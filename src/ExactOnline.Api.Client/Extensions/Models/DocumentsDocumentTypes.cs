@@ -1,0 +1,17 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class DocumentsDocumentTypes
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Created), "Created" },
+        { nameof(Description), "Description" },
+        { nameof(DocumentIsCreatable), "DocumentIsCreatable" },
+        { nameof(DocumentIsDeletable), "DocumentIsDeletable" },
+        { nameof(DocumentIsUpdatable), "DocumentIsUpdatable" },
+        { nameof(DocumentIsViewable), "DocumentIsViewable" },
+        { nameof(ID), "ID" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(TypeCategory), "TypeCategory" }
+    };
+}

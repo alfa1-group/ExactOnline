@@ -1,0 +1,14 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ReadProjectHourEntryActivitiesByProject
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(DefaultItem), "DefaultItem" },
+        { nameof(DefaultItemCode), "DefaultItemCode" },
+        { nameof(DefaultItemDescription), "DefaultItemDescription" },
+        { nameof(Description), "Description" },
+        { nameof(ID), "ID" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(ParentDescription), "ParentDescription" }
+    };
+}

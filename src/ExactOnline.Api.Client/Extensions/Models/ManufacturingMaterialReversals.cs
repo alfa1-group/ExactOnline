@@ -1,0 +1,37 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ManufacturingMaterialReversals
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(BatchNumbers), "BatchNumbers" },
+        { nameof(CreatedBy), "CreatedBy" },
+        { nameof(CreatedByFullName), "CreatedByFullName" },
+        { nameof(CreatedDate), "CreatedDate" },
+        { nameof(IsBackflush), "IsBackflush" },
+        { nameof(IsBatch), "IsBatch" },
+        { nameof(IsFractionAllowedItem), "IsFractionAllowedItem" },
+        { nameof(IsSerial), "IsSerial" },
+        { nameof(Item), "Item" },
+        { nameof(ItemCode), "ItemCode" },
+        { nameof(ItemDescription), "ItemDescription" },
+        { nameof(ItemPictureUrl), "ItemPictureUrl" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Note), "Note" },
+        { nameof(OriginalStockTransactionId), "OriginalStockTransactionId" },
+        { nameof(Quantity), "Quantity" },
+        { nameof(ReversalStockTransactionId), "ReversalStockTransactionId" },
+        { nameof(SerialNumbers), "SerialNumbers" },
+        { nameof(ShopOrder), "ShopOrder" },
+        { nameof(ShopOrderMaterialPlan), "ShopOrderMaterialPlan" },
+        { nameof(ShopOrderNumber), "ShopOrderNumber" },
+        { nameof(StorageLocation), "StorageLocation" },
+        { nameof(StorageLocationCode), "StorageLocationCode" },
+        { nameof(StorageLocationDescription), "StorageLocationDescription" },
+        { nameof(TransactionDate), "TransactionDate" },
+        { nameof(Unit), "Unit" },
+        { nameof(UnitDescription), "UnitDescription" },
+        { nameof(Warehouse), "Warehouse" },
+        { nameof(WarehouseCode), "WarehouseCode" },
+        { nameof(WarehouseDescription), "WarehouseDescription" }
+    };
+}

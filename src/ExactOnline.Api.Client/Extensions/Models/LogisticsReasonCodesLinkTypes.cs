@@ -1,0 +1,12 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class LogisticsReasonCodesLinkTypes
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(ID), "ID" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Reason), "Reason" },
+        { nameof(Type), "Type" },
+        { nameof(TypeDescription), "TypeDescription" }
+    };
+}

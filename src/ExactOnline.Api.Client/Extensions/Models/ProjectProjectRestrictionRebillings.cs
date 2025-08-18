@@ -1,0 +1,22 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ProjectProjectRestrictionRebillings
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(CostTypeRebill), "CostTypeRebill" },
+        { nameof(CostTypeRebillCode), "CostTypeRebillCode" },
+        { nameof(CostTypeRebillDescription), "CostTypeRebillDescription" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Division), "Division" },
+        { nameof(ID), "ID" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Project), "Project" },
+        { nameof(ProjectCode), "ProjectCode" },
+        { nameof(ProjectDescription), "ProjectDescription" }
+    };
+}

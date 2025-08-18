@@ -1,0 +1,30 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class CashflowPaymentConditions
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Code), "Code" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(CreditManagementScenario), "CreditManagementScenario" },
+        { nameof(CreditManagementScenarioCode), "CreditManagementScenarioCode" },
+        { nameof(CreditManagementScenarioDescription), "CreditManagementScenarioDescription" },
+        { nameof(Description), "Description" },
+        { nameof(DiscountCalculation), "DiscountCalculation" },
+        { nameof(DiscountPaymentDays), "DiscountPaymentDays" },
+        { nameof(DiscountPercentage), "DiscountPercentage" },
+        { nameof(Division), "Division" },
+        { nameof(ID), "ID" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(PaymentDays), "PaymentDays" },
+        { nameof(PaymentDiscountType), "PaymentDiscountType" },
+        { nameof(PaymentEndOfMonths), "PaymentEndOfMonths" },
+        { nameof(PaymentMethod), "PaymentMethod" },
+        { nameof(Percentage), "Percentage" },
+        { nameof(VATCalculation), "VATCalculation" }
+    };
+}

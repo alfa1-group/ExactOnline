@@ -1,0 +1,16 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class DocumentsDocumentTypeFolders
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(Division), "Division" },
+        { nameof(DocumentFolder), "DocumentFolder" },
+        { nameof(DocumentType), "DocumentType" },
+        { nameof(ID), "ID" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" }
+    };
+}

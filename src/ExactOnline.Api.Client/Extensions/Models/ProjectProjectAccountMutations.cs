@@ -1,0 +1,26 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ProjectProjectAccountMutations
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Account), "Account" },
+        { nameof(AccountCode), "AccountCode" },
+        { nameof(AccountName), "AccountName" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Division), "Division" },
+        { nameof(DivisionName), "DivisionName" },
+        { nameof(EndDate), "EndDate" },
+        { nameof(ID), "ID" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Notes), "Notes" },
+        { nameof(Project), "Project" },
+        { nameof(ProjectCode), "ProjectCode" },
+        { nameof(ProjectDescription), "ProjectDescription" },
+        { nameof(StartDate), "StartDate" }
+    };
+}

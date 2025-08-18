@@ -1,0 +1,23 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class AccountancyAccountOwners
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Account), "Account" },
+        { nameof(AccountCode), "AccountCode" },
+        { nameof(AccountName), "AccountName" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Division), "Division" },
+        { nameof(ID), "ID" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(OwnerAccount), "OwnerAccount" },
+        { nameof(OwnerAccountCode), "OwnerAccountCode" },
+        { nameof(OwnerAccountName), "OwnerAccountName" },
+        { nameof(Shares), "Shares" }
+    };
+}

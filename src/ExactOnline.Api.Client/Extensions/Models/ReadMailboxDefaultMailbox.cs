@@ -1,0 +1,19 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ReadMailboxDefaultMailbox
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(Description), "Description" },
+        { nameof(ForDivision), "ForDivision" },
+        { nameof(ID), "ID" },
+        { nameof(IsScanServiceMailbox), "IsScanServiceMailbox" },
+        { nameof(Mailbox), "Mailbox" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ValidFrom), "ValidFrom" },
+        { nameof(ValidTo), "ValidTo" }
+    };
+}

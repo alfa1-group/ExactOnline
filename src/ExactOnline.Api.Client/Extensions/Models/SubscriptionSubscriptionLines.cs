@@ -1,0 +1,36 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class SubscriptionSubscriptionLines
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(AmountDC), "AmountDC" },
+        { nameof(AmountFC), "AmountFC" },
+        { nameof(Costcenter), "Costcenter" },
+        { nameof(Costunit), "Costunit" },
+        { nameof(CustomField), "CustomField" },
+        { nameof(Description), "Description" },
+        { nameof(Discount), "Discount" },
+        { nameof(Division), "Division" },
+        { nameof(EntryID), "EntryID" },
+        { nameof(FromDate), "FromDate" },
+        { nameof(ID), "ID" },
+        { nameof(Item), "Item" },
+        { nameof(ItemDescription), "ItemDescription" },
+        { nameof(LineNumber), "LineNumber" },
+        { nameof(LineType), "LineType" },
+        { nameof(LineTypeDescription), "LineTypeDescription" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(NetPrice), "NetPrice" },
+        { nameof(Notes), "Notes" },
+        { nameof(Quantity), "Quantity" },
+        { nameof(SubscriptionNumber), "SubscriptionNumber" },
+        { nameof(ToDate), "ToDate" },
+        { nameof(UnitCode), "UnitCode" },
+        { nameof(UnitDescription), "UnitDescription" },
+        { nameof(UnitPrice), "UnitPrice" },
+        { nameof(VATAmountFC), "VATAmountFC" },
+        { nameof(VATCode), "VATCode" },
+        { nameof(VATCodeDescription), "VATCodeDescription" }
+    };
+}

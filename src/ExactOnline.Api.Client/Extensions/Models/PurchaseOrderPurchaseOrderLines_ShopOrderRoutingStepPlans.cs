@@ -1,0 +1,8 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class PurchaseOrderPurchaseOrderLines_ShopOrderRoutingStepPlans
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+
+    };
+}

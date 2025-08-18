@@ -1,0 +1,37 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class BulkSalesOrderGoodsDeliveryLines
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(BatchNumbers), "BatchNumbers" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(CustomerItemCode), "CustomerItemCode" },
+        { nameof(DeliveryDate), "DeliveryDate" },
+        { nameof(Description), "Description" },
+        { nameof(Division), "Division" },
+        { nameof(EntryID), "EntryID" },
+        { nameof(ID), "ID" },
+        { nameof(Item), "Item" },
+        { nameof(ItemCode), "ItemCode" },
+        { nameof(ItemDescription), "ItemDescription" },
+        { nameof(LineNumber), "LineNumber" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Notes), "Notes" },
+        { nameof(QuantityDelivered), "QuantityDelivered" },
+        { nameof(QuantityOrdered), "QuantityOrdered" },
+        { nameof(SalesOrderLineID), "SalesOrderLineID" },
+        { nameof(SalesOrderLineNumber), "SalesOrderLineNumber" },
+        { nameof(SalesOrderNumber), "SalesOrderNumber" },
+        { nameof(SerialNumbers), "SerialNumbers" },
+        { nameof(StorageLocation), "StorageLocation" },
+        { nameof(StorageLocationCode), "StorageLocationCode" },
+        { nameof(StorageLocationDescription), "StorageLocationDescription" },
+        { nameof(TrackingNumber), "TrackingNumber" },
+        { nameof(Unitcode), "Unitcode" }
+    };
+}

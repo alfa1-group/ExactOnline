@@ -1,0 +1,40 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class CRMAcceptQuotation
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Action), "Action" },
+        { nameof(AddToExistingProjectSuccess), "AddToExistingProjectSuccess" },
+        { nameof(CreateItemPriceAgreement), "CreateItemPriceAgreement" },
+        { nameof(CreateProjectWBS), "CreateProjectWBS" },
+        { nameof(Division), "Division" },
+        { nameof(ErrorMessage), "ErrorMessage" },
+        { nameof(InvoiceJournal), "InvoiceJournal" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(NotificationLayout), "NotificationLayout" },
+        { nameof(OptionalQuotationLineIDs), "OptionalQuotationLineIDs" },
+        { nameof(ProjectBudgetType), "ProjectBudgetType" },
+        { nameof(ProjectClassification), "ProjectClassification" },
+        { nameof(ProjectCode), "ProjectCode" },
+        { nameof(ProjectDescription), "ProjectDescription" },
+        { nameof(ProjectID), "ProjectID" },
+        { nameof(ProjectInvoiceDate), "ProjectInvoiceDate" },
+        { nameof(ProjectInvoicingAction), "ProjectInvoicingAction" },
+        { nameof(ProjectPrepaindTypes), "ProjectPrepaindTypes" },
+        { nameof(ProjectPriceAgreement), "ProjectPriceAgreement" },
+        { nameof(ProjectSuccess), "ProjectSuccess" },
+        { nameof(ProjectType), "ProjectType" },
+        { nameof(ProjectWBSPartOf), "ProjectWBSPartOf" },
+        { nameof(QuotationID), "QuotationID" },
+        { nameof(ReasonCode), "ReasonCode" },
+        { nameof(SalesInvoiceSuccess), "SalesInvoiceSuccess" },
+        { nameof(SalesOrderSuccess), "SalesOrderSuccess" },
+        { nameof(SubscriptionDescription), "SubscriptionDescription" },
+        { nameof(SubscriptionStartDate), "SubscriptionStartDate" },
+        { nameof(SubscriptionSuccess), "SubscriptionSuccess" },
+        { nameof(SubscriptionType), "SubscriptionType" },
+        { nameof(SuccessMessage), "SuccessMessage" },
+        { nameof(UpdateProjectBudgetAndPriceAgreement), "UpdateProjectBudgetAndPriceAgreement" },
+        { nameof(YourRef), "YourRef" }
+    };
+}

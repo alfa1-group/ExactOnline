@@ -1,0 +1,10 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class InventoryProcessWarehouseTransfer
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Metadata), "__metadata" },
+        { nameof(TransferDate), "TransferDate" },
+        { nameof(TransferID), "TransferID" }
+    };
+}

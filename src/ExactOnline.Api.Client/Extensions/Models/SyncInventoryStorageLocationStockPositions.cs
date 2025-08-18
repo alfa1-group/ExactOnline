@@ -1,0 +1,26 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class SyncInventoryStorageLocationStockPositions
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Division), "Division" },
+        { nameof(ID), "ID" },
+        { nameof(Item), "Item" },
+        { nameof(ItemCode), "ItemCode" },
+        { nameof(ItemDescription), "ItemDescription" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(QuantityToPicked), "QuantityToPicked" },
+        { nameof(ReservedPick), "ReservedPick" },
+        { nameof(SerialBatchReservedStock), "SerialBatchReservedStock" },
+        { nameof(Stock), "Stock" },
+        { nameof(StorageLocation), "StorageLocation" },
+        { nameof(StorageLocationCode), "StorageLocationCode" },
+        { nameof(StorageLocationDescription), "StorageLocationDescription" },
+        { nameof(Timestamp), "Timestamp" },
+        { nameof(UnitCode), "UnitCode" },
+        { nameof(UnitDescription), "UnitDescription" },
+        { nameof(Warehouse), "Warehouse" },
+        { nameof(WarehouseCode), "WarehouseCode" },
+        { nameof(WarehouseDescription), "WarehouseDescription" }
+    };
+}

@@ -1,0 +1,32 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class InventoryWarehouseTransfers
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Description), "Description" },
+        { nameof(Division), "Division" },
+        { nameof(EntryDate), "EntryDate" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(PlannedDeliveryDate), "PlannedDeliveryDate" },
+        { nameof(PlannedReceiptDate), "PlannedReceiptDate" },
+        { nameof(Remarks), "Remarks" },
+        { nameof(Source), "Source" },
+        { nameof(Status), "Status" },
+        { nameof(TransferDate), "TransferDate" },
+        { nameof(TransferID), "TransferID" },
+        { nameof(TransferNumber), "TransferNumber" },
+        { nameof(WarehouseFrom), "WarehouseFrom" },
+        { nameof(WarehouseFromCode), "WarehouseFromCode" },
+        { nameof(WarehouseFromDescription), "WarehouseFromDescription" },
+        { nameof(WarehouseTo), "WarehouseTo" },
+        { nameof(WarehouseToCode), "WarehouseToCode" },
+        { nameof(WarehouseToDescription), "WarehouseToDescription" },
+        { nameof(WarehouseTransferLines), "WarehouseTransferLines" }
+    };
+}

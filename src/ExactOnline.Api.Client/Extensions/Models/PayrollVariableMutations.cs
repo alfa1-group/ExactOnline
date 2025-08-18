@@ -1,0 +1,20 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class PayrollVariableMutations
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Description), "Description" },
+        { nameof(EmployeeHID), "EmployeeHID" },
+        { nameof(EmployeeID), "EmployeeID" },
+        { nameof(EntryFieldType), "EntryFieldType" },
+        { nameof(ID), "ID" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Notes), "Notes" },
+        { nameof(PayrollComponent), "PayrollComponent" },
+        { nameof(PayrollComponentID), "PayrollComponentID" },
+        { nameof(PayrollPeriod), "PayrollPeriod" },
+        { nameof(PayrollYear), "PayrollYear" },
+        { nameof(Type), "Type" },
+        { nameof(Value), "Value" }
+    };
+}

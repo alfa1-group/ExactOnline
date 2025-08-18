@@ -1,9 +1,10 @@
 using System.Linq.Expressions;
 using System.Reflection;
+using Microsoft.Kiota.Abstractions.Serialization;
 
 namespace ExactOnline.Api.Client.Builders.Select;
 
-public static class SelectBuilder<T>
+public static class SelectBuilder<T> where T : IParsable, new()
 {
     /// <summary>
     /// Creates a CSV string of property names from the provided lambda expressions. When no expressions are provided, it returns all instance public properties with a getter.
@@ -13,22 +14,31 @@ public static class SelectBuilder<T>
     /// <returns>A comma-separated string of property names</returns>
     public static string Build(params Expression<Func<T, object?>>[] expressions)
     {
+        var instance = Activator.CreateInstance<T>();
+        var fields = instance.GetFieldDeserializers()
+            .Where(f => f.Key != "__metadata")
+            .ToDictionary(pair => pair.Key, pair => pair.Value);
+
         if (expressions.Length == 0)
         {
-            return string.Join(", ", typeof(T)
-                .GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                .Where(p => p.GetMethod != null && p.Name != "Metadata")
-                .Select(p => p.Name));
+            return string.Join(", ", fields.Select(f => f.Key));
         }
 
+        var propertyMapping = typeof(T).GetField("PropertyMapping", BindingFlags.NonPublic | BindingFlags.Static)?.GetValue(null) as Dictionary<string, string>;
         var propertyNames = new List<string>();
-
         foreach (var expression in expressions)
         {
             var propertyName = GetPropertyName(expression);
-            if (!string.IsNullOrEmpty(propertyName))
+            if (!string.IsNullOrEmpty(propertyName) && propertyName != "Metadata")
             {
-                propertyNames.Add(propertyName);
+                if (propertyMapping?.TryGetValue(propertyName, out var mappedName) == true)
+                {
+                    propertyNames.Add(mappedName);
+                }
+                else
+                {
+                    propertyNames.Add(propertyName);
+                }
             }
         }
 

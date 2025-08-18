@@ -1,0 +1,38 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class LogisticsItemGroups
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Code), "Code" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Description), "Description" },
+        { nameof(Division), "Division" },
+        { nameof(GLCosts), "GLCosts" },
+        { nameof(GLCostsCode), "GLCostsCode" },
+        { nameof(GLCostsDescription), "GLCostsDescription" },
+        { nameof(GLPurchaseAccount), "GLPurchaseAccount" },
+        { nameof(GLPurchaseAccountCode), "GLPurchaseAccountCode" },
+        { nameof(GLPurchaseAccountDescription), "GLPurchaseAccountDescription" },
+        { nameof(GLPurchasePriceDifference), "GLPurchasePriceDifference" },
+        { nameof(GLPurchasePriceDifferenceCode), "GLPurchasePriceDifferenceCode" },
+        { nameof(GLPurchasePriceDifferenceDescr), "GLPurchasePriceDifferenceDescr" },
+        { nameof(GLRevenue), "GLRevenue" },
+        { nameof(GLRevenueCode), "GLRevenueCode" },
+        { nameof(GLRevenueDescription), "GLRevenueDescription" },
+        { nameof(GLStock), "GLStock" },
+        { nameof(GLStockCode), "GLStockCode" },
+        { nameof(GLStockDescription), "GLStockDescription" },
+        { nameof(GLStockVariance), "GLStockVariance" },
+        { nameof(GLStockVarianceCode), "GLStockVarianceCode" },
+        { nameof(GLStockVarianceDescription), "GLStockVarianceDescription" },
+        { nameof(ID), "ID" },
+        { nameof(IsDefault), "IsDefault" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(Notes), "Notes" }
+    };
+}

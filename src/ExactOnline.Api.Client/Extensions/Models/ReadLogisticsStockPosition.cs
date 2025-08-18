@@ -1,0 +1,15 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ReadLogisticsStockPosition
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(FreeStock), "FreeStock" },
+        { nameof(InStock), "InStock" },
+        { nameof(ItemId), "ItemId" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(PlanningIn), "PlanningIn" },
+        { nameof(PlanningOut), "PlanningOut" },
+        { nameof(ProjectedStock), "ProjectedStock" },
+        { nameof(ReservedStock), "ReservedStock" }
+    };
+}

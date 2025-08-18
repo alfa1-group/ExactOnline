@@ -1,0 +1,30 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class ManufacturingStageForDeliveryReceipts
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(CreatedBy), "CreatedBy" },
+        { nameof(CreatedByFullName), "CreatedByFullName" },
+        { nameof(CreatedDate), "CreatedDate" },
+        { nameof(HasReversibleQuantity), "HasReversibleQuantity" },
+        { nameof(Id), "Id" },
+        { nameof(IsBatch), "IsBatch" },
+        { nameof(IsFractionAllowedItem), "IsFractionAllowedItem" },
+        { nameof(IsSerial), "IsSerial" },
+        { nameof(Item), "Item" },
+        { nameof(ItemCode), "ItemCode" },
+        { nameof(ItemDescription), "ItemDescription" },
+        { nameof(ItemPictureUrl), "ItemPictureUrl" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Quantity), "Quantity" },
+        { nameof(RelatedId), "RelatedId" },
+        { nameof(ShopOrder), "ShopOrder" },
+        { nameof(ShopOrderNumber), "ShopOrderNumber" },
+        { nameof(TransactionDate), "TransactionDate" },
+        { nameof(Unit), "Unit" },
+        { nameof(UnitDescription), "UnitDescription" },
+        { nameof(Warehouse), "Warehouse" },
+        { nameof(WarehouseCode), "WarehouseCode" },
+        { nameof(WarehouseDescription), "WarehouseDescription" }
+    };
+}

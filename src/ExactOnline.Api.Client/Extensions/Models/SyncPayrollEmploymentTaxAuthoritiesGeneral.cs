@@ -1,0 +1,32 @@
+namespace ExactOnline.Api.Client.Models;
+public partial class SyncPayrollEmploymentTaxAuthoritiesGeneral
+{
+    internal static readonly Dictionary<string, string> PropertyMapping = new()
+    {
+        { nameof(Account), "Account" },
+        { nameof(Created), "Created" },
+        { nameof(Creator), "Creator" },
+        { nameof(CreatorFullName), "CreatorFullName" },
+        { nameof(Division), "Division" },
+        { nameof(Employee), "Employee" },
+        { nameof(EmployeeFullName), "EmployeeFullName" },
+        { nameof(EmployeeHID), "EmployeeHID" },
+        { nameof(Employment), "Employment" },
+        { nameof(EmploymentNumber), "EmploymentNumber" },
+        { nameof(EndDate), "EndDate" },
+        { nameof(ID), "ID" },
+        { nameof(InfluenceInsuranceObligation), "InfluenceInsuranceObligation" },
+        { nameof(InfluenceInsuranceObligationDescription), "InfluenceInsuranceObligationDescription" },
+        { nameof(Metadata), "__metadata" },
+        { nameof(Modified), "Modified" },
+        { nameof(Modifier), "Modifier" },
+        { nameof(ModifierFullName), "ModifierFullName" },
+        { nameof(NatureOfWorkRelationship), "NatureOfWorkRelationship" },
+        { nameof(NatureOfWorkRelationshipDescription), "NatureOfWorkRelationshipDescription" },
+        { nameof(PayrollTaxesNumber), "PayrollTaxesNumber" },
+        { nameof(StartDate), "StartDate" },
+        { nameof(Timestamp), "Timestamp" },
+        { nameof(TypeOfIncome), "TypeOfIncome" },
+        { nameof(TypeOfIncomeDescription), "TypeOfIncomeDescription" }
+    };
+}
