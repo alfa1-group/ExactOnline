@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The HRMLeaveAbsenceHoursByDay entity.
+    /// A collection of HRMLeaveAbsenceHoursByDay entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HRMLeaveAbsenceHoursByDay_Response : IParsable

@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class PayrollPayrollTransactionsByPayrollYear_ResponseExtensions
 {
-    public static async Task<PayrollPayrollTransactionsByPayrollYear?> AsItem(this Task<PayrollPayrollTransactionsByPayrollYear_Response?> task)
+    public static async Task<List<PayrollPayrollTransactionsByPayrollYear>> AsItems(this Task<PayrollPayrollTransactionsByPayrollYear_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.PayrollPayrollTransactionsByPayrollYear ?? d.PayrollPayrollTransactionsByPayrollYearResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.PayrollPayrollTransactionsByPayrollYear ?? d.PayrollPayrollTransactionsByPayrollYearResults?.Results ?? [];
     }
 
 }

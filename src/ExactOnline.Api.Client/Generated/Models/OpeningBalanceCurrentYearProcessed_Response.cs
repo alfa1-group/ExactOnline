@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The OpeningBalanceCurrentYearProcessed entity.
+    /// A collection of OpeningBalanceCurrentYearProcessed entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OpeningBalanceCurrentYearProcessed_Response : IParsable

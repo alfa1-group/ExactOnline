@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadPayrollEmploymentContractFlexPhasesOnFocusDate entity.
+    /// A collection of ReadPayrollEmploymentContractFlexPhasesOnFocusDate entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadPayrollEmploymentContractFlexPhasesOnFocusDate_Response : IParsable

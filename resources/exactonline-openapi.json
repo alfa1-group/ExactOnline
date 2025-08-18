@@ -105994,7 +105994,7 @@
             }
           }
         },
-        "description": "The BulkProjectProjectWBS entity.",
+        "description": "A collection of BulkProjectProjectWBS entities.",
         "readOnly": true
       },
       "BulkProjectProjectWBSGet_Response": {
@@ -108265,7 +108265,7 @@
             }
           }
         },
-        "description": "The CashflowAllocationRule entity.",
+        "description": "A collection of CashflowAllocationRule entities.",
         "readOnly": true
       },
       "CashflowAllocationRuleGet_Response": {
@@ -110403,7 +110403,7 @@
             }
           }
         },
-        "description": "The CRMAcceptQuotation entity.",
+        "description": "A collection of CRMAcceptQuotation entities.",
         "readOnly": true
       },
       "CRMAcceptQuotationGet_Response": {
@@ -115009,7 +115009,7 @@
             }
           }
         },
-        "description": "The CRMEmailWithSignOffQuotation entity.",
+        "description": "A collection of CRMEmailWithSignOffQuotation entities.",
         "readOnly": true
       },
       "CRMEmailWithSignOffQuotationGet_Response": {
@@ -115958,7 +115958,7 @@
             }
           }
         },
-        "description": "The CRMOptionalQuotationLineID entity.",
+        "description": "A collection of CRMOptionalQuotationLineID entities.",
         "readOnly": true
       },
       "CRMOptionalQuotationLineIDGet_Response": {
@@ -116115,7 +116115,7 @@
             }
           }
         },
-        "description": "The CRMPrintQuotation entity.",
+        "description": "A collection of CRMPrintQuotation entities.",
         "readOnly": true
       },
       "CRMPrintQuotationGet_Response": {
@@ -117798,7 +117798,7 @@
             }
           }
         },
-        "description": "The CRMRejectQuotation entity.",
+        "description": "A collection of CRMRejectQuotation entities.",
         "readOnly": true
       },
       "CRMRejectQuotationGet_Response": {
@@ -117942,7 +117942,7 @@
             }
           }
         },
-        "description": "The CRMReopenQuotation entity.",
+        "description": "A collection of CRMReopenQuotation entities.",
         "readOnly": true
       },
       "CRMReopenQuotationGet_Response": {
@@ -118113,7 +118113,7 @@
             }
           }
         },
-        "description": "The CRMReviewQuotation entity.",
+        "description": "A collection of CRMReviewQuotation entities.",
         "readOnly": true
       },
       "CRMReviewQuotationGet_Response": {
@@ -118411,7 +118411,7 @@
             }
           }
         },
-        "description": "The CustomFieldUpdateCustomField entity.",
+        "description": "A collection of CustomFieldUpdateCustomField entities.",
         "readOnly": true
       },
       "CustomFieldUpdateCustomFieldGet_Response": {
@@ -122737,7 +122737,7 @@
             }
           }
         },
-        "description": "The FinancialProcessReturn entity.",
+        "description": "A collection of FinancialProcessReturn entities.",
         "readOnly": true
       },
       "FinancialProcessReturnGet_Response": {
@@ -122951,7 +122951,7 @@
             }
           }
         },
-        "description": "The FinancialReportingBalance entity.",
+        "description": "A collection of FinancialReportingBalance entities.",
         "readOnly": true
       },
       "FinancialReportingBalanceGet_Response": {
@@ -127753,7 +127753,7 @@
             }
           }
         },
-        "description": "The HRMLeaveAbsenceHoursByDay entity.",
+        "description": "A collection of HRMLeaveAbsenceHoursByDay entities.",
         "readOnly": true
       },
       "HRMLeaveAbsenceHoursByDayGet_Response": {
@@ -128561,7 +128561,7 @@
             }
           }
         },
-        "description": "The InventoryAssemblyBillOfMaterialHeader entity.",
+        "description": "A collection of InventoryAssemblyBillOfMaterialHeader entities.",
         "readOnly": true
       },
       "InventoryAssemblyBillOfMaterialHeaderGet_Response": {
@@ -129463,7 +129463,7 @@
             }
           }
         },
-        "description": "The InventoryFinishAssemblyOrder entity.",
+        "description": "A collection of InventoryFinishAssemblyOrder entities.",
         "readOnly": true
       },
       "InventoryFinishAssemblyOrderGet_Response": {
@@ -130383,7 +130383,7 @@
             }
           }
         },
-        "description": "The InventoryProcessStockCount entity.",
+        "description": "A collection of InventoryProcessStockCount entities.",
         "readOnly": true
       },
       "InventoryProcessStockCountGet_Response": {
@@ -130509,7 +130509,7 @@
             }
           }
         },
-        "description": "The InventoryProcessWarehouseTransfer entity.",
+        "description": "A collection of InventoryProcessWarehouseTransfer entities.",
         "readOnly": true
       },
       "InventoryProcessWarehouseTransferGet_Response": {
@@ -133668,7 +133668,7 @@
             }
           }
         },
-        "description": "The LogisticsItemAssortment entity.",
+        "description": "A collection of LogisticsItemAssortment entities.",
         "readOnly": true
       },
       "LogisticsItemAssortmentGet_Response": {
@@ -133770,7 +133770,7 @@
             }
           }
         },
-        "description": "The LogisticsItemAssortmentProperty entity.",
+        "description": "A collection of LogisticsItemAssortmentProperty entities.",
         "readOnly": true
       },
       "LogisticsItemAssortmentPropertyGet_Response": {
@@ -133966,7 +133966,7 @@
             }
           }
         },
-        "description": "The LogisticsItemChargeRelation entity.",
+        "description": "A collection of LogisticsItemChargeRelation entities.",
         "readOnly": true
       },
       "LogisticsItemChargeRelationGet_Response": {
@@ -136744,7 +136744,7 @@
             }
           }
         },
-        "description": "The LogisticsSupplierItem entity.",
+        "description": "A collection of LogisticsSupplierItem entities.",
         "readOnly": true
       },
       "LogisticsSupplierItemGet_Response": {
@@ -137813,7 +137813,7 @@
             }
           }
         },
-        "description": "The MailboxMailMessagesSent entity.",
+        "description": "A collection of MailboxMailMessagesSent entities.",
         "readOnly": true
       },
       "MailboxMailMessagesSentGet_Response": {
@@ -146554,7 +146554,7 @@
             }
           }
         },
-        "description": "The OpeningBalanceCurrentYearAfterEntry entity.",
+        "description": "A collection of OpeningBalanceCurrentYearAfterEntry entities.",
         "readOnly": true
       },
       "OpeningBalanceCurrentYearAfterEntryGet_Response": {
@@ -146669,7 +146669,7 @@
             }
           }
         },
-        "description": "The OpeningBalanceCurrentYearProcessed entity.",
+        "description": "A collection of OpeningBalanceCurrentYearProcessed entities.",
         "readOnly": true
       },
       "OpeningBalanceCurrentYearProcessedGet_Response": {
@@ -146784,7 +146784,7 @@
             }
           }
         },
-        "description": "The OpeningBalancePreviousYearAfterEntry entity.",
+        "description": "A collection of OpeningBalancePreviousYearAfterEntry entities.",
         "readOnly": true
       },
       "OpeningBalancePreviousYearAfterEntryGet_Response": {
@@ -146899,7 +146899,7 @@
             }
           }
         },
-        "description": "The OpeningBalancePreviousYearProcessed entity.",
+        "description": "A collection of OpeningBalancePreviousYearProcessed entities.",
         "readOnly": true
       },
       "OpeningBalancePreviousYearProcessedGet_Response": {
@@ -149213,7 +149213,7 @@
             }
           }
         },
-        "description": "The PayrollEmploymentTaxAuthoritiesGeneral entity.",
+        "description": "A collection of PayrollEmploymentTaxAuthoritiesGeneral entities.",
         "readOnly": true
       },
       "PayrollEmploymentTaxAuthoritiesGeneralGet_Response": {
@@ -149815,7 +149815,7 @@
             }
           }
         },
-        "description": "The PayrollPayrollTransactionsByPayrollYear entity.",
+        "description": "A collection of PayrollPayrollTransactionsByPayrollYear entities.",
         "readOnly": true
       },
       "PayrollPayrollTransactionsByPayrollYearGet_Response": {
@@ -152523,7 +152523,7 @@
             }
           }
         },
-        "description": "The ProjectProjectPlanning entity.",
+        "description": "A collection of ProjectProjectPlanning entities.",
         "readOnly": true
       },
       "ProjectProjectPlanningGet_Response": {
@@ -153025,7 +153025,7 @@
             }
           }
         },
-        "description": "The ProjectProjectPlanningRecurring entity.",
+        "description": "A collection of ProjectProjectPlanningRecurring entities.",
         "readOnly": true
       },
       "ProjectProjectPlanningRecurringGet_Response": {
@@ -161922,7 +161922,7 @@
             }
           }
         },
-        "description": "The ReadCRMAccountDocumentsCount entity.",
+        "description": "A collection of ReadCRMAccountDocumentsCount entities.",
         "readOnly": true
       },
       "ReadCRMAccountDocumentsCountGet_Response": {
@@ -162286,7 +162286,7 @@
             }
           }
         },
-        "description": "The ReadCRMDefaultAddressForAccount entity.",
+        "description": "A collection of ReadCRMDefaultAddressForAccount entities.",
         "readOnly": true
       },
       "ReadCRMDefaultAddressForAccountGet_Response": {
@@ -163396,7 +163396,7 @@
             }
           }
         },
-        "description": "The ReadCRMOpportunityDocumentsCount entity.",
+        "description": "A collection of ReadCRMOpportunityDocumentsCount entities.",
         "readOnly": true
       },
       "ReadCRMOpportunityDocumentsCountGet_Response": {
@@ -163498,7 +163498,7 @@
             }
           }
         },
-        "description": "The ReadFinancialAgingOverview entity.",
+        "description": "A collection of ReadFinancialAgingOverview entities.",
         "readOnly": true
       },
       "ReadFinancialAgingOverviewGet_Response": {
@@ -163600,7 +163600,7 @@
             }
           }
         },
-        "description": "The ReadFinancialAgingOverviewByAccount entity.",
+        "description": "A collection of ReadFinancialAgingOverviewByAccount entities.",
         "readOnly": true
       },
       "ReadFinancialAgingOverviewByAccountGet_Response": {
@@ -163938,7 +163938,7 @@
             }
           }
         },
-        "description": "The ReadFinancialAgingPayablesListByAgeGroup entity.",
+        "description": "A collection of ReadFinancialAgingPayablesListByAgeGroup entities.",
         "readOnly": true
       },
       "ReadFinancialAgingPayablesListByAgeGroupGet_Response": {
@@ -164276,7 +164276,7 @@
             }
           }
         },
-        "description": "The ReadFinancialAgingReceivablesListByAgeGroup entity.",
+        "description": "A collection of ReadFinancialAgingReceivablesListByAgeGroup entities.",
         "readOnly": true
       },
       "ReadFinancialAgingReceivablesListByAgeGroupGet_Response": {
@@ -164396,7 +164396,7 @@
             }
           }
         },
-        "description": "The ReadFinancialJournalStatusByFinancialPeriod entity.",
+        "description": "A collection of ReadFinancialJournalStatusByFinancialPeriod entities.",
         "readOnly": true
       },
       "ReadFinancialJournalStatusByFinancialPeriodGet_Response": {
@@ -164643,7 +164643,7 @@
             }
           }
         },
-        "description": "The ReadFinancialOutstandingInvoicesOverview entity.",
+        "description": "A collection of ReadFinancialOutstandingInvoicesOverview entities.",
         "readOnly": true
       },
       "ReadFinancialOutstandingInvoicesOverviewGet_Response": {
@@ -164991,7 +164991,7 @@
             }
           }
         },
-        "description": "The ReadFinancialPayablesListByAccount entity.",
+        "description": "A collection of ReadFinancialPayablesListByAccount entities.",
         "readOnly": true
       },
       "ReadFinancialPayablesListByAccountGet_Response": {
@@ -165165,7 +165165,7 @@
             }
           }
         },
-        "description": "The ReadFinancialPayablesListByAccountAndAgeGroup entity.",
+        "description": "A collection of ReadFinancialPayablesListByAccountAndAgeGroup entities.",
         "readOnly": true
       },
       "ReadFinancialPayablesListByAccountAndAgeGroupGet_Response": {
@@ -165339,7 +165339,7 @@
             }
           }
         },
-        "description": "The ReadFinancialPayablesListByAgeGroup entity.",
+        "description": "A collection of ReadFinancialPayablesListByAgeGroup entities.",
         "readOnly": true
       },
       "ReadFinancialPayablesListByAgeGroupGet_Response": {
@@ -165514,7 +165514,7 @@
             }
           }
         },
-        "description": "The ReadFinancialProfitLossOverview entity.",
+        "description": "A collection of ReadFinancialProfitLossOverview entities.",
         "readOnly": true
       },
       "ReadFinancialProfitLossOverviewGet_Response": {
@@ -165850,7 +165850,7 @@
             }
           }
         },
-        "description": "The ReadFinancialReceivablesListByAccount entity.",
+        "description": "A collection of ReadFinancialReceivablesListByAccount entities.",
         "readOnly": true
       },
       "ReadFinancialReceivablesListByAccountGet_Response": {
@@ -166018,7 +166018,7 @@
             }
           }
         },
-        "description": "The ReadFinancialReceivablesListByAccountAndAgeGroup entity.",
+        "description": "A collection of ReadFinancialReceivablesListByAccountAndAgeGroup entities.",
         "readOnly": true
       },
       "ReadFinancialReceivablesListByAccountAndAgeGroupGet_Response": {
@@ -166186,7 +166186,7 @@
             }
           }
         },
-        "description": "The ReadFinancialReceivablesListByAgeGroup entity.",
+        "description": "A collection of ReadFinancialReceivablesListByAgeGroup entities.",
         "readOnly": true
       },
       "ReadFinancialReceivablesListByAgeGroupGet_Response": {
@@ -166377,7 +166377,7 @@
             }
           }
         },
-        "description": "The ReadFinancialReportingBalanceByClassification entity.",
+        "description": "A collection of ReadFinancialReportingBalanceByClassification entities.",
         "readOnly": true
       },
       "ReadFinancialReportingBalanceByClassificationGet_Response": {
@@ -166726,7 +166726,7 @@
             }
           }
         },
-        "description": "The ReadFinancialRevenueListByYear entity.",
+        "description": "A collection of ReadFinancialRevenueListByYear entities.",
         "readOnly": true
       },
       "ReadFinancialRevenueListByYearGet_Response": {
@@ -167275,7 +167275,7 @@
             }
           }
         },
-        "description": "The ReadLogisticsItemDetailsByID entity.",
+        "description": "A collection of ReadLogisticsItemDetailsByID entities.",
         "readOnly": true
       },
       "ReadLogisticsItemDetailsByIDGet_Response": {
@@ -167374,7 +167374,7 @@
             }
           }
         },
-        "description": "The ReadLogisticsItemExtraField entity.",
+        "description": "A collection of ReadLogisticsItemExtraField entities.",
         "readOnly": true
       },
       "ReadLogisticsItemExtraFieldGet_Response": {
@@ -167493,7 +167493,7 @@
             }
           }
         },
-        "description": "The ReadLogisticsSalesItemPrice entity.",
+        "description": "A collection of ReadLogisticsSalesItemPrice entities.",
         "readOnly": true
       },
       "ReadLogisticsSalesItemPriceGet_Response": {
@@ -167606,7 +167606,7 @@
             }
           }
         },
-        "description": "The ReadLogisticsStockPosition entity.",
+        "description": "A collection of ReadLogisticsStockPosition entities.",
         "readOnly": true
       },
       "ReadLogisticsStockPositionGet_Response": {
@@ -167743,7 +167743,7 @@
             }
           }
         },
-        "description": "The ReadMailboxDefaultMailbox entity.",
+        "description": "A collection of ReadMailboxDefaultMailbox entities.",
         "readOnly": true
       },
       "ReadMailboxDefaultMailboxGet_Response": {
@@ -167880,7 +167880,7 @@
             }
           }
         },
-        "description": "The ReadMailboxPreferredMailbox entity.",
+        "description": "A collection of ReadMailboxPreferredMailbox entities.",
         "readOnly": true
       },
       "ReadMailboxPreferredMailboxGet_Response": {
@@ -168017,7 +168017,7 @@
             }
           }
         },
-        "description": "The ReadMailboxPreferredMailboxForOperation entity.",
+        "description": "A collection of ReadMailboxPreferredMailboxForOperation entities.",
         "readOnly": true
       },
       "ReadMailboxPreferredMailboxForOperationGet_Response": {
@@ -168730,7 +168730,7 @@
             }
           }
         },
-        "description": "The ReadManufacturingShopOrderRoutingStepPlansAvailableToWork entity.",
+        "description": "A collection of ReadManufacturingShopOrderRoutingStepPlansAvailableToWork entities.",
         "readOnly": true
       },
       "ReadManufacturingShopOrderRoutingStepPlansAvailableToWorkGet_Response": {
@@ -169178,7 +169178,7 @@
             }
           }
         },
-        "description": "The ReadPayrollEmploymentContractFlexPhasesOnFocusDate entity.",
+        "description": "A collection of ReadPayrollEmploymentContractFlexPhasesOnFocusDate entities.",
         "readOnly": true
       },
       "ReadPayrollEmploymentContractFlexPhasesOnFocusDateGet_Response": {
@@ -169277,7 +169277,7 @@
             }
           }
         },
-        "description": "The ReadPayrollEmploymentEndReasonsOnFocusDate entity.",
+        "description": "A collection of ReadPayrollEmploymentEndReasonsOnFocusDate entities.",
         "readOnly": true
       },
       "ReadPayrollEmploymentEndReasonsOnFocusDateGet_Response": {
@@ -169383,7 +169383,7 @@
             }
           }
         },
-        "description": "The ReadProjectCostEntryExpensesByProject entity.",
+        "description": "A collection of ReadProjectCostEntryExpensesByProject entities.",
         "readOnly": true
       },
       "ReadProjectCostEntryExpensesByProjectGet_Response": {
@@ -169565,7 +169565,7 @@
             }
           }
         },
-        "description": "The ReadProjectCostEntryRecentAccountsByProject entity.",
+        "description": "A collection of ReadProjectCostEntryRecentAccountsByProject entities.",
         "readOnly": true
       },
       "ReadProjectCostEntryRecentAccountsByProjectGet_Response": {
@@ -169767,7 +169767,7 @@
             }
           }
         },
-        "description": "The ReadProjectCostEntryRecentCostTypesByProject entity.",
+        "description": "A collection of ReadProjectCostEntryRecentCostTypesByProject entities.",
         "readOnly": true
       },
       "ReadProjectCostEntryRecentCostTypesByProjectGet_Response": {
@@ -169879,7 +169879,7 @@
             }
           }
         },
-        "description": "The ReadProjectCostEntryRecentExpensesByProject entity.",
+        "description": "A collection of ReadProjectCostEntryRecentExpensesByProject entities.",
         "readOnly": true
       },
       "ReadProjectCostEntryRecentExpensesByProjectGet_Response": {
@@ -170190,7 +170190,7 @@
             }
           }
         },
-        "description": "The ReadProjectCostsByDate entity.",
+        "description": "A collection of ReadProjectCostsByDate entities.",
         "readOnly": true
       },
       "ReadProjectCostsByDateGet_Response": {
@@ -170405,7 +170405,7 @@
             }
           }
         },
-        "description": "The ReadProjectCostsById entity.",
+        "description": "A collection of ReadProjectCostsById entities.",
         "readOnly": true
       },
       "ReadProjectCostsByIdGet_Response": {
@@ -170585,7 +170585,7 @@
             }
           }
         },
-        "description": "The ReadProjectCostTypesByDate entity.",
+        "description": "A collection of ReadProjectCostTypesByDate entities.",
         "readOnly": true
       },
       "ReadProjectCostTypesByDateGet_Response": {
@@ -170675,7 +170675,7 @@
             }
           }
         },
-        "description": "The ReadProjectCostTypesByProjectAndDate entity.",
+        "description": "A collection of ReadProjectCostTypesByProjectAndDate entities.",
         "readOnly": true
       },
       "ReadProjectCostTypesByProjectAndDateGet_Response": {
@@ -170871,7 +170871,7 @@
             }
           }
         },
-        "description": "The ReadProjectHourEntryActivitiesByProject entity.",
+        "description": "A collection of ReadProjectHourEntryActivitiesByProject entities.",
         "readOnly": true
       },
       "ReadProjectHourEntryActivitiesByProjectGet_Response": {
@@ -171053,7 +171053,7 @@
             }
           }
         },
-        "description": "The ReadProjectHourEntryRecentAccountsByProject entity.",
+        "description": "A collection of ReadProjectHourEntryRecentAccountsByProject entities.",
         "readOnly": true
       },
       "ReadProjectHourEntryRecentAccountsByProjectGet_Response": {
@@ -171165,7 +171165,7 @@
             }
           }
         },
-        "description": "The ReadProjectHourEntryRecentActivitiesByProject entity.",
+        "description": "A collection of ReadProjectHourEntryRecentActivitiesByProject entities.",
         "readOnly": true
       },
       "ReadProjectHourEntryRecentActivitiesByProjectGet_Response": {
@@ -171367,7 +171367,7 @@
             }
           }
         },
-        "description": "The ReadProjectHourEntryRecentHourTypesByProject entity.",
+        "description": "A collection of ReadProjectHourEntryRecentHourTypesByProject entities.",
         "readOnly": true
       },
       "ReadProjectHourEntryRecentHourTypesByProjectGet_Response": {
@@ -171673,7 +171673,7 @@
             }
           }
         },
-        "description": "The ReadProjectHoursByDate entity.",
+        "description": "A collection of ReadProjectHoursByDate entities.",
         "readOnly": true
       },
       "ReadProjectHoursByDateGet_Response": {
@@ -171883,7 +171883,7 @@
             }
           }
         },
-        "description": "The ReadProjectHoursById entity.",
+        "description": "A collection of ReadProjectHoursById entities.",
         "readOnly": true
       },
       "ReadProjectHoursByIdGet_Response": {
@@ -172063,7 +172063,7 @@
             }
           }
         },
-        "description": "The ReadProjectHourTypesByDate entity.",
+        "description": "A collection of ReadProjectHourTypesByDate entities.",
         "readOnly": true
       },
       "ReadProjectHourTypesByDateGet_Response": {
@@ -172153,7 +172153,7 @@
             }
           }
         },
-        "description": "The ReadProjectHourTypesByProjectAndDate entity.",
+        "description": "A collection of ReadProjectHourTypesByProjectAndDate entities.",
         "readOnly": true
       },
       "ReadProjectHourTypesByProjectAndDateGet_Response": {
@@ -172439,7 +172439,7 @@
             }
           }
         },
-        "description": "The ReadProjectProjectWBSByProject entity.",
+        "description": "A collection of ReadProjectProjectWBSByProject entities.",
         "readOnly": true
       },
       "ReadProjectProjectWBSByProjectGet_Response": {
@@ -172725,7 +172725,7 @@
             }
           }
         },
-        "description": "The ReadProjectProjectWBSByProjectAndWBS entity.",
+        "description": "A collection of ReadProjectProjectWBSByProjectAndWBS entities.",
         "readOnly": true
       },
       "ReadProjectProjectWBSByProjectAndWBSGet_Response": {
@@ -173370,7 +173370,7 @@
             }
           }
         },
-        "description": "The ReadProjectRecentCostsByNumberOfWeeksByDate entity.",
+        "description": "A collection of ReadProjectRecentCostsByNumberOfWeeksByDate entities.",
         "readOnly": true
       },
       "ReadProjectRecentCostsByNumberOfWeeksByDateGet_Response": {
@@ -174000,7 +174000,7 @@
             }
           }
         },
-        "description": "The ReadProjectRecentHoursByNumberOfWeeksByDate entity.",
+        "description": "A collection of ReadProjectRecentHoursByNumberOfWeeksByDate entities.",
         "readOnly": true
       },
       "ReadProjectRecentHoursByNumberOfWeeksByDateGet_Response": {
@@ -174170,7 +174170,7 @@
             }
           }
         },
-        "description": "The ReadProjectTimeAndBillingAccountDetailsByID entity.",
+        "description": "A collection of ReadProjectTimeAndBillingAccountDetailsByID entities.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingAccountDetailsByIDGet_Response": {
@@ -174446,7 +174446,7 @@
             }
           }
         },
-        "description": "The ReadProjectTimeAndBillingEntryAccountsByDate entity.",
+        "description": "A collection of ReadProjectTimeAndBillingEntryAccountsByDate entities.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingEntryAccountsByDateGet_Response": {
@@ -174531,7 +174531,7 @@
             }
           }
         },
-        "description": "The ReadProjectTimeAndBillingEntryAccountsByProjectAndDate entity.",
+        "description": "A collection of ReadProjectTimeAndBillingEntryAccountsByProjectAndDate entities.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingEntryAccountsByProjectAndDateGet_Response": {
@@ -174711,7 +174711,7 @@
             }
           }
         },
-        "description": "The ReadProjectTimeAndBillingEntryProjectsByAccountAndDate entity.",
+        "description": "A collection of ReadProjectTimeAndBillingEntryProjectsByAccountAndDate entities.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingEntryProjectsByAccountAndDateGet_Response": {
@@ -174801,7 +174801,7 @@
             }
           }
         },
-        "description": "The ReadProjectTimeAndBillingEntryProjectsByDate entity.",
+        "description": "A collection of ReadProjectTimeAndBillingEntryProjectsByDate entities.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingEntryProjectsByDateGet_Response": {
@@ -175423,7 +175423,7 @@
             }
           }
         },
-        "description": "The ReadProjectTimeAndBillingItemDetailsByID entity.",
+        "description": "A collection of ReadProjectTimeAndBillingItemDetailsByID entities.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingItemDetailsByIDGet_Response": {
@@ -175637,7 +175637,7 @@
             }
           }
         },
-        "description": "The ReadProjectTimeAndBillingProjectDetailsByID entity.",
+        "description": "A collection of ReadProjectTimeAndBillingProjectDetailsByID entities.",
         "readOnly": true
       },
       "ReadProjectTimeAndBillingProjectDetailsByIDGet_Response": {
@@ -179568,7 +179568,7 @@
             }
           }
         },
-        "description": "The SalesInvoiceSalesOrderID entity.",
+        "description": "A collection of SalesInvoiceSalesOrderID entities.",
         "readOnly": true
       },
       "SalesInvoiceSalesOrderIDGet_Response": {
@@ -179870,7 +179870,7 @@
             }
           }
         },
-        "description": "The SalesOrderCompleteSalesOrder entity.",
+        "description": "A collection of SalesOrderCompleteSalesOrder entities.",
         "readOnly": true
       },
       "SalesOrderCompleteSalesOrderGet_Response": {
@@ -180020,7 +180020,7 @@
             }
           }
         },
-        "description": "The SalesOrderCompleteSalesOrderLine entity.",
+        "description": "A collection of SalesOrderCompleteSalesOrderLine entities.",
         "readOnly": true
       },
       "SalesOrderCompleteSalesOrderLineGet_Response": {
@@ -189922,7 +189922,7 @@
             }
           }
         },
-        "description": "The SyncDeleted entity.",
+        "description": "A collection of SyncDeleted entities.",
         "readOnly": true
       },
       "SyncDeletedGet_Response": {
@@ -191962,7 +191962,7 @@
             }
           }
         },
-        "description": "The SyncHRMLeaveAbsenceHoursByDay entity.",
+        "description": "A collection of SyncHRMLeaveAbsenceHoursByDay entities.",
         "readOnly": true
       },
       "SyncHRMLeaveAbsenceHoursByDayGet_Response": {
@@ -195452,7 +195452,7 @@
             }
           }
         },
-        "description": "The SyncLogisticsSupplierItem entity.",
+        "description": "A collection of SyncLogisticsSupplierItem entities.",
         "readOnly": true
       },
       "SyncLogisticsSupplierItemGet_Response": {
@@ -196643,7 +196643,7 @@
             }
           }
         },
-        "description": "The SyncManufacturingShopOrderPurchasePlanning entity.",
+        "description": "A collection of SyncManufacturingShopOrderPurchasePlanning entities.",
         "readOnly": true
       },
       "SyncManufacturingShopOrderPurchasePlanningGet_Response": {
@@ -199543,7 +199543,7 @@
             }
           }
         },
-        "description": "The SyncPayrollEmploymentTaxAuthoritiesGeneral entity.",
+        "description": "A collection of SyncPayrollEmploymentTaxAuthoritiesGeneral entities.",
         "readOnly": true
       },
       "SyncPayrollEmploymentTaxAuthoritiesGeneralGet_Response": {
@@ -199824,7 +199824,7 @@
             }
           }
         },
-        "description": "The SyncProjectProjectPlanning entity.",
+        "description": "A collection of SyncProjectProjectPlanning entities.",
         "readOnly": true
       },
       "SyncProjectProjectPlanningGet_Response": {
@@ -200565,7 +200565,7 @@
             }
           }
         },
-        "description": "The SyncProjectProjectWBS entity.",
+        "description": "A collection of SyncProjectProjectWBS entities.",
         "readOnly": true
       },
       "SyncProjectProjectWBSGet_Response": {
@@ -204547,7 +204547,7 @@
             }
           }
         },
-        "description": "The SystemSystemAccountantInfo entity.",
+        "description": "A collection of SystemSystemAccountantInfo entities.",
         "readOnly": true
       },
       "SystemSystemAccountantInfoGet_Response": {

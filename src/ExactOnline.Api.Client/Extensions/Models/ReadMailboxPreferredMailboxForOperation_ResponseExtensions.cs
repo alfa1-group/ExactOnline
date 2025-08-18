@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadMailboxPreferredMailboxForOperation_ResponseExtensions
 {
-    public static async Task<ReadMailboxPreferredMailboxForOperation?> AsItem(this Task<ReadMailboxPreferredMailboxForOperation_Response?> task)
+    public static async Task<List<ReadMailboxPreferredMailboxForOperation>> AsItems(this Task<ReadMailboxPreferredMailboxForOperation_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.ReadMailboxPreferredMailboxForOperation ?? d.ReadMailboxPreferredMailboxForOperationResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.ReadMailboxPreferredMailboxForOperation ?? d.ReadMailboxPreferredMailboxForOperationResults?.Results ?? [];
     }
 
 }

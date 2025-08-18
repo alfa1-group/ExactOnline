@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadProjectTimeAndBillingEntryAccountsByProjectAndDate entity.
+    /// A collection of ReadProjectTimeAndBillingEntryAccountsByProjectAndDate entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadProjectTimeAndBillingEntryAccountsByProjectAndDate_Response : IParsable

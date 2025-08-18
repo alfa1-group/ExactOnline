@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The InventoryFinishAssemblyOrder entity.
+    /// A collection of InventoryFinishAssemblyOrder entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InventoryFinishAssemblyOrder_Response : IParsable

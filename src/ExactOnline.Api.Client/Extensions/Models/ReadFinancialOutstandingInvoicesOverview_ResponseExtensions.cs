@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadFinancialOutstandingInvoicesOverview_ResponseExtensions
 {
-    public static async Task<ReadFinancialOutstandingInvoicesOverview?> AsItem(this Task<ReadFinancialOutstandingInvoicesOverview_Response?> task)
+    public static async Task<List<ReadFinancialOutstandingInvoicesOverview>> AsItems(this Task<ReadFinancialOutstandingInvoicesOverview_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.ReadFinancialOutstandingInvoicesOverview ?? d.ReadFinancialOutstandingInvoicesOverviewResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.ReadFinancialOutstandingInvoicesOverview ?? d.ReadFinancialOutstandingInvoicesOverviewResults?.Results ?? [];
     }
 
 }

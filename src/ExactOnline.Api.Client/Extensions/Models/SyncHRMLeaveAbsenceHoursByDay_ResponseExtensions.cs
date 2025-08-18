@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncHRMLeaveAbsenceHoursByDay_ResponseExtensions
 {
-    public static async Task<SyncHRMLeaveAbsenceHoursByDay?> AsItem(this Task<SyncHRMLeaveAbsenceHoursByDay_Response?> task)
+    public static async Task<List<SyncHRMLeaveAbsenceHoursByDay>> AsItems(this Task<SyncHRMLeaveAbsenceHoursByDay_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.SyncHRMLeaveAbsenceHoursByDay ?? d.SyncHRMLeaveAbsenceHoursByDayResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.SyncHRMLeaveAbsenceHoursByDay ?? d.SyncHRMLeaveAbsenceHoursByDayResults?.Results ?? [];
     }
 
 }

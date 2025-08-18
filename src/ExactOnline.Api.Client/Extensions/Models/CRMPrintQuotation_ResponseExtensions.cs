@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class CRMPrintQuotation_ResponseExtensions
 {
-    public static async Task<CRMPrintQuotation?> AsItem(this Task<CRMPrintQuotation_Response?> task)
+    public static async Task<List<CRMPrintQuotation>> AsItems(this Task<CRMPrintQuotation_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.CRMPrintQuotation ?? d.CRMPrintQuotationResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.CRMPrintQuotation ?? d.CRMPrintQuotationResults?.Results ?? [];
     }
 
 }

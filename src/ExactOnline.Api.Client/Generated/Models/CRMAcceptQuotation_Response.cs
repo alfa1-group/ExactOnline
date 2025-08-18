@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The CRMAcceptQuotation entity.
+    /// A collection of CRMAcceptQuotation entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CRMAcceptQuotation_Response : IParsable

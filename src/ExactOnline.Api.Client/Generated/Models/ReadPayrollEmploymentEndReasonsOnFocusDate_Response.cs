@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadPayrollEmploymentEndReasonsOnFocusDate entity.
+    /// A collection of ReadPayrollEmploymentEndReasonsOnFocusDate entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadPayrollEmploymentEndReasonsOnFocusDate_Response : IParsable

@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadFinancialReportingBalanceByClassification entity.
+    /// A collection of ReadFinancialReportingBalanceByClassification entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadFinancialReportingBalanceByClassification_Response : IParsable

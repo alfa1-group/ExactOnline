@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SyncDeleted_ResponseExtensions
 {
-    public static async Task<SyncDeleted?> AsItem(this Task<SyncDeleted_Response?> task)
+    public static async Task<List<SyncDeleted>> AsItems(this Task<SyncDeleted_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.SyncDeleted ?? d.SyncDeletedResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.SyncDeleted ?? d.SyncDeletedResults?.Results ?? [];
     }
 
 }

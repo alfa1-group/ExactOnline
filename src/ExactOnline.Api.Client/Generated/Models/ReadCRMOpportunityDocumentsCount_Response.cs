@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadCRMOpportunityDocumentsCount entity.
+    /// A collection of ReadCRMOpportunityDocumentsCount entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadCRMOpportunityDocumentsCount_Response : IParsable

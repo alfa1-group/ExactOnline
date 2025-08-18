@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The InventoryAssemblyBillOfMaterialHeader entity.
+    /// A collection of InventoryAssemblyBillOfMaterialHeader entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InventoryAssemblyBillOfMaterialHeader_Response : IParsable

@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The SalesOrderCompleteSalesOrder entity.
+    /// A collection of SalesOrderCompleteSalesOrder entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SalesOrderCompleteSalesOrder_Response : IParsable

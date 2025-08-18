@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadCRMDefaultAddressForAccount entity.
+    /// A collection of ReadCRMDefaultAddressForAccount entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadCRMDefaultAddressForAccount_Response : IParsable

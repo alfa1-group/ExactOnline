@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadProjectHourTypesByDate_ResponseExtensions
 {
-    public static async Task<ReadProjectHourTypesByDate?> AsItem(this Task<ReadProjectHourTypesByDate_Response?> task)
+    public static async Task<List<ReadProjectHourTypesByDate>> AsItems(this Task<ReadProjectHourTypesByDate_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.ReadProjectHourTypesByDate ?? d.ReadProjectHourTypesByDateResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.ReadProjectHourTypesByDate ?? d.ReadProjectHourTypesByDateResults?.Results ?? [];
     }
 
 }

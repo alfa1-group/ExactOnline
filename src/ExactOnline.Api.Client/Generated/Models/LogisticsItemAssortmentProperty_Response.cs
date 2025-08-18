@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The LogisticsItemAssortmentProperty entity.
+    /// A collection of LogisticsItemAssortmentProperty entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LogisticsItemAssortmentProperty_Response : IParsable

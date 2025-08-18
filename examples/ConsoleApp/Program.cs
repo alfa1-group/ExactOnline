@@ -237,11 +237,11 @@ await RunAsync(async () =>
 
 await RunAsync(async () =>
 {
-    Console.WriteLine("Getting Sync.Project.TimeCostTransactions - select - ALL");
+    Console.WriteLine("Getting Sync.Project.TimeCostTransactions - ALL");
     var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAllAsync(p =>
     {
         p.QueryParameters.Top = 1100;
-        p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransactions>.Build(t => t.ID, t => t.Timestamp, t => t.Type, t => t.Created);
+        p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransactions>.Build();
         p.QueryParameters.Filter = syncFilter;
     }).AsItems();
 

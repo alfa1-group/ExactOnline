@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class LogisticsItemAssortmentProperty_ResponseExtensions
 {
-    public static async Task<LogisticsItemAssortmentProperty?> AsItem(this Task<LogisticsItemAssortmentProperty_Response?> task)
+    public static async Task<List<LogisticsItemAssortmentProperty>> AsItems(this Task<LogisticsItemAssortmentProperty_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.LogisticsItemAssortmentProperty ?? d.LogisticsItemAssortmentPropertyResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.LogisticsItemAssortmentProperty ?? d.LogisticsItemAssortmentPropertyResults?.Results ?? [];
     }
 
 }

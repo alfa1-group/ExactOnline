@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The BulkProjectProjectWBS entity.
+    /// A collection of BulkProjectProjectWBS entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BulkProjectProjectWBS_Response : IParsable

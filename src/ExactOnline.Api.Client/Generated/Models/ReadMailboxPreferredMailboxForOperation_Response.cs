@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadMailboxPreferredMailboxForOperation entity.
+    /// A collection of ReadMailboxPreferredMailboxForOperation entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadMailboxPreferredMailboxForOperation_Response : IParsable

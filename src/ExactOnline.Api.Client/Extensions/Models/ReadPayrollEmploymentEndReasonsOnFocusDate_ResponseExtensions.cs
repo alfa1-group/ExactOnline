@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadPayrollEmploymentEndReasonsOnFocusDate_ResponseExtensions
 {
-    public static async Task<ReadPayrollEmploymentEndReasonsOnFocusDate?> AsItem(this Task<ReadPayrollEmploymentEndReasonsOnFocusDate_Response?> task)
+    public static async Task<List<ReadPayrollEmploymentEndReasonsOnFocusDate>> AsItems(this Task<ReadPayrollEmploymentEndReasonsOnFocusDate_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.ReadPayrollEmploymentEndReasonsOnFocusDate ?? d.ReadPayrollEmploymentEndReasonsOnFocusDateResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.ReadPayrollEmploymentEndReasonsOnFocusDate ?? d.ReadPayrollEmploymentEndReasonsOnFocusDateResults?.Results ?? [];
     }
 
 }

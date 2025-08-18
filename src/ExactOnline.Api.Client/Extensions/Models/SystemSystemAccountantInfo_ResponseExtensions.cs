@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class SystemSystemAccountantInfo_ResponseExtensions
 {
-    public static async Task<SystemSystemAccountantInfo?> AsItem(this Task<SystemSystemAccountantInfo_Response?> task)
+    public static async Task<List<SystemSystemAccountantInfo>> AsItems(this Task<SystemSystemAccountantInfo_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.SystemSystemAccountantInfo ?? d.SystemSystemAccountantInfoResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.SystemSystemAccountantInfo ?? d.SystemSystemAccountantInfoResults?.Results ?? [];
     }
 
 }

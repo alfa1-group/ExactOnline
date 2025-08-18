@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The CashflowAllocationRule entity.
+    /// A collection of CashflowAllocationRule entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CashflowAllocationRule_Response : IParsable

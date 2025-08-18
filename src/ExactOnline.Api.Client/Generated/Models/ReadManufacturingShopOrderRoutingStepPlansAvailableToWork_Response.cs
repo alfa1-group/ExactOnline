@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadManufacturingShopOrderRoutingStepPlansAvailableToWork entity.
+    /// A collection of ReadManufacturingShopOrderRoutingStepPlansAvailableToWork entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadManufacturingShopOrderRoutingStepPlansAvailableToWork_Response : IParsable

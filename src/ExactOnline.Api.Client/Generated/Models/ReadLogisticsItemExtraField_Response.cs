@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadLogisticsItemExtraField entity.
+    /// A collection of ReadLogisticsItemExtraField entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadLogisticsItemExtraField_Response : IParsable

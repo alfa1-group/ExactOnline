@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadLogisticsItemExtraField_ResponseExtensions
 {
-    public static async Task<ReadLogisticsItemExtraField?> AsItem(this Task<ReadLogisticsItemExtraField_Response?> task)
+    public static async Task<List<ReadLogisticsItemExtraField>> AsItems(this Task<ReadLogisticsItemExtraField_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.ReadLogisticsItemExtraField ?? d.ReadLogisticsItemExtraFieldResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.ReadLogisticsItemExtraField ?? d.ReadLogisticsItemExtraFieldResults?.Results ?? [];
     }
 
 }

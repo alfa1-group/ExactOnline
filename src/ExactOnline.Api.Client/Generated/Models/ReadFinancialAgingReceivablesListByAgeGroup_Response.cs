@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadFinancialAgingReceivablesListByAgeGroup entity.
+    /// A collection of ReadFinancialAgingReceivablesListByAgeGroup entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadFinancialAgingReceivablesListByAgeGroup_Response : IParsable

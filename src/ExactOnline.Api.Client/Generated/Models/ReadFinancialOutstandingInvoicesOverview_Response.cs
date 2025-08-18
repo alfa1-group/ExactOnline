@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadFinancialOutstandingInvoicesOverview entity.
+    /// A collection of ReadFinancialOutstandingInvoicesOverview entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadFinancialOutstandingInvoicesOverview_Response : IParsable

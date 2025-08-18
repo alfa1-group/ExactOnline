@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadProjectHourEntryRecentHourTypesByProject entity.
+    /// A collection of ReadProjectHourEntryRecentHourTypesByProject entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadProjectHourEntryRecentHourTypesByProject_Response : IParsable

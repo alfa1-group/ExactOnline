@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The ReadFinancialPayablesListByAccountAndAgeGroup entity.
+    /// A collection of ReadFinancialPayablesListByAccountAndAgeGroup entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReadFinancialPayablesListByAccountAndAgeGroup_Response : IParsable

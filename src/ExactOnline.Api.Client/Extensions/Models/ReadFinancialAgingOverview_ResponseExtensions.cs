@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadFinancialAgingOverview_ResponseExtensions
 {
-    public static async Task<ReadFinancialAgingOverview?> AsItem(this Task<ReadFinancialAgingOverview_Response?> task)
+    public static async Task<List<ReadFinancialAgingOverview>> AsItems(this Task<ReadFinancialAgingOverview_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.ReadFinancialAgingOverview ?? d.ReadFinancialAgingOverviewResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.ReadFinancialAgingOverview ?? d.ReadFinancialAgingOverviewResults?.Results ?? [];
     }
 
 }

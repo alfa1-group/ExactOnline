@@ -14,6 +14,7 @@ internal class EndpointCrawler
     private const int MaxRetries = 3;
     private static readonly Regex EndpointUriRegex = new(@"\{(\w+)\}", RegexOptions.Compiled);
     private static readonly Regex EndpointUriEdmTypeRegex = new(@"(\w+)=\{([^}]+)\}", RegexOptions.Compiled);
+    private static readonly string[] ReturnsSingleItem = ["SystemSystemMe", "ReadSyncSyncSyncTimestamp"];
 
     private readonly OpenApiDocument _openApiDoc;
     private readonly PuppeteerHtmlLoader _puppeteerHtmlLoader;
@@ -175,9 +176,9 @@ internal class EndpointCrawler
         return contentDictionary;
     }
 
-    private static string GetResponseDescription(string baseSchemaName, bool schemaIsCollection)
+    private static string GetResponseDescription(string baseSchemaName, bool returnsMultiple)
     {
-        return schemaIsCollection ? $"A collection of {baseSchemaName} entities." : $"The {baseSchemaName} entity.";
+        return returnsMultiple ? $"A collection of {baseSchemaName} entities." : $"The {baseSchemaName} entity.";
     }
 
     private static void Process(string pageUrl, IDictionary<HttpMethod, HtmlDocument> docs, OpenApiDocument openApiDoc)
@@ -186,7 +187,7 @@ internal class EndpointCrawler
 
         var baseSchemaName = pageUrl.Split("?name=").Last().Trim();
         var endpointDescription = docGet.DocumentNode.SelectSingleNode("//p[@id='goodToKnow']")?.InnerText.Trim() ?? string.Empty;
-        var schemaIsCollection = IsCollection(baseSchemaName, endpointDescription);
+        var isSingleResponse = ReturnsSingleItem.Contains(baseSchemaName);
         var (baseEndpointUri, queryParameters) = GetEndpointUriDetails(docGet);
         var isSyncInterface = baseSchemaName.StartsWith("Sync");
         var isGetOnly = docs.Count == 1;
@@ -308,7 +309,7 @@ internal class EndpointCrawler
             var schemaName = httpMethod == HttpMethod.Get ? baseSchemaName : baseSchemaName + httpMethod.ToString().ToPascalCase();
             openApiDoc.Components!.Schemas!.Add(schemaName, entityComponent);
 
-            AddOperations(openApiDoc, httpMethod, baseEndpointUri, baseSchemaName, endpointDescription, queryParameters, isSyncInterface, schemaIsCollection);
+            AddOperations(openApiDoc, httpMethod, baseEndpointUri, baseSchemaName, endpointDescription, queryParameters, isSyncInterface, isSingleResponse);
         }
     }
 
@@ -375,7 +376,7 @@ internal class EndpointCrawler
         string endpointDescription,
         HashSet<OpenApiParameter> queryParameters,
         bool isSyncInterface,
-        bool isCollection
+        bool isSingleResponse
     )
     {
         var schemaNameWithHttpMethod = baseSchemaName + httpMethod.ToString().ToPascalCase();
@@ -420,7 +421,7 @@ internal class EndpointCrawler
 
             var getResponseSchema = new OpenApiSchema
             {
-                Description = GetResponseDescription(baseSchemaName, isCollection),
+                Description = GetResponseDescription(baseSchemaName, !isSingleResponse),
                 Type = JsonSchemaType.Object,
                 ReadOnly = true,
                 Properties = new Dictionary<string, IOpenApiSchema>
@@ -779,13 +780,6 @@ internal class EndpointCrawler
                 Description = "Expand related entities, e.g., `ParentEntity`"
             });
         }
-    }
-
-    private static bool IsCollection(string schemaName, string endpointDescription)
-    {
-        return schemaName.EndsWith("s") ||
-               schemaName.EndsWith("List") ||
-               endpointDescription.Contains("returns a list");
     }
 
     private static (string ServiceUri, HashSet<OpenApiParameter> QueryParameters) GetEndpointUriDetails(HtmlDocument doc)

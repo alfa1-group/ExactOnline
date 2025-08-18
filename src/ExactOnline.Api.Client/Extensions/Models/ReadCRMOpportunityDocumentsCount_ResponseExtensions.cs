@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadCRMOpportunityDocumentsCount_ResponseExtensions
 {
-    public static async Task<ReadCRMOpportunityDocumentsCount?> AsItem(this Task<ReadCRMOpportunityDocumentsCount_Response?> task)
+    public static async Task<List<ReadCRMOpportunityDocumentsCount>> AsItems(this Task<ReadCRMOpportunityDocumentsCount_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.ReadCRMOpportunityDocumentsCount ?? d.ReadCRMOpportunityDocumentsCountResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.ReadCRMOpportunityDocumentsCount ?? d.ReadCRMOpportunityDocumentsCountResults?.Results ?? [];
     }
 
 }

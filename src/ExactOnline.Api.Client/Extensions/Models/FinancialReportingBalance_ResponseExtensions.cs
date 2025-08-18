@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class FinancialReportingBalance_ResponseExtensions
 {
-    public static async Task<FinancialReportingBalance?> AsItem(this Task<FinancialReportingBalance_Response?> task)
+    public static async Task<List<FinancialReportingBalance>> AsItems(this Task<FinancialReportingBalance_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.FinancialReportingBalance ?? d.FinancialReportingBalanceResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.FinancialReportingBalance ?? d.FinancialReportingBalanceResults?.Results ?? [];
     }
 
 }

@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The SyncProjectProjectWBS entity.
+    /// A collection of SyncProjectProjectWBS entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SyncProjectProjectWBS_Response : IParsable

@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class InventoryFinishAssemblyOrder_ResponseExtensions
 {
-    public static async Task<InventoryFinishAssemblyOrder?> AsItem(this Task<InventoryFinishAssemblyOrder_Response?> task)
+    public static async Task<List<InventoryFinishAssemblyOrder>> AsItems(this Task<InventoryFinishAssemblyOrder_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.InventoryFinishAssemblyOrder ?? d.InventoryFinishAssemblyOrderResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.InventoryFinishAssemblyOrder ?? d.InventoryFinishAssemblyOrderResults?.Results ?? [];
     }
 
 }

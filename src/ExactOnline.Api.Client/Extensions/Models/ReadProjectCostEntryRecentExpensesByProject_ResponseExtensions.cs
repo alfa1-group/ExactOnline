@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadProjectCostEntryRecentExpensesByProject_ResponseExtensions
 {
-    public static async Task<ReadProjectCostEntryRecentExpensesByProject?> AsItem(this Task<ReadProjectCostEntryRecentExpensesByProject_Response?> task)
+    public static async Task<List<ReadProjectCostEntryRecentExpensesByProject>> AsItems(this Task<ReadProjectCostEntryRecentExpensesByProject_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.ReadProjectCostEntryRecentExpensesByProject ?? d.ReadProjectCostEntryRecentExpensesByProjectResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.ReadProjectCostEntryRecentExpensesByProject ?? d.ReadProjectCostEntryRecentExpensesByProjectResults?.Results ?? [];
     }
 
 }

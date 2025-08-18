@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class InventoryAssemblyBillOfMaterialHeader_ResponseExtensions
 {
-    public static async Task<InventoryAssemblyBillOfMaterialHeader?> AsItem(this Task<InventoryAssemblyBillOfMaterialHeader_Response?> task)
+    public static async Task<List<InventoryAssemblyBillOfMaterialHeader>> AsItems(this Task<InventoryAssemblyBillOfMaterialHeader_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.InventoryAssemblyBillOfMaterialHeader ?? d.InventoryAssemblyBillOfMaterialHeaderResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.InventoryAssemblyBillOfMaterialHeader ?? d.InventoryAssemblyBillOfMaterialHeaderResults?.Results ?? [];
     }
 
 }

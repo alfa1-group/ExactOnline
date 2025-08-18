@@ -8,7 +8,7 @@ using System;
 namespace ExactOnline.Api.Client.Models
 {
     /// <summary>
-    /// The PayrollEmploymentTaxAuthoritiesGeneral entity.
+    /// A collection of PayrollEmploymentTaxAuthoritiesGeneral entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayrollEmploymentTaxAuthoritiesGeneral_Response : IParsable

@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadProjectProjectWBSByProjectAndWBS_ResponseExtensions
 {
-    public static async Task<ReadProjectProjectWBSByProjectAndWBS?> AsItem(this Task<ReadProjectProjectWBSByProjectAndWBS_Response?> task)
+    public static async Task<List<ReadProjectProjectWBSByProjectAndWBS>> AsItems(this Task<ReadProjectProjectWBSByProjectAndWBS_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.ReadProjectProjectWBSByProjectAndWBS ?? d.ReadProjectProjectWBSByProjectAndWBSResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.ReadProjectProjectWBSByProjectAndWBS ?? d.ReadProjectProjectWBSByProjectAndWBSResults?.Results ?? [];
     }
 
 }

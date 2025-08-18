@@ -4,10 +4,10 @@ namespace ExactOnline.Api.Client.Models;
 
 public static class ReadFinancialRevenueListByYear_ResponseExtensions
 {
-    public static async Task<ReadFinancialRevenueListByYear?> AsItem(this Task<ReadFinancialRevenueListByYear_Response?> task)
+    public static async Task<List<ReadFinancialRevenueListByYear>> AsItems(this Task<ReadFinancialRevenueListByYear_Response?> task)
     {
         var d = (await task)?.D;
-        return d == null ? null : (d.ReadFinancialRevenueListByYear ?? d.ReadFinancialRevenueListByYearResults?.Results ?? []).FirstOrDefault();
+        return d == null ? [] : d.ReadFinancialRevenueListByYear ?? d.ReadFinancialRevenueListByYearResults?.Results ?? [];
     }
 
 }

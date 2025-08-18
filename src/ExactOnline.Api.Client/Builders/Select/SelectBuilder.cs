@@ -14,7 +14,7 @@ public static class SelectBuilder<T>
     {
         if (expressions.Length == 0)
         {
-            return string.Empty;
+            return string.Join(", ", typeof(T).GetProperties().Select(p => p.Name));
         }
 
         var propertyNames = new List<string>();
