@@ -19,7 +19,6 @@ public static class ServiceCollectionExtensions
             .ValidateDataAnnotations()
             .ValidateOnStart();
         services.AddHttpClient();
-        services.AddMemoryCache();
         services.AddServices();
 
         return services;

@@ -17,11 +17,12 @@ public static class ServiceCollectionExtensions
             .ValidateDataAnnotations()
             .ValidateOnStart();
 
+        services.AddMemoryCache();
+
         services.AddSingleton(sp =>
         {
             var options = sp.GetRequiredService<IOptions<ExactOnlineAzureBlobsStorageOptions>>();
-            var container = new BlobContainerClient(options.Value.ConnectionString, options.Value.ContainerName);
-            return container.GetBlobClient(options.Value.RefreshTokenFilePath);
+            return new BlobContainerClient(options.Value.ConnectionString, options.Value.ContainerName);
         });
 
         return services.AddSingleton<IExactTokenStorageService, ExactTokenServiceAzureBlobs>();

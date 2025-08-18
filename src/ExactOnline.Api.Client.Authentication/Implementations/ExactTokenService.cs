@@ -3,7 +3,6 @@ using System.Text.Json;
 using Duende.IdentityModel.Client;
 using ExactOnline.Api.Client.Authentication.Abstractions;
 using ExactOnline.Api.Client.Authentication.Interfaces;
-using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
 namespace ExactOnline.Api.Client.Authentication.Implementations;
@@ -11,10 +10,8 @@ namespace ExactOnline.Api.Client.Authentication.Implementations;
 internal class ExactTokenService(
     ILogger<ExactTokenService> logger,
     IExactTokenStorageService tokenStorageService,
-    IMemoryCache memoryCache,
     IExactTokenClient exactTokenClient) : IExactTokenService
 {
-    private const string ExactAccessTokenKey = "ExactAccessToken";
     private const int RateLimitDelayInMinutes = 1;
 
     // The expiration time to 9 minutes and 30 seconds, which is the maximum time a token is valid.
@@ -22,15 +19,13 @@ internal class ExactTokenService(
 
     public async Task<string> GetAccessTokenAsync(CancellationToken cancellationToken = default)
     {
-        // First we check if we have a token in memory.
-        if (memoryCache.TryGetValue(ExactAccessTokenKey, out string? accessToken))
+        // First we check if we have a token in storage.
+        var accessToken = await tokenStorageService.RetrieveAccessTokenAsync(cancellationToken);
+        if (!string.IsNullOrEmpty(accessToken))
         {
-            // The memory cache entry is valid for 9 minutes and 30 seconds, which means that after this time we won't get a cached token returned and we should refresh the token using the refresh token.
+            // The cache entry is valid for 9 minutes and 30 seconds, which means that after this time we won't get a cached token returned and we should refresh the token using the refresh token.
             // Checking the validity of the token itself is not possible, because the token is encrypted and we don't have the private key to decrypt it.
-            if (!string.IsNullOrWhiteSpace(accessToken))
-            {
-                return accessToken;
-            }
+            return accessToken;
         }
 
         // If expired or not present, refresh the AccessToken by contacting the authentication server using the refresh token from storage.
@@ -62,8 +57,8 @@ internal class ExactTokenService(
             logger.LogError("The access token is null or empty. ({ErrorType} {Error} {ErrorDescription}).", response.ErrorType, response.Error, response.ErrorDescription);
         }
 
-        // Store the access token in memory for reuse
-        return memoryCache.Set(ExactAccessTokenKey, response.AccessToken, _accessTokenExpirationTime)!;
+        // Store the access token for reuse
+        return await tokenStorageService.StoreAccessTokenAsync(response.AccessToken!, _accessTokenExpirationTime, cancellationToken);
     }
 
     private async Task<TokenResponse> RequestRefreshTokenWithRetryAndErrorHandlingAsync(string refreshToken, CancellationToken cancellationToken)
