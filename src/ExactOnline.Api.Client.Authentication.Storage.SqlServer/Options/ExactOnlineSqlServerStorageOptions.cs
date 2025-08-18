@@ -9,9 +9,9 @@ public class ExactOnlineSqlServerStorageOptions
 
     [Required]
     public string TableName { get; set; } = "Exact";
-    
+
     [Required]
-    public string ColumnName { get; set; } = "RefreshToken";
+    public string RefreshTokenColumnName { get; set; } = "RefreshToken";
 
     [Required]
     public string RefreshTokenUpdatedAtColumnName { get; set; } = "RefreshTokenUpdatedAt";

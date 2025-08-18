@@ -2,6 +2,7 @@
 using ExactOnline.Api.Client.Authentication.Storage.SqlServer.Data;
 using ExactOnline.Api.Client.Authentication.Storage.SqlServer.Options;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -10,8 +11,11 @@ namespace ExactOnline.Api.Client.Authentication.Storage.SqlServer;
 internal class ExactTokenStorageSqlServer(
     ILogger<ExactTokenStorageSqlServer> logger,
     IOptions<ExactOnlineSqlServerStorageOptions> options,
+    IMemoryCache memoryCache,
     ExactOnlineTokenDbContext dbContext) : IExactTokenStorageService
 {
+    private const string AccessTokenKey = nameof(AccessTokenKey);
+
     public async Task StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
     {
         var existingToken = await dbContext.RefreshTokens.SingleOrDefaultAsync(cancellationToken);
@@ -38,5 +42,20 @@ internal class ExactTokenStorageSqlServer(
         }
 
         return refreshToken.RefreshToken;
+    }
+
+    public Task<string> RetrieveAccessTokenAsync(CancellationToken cancellationToken = default)
+    {
+        if (memoryCache.TryGetValue(AccessTokenKey, out string? accessToken) && !string.IsNullOrEmpty(accessToken))
+        {
+            return Task.FromResult(accessToken);
+        }
+
+        return Task.FromResult(string.Empty);
+    }
+
+    public Task<string> StoreAccessTokenAsync(string accessToken, TimeSpan absoluteExpirationRelativeToUtcNow, CancellationToken cancellationToken = default)
+    {
+        return Task.FromResult(memoryCache.Set(AccessTokenKey, accessToken, absoluteExpirationRelativeToUtcNow));
     }
 }
