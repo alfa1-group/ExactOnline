@@ -17,7 +17,7 @@ public static class SelectBuilder<T>
         {
             return string.Join(", ", typeof(T)
                 .GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                .Where(p => p.GetMethod != null)
+                .Where(p => p.GetMethod != null && p.Name != "Metadata")
                 .Select(p => p.Name));
         }
 
