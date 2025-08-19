@@ -74,7 +74,7 @@ Write-Output "🧹 Cleaning RequestBuilders folder..."
 Remove-Item -Path "$requestBuildersPath\*" -Recurse -Force
 
 Write-Output "🔄 Generating partial RequestBuilder classes..."
-$requestBuilderFiles = Get-ChildItem -Path $buildersGeneratedPath -Recurse -Filter "*RequestBuilder.cs" | Where-Object { $_.Name -notlike '*WithIdRequestBuilder.cs' }
+$requestBuilderFiles = Get-ChildItem -Path $buildersGeneratedPath -Recurse -Filter "*RequestBuilder.cs" | Where-Object { $_.Name -notlike '*WithIdRequestBuilder.cs' -and $_.Name -notlike '*WithTimestampRequestBuilder.cs' }
 foreach ($file in $requestBuilderFiles) {
     $className = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
 

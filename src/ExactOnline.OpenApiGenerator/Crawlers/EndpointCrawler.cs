@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Net.Mime;
 using System.Text.RegularExpressions;
 using ExactOnline.OpenApiGenerator.Extensions;
@@ -546,18 +545,41 @@ internal class EndpointCrawler
         if (httpMethod == HttpMethod.Get || httpMethod == HttpMethod.Put || httpMethod == HttpMethod.Delete)
         {
             var withIdOperation = CreateDefaultOperation(httpMethod, baseSchemaName, baseEndpointUri);
-            withIdOperation.Parameters!.Add(new OpenApiParameter
+
+            OpenApiParameter idParameter;
+            string append;
+            if (isSyncInterface)
             {
-                Name = "id",
-                In = ParameterLocation.Path,
-                Required = true,
-                Schema = new OpenApiSchema
+                idParameter = new OpenApiParameter
                 {
-                    Type = JsonSchemaType.String,
-                    Format = "uuid"
-                },
-                Description = $"Unique identifier (GUID) of the {baseSchemaName}"
-            });
+                    Name = "Timestamp",
+                    In = ParameterLocation.Path,
+                    Required = true,
+                    Schema = new OpenApiSchema
+                    {
+                        Type = JsonSchemaType.String
+                    },
+                    Description = $"The Timestamp of the {baseSchemaName}"
+                };
+                append = "({Timestamp})";
+            }
+            else
+            {
+                idParameter = new OpenApiParameter
+                {
+                    Name = "id",
+                    In = ParameterLocation.Path,
+                    Required = true,
+                    Schema = new OpenApiSchema
+                    {
+                        Type = JsonSchemaType.String,
+                        Format = "uuid"
+                    },
+                    Description = $"Unique identifier (GUID) of the {baseSchemaName}"
+                };
+                append = "({id})";
+            }
+            withIdOperation.Parameters!.Add(idParameter);
 
             if (httpMethod == HttpMethod.Get)
             {
@@ -624,7 +646,7 @@ internal class EndpointCrawler
                 });
             }
 
-            AddOperationToPath(openApiDoc, httpMethod, baseEndpointUri + "({id})", endpointDescription, withIdOperation);
+            AddOperationToPath(openApiDoc, httpMethod, baseEndpointUri + append, endpointDescription, withIdOperation);
         }
     }
 

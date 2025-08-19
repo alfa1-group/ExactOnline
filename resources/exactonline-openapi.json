@@ -82510,7 +82510,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Cashflow/PaymentTerms({id})": {
+    "/api/v1/{division}/sync/Cashflow/PaymentTerms({Timestamp})": {
       "description": "The PaymentTerms sync api returns both payments and receipts. To filter out payments you need to filter on property ApprovalStatus and LineType. Approval for payments is a feature which only turned on in some subscriptions. By default this feature is off and in that case the ApprovalStatus will be null. To filter out receipts  you need to filter only on LineType. The API does not allow to filter on these fields. Filtering need to be done after receiving the records.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncCashflowPaymentTerms",
@@ -82524,13 +82524,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncCashflowPaymentTerms",
+            "description": "The Timestamp of the SyncCashflowPaymentTerms",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -82689,7 +82688,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/CRM/Accounts({id})": {
+    "/api/v1/{division}/sync/CRM/Accounts({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncCRMAccounts",
@@ -82703,13 +82702,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncCRMAccounts",
+            "description": "The Timestamp of the SyncCRMAccounts",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -82868,7 +82866,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/CRM/Addresses({id})": {
+    "/api/v1/{division}/sync/CRM/Addresses({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncCRMAddresses",
@@ -82882,13 +82880,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncCRMAddresses",
+            "description": "The Timestamp of the SyncCRMAddresses",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -83047,7 +83044,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/CRM/Contacts({id})": {
+    "/api/v1/{division}/sync/CRM/Contacts({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.",
       "get": {
         "summary": "GET SyncCRMContacts",
@@ -83061,13 +83058,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncCRMContacts",
+            "description": "The Timestamp of the SyncCRMContacts",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -83226,7 +83222,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/CRM/QuotationHeaders({id})": {
+    "/api/v1/{division}/sync/CRM/QuotationHeaders({Timestamp})": {
       "description": "Any change in the header of the Quotations will lead to a new timestamp value in the header. The API will return header data in the API call.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncCRMQuotationHeaders",
@@ -83240,13 +83236,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncCRMQuotationHeaders",
+            "description": "The Timestamp of the SyncCRMQuotationHeaders",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -83405,7 +83400,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/CRM/QuotationLines({id})": {
+    "/api/v1/{division}/sync/CRM/QuotationLines({Timestamp})": {
       "description": "Any change in the line of the Quotations will lead to a new timestamp value in the line. The API will return line data in the API call.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncCRMQuotationLines",
@@ -83419,13 +83414,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncCRMQuotationLines",
+            "description": "The Timestamp of the SyncCRMQuotationLines",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -83584,7 +83578,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Deleted({id})": {
+    "/api/v1/{division}/sync/Deleted({Timestamp})": {
       "description": "The sync api's and the delete api should be used together to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe sync api's however do not show deleted records. Therefore the deleted api is introduced. Via the delete api you can get the deleted records per entity. By using the delete api and the sync api together you can keep the data the same between Exact Online and a 3rd party application.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nNote: the log of records deleted is saved for 2 months. Data older than 2 months is automatically deleted and therefore also not available anymore via the deleted API.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncDeleted",
@@ -83598,13 +83592,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncDeleted",
+            "description": "The Timestamp of the SyncDeleted",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -83763,7 +83756,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Documents/DocumentAttachments({id})": {
+    "/api/v1/{division}/sync/Documents/DocumentAttachments({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncDocumentsDocumentAttachments",
@@ -83777,13 +83770,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncDocumentsDocumentAttachments",
+            "description": "The Timestamp of the SyncDocumentsDocumentAttachments",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -83942,7 +83934,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Documents/Documents({id})": {
+    "/api/v1/{division}/sync/Documents/Documents({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncDocumentsDocuments",
@@ -83956,13 +83948,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncDocumentsDocuments",
+            "description": "The Timestamp of the SyncDocumentsDocuments",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -84121,7 +84112,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Financial/GLAccounts({id})": {
+    "/api/v1/{division}/sync/Financial/GLAccounts({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncFinancialGLAccounts",
@@ -84135,13 +84126,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncFinancialGLAccounts",
+            "description": "The Timestamp of the SyncFinancialGLAccounts",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -84300,7 +84290,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Financial/GLClassifications({id})": {
+    "/api/v1/{division}/sync/Financial/GLClassifications({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* }. Please query with a selection of one or more of the resource properties.",
       "get": {
         "summary": "GET SyncFinancialGLClassifications",
@@ -84314,13 +84304,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncFinancialGLClassifications",
+            "description": "The Timestamp of the SyncFinancialGLClassifications",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -84479,7 +84468,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Financial/TransactionLines({id})": {
+    "/api/v1/{division}/sync/Financial/TransactionLines({Timestamp})": {
       "description": "The API will return both header and line data in the same API call, to determine if the record is the header or the line, the line number can be used. If the line number is 0 it is the transaction line header, if the line number is 1 or higher it is a transaction line.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncFinancialTransactionLines",
@@ -84493,13 +84482,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncFinancialTransactionLines",
+            "description": "The Timestamp of the SyncFinancialTransactionLines",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -84658,7 +84646,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/HRM/AbsenceRegistrations({id})": {
+    "/api/v1/{division}/sync/HRM/AbsenceRegistrations({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nIn case the division is linked or unlinked to Exact Officient, the timestamp and ID values will be changed.\n\t\t\t\t\t\tTherefore, after a division is linked or unlinked all data needs to be deleted and synchronized again in order to get the new timestamp and ID values.\n\t\t\t\t\t\tTo see if a division was linked or unlinked, the /api/v1/{division}/system/Divisions can be used.\n\t\t\t\t\t\tThe property DivisionHRLinkUnLinkDate indicated at which date a division was linked or unlinked and this date can be used to determine\n\t\t\t\t\t\tif it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\nunless the division has been linked or unlinked to Exact Officient. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncHRMAbsenceRegistrations",
@@ -84672,13 +84660,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncHRMAbsenceRegistrations",
+            "description": "The Timestamp of the SyncHRMAbsenceRegistrations",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -84837,7 +84824,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/HRM/AbsenceRegistrationTransactions({id})": {
+    "/api/v1/{division}/sync/HRM/AbsenceRegistrationTransactions({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nIn case the division is linked or unlinked to Exact Officient, the timestamp and ID values will be changed.\n\t\t\t\t\t\tTherefore, after a division is linked or unlinked all data needs to be deleted and synchronized again in order to get the new timestamp and ID values.\n\t\t\t\t\t\tTo see if a division was linked or unlinked, the /api/v1/{division}/system/Divisions can be used.\n\t\t\t\t\t\tThe property DivisionHRLinkUnLinkDate indicated at which date a division was linked or unlinked and this date can be used to determine\n\t\t\t\t\t\tif it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\nunless the division has been linked or unlinked to Exact Officient. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncHRMAbsenceRegistrationTransactions",
@@ -84851,13 +84838,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncHRMAbsenceRegistrationTransactions",
+            "description": "The Timestamp of the SyncHRMAbsenceRegistrationTransactions",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -85016,7 +85002,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/HRM/LeaveAbsenceHoursByDay({id})": {
+    "/api/v1/{division}/sync/HRM/LeaveAbsenceHoursByDay({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nIn case the division is linked or unlinked to Exact Officient, the timestamp and ID values will be changed.\n\t\t\t\t\t\tTherefore, after a division is linked or unlinked all data needs to be deleted and synchronized again in order to get the new timestamp and ID values.\n\t\t\t\t\t\tTo see if a division was linked or unlinked, the /api/v1/{division}/system/Divisions can be used.\n\t\t\t\t\t\tThe property DivisionHRLinkUnLinkDate indicated at which date a division was linked or unlinked and this date can be used to determine\n\t\t\t\t\t\tif it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\nunless the division has been linked or unlinked to Exact Officient. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncHRMLeaveAbsenceHoursByDay",
@@ -85030,13 +85016,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncHRMLeaveAbsenceHoursByDay",
+            "description": "The Timestamp of the SyncHRMLeaveAbsenceHoursByDay",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -85195,7 +85180,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/HRM/LeaveBuildUpRegistrations({id})": {
+    "/api/v1/{division}/sync/HRM/LeaveBuildUpRegistrations({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nIn case the division is linked or unlinked to Exact Officient, the timestamp and ID values will be changed.\n\t\t\t\t\t\tTherefore, after a division is linked or unlinked all data needs to be deleted and synchronized again in order to get the new timestamp and ID values.\n\t\t\t\t\t\tTo see if a division was linked or unlinked, the /api/v1/{division}/system/Divisions can be used.\n\t\t\t\t\t\tThe property DivisionHRLinkUnLinkDate indicated at which date a division was linked or unlinked and this date can be used to determine\n\t\t\t\t\t\tif it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\nunless the division has been linked or unlinked to Exact Officient. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncHRMLeaveBuildUpRegistrations",
@@ -85209,13 +85194,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncHRMLeaveBuildUpRegistrations",
+            "description": "The Timestamp of the SyncHRMLeaveBuildUpRegistrations",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -85374,7 +85358,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/HRM/LeaveRegistrations({id})": {
+    "/api/v1/{division}/sync/HRM/LeaveRegistrations({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nIn case the division is linked or unlinked to Exact Officient, the timestamp and ID values will be changed.\n\t\t\t\t\t\tTherefore, after a division is linked or unlinked all data needs to be deleted and synchronized again in order to get the new timestamp and ID values.\n\t\t\t\t\t\tTo see if a division was linked or unlinked, the /api/v1/{division}/system/Divisions can be used.\n\t\t\t\t\t\tThe property DivisionHRLinkUnLinkDate indicated at which date a division was linked or unlinked and this date can be used to determine\n\t\t\t\t\t\tif it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\nunless the division has been linked or unlinked to Exact Officient. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncHRMLeaveRegistrations",
@@ -85388,13 +85372,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncHRMLeaveRegistrations",
+            "description": "The Timestamp of the SyncHRMLeaveRegistrations",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -85553,7 +85536,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/HRM/ScheduleEntries({id})": {
+    "/api/v1/{division}/sync/HRM/ScheduleEntries({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncHRMScheduleEntries",
@@ -85567,13 +85550,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncHRMScheduleEntries",
+            "description": "The Timestamp of the SyncHRMScheduleEntries",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -85732,7 +85714,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/HRM/Schedules({id})": {
+    "/api/v1/{division}/sync/HRM/Schedules({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncHRMSchedules",
@@ -85746,13 +85728,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncHRMSchedules",
+            "description": "The Timestamp of the SyncHRMSchedules",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -85911,7 +85892,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Inventory/ItemStorageLocations({id})": {
+    "/api/v1/{division}/sync/Inventory/ItemStorageLocations({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.",
       "get": {
         "summary": "GET SyncInventoryItemStorageLocations",
@@ -85925,13 +85906,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncInventoryItemStorageLocations",
+            "description": "The Timestamp of the SyncInventoryItemStorageLocations",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -86090,7 +86070,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Inventory/ItemWarehouses({id})": {
+    "/api/v1/{division}/sync/Inventory/ItemWarehouses({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.",
       "get": {
         "summary": "GET SyncInventoryItemWarehouses",
@@ -86104,13 +86084,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncInventoryItemWarehouses",
+            "description": "The Timestamp of the SyncInventoryItemWarehouses",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -86269,7 +86248,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Inventory/SerialBatchNumbers({id})": {
+    "/api/v1/{division}/sync/Inventory/SerialBatchNumbers({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.",
       "get": {
         "summary": "GET SyncInventorySerialBatchNumbers",
@@ -86283,13 +86262,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncInventorySerialBatchNumbers",
+            "description": "The Timestamp of the SyncInventorySerialBatchNumbers",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -86448,7 +86426,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Inventory/StockPositions({id})": {
+    "/api/v1/{division}/sync/Inventory/StockPositions({Timestamp})": {
       "description": "Any change in stock movement including stock count, purchase order, goods receipt, sales order, goods delivery, assembly order and warehouse transfer will lead to a new timestamp value in stock position. The API will return all stock movements data in the API call. Filtering will be only allowed for property Timestamp.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.",
       "get": {
         "summary": "GET SyncInventoryStockPositions",
@@ -86462,13 +86440,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncInventoryStockPositions",
+            "description": "The Timestamp of the SyncInventoryStockPositions",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -86627,7 +86604,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Inventory/StockSerialBatchNumbers({id})": {
+    "/api/v1/{division}/sync/Inventory/StockSerialBatchNumbers({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.",
       "get": {
         "summary": "GET SyncInventoryStockSerialBatchNumbers",
@@ -86641,13 +86618,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncInventoryStockSerialBatchNumbers",
+            "description": "The Timestamp of the SyncInventoryStockSerialBatchNumbers",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -86806,7 +86782,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Inventory/StorageLocationStockPositions({id})": {
+    "/api/v1/{division}/sync/Inventory/StorageLocationStockPositions({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.",
       "get": {
         "summary": "GET SyncInventoryStorageLocationStockPositions",
@@ -86820,13 +86796,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncInventoryStorageLocationStockPositions",
+            "description": "The Timestamp of the SyncInventoryStorageLocationStockPositions",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -86985,7 +86960,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Logistics/Items({id})": {
+    "/api/v1/{division}/sync/Logistics/Items({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.",
       "get": {
         "summary": "GET SyncLogisticsItems",
@@ -86999,13 +86974,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncLogisticsItems",
+            "description": "The Timestamp of the SyncLogisticsItems",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -87164,7 +87138,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Logistics/PurchaseItemPrices({id})": {
+    "/api/v1/{division}/sync/Logistics/PurchaseItemPrices({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.",
       "get": {
         "summary": "GET SyncLogisticsPurchaseItemPrices",
@@ -87178,13 +87152,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncLogisticsPurchaseItemPrices",
+            "description": "The Timestamp of the SyncLogisticsPurchaseItemPrices",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -87343,7 +87316,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Logistics/SalesItemPrices({id})": {
+    "/api/v1/{division}/sync/Logistics/SalesItemPrices({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.",
       "get": {
         "summary": "GET SyncLogisticsSalesItemPrices",
@@ -87357,13 +87330,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncLogisticsSalesItemPrices",
+            "description": "The Timestamp of the SyncLogisticsSalesItemPrices",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -87522,7 +87494,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Logistics/SupplierItem({id})": {
+    "/api/v1/{division}/sync/Logistics/SupplierItem({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.",
       "get": {
         "summary": "GET SyncLogisticsSupplierItem",
@@ -87536,13 +87508,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncLogisticsSupplierItem",
+            "description": "The Timestamp of the SyncLogisticsSupplierItem",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -87701,7 +87672,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Manufacturing/BillOfMaterialMaterials({id})": {
+    "/api/v1/{division}/sync/Manufacturing/BillOfMaterialMaterials({Timestamp})": {
       "description": "Any change in the BillOfMaterialMaterials will lead to a new timestamp value. The API will return the data in the same API call.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.\nThis endpoint is available for the following packages:\n• Manufacturing (All)",
       "get": {
         "summary": "GET SyncManufacturingBillOfMaterialMaterials",
@@ -87715,13 +87686,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncManufacturingBillOfMaterialMaterials",
+            "description": "The Timestamp of the SyncManufacturingBillOfMaterialMaterials",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -87880,7 +87850,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Manufacturing/BillOfMaterialVersions({id})": {
+    "/api/v1/{division}/sync/Manufacturing/BillOfMaterialVersions({Timestamp})": {
       "description": "Any change in the BillOfMaterialVersions will lead to a new timestamp value. The API will return the data in the same API call.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.\nThis endpoint is available for the following packages:\n• Manufacturing (All)",
       "get": {
         "summary": "GET SyncManufacturingBillOfMaterialVersions",
@@ -87894,13 +87864,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncManufacturingBillOfMaterialVersions",
+            "description": "The Timestamp of the SyncManufacturingBillOfMaterialVersions",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -88059,7 +88028,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Manufacturing/MaterialIssues({id})": {
+    "/api/v1/{division}/sync/Manufacturing/MaterialIssues({Timestamp})": {
       "description": "Any change in the MaterialIssues will lead to a new timestamp value. The API will return the data in the same API call.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.\nThis endpoint is available for the following packages:\n• Manufacturing (All)",
       "get": {
         "summary": "GET SyncManufacturingMaterialIssues",
@@ -88073,13 +88042,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncManufacturingMaterialIssues",
+            "description": "The Timestamp of the SyncManufacturingMaterialIssues",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -88238,7 +88206,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Manufacturing/ShopOrderMaterialPlans({id})": {
+    "/api/v1/{division}/sync/Manufacturing/ShopOrderMaterialPlans({Timestamp})": {
       "description": "Any change in the ShopOrderMaterialPlans will lead to a new timestamp value. The API will return the data in the same API call.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.\nThis endpoint is available for the following packages:\n• Manufacturing (All)",
       "get": {
         "summary": "GET SyncManufacturingShopOrderMaterialPlans",
@@ -88252,13 +88220,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncManufacturingShopOrderMaterialPlans",
+            "description": "The Timestamp of the SyncManufacturingShopOrderMaterialPlans",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -88417,7 +88384,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Manufacturing/ShopOrderPurchasePlanning({id})": {
+    "/api/v1/{division}/sync/Manufacturing/ShopOrderPurchasePlanning({Timestamp})": {
       "description": "Any change in the ShopOrderPurchasePlanning will lead to a new timestamp value. The API will return the data in the same API call.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.\nThis endpoint is available for the following packages:\n• Manufacturing (All)",
       "get": {
         "summary": "GET SyncManufacturingShopOrderPurchasePlanning",
@@ -88431,13 +88398,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncManufacturingShopOrderPurchasePlanning",
+            "description": "The Timestamp of the SyncManufacturingShopOrderPurchasePlanning",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -88596,7 +88562,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Manufacturing/ShopOrderRoutingStepPlans({id})": {
+    "/api/v1/{division}/sync/Manufacturing/ShopOrderRoutingStepPlans({Timestamp})": {
       "description": "Any change in the ShopOrderRoutingStepPlans will lead to a new timestamp value. The API will return the data in the same API call.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.\nThis endpoint is available for the following packages:\n• Manufacturing (All)",
       "get": {
         "summary": "GET SyncManufacturingShopOrderRoutingStepPlans",
@@ -88610,13 +88576,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncManufacturingShopOrderRoutingStepPlans",
+            "description": "The Timestamp of the SyncManufacturingShopOrderRoutingStepPlans",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -88775,7 +88740,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Manufacturing/ShopOrders({id})": {
+    "/api/v1/{division}/sync/Manufacturing/ShopOrders({Timestamp})": {
       "description": "Any change in the ShopOrders will lead to a new timestamp value. The API will return the data in the same API call.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.\nThis endpoint is available for the following packages:\n• Manufacturing (All)",
       "get": {
         "summary": "GET SyncManufacturingShopOrders",
@@ -88789,13 +88754,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncManufacturingShopOrders",
+            "description": "The Timestamp of the SyncManufacturingShopOrders",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -88954,7 +88918,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Manufacturing/ShopOrderSubOrders({id})": {
+    "/api/v1/{division}/sync/Manufacturing/ShopOrderSubOrders({Timestamp})": {
       "description": "Any change in the ShopOrderSubOrders will lead to a new timestamp value. The API will return the data in the same API call.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.\nThis endpoint is available for the following packages:\n• Manufacturing (All)",
       "get": {
         "summary": "GET SyncManufacturingShopOrderSubOrders",
@@ -88968,13 +88932,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncManufacturingShopOrderSubOrders",
+            "description": "The Timestamp of the SyncManufacturingShopOrderSubOrders",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -89133,7 +89096,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Payroll/BankAccounts({id})": {
+    "/api/v1/{division}/sync/Payroll/BankAccounts({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncPayrollBankAccounts",
@@ -89147,13 +89110,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncPayrollBankAccounts",
+            "description": "The Timestamp of the SyncPayrollBankAccounts",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -89312,7 +89274,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Payroll/Employees({id})": {
+    "/api/v1/{division}/sync/Payroll/Employees({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncPayrollEmployees",
@@ -89326,13 +89288,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncPayrollEmployees",
+            "description": "The Timestamp of the SyncPayrollEmployees",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -89491,7 +89452,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Payroll/EmploymentCLAs({id})": {
+    "/api/v1/{division}/sync/Payroll/EmploymentCLAs({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncPayrollEmploymentCLAs",
@@ -89505,13 +89466,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncPayrollEmploymentCLAs",
+            "description": "The Timestamp of the SyncPayrollEmploymentCLAs",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -89670,7 +89630,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Payroll/EmploymentContracts({id})": {
+    "/api/v1/{division}/sync/Payroll/EmploymentContracts({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncPayrollEmploymentContracts",
@@ -89684,13 +89644,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncPayrollEmploymentContracts",
+            "description": "The Timestamp of the SyncPayrollEmploymentContracts",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -89849,7 +89808,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Payroll/EmploymentOrganizations({id})": {
+    "/api/v1/{division}/sync/Payroll/EmploymentOrganizations({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncPayrollEmploymentOrganizations",
@@ -89863,13 +89822,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncPayrollEmploymentOrganizations",
+            "description": "The Timestamp of the SyncPayrollEmploymentOrganizations",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -90028,7 +89986,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Payroll/Employments({id})": {
+    "/api/v1/{division}/sync/Payroll/Employments({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncPayrollEmployments",
@@ -90042,13 +90000,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncPayrollEmployments",
+            "description": "The Timestamp of the SyncPayrollEmployments",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -90207,7 +90164,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Payroll/EmploymentSalaries({id})": {
+    "/api/v1/{division}/sync/Payroll/EmploymentSalaries({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncPayrollEmploymentSalaries",
@@ -90221,13 +90178,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncPayrollEmploymentSalaries",
+            "description": "The Timestamp of the SyncPayrollEmploymentSalaries",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -90386,7 +90342,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Payroll/EmploymentTaxAuthoritiesGeneral({id})": {
+    "/api/v1/{division}/sync/Payroll/EmploymentTaxAuthoritiesGeneral({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.",
       "get": {
         "summary": "GET SyncPayrollEmploymentTaxAuthoritiesGeneral",
@@ -90400,13 +90356,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncPayrollEmploymentTaxAuthoritiesGeneral",
+            "description": "The Timestamp of the SyncPayrollEmploymentTaxAuthoritiesGeneral",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -90565,7 +90520,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Project/ProjectPlanning({id})": {
+    "/api/v1/{division}/sync/Project/ProjectPlanning({Timestamp})": {
       "description": "The ProjectPlanning sync api returns planning for Planned and Reserved. To filter out Planned and Reserved you need to filter only on property Status. The API does not allow to filter on these fields. Filtering need to be done after receiving the records.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncProjectProjectPlanning",
@@ -90579,13 +90534,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncProjectProjectPlanning",
+            "description": "The Timestamp of the SyncProjectProjectPlanning",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -90744,7 +90698,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Project/Projects({id})": {
+    "/api/v1/{division}/sync/Project/Projects({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncProjectProjects",
@@ -90758,13 +90712,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncProjectProjects",
+            "description": "The Timestamp of the SyncProjectProjects",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -90923,7 +90876,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Project/ProjectWBS({id})": {
+    "/api/v1/{division}/sync/Project/ProjectWBS({Timestamp})": {
       "description": "The ProjectWBS sync api returns WBS deliverable, activity and expense. To filter out deliverable, activity or expense you need to filter only on property Type. The API does not allow to filter on these fields. Filtering need to be done after receiving the records.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncProjectProjectWBS",
@@ -90937,13 +90890,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncProjectProjectWBS",
+            "description": "The Timestamp of the SyncProjectProjectWBS",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -91102,7 +91054,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Project/TimeCostTransactions({id})": {
+    "/api/v1/{division}/sync/Project/TimeCostTransactions({Timestamp})": {
       "description": "The TimeCostTransactions sync api returns both time and cost transactions. To filter out time or cost transactions you need to filter only on property Type. The API does not allow to filter on these fields. Filtering need to be done after receiving the records.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncProjectTimeCostTransactions",
@@ -91116,13 +91068,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncProjectTimeCostTransactions",
+            "description": "The Timestamp of the SyncProjectTimeCostTransactions",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -91281,7 +91232,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/PurchaseOrder/PurchaseOrders({id})": {
+    "/api/v1/{division}/sync/PurchaseOrder/PurchaseOrders({Timestamp})": {
       "description": "Any change in the header or the line of the PurchaseOrders will lead to a new timestamp value in both the header and the line. The API will return both header and line data in the same API call, to determine if the record is the header or the line, the line number can be used. If the line number is 0 it is the purchase order header, if the line number is 1 or higher it is a purchase order line.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.\nThis endpoint is available for the following packages:\n• Manufacturing (All)\n• Professional Services (Plus, Professional &amp; Premium only)\n• Wholesale &amp; Distribution (All)",
       "get": {
         "summary": "GET SyncPurchaseOrderPurchaseOrders",
@@ -91295,13 +91246,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncPurchaseOrderPurchaseOrders",
+            "description": "The Timestamp of the SyncPurchaseOrderPurchaseOrders",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -91460,7 +91410,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/SalesInvoice/SalesInvoices({id})": {
+    "/api/v1/{division}/sync/SalesInvoice/SalesInvoices({Timestamp})": {
       "description": "Any change in the header or the line of the SalesInvoices will lead to a new timestamp value in both the header and the line. The API will return both header and line data in the same API call, to determine if the record is the header or the line, the line number can be used. If the line number is 0 it is the sales invoice header, if the line number is 1 or higher it is a sales invoice line.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncSalesInvoiceSalesInvoices",
@@ -91474,13 +91424,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncSalesInvoiceSalesInvoices",
+            "description": "The Timestamp of the SyncSalesInvoiceSalesInvoices",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -91639,7 +91588,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/SalesOrder/GoodsDeliveries({id})": {
+    "/api/v1/{division}/sync/SalesOrder/GoodsDeliveries({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the EntryID. The EntryID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncSalesOrderGoodsDeliveries",
@@ -91653,13 +91602,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncSalesOrderGoodsDeliveries",
+            "description": "The Timestamp of the SyncSalesOrderGoodsDeliveries",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -91818,7 +91766,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/SalesOrder/GoodsDeliveryLines({id})": {
+    "/api/v1/{division}/sync/SalesOrder/GoodsDeliveryLines({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncSalesOrderGoodsDeliveryLines",
@@ -91832,13 +91780,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncSalesOrderGoodsDeliveryLines",
+            "description": "The Timestamp of the SyncSalesOrderGoodsDeliveryLines",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -91997,7 +91944,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/SalesOrder/SalesOrderHeaders({id})": {
+    "/api/v1/{division}/sync/SalesOrder/SalesOrderHeaders({Timestamp})": {
       "description": "Any change in the header of the SalesOrders will lead to a new timestamp value in the header. The API will return header data in the API call.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncSalesOrderSalesOrderHeaders",
@@ -92011,13 +91958,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncSalesOrderSalesOrderHeaders",
+            "description": "The Timestamp of the SyncSalesOrderSalesOrderHeaders",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -92176,7 +92122,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/SalesOrder/SalesOrderLines({id})": {
+    "/api/v1/{division}/sync/SalesOrder/SalesOrderLines({Timestamp})": {
       "description": "Any change in the line of the SalesOrders will lead to a new timestamp value in the line. The API will return line data in the API call.\nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncSalesOrderSalesOrderLines",
@@ -92190,13 +92136,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncSalesOrderSalesOrderLines",
+            "description": "The Timestamp of the SyncSalesOrderSalesOrderLines",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -92355,7 +92300,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Sales/SalesPriceListVolumeDiscounts({id})": {
+    "/api/v1/{division}/sync/Sales/SalesPriceListVolumeDiscounts({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nNote: This endpoint does not support query { $select=* } since there are a lot of properties in this endpoint.",
       "get": {
         "summary": "GET SyncSalesSalesPriceListVolumeDiscounts",
@@ -92369,13 +92314,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncSalesSalesPriceListVolumeDiscounts",
+            "description": "The Timestamp of the SyncSalesSalesPriceListVolumeDiscounts",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -92534,7 +92478,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Subscription/SubscriptionLines({id})": {
+    "/api/v1/{division}/sync/Subscription/SubscriptionLines({Timestamp})": {
       "description": "The API will return both one time and recurring line type for subscription lines, to determined line type of the subscription line, the LineType property can be used. If the LineType is 1, the subscription line is recurring line. If the LineType is 2, the subscription line is one time line. \nThe sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the ID. The ID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncSubscriptionSubscriptionLines",
@@ -92548,13 +92492,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncSubscriptionSubscriptionLines",
+            "description": "The Timestamp of the SyncSubscriptionSubscriptionLines",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -92713,7 +92656,7 @@
         }
       }
     },
-    "/api/v1/{division}/sync/Subscription/Subscriptions({id})": {
+    "/api/v1/{division}/sync/Subscription/Subscriptions({Timestamp})": {
       "description": "The sync api's have the goal to keep the data between Exact Online and a 3rd party application the same.\nThe sync api's are all based on row versioning and because of that it is guaranteed to be unique. Every time an existing record is changed or a new record is inserted, the row versioning value is higher than the highest available value at that time. When retrieving records via these api's also a timestamp value is returned. The highest timestamp value of the records returned should be stored on client side. Next time records are retrieved, the timestamp value stored on client side should be provided as parameter. The api will then return only the new and changed records. Using this method is more reliable than using modified date, since it can happen that multiple records have the same modified date and therefore same record can be returned more than once. This will not happen when using timestamp.\nThe sync api's are also developed to give best performance when retrieving records. Because of performance and the intended purpose of the api's, only the timestamp field is allowed as parameter.\nThe single and bulk api’s are designed for a different purpose. They provide ability to retrieve specific record or a set of records which meet certain conditions.\nIn case the division is moved to another database in Exact Online the timestamp values will be reset. Therefore, after a division is moved all data needs to be synchronized again in order to get the new timestamp values. To see if a division was moved, the /api/v1/{division}/system/Divisions can be used. The property DivisionMoveDate indicated at which date a division was moved and this date can be used to determine if it is needed to synchronize all data again.\nThe API has two important key fields, the Timestamp and the EntryID. The EntryID should be used to uniquely identify the record and will never change\n. The Timestamp is used to get new or changed records in an efficient way and will change for every change made to the record.\nThe timestamp value returned has no relation with actual date or time. As such it cannot be converted to a date\\time value. The timestamp is a rowversion value.\nWhen you use the sync or delete api for the first time for a particular division, filter on timestamp greater than 1.\nOr use the SyncTimestamp API to GET a timestamp from a certain date.",
       "get": {
         "summary": "GET SyncSubscriptionSubscriptions",
@@ -92727,13 +92670,12 @@
             }
           },
           {
-            "name": "id",
+            "name": "Timestamp",
             "in": "path",
-            "description": "Unique identifier (GUID) of the SyncSubscriptionSubscriptions",
+            "description": "The Timestamp of the SyncSubscriptionSubscriptions",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
