@@ -12,7 +12,7 @@ namespace ExactOnline.Api.Client.Models
     public partial class MailboxMailMessageAttachments : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Attachment property</summary>
+        /// <summary>For performance reasons Attachment is Write-Only. The blob can be downloaded using the supplied Url</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Attachment { get; set; }
@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public byte[] Attachment { get; set; }
 #endif
-        /// <summary>The AttachmentFileExtension property</summary>
+        /// <summary>File extension of attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AttachmentFileExtension { get; set; }
@@ -28,7 +28,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AttachmentFileExtension { get; set; }
 #endif
-        /// <summary>The AttachmentFileName property</summary>
+        /// <summary>File name of attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AttachmentFileName { get; set; }
@@ -36,11 +36,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AttachmentFileName { get; set; }
 #endif
-        /// <summary>The FileSize property</summary>
+        /// <summary>File size</summary>
         public long? FileSize { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The MailMessageID property</summary>
+        /// <summary>Reference to Mail message</summary>
         public Guid? MailMessageID { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,13 +50,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The RecipientAccount property</summary>
+        /// <summary>Reference to recipient account</summary>
         public Guid? RecipientAccount { get; set; }
-        /// <summary>The SenderAccount property</summary>
+        /// <summary>Reference to sender account</summary>
         public Guid? SenderAccount { get; set; }
-        /// <summary>The Type property</summary>
+        /// <summary>Type of mail message attachment0-Unknown10-PDF11-XML (ZUGFeRD)20-UBL 2.021-SIB22-Simplerinvoicing 1.023-PEPPOL24-eFFF25-Simplerinvoicing 1.126-Simplerinvoicing 1.230-Finvoice40-eInvoice50-XML60-XBRL70-Bank import71-Internal bank statement (TestAutomation)72-XLSM73-BankGateway source80-Bank export81-Direct debit82-Mandates85-Message86-Status update90-Statistics91-Statistics Json100-TXT110-Soda120-OfficialReturnProof130-UBL 2.1</summary>
         public int? Type { get; set; }
-        /// <summary>The TypeDescription property</summary>
+        /// <summary>Description of Type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TypeDescription { get; set; }
@@ -64,7 +64,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string TypeDescription { get; set; }
 #endif
-        /// <summary>The Url property</summary>
+        /// <summary>To get the file in its original format (xml, jpg, pdf, etc.) append &amp;amp;Download=1 to the url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

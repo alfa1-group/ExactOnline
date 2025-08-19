@@ -12,15 +12,15 @@ namespace ExactOnline.Api.Client.Models
     public partial class FinancialTransactionBankEntryLinesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>Reference to Account</summary>
         public Guid? Account { get; set; }
-        /// <summary>The AmountFC property</summary>
+        /// <summary>Amount in the currency of the transaction</summary>
         public double? AmountFC { get; set; }
-        /// <summary>The AmountVATFC property</summary>
+        /// <summary>Vat amount in the currency of the transaction</summary>
         public double? AmountVATFC { get; set; }
-        /// <summary>The Asset property</summary>
+        /// <summary>Reference to an asset</summary>
         public Guid? Asset { get; set; }
-        /// <summary>The CostCenter property</summary>
+        /// <summary>Reference to a cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenter { get; set; }
@@ -28,7 +28,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenter { get; set; }
 #endif
-        /// <summary>The CostUnit property</summary>
+        /// <summary>Reference to a cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnit { get; set; }
@@ -36,9 +36,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnit { get; set; }
 #endif
-        /// <summary>The Date property</summary>
+        /// <summary>Date of the statement line</summary>
         public DateTimeOffset? Date { get; set; }
-        /// <summary>The Description property</summary>
+        /// <summary>Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -46,13 +46,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Document property</summary>
+        /// <summary>Reference to a document</summary>
         public Guid? Document { get; set; }
-        /// <summary>The EntryID property</summary>
+        /// <summary>Reference to the header</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The ExchangeRate property</summary>
+        /// <summary>Exchange rate</summary>
         public double? ExchangeRate { get; set; }
-        /// <summary>The GLAccount property</summary>
+        /// <summary>General ledger account</summary>
         public Guid? GLAccount { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +62,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Extra remarks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -70,13 +70,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The OurRef property</summary>
+        /// <summary>Invoice number</summary>
         public int? OurRef { get; set; }
-        /// <summary>The Project property</summary>
+        /// <summary>Reference to a project</summary>
         public Guid? Project { get; set; }
-        /// <summary>The Quantity property</summary>
+        /// <summary>Quantity</summary>
         public double? Quantity { get; set; }
-        /// <summary>The VATCode property</summary>
+        /// <summary>Reference to vat code. If this property is not filled, it will use the default VAT code of the G/L account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCode { get; set; }
@@ -84,9 +84,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCode { get; set; }
 #endif
-        /// <summary>The VATPercentage property</summary>
+        /// <summary>Vat code percentage</summary>
         public double? VATPercentage { get; set; }
-        /// <summary>The VATType property</summary>
+        /// <summary>Type of vat code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATType { get; set; }

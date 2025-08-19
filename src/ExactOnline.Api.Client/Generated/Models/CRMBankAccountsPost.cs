@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class CRMBankAccountsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>Account (customer, supplier) to which the bank account belongs</summary>
         public Guid? Account { get; set; }
-        /// <summary>The BankAccount property</summary>
+        /// <summary>The bank account number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BankAccount { get; set; }
@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BankAccount { get; set; }
 #endif
-        /// <summary>The BankAccountHolderName property</summary>
+        /// <summary>Name of the holder of the bank account, as known by the bank</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BankAccountHolderName { get; set; }
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BankAccountHolderName { get; set; }
 #endif
-        /// <summary>The BICCode property</summary>
+        /// <summary>BIC code of the bank where the bank account is held</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BICCode { get; set; }
@@ -38,9 +38,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BICCode { get; set; }
 #endif
-        /// <summary>The Blocked property</summary>
+        /// <summary>Indicates if the bank account is blocked</summary>
         public bool? Blocked { get; set; }
-        /// <summary>The Description property</summary>
+        /// <summary>Description of the bank account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -48,9 +48,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The Main property</summary>
+        /// <summary>Indicates if the bank account is the main bank account</summary>
         public bool? Main { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

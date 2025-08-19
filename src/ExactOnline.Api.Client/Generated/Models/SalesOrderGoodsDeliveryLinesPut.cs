@@ -12,7 +12,7 @@ namespace ExactOnline.Api.Client.Models
     public partial class SalesOrderGoodsDeliveryLinesPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ID property</summary>
+        /// <summary>The unique identifier of a stock transaction for a goods delivery line. A goods delivery line can be split into multiple storage locations. In this case, multiple storage locations will have the same stock transaction ID.</summary>
         public Guid? ID { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The TrackingNumber property</summary>
+        /// <summary>Reference to tracking number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrackingNumber { get; set; }

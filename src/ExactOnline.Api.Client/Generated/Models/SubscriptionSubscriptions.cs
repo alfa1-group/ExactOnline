@@ -12,13 +12,13 @@ namespace ExactOnline.Api.Client.Models
     public partial class SubscriptionSubscriptions : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The BlockEntry property</summary>
+        /// <summary>Indicates if subscription is blocked for time cost entry</summary>
         public bool? BlockEntry { get; set; }
-        /// <summary>The CancellationDate property</summary>
+        /// <summary>Date of cancellation</summary>
         public DateTimeOffset? CancellationDate { get; set; }
-        /// <summary>The Classification property</summary>
+        /// <summary>Guid ID of classification, to filter the report based on the classification of a subscription</summary>
         public Guid? Classification { get; set; }
-        /// <summary>The ClassificationCode property</summary>
+        /// <summary>Code of classification, to filter the report based on the classification of a subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClassificationCode { get; set; }
@@ -26,7 +26,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ClassificationCode { get; set; }
 #endif
-        /// <summary>The ClassificationDescription property</summary>
+        /// <summary>Description of classification, to filter the report based on the classification of a subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClassificationDescription { get; set; }
@@ -34,11 +34,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ClassificationDescription { get; set; }
 #endif
-        /// <summary>The Created property</summary>
+        /// <summary>Date when the subscription was created</summary>
         public DateTimeOffset? Created { get; set; }
-        /// <summary>The Creator property</summary>
+        /// <summary>The Guid ID of the user that created the subscription</summary>
         public Guid? Creator { get; set; }
-        /// <summary>The CreatorFullName property</summary>
+        /// <summary>The full name of the user that created the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorFullName { get; set; }
@@ -46,7 +46,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; set; }
 #endif
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency code used in the transactions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -54,7 +54,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The CustomerPONumber property</summary>
+        /// <summary>Purchase order number of that is linked to customer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerPONumber { get; set; }
@@ -62,7 +62,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomerPONumber { get; set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description of the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -70,21 +70,21 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Division property</summary>
+        /// <summary>Division number of the company that the subscription is linked to</summary>
         public int? Division { get; set; }
-        /// <summary>The EndDate property</summary>
+        /// <summary>The date and time when the subscription ends</summary>
         public DateTimeOffset? EndDate { get; set; }
-        /// <summary>The EntryID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The InvoiceDay property</summary>
+        /// <summary>For monthly, quaterly, half-year and yearly invoice period, the day number of the month when the invoice of the subscription is sent.While for weekly invoice period, the weekday number of the week when the invoice of the subscription is sent: 0=Monday 1=Tuesday 2=Wednesday 3=Thursday4=Friday 5=Saturday 6=Sunday</summary>
         public int? InvoiceDay { get; set; }
-        /// <summary>The InvoicedTo property</summary>
+        /// <summary>The date when the invoice of the subscription is sent</summary>
         public DateTimeOffset? InvoicedTo { get; set; }
-        /// <summary>The InvoiceTo property</summary>
+        /// <summary>The account which the subsciption is invoiced to</summary>
         public Guid? InvoiceTo { get; set; }
-        /// <summary>The InvoiceToContactPerson property</summary>
+        /// <summary>The ID of the contact person that is linked to the account the subscription is invoice to</summary>
         public Guid? InvoiceToContactPerson { get; set; }
-        /// <summary>The InvoiceToContactPersonFullName property</summary>
+        /// <summary>The name of the contact person that is linked to the account the subscription is invoice to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoiceToContactPersonFullName { get; set; }
@@ -92,7 +92,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string InvoiceToContactPersonFullName { get; set; }
 #endif
-        /// <summary>The InvoiceToName property</summary>
+        /// <summary>Name of the account to invoice to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoiceToName { get; set; }
@@ -100,7 +100,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string InvoiceToName { get; set; }
 #endif
-        /// <summary>The InvoicingStartDate property</summary>
+        /// <summary>Date to start invoicing the account</summary>
         public DateTimeOffset? InvoicingStartDate { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,11 +110,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Modified property</summary>
+        /// <summary>Date and time when the subscription has been modified</summary>
         public DateTimeOffset? Modified { get; set; }
-        /// <summary>The Modifier property</summary>
+        /// <summary>The ID of the user that modified the subscription</summary>
         public Guid? Modifier { get; set; }
-        /// <summary>The ModifierFullName property</summary>
+        /// <summary>The name of the user that modified the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifierFullName { get; set; }
@@ -122,7 +122,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>For additional information regarding the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -130,13 +130,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The Number property</summary>
+        /// <summary>Subscription number of the company</summary>
         public int? Number { get; set; }
-        /// <summary>The OrderedBy property</summary>
+        /// <summary>Reference to order account, GUID ID of the subscriber</summary>
         public Guid? OrderedBy { get; set; }
-        /// <summary>The OrderedByContactPerson property</summary>
+        /// <summary>Reference of contact person of order account, displays the contact name of the subscriber</summary>
         public Guid? OrderedByContactPerson { get; set; }
-        /// <summary>The OrderedByContactPersonFullName property</summary>
+        /// <summary>Name of contact person of order account, displays the full contact name of the subscriber</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrderedByContactPersonFullName { get; set; }
@@ -144,7 +144,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string OrderedByContactPersonFullName { get; set; }
 #endif
-        /// <summary>The OrderedByName property</summary>
+        /// <summary>Name of order account, displays the name of the subscriber</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrderedByName { get; set; }
@@ -152,7 +152,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string OrderedByName { get; set; }
 #endif
-        /// <summary>The PaymentCondition property</summary>
+        /// <summary>Code of subscriptions payment condition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentCondition { get; set; }
@@ -160,7 +160,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PaymentCondition { get; set; }
 #endif
-        /// <summary>The PaymentConditionDescription property</summary>
+        /// <summary>Description of subscriptions payment condition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentConditionDescription { get; set; }
@@ -168,13 +168,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PaymentConditionDescription { get; set; }
 #endif
-        /// <summary>The Printed property</summary>
+        /// <summary>Indicates if subscription has been printed</summary>
         public bool? Printed { get; set; }
-        /// <summary>The Project property</summary>
+        /// <summary>The Guid ID of the project, reference to Project endpoint</summary>
         public Guid? Project { get; set; }
-        /// <summary>The ReasonCancelled property</summary>
+        /// <summary>Guid ID of the reason of cancellation record linked to the subscription</summary>
         public Guid? ReasonCancelled { get; set; }
-        /// <summary>The ReasonCancelledCode property</summary>
+        /// <summary>Code of the reason of cancellation record linked to the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCancelledCode { get; set; }
@@ -182,7 +182,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ReasonCancelledCode { get; set; }
 #endif
-        /// <summary>The ReasonCancelledDescription property</summary>
+        /// <summary>Description of the reason of cancellation record linked to the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCancelledDescription { get; set; }
@@ -190,35 +190,35 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ReasonCancelledDescription { get; set; }
 #endif
-        /// <summary>The StartDate property</summary>
+        /// <summary>Start date of the subscription</summary>
         public DateTimeOffset? StartDate { get; set; }
-        /// <summary>The SubscriptionLines property</summary>
+        /// <summary>Collection of subscription lines linked to the subscription link, can be referenced to SubscriptionLines endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines? SubscriptionLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines>? SubscriptionLines { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines SubscriptionLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines> SubscriptionLines { get; set; }
 #endif
-        /// <summary>The SubscriptionRestrictionEmployees property</summary>
+        /// <summary>Collection of employee&apos;s restriction, can be referenced to SubscriptionRestrictionEmployees endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionEmployees? SubscriptionRestrictionEmployees { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionEmployees>? SubscriptionRestrictionEmployees { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionEmployees SubscriptionRestrictionEmployees { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionEmployees> SubscriptionRestrictionEmployees { get; set; }
 #endif
-        /// <summary>The SubscriptionRestrictionItems property</summary>
+        /// <summary>Collection of restriction items linked to the subscription, can be referenced to SubscriptionRestrictionItems endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionItems? SubscriptionRestrictionItems { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionItems>? SubscriptionRestrictionItems { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionItems SubscriptionRestrictionItems { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionItems> SubscriptionRestrictionItems { get; set; }
 #endif
-        /// <summary>The SubscriptionType property</summary>
+        /// <summary>The GUID ID of the subscription condition, reference to SubscriptionType endpoint</summary>
         public Guid? SubscriptionType { get; set; }
-        /// <summary>The SubscriptionTypeCode property</summary>
+        /// <summary>The code of the subscription condition record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionTypeCode { get; set; }
@@ -226,7 +226,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SubscriptionTypeCode { get; set; }
 #endif
-        /// <summary>The SubscriptionTypeDescription property</summary>
+        /// <summary>The code of the subscription condition description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionTypeDescription { get; set; }
@@ -291,9 +291,9 @@ namespace ExactOnline.Api.Client.Models
                 { "ReasonCancelledCode", n => { ReasonCancelledCode = n.GetStringValue(); } },
                 { "ReasonCancelledDescription", n => { ReasonCancelledDescription = n.GetStringValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "SubscriptionLines", n => { SubscriptionLines = n.GetObjectValue<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines>(global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines.CreateFromDiscriminatorValue); } },
-                { "SubscriptionRestrictionEmployees", n => { SubscriptionRestrictionEmployees = n.GetObjectValue<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionEmployees>(global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionEmployees.CreateFromDiscriminatorValue); } },
-                { "SubscriptionRestrictionItems", n => { SubscriptionRestrictionItems = n.GetObjectValue<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionItems>(global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionItems.CreateFromDiscriminatorValue); } },
+                { "SubscriptionLines", n => { SubscriptionLines = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines>(global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "SubscriptionRestrictionEmployees", n => { SubscriptionRestrictionEmployees = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionEmployees>(global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionEmployees.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "SubscriptionRestrictionItems", n => { SubscriptionRestrictionItems = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionItems>(global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionItems.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "SubscriptionType", n => { SubscriptionType = n.GetGuidValue(); } },
                 { "SubscriptionTypeCode", n => { SubscriptionTypeCode = n.GetStringValue(); } },
                 { "SubscriptionTypeDescription", n => { SubscriptionTypeDescription = n.GetStringValue(); } },
@@ -344,9 +344,9 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("ReasonCancelledCode", ReasonCancelledCode);
             writer.WriteStringValue("ReasonCancelledDescription", ReasonCancelledDescription);
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines>("SubscriptionLines", SubscriptionLines);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionEmployees>("SubscriptionRestrictionEmployees", SubscriptionRestrictionEmployees);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionItems>("SubscriptionRestrictionItems", SubscriptionRestrictionItems);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines>("SubscriptionLines", SubscriptionLines);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionEmployees>("SubscriptionRestrictionEmployees", SubscriptionRestrictionEmployees);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionRestrictionItems>("SubscriptionRestrictionItems", SubscriptionRestrictionItems);
             writer.WriteGuidValue("SubscriptionType", SubscriptionType);
             writer.WriteStringValue("SubscriptionTypeCode", SubscriptionTypeCode);
             writer.WriteStringValue("SubscriptionTypeDescription", SubscriptionTypeDescription);

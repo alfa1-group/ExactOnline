@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Net.Mime;
 using System.Text.RegularExpressions;
 using ExactOnline.OpenApiGenerator.Extensions;
@@ -209,29 +210,33 @@ internal class EndpointCrawler
             // Rows from the tabel which:
             // - are not headers (no class='header')
             // - are not hidden (no style='display: none')
-            var propertyRows = document.DocumentNode.SelectNodes("//table[@id='referencetable']//tr[not(@class='header') and not(contains(@style, 'display: none'))]");
+            var propertyRows = document.DocumentNode.SelectNodes("//table[@id='referencetable']//tr[not(contains(@style, 'display: none'))]");
             // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
             if (propertyRows != null)
             {
-                foreach (var row in propertyRows)
+                var nameColumnIndex = 1;
+                var typeColumnIndex = 5;
+                var descriptionColumnIndex = propertyRows.FirstOrDefault()?.SelectNodes("th")
+                    .Select((node, idx) => new { node, idx })
+                    .Where(x => x.node.InnerText.Contains("Description"))
+                    .Select(x => x.idx)
+                    .FirstOrDefault();
+
+                foreach (var row in propertyRows.Skip(descriptionColumnIndex != null ? 1 : 0))
                 {
                     var rowIsKey = row.GetClasses().Contains("key");
 
                     var columns = row.SelectNodes("td");
                     if (columns is { Count: >= 7 })
                     {
-                        var nameColumn = columns[1];
+                        var nameColumn = columns[nameColumnIndex];
                         var name = nameColumn.InnerText.Trim();
                         var linkNode = nameColumn.SelectSingleNode(".//a");
                         var href = linkNode?.Attributes["href"]?.Value;
                         var linkedSchemaName = href?.Split("?name=").Last().Trim();
 
-                        var type = columns[5].InnerText.Trim().Split(' ')[0].Trim();
-                        var description = columns[6].InnerText.Trim();
-                        if (string.IsNullOrEmpty(description) && columns.Count >= 9)
-                        {
-                            description = columns[8].InnerText.Trim();
-                        }
+                        var type = columns[typeColumnIndex].InnerText.Trim().Split(' ')[0].Trim();
+                        var description = descriptionColumnIndex.HasValue ? columns[descriptionColumnIndex.Value].InnerText.Trim() : string.Empty;
                         var isCollection = description.Contains("collection of", StringComparison.OrdinalIgnoreCase);
                         var isRequired = rowIsKey || bool.TryParse(columns[2].InnerText.Trim(), out var isMandatoryValue) && isMandatoryValue;
 

@@ -12,15 +12,15 @@ namespace ExactOnline.Api.Client.Models
     public partial class CRMContacts : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>The account to which the contact belongs</summary>
         public Guid? Account { get; set; }
-        /// <summary>The AccountIsCustomer property</summary>
+        /// <summary>Indicates if account is a customer</summary>
         public bool? AccountIsCustomer { get; set; }
-        /// <summary>The AccountIsSupplier property</summary>
+        /// <summary>Indicates if account is a supplier</summary>
         public bool? AccountIsSupplier { get; set; }
-        /// <summary>The AccountMainContact property</summary>
+        /// <summary>Reference to the main contact of the account</summary>
         public Guid? AccountMainContact { get; set; }
-        /// <summary>The AccountName property</summary>
+        /// <summary>Name of the account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountName { get; set; }
@@ -28,7 +28,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountName { get; set; }
 #endif
-        /// <summary>The AddressLine2 property</summary>
+        /// <summary>Second address line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AddressLine2 { get; set; }
@@ -36,7 +36,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AddressLine2 { get; set; }
 #endif
-        /// <summary>The AddressStreet property</summary>
+        /// <summary>Street name of the address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AddressStreet { get; set; }
@@ -44,7 +44,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AddressStreet { get; set; }
 #endif
-        /// <summary>The AddressStreetNumber property</summary>
+        /// <summary>Street number of the address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AddressStreetNumber { get; set; }
@@ -52,7 +52,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AddressStreetNumber { get; set; }
 #endif
-        /// <summary>The AddressStreetNumberSuffix property</summary>
+        /// <summary>Street number suffix of the address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AddressStreetNumberSuffix { get; set; }
@@ -60,11 +60,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AddressStreetNumberSuffix { get; set; }
 #endif
-        /// <summary>The AllowMailing property</summary>
+        /// <summary>Obsolete</summary>
         public int? AllowMailing { get; set; }
-        /// <summary>The BirthDate property</summary>
+        /// <summary>Birth date</summary>
         public DateTimeOffset? BirthDate { get; set; }
-        /// <summary>The BirthName property</summary>
+        /// <summary>Obsolete. Please don&apos;t use this field anymore as it may overwrite LastName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BirthName { get; set; }
@@ -72,7 +72,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BirthName { get; set; }
 #endif
-        /// <summary>The BirthNamePrefix property</summary>
+        /// <summary>Obsolete. Please don&apos;t use this field anymore as it may overwrite MiddleName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BirthNamePrefix { get; set; }
@@ -80,7 +80,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BirthNamePrefix { get; set; }
 #endif
-        /// <summary>The BirthPlace property</summary>
+        /// <summary>Birth place</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BirthPlace { get; set; }
@@ -88,7 +88,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BirthPlace { get; set; }
 #endif
-        /// <summary>The BusinessEmail property</summary>
+        /// <summary>Email address of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessEmail { get; set; }
@@ -96,7 +96,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BusinessEmail { get; set; }
 #endif
-        /// <summary>The BusinessFax property</summary>
+        /// <summary>Fax of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessFax { get; set; }
@@ -104,7 +104,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BusinessFax { get; set; }
 #endif
-        /// <summary>The BusinessMobile property</summary>
+        /// <summary>Mobile of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessMobile { get; set; }
@@ -112,7 +112,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BusinessMobile { get; set; }
 #endif
-        /// <summary>The BusinessPhone property</summary>
+        /// <summary>Phone of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessPhone { get; set; }
@@ -120,7 +120,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BusinessPhone { get; set; }
 #endif
-        /// <summary>The BusinessPhoneExtension property</summary>
+        /// <summary>Phone extension of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessPhoneExtension { get; set; }
@@ -128,7 +128,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BusinessPhoneExtension { get; set; }
 #endif
-        /// <summary>The City property</summary>
+        /// <summary>City</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? City { get; set; }
@@ -136,7 +136,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string City { get; set; }
 #endif
-        /// <summary>The Code property</summary>
+        /// <summary>Code of the account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -144,7 +144,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>The Country property</summary>
+        /// <summary>Country code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country { get; set; }
@@ -152,11 +152,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>The Created property</summary>
+        /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; set; }
-        /// <summary>The Creator property</summary>
+        /// <summary>User ID of the creator</summary>
         public Guid? Creator { get; set; }
-        /// <summary>The CreatorFullName property</summary>
+        /// <summary>Name of the creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorFullName { get; set; }
@@ -164,7 +164,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; set; }
 #endif
-        /// <summary>The CustomField property</summary>
+        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomField { get; set; }
@@ -172,9 +172,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomField { get; set; }
 #endif
-        /// <summary>The Division property</summary>
+        /// <summary>Division code</summary>
         public int? Division { get; set; }
-        /// <summary>The Email property</summary>
+        /// <summary>Email address of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -182,9 +182,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The EndDate property</summary>
+        /// <summary>End date</summary>
         public DateTimeOffset? EndDate { get; set; }
-        /// <summary>The FirstName property</summary>
+        /// <summary>First name. Provide at least first name or last name to create a new contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -192,7 +192,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The FullName property</summary>
+        /// <summary>Full name (First name Middle name Last name)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FullName { get; set; }
@@ -200,7 +200,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FullName { get; set; }
 #endif
-        /// <summary>The Gender property</summary>
+        /// <summary>Gender</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Gender { get; set; }
@@ -208,17 +208,17 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Gender { get; set; }
 #endif
-        /// <summary>The HID property</summary>
+        /// <summary>Contact ID</summary>
         public int? HID { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The IdentificationDate property</summary>
+        /// <summary>Identification date</summary>
         public DateTimeOffset? IdentificationDate { get; set; }
-        /// <summary>The IdentificationDocument property</summary>
+        /// <summary>Reference to the identification document of the contact</summary>
         public Guid? IdentificationDocument { get; set; }
-        /// <summary>The IdentificationUser property</summary>
+        /// <summary>Reference to the user responsible for identification</summary>
         public Guid? IdentificationUser { get; set; }
-        /// <summary>The Initials property</summary>
+        /// <summary>Initials</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Initials { get; set; }
@@ -226,13 +226,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Initials { get; set; }
 #endif
-        /// <summary>The IsAnonymised property</summary>
+        /// <summary>Indicates whether the contact is anonymised.</summary>
         public int? IsAnonymised { get; set; }
-        /// <summary>The IsMailingExcluded property</summary>
+        /// <summary>Indicates whether contacts are excluded from the marketing list</summary>
         public bool? IsMailingExcluded { get; set; }
-        /// <summary>The IsMainContact property</summary>
+        /// <summary>Indicates if this is the main contact of the linked account</summary>
         public bool? IsMainContact { get; set; }
-        /// <summary>The JobTitleDescription property</summary>
+        /// <summary>Jobtitle of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JobTitleDescription { get; set; }
@@ -240,7 +240,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string JobTitleDescription { get; set; }
 #endif
-        /// <summary>The Language property</summary>
+        /// <summary>Language code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Language { get; set; }
@@ -248,7 +248,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Language { get; set; }
 #endif
-        /// <summary>The LastName property</summary>
+        /// <summary>Last name. Provide at least first name or last name to create a new contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -256,11 +256,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The LeadPurpose property</summary>
+        /// <summary>Reference to purpose of an contact</summary>
         public Guid? LeadPurpose { get; set; }
-        /// <summary>The LeadSource property</summary>
+        /// <summary>Reference to source of an contact</summary>
         public Guid? LeadSource { get; set; }
-        /// <summary>The MarketingNotes property</summary>
+        /// <summary>The user should be able to do a full text search on these notes to gather contacts for a marketing campaign</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MarketingNotes { get; set; }
@@ -276,7 +276,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The MiddleName property</summary>
+        /// <summary>Middle name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MiddleName { get; set; }
@@ -284,7 +284,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string MiddleName { get; set; }
 #endif
-        /// <summary>The Mobile property</summary>
+        /// <summary>Business phone of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Mobile { get; set; }
@@ -292,11 +292,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Mobile { get; set; }
 #endif
-        /// <summary>The Modified property</summary>
+        /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
-        /// <summary>The Modifier property</summary>
+        /// <summary>User ID of modifier</summary>
         public Guid? Modifier { get; set; }
-        /// <summary>The ModifierFullName property</summary>
+        /// <summary>Name of the last modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifierFullName { get; set; }
@@ -304,7 +304,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; set; }
 #endif
-        /// <summary>The Nationality property</summary>
+        /// <summary>Nationality</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Nationality { get; set; }
@@ -312,7 +312,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Nationality { get; set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Extra remarks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -320,7 +320,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The PartnerName property</summary>
+        /// <summary>Last name of partner</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PartnerName { get; set; }
@@ -328,7 +328,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PartnerName { get; set; }
 #endif
-        /// <summary>The PartnerNamePrefix property</summary>
+        /// <summary>Middlename of partner</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PartnerNamePrefix { get; set; }
@@ -336,9 +336,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PartnerNamePrefix { get; set; }
 #endif
-        /// <summary>The Person property</summary>
+        /// <summary>Reference to the personal information of this contact such as name, gender, address etc.</summary>
         public Guid? Person { get; set; }
-        /// <summary>The Phone property</summary>
+        /// <summary>Phone of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Phone { get; set; }
@@ -346,7 +346,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Phone { get; set; }
 #endif
-        /// <summary>The PhoneExtension property</summary>
+        /// <summary>Phone extension of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneExtension { get; set; }
@@ -354,7 +354,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PhoneExtension { get; set; }
 #endif
-        /// <summary>The Picture property</summary>
+        /// <summary>This field is write-only. The picture can be downloaded through PictureUrl and PictureThumbnailUrl.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Picture { get; set; }
@@ -362,7 +362,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public byte[] Picture { get; set; }
 #endif
-        /// <summary>The PictureName property</summary>
+        /// <summary>Filename of the picture</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PictureName { get; set; }
@@ -370,7 +370,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PictureName { get; set; }
 #endif
-        /// <summary>The PictureThumbnailUrl property</summary>
+        /// <summary>Url to retrieve the picture thumbnail</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PictureThumbnailUrl { get; set; }
@@ -378,7 +378,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PictureThumbnailUrl { get; set; }
 #endif
-        /// <summary>The PictureUrl property</summary>
+        /// <summary>Url to retrieve the picture</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PictureUrl { get; set; }
@@ -386,7 +386,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PictureUrl { get; set; }
 #endif
-        /// <summary>The Postcode property</summary>
+        /// <summary>Postcode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Postcode { get; set; }
@@ -394,7 +394,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Postcode { get; set; }
 #endif
-        /// <summary>The SocialSecurityNumber property</summary>
+        /// <summary>Social security number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SocialSecurityNumber { get; set; }
@@ -402,9 +402,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SocialSecurityNumber { get; set; }
 #endif
-        /// <summary>The StartDate property</summary>
+        /// <summary>Start date</summary>
         public DateTimeOffset? StartDate { get; set; }
-        /// <summary>The State property</summary>
+        /// <summary>State</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }
@@ -412,7 +412,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string State { get; set; }
 #endif
-        /// <summary>The Title property</summary>
+        /// <summary>Title</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -420,7 +420,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The TitleAbbreviation property</summary>
+        /// <summary>TitleAbbreviation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TitleAbbreviation { get; set; }
@@ -428,7 +428,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string TitleAbbreviation { get; set; }
 #endif
-        /// <summary>The TitleDescription property</summary>
+        /// <summary>TitleDescription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TitleDescription { get; set; }

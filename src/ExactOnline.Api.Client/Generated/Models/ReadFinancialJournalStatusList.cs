@@ -12,7 +12,7 @@ namespace ExactOnline.Api.Client.Models
     public partial class ReadFinancialJournalStatusList : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Journal property</summary>
+        /// <summary>Reference to Journal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Journal { get; private set; }
@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Journal { get; private set; }
 #endif
-        /// <summary>The JournalDescription property</summary>
+        /// <summary>Description of Journal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JournalDescription { get; private set; }
@@ -28,9 +28,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string JournalDescription { get; private set; }
 #endif
-        /// <summary>The JournalType property</summary>
+        /// <summary>Type of Journal 10=Cash, 12=Bank, 20=Sales, 21=Return invoice, 22=Purchase, 23=Received return invoice, 90=General journal</summary>
         public int? JournalType { get; private set; }
-        /// <summary>The JournalTypeDescription property</summary>
+        /// <summary>Description of JournalType</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JournalTypeDescription { get; private set; }
@@ -46,11 +46,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Period property</summary>
+        /// <summary>Financial period</summary>
         public int? Period { get; private set; }
-        /// <summary>The Status property</summary>
+        /// <summary>Journal status for this year and period 0=open, 1=closed</summary>
         public int? Status { get; private set; }
-        /// <summary>The StatusDescription property</summary>
+        /// <summary>Description of Status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusDescription { get; private set; }
@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string StatusDescription { get; private set; }
 #endif
-        /// <summary>The Year property</summary>
+        /// <summary>Financial year</summary>
         public int? Year { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

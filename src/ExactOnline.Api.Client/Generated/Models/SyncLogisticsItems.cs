@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class SyncLogisticsItems : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The AverageCost property</summary>
+        /// <summary>The current average cost price</summary>
         public double? AverageCost { get; private set; }
-        /// <summary>The Barcode property</summary>
+        /// <summary>Barcode of the item (numeric string)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Barcode { get; private set; }
@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Barcode { get; private set; }
 #endif
-        /// <summary>The Class_01 property</summary>
+        /// <summary>Item class code referring to ItemClasses with ClassID 1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Class01 { get; private set; }
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Class01 { get; private set; }
 #endif
-        /// <summary>The Class_02 property</summary>
+        /// <summary>Item class code referring to ItemClasses with ClassID 2</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Class02 { get; private set; }
@@ -38,7 +38,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Class02 { get; private set; }
 #endif
-        /// <summary>The Class_03 property</summary>
+        /// <summary>Item class code referring to ItemClasses with ClassID 3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Class03 { get; private set; }
@@ -46,7 +46,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Class03 { get; private set; }
 #endif
-        /// <summary>The Class_04 property</summary>
+        /// <summary>Item class code referring to ItemClasses with ClassID 4</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Class04 { get; private set; }
@@ -54,7 +54,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Class04 { get; private set; }
 #endif
-        /// <summary>The Class_05 property</summary>
+        /// <summary>Item class code referring to ItemClasses with ClassID 5</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Class05 { get; private set; }
@@ -62,7 +62,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Class05 { get; private set; }
 #endif
-        /// <summary>The Class_06 property</summary>
+        /// <summary>Item class code referring to ItemClasses with ClassID 6</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Class06 { get; private set; }
@@ -70,7 +70,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Class06 { get; private set; }
 #endif
-        /// <summary>The Class_07 property</summary>
+        /// <summary>Item class code referring to ItemClasses with ClassID 7</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Class07 { get; private set; }
@@ -78,7 +78,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Class07 { get; private set; }
 #endif
-        /// <summary>The Class_08 property</summary>
+        /// <summary>Item class code referring to ItemClasses with ClassID 8</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Class08 { get; private set; }
@@ -86,7 +86,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Class08 { get; private set; }
 #endif
-        /// <summary>The Class_09 property</summary>
+        /// <summary>Item class code referring to ItemClasses with ClassID 9</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Class09 { get; private set; }
@@ -94,7 +94,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Class09 { get; private set; }
 #endif
-        /// <summary>The Class_10 property</summary>
+        /// <summary>Item class code referring to ItemClasses with ClassID 10</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Class10 { get; private set; }
@@ -102,7 +102,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Class10 { get; private set; }
 #endif
-        /// <summary>The Code property</summary>
+        /// <summary>Item code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; private set; }
@@ -110,9 +110,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Code { get; private set; }
 #endif
-        /// <summary>The CopyRemarks property</summary>
+        /// <summary>Copy sales remarks to sales lines</summary>
         public int? CopyRemarks { get; private set; }
-        /// <summary>The CostPriceCurrency property</summary>
+        /// <summary>The currency of the current and proposed cost price</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostPriceCurrency { get; private set; }
@@ -120,15 +120,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostPriceCurrency { get; private set; }
 #endif
-        /// <summary>The CostPriceNew property</summary>
+        /// <summary>Proposed cost price</summary>
         public double? CostPriceNew { get; private set; }
-        /// <summary>The CostPriceStandard property</summary>
+        /// <summary>The current standard cost price</summary>
         public double? CostPriceStandard { get; private set; }
-        /// <summary>The Created property</summary>
+        /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; private set; }
-        /// <summary>The Creator property</summary>
+        /// <summary>User ID of creator</summary>
         public Guid? Creator { get; private set; }
-        /// <summary>The CreatorFullName property</summary>
+        /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorFullName { get; private set; }
@@ -136,7 +136,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; private set; }
 #endif
-        /// <summary>The CustomField property</summary>
+        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomField { get; private set; }
@@ -144,7 +144,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomField { get; private set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; private set; }
@@ -152,11 +152,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; private set; }
 #endif
-        /// <summary>The Division property</summary>
+        /// <summary>Division code</summary>
         public int? Division { get; private set; }
-        /// <summary>The EndDate property</summary>
+        /// <summary>Together with StartDate this determines if the item is active</summary>
         public DateTimeOffset? EndDate { get; private set; }
-        /// <summary>The ExtraDescription property</summary>
+        /// <summary>Extra description text, slightly longer than the regular description (255 instead of 60)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtraDescription { get; private set; }
@@ -164,43 +164,43 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ExtraDescription { get; private set; }
 #endif
-        /// <summary>The FreeBoolField_01 property</summary>
+        /// <summary>Free boolean field 1</summary>
         public bool? FreeBoolField01 { get; private set; }
-        /// <summary>The FreeBoolField_02 property</summary>
+        /// <summary>Free boolean field 2</summary>
         public bool? FreeBoolField02 { get; private set; }
-        /// <summary>The FreeBoolField_03 property</summary>
+        /// <summary>Free boolean field 3</summary>
         public bool? FreeBoolField03 { get; private set; }
-        /// <summary>The FreeBoolField_04 property</summary>
+        /// <summary>Free boolean field 4</summary>
         public bool? FreeBoolField04 { get; private set; }
-        /// <summary>The FreeBoolField_05 property</summary>
+        /// <summary>Free boolean field 5</summary>
         public bool? FreeBoolField05 { get; private set; }
-        /// <summary>The FreeDateField_01 property</summary>
+        /// <summary>Free date field 1</summary>
         public DateTimeOffset? FreeDateField01 { get; private set; }
-        /// <summary>The FreeDateField_02 property</summary>
+        /// <summary>Free date field 2</summary>
         public DateTimeOffset? FreeDateField02 { get; private set; }
-        /// <summary>The FreeDateField_03 property</summary>
+        /// <summary>Free date field 3</summary>
         public DateTimeOffset? FreeDateField03 { get; private set; }
-        /// <summary>The FreeDateField_04 property</summary>
+        /// <summary>Free date field 4</summary>
         public DateTimeOffset? FreeDateField04 { get; private set; }
-        /// <summary>The FreeDateField_05 property</summary>
+        /// <summary>Free date field 5</summary>
         public DateTimeOffset? FreeDateField05 { get; private set; }
-        /// <summary>The FreeNumberField_01 property</summary>
+        /// <summary>Free numeric field 1</summary>
         public double? FreeNumberField01 { get; private set; }
-        /// <summary>The FreeNumberField_02 property</summary>
+        /// <summary>Free numeric field 2</summary>
         public double? FreeNumberField02 { get; private set; }
-        /// <summary>The FreeNumberField_03 property</summary>
+        /// <summary>Free numeric field 3</summary>
         public double? FreeNumberField03 { get; private set; }
-        /// <summary>The FreeNumberField_04 property</summary>
+        /// <summary>Free numeric field 4</summary>
         public double? FreeNumberField04 { get; private set; }
-        /// <summary>The FreeNumberField_05 property</summary>
+        /// <summary>Free numeric field 5</summary>
         public double? FreeNumberField05 { get; private set; }
-        /// <summary>The FreeNumberField_06 property</summary>
+        /// <summary>Free numeric field 6</summary>
         public double? FreeNumberField06 { get; private set; }
-        /// <summary>The FreeNumberField_07 property</summary>
+        /// <summary>Free numeric field 7</summary>
         public double? FreeNumberField07 { get; private set; }
-        /// <summary>The FreeNumberField_08 property</summary>
+        /// <summary>Free numeric field 8</summary>
         public double? FreeNumberField08 { get; private set; }
-        /// <summary>The FreeTextField_01 property</summary>
+        /// <summary>Free text field 1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FreeTextField01 { get; private set; }
@@ -208,7 +208,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FreeTextField01 { get; private set; }
 #endif
-        /// <summary>The FreeTextField_02 property</summary>
+        /// <summary>Free text field 2</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FreeTextField02 { get; private set; }
@@ -216,7 +216,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FreeTextField02 { get; private set; }
 #endif
-        /// <summary>The FreeTextField_03 property</summary>
+        /// <summary>Free text field 3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FreeTextField03 { get; private set; }
@@ -224,7 +224,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FreeTextField03 { get; private set; }
 #endif
-        /// <summary>The FreeTextField_04 property</summary>
+        /// <summary>Free text field 4</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FreeTextField04 { get; private set; }
@@ -232,7 +232,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FreeTextField04 { get; private set; }
 #endif
-        /// <summary>The FreeTextField_05 property</summary>
+        /// <summary>Free text field 5</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FreeTextField05 { get; private set; }
@@ -240,7 +240,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FreeTextField05 { get; private set; }
 #endif
-        /// <summary>The FreeTextField_06 property</summary>
+        /// <summary>Free text field 6</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FreeTextField06 { get; private set; }
@@ -248,7 +248,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FreeTextField06 { get; private set; }
 #endif
-        /// <summary>The FreeTextField_07 property</summary>
+        /// <summary>Free text field 7</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FreeTextField07 { get; private set; }
@@ -256,7 +256,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FreeTextField07 { get; private set; }
 #endif
-        /// <summary>The FreeTextField_08 property</summary>
+        /// <summary>Free text field 8</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FreeTextField08 { get; private set; }
@@ -264,7 +264,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FreeTextField08 { get; private set; }
 #endif
-        /// <summary>The FreeTextField_09 property</summary>
+        /// <summary>Free text field 9</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FreeTextField09 { get; private set; }
@@ -272,7 +272,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FreeTextField09 { get; private set; }
 #endif
-        /// <summary>The FreeTextField_10 property</summary>
+        /// <summary>Free text field 10</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FreeTextField10 { get; private set; }
@@ -280,9 +280,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FreeTextField10 { get; private set; }
 #endif
-        /// <summary>The GLCosts property</summary>
+        /// <summary>GL account the cost entries will be booked on. This overrules the GL account from the item group. If the license contains &apos;Intuit integration&apos; this property overrides the value in Settings, not the item group.</summary>
         public Guid? GLCosts { get; private set; }
-        /// <summary>The GLCostsCode property</summary>
+        /// <summary>Code of GL account for costs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GLCostsCode { get; private set; }
@@ -290,7 +290,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string GLCostsCode { get; private set; }
 #endif
-        /// <summary>The GLCostsDescription property</summary>
+        /// <summary>Description of GLCosts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GLCostsDescription { get; private set; }
@@ -298,9 +298,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string GLCostsDescription { get; private set; }
 #endif
-        /// <summary>The GLRevenue property</summary>
+        /// <summary>GL account the revenue will be booked on. This overrules the GL account from the item group. If the license contains &apos;Intuit integration&apos; this property overrides the value in Settings, not the item group.</summary>
         public Guid? GLRevenue { get; private set; }
-        /// <summary>The GLRevenueCode property</summary>
+        /// <summary>Code of GLRevenue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GLRevenueCode { get; private set; }
@@ -308,7 +308,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string GLRevenueCode { get; private set; }
 #endif
-        /// <summary>The GLRevenueDescription property</summary>
+        /// <summary>Description of GLRevenue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GLRevenueDescription { get; private set; }
@@ -316,9 +316,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string GLRevenueDescription { get; private set; }
 #endif
-        /// <summary>The GLStock property</summary>
+        /// <summary>GL account the stock entries will be booked on. This overrules the GL account from the item group. If the license contains &apos;Intuit integration&apos; this property overrides the value in Settings, not the item group.</summary>
         public Guid? GLStock { get; private set; }
-        /// <summary>The GLStockCode property</summary>
+        /// <summary>Code of GL account for stock</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GLStockCode { get; private set; }
@@ -326,7 +326,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string GLStockCode { get; private set; }
 #endif
-        /// <summary>The GLStockDescription property</summary>
+        /// <summary>Description of GLStock</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GLStockDescription { get; private set; }
@@ -334,41 +334,41 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string GLStockDescription { get; private set; }
 #endif
-        /// <summary>The GrossWeight property</summary>
+        /// <summary>Gross weight for international goods shipments</summary>
         public double? GrossWeight { get; private set; }
-        /// <summary>The ID property</summary>
+        /// <summary>A guid that is the unique identifier of the item</summary>
         public Guid? ID { get; private set; }
-        /// <summary>The IsBatchItem property</summary>
+        /// <summary>Indicates if batches are used for this item</summary>
         public int? IsBatchItem { get; private set; }
-        /// <summary>The IsFractionAllowedItem property</summary>
+        /// <summary>Indicates if fractions (for example 0.35) are allowed for quantities of this item</summary>
         public bool? IsFractionAllowedItem { get; private set; }
-        /// <summary>The IsMakeItem property</summary>
+        /// <summary>Indicates that an Item is produced to Inventory, not purchased</summary>
         public int? IsMakeItem { get; private set; }
-        /// <summary>The IsNewContract property</summary>
+        /// <summary>Only used for packages (IsPackageItem=1). To indicate if this package is a new contract type package</summary>
         public int? IsNewContract { get; private set; }
-        /// <summary>The IsOnDemandItem property</summary>
+        /// <summary>Is On demand Item</summary>
         public int? IsOnDemandItem { get; private set; }
-        /// <summary>The IsPackageItem property</summary>
+        /// <summary>Indicates if the item is a package item. Can only be created in the hosting administration</summary>
         public bool? IsPackageItem { get; private set; }
-        /// <summary>The IsPurchaseItem property</summary>
+        /// <summary>Indicates if the item can be purchased</summary>
         public bool? IsPurchaseItem { get; private set; }
-        /// <summary>The IsSalesItem property</summary>
+        /// <summary>Indicates if the item can be sold</summary>
         public bool? IsSalesItem { get; private set; }
-        /// <summary>The IsSerialItem property</summary>
+        /// <summary>Indicates that serial numbers are used for this item</summary>
         public bool? IsSerialItem { get; private set; }
-        /// <summary>The IsStockItem property</summary>
+        /// <summary>If you have the Trade or Manufacturing license and you check this property the item will be shown in the stock positions overview, stock counts and transaction lists. If you have the Invoice module and you check this property you will get a general journal entry based on the Stock and Costs G/L accounts of the item group. If you don’t want the general journal entry to be created you should change the Stock/Costs G/L account on the Item group page to the type Costs instead of Inventory. If you have the CRM Standalone license, the item will not be available.</summary>
         public bool? IsStockItem { get; private set; }
-        /// <summary>The IsSubcontractedItem property</summary>
+        /// <summary>Indicates if the item is provided by an outside supplier</summary>
         public bool? IsSubcontractedItem { get; private set; }
-        /// <summary>The IsTaxableItem property</summary>
+        /// <summary>Indicates if tax needs to be calculated for this item</summary>
         public int? IsTaxableItem { get; private set; }
-        /// <summary>The IsTime property</summary>
+        /// <summary>Indicates if the item is a time unit item (for example a labor hour item)</summary>
         public int? IsTime { get; private set; }
-        /// <summary>The IsWebshopItem property</summary>
+        /// <summary>Indicates if the item can be exported to a web shop. If you have the CRM Standalone license, the item will not be available.</summary>
         public int? IsWebshopItem { get; private set; }
-        /// <summary>The ItemGroup property</summary>
+        /// <summary>GUID of Item group of the item</summary>
         public Guid? ItemGroup { get; private set; }
-        /// <summary>The ItemGroupCode property</summary>
+        /// <summary>Code of ItemGroup</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemGroupCode { get; private set; }
@@ -376,7 +376,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ItemGroupCode { get; private set; }
 #endif
-        /// <summary>The ItemGroupDescription property</summary>
+        /// <summary>Description of ItemGroup</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemGroupDescription { get; private set; }
@@ -392,11 +392,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Modified property</summary>
+        /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; private set; }
-        /// <summary>The Modifier property</summary>
+        /// <summary>User ID of modifier</summary>
         public Guid? Modifier { get; private set; }
-        /// <summary>The ModifierFullName property</summary>
+        /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifierFullName { get; private set; }
@@ -404,9 +404,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; private set; }
 #endif
-        /// <summary>The NetWeight property</summary>
+        /// <summary>Net weight for international goods shipments</summary>
         public double? NetWeight { get; private set; }
-        /// <summary>The NetWeightUnit property</summary>
+        /// <summary>Net Weight unit for international goods shipment, only available in manufacturing packages</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NetWeightUnit { get; private set; }
@@ -414,7 +414,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string NetWeightUnit { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; private set; }
@@ -422,7 +422,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; private set; }
 #endif
-        /// <summary>The Picture property</summary>
+        /// <summary>This field is write-only. The picture can be downloaded through PictureUrl and PictureThumbnailUrl.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Picture { get; private set; }
@@ -430,7 +430,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public byte[] Picture { get; private set; }
 #endif
-        /// <summary>The PictureName property</summary>
+        /// <summary>File name of picture</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PictureName { get; private set; }
@@ -438,7 +438,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PictureName { get; private set; }
 #endif
-        /// <summary>The PictureThumbnailUrl property</summary>
+        /// <summary>Url where thumbnail picture can be retrieved</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PictureThumbnailUrl { get; private set; }
@@ -446,7 +446,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PictureThumbnailUrl { get; private set; }
 #endif
-        /// <summary>The PictureUrl property</summary>
+        /// <summary>Url where picture can be retrieved</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PictureUrl { get; private set; }
@@ -454,7 +454,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PictureUrl { get; private set; }
 #endif
-        /// <summary>The SalesVatCode property</summary>
+        /// <summary>Code of SalesVat</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SalesVatCode { get; private set; }
@@ -462,7 +462,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SalesVatCode { get; private set; }
 #endif
-        /// <summary>The SalesVatCodeDescription property</summary>
+        /// <summary>Description of SalesVatCode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SalesVatCodeDescription { get; private set; }
@@ -470,7 +470,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SalesVatCodeDescription { get; private set; }
 #endif
-        /// <summary>The SearchCode property</summary>
+        /// <summary>Search code of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SearchCode { get; private set; }
@@ -478,11 +478,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SearchCode { get; private set; }
 #endif
-        /// <summary>The SecurityLevel property</summary>
+        /// <summary>Security level (0 - 100)</summary>
         public int? SecurityLevel { get; private set; }
-        /// <summary>The StartDate property</summary>
+        /// <summary>Together with EndDate this determines if the item is active</summary>
         public DateTimeOffset? StartDate { get; private set; }
-        /// <summary>The StatisticalCode property</summary>
+        /// <summary>Statistical code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatisticalCode { get; private set; }
@@ -490,17 +490,17 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string StatisticalCode { get; private set; }
 #endif
-        /// <summary>The StatisticalNetWeight property</summary>
+        /// <summary>Statistical net weight</summary>
         public double? StatisticalNetWeight { get; private set; }
-        /// <summary>The StatisticalUnits property</summary>
+        /// <summary>Statistical units</summary>
         public double? StatisticalUnits { get; private set; }
-        /// <summary>The StatisticalValue property</summary>
+        /// <summary>Statistical value</summary>
         public double? StatisticalValue { get; private set; }
-        /// <summary>The Stock property</summary>
+        /// <summary>Quantity that is in stock</summary>
         public double? Stock { get; private set; }
-        /// <summary>The Timestamp property</summary>
+        /// <summary>Timestamp</summary>
         public long? Timestamp { get; private set; }
-        /// <summary>The Unit property</summary>
+        /// <summary>The standard unit of this item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Unit { get; private set; }
@@ -508,7 +508,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Unit { get; private set; }
 #endif
-        /// <summary>The UnitDescription property</summary>
+        /// <summary>Description of Unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnitDescription { get; private set; }
@@ -516,7 +516,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string UnitDescription { get; private set; }
 #endif
-        /// <summary>The UnitType property</summary>
+        /// <summary>Type of unit: A=Area, L=Length, O=Other, T=Time, V=Volume, W=Weight</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnitType { get; private set; }

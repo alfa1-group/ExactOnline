@@ -12,13 +12,13 @@ namespace ExactOnline.Api.Client.Models
     public partial class ProjectTimeTransactionsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>Reference to the account</summary>
         public Guid? Account { get; set; }
-        /// <summary>The Activity property</summary>
+        /// <summary>Guid ID of activity that is linked to project WBS (work breakdown structure)</summary>
         public Guid? Activity { get; set; }
-        /// <summary>The Attachment property</summary>
+        /// <summary>Attachment linked to the transaction (not mandatory)</summary>
         public Guid? Attachment { get; set; }
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency of amount FC</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -26,15 +26,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The Date property</summary>
+        /// <summary>Date and time the time transaction was done</summary>
         public DateTimeOffset? Date { get; set; }
-        /// <summary>The Employee property</summary>
+        /// <summary>Guid ID of the employee that is linked to the time transaction</summary>
         public Guid? Employee { get; set; }
-        /// <summary>The EndTime property</summary>
+        /// <summary>End time of the time transaction</summary>
         public DateTimeOffset? EndTime { get; set; }
-        /// <summary>The EntryNumber property</summary>
+        /// <summary>Number that represents the grouping of time transactions</summary>
         public int? EntryNumber { get; set; }
-        /// <summary>The ErrorText property</summary>
+        /// <summary>(Only used by backgroundjobs) To determine which transaction has an error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorText { get; set; }
@@ -42,11 +42,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ErrorText { get; set; }
 #endif
-        /// <summary>The HourStatus property</summary>
+        /// <summary>For POST/PUT: Status of the transaction: 1 = Draft, 2 = Rejected, 10 = Submitted  For GET: Status of the transaction: 1 = Draft, 2 = Rejected, 10 = Submitted, 11 = Failed on approval, 14 = Processing, 16 = Processing, 19 = Failed while undoing approval, 20 = Final</summary>
         public int? HourStatus { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The Item property</summary>
+        /// <summary>Item that is linked to the transaction, which provides the time information</summary>
         public Guid? Item { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Notes linked to the transaction for providing additional information (not mandatory)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -64,15 +64,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The Project property</summary>
+        /// <summary>Guid ID of project that is linked to the transaction</summary>
         public Guid? Project { get; set; }
-        /// <summary>The Quantity property</summary>
+        /// <summary>Quantity of the item that is linked to the transaction</summary>
         public double? Quantity { get; set; }
-        /// <summary>The StartTime property</summary>
+        /// <summary>Start time of the time transaction</summary>
         public DateTimeOffset? StartTime { get; set; }
-        /// <summary>The Subscription property</summary>
+        /// <summary>Guid ID of subscription that is linked to the transaction</summary>
         public Guid? Subscription { get; set; }
-        /// <summary>The SubscriptionAccount property</summary>
+        /// <summary>Subscription account ID that is linked to the transaction, this is to identify the referenced subscription</summary>
         public Guid? SubscriptionAccount { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class ProjectProjectPlanningPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>Account linked to the project planning</summary>
         public Guid? Account { get; set; }
-        /// <summary>The Description property</summary>
+        /// <summary>The description of the project planning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -22,15 +22,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Employee property</summary>
+        /// <summary>The GUID ID of the employee that is linked to the project planning</summary>
         public Guid? Employee { get; set; }
-        /// <summary>The EndDate property</summary>
+        /// <summary>The end date of the project planning, this is to indicate when the planning ends. E.g: End of a project</summary>
         public DateTimeOffset? EndDate { get; set; }
-        /// <summary>The Hours property</summary>
+        /// <summary>Hours planned for the employee</summary>
         public double? Hours { get; set; }
-        /// <summary>The HourType property</summary>
+        /// <summary>The type of hours entered for the project planning, item with &apos;Time&apos; type</summary>
         public Guid? HourType { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +40,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Additional information on this project planning record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -48,15 +48,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The OverAllocate property</summary>
+        /// <summary>Indicates whether the entries can have over allocated planning hours</summary>
         public bool? OverAllocate { get; set; }
-        /// <summary>The Project property</summary>
+        /// <summary>Project ID that is linked to the planning</summary>
         public Guid? Project { get; set; }
-        /// <summary>The ProjectWBS property</summary>
+        /// <summary>Referenced project work break down structure ID that is linked to the project planning</summary>
         public Guid? ProjectWBS { get; set; }
-        /// <summary>The StartDate property</summary>
+        /// <summary>Start date of the project planning</summary>
         public DateTimeOffset? StartDate { get; set; }
-        /// <summary>The Status property</summary>
+        /// <summary>Status of the project planning, 1 = Reserved, 2 = Planned</summary>
         public int? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

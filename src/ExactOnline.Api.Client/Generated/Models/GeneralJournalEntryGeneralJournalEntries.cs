@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class GeneralJournalEntryGeneralJournalEntries : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Created property</summary>
+        /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; set; }
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The CustomField property</summary>
+        /// <summary>Custom field endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomField { get; set; }
@@ -30,27 +30,27 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomField { get; set; }
 #endif
-        /// <summary>The Division property</summary>
+        /// <summary>Division code</summary>
         public int? Division { get; set; }
-        /// <summary>The EntryID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The EntryNumber property</summary>
+        /// <summary>Entry number</summary>
         public int? EntryNumber { get; set; }
-        /// <summary>The ExchangeRate property</summary>
+        /// <summary>Exchange rate</summary>
         public double? ExchangeRate { get; set; }
-        /// <summary>The FinancialPeriod property</summary>
+        /// <summary>The period of the transaction lines. The period should exist in the period date table</summary>
         public int? FinancialPeriod { get; set; }
-        /// <summary>The FinancialYear property</summary>
+        /// <summary>The financial year to which the entry belongs. The financial year should exist in the period date table</summary>
         public int? FinancialYear { get; set; }
-        /// <summary>The GeneralJournalEntryLines property</summary>
+        /// <summary>Collection of lines</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.GeneralJournalEntryGeneralJournalEntryLines? GeneralJournalEntryLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.GeneralJournalEntryGeneralJournalEntryLines>? GeneralJournalEntryLines { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.GeneralJournalEntryGeneralJournalEntryLines GeneralJournalEntryLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.GeneralJournalEntryGeneralJournalEntryLines> GeneralJournalEntryLines { get; set; }
 #endif
-        /// <summary>The JournalCode property</summary>
+        /// <summary>Code of Journal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JournalCode { get; set; }
@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string JournalCode { get; set; }
 #endif
-        /// <summary>The JournalDescription property</summary>
+        /// <summary>Description of Journal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JournalDescription { get; set; }
@@ -74,13 +74,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Modified property</summary>
+        /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
-        /// <summary>The Reversal property</summary>
+        /// <summary>Indicates that amounts are reversed, reversal allows to create correction entries with negative amounts on same side (debit/credit) as the original entry.</summary>
         public bool? Reversal { get; set; }
-        /// <summary>The Status property</summary>
+        /// <summary>Status: 5 = Rejected, 20 = Open, 50 = Processed</summary>
         public int? Status { get; set; }
-        /// <summary>The StatusDescription property</summary>
+        /// <summary>Description of Status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusDescription { get; set; }
@@ -88,9 +88,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string StatusDescription { get; set; }
 #endif
-        /// <summary>The Type property</summary>
+        /// <summary>Type: 10 = Opening balance, 90 = Other</summary>
         public int? Type { get; set; }
-        /// <summary>The TypeDescription property</summary>
+        /// <summary>Description of Type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TypeDescription { get; set; }
@@ -125,7 +125,7 @@ namespace ExactOnline.Api.Client.Models
                 { "ExchangeRate", n => { ExchangeRate = n.GetDoubleValue(); } },
                 { "FinancialPeriod", n => { FinancialPeriod = n.GetIntValue(); } },
                 { "FinancialYear", n => { FinancialYear = n.GetIntValue(); } },
-                { "GeneralJournalEntryLines", n => { GeneralJournalEntryLines = n.GetObjectValue<global::ExactOnline.Api.Client.Models.GeneralJournalEntryGeneralJournalEntryLines>(global::ExactOnline.Api.Client.Models.GeneralJournalEntryGeneralJournalEntryLines.CreateFromDiscriminatorValue); } },
+                { "GeneralJournalEntryLines", n => { GeneralJournalEntryLines = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.GeneralJournalEntryGeneralJournalEntryLines>(global::ExactOnline.Api.Client.Models.GeneralJournalEntryGeneralJournalEntryLines.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "JournalCode", n => { JournalCode = n.GetStringValue(); } },
                 { "JournalDescription", n => { JournalDescription = n.GetStringValue(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
@@ -153,7 +153,7 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteDoubleValue("ExchangeRate", ExchangeRate);
             writer.WriteIntValue("FinancialPeriod", FinancialPeriod);
             writer.WriteIntValue("FinancialYear", FinancialYear);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.GeneralJournalEntryGeneralJournalEntryLines>("GeneralJournalEntryLines", GeneralJournalEntryLines);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.GeneralJournalEntryGeneralJournalEntryLines>("GeneralJournalEntryLines", GeneralJournalEntryLines);
             writer.WriteStringValue("JournalCode", JournalCode);
             writer.WriteStringValue("JournalDescription", JournalDescription);
             writer.WriteDateTimeOffsetValue("Modified", Modified);

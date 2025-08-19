@@ -12,7 +12,7 @@ namespace ExactOnline.Api.Client.Models
     public partial class DocumentsDocumentAttachmentsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Attachment property</summary>
+        /// <summary>Contains the attachment(Format: Base64 encoded)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Attachment { get; set; }
@@ -20,9 +20,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public byte[] Attachment { get; set; }
 #endif
-        /// <summary>The Document property</summary>
+        /// <summary>Reference to the Document</summary>
         public Guid? Document { get; set; }
-        /// <summary>The FileName property</summary>
+        /// <summary>Filename of the attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileName { get; set; }
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string FileName { get; set; }
 #endif
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

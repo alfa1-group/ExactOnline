@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class SyncProjectProjectPlanning : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>Account linked to the project planning</summary>
         public Guid? Account { get; private set; }
-        /// <summary>The AccountCode property</summary>
+        /// <summary>Account code linked to project planning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountCode { get; private set; }
@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountCode { get; private set; }
 #endif
-        /// <summary>The AccountName property</summary>
+        /// <summary>Account name linked to project planning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountName { get; private set; }
@@ -30,15 +30,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountName { get; private set; }
 #endif
-        /// <summary>The BGTStatus property</summary>
+        /// <summary>Status of the background task for project planning, 1 = To be processed, 2 = Processed, 3 = Failed</summary>
         public int? BGTStatus { get; private set; }
-        /// <summary>The CommunicationErrorStatus property</summary>
+        /// <summary>Status of the external calender linked to project planning, 0 = No error, 1 = Credentials error, 2 = Technical error, 3 = Both credentials &amp;amp; technical errors, 4 = In progress</summary>
         public int? CommunicationErrorStatus { get; private set; }
-        /// <summary>The Created property</summary>
+        /// <summary>Date and time the record was created</summary>
         public DateTimeOffset? Created { get; private set; }
-        /// <summary>The Creator property</summary>
+        /// <summary>The GUID ID of the user that created the project planning</summary>
         public Guid? Creator { get; private set; }
-        /// <summary>The CreatorFullName property</summary>
+        /// <summary>The full name of the user that created the project planning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorFullName { get; private set; }
@@ -46,7 +46,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; private set; }
 #endif
-        /// <summary>The CustomField property</summary>
+        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomField { get; private set; }
@@ -54,7 +54,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomField { get; private set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>The description of the project planning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; private set; }
@@ -62,11 +62,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; private set; }
 #endif
-        /// <summary>The Division property</summary>
+        /// <summary>The code of the company that the record is stored in</summary>
         public int? Division { get; private set; }
-        /// <summary>The Employee property</summary>
+        /// <summary>The GUID ID of the employee that is linked to the project planning</summary>
         public Guid? Employee { get; private set; }
-        /// <summary>The EmployeeCode property</summary>
+        /// <summary>The code of the employee that is linked to the project planning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmployeeCode { get; private set; }
@@ -74,15 +74,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string EmployeeCode { get; private set; }
 #endif
-        /// <summary>The EmployeeHID property</summary>
+        /// <summary>The numeric ID of the employee that is linked to the project planning</summary>
         public int? EmployeeHID { get; private set; }
-        /// <summary>The EndDate property</summary>
+        /// <summary>The end date of the project planning, this is to indicate when the planning ends. E.g: End of a project</summary>
         public DateTimeOffset? EndDate { get; private set; }
-        /// <summary>The Hours property</summary>
+        /// <summary>Hours planned for the employee</summary>
         public double? Hours { get; private set; }
-        /// <summary>The HourType property</summary>
+        /// <summary>The type of hours entered for the project planning, item with &apos;Time&apos; type</summary>
         public Guid? HourType { get; private set; }
-        /// <summary>The HourTypeCode property</summary>
+        /// <summary>The code of the item with &apos;Time&apos; type that is used in project planning, can be used for searching for hour type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HourTypeCode { get; private set; }
@@ -90,7 +90,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string HourTypeCode { get; private set; }
 #endif
-        /// <summary>The HourTypeDescription property</summary>
+        /// <summary>The description of the item  with &apos;Time&apos; type that is used in project planning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HourTypeDescription { get; private set; }
@@ -98,9 +98,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string HourTypeDescription { get; private set; }
 #endif
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; private set; }
-        /// <summary>The IsBrokenRecurrence property</summary>
+        /// <summary>Indicates whether the project planning is separated from the recurring planning</summary>
         public bool? IsBrokenRecurrence { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,11 +110,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Modified property</summary>
+        /// <summary>Date the project planning record was modified</summary>
         public DateTimeOffset? Modified { get; private set; }
-        /// <summary>The Modifier property</summary>
+        /// <summary>The ID of the user that modified the project planning records</summary>
         public Guid? Modifier { get; private set; }
-        /// <summary>The ModifierFullName property</summary>
+        /// <summary>The full name of the user that modified the project planning record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifierFullName { get; private set; }
@@ -122,7 +122,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Additional information on this project planning record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; private set; }
@@ -130,11 +130,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; private set; }
 #endif
-        /// <summary>The OverAllocate property</summary>
+        /// <summary>Indicates whether the entries can have over allocated planning hours</summary>
         public bool? OverAllocate { get; private set; }
-        /// <summary>The Project property</summary>
+        /// <summary>Project ID that is linked to the planning</summary>
         public Guid? Project { get; private set; }
-        /// <summary>The ProjectCode property</summary>
+        /// <summary>Project code that is linked to the planning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectCode { get; private set; }
@@ -142,7 +142,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectCode { get; private set; }
 #endif
-        /// <summary>The ProjectDescription property</summary>
+        /// <summary>Project description that is linked to the planning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectDescription { get; private set; }
@@ -150,11 +150,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectDescription { get; private set; }
 #endif
-        /// <summary>The ProjectPlanningRecurring property</summary>
+        /// <summary>Recurring planning linked to project planning</summary>
         public Guid? ProjectPlanningRecurring { get; private set; }
-        /// <summary>The ProjectWBS property</summary>
+        /// <summary>Referenced project work break down structure ID that is linked to the project planning</summary>
         public Guid? ProjectWBS { get; private set; }
-        /// <summary>The ProjectWBSDescription property</summary>
+        /// <summary>Referenced project work break down structure description that is linked to the project planning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectWBSDescription { get; private set; }
@@ -162,13 +162,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectWBSDescription { get; private set; }
 #endif
-        /// <summary>The StartDate property</summary>
+        /// <summary>Start date of the project planning</summary>
         public DateTimeOffset? StartDate { get; private set; }
-        /// <summary>The Status property</summary>
+        /// <summary>Status of the project planning, 1 = Reserved, 2 = Planned</summary>
         public int? Status { get; private set; }
-        /// <summary>The Timestamp property</summary>
+        /// <summary>Timestamp</summary>
         public long? Timestamp { get; private set; }
-        /// <summary>The Type property</summary>
+        /// <summary>Type of project planning, it will always be 4 for employee</summary>
         public int? Type { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,13 +12,13 @@ namespace ExactOnline.Api.Client.Models
     public partial class SubscriptionSubscriptionsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The BlockEntry property</summary>
+        /// <summary>Indicates if subscription is blocked for time cost entry</summary>
         public bool? BlockEntry { get; set; }
-        /// <summary>The CancellationDate property</summary>
+        /// <summary>Date of cancellation</summary>
         public DateTimeOffset? CancellationDate { get; set; }
-        /// <summary>The Classification property</summary>
+        /// <summary>Guid ID of classification, to filter the report based on the classification of a subscription</summary>
         public Guid? Classification { get; set; }
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency code used in the transactions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -26,7 +26,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The CustomerPONumber property</summary>
+        /// <summary>Purchase order number of that is linked to customer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerPONumber { get; set; }
@@ -34,7 +34,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomerPONumber { get; set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description of the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -42,17 +42,17 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The EndDate property</summary>
+        /// <summary>The date and time when the subscription ends</summary>
         public DateTimeOffset? EndDate { get; set; }
-        /// <summary>The EntryID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The InvoiceDay property</summary>
+        /// <summary>For monthly, quaterly, half-year and yearly invoice period, the day number of the month when the invoice of the subscription is sent.While for weekly invoice period, the weekday number of the week when the invoice of the subscription is sent: 0=Monday 1=Tuesday 2=Wednesday 3=Thursday4=Friday 5=Saturday 6=Sunday</summary>
         public int? InvoiceDay { get; set; }
-        /// <summary>The InvoiceTo property</summary>
+        /// <summary>The account which the subsciption is invoiced to</summary>
         public Guid? InvoiceTo { get; set; }
-        /// <summary>The InvoiceToContactPerson property</summary>
+        /// <summary>The ID of the contact person that is linked to the account the subscription is invoice to</summary>
         public Guid? InvoiceToContactPerson { get; set; }
-        /// <summary>The InvoicingStartDate property</summary>
+        /// <summary>Date to start invoicing the account</summary>
         public DateTimeOffset? InvoicingStartDate { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +62,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>For additional information regarding the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -70,11 +70,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The OrderedBy property</summary>
+        /// <summary>Reference to order account, GUID ID of the subscriber</summary>
         public Guid? OrderedBy { get; set; }
-        /// <summary>The OrderedByContactPerson property</summary>
+        /// <summary>Reference of contact person of order account, displays the contact name of the subscriber</summary>
         public Guid? OrderedByContactPerson { get; set; }
-        /// <summary>The PaymentCondition property</summary>
+        /// <summary>Code of subscriptions payment condition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentCondition { get; set; }
@@ -82,23 +82,23 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PaymentCondition { get; set; }
 #endif
-        /// <summary>The Printed property</summary>
+        /// <summary>Indicates if subscription has been printed</summary>
         public bool? Printed { get; set; }
-        /// <summary>The Project property</summary>
+        /// <summary>The Guid ID of the project, reference to Project endpoint</summary>
         public Guid? Project { get; set; }
-        /// <summary>The ReasonCancelled property</summary>
+        /// <summary>Guid ID of the reason of cancellation record linked to the subscription</summary>
         public Guid? ReasonCancelled { get; set; }
-        /// <summary>The StartDate property</summary>
+        /// <summary>Start date of the subscription</summary>
         public DateTimeOffset? StartDate { get; set; }
-        /// <summary>The SubscriptionLines property</summary>
+        /// <summary>Collection of subscription lines linked to the subscription link, can be referenced to SubscriptionLines endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines? SubscriptionLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines>? SubscriptionLines { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines SubscriptionLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines> SubscriptionLines { get; set; }
 #endif
-        /// <summary>The SubscriptionType property</summary>
+        /// <summary>The GUID ID of the subscription condition, reference to SubscriptionType endpoint</summary>
         public Guid? SubscriptionType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -139,7 +139,7 @@ namespace ExactOnline.Api.Client.Models
                 { "Project", n => { Project = n.GetGuidValue(); } },
                 { "ReasonCancelled", n => { ReasonCancelled = n.GetGuidValue(); } },
                 { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "SubscriptionLines", n => { SubscriptionLines = n.GetObjectValue<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines>(global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines.CreateFromDiscriminatorValue); } },
+                { "SubscriptionLines", n => { SubscriptionLines = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines>(global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "SubscriptionType", n => { SubscriptionType = n.GetGuidValue(); } },
             };
         }
@@ -170,7 +170,7 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("Project", Project);
             writer.WriteGuidValue("ReasonCancelled", ReasonCancelled);
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines>("SubscriptionLines", SubscriptionLines);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SubscriptionSubscriptionLines>("SubscriptionLines", SubscriptionLines);
             writer.WriteGuidValue("SubscriptionType", SubscriptionType);
         }
     }

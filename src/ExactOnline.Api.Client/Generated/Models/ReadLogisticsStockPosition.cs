@@ -12,11 +12,11 @@ namespace ExactOnline.Api.Client.Models
     public partial class ReadLogisticsStockPosition : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The FreeStock property</summary>
+        /// <summary>Quantity of available stock</summary>
         public double? FreeStock { get; private set; }
-        /// <summary>The InStock property</summary>
+        /// <summary>Number of items in stock</summary>
         public double? InStock { get; private set; }
-        /// <summary>The ItemId property</summary>
+        /// <summary>Primary key, Item</summary>
         public Guid? ItemId { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -26,13 +26,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The PlanningIn property</summary>
+        /// <summary>Number of items that are planned to come in</summary>
         public double? PlanningIn { get; private set; }
-        /// <summary>The PlanningOut property</summary>
+        /// <summary>Number of items that are planned to go out</summary>
         public double? PlanningOut { get; private set; }
-        /// <summary>The ProjectedStock property</summary>
+        /// <summary>The quantity of stock projected given all planned future stock changes</summary>
         public double? ProjectedStock { get; private set; }
-        /// <summary>The ReservedStock property</summary>
+        /// <summary>Stock stored in the warehouse that is already reserved</summary>
         public double? ReservedStock { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class CRMQuotationsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ClosingDate property</summary>
+        /// <summary>Date on which you expect to close/win the deal</summary>
         public DateTimeOffset? ClosingDate { get; set; }
-        /// <summary>The Currency property</summary>
+        /// <summary>The currency of the quotation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -22,15 +22,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The DeliveryAccount property</summary>
+        /// <summary>The account where the items should delivered</summary>
         public Guid? DeliveryAccount { get; set; }
-        /// <summary>The DeliveryAccountContact property</summary>
+        /// <summary>The contact person of the delivery account</summary>
         public Guid? DeliveryAccountContact { get; set; }
-        /// <summary>The DeliveryAddress property</summary>
+        /// <summary>The id of the delivery address</summary>
         public Guid? DeliveryAddress { get; set; }
-        /// <summary>The DeliveryDate property</summary>
+        /// <summary>The date of the delivery</summary>
         public DateTimeOffset? DeliveryDate { get; set; }
-        /// <summary>The Description property</summary>
+        /// <summary>The description of the quotation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -38,11 +38,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Document property</summary>
+        /// <summary>Document linked to the quotation</summary>
         public Guid? Document { get; set; }
-        /// <summary>The DueDate property</summary>
+        /// <summary>Date after which the quotation is no longer valid</summary>
         public DateTimeOffset? DueDate { get; set; }
-        /// <summary>The IncotermAddress property</summary>
+        /// <summary>Address of Incoterm</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IncotermAddress { get; set; }
@@ -50,7 +50,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IncotermAddress { get; set; }
 #endif
-        /// <summary>The IncotermCode property</summary>
+        /// <summary>Code of Incoterm</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IncotermCode { get; set; }
@@ -58,11 +58,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IncotermCode { get; set; }
 #endif
-        /// <summary>The IncotermVersion property</summary>
+        /// <summary>Version of Incoterm Supported version for Incoterms : 2010, 2020</summary>
         public int? IncotermVersion { get; set; }
-        /// <summary>The InvoiceAccount property</summary>
+        /// <summary>The account to which the invoice is sent</summary>
         public Guid? InvoiceAccount { get; set; }
-        /// <summary>The InvoiceAccountContact property</summary>
+        /// <summary>The contact person of the invoice account</summary>
         public Guid? InvoiceAccountContact { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,13 +72,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Opportunity property</summary>
+        /// <summary>Opportunity linked to the quotation</summary>
         public Guid? Opportunity { get; set; }
-        /// <summary>The OrderAccount property</summary>
+        /// <summary>The account that requested the quotation</summary>
         public Guid? OrderAccount { get; set; }
-        /// <summary>The OrderAccountContact property</summary>
+        /// <summary>The contact person of the order account</summary>
         public Guid? OrderAccountContact { get; set; }
-        /// <summary>The PaymentCondition property</summary>
+        /// <summary>Payment condition code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentCondition { get; set; }
@@ -86,31 +86,31 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PaymentCondition { get; set; }
 #endif
-        /// <summary>The Project property</summary>
+        /// <summary>The project linked to the quotation</summary>
         public Guid? Project { get; set; }
-        /// <summary>The QuotationDate property</summary>
+        /// <summary>Date on which the quotation version is entered or printed. Both during entering and printing this date can be adjusted</summary>
         public DateTimeOffset? QuotationDate { get; set; }
-        /// <summary>The QuotationID property</summary>
+        /// <summary>Identifier of the quotation</summary>
         public Guid? QuotationID { get; set; }
-        /// <summary>The QuotationLines property</summary>
+        /// <summary>The collection of quotation lines</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.CRMQuotationLines? QuotationLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.CRMQuotationLines>? QuotationLines { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.CRMQuotationLines QuotationLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.CRMQuotationLines> QuotationLines { get; set; }
 #endif
-        /// <summary>The QuotationNumber property</summary>
+        /// <summary>Unique number to indentify the quotation. By default this number is based on the setting for first available number</summary>
         public int? QuotationNumber { get; set; }
-        /// <summary>The QuotationOrderChargeLines property</summary>
+        /// <summary>Collection of shipping cost and order charge lines. Only applicable in POST. Ignore the URL returns in GET.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.CRMQuotationOrderChargeLines? QuotationOrderChargeLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.CRMQuotationOrderChargeLines>? QuotationOrderChargeLines { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.CRMQuotationOrderChargeLines QuotationOrderChargeLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.CRMQuotationOrderChargeLines> QuotationOrderChargeLines { get; set; }
 #endif
-        /// <summary>The Remarks property</summary>
+        /// <summary>Extra text that can be added to the quotation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Remarks { get; set; }
@@ -118,17 +118,17 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Remarks { get; set; }
 #endif
-        /// <summary>The SalesChannel property</summary>
+        /// <summary>ID of Sales channel.</summary>
         public Guid? SalesChannel { get; set; }
-        /// <summary>The SalesPerson property</summary>
+        /// <summary>The user that is responsible for the quotation version</summary>
         public Guid? SalesPerson { get; set; }
-        /// <summary>The SelectionCode property</summary>
+        /// <summary>ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale &amp;amp; Distribution and Manufacturing</summary>
         public Guid? SelectionCode { get; set; }
-        /// <summary>The ShippingMethod property</summary>
+        /// <summary>Shipping method ID</summary>
         public Guid? ShippingMethod { get; set; }
-        /// <summary>The WarehouseID property</summary>
+        /// <summary>Warehouse. Only supported by the Plus, Professional and Premium editions for Wholesale &amp;amp; Distribution and Manufacturing</summary>
         public Guid? WarehouseID { get; set; }
-        /// <summary>The YourRef property</summary>
+        /// <summary>The number by which this quotation is identified by the order account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? YourRef { get; set; }
@@ -176,9 +176,9 @@ namespace ExactOnline.Api.Client.Models
                 { "Project", n => { Project = n.GetGuidValue(); } },
                 { "QuotationDate", n => { QuotationDate = n.GetDateTimeOffsetValue(); } },
                 { "QuotationID", n => { QuotationID = n.GetGuidValue(); } },
-                { "QuotationLines", n => { QuotationLines = n.GetObjectValue<global::ExactOnline.Api.Client.Models.CRMQuotationLines>(global::ExactOnline.Api.Client.Models.CRMQuotationLines.CreateFromDiscriminatorValue); } },
+                { "QuotationLines", n => { QuotationLines = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.CRMQuotationLines>(global::ExactOnline.Api.Client.Models.CRMQuotationLines.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "QuotationNumber", n => { QuotationNumber = n.GetIntValue(); } },
-                { "QuotationOrderChargeLines", n => { QuotationOrderChargeLines = n.GetObjectValue<global::ExactOnline.Api.Client.Models.CRMQuotationOrderChargeLines>(global::ExactOnline.Api.Client.Models.CRMQuotationOrderChargeLines.CreateFromDiscriminatorValue); } },
+                { "QuotationOrderChargeLines", n => { QuotationOrderChargeLines = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.CRMQuotationOrderChargeLines>(global::ExactOnline.Api.Client.Models.CRMQuotationOrderChargeLines.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Remarks", n => { Remarks = n.GetStringValue(); } },
                 { "SalesChannel", n => { SalesChannel = n.GetGuidValue(); } },
                 { "SalesPerson", n => { SalesPerson = n.GetGuidValue(); } },
@@ -216,9 +216,9 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("Project", Project);
             writer.WriteDateTimeOffsetValue("QuotationDate", QuotationDate);
             writer.WriteGuidValue("QuotationID", QuotationID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.CRMQuotationLines>("QuotationLines", QuotationLines);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.CRMQuotationLines>("QuotationLines", QuotationLines);
             writer.WriteIntValue("QuotationNumber", QuotationNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.CRMQuotationOrderChargeLines>("QuotationOrderChargeLines", QuotationOrderChargeLines);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.CRMQuotationOrderChargeLines>("QuotationOrderChargeLines", QuotationOrderChargeLines);
             writer.WriteStringValue("Remarks", Remarks);
             writer.WriteGuidValue("SalesChannel", SalesChannel);
             writer.WriteGuidValue("SalesPerson", SalesPerson);

@@ -12,11 +12,11 @@ namespace ExactOnline.Api.Client.Models
     public partial class SubscriptionSubscriptionLinesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The AmountDC property</summary>
+        /// <summary>Amount in the default currency of the company</summary>
         public double? AmountDC { get; set; }
-        /// <summary>The AmountFC property</summary>
+        /// <summary>Amount in the currency of the transaction</summary>
         public double? AmountFC { get; set; }
-        /// <summary>The Costcenter property</summary>
+        /// <summary>Cost center linked to the subscription line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Costcenter { get; set; }
@@ -24,7 +24,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Costcenter { get; set; }
 #endif
-        /// <summary>The Costunit property</summary>
+        /// <summary>Cost unit linked to the subscription line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Costunit { get; set; }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Costunit { get; set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description of the subscription line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -40,17 +40,17 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Discount property</summary>
+        /// <summary>Discount percentage of the subscription line</summary>
         public double? Discount { get; set; }
-        /// <summary>The EntryID property</summary>
+        /// <summary>Entry ID referencing to the subscription</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The FromDate property</summary>
+        /// <summary>The date which the subscription line starts</summary>
         public DateTimeOffset? FromDate { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The Item property</summary>
+        /// <summary>The item that is used by the subscription line for sales details. Reference to Item</summary>
         public Guid? Item { get; set; }
-        /// <summary>The LineType property</summary>
+        /// <summary>Reference to LineType endpoint</summary>
         public int? LineType { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,9 +60,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The NetPrice property</summary>
+        /// <summary>Net price in the currency of the transaction</summary>
         public double? NetPrice { get; set; }
-        /// <summary>The Notes property</summary>
+        /// <summary>To add or retrieve additional information in the subscription line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -70,11 +70,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The Quantity property</summary>
+        /// <summary>Quantity of item used in the subscription line</summary>
         public double? Quantity { get; set; }
-        /// <summary>The ToDate property</summary>
+        /// <summary>The date the subscription line ends</summary>
         public DateTimeOffset? ToDate { get; set; }
-        /// <summary>The UnitCode property</summary>
+        /// <summary>The code of the unit used in the subscription line. E.g: kg, meter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnitCode { get; set; }
@@ -82,11 +82,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string UnitCode { get; set; }
 #endif
-        /// <summary>The UnitPrice property</summary>
+        /// <summary>Unit price in the currency of the transaction (price * unit factor)</summary>
         public double? UnitPrice { get; set; }
-        /// <summary>The VATAmountFC property</summary>
+        /// <summary>Vat Amount in the currency of the transaction</summary>
         public double? VATAmountFC { get; set; }
-        /// <summary>The VATCode property</summary>
+        /// <summary>VAT code that is used in the subscription line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCode { get; set; }

@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class SalesOrderGoodsDeliveriesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The DeliveryDate property</summary>
+        /// <summary>Date of goods delivery</summary>
         public DateTimeOffset? DeliveryDate { get; set; }
-        /// <summary>The Description property</summary>
+        /// <summary>Header description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -22,17 +22,17 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Document property</summary>
+        /// <summary>Document that is manually linked to the sales order delivery</summary>
         public Guid? Document { get; set; }
-        /// <summary>The EntryID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The GoodsDeliveryLines property</summary>
+        /// <summary>Collection of lines</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines? GoodsDeliveryLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines>? GoodsDeliveryLines { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines GoodsDeliveryLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines> GoodsDeliveryLines { get; set; }
 #endif
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,7 +42,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Remarks property</summary>
+        /// <summary>Remarks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Remarks { get; set; }
@@ -50,9 +50,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Remarks { get; set; }
 #endif
-        /// <summary>The ShippingMethod property</summary>
+        /// <summary>Reference to shipping method. Define shipping method during POST, else it will be empty by default.</summary>
         public Guid? ShippingMethod { get; set; }
-        /// <summary>The TrackingNumber property</summary>
+        /// <summary>Reference to header tracking number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrackingNumber { get; set; }
@@ -82,7 +82,7 @@ namespace ExactOnline.Api.Client.Models
                 { "Description", n => { Description = n.GetStringValue(); } },
                 { "Document", n => { Document = n.GetGuidValue(); } },
                 { "EntryID", n => { EntryID = n.GetGuidValue(); } },
-                { "GoodsDeliveryLines", n => { GoodsDeliveryLines = n.GetObjectValue<global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines>(global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines.CreateFromDiscriminatorValue); } },
+                { "GoodsDeliveryLines", n => { GoodsDeliveryLines = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines>(global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
                 { "Remarks", n => { Remarks = n.GetStringValue(); } },
                 { "ShippingMethod", n => { ShippingMethod = n.GetGuidValue(); } },
@@ -100,7 +100,7 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteStringValue("Description", Description);
             writer.WriteGuidValue("Document", Document);
             writer.WriteGuidValue("EntryID", EntryID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines>("GoodsDeliveryLines", GoodsDeliveryLines);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.SalesOrderGoodsDeliveryLines>("GoodsDeliveryLines", GoodsDeliveryLines);
             writer.WriteStringValue("Remarks", Remarks);
             writer.WriteGuidValue("ShippingMethod", ShippingMethod);
             writer.WriteStringValue("TrackingNumber", TrackingNumber);

@@ -12,7 +12,7 @@ namespace ExactOnline.Api.Client.Models
     public partial class PurchaseOrderPurchaseOrdersPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Description property</summary>
+        /// <summary>Description of the purchase order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -20,9 +20,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Document property</summary>
+        /// <summary>Document that is manually linked to the purchase order</summary>
         public Guid? Document { get; set; }
-        /// <summary>The IncotermAddress property</summary>
+        /// <summary>Address of Incoterm</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IncotermAddress { get; set; }
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IncotermAddress { get; set; }
 #endif
-        /// <summary>The IncotermCode property</summary>
+        /// <summary>Code of Incoterm</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IncotermCode { get; set; }
@@ -38,7 +38,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IncotermCode { get; set; }
 #endif
-        /// <summary>The IncotermVersion property</summary>
+        /// <summary>Version of Incoterm Supported version for Incoterms : 2010, 2020</summary>
         public int? IncotermVersion { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,9 +48,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The OrderDate property</summary>
+        /// <summary>Order date</summary>
         public DateTimeOffset? OrderDate { get; set; }
-        /// <summary>The PaymentCondition property</summary>
+        /// <summary>The payment condition code used for due date and discount calculation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentCondition { get; set; }
@@ -58,13 +58,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PaymentCondition { get; set; }
 #endif
-        /// <summary>The PurchaseAgent property</summary>
+        /// <summary>Purchase agent</summary>
         public Guid? PurchaseAgent { get; set; }
-        /// <summary>The PurchaseOrderID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? PurchaseOrderID { get; set; }
-        /// <summary>The ReceiptDate property</summary>
+        /// <summary>This field shows the date the goods are expected to be received.</summary>
         public DateTimeOffset? ReceiptDate { get; set; }
-        /// <summary>The Remarks property</summary>
+        /// <summary>Include any relevant remarks regarding the purchase order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Remarks { get; set; }
@@ -72,15 +72,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Remarks { get; set; }
 #endif
-        /// <summary>The SelectionCode property</summary>
+        /// <summary>ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale &amp;amp; Distribution and Manufacturing</summary>
         public Guid? SelectionCode { get; set; }
-        /// <summary>The ShippingMethod property</summary>
+        /// <summary>ShippingMethod</summary>
         public Guid? ShippingMethod { get; set; }
-        /// <summary>The SupplierContact property</summary>
+        /// <summary>Contact of supplier</summary>
         public Guid? SupplierContact { get; set; }
-        /// <summary>The Warehouse property</summary>
+        /// <summary>Warehouse</summary>
         public Guid? Warehouse { get; set; }
-        /// <summary>The YourRef property</summary>
+        /// <summary>Shows the reference number associated with the purchase order. Enter a description and reference to make the purchase order easier to identify.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? YourRef { get; set; }

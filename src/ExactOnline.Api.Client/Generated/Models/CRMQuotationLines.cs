@@ -12,11 +12,11 @@ namespace ExactOnline.Api.Client.Models
     public partial class CRMQuotationLines : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The AmountDC property</summary>
+        /// <summary>Amount in the default currency of the company</summary>
         public double? AmountDC { get; set; }
-        /// <summary>The AmountFC property</summary>
+        /// <summary>Amount in the currency of the transaction</summary>
         public double? AmountFC { get; set; }
-        /// <summary>The CostCenter property</summary>
+        /// <summary>Reference to Cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenter { get; set; }
@@ -24,7 +24,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenter { get; set; }
 #endif
-        /// <summary>The CostCenterDescription property</summary>
+        /// <summary>Description of CostCenter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenterDescription { get; set; }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenterDescription { get; set; }
 #endif
-        /// <summary>The CostUnit property</summary>
+        /// <summary>Reference to Cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnit { get; set; }
@@ -40,7 +40,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnit { get; set; }
 #endif
-        /// <summary>The CostUnitDescription property</summary>
+        /// <summary>Description of CostUnit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnitDescription { get; set; }
@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnitDescription { get; set; }
 #endif
-        /// <summary>The CustomerItemCode property</summary>
+        /// <summary>Code the customer uses for this item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerItemCode { get; set; }
@@ -56,7 +56,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomerItemCode { get; set; }
 #endif
-        /// <summary>The CustomField property</summary>
+        /// <summary>Custom field endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomField { get; set; }
@@ -64,7 +64,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomField { get; set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>By default this contains the item description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -72,15 +72,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Discount property</summary>
+        /// <summary>Discount given on the default price. This is stored as a fraction. ie 5.5% is stored as .055</summary>
         public double? Discount { get; set; }
-        /// <summary>The Division property</summary>
+        /// <summary>Division code</summary>
         public int? Division { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The Item property</summary>
+        /// <summary>Reference to the item that is sold in this quotation line</summary>
         public Guid? Item { get; set; }
-        /// <summary>The ItemDescription property</summary>
+        /// <summary>Description of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemDescription { get; set; }
@@ -88,7 +88,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ItemDescription { get; set; }
 #endif
-        /// <summary>The LineNumber property</summary>
+        /// <summary>Indicates the sequence of the lines within one quotation</summary>
         public int? LineNumber { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,9 +98,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The NetPrice property</summary>
+        /// <summary>Net price of the quotation line</summary>
         public double? NetPrice { get; set; }
-        /// <summary>The Notes property</summary>
+        /// <summary>Extra notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -108,15 +108,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The Optional property</summary>
+        /// <summary>Indicates the optional line</summary>
         public bool? Optional { get; set; }
-        /// <summary>The Quantity property</summary>
+        /// <summary>The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor</summary>
         public double? Quantity { get; set; }
-        /// <summary>The QuotationID property</summary>
+        /// <summary>Identifies the quotation. All the lines of a quotation have the same QuotationID</summary>
         public Guid? QuotationID { get; set; }
-        /// <summary>The QuotationNumber property</summary>
+        /// <summary>Unique number to indentify the quotation. By default this number is based on the setting for first available number</summary>
         public int? QuotationNumber { get; set; }
-        /// <summary>The UnitCode property</summary>
+        /// <summary>Code of the item unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnitCode { get; set; }
@@ -124,7 +124,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string UnitCode { get; set; }
 #endif
-        /// <summary>The UnitDescription property</summary>
+        /// <summary>Description of the item unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnitDescription { get; set; }
@@ -132,11 +132,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string UnitDescription { get; set; }
 #endif
-        /// <summary>The UnitPrice property</summary>
+        /// <summary>Price per item unit</summary>
         public double? UnitPrice { get; set; }
-        /// <summary>The VATAmountFC property</summary>
+        /// <summary>VAT amount of the line in the currency of the transaction</summary>
         public double? VATAmountFC { get; set; }
-        /// <summary>The VATCode property</summary>
+        /// <summary>The VAT code that is used when the quotation is invoiced</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCode { get; set; }
@@ -144,7 +144,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCode { get; set; }
 #endif
-        /// <summary>The VATDescription property</summary>
+        /// <summary>Description of the VAT code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATDescription { get; set; }
@@ -152,9 +152,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATDescription { get; set; }
 #endif
-        /// <summary>The VATPercentage property</summary>
+        /// <summary>The VAT percentage of the VAT code</summary>
         public double? VATPercentage { get; set; }
-        /// <summary>The VersionNumber property</summary>
+        /// <summary>Number indicating the different reviews which are made for the quotation</summary>
         public int? VersionNumber { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

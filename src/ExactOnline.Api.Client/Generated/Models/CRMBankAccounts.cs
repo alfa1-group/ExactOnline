@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class CRMBankAccounts : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>Account (customer, supplier) to which the bank account belongs</summary>
         public Guid? Account { get; set; }
-        /// <summary>The AccountName property</summary>
+        /// <summary>The name of the account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountName { get; set; }
@@ -22,9 +22,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountName { get; set; }
 #endif
-        /// <summary>The Bank property</summary>
+        /// <summary>Obsolete</summary>
         public Guid? Bank { get; set; }
-        /// <summary>The BankAccount property</summary>
+        /// <summary>The bank account number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BankAccount { get; set; }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BankAccount { get; set; }
 #endif
-        /// <summary>The BankAccountHolderName property</summary>
+        /// <summary>Name of the holder of the bank account, as known by the bank</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BankAccountHolderName { get; set; }
@@ -40,7 +40,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BankAccountHolderName { get; set; }
 #endif
-        /// <summary>The BankDescription property</summary>
+        /// <summary>Obsolete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BankDescription { get; set; }
@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BankDescription { get; set; }
 #endif
-        /// <summary>The BankName property</summary>
+        /// <summary>Obsolete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BankName { get; set; }
@@ -56,7 +56,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BankName { get; set; }
 #endif
-        /// <summary>The BICCode property</summary>
+        /// <summary>BIC code of the bank where the bank account is held</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BICCode { get; set; }
@@ -64,13 +64,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BICCode { get; set; }
 #endif
-        /// <summary>The Blocked property</summary>
+        /// <summary>Indicates if the bank account is blocked</summary>
         public bool? Blocked { get; set; }
-        /// <summary>The Created property</summary>
+        /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; set; }
-        /// <summary>The Creator property</summary>
+        /// <summary>User ID of creator</summary>
         public Guid? Creator { get; set; }
-        /// <summary>The CreatorFullName property</summary>
+        /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorFullName { get; set; }
@@ -78,7 +78,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description of the bank account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -86,9 +86,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Division property</summary>
+        /// <summary>Division code</summary>
         public int? Division { get; set; }
-        /// <summary>The Format property</summary>
+        /// <summary>Format that belongs to the bank account number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Format { get; set; }
@@ -96,7 +96,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Format { get; set; }
 #endif
-        /// <summary>The IBAN property</summary>
+        /// <summary>Obsolete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IBAN { get; set; }
@@ -104,9 +104,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IBAN { get; set; }
 #endif
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The Main property</summary>
+        /// <summary>Indicates if the bank account is the main bank account</summary>
         public bool? Main { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,11 +116,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Modified property</summary>
+        /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
-        /// <summary>The Modifier property</summary>
+        /// <summary>User ID of modifier</summary>
         public Guid? Modifier { get; set; }
-        /// <summary>The ModifierFullName property</summary>
+        /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifierFullName { get; set; }
@@ -128,9 +128,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; set; }
 #endif
-        /// <summary>The PaymentServiceAccount property</summary>
+        /// <summary>ID of the Payment service account. Used when Type is &apos;P&apos; (Payment service)</summary>
         public Guid? PaymentServiceAccount { get; set; }
-        /// <summary>The Type property</summary>
+        /// <summary>The type indicates what entity the bank account is used for. A = Account (default), E = Employee, K = Cash, P = Payment service, R = Bank, S = Student, U = Unknown. Currently it&apos;s only possible to create &apos;Account&apos; type bank accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -138,7 +138,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The TypeDescription property</summary>
+        /// <summary>Description of the Type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TypeDescription { get; set; }

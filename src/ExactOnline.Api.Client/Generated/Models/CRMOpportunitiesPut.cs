@@ -12,21 +12,21 @@ namespace ExactOnline.Api.Client.Models
     public partial class CRMOpportunitiesPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>Lead to which the opportunity applies</summary>
         public Guid? Account { get; set; }
-        /// <summary>The ActionDate property</summary>
+        /// <summary>Indicates the date before/on the NextAction is supposed to be done</summary>
         public DateTimeOffset? ActionDate { get; set; }
-        /// <summary>The AmountDC property</summary>
+        /// <summary>Amount in the default currency of the company. AmountDC = AmountFC * RateFC</summary>
         public double? AmountDC { get; set; }
-        /// <summary>The AmountFC property</summary>
+        /// <summary>Amount in the currency of the transaction</summary>
         public double? AmountFC { get; set; }
-        /// <summary>The Campaign property</summary>
+        /// <summary>Reference to the campaign opportunity is related to</summary>
         public Guid? Campaign { get; set; }
-        /// <summary>The CloseDate property</summary>
+        /// <summary>The date when the opportunity is expected to be closed</summary>
         public DateTimeOffset? CloseDate { get; set; }
-        /// <summary>The Contact property</summary>
+        /// <summary>Contact ID of main contact person</summary>
         public Guid? Contact { get; set; }
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -34,9 +34,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The LeadSource property</summary>
+        /// <summary>The source of the lead/opportunity</summary>
         public Guid? LeadSource { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Name property</summary>
+        /// <summary>Name of the opportunity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -54,7 +54,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The NextAction property</summary>
+        /// <summary>Indicates what follow up action is to be undertaken to move the opportunity towards a deal. Is used in combination with ActionDate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextAction { get; set; }
@@ -62,7 +62,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string NextAction { get; set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Notes of the opportunity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -70,19 +70,19 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The OpportunityStage property</summary>
+        /// <summary>The stage of the opportunity. This is a list defined by the user</summary>
         public Guid? OpportunityStage { get; set; }
-        /// <summary>The Owner property</summary>
+        /// <summary>The resource who owns the opportunity and is responsible to close the opportunity (either won or lost)</summary>
         public Guid? Owner { get; set; }
-        /// <summary>The Probability property</summary>
+        /// <summary>The chance that the opportunity will be closed and won. The default for the probability depends on the default from the opportunity stage</summary>
         public double? Probability { get; set; }
-        /// <summary>The Project property</summary>
+        /// <summary>Reference to project</summary>
         public Guid? Project { get; set; }
-        /// <summary>The RateFC property</summary>
+        /// <summary>Exchange rate from original to division currency</summary>
         public double? RateFC { get; set; }
-        /// <summary>The ReasonCode property</summary>
+        /// <summary>Indicates the reason why the opportunity was lost.</summary>
         public Guid? ReasonCode { get; set; }
-        /// <summary>The SalesType property</summary>
+        /// <summary>Reference to Sales type</summary>
         public Guid? SalesType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class SyncProjectTimeCostTransactions : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>Guid ID of account that is linked to the project</summary>
         public Guid? Account { get; private set; }
-        /// <summary>The AccountName property</summary>
+        /// <summary>Name of account that is linked to the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountName { get; private set; }
@@ -22,15 +22,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountName { get; private set; }
 #endif
-        /// <summary>The AmountFC property</summary>
+        /// <summary>Calculated amount of the transaction based on (Quantity * PriceFC)</summary>
         public double? AmountFC { get; private set; }
-        /// <summary>The Attachment property</summary>
+        /// <summary>Attachment linked to the transaction (not mandatory)</summary>
         public Guid? Attachment { get; private set; }
-        /// <summary>The Created property</summary>
+        /// <summary>Date and time the transaction was created</summary>
         public DateTimeOffset? Created { get; private set; }
-        /// <summary>The Creator property</summary>
+        /// <summary>The Guid ID of user that created the transaction</summary>
         public Guid? Creator { get; private set; }
-        /// <summary>The CreatorFullName property</summary>
+        /// <summary>The full name of the user that created the record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorFullName { get; private set; }
@@ -38,7 +38,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; private set; }
 #endif
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency of amount FC</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; private set; }
@@ -46,7 +46,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; private set; }
 #endif
-        /// <summary>The CustomField property</summary>
+        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomField { get; private set; }
@@ -54,11 +54,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomField { get; private set; }
 #endif
-        /// <summary>The Date property</summary>
+        /// <summary>Date and time the transaction was done</summary>
         public DateTimeOffset? Date { get; private set; }
-        /// <summary>The Division property</summary>
+        /// <summary>Division code</summary>
         public int? Division { get; private set; }
-        /// <summary>The DivisionDescription property</summary>
+        /// <summary>Description of Division</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DivisionDescription { get; private set; }
@@ -66,13 +66,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string DivisionDescription { get; private set; }
 #endif
-        /// <summary>The Employee property</summary>
+        /// <summary>Guid ID of the employee that is linked to the transaction</summary>
         public Guid? Employee { get; private set; }
-        /// <summary>The EndTime property</summary>
+        /// <summary>End time of the time transaction</summary>
         public DateTimeOffset? EndTime { get; private set; }
-        /// <summary>The EntryNumber property</summary>
+        /// <summary>Number that represents the grouping of transactions</summary>
         public int? EntryNumber { get; private set; }
-        /// <summary>The ErrorText property</summary>
+        /// <summary>(Only used by backgroundjobs) To determine which transaction has an error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorText { get; private set; }
@@ -80,13 +80,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ErrorText { get; private set; }
 #endif
-        /// <summary>The HourStatus property</summary>
+        /// <summary>Status of the transaction: 1 = Draft, 2 = Rejected, 10 = Submitted, 11 = Failed on approval, 14 = Processing, 16 = Processing, 19 = Failed while undoing approval, 20 = Final</summary>
         public int? HourStatus { get; private set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; private set; }
-        /// <summary>The Item property</summary>
+        /// <summary>Item that is linked to the transaction, which provides the time or cost information</summary>
         public Guid? Item { get; private set; }
-        /// <summary>The ItemDescription property</summary>
+        /// <summary>Description of the item that is linked to the transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemDescription { get; private set; }
@@ -94,7 +94,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ItemDescription { get; private set; }
 #endif
-        /// <summary>The ItemDivisable property</summary>
+        /// <summary>Indicates if fractional quantities of the item can be used, for example quantity = 0.4</summary>
         public bool? ItemDivisable { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,11 +104,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Modified property</summary>
+        /// <summary>The date and time transaction record was modified</summary>
         public DateTimeOffset? Modified { get; private set; }
-        /// <summary>The Modifier property</summary>
+        /// <summary>The Guid ID of the user that modified the records</summary>
         public Guid? Modifier { get; private set; }
-        /// <summary>The ModifierFullName property</summary>
+        /// <summary>The full name of the user that modified the record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifierFullName { get; private set; }
@@ -116,7 +116,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Notes linked to the transaction for providing additional information (not mandatory)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; private set; }
@@ -124,13 +124,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; private set; }
 #endif
-        /// <summary>The PriceFC property</summary>
+        /// <summary>For use in AmountFC (Quantiy * Price FC)</summary>
         public double? PriceFC { get; private set; }
-        /// <summary>The Project property</summary>
+        /// <summary>Guid ID of project that is linked to the transaction</summary>
         public Guid? Project { get; private set; }
-        /// <summary>The ProjectAccount property</summary>
+        /// <summary>Project account ID that is linked to the transaction (not mandatory)</summary>
         public Guid? ProjectAccount { get; private set; }
-        /// <summary>The ProjectAccountCode property</summary>
+        /// <summary>Project account code that is linked to the transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectAccountCode { get; private set; }
@@ -138,7 +138,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectAccountCode { get; private set; }
 #endif
-        /// <summary>The ProjectAccountName property</summary>
+        /// <summary>Project account name that is linked to the transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectAccountName { get; private set; }
@@ -146,7 +146,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectAccountName { get; private set; }
 #endif
-        /// <summary>The ProjectCode property</summary>
+        /// <summary>Project code that is linked to the transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectCode { get; private set; }
@@ -154,7 +154,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectCode { get; private set; }
 #endif
-        /// <summary>The ProjectDescription property</summary>
+        /// <summary>Project description that is linked to the transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectDescription { get; private set; }
@@ -162,15 +162,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectDescription { get; private set; }
 #endif
-        /// <summary>The Quantity property</summary>
+        /// <summary>Quantity of the item that is linked to the transaction</summary>
         public double? Quantity { get; private set; }
-        /// <summary>The StartTime property</summary>
+        /// <summary>Start time of the time transaction</summary>
         public DateTimeOffset? StartTime { get; private set; }
-        /// <summary>The Subscription property</summary>
+        /// <summary>Guid ID of subscription that is linked to the transaction</summary>
         public Guid? Subscription { get; private set; }
-        /// <summary>The SubscriptionAccount property</summary>
+        /// <summary>Subscription account ID that is linked to the transaction, this is to identify the referenced subscription</summary>
         public Guid? SubscriptionAccount { get; private set; }
-        /// <summary>The SubscriptionAccountCode property</summary>
+        /// <summary>Subscription account code that is linked to the transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionAccountCode { get; private set; }
@@ -178,7 +178,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SubscriptionAccountCode { get; private set; }
 #endif
-        /// <summary>The SubscriptionAccountName property</summary>
+        /// <summary>Subscription account name that is linked to the transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionAccountName { get; private set; }
@@ -186,7 +186,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SubscriptionAccountName { get; private set; }
 #endif
-        /// <summary>The SubscriptionDescription property</summary>
+        /// <summary>Subscription description that is linked to the transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionDescription { get; private set; }
@@ -194,15 +194,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SubscriptionDescription { get; private set; }
 #endif
-        /// <summary>The SubscriptionNumber property</summary>
+        /// <summary>Subscription number that is linked to the transaction</summary>
         public int? SubscriptionNumber { get; private set; }
-        /// <summary>The Timestamp property</summary>
+        /// <summary>Timestamp</summary>
         public long? Timestamp { get; private set; }
-        /// <summary>The Type property</summary>
+        /// <summary>The type of transaction. E.g: 1 = Time, 2 = Cost</summary>
         public int? Type { get; private set; }
-        /// <summary>The WBS property</summary>
+        /// <summary>Guid ID of activity for time transaction or expense for cost transaction that is linked to project WBS (work breakdown structure)</summary>
         public Guid? WBS { get; private set; }
-        /// <summary>The WBSDescription property</summary>
+        /// <summary>Name of activity for time transaction or expense for cost transaction that is linked to project WBS (work breakdown structure)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WBSDescription { get; private set; }

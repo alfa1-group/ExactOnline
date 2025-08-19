@@ -12,17 +12,17 @@ namespace ExactOnline.Api.Client.Models
     public partial class FinancialTransactionCashEntriesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The CashEntryLines property</summary>
+        /// <summary>Collection of lines</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryLines? CashEntryLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryLines>? CashEntryLines { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryLines CashEntryLines { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryLines> CashEntryLines { get; set; }
 #endif
-        /// <summary>The ClosingBalanceFC property</summary>
+        /// <summary>Closing balance in the currency of the transaction</summary>
         public double? ClosingBalanceFC { get; set; }
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -30,15 +30,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The EntryID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The EntryNumber property</summary>
+        /// <summary>Entry number</summary>
         public int? EntryNumber { get; set; }
-        /// <summary>The FinancialPeriod property</summary>
+        /// <summary>The period of the transaction lines. The period should exist in the period date table</summary>
         public int? FinancialPeriod { get; set; }
-        /// <summary>The FinancialYear property</summary>
+        /// <summary>The financial year to which the entry belongs. The financial year should exist in the period date table</summary>
         public int? FinancialYear { get; set; }
-        /// <summary>The JournalCode property</summary>
+        /// <summary>Code of Journal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JournalCode { get; set; }
@@ -54,7 +54,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The OpeningBalanceFC property</summary>
+        /// <summary>Opening balance in the currency of the transaction</summary>
         public double? OpeningBalanceFC { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -74,7 +74,7 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CashEntryLines", n => { CashEntryLines = n.GetObjectValue<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryLines>(global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryLines.CreateFromDiscriminatorValue); } },
+                { "CashEntryLines", n => { CashEntryLines = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryLines>(global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryLines.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ClosingBalanceFC", n => { ClosingBalanceFC = n.GetDoubleValue(); } },
                 { "Currency", n => { Currency = n.GetStringValue(); } },
                 { "EntryID", n => { EntryID = n.GetGuidValue(); } },
@@ -93,7 +93,7 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryLines>("CashEntryLines", CashEntryLines);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryLines>("CashEntryLines", CashEntryLines);
             writer.WriteDoubleValue("ClosingBalanceFC", ClosingBalanceFC);
             writer.WriteStringValue("Currency", Currency);
             writer.WriteGuidValue("EntryID", EntryID);

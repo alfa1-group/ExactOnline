@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class SyncFinancialTransactionLines : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>Reference to account</summary>
         public Guid? Account { get; private set; }
-        /// <summary>The AccountCode property</summary>
+        /// <summary>Code of the Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountCode { get; private set; }
@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountCode { get; private set; }
 #endif
-        /// <summary>The AccountName property</summary>
+        /// <summary>Name of the Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountName { get; private set; }
@@ -30,17 +30,17 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountName { get; private set; }
 #endif
-        /// <summary>The AmountDC property</summary>
+        /// <summary>Amount in the default currency of the company</summary>
         public double? AmountDC { get; private set; }
-        /// <summary>The AmountFC property</summary>
+        /// <summary>Amount in the currency of the transaction</summary>
         public double? AmountFC { get; private set; }
-        /// <summary>The AmountVATBaseFC property</summary>
+        /// <summary>Vat base amount in the currency of the transaction</summary>
         public double? AmountVATBaseFC { get; private set; }
-        /// <summary>The AmountVATFC property</summary>
+        /// <summary>Vat amount in the currency of the transaction</summary>
         public double? AmountVATFC { get; private set; }
-        /// <summary>The Asset property</summary>
+        /// <summary>Reference to asset</summary>
         public Guid? Asset { get; private set; }
-        /// <summary>The AssetCode property</summary>
+        /// <summary>Code of Asset</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssetCode { get; private set; }
@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AssetCode { get; private set; }
 #endif
-        /// <summary>The AssetDescription property</summary>
+        /// <summary>Description of Asset</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssetDescription { get; private set; }
@@ -56,7 +56,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AssetDescription { get; private set; }
 #endif
-        /// <summary>The CostCenter property</summary>
+        /// <summary>Reference to cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenter { get; private set; }
@@ -64,7 +64,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenter { get; private set; }
 #endif
-        /// <summary>The CostCenterDescription property</summary>
+        /// <summary>Description of CostCenter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenterDescription { get; private set; }
@@ -72,7 +72,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenterDescription { get; private set; }
 #endif
-        /// <summary>The CostUnit property</summary>
+        /// <summary>Reference to cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnit { get; private set; }
@@ -80,7 +80,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnit { get; private set; }
 #endif
-        /// <summary>The CostUnitDescription property</summary>
+        /// <summary>Description of CostUnit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnitDescription { get; private set; }
@@ -88,11 +88,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnitDescription { get; private set; }
 #endif
-        /// <summary>The Created property</summary>
+        /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; private set; }
-        /// <summary>The Creator property</summary>
+        /// <summary>User ID of creator</summary>
         public Guid? Creator { get; private set; }
-        /// <summary>The CreatorFullName property</summary>
+        /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorFullName { get; private set; }
@@ -100,7 +100,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; private set; }
 #endif
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; private set; }
@@ -108,7 +108,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; private set; }
 #endif
-        /// <summary>The CustomField property</summary>
+        /// <summary>Custom field endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomField { get; private set; }
@@ -116,9 +116,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomField { get; private set; }
 #endif
-        /// <summary>The Date property</summary>
+        /// <summary>Entry date</summary>
         public DateTimeOffset? Date { get; private set; }
-        /// <summary>The Description property</summary>
+        /// <summary>Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; private set; }
@@ -126,13 +126,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; private set; }
 #endif
-        /// <summary>The Division property</summary>
+        /// <summary>Division code</summary>
         public int? Division { get; private set; }
-        /// <summary>The Document property</summary>
+        /// <summary>Reference to document</summary>
         public Guid? Document { get; private set; }
-        /// <summary>The DocumentNumber property</summary>
+        /// <summary>Number of the document</summary>
         public int? DocumentNumber { get; private set; }
-        /// <summary>The DocumentSubject property</summary>
+        /// <summary>Subject of the document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DocumentSubject { get; private set; }
@@ -140,15 +140,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string DocumentSubject { get; private set; }
 #endif
-        /// <summary>The DueDate property</summary>
+        /// <summary>Date that payment should be done</summary>
         public DateTimeOffset? DueDate { get; private set; }
-        /// <summary>The EntryID property</summary>
+        /// <summary>The transaction lines that make up a financial entry share the same EntryID</summary>
         public Guid? EntryID { get; private set; }
-        /// <summary>The EntryNumber property</summary>
+        /// <summary>Entry number of the header</summary>
         public int? EntryNumber { get; private set; }
-        /// <summary>The ExchangeRate property</summary>
+        /// <summary>Exchange rate</summary>
         public double? ExchangeRate { get; private set; }
-        /// <summary>The ExternalLinkDescription property</summary>
+        /// <summary>Description of ExternalLink</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalLinkDescription { get; private set; }
@@ -156,7 +156,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ExternalLinkDescription { get; private set; }
 #endif
-        /// <summary>The ExternalLinkReference property</summary>
+        /// <summary>External link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalLinkReference { get; private set; }
@@ -164,17 +164,17 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ExternalLinkReference { get; private set; }
 #endif
-        /// <summary>The ExtraDutyAmountFC property</summary>
+        /// <summary>Extra duty amount</summary>
         public double? ExtraDutyAmountFC { get; private set; }
-        /// <summary>The ExtraDutyPercentage property</summary>
+        /// <summary>Extra duty percentage</summary>
         public double? ExtraDutyPercentage { get; private set; }
-        /// <summary>The FinancialPeriod property</summary>
+        /// <summary>Financial period</summary>
         public int? FinancialPeriod { get; private set; }
-        /// <summary>The FinancialYear property</summary>
+        /// <summary>Financial year</summary>
         public int? FinancialYear { get; private set; }
-        /// <summary>The GLAccount property</summary>
+        /// <summary>General ledger account</summary>
         public Guid? GLAccount { get; private set; }
-        /// <summary>The GLAccountCode property</summary>
+        /// <summary>Code of GLAccount</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GLAccountCode { get; private set; }
@@ -182,7 +182,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string GLAccountCode { get; private set; }
 #endif
-        /// <summary>The GLAccountDescription property</summary>
+        /// <summary>Description of GLAccount</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GLAccountDescription { get; private set; }
@@ -190,13 +190,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string GLAccountDescription { get; private set; }
 #endif
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; private set; }
-        /// <summary>The InvoiceNumber property</summary>
+        /// <summary>Invoice number</summary>
         public int? InvoiceNumber { get; private set; }
-        /// <summary>The Item property</summary>
+        /// <summary>Reference to item</summary>
         public Guid? Item { get; private set; }
-        /// <summary>The ItemCode property</summary>
+        /// <summary>Code of Item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemCode { get; private set; }
@@ -204,7 +204,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ItemCode { get; private set; }
 #endif
-        /// <summary>The ItemDescription property</summary>
+        /// <summary>Description of Item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemDescription { get; private set; }
@@ -212,7 +212,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ItemDescription { get; private set; }
 #endif
-        /// <summary>The JournalCode property</summary>
+        /// <summary>The journal code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JournalCode { get; private set; }
@@ -220,7 +220,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string JournalCode { get; private set; }
 #endif
-        /// <summary>The JournalDescription property</summary>
+        /// <summary>The journal description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JournalDescription { get; private set; }
@@ -228,9 +228,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string JournalDescription { get; private set; }
 #endif
-        /// <summary>The LineNumber property</summary>
+        /// <summary>Line number</summary>
         public int? LineNumber { get; private set; }
-        /// <summary>The LineType property</summary>
+        /// <summary>Line type</summary>
         public int? LineType { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -240,11 +240,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Modified property</summary>
+        /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; private set; }
-        /// <summary>The Modifier property</summary>
+        /// <summary>User ID of modifier</summary>
         public Guid? Modifier { get; private set; }
-        /// <summary>The ModifierFullName property</summary>
+        /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifierFullName { get; private set; }
@@ -252,7 +252,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Extra remarks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; private set; }
@@ -260,13 +260,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; private set; }
 #endif
-        /// <summary>The OffsetID property</summary>
+        /// <summary>OffsetID</summary>
         public Guid? OffsetID { get; private set; }
-        /// <summary>The OrderNumber property</summary>
+        /// <summary>Order number</summary>
         public int? OrderNumber { get; private set; }
-        /// <summary>The PaymentDiscountAmount property</summary>
+        /// <summary>Discount amount when paid in time</summary>
         public double? PaymentDiscountAmount { get; private set; }
-        /// <summary>The PaymentReference property</summary>
+        /// <summary>Payment reference</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentReference { get; private set; }
@@ -274,9 +274,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PaymentReference { get; private set; }
 #endif
-        /// <summary>The Project property</summary>
+        /// <summary>Reference to project</summary>
         public Guid? Project { get; private set; }
-        /// <summary>The ProjectCode property</summary>
+        /// <summary>Code of Project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectCode { get; private set; }
@@ -284,7 +284,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectCode { get; private set; }
 #endif
-        /// <summary>The ProjectDescription property</summary>
+        /// <summary>Description of Project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectDescription { get; private set; }
@@ -292,9 +292,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectDescription { get; private set; }
 #endif
-        /// <summary>The Quantity property</summary>
+        /// <summary>Quantity</summary>
         public double? Quantity { get; private set; }
-        /// <summary>The SerialNumber property</summary>
+        /// <summary>Obsolete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SerialNumber { get; private set; }
@@ -302,11 +302,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SerialNumber { get; private set; }
 #endif
-        /// <summary>The Status property</summary>
+        /// <summary>20 = Open, 50 = Processed</summary>
         public int? Status { get; private set; }
-        /// <summary>The Subscription property</summary>
+        /// <summary>Reference to subscription line (Note: LineNumber greater than 0 is subscription line)</summary>
         public Guid? Subscription { get; private set; }
-        /// <summary>The SubscriptionDescription property</summary>
+        /// <summary>Description of subscription line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionDescription { get; private set; }
@@ -314,9 +314,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SubscriptionDescription { get; private set; }
 #endif
-        /// <summary>The Timestamp property</summary>
+        /// <summary>Timestamp</summary>
         public long? Timestamp { get; private set; }
-        /// <summary>The TrackingNumber property</summary>
+        /// <summary>Tracking number of item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrackingNumber { get; private set; }
@@ -324,7 +324,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string TrackingNumber { get; private set; }
 #endif
-        /// <summary>The TrackingNumberDescription property</summary>
+        /// <summary>Tracking number description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrackingNumberDescription { get; private set; }
@@ -332,9 +332,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string TrackingNumberDescription { get; private set; }
 #endif
-        /// <summary>The Type property</summary>
+        /// <summary>The transaction type.10 = Opening balance142 = Issue to parent20 = Sales entry145 = Shop order time entry21 = Sales credit note146 = Shop order time entry reversal30 = Purchase entry147 = Shop order by-product receipt31 = Purchase credit note148 = Shop order by-product reversal40 = Cash flow150 = Requirement issue50 = VAT return151 = Requirement reversal70 = Asset - Depreciation152 = Returned from parent71 = Asset - Investment155 = Subcontract Issue72 = Asset - Revaluation156 = Subcontract reversal73 = Asset - Transfer158 = Shop order completed74 = Asset - Split162 = Finish assembly75 = Asset - Discontinue170 = Payroll76 = Asset - Sales180 = Stock revaluation80 = Revaluation181 = Financial revaluation82 = Exchange rate difference195 = Stock count83 = Payment difference200 = Trade-in84 = Deferred revenue201 = Trade-in (Purchase)85 = Tracking number:Revaluation290 = Correction entry86 = Deferred cost310 = Period closing87 = VAT on prepayment320 = Year end reflection90 = Other321 = Year end costing95 = Accrued revenue322 = Year end profits to gross profit96 = Accrued costs323 = Year end costs to gross profit120 = Delivery324 = Year end tax121 = Sales return325 = Year end gross profit to net p/l130 = Receipt326 = Year end net p/l to balance sheet131 = Purchase return327 = Year end closing balance140 = Shop order stock receipt328 = Year start opening balance141 = Shop order stock reversal3000 = Budget</summary>
         public int? Type { get; private set; }
-        /// <summary>The VATCode property</summary>
+        /// <summary>Vat code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCode { get; private set; }
@@ -342,7 +342,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCode { get; private set; }
 #endif
-        /// <summary>The VATCodeDescription property</summary>
+        /// <summary>Description of VATCode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCodeDescription { get; private set; }
@@ -350,9 +350,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCodeDescription { get; private set; }
 #endif
-        /// <summary>The VATPercentage property</summary>
+        /// <summary>Vat percentage</summary>
         public double? VATPercentage { get; private set; }
-        /// <summary>The VATType property</summary>
+        /// <summary>Vat type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATType { get; private set; }
@@ -360,7 +360,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATType { get; private set; }
 #endif
-        /// <summary>The YourRef property</summary>
+        /// <summary>Your reference (of customer)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? YourRef { get; private set; }

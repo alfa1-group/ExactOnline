@@ -12,11 +12,11 @@ namespace ExactOnline.Api.Client.Models
     public partial class PurchaseOrderPurchaseOrderLines : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The AmountDC property</summary>
+        /// <summary>Amount in the default currency of the company</summary>
         public double? AmountDC { get; set; }
-        /// <summary>The AmountFC property</summary>
+        /// <summary>Amount in the currency of the transaction</summary>
         public double? AmountFC { get; set; }
-        /// <summary>The CostCenter property</summary>
+        /// <summary>Reference to Cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenter { get; set; }
@@ -24,7 +24,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenter { get; set; }
 #endif
-        /// <summary>The CostCenterDescription property</summary>
+        /// <summary>Description of CostCenter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenterDescription { get; set; }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenterDescription { get; set; }
 #endif
-        /// <summary>The CostUnit property</summary>
+        /// <summary>Reference to Cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnit { get; set; }
@@ -40,7 +40,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnit { get; set; }
 #endif
-        /// <summary>The CostUnitDescription property</summary>
+        /// <summary>Description of CostUnit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnitDescription { get; set; }
@@ -48,11 +48,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnitDescription { get; set; }
 #endif
-        /// <summary>The Created property</summary>
+        /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; set; }
-        /// <summary>The Creator property</summary>
+        /// <summary>User ID of creator</summary>
         public Guid? Creator { get; set; }
-        /// <summary>The CreatorFullName property</summary>
+        /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorFullName { get; set; }
@@ -60,7 +60,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; set; }
 #endif
-        /// <summary>The CustomField property</summary>
+        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomField { get; set; }
@@ -68,7 +68,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomField { get; set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description of the purchase order line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -76,13 +76,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Discount property</summary>
+        /// <summary>Discount in percentage for item</summary>
         public double? Discount { get; set; }
-        /// <summary>The Division property</summary>
+        /// <summary>Division code</summary>
         public int? Division { get; set; }
-        /// <summary>The Expense property</summary>
+        /// <summary>Expense related to the Work Breakdown Structure of the selected project. Only available with a professional service license</summary>
         public Guid? Expense { get; set; }
-        /// <summary>The ExpenseDescription property</summary>
+        /// <summary>Description of expense. Only available with a professional service license</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpenseDescription { get; set; }
@@ -90,19 +90,19 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ExpenseDescription { get; set; }
 #endif
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The InStock property</summary>
+        /// <summary>The current stock level of items shown in stock unit. The information is displayed only for items with the stock property selected.</summary>
         public double? InStock { get; set; }
-        /// <summary>The InvoicedQuantity property</summary>
+        /// <summary>Quantity of item that has been invoiced</summary>
         public double? InvoicedQuantity { get; set; }
-        /// <summary>The IsBatchNumberItem property</summary>
+        /// <summary>Indicates that an Item is an batch item</summary>
         public int? IsBatchNumberItem { get; set; }
-        /// <summary>The IsSerialNumberItem property</summary>
+        /// <summary>Indicates that an Item is an serial item</summary>
         public int? IsSerialNumberItem { get; set; }
-        /// <summary>The Item property</summary>
+        /// <summary>Reference to the item for purchase order</summary>
         public Guid? Item { get; set; }
-        /// <summary>The ItemBarcode property</summary>
+        /// <summary>Barcode of the item (numeric string)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemBarcode { get; set; }
@@ -110,7 +110,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ItemBarcode { get; set; }
 #endif
-        /// <summary>The ItemBarcodeAdditional property</summary>
+        /// <summary>This is the barcode for the unit other than standard unit of the item. Only supported by the Premium for Wholesale &amp;amp; Distribution and Manufacturing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemBarcodeAdditional { get; set; }
@@ -118,7 +118,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ItemBarcodeAdditional { get; set; }
 #endif
-        /// <summary>The ItemCode property</summary>
+        /// <summary>Item code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemCode { get; set; }
@@ -126,7 +126,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ItemCode { get; set; }
 #endif
-        /// <summary>The ItemDescription property</summary>
+        /// <summary>Description of item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemDescription { get; set; }
@@ -134,9 +134,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ItemDescription { get; set; }
 #endif
-        /// <summary>The ItemDivisable property</summary>
+        /// <summary>Indicates if fractional quantities of the item can be used, for example quantity = 0.4</summary>
         public bool? ItemDivisable { get; set; }
-        /// <summary>The LineNumber property</summary>
+        /// <summary>Line number</summary>
         public int? LineNumber { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,11 +146,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Modified property</summary>
+        /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
-        /// <summary>The Modifier property</summary>
+        /// <summary>User ID of modifier</summary>
         public Guid? Modifier { get; set; }
-        /// <summary>The ModifierFullName property</summary>
+        /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifierFullName { get; set; }
@@ -158,9 +158,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; set; }
 #endif
-        /// <summary>The NetPrice property</summary>
+        /// <summary>The net price is the unit price (VAT code taken into account) with any discount applied</summary>
         public double? NetPrice { get; set; }
-        /// <summary>The Notes property</summary>
+        /// <summary>Notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -168,9 +168,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The Project property</summary>
+        /// <summary>Reference to project. Only available with a professional service license</summary>
         public Guid? Project { get; set; }
-        /// <summary>The ProjectCode property</summary>
+        /// <summary>Project code. Only available with a professional service license</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectCode { get; set; }
@@ -178,7 +178,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectCode { get; set; }
 #endif
-        /// <summary>The ProjectDescription property</summary>
+        /// <summary>Description of the project. Only available with a professional service license</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectDescription { get; set; }
@@ -186,57 +186,57 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectDescription { get; set; }
 #endif
-        /// <summary>The ProjectedStock property</summary>
+        /// <summary>The current stock level + the planned quantity to be received - the planned quantity to deliver shown in stock unit.</summary>
         public double? ProjectedStock { get; set; }
-        /// <summary>The PurchaseOrderID property</summary>
+        /// <summary>Identifies the purchase order. All the lines of a purchase order have the same PurchaseOrderID</summary>
         public Guid? PurchaseOrderID { get; set; }
-        /// <summary>The Quantity property</summary>
+        /// <summary>Quantity in item units</summary>
         public double? Quantity { get; set; }
-        /// <summary>The QuantityInPurchaseUnits property</summary>
+        /// <summary>Quantity in purchase units. Use this field when creating a purchase order</summary>
         public double? QuantityInPurchaseUnits { get; set; }
-        /// <summary>The Rebill property</summary>
+        /// <summary>Indicates whether the purchase order line needs to be rebilled. Only available with a professional service license</summary>
         public bool? Rebill { get; set; }
-        /// <summary>The ReceiptDate property</summary>
+        /// <summary>Date the goods are expected to be received</summary>
         public DateTimeOffset? ReceiptDate { get; set; }
-        /// <summary>The ReceivedQuantity property</summary>
+        /// <summary>Quantity of goods received</summary>
         public double? ReceivedQuantity { get; set; }
-        /// <summary>The SalesOrder property</summary>
+        /// <summary>Sales order that is linked to a back to back sales order in purchase order. Show NULL if more than one sales order is linked to the purchase order line.</summary>
         public Guid? SalesOrder { get; set; }
-        /// <summary>The SalesOrderLine property</summary>
+        /// <summary>Sales order line of the sales order that Is linked to a back to back sales order in purchase order. Show NULL if more than one sales order is linked to the purchase order line.</summary>
         public Guid? SalesOrderLine { get; set; }
-        /// <summary>The SalesOrderLineNumber property</summary>
+        /// <summary>Number of the sales order line. Show NULL if more than one sales order is linked to the purchase order line.</summary>
         public int? SalesOrderLineNumber { get; set; }
-        /// <summary>The SalesOrderNumber property</summary>
+        /// <summary>Number of the sales order. Show NULL if more than one sales order is linked to the purchase order line.</summary>
         public int? SalesOrderNumber { get; set; }
-        /// <summary>The ShopOrder property</summary>
+        /// <summary>Obsolete. Please use &quot;ShopOrderMaterialPlans&quot; or &quot;ShopOrderRoutingStepPlans&quot; property.</summary>
         public Guid? ShopOrder { get; set; }
-        /// <summary>The ShopOrderMaterialPlan property</summary>
+        /// <summary>Obsolete. Please use &quot;ShopOrderMaterialPlans&quot; property.</summary>
         public Guid? ShopOrderMaterialPlan { get; set; }
-        /// <summary>The ShopOrderMaterialPlanLineNumber property</summary>
+        /// <summary>Obsolete. Please use &quot;ShopOrderMaterialPlans&quot; property.</summary>
         public int? ShopOrderMaterialPlanLineNumber { get; set; }
-        /// <summary>The ShopOrderMaterialPlans property</summary>
+        /// <summary>Collection of Shop order Material plans</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderMaterialPlans? ShopOrderMaterialPlans { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderMaterialPlans>? ShopOrderMaterialPlans { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderMaterialPlans ShopOrderMaterialPlans { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderMaterialPlans> ShopOrderMaterialPlans { get; set; }
 #endif
-        /// <summary>The ShopOrderNumber property</summary>
+        /// <summary>Obsolete. Please use &quot;ShopOrderMaterialPlans&quot; or &quot;ShopOrderRoutingStepPlans&quot; property.</summary>
         public int? ShopOrderNumber { get; set; }
-        /// <summary>The ShopOrderRoutingStepPlan property</summary>
+        /// <summary>Obsolete. Please use &quot;ShopOrderRoutingStepPlans&quot; property.</summary>
         public Guid? ShopOrderRoutingStepPlan { get; set; }
-        /// <summary>The ShopOrderRoutingStepPlanLineNumber property</summary>
+        /// <summary>Obsolete. Please use &quot;ShopOrderRoutingStepPlans&quot; property.</summary>
         public int? ShopOrderRoutingStepPlanLineNumber { get; set; }
-        /// <summary>The ShopOrderRoutingStepPlans property</summary>
+        /// <summary>Collection of Shop order Routing step plans</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderRoutingStepPlans? ShopOrderRoutingStepPlans { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderRoutingStepPlans>? ShopOrderRoutingStepPlans { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderRoutingStepPlans ShopOrderRoutingStepPlans { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderRoutingStepPlans> ShopOrderRoutingStepPlans { get; set; }
 #endif
-        /// <summary>The SupplierItemCode property</summary>
+        /// <summary>Code the supplier uses for this item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SupplierItemCode { get; set; }
@@ -244,9 +244,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SupplierItemCode { get; set; }
 #endif
-        /// <summary>The SupplierItemCopyRemarks property</summary>
+        /// <summary>Indicate if the notes content should be copied from SupplierItem&apos;s remarks. The default follows the CopyRemarks value from SupplierItem. Values: 0 = Do not copy remark, 1 = Copy remark</summary>
         public int? SupplierItemCopyRemarks { get; set; }
-        /// <summary>The Unit property</summary>
+        /// <summary>Code of item unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Unit { get; set; }
@@ -254,7 +254,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Unit { get; set; }
 #endif
-        /// <summary>The UnitDescription property</summary>
+        /// <summary>Description of unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnitDescription { get; set; }
@@ -262,11 +262,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string UnitDescription { get; set; }
 #endif
-        /// <summary>The UnitPrice property</summary>
+        /// <summary>Item price per purchase unit</summary>
         public double? UnitPrice { get; set; }
-        /// <summary>The VATAmount property</summary>
+        /// <summary>Amount of VAT charges calculated from total amount and vat percentage</summary>
         public double? VATAmount { get; set; }
-        /// <summary>The VATCode property</summary>
+        /// <summary>The VAT code used when the invoice was registered</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCode { get; set; }
@@ -274,7 +274,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCode { get; set; }
 #endif
-        /// <summary>The VATDescription property</summary>
+        /// <summary>Description of vat code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATDescription { get; set; }
@@ -282,7 +282,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATDescription { get; set; }
 #endif
-        /// <summary>The VATPercentage property</summary>
+        /// <summary>The VAT percentage of the VAT code. This is the percentage at the moment the invoice is created. It&apos;s also used by the default calculation of VAT amounts and VAT base amounts</summary>
         public double? VATPercentage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -352,11 +352,11 @@ namespace ExactOnline.Api.Client.Models
                 { "ShopOrder", n => { ShopOrder = n.GetGuidValue(); } },
                 { "ShopOrderMaterialPlan", n => { ShopOrderMaterialPlan = n.GetGuidValue(); } },
                 { "ShopOrderMaterialPlanLineNumber", n => { ShopOrderMaterialPlanLineNumber = n.GetIntValue(); } },
-                { "ShopOrderMaterialPlans", n => { ShopOrderMaterialPlans = n.GetObjectValue<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderMaterialPlans>(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderMaterialPlans.CreateFromDiscriminatorValue); } },
+                { "ShopOrderMaterialPlans", n => { ShopOrderMaterialPlans = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderMaterialPlans>(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderMaterialPlans.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ShopOrderNumber", n => { ShopOrderNumber = n.GetIntValue(); } },
                 { "ShopOrderRoutingStepPlan", n => { ShopOrderRoutingStepPlan = n.GetGuidValue(); } },
                 { "ShopOrderRoutingStepPlanLineNumber", n => { ShopOrderRoutingStepPlanLineNumber = n.GetIntValue(); } },
-                { "ShopOrderRoutingStepPlans", n => { ShopOrderRoutingStepPlans = n.GetObjectValue<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderRoutingStepPlans>(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderRoutingStepPlans.CreateFromDiscriminatorValue); } },
+                { "ShopOrderRoutingStepPlans", n => { ShopOrderRoutingStepPlans = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderRoutingStepPlans>(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderRoutingStepPlans.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "SupplierItemCode", n => { SupplierItemCode = n.GetStringValue(); } },
                 { "SupplierItemCopyRemarks", n => { SupplierItemCopyRemarks = n.GetIntValue(); } },
                 { "Unit", n => { Unit = n.GetStringValue(); } },
@@ -424,11 +424,11 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("ShopOrder", ShopOrder);
             writer.WriteGuidValue("ShopOrderMaterialPlan", ShopOrderMaterialPlan);
             writer.WriteIntValue("ShopOrderMaterialPlanLineNumber", ShopOrderMaterialPlanLineNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderMaterialPlans>("ShopOrderMaterialPlans", ShopOrderMaterialPlans);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderMaterialPlans>("ShopOrderMaterialPlans", ShopOrderMaterialPlans);
             writer.WriteIntValue("ShopOrderNumber", ShopOrderNumber);
             writer.WriteGuidValue("ShopOrderRoutingStepPlan", ShopOrderRoutingStepPlan);
             writer.WriteIntValue("ShopOrderRoutingStepPlanLineNumber", ShopOrderRoutingStepPlanLineNumber);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderRoutingStepPlans>("ShopOrderRoutingStepPlans", ShopOrderRoutingStepPlans);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderLines_ShopOrderRoutingStepPlans>("ShopOrderRoutingStepPlans", ShopOrderRoutingStepPlans);
             writer.WriteStringValue("SupplierItemCode", SupplierItemCode);
             writer.WriteIntValue("SupplierItemCopyRemarks", SupplierItemCopyRemarks);
             writer.WriteStringValue("Unit", Unit);

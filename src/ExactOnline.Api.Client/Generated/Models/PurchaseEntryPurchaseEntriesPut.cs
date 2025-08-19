@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class PurchaseEntryPurchaseEntriesPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The BatchNumber property</summary>
+        /// <summary>The number of the batch of entries. Normally a batch consists of multiple entries. Batchnumbers are filled for invoices created by: - Fixed entries - Prolongation (only available with module hosting)</summary>
         public int? BatchNumber { get; set; }
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -30,17 +30,17 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Document property</summary>
+        /// <summary>Reference to document</summary>
         public Guid? Document { get; set; }
-        /// <summary>The DueDate property</summary>
+        /// <summary>Date when payment should be done</summary>
         public DateTimeOffset? DueDate { get; set; }
-        /// <summary>The EntryDate property</summary>
+        /// <summary>Invoice date</summary>
         public DateTimeOffset? EntryDate { get; set; }
-        /// <summary>The EntryID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The EntryNumber property</summary>
+        /// <summary>Entry number</summary>
         public int? EntryNumber { get; set; }
-        /// <summary>The ExternalLinkReference property</summary>
+        /// <summary>External link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalLinkReference { get; set; }
@@ -48,11 +48,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ExternalLinkReference { get; set; }
 #endif
-        /// <summary>The GAccountAmountFC property</summary>
+        /// <summary>A positive value of the amount indicates that the amount is to be paid to the suppliers G bank account.In case of a credit invoice the amount should have negative value when retrieved or posted to Exact.</summary>
         public double? GAccountAmountFC { get; set; }
-        /// <summary>The InvoiceNumber property</summary>
+        /// <summary>Invoice number</summary>
         public int? InvoiceNumber { get; set; }
-        /// <summary>The Journal property</summary>
+        /// <summary>Journal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Journal { get; set; }
@@ -68,9 +68,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The OrderNumber property</summary>
+        /// <summary>Order number</summary>
         public int? OrderNumber { get; set; }
-        /// <summary>The PaymentCondition property</summary>
+        /// <summary>Payment condition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentCondition { get; set; }
@@ -78,7 +78,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PaymentCondition { get; set; }
 #endif
-        /// <summary>The PaymentReference property</summary>
+        /// <summary>The payment reference used for bank imports, VAT return and Tax reference</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentReference { get; set; }
@@ -86,21 +86,21 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PaymentReference { get; set; }
 #endif
-        /// <summary>The ProcessNumber property</summary>
+        /// <summary>Internal processing number, only relevant for Germany</summary>
         public int? ProcessNumber { get; set; }
-        /// <summary>The Rate property</summary>
+        /// <summary>Currency exchange rate</summary>
         public double? Rate { get; set; }
-        /// <summary>The ReportingPeriod property</summary>
+        /// <summary>The period of the transaction lines. The period should exist in the period date table</summary>
         public int? ReportingPeriod { get; set; }
-        /// <summary>The ReportingYear property</summary>
+        /// <summary>The financial year to which the entry belongs. The financial year should exist in the period date table</summary>
         public int? ReportingYear { get; set; }
-        /// <summary>The Reversal property</summary>
+        /// <summary>Indicates that amounts are reversed</summary>
         public bool? Reversal { get; set; }
-        /// <summary>The Supplier property</summary>
+        /// <summary>Reference to supplier (account)</summary>
         public Guid? Supplier { get; set; }
-        /// <summary>The VATAmountFC property</summary>
+        /// <summary>Vat Amount in the currency of the transaction</summary>
         public double? VATAmountFC { get; set; }
-        /// <summary>The YourRef property</summary>
+        /// <summary>Your reference</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? YourRef { get; set; }

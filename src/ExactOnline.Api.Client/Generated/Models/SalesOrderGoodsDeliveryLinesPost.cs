@@ -12,15 +12,15 @@ namespace ExactOnline.Api.Client.Models
     public partial class SalesOrderGoodsDeliveryLinesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The BatchNumbers property</summary>
+        /// <summary>Collection of batch numbers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers? BatchNumbers { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>? BatchNumbers { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers BatchNumbers { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers> BatchNumbers { get; set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description of sales order delivery</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -28,9 +28,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The EntryID property</summary>
+        /// <summary>The EntryID identifies the goods delivery. All the lines of a goods delivery have the same EntryID</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>The unique identifier of a stock transaction for a goods delivery line. A goods delivery line can be split into multiple storage locations. In this case, multiple storage locations will have the same stock transaction ID.</summary>
         public Guid? ID { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +40,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -48,21 +48,21 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The QuantityDelivered property</summary>
+        /// <summary>Quantity delivered</summary>
         public double? QuantityDelivered { get; set; }
-        /// <summary>The SalesOrderLineID property</summary>
+        /// <summary>Reference to sales order</summary>
         public Guid? SalesOrderLineID { get; set; }
-        /// <summary>The SerialNumbers property</summary>
+        /// <summary>Collection of serial numbers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers? SerialNumbers { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>? SerialNumbers { get; set; }
 #nullable restore
 #else
-        public global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers SerialNumbers { get; set; }
+        public List<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers> SerialNumbers { get; set; }
 #endif
-        /// <summary>The StorageLocation property</summary>
+        /// <summary>Reference to storage location</summary>
         public Guid? StorageLocation { get; set; }
-        /// <summary>The StorageLocationCode property</summary>
+        /// <summary>Storage location code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageLocationCode { get; set; }
@@ -70,7 +70,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string StorageLocationCode { get; set; }
 #endif
-        /// <summary>The StorageLocationDescription property</summary>
+        /// <summary>Storage location description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageLocationDescription { get; set; }
@@ -78,7 +78,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string StorageLocationDescription { get; set; }
 #endif
-        /// <summary>The TrackingNumber property</summary>
+        /// <summary>Reference to tracking number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrackingNumber { get; set; }
@@ -104,7 +104,7 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "BatchNumbers", n => { BatchNumbers = n.GetObjectValue<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers.CreateFromDiscriminatorValue); } },
+                { "BatchNumbers", n => { BatchNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Description", n => { Description = n.GetStringValue(); } },
                 { "EntryID", n => { EntryID = n.GetGuidValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
@@ -112,7 +112,7 @@ namespace ExactOnline.Api.Client.Models
                 { "Notes", n => { Notes = n.GetStringValue(); } },
                 { "QuantityDelivered", n => { QuantityDelivered = n.GetDoubleValue(); } },
                 { "SalesOrderLineID", n => { SalesOrderLineID = n.GetGuidValue(); } },
-                { "SerialNumbers", n => { SerialNumbers = n.GetObjectValue<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers.CreateFromDiscriminatorValue); } },
+                { "SerialNumbers", n => { SerialNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "StorageLocation", n => { StorageLocation = n.GetGuidValue(); } },
                 { "StorageLocationCode", n => { StorageLocationCode = n.GetStringValue(); } },
                 { "StorageLocationDescription", n => { StorageLocationDescription = n.GetStringValue(); } },
@@ -126,14 +126,14 @@ namespace ExactOnline.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>("BatchNumbers", BatchNumbers);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>("BatchNumbers", BatchNumbers);
             writer.WriteStringValue("Description", Description);
             writer.WriteGuidValue("EntryID", EntryID);
             writer.WriteGuidValue("ID", ID);
             writer.WriteStringValue("Notes", Notes);
             writer.WriteDoubleValue("QuantityDelivered", QuantityDelivered);
             writer.WriteGuidValue("SalesOrderLineID", SalesOrderLineID);
-            writer.WriteObjectValue<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>("SerialNumbers", SerialNumbers);
+            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>("SerialNumbers", SerialNumbers);
             writer.WriteGuidValue("StorageLocation", StorageLocation);
             writer.WriteStringValue("StorageLocationCode", StorageLocationCode);
             writer.WriteStringValue("StorageLocationDescription", StorageLocationDescription);

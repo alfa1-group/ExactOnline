@@ -12,7 +12,7 @@ namespace ExactOnline.Api.Client.Models
     public partial class PurchaseOrderPurchaseOrderLinesPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The CostCenter property</summary>
+        /// <summary>Reference to Cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenter { get; set; }
@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenter { get; set; }
 #endif
-        /// <summary>The CostUnit property</summary>
+        /// <summary>Reference to Cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnit { get; set; }
@@ -28,7 +28,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnit { get; set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description of the purchase order line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -36,11 +36,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Discount property</summary>
+        /// <summary>Discount in percentage for item</summary>
         public double? Discount { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The Item property</summary>
+        /// <summary>Reference to the item for purchase order</summary>
         public Guid? Item { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,9 +50,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The NetPrice property</summary>
+        /// <summary>The net price is the unit price (VAT code taken into account) with any discount applied</summary>
         public double? NetPrice { get; set; }
-        /// <summary>The Notes property</summary>
+        /// <summary>Notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -60,17 +60,17 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The Project property</summary>
+        /// <summary>Reference to project. Only available with a professional service license</summary>
         public Guid? Project { get; set; }
-        /// <summary>The QuantityInPurchaseUnits property</summary>
+        /// <summary>Quantity in purchase units. Use this field when creating a purchase order</summary>
         public double? QuantityInPurchaseUnits { get; set; }
-        /// <summary>The Rebill property</summary>
+        /// <summary>Indicates whether the purchase order line needs to be rebilled. Only available with a professional service license</summary>
         public bool? Rebill { get; set; }
-        /// <summary>The ReceiptDate property</summary>
+        /// <summary>Date the goods are expected to be received</summary>
         public DateTimeOffset? ReceiptDate { get; set; }
-        /// <summary>The UnitPrice property</summary>
+        /// <summary>Item price per purchase unit</summary>
         public double? UnitPrice { get; set; }
-        /// <summary>The VATCode property</summary>
+        /// <summary>The VAT code used when the invoice was registered</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCode { get; set; }
@@ -78,7 +78,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCode { get; set; }
 #endif
-        /// <summary>The VATPercentage property</summary>
+        /// <summary>The VAT percentage of the VAT code. This is the percentage at the moment the invoice is created. It&apos;s also used by the default calculation of VAT amounts and VAT base amounts</summary>
         public double? VATPercentage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

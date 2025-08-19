@@ -12,11 +12,11 @@ namespace ExactOnline.Api.Client.Models
     public partial class SalesEntrySalesEntryLinesPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The AmountFC property</summary>
+        /// <summary>For normal lines it&apos;s the amount excluding VAT</summary>
         public double? AmountFC { get; set; }
-        /// <summary>The Asset property</summary>
+        /// <summary>Reference to Asset</summary>
         public Guid? Asset { get; set; }
-        /// <summary>The CostCenter property</summary>
+        /// <summary>Reference to Cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenter { get; set; }
@@ -24,7 +24,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenter { get; set; }
 #endif
-        /// <summary>The CostUnit property</summary>
+        /// <summary>Reference to Cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnit { get; set; }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnit { get; set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description. Can be different for header and lines</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -40,19 +40,19 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The EntryID property</summary>
+        /// <summary>The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The ExtraDutyAmountFC property</summary>
+        /// <summary>Extra duty amount in the currency of the transaction. Both extra duty amount and VAT amount need to be specified in order to differ this property from automatically calculated.</summary>
         public double? ExtraDutyAmountFC { get; set; }
-        /// <summary>The ExtraDutyPercentage property</summary>
+        /// <summary>Extra duty percentage for the item</summary>
         public double? ExtraDutyPercentage { get; set; }
-        /// <summary>The From property</summary>
+        /// <summary>From date to identify the range for accrued/deferred revenue. This is used in combination with the property &apos;To&apos; that defines the end date</summary>
         public DateTimeOffset? From { get; set; }
-        /// <summary>The GLAccount property</summary>
+        /// <summary>The GL Account of the invoice line. This field is generated based on the revenue account of the item (or the related item group). G/L Account is also used to determine whether the costcenter / costunit is mandatory</summary>
         public Guid? GLAccount { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The IntraStatArea property</summary>
+        /// <summary>IntraStat area (only relevant when IntraStat for sales is enabled in the administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntraStatArea { get; set; }
@@ -60,7 +60,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IntraStatArea { get; set; }
 #endif
-        /// <summary>The IntraStatCountry property</summary>
+        /// <summary>IntraStatCountry (only relevant when IntraStat for sales is enabled in the administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntraStatCountry { get; set; }
@@ -68,7 +68,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IntraStatCountry { get; set; }
 #endif
-        /// <summary>The IntraStatDeliveryTerm property</summary>
+        /// <summary>IntraStat delivery term (only relevant when IntraStat for sales is enabled in the administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntraStatDeliveryTerm { get; set; }
@@ -76,7 +76,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IntraStatDeliveryTerm { get; set; }
 #endif
-        /// <summary>The IntraStatTransactionA property</summary>
+        /// <summary>IntraStat transaction A (only relevant when IntraStat for sales is enabled in the administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntraStatTransactionA { get; set; }
@@ -84,7 +84,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IntraStatTransactionA { get; set; }
 #endif
-        /// <summary>The IntraStatTransactionB property</summary>
+        /// <summary>IntraStat transaction B (only relevant when IntraStat for sales is enabled in the Belgium, Luxembourg, France &amp;amp; United Kingdom administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntraStatTransactionB { get; set; }
@@ -92,7 +92,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IntraStatTransactionB { get; set; }
 #endif
-        /// <summary>The IntraStatTransportMethod property</summary>
+        /// <summary>IntraStat transport method (only relevant when IntraStat for sales is enabled in the administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntraStatTransportMethod { get; set; }
@@ -108,7 +108,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Extra notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -116,11 +116,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The Project property</summary>
+        /// <summary>The project to which the sales transaction line is linked. The project can be different per line. Sometimes also the project in the header is filled although this is not really used</summary>
         public Guid? Project { get; set; }
-        /// <summary>The Quantity property</summary>
+        /// <summary>The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor</summary>
         public double? Quantity { get; set; }
-        /// <summary>The SerialNumber property</summary>
+        /// <summary>Serial number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SerialNumber { get; set; }
@@ -128,9 +128,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SerialNumber { get; set; }
 #endif
-        /// <summary>The StatisticalNetWeight property</summary>
+        /// <summary>Statistical NetWeight (only relevant when IntraStat for sales is enabled in the administration)</summary>
         public double? StatisticalNetWeight { get; set; }
-        /// <summary>The StatisticalNumber property</summary>
+        /// <summary>Statistical Number (only relevant when IntraStat for sales is enabled in the administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatisticalNumber { get; set; }
@@ -138,25 +138,25 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string StatisticalNumber { get; set; }
 #endif
-        /// <summary>The StatisticalQuantity property</summary>
+        /// <summary>Statistical Quantity (only relevant when IntraStat for sales is enabled in the administration)</summary>
         public double? StatisticalQuantity { get; set; }
-        /// <summary>The StatisticalValue property</summary>
+        /// <summary>Statistical Value (only relevant when IntraStat for sales is enabled in the administration)</summary>
         public double? StatisticalValue { get; set; }
-        /// <summary>The Subscription property</summary>
+        /// <summary>When generating invoices from subscriptions, this field records the link between invoice lines and subscription lines</summary>
         public Guid? Subscription { get; set; }
-        /// <summary>The TaxSchedule property</summary>
+        /// <summary>Obsolete</summary>
         public Guid? TaxSchedule { get; set; }
-        /// <summary>The To property</summary>
+        /// <summary>To date to identify the range for accrued/deferred revenue. This is used in combination with the property &apos;From&apos; that defines the start date</summary>
         public DateTimeOffset? To { get; set; }
-        /// <summary>The TrackingNumber property</summary>
+        /// <summary>Reference to TrackingNumber</summary>
         public Guid? TrackingNumber { get; set; }
-        /// <summary>The VATAmountFC property</summary>
+        /// <summary>VAT amount in the currency of the transaction. Use this property to specify a VAT amount that differs from the VAT amount that is automatically calculated. However if the transaction uses extra duty, extra duty amount also needs to be specified.</summary>
         public double? VATAmountFC { get; set; }
-        /// <summary>The VATBaseAmountDC property</summary>
+        /// <summary>The VAT base amount in the default currency of the company. This is calculated based on the VATBaseAmountFC</summary>
         public double? VATBaseAmountDC { get; set; }
-        /// <summary>The VATBaseAmountFC property</summary>
+        /// <summary>The VAT base amount in invoice currency. This is calculated with the use of VAT codes. It&apos;s an internal value</summary>
         public double? VATBaseAmountFC { get; set; }
-        /// <summary>The VATCode property</summary>
+        /// <summary>The VAT code used when the invoice was registered. If this property is not filled, it will use the default VAT code of the G/L account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCode { get; set; }
@@ -164,7 +164,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCode { get; set; }
 #endif
-        /// <summary>The VATPercentage property</summary>
+        /// <summary>The VAT percentage of the VAT code. This is the percentage at the moment the invoice is created. It&apos;s also used by the default calculation of VAT amounts and VAT base amounts</summary>
         public double? VATPercentage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

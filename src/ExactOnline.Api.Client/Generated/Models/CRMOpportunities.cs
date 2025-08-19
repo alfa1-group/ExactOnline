@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class CRMOpportunities : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>Lead to which the opportunity applies</summary>
         public Guid? Account { get; set; }
-        /// <summary>The AccountCode property</summary>
+        /// <summary>Code of Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountCode { get; set; }
@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountCode { get; set; }
 #endif
-        /// <summary>The AccountName property</summary>
+        /// <summary>Name of Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountName { get; set; }
@@ -30,15 +30,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AccountName { get; set; }
 #endif
-        /// <summary>The ActionDate property</summary>
+        /// <summary>Indicates the date before/on the NextAction is supposed to be done</summary>
         public DateTimeOffset? ActionDate { get; set; }
-        /// <summary>The AmountDC property</summary>
+        /// <summary>Amount in the default currency of the company. AmountDC = AmountFC * RateFC</summary>
         public double? AmountDC { get; set; }
-        /// <summary>The AmountFC property</summary>
+        /// <summary>Amount in the currency of the transaction</summary>
         public double? AmountFC { get; set; }
-        /// <summary>The Campaign property</summary>
+        /// <summary>Reference to the campaign opportunity is related to</summary>
         public Guid? Campaign { get; set; }
-        /// <summary>The CampaignDescription property</summary>
+        /// <summary>Description of Campaign</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignDescription { get; set; }
@@ -46,11 +46,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CampaignDescription { get; set; }
 #endif
-        /// <summary>The CloseDate property</summary>
+        /// <summary>The date when the opportunity is expected to be closed</summary>
         public DateTimeOffset? CloseDate { get; set; }
-        /// <summary>The Contact property</summary>
+        /// <summary>Contact ID of main contact person</summary>
         public Guid? Contact { get; set; }
-        /// <summary>The ContactFullName property</summary>
+        /// <summary>Name of the main contact person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactFullName { get; set; }
@@ -58,11 +58,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ContactFullName { get; set; }
 #endif
-        /// <summary>The Created property</summary>
+        /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; set; }
-        /// <summary>The Creator property</summary>
+        /// <summary>User ID of creator</summary>
         public Guid? Creator { get; set; }
-        /// <summary>The CreatorFullName property</summary>
+        /// <summary>Name of the creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorFullName { get; set; }
@@ -70,7 +70,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; set; }
 #endif
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -78,7 +78,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The CustomField property</summary>
+        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomField { get; set; }
@@ -86,13 +86,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomField { get; set; }
 #endif
-        /// <summary>The Division property</summary>
+        /// <summary>Division code</summary>
         public int? Division { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The LeadSource property</summary>
+        /// <summary>The source of the lead/opportunity</summary>
         public Guid? LeadSource { get; set; }
-        /// <summary>The LeadSourceDescription property</summary>
+        /// <summary>Description of LeadSource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeadSourceDescription { get; set; }
@@ -108,11 +108,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Modified property</summary>
+        /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; set; }
-        /// <summary>The Modifier property</summary>
+        /// <summary>User ID of modifier</summary>
         public Guid? Modifier { get; set; }
-        /// <summary>The ModifierFullName property</summary>
+        /// <summary>Name of the last modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifierFullName { get; set; }
@@ -120,7 +120,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; set; }
 #endif
-        /// <summary>The Name property</summary>
+        /// <summary>Name of the opportunity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -128,7 +128,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The NextAction property</summary>
+        /// <summary>Indicates what follow up action is to be undertaken to move the opportunity towards a deal. Is used in combination with ActionDate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextAction { get; set; }
@@ -136,7 +136,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string NextAction { get; set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Notes of the opportunity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -144,11 +144,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The Number property</summary>
+        /// <summary>Internal number of the opportunity</summary>
         public int? Number { get; set; }
-        /// <summary>The OpportunityStage property</summary>
+        /// <summary>The stage of the opportunity. This is a list defined by the user</summary>
         public Guid? OpportunityStage { get; set; }
-        /// <summary>The OpportunityStageDescription property</summary>
+        /// <summary>Description of OpportunityStage</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OpportunityStageDescription { get; set; }
@@ -156,11 +156,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string OpportunityStageDescription { get; set; }
 #endif
-        /// <summary>The OpportunityStatus property</summary>
+        /// <summary>Status: 1=Open, 2=Closed won, 3=Closed lost</summary>
         public int? OpportunityStatus { get; set; }
-        /// <summary>The Owner property</summary>
+        /// <summary>The resource who owns the opportunity and is responsible to close the opportunity (either won or lost)</summary>
         public Guid? Owner { get; set; }
-        /// <summary>The OwnerFullName property</summary>
+        /// <summary>Name of Owner</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerFullName { get; set; }
@@ -168,11 +168,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string OwnerFullName { get; set; }
 #endif
-        /// <summary>The Probability property</summary>
+        /// <summary>The chance that the opportunity will be closed and won. The default for the probability depends on the default from the opportunity stage</summary>
         public double? Probability { get; set; }
-        /// <summary>The Project property</summary>
+        /// <summary>Reference to project</summary>
         public Guid? Project { get; set; }
-        /// <summary>The ProjectCode property</summary>
+        /// <summary>Code of Project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectCode { get; set; }
@@ -180,7 +180,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectCode { get; set; }
 #endif
-        /// <summary>The ProjectDescription property</summary>
+        /// <summary>Description of Project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectDescription { get; set; }
@@ -188,11 +188,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectDescription { get; set; }
 #endif
-        /// <summary>The RateFC property</summary>
+        /// <summary>Exchange rate from original to division currency</summary>
         public double? RateFC { get; set; }
-        /// <summary>The ReasonCode property</summary>
+        /// <summary>Indicates the reason why the opportunity was lost.</summary>
         public Guid? ReasonCode { get; set; }
-        /// <summary>The ReasonCodeDescription property</summary>
+        /// <summary>Description of ReasonCode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCodeDescription { get; set; }
@@ -200,9 +200,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ReasonCodeDescription { get; set; }
 #endif
-        /// <summary>The SalesType property</summary>
+        /// <summary>Reference to Sales type</summary>
         public Guid? SalesType { get; set; }
-        /// <summary>The SalesTypeDescription property</summary>
+        /// <summary>Description of SalesType</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SalesTypeDescription { get; set; }

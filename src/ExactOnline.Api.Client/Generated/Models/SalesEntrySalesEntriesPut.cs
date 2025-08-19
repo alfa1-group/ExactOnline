@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class SalesEntrySalesEntriesPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The BatchNumber property</summary>
+        /// <summary>The number of the batch of entries. Normally a batch consists of multiple entries. Batchnumbers are filled for invoices created by: - Fixed entries - Prolongation (only available with module hosting)</summary>
         public int? BatchNumber { get; set; }
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency for the invoice. By default this is the currency of the administration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -22,9 +22,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The Customer property</summary>
+        /// <summary>Reference to customer (account)</summary>
         public Guid? Customer { get; set; }
-        /// <summary>The Description property</summary>
+        /// <summary>Description of the entry. Can be different for the sales entry lines</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -32,17 +32,17 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Document property</summary>
+        /// <summary>Document that is manually linked to the invoice</summary>
         public Guid? Document { get; set; }
-        /// <summary>The DueDate property</summary>
+        /// <summary>The due date for payments. This date is calculated based on the EntryDate and the Paymentcondition</summary>
         public DateTimeOffset? DueDate { get; set; }
-        /// <summary>The EntryDate property</summary>
+        /// <summary>Invoice date</summary>
         public DateTimeOffset? EntryDate { get; set; }
-        /// <summary>The EntryID property</summary>
+        /// <summary>The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The EntryNumber property</summary>
+        /// <summary>Entry number, for sales invoices this is the invoice number</summary>
         public int? EntryNumber { get; set; }
-        /// <summary>The ExternalLinkReference property</summary>
+        /// <summary>Reference of ExternalLink</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalLinkReference { get; set; }
@@ -50,13 +50,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ExternalLinkReference { get; set; }
 #endif
-        /// <summary>The GAccountAmountFC property</summary>
+        /// <summary>A positive value of the amount indicates that the amount is to be paid by the customer to your G bank account.In case of a credit invoice the amount should have negative value when retrieved or posted to Exact.</summary>
         public double? GAccountAmountFC { get; set; }
-        /// <summary>The InvoiceNumber property</summary>
+        /// <summary>Assigned at entry or at printing depending on setting. The number assigned is based on the freenumbers as defined for the Journal. When printing the field InvoiceNumber is copied to the fields EntryNumber and InvoiceNumber of the sales entry</summary>
         public int? InvoiceNumber { get; set; }
-        /// <summary>The IsExtraDuty property</summary>
+        /// <summary>Indicates whether the invoice has extra duty</summary>
         public bool? IsExtraDuty { get; set; }
-        /// <summary>The Journal property</summary>
+        /// <summary>The journal code. Every invoice should be linked to a sales journal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Journal { get; set; }
@@ -72,9 +72,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The OrderNumber property</summary>
+        /// <summary>Number to indentify the invoice. Order numbers are not unique. Default the number is based on a setting for the first free number</summary>
         public int? OrderNumber { get; set; }
-        /// <summary>The PaymentCondition property</summary>
+        /// <summary>The payment condition used for due date and discount calculation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentCondition { get; set; }
@@ -82,7 +82,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PaymentCondition { get; set; }
 #endif
-        /// <summary>The PaymentReference property</summary>
+        /// <summary>The payment reference used for bank imports, VAT return and Tax reference</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentReference { get; set; }
@@ -90,25 +90,25 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PaymentReference { get; set; }
 #endif
-        /// <summary>The ProcessNumber property</summary>
+        /// <summary>Internal processing number, only relevant for Germany</summary>
         public int? ProcessNumber { get; set; }
-        /// <summary>The Rate property</summary>
+        /// <summary>Foreign currency rate</summary>
         public double? Rate { get; set; }
-        /// <summary>The ReportingPeriod property</summary>
+        /// <summary>The period of the transaction lines. The period should exist in the period date table</summary>
         public int? ReportingPeriod { get; set; }
-        /// <summary>The ReportingYear property</summary>
+        /// <summary>The financial year to which the entry belongs. The financial year should exist in the period date table</summary>
         public int? ReportingYear { get; set; }
-        /// <summary>The Reversal property</summary>
+        /// <summary>Indicates if amounts are reversed</summary>
         public bool? Reversal { get; set; }
-        /// <summary>The VATAmountFC property</summary>
+        /// <summary>Vat amount in the currency of the transaction</summary>
         public double? VATAmountFC { get; set; }
-        /// <summary>The WithholdingTaxAmountDC property</summary>
+        /// <summary>Withholding tax amount, Spanish legislation only</summary>
         public double? WithholdingTaxAmountDC { get; set; }
-        /// <summary>The WithholdingTaxBaseAmount property</summary>
+        /// <summary>Withholding tax base amount to calculate withholding amount, Spanish legislation only</summary>
         public double? WithholdingTaxBaseAmount { get; set; }
-        /// <summary>The WithholdingTaxPercentage property</summary>
+        /// <summary>Withholding tax percentage, Spanish legislation only</summary>
         public double? WithholdingTaxPercentage { get; set; }
-        /// <summary>The YourRef property</summary>
+        /// <summary>Reference of the customer, like order number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? YourRef { get; set; }

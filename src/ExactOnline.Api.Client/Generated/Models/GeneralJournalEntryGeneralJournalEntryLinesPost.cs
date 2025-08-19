@@ -12,15 +12,15 @@ namespace ExactOnline.Api.Client.Models
     public partial class GeneralJournalEntryGeneralJournalEntryLinesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>Reference to account</summary>
         public Guid? Account { get; set; }
-        /// <summary>The AmountFC property</summary>
+        /// <summary>Amount in the currency of the transaction. If an &apos;Including&apos; VAT code is used this amount includes the VAT amount.</summary>
         public double? AmountFC { get; set; }
-        /// <summary>The AmountVATFC property</summary>
+        /// <summary>Vat amount in the currency of the transaction. If you want to set this in a POST you have to specify VATCode as well.</summary>
         public double? AmountVATFC { get; set; }
-        /// <summary>The Asset property</summary>
+        /// <summary>Reference to asset</summary>
         public Guid? Asset { get; set; }
-        /// <summary>The CostCenter property</summary>
+        /// <summary>Reference to cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenter { get; set; }
@@ -28,7 +28,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenter { get; set; }
 #endif
-        /// <summary>The CostUnit property</summary>
+        /// <summary>Reference to cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnit { get; set; }
@@ -36,9 +36,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnit { get; set; }
 #endif
-        /// <summary>The Date property</summary>
+        /// <summary>Entry date</summary>
         public DateTimeOffset? Date { get; set; }
-        /// <summary>The Description property</summary>
+        /// <summary>Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -46,13 +46,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The Document property</summary>
+        /// <summary>Reference to document</summary>
         public Guid? Document { get; set; }
-        /// <summary>The EntryID property</summary>
+        /// <summary>Reference to header of the entry</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The GLAccount property</summary>
+        /// <summary>General ledger account</summary>
         public Guid? GLAccount { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +62,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Extra remarks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -70,15 +70,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The OffsetID property</summary>
+        /// <summary>OffsetID - The GUID of the entryline which contain the off set amount of this entry</summary>
         public Guid? OffsetID { get; set; }
-        /// <summary>The OurRef property</summary>
+        /// <summary>Our ref of general journal entry</summary>
         public int? OurRef { get; set; }
-        /// <summary>The Project property</summary>
+        /// <summary>Reference to project</summary>
         public Guid? Project { get; set; }
-        /// <summary>The Quantity property</summary>
+        /// <summary>Quantity</summary>
         public double? Quantity { get; set; }
-        /// <summary>The VATCode property</summary>
+        /// <summary>VATCode can only be used if the general journal has VAT enabled. VAT Lines will be automatically created if the VATCode is specified when creating a new general journal entry. If this property is not filled, it will use the default VAT code of the G/L account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCode { get; set; }
@@ -86,7 +86,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCode { get; set; }
 #endif
-        /// <summary>The VATPercentage property</summary>
+        /// <summary>Vat percentage</summary>
         public double? VATPercentage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

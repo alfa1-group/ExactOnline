@@ -12,11 +12,11 @@ namespace ExactOnline.Api.Client.Models
     public partial class DocumentsDocumentsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Account property</summary>
+        /// <summary>ID of the related account of this document</summary>
         public Guid? Account { get; set; }
-        /// <summary>The AmountFC property</summary>
+        /// <summary>Amount in the currency of the transaction</summary>
         public double? AmountFC { get; set; }
-        /// <summary>The Body property</summary>
+        /// <summary>Body of this document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Body { get; set; }
@@ -24,9 +24,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Body { get; set; }
 #endif
-        /// <summary>The Category property</summary>
+        /// <summary>ID of the category of this document</summary>
         public Guid? Category { get; set; }
-        /// <summary>The CategoryDescription property</summary>
+        /// <summary>Description of Category</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CategoryDescription { get; set; }
@@ -34,11 +34,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CategoryDescription { get; set; }
 #endif
-        /// <summary>The Contact property</summary>
+        /// <summary>ID of the related contact of this document</summary>
         public Guid? Contact { get; set; }
-        /// <summary>The ContractID property</summary>
+        /// <summary>The contract linked to the document</summary>
         public Guid? ContractID { get; set; }
-        /// <summary>The CreatorFullName property</summary>
+        /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorFullName { get; set; }
@@ -46,7 +46,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; set; }
 #endif
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -54,23 +54,23 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The DocumentDate property</summary>
+        /// <summary>Entry date of the incoming document</summary>
         public DateTimeOffset? DocumentDate { get; set; }
-        /// <summary>The DocumentFolder property</summary>
+        /// <summary>The Id of document folder</summary>
         public Guid? DocumentFolder { get; set; }
-        /// <summary>The ExpiryDate property</summary>
+        /// <summary>Expiry date of this document</summary>
         public DateTimeOffset? ExpiryDate { get; set; }
-        /// <summary>The FinancialTransactionEntryID property</summary>
+        /// <summary>Reference to the transaction lines of the financial entry. For a document of type sales invoice it will return the InvoiceID of the sales invoice (SalesInvoices API).</summary>
         public Guid? FinancialTransactionEntryID { get; set; }
-        /// <summary>The HID property</summary>
+        /// <summary>Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero</summary>
         public int? HID { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The InheritShare property</summary>
+        /// <summary>InheritShare value</summary>
         public bool? InheritShare { get; set; }
-        /// <summary>The Item property</summary>
+        /// <summary>The item linked to the document</summary>
         public Guid? Item { get; set; }
-        /// <summary>The Language property</summary>
+        /// <summary>The language code of the document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Language { get; set; }
@@ -86,19 +86,19 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Opportunity property</summary>
+        /// <summary>The opportunity linked to the document</summary>
         public Guid? Opportunity { get; set; }
-        /// <summary>The Project property</summary>
+        /// <summary>The project linked to the document</summary>
         public Guid? Project { get; set; }
-        /// <summary>The ProposedEntryStatus property</summary>
+        /// <summary>ProposedEntryStatus, 0 = Void, 5 = Rejected, 20 = Open, 50 = Processed</summary>
         public int? ProposedEntryStatus { get; set; }
-        /// <summary>The SalesInvoiceNumber property</summary>
+        /// <summary>&apos;Our reference&apos; of the transaction that belongs to this document</summary>
         public int? SalesInvoiceNumber { get; set; }
-        /// <summary>The SalesOrderNumber property</summary>
+        /// <summary>Number of the sales order</summary>
         public int? SalesOrderNumber { get; set; }
-        /// <summary>The ShopOrderNumber property</summary>
+        /// <summary>Number of the shop order</summary>
         public int? ShopOrderNumber { get; set; }
-        /// <summary>The Subject property</summary>
+        /// <summary>Subject of this document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject { get; set; }
@@ -106,7 +106,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Subject { get; set; }
 #endif
-        /// <summary>The TeamsMeetingId property</summary>
+        /// <summary>Teams meeting id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TeamsMeetingId { get; set; }
@@ -114,7 +114,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string TeamsMeetingId { get; set; }
 #endif
-        /// <summary>The Type property</summary>
+        /// <summary>ID of the type of this document</summary>
         public int? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,9 +12,9 @@ namespace ExactOnline.Api.Client.Models
     public partial class MailboxMailMessagesSentPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Bank property</summary>
+        /// <summary>Bank to/from which the mail message is sent/received. This is only used for mail messages of type &apos;Bank&apos;. It has an attachment containing the bank file.</summary>
         public Guid? Bank { get; set; }
-        /// <summary>The BankAccount property</summary>
+        /// <summary>Bank account for which the mail message is sent. This is only used for mail messages of type &apos;Bank&apos;. It has an attachment containing the bank export file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BankAccount { get; set; }
@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BankAccount { get; set; }
 #endif
-        /// <summary>The Country property</summary>
+        /// <summary>Country code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country { get; set; }
@@ -30,9 +30,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>The ForDivision property</summary>
+        /// <summary>Administration from which the mail message is sent. This is only used for mail messages of type &apos;Bank&apos;.</summary>
         public int? ForDivision { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>The primary key of the mail message.</summary>
         public Guid? ID { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,25 +42,25 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Operation property</summary>
+        /// <summary>Specifies the operation upon dealing with the mailmessage (Kirean scan service).Operation can have the following values: 1= Purchase invoice without details2= Purchase invoice with details3= Sales invoice4= Bank statement</summary>
         public int? Operation { get; set; }
-        /// <summary>The OriginalMessage property</summary>
+        /// <summary>Provides a link to another mail message (Kirean scan service).</summary>
         public Guid? OriginalMessage { get; set; }
-        /// <summary>The PartnerKey property</summary>
+        /// <summary>The key of the application that created the message. It is filled with a fixed value when created from within Exact Online.</summary>
         public Guid? PartnerKey { get; set; }
-        /// <summary>The Quantity property</summary>
+        /// <summary>The number of lines of the returned mail message attachment (Kirean scan service).</summary>
         public double? Quantity { get; set; }
-        /// <summary>The RecipientDeleted property</summary>
+        /// <summary>Indicates whether the recipient deleted this message. If this is the case the recipient can&apos;t see it anymore and the sender can actually delete it.</summary>
         public int? RecipientDeleted { get; set; }
-        /// <summary>The RecipientMailboxID property</summary>
+        /// <summary>The mailbox ID of the recipient. The owner of this mailbox will see the message in the inbox.</summary>
         public Guid? RecipientMailboxID { get; set; }
-        /// <summary>The RecipientStatus property</summary>
+        /// <summary>The status of the mail message, only the recipient can update this. RecipientStatus can have the following values: 5= Rejected42= In process10= Draft43= At the scanning service20= Open45= Error during processing25= Prepared46= Blocked30= Approved50= Processed40= Realized</summary>
         public int? RecipientStatus { get; set; }
-        /// <summary>The SenderDateSent property</summary>
+        /// <summary>Date the message was sent. By default this is the date the message is created. It can be an earlier date when the mail message is imported from xml (the date the xml was sent).</summary>
         public DateTimeOffset? SenderDateSent { get; set; }
-        /// <summary>The SenderDeleted property</summary>
+        /// <summary>Indicates whether the sender deleted the message. This means the sender can&apos;t see it anymore and the recipient can actually delete it.</summary>
         public int? SenderDeleted { get; set; }
-        /// <summary>The SenderIPAddress property</summary>
+        /// <summary>The IP address of the sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenderIPAddress { get; set; }
@@ -68,9 +68,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SenderIPAddress { get; set; }
 #endif
-        /// <summary>The SenderMailboxID property</summary>
+        /// <summary>The mailbox ID of the sender. The owner of this mailbox will see the message in the sent items.</summary>
         public Guid? SenderMailboxID { get; set; }
-        /// <summary>The SkipRecipientMailBoxAddressOverride property</summary>
+        /// <summary>Skip Recipient MailBoxAddress Override for Scanning service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkipRecipientMailBoxAddressOverride { get; set; }
@@ -78,7 +78,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SkipRecipientMailBoxAddressOverride { get; set; }
 #endif
-        /// <summary>The Subject property</summary>
+        /// <summary>The subject of the mail message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject { get; set; }
@@ -86,7 +86,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Subject { get; set; }
 #endif
-        /// <summary>The SynchronizationCode property</summary>
+        /// <summary>Provides a link between Exact Online and the banks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SynchronizationCode { get; set; }
@@ -94,7 +94,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SynchronizationCode { get; set; }
 #endif
-        /// <summary>The Type property</summary>
+        /// <summary>The mail message type can have the following values: 0= Other5000= Invitation1000= Purchase invoice5010= Invitation accepted1010= Reminder5020= Invitation rejected1020= Quotation6100= Annual statement1030= Sales order6200= Income tax1040= Delivery note6210= Corporate tax1050= Return note6220= VAT Return XBRL1060= Purchase order6221= Supplementary VAT Return XBRL1100= Sales invoice6230= EU Sales list XBRL1200= CRM document6300= Credit report1300= Soda6400= TaxKitDiese2000= Bank7000= Scanned document3000= VAT Return8000= Tax Declaration3001= Postpone submission8010= Payroll tax declaration XBRL4000= EC Sales list8020= Yearly payroll tax declaration XBRL</summary>
         public int? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,11 +12,11 @@ namespace ExactOnline.Api.Client.Models
     public partial class SyncSalesOrderSalesOrderLines : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The AmountDC property</summary>
+        /// <summary>Amount in the default currency of the company</summary>
         public double? AmountDC { get; private set; }
-        /// <summary>The AmountFC property</summary>
+        /// <summary>Amount in the currency of the transaction</summary>
         public double? AmountFC { get; private set; }
-        /// <summary>The CostCenter property</summary>
+        /// <summary>Reference to Cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenter { get; private set; }
@@ -24,7 +24,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenter { get; private set; }
 #endif
-        /// <summary>The CostCenterDescription property</summary>
+        /// <summary>Description of CostCenter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenterDescription { get; private set; }
@@ -32,9 +32,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenterDescription { get; private set; }
 #endif
-        /// <summary>The CostPriceFC property</summary>
+        /// <summary>Item cost price</summary>
         public double? CostPriceFC { get; private set; }
-        /// <summary>The CostUnit property</summary>
+        /// <summary>Reference to Cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnit { get; private set; }
@@ -42,7 +42,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnit { get; private set; }
 #endif
-        /// <summary>The CostUnitDescription property</summary>
+        /// <summary>Description of CostUnit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnitDescription { get; private set; }
@@ -50,11 +50,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnitDescription { get; private set; }
 #endif
-        /// <summary>The Created property</summary>
+        /// <summary>Creation date</summary>
         public DateTimeOffset? Created { get; private set; }
-        /// <summary>The Creator property</summary>
+        /// <summary>User ID of creator</summary>
         public Guid? Creator { get; private set; }
-        /// <summary>The CreatorFullName property</summary>
+        /// <summary>Name of creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorFullName { get; private set; }
@@ -62,7 +62,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; private set; }
 #endif
-        /// <summary>The CustomerItemCode property</summary>
+        /// <summary>Code the customer uses for this item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerItemCode { get; private set; }
@@ -70,7 +70,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomerItemCode { get; private set; }
 #endif
-        /// <summary>The CustomField property</summary>
+        /// <summary>Custom field endpoint. Provided only for the Exact Online Premium users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomField { get; private set; }
@@ -78,11 +78,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomField { get; private set; }
 #endif
-        /// <summary>The DeliveryDate property</summary>
+        /// <summary>Delivery date of this line</summary>
         public DateTimeOffset? DeliveryDate { get; private set; }
-        /// <summary>The DeliveryStatus property</summary>
+        /// <summary>Shipping status of the sales order line. 12=Open, 20=Partial, 21=Complete, 45=Cancelled</summary>
         public int? DeliveryStatus { get; private set; }
-        /// <summary>The DeliveryStatusDescription property</summary>
+        /// <summary>Description of DeliveryStatus</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeliveryStatusDescription { get; private set; }
@@ -90,7 +90,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string DeliveryStatusDescription { get; private set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; private set; }
@@ -98,15 +98,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; private set; }
 #endif
-        /// <summary>The Discount property</summary>
+        /// <summary>Discount given on the default price. Discount = (DefaultPrice of Item - PriceItem in line) / DefaultPrice of Item</summary>
         public double? Discount { get; private set; }
-        /// <summary>The Division property</summary>
+        /// <summary>Division code</summary>
         public int? Division { get; private set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; private set; }
-        /// <summary>The InvoiceStatus property</summary>
+        /// <summary>Invoice status of the sales order line. 12=Open, 20=Partial, 21=Complete, 45=Cancelled</summary>
         public int? InvoiceStatus { get; private set; }
-        /// <summary>The InvoiceStatusDescription property</summary>
+        /// <summary>Description of InvoiceStatus</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoiceStatusDescription { get; private set; }
@@ -114,9 +114,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string InvoiceStatusDescription { get; private set; }
 #endif
-        /// <summary>The Item property</summary>
+        /// <summary>Reference to the item that is sold in this sales order line</summary>
         public Guid? Item { get; private set; }
-        /// <summary>The ItemCode property</summary>
+        /// <summary>Code of Item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemCode { get; private set; }
@@ -124,7 +124,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ItemCode { get; private set; }
 #endif
-        /// <summary>The ItemDescription property</summary>
+        /// <summary>Description of Item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemDescription { get; private set; }
@@ -132,9 +132,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ItemDescription { get; private set; }
 #endif
-        /// <summary>The ItemVersion property</summary>
+        /// <summary>Item Version</summary>
         public Guid? ItemVersion { get; private set; }
-        /// <summary>The ItemVersionDescription property</summary>
+        /// <summary>Description of Item Version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemVersionDescription { get; private set; }
@@ -142,9 +142,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ItemVersionDescription { get; private set; }
 #endif
-        /// <summary>The LineNumber property</summary>
+        /// <summary>Line number</summary>
         public int? LineNumber { get; private set; }
-        /// <summary>The Margin property</summary>
+        /// <summary>Sales margin of the sales order line</summary>
         public double? Margin { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,11 +154,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Modified property</summary>
+        /// <summary>Last modified date</summary>
         public DateTimeOffset? Modified { get; private set; }
-        /// <summary>The Modifier property</summary>
+        /// <summary>User ID of modifier</summary>
         public Guid? Modifier { get; private set; }
-        /// <summary>The ModifierFullName property</summary>
+        /// <summary>Name of modifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifierFullName { get; private set; }
@@ -166,9 +166,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; private set; }
 #endif
-        /// <summary>The NetPrice property</summary>
+        /// <summary>Net price of the sales order line</summary>
         public double? NetPrice { get; private set; }
-        /// <summary>The Notes property</summary>
+        /// <summary>Extra notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; private set; }
@@ -176,13 +176,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; private set; }
 #endif
-        /// <summary>The OrderID property</summary>
+        /// <summary>The OrderID identifies the sales order. All the lines of a sales order have the same OrderID</summary>
         public Guid? OrderID { get; private set; }
-        /// <summary>The OrderNumber property</summary>
+        /// <summary>Number of sales order</summary>
         public int? OrderNumber { get; private set; }
-        /// <summary>The Pricelist property</summary>
+        /// <summary>Price list</summary>
         public Guid? Pricelist { get; private set; }
-        /// <summary>The PricelistDescription property</summary>
+        /// <summary>Description of Pricelist</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PricelistDescription { get; private set; }
@@ -190,9 +190,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PricelistDescription { get; private set; }
 #endif
-        /// <summary>The Project property</summary>
+        /// <summary>The project to which the sales order line is linked. The project can be different per line. Sometimes also the project in the header is filled although this is not really used</summary>
         public Guid? Project { get; private set; }
-        /// <summary>The ProjectCode property</summary>
+        /// <summary>Code of Project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectCode { get; private set; }
@@ -200,7 +200,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectCode { get; private set; }
 #endif
-        /// <summary>The ProjectDescription property</summary>
+        /// <summary>Description of Project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectDescription { get; private set; }
@@ -208,27 +208,27 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ProjectDescription { get; private set; }
 #endif
-        /// <summary>The PurchaseOrder property</summary>
+        /// <summary>Purchase order that is linked to the sales order</summary>
         public Guid? PurchaseOrder { get; private set; }
-        /// <summary>The PurchaseOrderLine property</summary>
+        /// <summary>Purchase order line of the purchase order that is linked to the sales order</summary>
         public Guid? PurchaseOrderLine { get; private set; }
-        /// <summary>The PurchaseOrderLineNumber property</summary>
+        /// <summary>Number of the purchase order line</summary>
         public int? PurchaseOrderLineNumber { get; private set; }
-        /// <summary>The PurchaseOrderNumber property</summary>
+        /// <summary>Number of the purchase order</summary>
         public int? PurchaseOrderNumber { get; private set; }
-        /// <summary>The Quantity property</summary>
+        /// <summary>The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor.Positive quantity = Sales order lines, Negative quantity = Trade-in lines.</summary>
         public double? Quantity { get; private set; }
-        /// <summary>The QuantityDelivered property</summary>
+        /// <summary>The number of items delivered</summary>
         public double? QuantityDelivered { get; private set; }
-        /// <summary>The QuantityInvoiced property</summary>
+        /// <summary>The number of items invoiced</summary>
         public double? QuantityInvoiced { get; private set; }
-        /// <summary>The ShopOrder property</summary>
+        /// <summary>Reference to ShopOrder</summary>
         public Guid? ShopOrder { get; private set; }
-        /// <summary>The ShopOrderNumber property</summary>
+        /// <summary>Number of shop order</summary>
         public int? ShopOrderNumber { get; private set; }
-        /// <summary>The Status property</summary>
+        /// <summary>The status of the sales order line. 12 = Open, 20 = Partial, 21 = Complete, 45 = Cancelled.</summary>
         public int? Status { get; private set; }
-        /// <summary>The StatusDescription property</summary>
+        /// <summary>Description of Status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusDescription { get; private set; }
@@ -236,9 +236,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string StatusDescription { get; private set; }
 #endif
-        /// <summary>The Timestamp property</summary>
+        /// <summary>Timestamp</summary>
         public long? Timestamp { get; private set; }
-        /// <summary>The UnitCode property</summary>
+        /// <summary>Code of item unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnitCode { get; private set; }
@@ -246,7 +246,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string UnitCode { get; private set; }
 #endif
-        /// <summary>The UnitDescription property</summary>
+        /// <summary>Description of Unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnitDescription { get; private set; }
@@ -254,13 +254,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string UnitDescription { get; private set; }
 #endif
-        /// <summary>The UnitPrice property</summary>
+        /// <summary>Price per unit in the currency of the transaction</summary>
         public double? UnitPrice { get; private set; }
-        /// <summary>The UseDropShipment property</summary>
+        /// <summary>Indicates if drop shipment is used (delivery directly to customer, invoice to wholesaler)</summary>
         public int? UseDropShipment { get; private set; }
-        /// <summary>The VATAmount property</summary>
+        /// <summary>VAT amount in the currency of the transaction</summary>
         public double? VATAmount { get; private set; }
-        /// <summary>The VATCode property</summary>
+        /// <summary>VAT code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCode { get; private set; }
@@ -268,7 +268,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCode { get; private set; }
 #endif
-        /// <summary>The VATCodeDescription property</summary>
+        /// <summary>Description of VATCode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCodeDescription { get; private set; }
@@ -276,7 +276,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCodeDescription { get; private set; }
 #endif
-        /// <summary>The VATPercentage property</summary>
+        /// <summary>The vat percentage of the VAT code. This is the percentage at the moment the sales order is created. It&apos;s also used for the default calculation of VAT amounts and VAT base amounts</summary>
         public double? VATPercentage { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

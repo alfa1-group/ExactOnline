@@ -12,7 +12,7 @@ namespace ExactOnline.Api.Client.Models
     public partial class MailboxMailMessageAttachmentsPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Attachment property</summary>
+        /// <summary>For performance reasons Attachment is Write-Only. The blob can be downloaded using the supplied Url</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Attachment { get; set; }
@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public byte[] Attachment { get; set; }
 #endif
-        /// <summary>The AttachmentFileName property</summary>
+        /// <summary>File name of attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AttachmentFileName { get; set; }
@@ -28,9 +28,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string AttachmentFileName { get; set; }
 #endif
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The MailMessageID property</summary>
+        /// <summary>Reference to Mail message</summary>
         public Guid? MailMessageID { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +40,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Type property</summary>
+        /// <summary>Type of mail message attachment0-Unknown10-PDF11-XML (ZUGFeRD)20-UBL 2.021-SIB22-Simplerinvoicing 1.023-PEPPOL24-eFFF25-Simplerinvoicing 1.126-Simplerinvoicing 1.230-Finvoice40-eInvoice50-XML60-XBRL70-Bank import71-Internal bank statement (TestAutomation)72-XLSM73-BankGateway source80-Bank export81-Direct debit82-Mandates85-Message86-Status update90-Statistics91-Statistics Json100-TXT110-Soda120-OfficialReturnProof130-UBL 2.1</summary>
         public int? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

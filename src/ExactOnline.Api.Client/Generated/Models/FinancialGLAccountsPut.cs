@@ -12,11 +12,11 @@ namespace ExactOnline.Api.Client.Models
     public partial class FinancialGLAccountsPut : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The AllowCostsInSales property</summary>
+        /// <summary>Allow cost base amount and vat amount to be generated in sales entries</summary>
         public int? AllowCostsInSales { get; set; }
-        /// <summary>The AssimilatedVATBox property</summary>
+        /// <summary>AssimilatedVATBox (France)</summary>
         public int? AssimilatedVATBox { get; set; }
-        /// <summary>The BalanceSide property</summary>
+        /// <summary>The following values are supported: D (Debit) C (Credit)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BalanceSide { get; set; }
@@ -24,7 +24,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BalanceSide { get; set; }
 #endif
-        /// <summary>The BalanceType property</summary>
+        /// <summary>The following values are supported: B (Balance Sheet) W (Profit &amp;amp; Loss)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BalanceType { get; set; }
@@ -32,9 +32,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string BalanceType { get; set; }
 #endif
-        /// <summary>The BelcotaxType property</summary>
+        /// <summary>Indentify the kind of rewarding for the G/L account. This is used in the official document for the fiscal fiches Belcotax</summary>
         public int? BelcotaxType { get; set; }
-        /// <summary>The Code property</summary>
+        /// <summary>Unique Code of the G/L account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -42,9 +42,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>The Compress property</summary>
+        /// <summary>Indicate if this G/L account should be shown as compressed without the details in the CRW report of G/L history</summary>
         public bool? Compress { get; set; }
-        /// <summary>The Costcenter property</summary>
+        /// <summary>Cost Center linked to the G/L account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Costcenter { get; set; }
@@ -52,7 +52,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Costcenter { get; set; }
 #endif
-        /// <summary>The Costunit property</summary>
+        /// <summary>Cost Unit linked to the G/L account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Costunit { get; set; }
@@ -60,7 +60,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Costunit { get; set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Name of the G/L account. If Multilanguage featureset is enabled in the administration and the G/L account already has a set of termed description, this field is not allowed to change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -68,15 +68,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The ExcludeVATListing property</summary>
+        /// <summary>General ledger transactions on this G/L account should not appear on the VAT listing</summary>
         public int? ExcludeVATListing { get; set; }
-        /// <summary>The ExpenseNonDeductiblePercentage property</summary>
+        /// <summary>Expenses on this G/L account can not be used to reduce the incomes</summary>
         public double? ExpenseNonDeductiblePercentage { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary Key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The IsBlocked property</summary>
+        /// <summary>When blocked you can&apos;t use this general ledger account anymore for new entries</summary>
         public bool? IsBlocked { get; set; }
-        /// <summary>The Matching property</summary>
+        /// <summary>Allow entries on this general ledger account to be matched via the G/L account card</summary>
         public bool? Matching { get; set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,11 +86,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The PrivateGLAccount property</summary>
+        /// <summary>If a private use percentage is defined, you need to specify the G/L account used for the re-invoice of the private use to the owner of the company</summary>
         public Guid? PrivateGLAccount { get; set; }
-        /// <summary>The PrivatePercentage property</summary>
+        /// <summary>Specify the percentage of the cost that should be re-invoiced to the owner of the company as private use of the costs</summary>
         public double? PrivatePercentage { get; set; }
-        /// <summary>The ReportingCode property</summary>
+        /// <summary>Used in the export of yearly report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportingCode { get; set; }
@@ -98,9 +98,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ReportingCode { get; set; }
 #endif
-        /// <summary>The RevalueCurrency property</summary>
+        /// <summary>Indicates if the amounts booked on this general ledger account will be recalculated when currency revaluation is done</summary>
         public bool? RevalueCurrency { get; set; }
-        /// <summary>The SearchCode property</summary>
+        /// <summary>Search Code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SearchCode { get; set; }
@@ -108,13 +108,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SearchCode { get; set; }
 #endif
-        /// <summary>The Type property</summary>
+        /// <summary>The type of the G/L account. Supported values are:10 = Cash12 = Bank14 = Credit card16 = Payment services20 = Accounts receivable21 = Prepayment accounts receivable22 = Accounts payable24 = VAT25 = Employees payable26 = Prepaid expenses27 = Accrued expenses29 = Income taxes payable30 = Fixed assets32 = Other assets35 = Accumulated depreciation40 = Inventory50 = Capital stock52 = Retained earnings55 = Long term debt60 = Current portion of debt90 = General100 = Tax payable110 = Revenue111 = Cost of goods120 = Other costs121 = Sales, general administrative expenses122 = Depreciation costs123 = Research and development125 = Employee costs126 = Employment costs130 = Exceptional costs140 = Exceptional income150 = Income taxes160 = Interest income300 = Year end reflection301 = Indirect year end costing302 = Direct year end costing</summary>
         public int? Type { get; set; }
-        /// <summary>The UseCostcenter property</summary>
+        /// <summary>Indicates if cost centers can be used when using this general ledger account. The following values are supported: 0 (Optional) 1 (Mandatory) 2 (No)</summary>
         public int? UseCostcenter { get; set; }
-        /// <summary>The UseCostunit property</summary>
+        /// <summary>Indicates if cost units can be used when using this general ledger account. The following values are supported: 0 (Optional) 1 (Mandatory) 2 (No)</summary>
         public int? UseCostunit { get; set; }
-        /// <summary>The VATCode property</summary>
+        /// <summary>VAT Code linked to the G/L account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCode { get; set; }
@@ -122,7 +122,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCode { get; set; }
 #endif
-        /// <summary>The VATGLAccountType property</summary>
+        /// <summary>Specify the kind of purchase this G/L account is used for. This is important for the Belgian VAT return to indicate in which VAT box the base amount of purchase should go</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATGLAccountType { get; set; }
@@ -130,11 +130,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATGLAccountType { get; set; }
 #endif
-        /// <summary>The VATNonDeductibleGLAccount property</summary>
+        /// <summary>If you use a percentage of non deductible VAT, you can specify another G/L account that will be used for the non deductible part of the VAT amount. This is used directly in the entry application of purchase invoices.</summary>
         public Guid? VATNonDeductibleGLAccount { get; set; }
-        /// <summary>The VATNonDeductiblePercentage property</summary>
+        /// <summary>If not the full amount of the VAT is deductible, you can indicate a percentage for the non decuctible part. This is used during the entry of purchase invoices</summary>
         public double? VATNonDeductiblePercentage { get; set; }
-        /// <summary>The VATSystem property</summary>
+        /// <summary>The following values are supported: I (Invoice) C (Cash) (France)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATSystem { get; set; }
@@ -142,9 +142,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATSystem { get; set; }
 #endif
-        /// <summary>The YearEndCostGLAccount property</summary>
+        /// <summary>Indicates the costing account for year end calculations</summary>
         public Guid? YearEndCostGLAccount { get; set; }
-        /// <summary>The YearEndReflectionGLAccount property</summary>
+        /// <summary>Indicates the reflection account that is used by year end application</summary>
         public Guid? YearEndReflectionGLAccount { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

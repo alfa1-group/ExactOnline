@@ -12,11 +12,11 @@ namespace ExactOnline.Api.Client.Models
     public partial class PurchaseEntryPurchaseEntryLinesPost : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The AmountFC property</summary>
+        /// <summary>Amount in the currency of the transaction</summary>
         public double? AmountFC { get; set; }
-        /// <summary>The Asset property</summary>
+        /// <summary>Reference to asset</summary>
         public Guid? Asset { get; set; }
-        /// <summary>The CostCenter property</summary>
+        /// <summary>Reference to cost center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenter { get; set; }
@@ -24,7 +24,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostCenter { get; set; }
 #endif
-        /// <summary>The CostUnit property</summary>
+        /// <summary>Reference to cost unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostUnit { get; set; }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CostUnit { get; set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -40,15 +40,15 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The EntryID property</summary>
+        /// <summary>Reference to header of the purchase entry</summary>
         public Guid? EntryID { get; set; }
-        /// <summary>The From property</summary>
+        /// <summary>From date to identify the range for accrued/deferred costs. This is used in combination with the property &apos;To&apos; that defines the end date</summary>
         public DateTimeOffset? From { get; set; }
-        /// <summary>The GLAccount property</summary>
+        /// <summary>General ledger account</summary>
         public Guid? GLAccount { get; set; }
-        /// <summary>The ID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? ID { get; set; }
-        /// <summary>The IntraStatArea property</summary>
+        /// <summary>IntraStat area (only relevant when IntraStat for purchase is enabled in the administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntraStatArea { get; set; }
@@ -56,7 +56,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IntraStatArea { get; set; }
 #endif
-        /// <summary>The IntraStatCountry property</summary>
+        /// <summary>IntraStatCountry (only relevant when IntraStat for purchase is enabled in the administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntraStatCountry { get; set; }
@@ -64,7 +64,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IntraStatCountry { get; set; }
 #endif
-        /// <summary>The IntraStatDeliveryTerm property</summary>
+        /// <summary>IntraStat delivery term (only relevant when IntraStat for purchase is enabled in the administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntraStatDeliveryTerm { get; set; }
@@ -72,7 +72,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IntraStatDeliveryTerm { get; set; }
 #endif
-        /// <summary>The IntraStatTransactionA property</summary>
+        /// <summary>IntraStat transaction A (only relevant when IntraStat for purchase is enabled in the administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntraStatTransactionA { get; set; }
@@ -80,7 +80,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IntraStatTransactionA { get; set; }
 #endif
-        /// <summary>The IntraStatTransactionB property</summary>
+        /// <summary>IntraStat transaction B (only relevant when IntraStat for purchase is enabled in the Belgium, Luxembourg, France &amp;amp; United Kingdom administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntraStatTransactionB { get; set; }
@@ -88,7 +88,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string IntraStatTransactionB { get; set; }
 #endif
-        /// <summary>The IntraStatTransportMethod property</summary>
+        /// <summary>IntraStat transport method (only relevant when IntraStat for purchase is enabled in the administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntraStatTransportMethod { get; set; }
@@ -104,7 +104,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>Extra remarks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -112,13 +112,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The PrivateUsePercentage property</summary>
+        /// <summary>Percentage of re-invoice part of a cost to the owner of the company.</summary>
         public double? PrivateUsePercentage { get; set; }
-        /// <summary>The Project property</summary>
+        /// <summary>Reference to project</summary>
         public Guid? Project { get; set; }
-        /// <summary>The Quantity property</summary>
+        /// <summary>Quantity</summary>
         public double? Quantity { get; set; }
-        /// <summary>The SerialNumber property</summary>
+        /// <summary>Serial number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SerialNumber { get; set; }
@@ -126,9 +126,9 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SerialNumber { get; set; }
 #endif
-        /// <summary>The StatisticalNetWeight property</summary>
+        /// <summary>Statistical NetWeight (only relevant when IntraStat for purchase is enabled in the administration)</summary>
         public double? StatisticalNetWeight { get; set; }
-        /// <summary>The StatisticalNumber property</summary>
+        /// <summary>Statistical Number (only relevant when IntraStat for purchase is enabled in the administration)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatisticalNumber { get; set; }
@@ -136,21 +136,21 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string StatisticalNumber { get; set; }
 #endif
-        /// <summary>The StatisticalQuantity property</summary>
+        /// <summary>Statistical Quantity (only relevant when IntraStat for purchase is enabled in the administration)</summary>
         public double? StatisticalQuantity { get; set; }
-        /// <summary>The StatisticalValue property</summary>
+        /// <summary>Statistical Value (only relevant when IntraStat for purchase is enabled in the administration)</summary>
         public double? StatisticalValue { get; set; }
-        /// <summary>The Subscription property</summary>
+        /// <summary>Reference to subscription</summary>
         public Guid? Subscription { get; set; }
-        /// <summary>The To property</summary>
+        /// <summary>To date to identify the range for accrued/deferred costs. This is used in combination with the property &apos;From&apos; that defines the start date</summary>
         public DateTimeOffset? To { get; set; }
-        /// <summary>The TrackingNumber property</summary>
+        /// <summary>Reference to tracking number</summary>
         public Guid? TrackingNumber { get; set; }
-        /// <summary>The VATAmountFC property</summary>
+        /// <summary>VAT amount in the currency of the transaction. Use this property to specify a VAT amount that differs from the VAT amount that is automatically calculated.</summary>
         public double? VATAmountFC { get; set; }
-        /// <summary>The VATBaseAmountFC property</summary>
+        /// <summary>VAT base amount in the currency of the transaction</summary>
         public double? VATBaseAmountFC { get; set; }
-        /// <summary>The VATCode property</summary>
+        /// <summary>VAT code. If this property is not filled, it will use the default VAT code of the G/L account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VATCode { get; set; }
@@ -158,13 +158,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string VATCode { get; set; }
 #endif
-        /// <summary>The VATNonDeductiblePercentage property</summary>
+        /// <summary>If not the full amount of the VAT is deductible, you can indicate a percentage for the non decuctible part. This is used during the entry of purchase invoices.</summary>
         public double? VATNonDeductiblePercentage { get; set; }
-        /// <summary>The VATPercentage property</summary>
+        /// <summary>VAT percentage</summary>
         public double? VATPercentage { get; set; }
-        /// <summary>The WithholdingAmountDC property</summary>
+        /// <summary>Withholding tax amount for spanish legislation</summary>
         public double? WithholdingAmountDC { get; set; }
-        /// <summary>The WithholdingTax property</summary>
+        /// <summary>Withholding tax key for spanish legislation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WithholdingTax { get; set; }

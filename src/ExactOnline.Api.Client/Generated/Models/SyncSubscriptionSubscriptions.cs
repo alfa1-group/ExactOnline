@@ -12,13 +12,13 @@ namespace ExactOnline.Api.Client.Models
     public partial class SyncSubscriptionSubscriptions : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The BlockEntry property</summary>
+        /// <summary>Indicates if subscription is blocked for time cost entry</summary>
         public bool? BlockEntry { get; private set; }
-        /// <summary>The CancellationDate property</summary>
+        /// <summary>Date of cancellation</summary>
         public DateTimeOffset? CancellationDate { get; private set; }
-        /// <summary>The Classification property</summary>
+        /// <summary>Guid ID of classification, to filter the report based on the classification of a subscription</summary>
         public Guid? Classification { get; private set; }
-        /// <summary>The ClassificationCode property</summary>
+        /// <summary>Code of classification, to filter the report based on the classification of a subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClassificationCode { get; private set; }
@@ -26,7 +26,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ClassificationCode { get; private set; }
 #endif
-        /// <summary>The ClassificationDescription property</summary>
+        /// <summary>Description of classification, to filter the report based on the classification of a subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClassificationDescription { get; private set; }
@@ -34,11 +34,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ClassificationDescription { get; private set; }
 #endif
-        /// <summary>The Created property</summary>
+        /// <summary>Date when the subscription was created</summary>
         public DateTimeOffset? Created { get; private set; }
-        /// <summary>The Creator property</summary>
+        /// <summary>The Guid ID of the user that created the subscription</summary>
         public Guid? Creator { get; private set; }
-        /// <summary>The CreatorFullName property</summary>
+        /// <summary>The full name of the user that created the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorFullName { get; private set; }
@@ -46,7 +46,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CreatorFullName { get; private set; }
 #endif
-        /// <summary>The Currency property</summary>
+        /// <summary>Currency code used in the transactions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; private set; }
@@ -54,7 +54,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Currency { get; private set; }
 #endif
-        /// <summary>The CustomerPONumber property</summary>
+        /// <summary>Purchase order number of that is linked to customer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerPONumber { get; private set; }
@@ -62,7 +62,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string CustomerPONumber { get; private set; }
 #endif
-        /// <summary>The Description property</summary>
+        /// <summary>Description of the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; private set; }
@@ -70,21 +70,21 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Description { get; private set; }
 #endif
-        /// <summary>The Division property</summary>
+        /// <summary>Division number of the company that the subscription is linked to</summary>
         public int? Division { get; private set; }
-        /// <summary>The EndDate property</summary>
+        /// <summary>The date and time when the subscription ends</summary>
         public DateTimeOffset? EndDate { get; private set; }
-        /// <summary>The EntryID property</summary>
+        /// <summary>Primary key</summary>
         public Guid? EntryID { get; private set; }
-        /// <summary>The InvoiceDay property</summary>
+        /// <summary>For monthly, quaterly, half-year and yearly invoice period, the day number of the month when the invoice of the subscription is sent.While for weekly invoice period, the weekday number of the week when the invoice of the subscription is sent: 0=Monday 1=Tuesday 2=Wednesday 3=Thursday4=Friday 5=Saturday 6=Sunday</summary>
         public int? InvoiceDay { get; private set; }
-        /// <summary>The InvoicedTo property</summary>
+        /// <summary>The date when the invoice of the subscription is sent</summary>
         public DateTimeOffset? InvoicedTo { get; private set; }
-        /// <summary>The InvoiceTo property</summary>
+        /// <summary>The account which the subsciption is invoiced to</summary>
         public Guid? InvoiceTo { get; private set; }
-        /// <summary>The InvoiceToContactPerson property</summary>
+        /// <summary>The ID of the contact person that is linked to the account the subscription is invoice to</summary>
         public Guid? InvoiceToContactPerson { get; private set; }
-        /// <summary>The InvoiceToContactPersonFullName property</summary>
+        /// <summary>The name of the contact person that is linked to the account the subscription is invoice to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoiceToContactPersonFullName { get; private set; }
@@ -92,7 +92,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string InvoiceToContactPersonFullName { get; private set; }
 #endif
-        /// <summary>The InvoiceToName property</summary>
+        /// <summary>Name of the account to invoice to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoiceToName { get; private set; }
@@ -100,7 +100,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string InvoiceToName { get; private set; }
 #endif
-        /// <summary>The InvoicingStartDate property</summary>
+        /// <summary>Date to start invoicing the account</summary>
         public DateTimeOffset? InvoicingStartDate { get; private set; }
         /// <summary>The __metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,11 +110,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata Metadata { get; private set; }
 #endif
-        /// <summary>The Modified property</summary>
+        /// <summary>Date and time when the subscription has been modified</summary>
         public DateTimeOffset? Modified { get; private set; }
-        /// <summary>The Modifier property</summary>
+        /// <summary>The ID of the user that modified the subscription</summary>
         public Guid? Modifier { get; private set; }
-        /// <summary>The ModifierFullName property</summary>
+        /// <summary>The name of the user that modified the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifierFullName { get; private set; }
@@ -122,7 +122,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ModifierFullName { get; private set; }
 #endif
-        /// <summary>The Notes property</summary>
+        /// <summary>For additional information regarding the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; private set; }
@@ -130,13 +130,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string Notes { get; private set; }
 #endif
-        /// <summary>The Number property</summary>
+        /// <summary>Subscription number of the company</summary>
         public int? Number { get; private set; }
-        /// <summary>The OrderedBy property</summary>
+        /// <summary>Reference to order account, GUID ID of the subscriber</summary>
         public Guid? OrderedBy { get; private set; }
-        /// <summary>The OrderedByContactPerson property</summary>
+        /// <summary>Reference of contact person of order account, displays the contact name of the subscriber</summary>
         public Guid? OrderedByContactPerson { get; private set; }
-        /// <summary>The OrderedByContactPersonFullName property</summary>
+        /// <summary>Name of contact person of order account, displays the full contact name of the subscriber</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrderedByContactPersonFullName { get; private set; }
@@ -144,7 +144,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string OrderedByContactPersonFullName { get; private set; }
 #endif
-        /// <summary>The OrderedByName property</summary>
+        /// <summary>Name of order account, displays the name of the subscriber</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrderedByName { get; private set; }
@@ -152,7 +152,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string OrderedByName { get; private set; }
 #endif
-        /// <summary>The PaymentCondition property</summary>
+        /// <summary>Code of subscriptions payment condition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentCondition { get; private set; }
@@ -160,7 +160,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PaymentCondition { get; private set; }
 #endif
-        /// <summary>The PaymentConditionDescription property</summary>
+        /// <summary>Description of subscriptions payment condition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentConditionDescription { get; private set; }
@@ -168,13 +168,13 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string PaymentConditionDescription { get; private set; }
 #endif
-        /// <summary>The Printed property</summary>
+        /// <summary>Indicates if subscription has been printed</summary>
         public bool? Printed { get; private set; }
-        /// <summary>The Project property</summary>
+        /// <summary>The Guid ID of the project, reference to Project endpoint</summary>
         public Guid? Project { get; private set; }
-        /// <summary>The ReasonCancelled property</summary>
+        /// <summary>Guid ID of the reason of cancellation record linked to the subscription</summary>
         public Guid? ReasonCancelled { get; private set; }
-        /// <summary>The ReasonCancelledCode property</summary>
+        /// <summary>Code of the reason of cancellation record linked to the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCancelledCode { get; private set; }
@@ -182,7 +182,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ReasonCancelledCode { get; private set; }
 #endif
-        /// <summary>The ReasonCancelledDescription property</summary>
+        /// <summary>Description of the reason of cancellation record linked to the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCancelledDescription { get; private set; }
@@ -190,11 +190,11 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string ReasonCancelledDescription { get; private set; }
 #endif
-        /// <summary>The StartDate property</summary>
+        /// <summary>Start date of the subscription</summary>
         public DateTimeOffset? StartDate { get; private set; }
-        /// <summary>The SubscriptionType property</summary>
+        /// <summary>The GUID ID of the subscription condition, reference to SubscriptionType endpoint</summary>
         public Guid? SubscriptionType { get; private set; }
-        /// <summary>The SubscriptionTypeCode property</summary>
+        /// <summary>The code of the subscription condition record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionTypeCode { get; private set; }
@@ -202,7 +202,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SubscriptionTypeCode { get; private set; }
 #endif
-        /// <summary>The SubscriptionTypeDescription property</summary>
+        /// <summary>The code of the subscription condition description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionTypeDescription { get; private set; }
@@ -210,7 +210,7 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string SubscriptionTypeDescription { get; private set; }
 #endif
-        /// <summary>The Timestamp property</summary>
+        /// <summary>Timestamp</summary>
         public long? Timestamp { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
