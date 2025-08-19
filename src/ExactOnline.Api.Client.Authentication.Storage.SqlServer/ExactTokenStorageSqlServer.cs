@@ -14,11 +14,9 @@ internal class ExactTokenStorageSqlServer(
     IMemoryCache memoryCache,
     ExactOnlineTokenDbContext dbContext) : IExactTokenStorageService
 {
-    private const string AccessTokenKey = nameof(AccessTokenKey);
-
     public async Task StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
     {
-        var existingToken = await dbContext.RefreshTokens.SingleOrDefaultAsync(cancellationToken);
+        var existingToken = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
         if (existingToken != null)
         {
             existingToken.RefreshToken = refreshToken;
@@ -26,7 +24,7 @@ internal class ExactTokenStorageSqlServer(
         }
         else
         {
-            dbContext.RefreshTokens.Add(new() { RefreshToken = refreshToken, RefreshTokenUpdatedAt = TimeProvider.System.GetUtcNow() });
+            dbContext.Tokens.Add(new() { RefreshToken = refreshToken, RefreshTokenUpdatedAt = TimeProvider.System.GetUtcNow() });
         }
 
         await dbContext.SaveChangesAsync(cancellationToken);
@@ -34,28 +32,67 @@ internal class ExactTokenStorageSqlServer(
 
     public async Task<string> RetrieveRefreshTokenAsync(CancellationToken cancellationToken = default)
     {
-        var refreshToken = await dbContext.RefreshTokens.SingleOrDefaultAsync(cancellationToken);
+        var refreshToken = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
         if (refreshToken == null)
         {
-            logger.LogInformation("RefreshToken entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
+            logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
             return string.Empty;
         }
 
         return refreshToken.RefreshToken;
     }
 
-    public Task<string> RetrieveAccessTokenAsync(CancellationToken cancellationToken = default)
+    public async Task<string> RetrieveAccessTokenAsync(CancellationToken cancellationToken = default)
     {
-        if (memoryCache.TryGetValue(AccessTokenKey, out string? accessToken) && !string.IsNullOrEmpty(accessToken))
+        // 1. Try to retrieve the access token from memory cache for quick access.
+        if (memoryCache.TryGetValue(options.Value.AccessTokenColumnName, out string? accessToken) && !string.IsNullOrEmpty(accessToken))
         {
-            return Task.FromResult(accessToken);
+            return accessToken;
         }
 
-        return Task.FromResult(string.Empty);
+        // 2. If not found in memory cache, retrieve it from SQL.
+        var token = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
+        if (token == null)
+        {
+            logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
+            return string.Empty;
+        }
+
+        if (string.IsNullOrEmpty(token.AccessToken))
+        {
+            logger.LogInformation("AccessToken is null or empty in table {Table}. Returning empty string.", options.Value.TableName);
+            return string.Empty;
+        }
+
+        if (TimeProvider.System.GetUtcNow() <= token.AccessTokenExpire)
+        {
+            return memoryCache.Set(options.Value.AccessTokenColumnName, token.AccessToken, token.AccessTokenExpire);
+        }
+
+        logger.LogInformation("AccessToken blob is expired. Returning empty string value.");
+        return string.Empty;
     }
 
-    public Task<string> StoreAccessTokenAsync(string accessToken, TimeSpan absoluteExpirationRelativeToUtcNow, CancellationToken cancellationToken = default)
+    public async Task<string> StoreAccessTokenAsync(string accessToken, TimeSpan absoluteExpirationRelativeToUtcNow, CancellationToken cancellationToken = default)
     {
-        return Task.FromResult(memoryCache.Set(AccessTokenKey, accessToken, absoluteExpirationRelativeToUtcNow));
+        // 1. Store the access token in memory cache for quick access.
+        memoryCache.Set(options.Value.AccessTokenColumnName, accessToken, absoluteExpirationRelativeToUtcNow);
+
+        // 2. Store the access token in SQL
+        var token = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
+        if (token == null)
+        {
+            logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
+            return string.Empty;
+        }
+
+        var now = TimeProvider.System.GetUtcNow();
+        token.AccessToken = accessToken;
+        token.AccessTokenUpdatedAt = now;
+        token.AccessTokenExpire = now.Add(absoluteExpirationRelativeToUtcNow);
+
+        await dbContext.SaveChangesAsync(cancellationToken);
+
+        return accessToken;
     }
 }

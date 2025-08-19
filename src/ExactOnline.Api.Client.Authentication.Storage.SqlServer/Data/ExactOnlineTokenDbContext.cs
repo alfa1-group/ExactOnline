@@ -8,12 +8,16 @@ public class ExactOnlineTokenDbContext(DbContextOptions<ExactOnlineTokenDbContex
 {
     private readonly ExactOnlineSqlServerStorageOptions _storageOptions = storageOptions.Value;
 
-    public DbSet<ExactOnlineToken> RefreshTokens { get; set; }
+    public DbSet<ExactOnlineToken> Tokens { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ExactOnlineToken>().ToTable(_storageOptions.TableName);
         modelBuilder.Entity<ExactOnlineToken>().Property(p => p.RefreshToken).HasColumnName(_storageOptions.RefreshTokenColumnName);
         modelBuilder.Entity<ExactOnlineToken>().Property(p => p.RefreshTokenUpdatedAt).HasColumnName(_storageOptions.RefreshTokenUpdatedAtColumnName);
+
+        modelBuilder.Entity<ExactOnlineToken>().Property(p => p.AccessToken).HasColumnName(_storageOptions.AccessTokenColumnName);
+        modelBuilder.Entity<ExactOnlineToken>().Property(p => p.AccessTokenUpdatedAt).HasColumnName(_storageOptions.AccessTokenUpdatedAtColumnName);
+        modelBuilder.Entity<ExactOnlineToken>().Property(p => p.AccessTokenExpire).HasColumnName(_storageOptions.AccessTokenExpireColumnName);
     }
 }

@@ -38,11 +38,13 @@ internal class ExactTokenServiceAzureBlobs(
 
     public async Task<string> RetrieveAccessTokenAsync(CancellationToken cancellationToken = default)
     {
+        // 1. Try to retrieve the access token from memory cache for quick access.
         if (memoryCache.TryGetValue(options.Value.AccessTokenFilePath, out string? accessToken) && !string.IsNullOrEmpty(accessToken))
         {
             return accessToken;
         }
 
+        // 2. If not found in memory cache, retrieve it from Azure Blob Storage.
         if (!await _accessTokenBlobClient.ExistsAsync(cancellationToken))
         {
             logger.LogInformation("AccessToken blob does not exist in container {Container} at path: {FilePath}. Returning empty string value.", options.Value.ContainerName, options.Value.AccessTokenFilePath);
@@ -56,8 +58,7 @@ internal class ExactTokenServiceAzureBlobs(
             && TimeProvider.System.GetUtcNow() <= absoluteExpirationRelativeToNow
         )
         {
-            memoryCache.Set(options.Value.AccessTokenFilePath, accessToken, absoluteExpirationRelativeToNow);
-            return response.Value.Content.ToString();
+            return memoryCache.Set(options.Value.AccessTokenFilePath, response.Value.Content.ToString(), absoluteExpirationRelativeToNow);
         }
 
         logger.LogInformation("AccessToken blob is expired or does not have a valid Metadata. Returning empty string value.");
