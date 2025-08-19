@@ -25,7 +25,7 @@ public static class ServiceCollectionExtensions
 
     private static IServiceCollection AddServices(this IServiceCollection services)
     {
-        return services.AddScoped(sp =>
+        return services.AddSingleton(sp =>
         {
             var authenticationProvider = sp.GetRequiredService<ExactOnlineAuthenticationProvider>();
             var options = sp.GetRequiredService<IOptions<ExactOnlineOptions>>();
