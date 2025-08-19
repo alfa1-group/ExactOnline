@@ -3,7 +3,7 @@
 /// <summary>
 /// All possible Entity Types.
 /// </summary>
-public static class SyncDeletedEntityType
+public static class DeletedEntityType
 {
     public const int TransactionLines = 1;
 

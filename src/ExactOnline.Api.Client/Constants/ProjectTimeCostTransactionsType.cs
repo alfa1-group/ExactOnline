@@ -3,7 +3,7 @@
 /// <summary>
 /// The type of transaction.
 /// </summary>
-public static class SyncProjectTimeCostTransactionsType
+public static class ProjectTimeCostTransactionsType
 {
     public const int Time = 1;
 
