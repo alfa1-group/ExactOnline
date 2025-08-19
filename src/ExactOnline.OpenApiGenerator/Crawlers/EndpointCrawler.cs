@@ -221,7 +221,7 @@ internal class EndpointCrawler
                     .Select(x => x.idx)
                     .FirstOrDefault();
 
-                foreach (var row in propertyRows.Skip(descriptionColumnIndex != null ? 1 : 0))
+                foreach (var row in propertyRows.Skip(1))
                 {
                     var rowIsKey = row.GetClasses().Contains("key");
 
