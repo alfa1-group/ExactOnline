@@ -1,4 +1,4 @@
-﻿namespace ExactOnline.Api.Client.Models;
+﻿namespace ExactOnline.Api.Client.Models.WebHook;
 
 public static class EventActions
 {
