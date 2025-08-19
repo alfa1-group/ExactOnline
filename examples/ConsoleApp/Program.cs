@@ -63,15 +63,16 @@ var division = me!.CurrentDivision!.Value;
 
 await RunAsync(async () =>
 {
-    Console.WriteLine("Getting Crm Accounts - GetAll");
-    var list = await client.Api.V1[division].Crm.Accounts.GetAllAsync(a =>
+    Console.WriteLine("Getting Sync Project Projects - GetAll");
+    var list = await client.Api.V1[division].Sync.Project.Projects.GetAllAsync(a =>
     {
-        
+        a.QueryParameters.Filter = TimestampFilterBuilder.Build(t => t.Timestamp >= 1);
+        a.QueryParameters.Select = SelectBuilder<SyncProjectProjects>.Build();
     }).AsItems();
 
     foreach (var a in list)
     {
-        Console.WriteLine($"Crm Accounts ID: {a.ID}, Created: {a.Created}");
+        Console.WriteLine($"Sync Project Project: {a.ID}, Created: {a.Created}");
     }
 
     return list;
@@ -89,6 +90,40 @@ await RunAsync(async () =>
     foreach (var a in list)
     {
         Console.WriteLine($"Sync Crm Account ID: {a.ID}, Created: {a.Created}");
+    }
+
+    return list;
+});
+
+await RunAsync(async () =>
+{
+    Console.WriteLine("Getting Sync Payroll Employees - GetAll");
+    var list = await client.Api.V1[division].Sync.Payroll.Employees.GetAllAsync(a =>
+    {
+        a.QueryParameters.Filter = TimestampFilterBuilder.Build(t => t.Timestamp >= 1);
+        a.QueryParameters.Select = SelectBuilder<SyncPayrollEmployees>.Build();
+    }).AsItems();
+
+    foreach (var a in list)
+    {
+        Console.WriteLine($"Sync Sync Payroll Employee ID: {a.ID}, Created: {a.Created}");
+    }
+
+    return list;
+});
+
+await RunAsync(async () =>
+{
+    Console.WriteLine("Getting Sync Logistics Items - GetAll");
+    var list = await client.Api.V1[division].Sync.Logistics.Items.GetAllAsync(a =>
+    {
+        a.QueryParameters.Filter = TimestampFilterBuilder.Build(t => t.Timestamp >= 1);
+        a.QueryParameters.Select = SelectBuilder<SyncLogisticsItems>.Build();
+    }).AsItems();
+
+    foreach (var a in list)
+    {
+        Console.WriteLine($"Sync Logistics Item ID: {a.ID}, Created: {a.Created}");
     }
 
     return list;

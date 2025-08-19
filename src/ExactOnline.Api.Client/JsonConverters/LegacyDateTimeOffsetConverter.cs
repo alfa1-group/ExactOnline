@@ -12,7 +12,7 @@ namespace ExactOnline.Api.Client.JsonConverters;
 internal class LegacyDateTimeOffsetConverter : JsonConverter<DateTimeOffset>
 {
     // Regex to extract the millisecond value from the date string.
-    private static readonly Regex MicrosoftDateRegex = new(@"^\/Date\((\d+)\)\/$", RegexOptions.Compiled);
+    private static readonly Regex MicrosoftDateRegex = new(@"^\/Date\((-?\d+)\)\/$", RegexOptions.Compiled);
 
     public override bool CanConvert(Type typeToConvert)
     {
@@ -37,7 +37,6 @@ internal class LegacyDateTimeOffsetConverter : JsonConverter<DateTimeOffset>
         }
 
         // Fallback to standard ISO 8601 parsing if the custom format isn't matched.
-        // This makes the converter more robust.
         return DateTimeOffset.Parse(dateString, null, DateTimeStyles.RoundtripKind);
     }
 
