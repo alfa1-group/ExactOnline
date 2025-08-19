@@ -1,5 +1,9 @@
 ﻿# Kiota generation script for Exact Online API client in C#
 
+$buildersGeneratedPath = "src/ExactOnline.Api.Client/Generated/Api/V1"
+$modelsPath = "./src/ExactOnline.Api.Client/Generated/Models"
+$extensionsModelsPath = "./src/ExactOnline.Api.Client/Extensions/Models"
+
 Write-Output "⚙️ Generating C# client code..."
 kiota generate `
     --cc `
@@ -10,10 +14,6 @@ kiota generate `
     --output "./src/ExactOnline.Api.Client/Generated" `
     --namespace-name "ExactOnline.Api.Client" `
     --class-name "ExactOnlineServiceClient" `
-
-$buildersGeneratedPath = "./src/ExactOnline.Api.Client/Generated/Api/V1/Item"
-$modelsPath = "./src/ExactOnline.Api.Client/Generated/Models"
-$extensionsModelsPath = "./src/ExactOnline.Api.Client/Extensions/Models"
 
 Write-Output "🔧 Patching models..."
 $modelFiles = Get-ChildItem -Path $modelsPath -Filter "*.cs" | Where-Object {
@@ -70,14 +70,22 @@ foreach ($file in $withIdRequestBuilderFiles) {
 }
 
 $requestBuildersPath = "./src/ExactOnline.Api.Client/Extensions/RequestBuilders"
-Write-Output "🧹 Cleaning RequestBuilders directory..."
+Write-Output "🧹 Cleaning RequestBuilders folder..."
 Remove-Item -Path "$requestBuildersPath\*" -Recurse -Force
 
 Write-Output "🔄 Generating partial RequestBuilder classes..."
 $requestBuilderFiles = Get-ChildItem -Path $buildersGeneratedPath -Recurse -Filter "*RequestBuilder.cs" | Where-Object { $_.Name -notlike '*WithIdRequestBuilder.cs' }
 foreach ($file in $requestBuilderFiles) {
     $className = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
-    $partialFilePath = Join-Path $requestBuildersPath $file.Name
+
+    $resolvedPath = Resolve-Path $buildersGeneratedPath
+    
+    $subFolder = Split-Path ($file.FullName.Replace($resolvedPath, "")) -Parent
+
+    $partialFilePath = Join-Path $requestBuildersPath (Join-Path $subFolder $file.Name)
+
+    $partialFileFolder = Split-Path $partialFilePath -Parent
+    New-Item -ItemType Directory -Path $partialFileFolder -Force | Out-Null
 
     $sourceContent = Get-Content -Path $file.FullName -Raw
 
@@ -154,7 +162,7 @@ foreach ($file in $requestBuilderFiles) {
     Set-Content -Path $partialFilePath -Value $partialClassContent -Encoding UTF8
 }
 
-Write-Output "🧹 Cleaning extensions directory..."
+Write-Output "🧹 Cleaning extensions model folder..."
 Remove-Item -Path "$extensionsModelsPath\*" -Recurse -Force
 
 Write-Output "🔄 Generating partial model classes..."

@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Cashflow.AllocationRuleWithId
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v1\beta\{division}\cashflow\AllocationRule({id})
+    /// Builds and executes requests for operations under \api\v1\beta\{division}\cashflow\AllocationRule(guid'{id}')
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AllocationRuleWithIdRequestBuilder : BaseRequestBuilder
@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Cashflow.AllocationRuleWithId
         /// <param name="id">Unique identifier (GUID) of the CashflowAllocationRule</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AllocationRuleWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/cashflow/AllocationRule({id})", pathParameters)
+        public AllocationRuleWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/cashflow/AllocationRule(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Cashflow.AllocationRuleWithId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AllocationRuleWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/cashflow/AllocationRule({id})", rawUrl)
+        public AllocationRuleWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/cashflow/AllocationRule(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -206,3 +206,4 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Cashflow.AllocationRuleWithId
     }
 }
 #pragma warning restore CS0618
+

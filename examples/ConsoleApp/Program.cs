@@ -63,6 +63,39 @@ var division = me!.CurrentDivision!.Value;
 
 await RunAsync(async () =>
 {
+    Console.WriteLine("Getting Crm Accounts - GetAll");
+    var list = await client.Api.V1[division].Crm.Accounts.GetAllAsync(a =>
+    {
+        
+    }).AsItems();
+
+    foreach (var a in list)
+    {
+        Console.WriteLine($"Crm Accounts ID: {a.ID}, Created: {a.Created}");
+    }
+
+    return list;
+});
+
+await RunAsync(async () =>
+{
+    Console.WriteLine("Getting Sync Crm Accounts - GetAll");
+    var list = await client.Api.V1[division].Sync.CRM.Accounts.GetAllAsync(a =>
+    {
+        a.QueryParameters.Filter = TimestampFilterBuilder.Build(t => t.Timestamp >= 1);
+        a.QueryParameters.Select = SelectBuilder<SyncCRMAccounts>.Build();
+    }).AsItems();
+
+    foreach (var a in list)
+    {
+        Console.WriteLine($"Sync Crm Account ID: {a.ID}, Created: {a.Created}");
+    }
+
+    return list;
+});
+
+await RunAsync(async () =>
+{
     var meTop = await client.Api.V1.Current.Me.GetAsync(m => m.QueryParameters.Top = 1).AsItem();
     Console.WriteLine($"After waiting: {meTop?.Email}");
 

@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachmentsWithId
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v1\beta\{division}\workflow\RequestAttachments({id})
+    /// Builds and executes requests for operations under \api\v1\beta\{division}\workflow\RequestAttachments(guid'{id}')
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RequestAttachmentsWithIdRequestBuilder : BaseRequestBuilder
@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachmentsWit
         /// <param name="id">Unique identifier (GUID) of the WorkflowRequestAttachments</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RequestAttachmentsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/workflow/RequestAttachments({id})", pathParameters)
+        public RequestAttachmentsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/workflow/RequestAttachments(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachmentsWit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RequestAttachmentsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/workflow/RequestAttachments({id})", rawUrl)
+        public RequestAttachmentsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/workflow/RequestAttachments(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -99,3 +99,4 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachmentsWit
     }
 }
 #pragma warning restore CS0618
+

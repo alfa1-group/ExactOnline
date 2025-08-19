@@ -12,7 +12,7 @@ using System;
 namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Budget.BudgetScenariosWithId
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v1\beta\{division}\budget\BudgetScenarios({id})
+    /// Builds and executes requests for operations under \api\v1\beta\{division}\budget\BudgetScenarios(guid'{id}')
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BudgetScenariosWithIdRequestBuilder : BaseRequestBuilder
@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Budget.BudgetScenariosWithId
         /// <param name="id">Unique identifier (GUID) of the BudgetBudgetScenarios</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BudgetScenariosWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/budget/BudgetScenarios({id})", pathParameters)
+        public BudgetScenariosWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/budget/BudgetScenarios(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Budget.BudgetScenariosWithId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BudgetScenariosWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/budget/BudgetScenarios({id})", rawUrl)
+        public BudgetScenariosWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/budget/BudgetScenarios(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -99,3 +99,4 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Budget.BudgetScenariosWithId
     }
 }
 #pragma warning restore CS0618
+

@@ -23,7 +23,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponentsWithI
         /// <param name="id">Unique identifier (GUID) of the PayrollPayrollComponents</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayrollComponentsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollComponents({id})", pathParameters)
+        public PayrollComponentsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollComponents(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponentsWithI
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayrollComponentsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollComponents({id})", rawUrl)
+        public PayrollComponentsWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollComponents(guid'{id}')", rawUrl)
         {
         }
         /// <summary>
@@ -99,3 +99,4 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponentsWithI
     }
 }
 #pragma warning restore CS0618
+
