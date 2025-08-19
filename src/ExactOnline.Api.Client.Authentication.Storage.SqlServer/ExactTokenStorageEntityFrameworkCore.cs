@@ -8,13 +8,13 @@ using Microsoft.Extensions.Options;
 
 namespace ExactOnline.Api.Client.Authentication.Storage.SqlServer;
 
-internal class ExactTokenStorageSqlServer(
-    ILogger<ExactTokenStorageSqlServer> logger,
-    IOptions<ExactOnlineSqlServerStorageOptions> options,
+internal class ExactTokenStorageEntityFrameworkCore(
+    ILogger<ExactTokenStorageEntityFrameworkCore> logger,
+    IOptions<ExactOnlineEntityFrameworkCoreStorageOptions> options,
     IMemoryCache memoryCache,
     ExactOnlineTokenDbContext dbContext) : IExactTokenStorageService
 {
-    public async Task StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
+    public async Task<string> StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
     {
         var existingToken = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
         if (existingToken != null)
@@ -28,6 +28,8 @@ internal class ExactTokenStorageSqlServer(
         }
 
         await dbContext.SaveChangesAsync(cancellationToken);
+
+        return refreshToken;
     }
 
     public async Task<string> RetrieveRefreshTokenAsync(CancellationToken cancellationToken = default)

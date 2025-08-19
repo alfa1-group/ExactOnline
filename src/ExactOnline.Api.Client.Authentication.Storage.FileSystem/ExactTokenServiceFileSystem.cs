@@ -21,9 +21,11 @@ internal class ExactTokenServiceFileSystem(ILogger<ExactTokenServiceFileSystem> 
         return await File.ReadAllTextAsync(_refreshTokenFilePath, cancellationToken);
     }
 
-    public Task StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
+    public async Task<string> StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
     {
-        return File.WriteAllTextAsync(_refreshTokenFilePath, refreshToken, cancellationToken);
+        await File.WriteAllTextAsync(_refreshTokenFilePath, refreshToken, cancellationToken);
+
+        return refreshToken;
     }
 
     public Task<string> RetrieveAccessTokenAsync(CancellationToken cancellationToken = default)

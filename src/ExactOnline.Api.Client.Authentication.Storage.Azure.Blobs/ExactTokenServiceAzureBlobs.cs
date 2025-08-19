@@ -31,9 +31,11 @@ internal class ExactTokenServiceAzureBlobs(
         return response.Value.Content.ToString();
     }
 
-    public Task StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
+    public async Task<string> StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
     {
-        return _refreshTokenBlobClient.UploadAsync(BinaryData.FromString(refreshToken), overwrite: true, cancellationToken);
+        _ = await _refreshTokenBlobClient.UploadAsync(BinaryData.FromString(refreshToken), overwrite: true, cancellationToken);
+
+        return refreshToken;
     }
 
     public async Task<string> RetrieveAccessTokenAsync(CancellationToken cancellationToken = default)

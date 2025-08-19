@@ -2,7 +2,7 @@
 
 namespace ExactOnline.Api.Client.Authentication.Storage.SqlServer.Options;
 
-public class ExactOnlineSqlServerStorageOptions
+public class ExactOnlineEntityFrameworkCoreStorageOptions
 {
     [Required]
     public string ConnectionString { get; set; } = null!;

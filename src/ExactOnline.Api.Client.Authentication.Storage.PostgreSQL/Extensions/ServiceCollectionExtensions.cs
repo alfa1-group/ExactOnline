@@ -11,17 +11,17 @@ namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddExactOnlineTokenStorageSqlServer(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddExactOnlineTokenStoragePostgreSQL(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddOptions<ExactOnlineEntityFrameworkCoreStorageOptions>()
-            .Bind(configuration.GetSection("ExactOnlineSqlServerStorageOptions"))
+            .Bind(configuration.GetSection("ExactOnlinePostgreSQLStorageOptions"))
             .ValidateDataAnnotations()
             .ValidateOnStart();
 
         services.AddDbContext<ExactOnlineTokenDbContext>((serviceProvider, options) =>
         {
             var storageOptions = serviceProvider.GetRequiredService<IOptions<ExactOnlineEntityFrameworkCoreStorageOptions>>().Value;
-            options.UseSqlServer(storageOptions.ConnectionString);
+            options.UseNpgsql(storageOptions.ConnectionString);
         });
 
         using (var serviceProvider = services.BuildServiceProvider())
