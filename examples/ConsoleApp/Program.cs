@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ExactOnline.Api.Client;
+﻿using ExactOnline.Api.Client;
 using ExactOnline.Api.Client.Authentication.Options;
 using ExactOnline.Api.Client.Builders.Filter;
 using ExactOnline.Api.Client.Builders.OrderBy;

@@ -9,7 +9,7 @@
   <ItemGroup>
     <Compile Include="..\ExactOnline.Api.Client.Authentication.Storage.SqlServer\Data\ExactOnlineToken.cs" Link="Data\ExactOnlineToken.cs" />
     <Compile Include="..\ExactOnline.Api.Client.Authentication.Storage.SqlServer\Data\ExactOnlineTokenDbContext.cs" Link="Data\ExactOnlineTokenDbContext.cs" />
-    <Compile Include="..\ExactOnline.Api.Client.Authentication.Storage.SqlServer\ExactTokenStorageEntityFrameworkCore.cs" Link="ExactTokenStorageEntityFrameworkCore.cs" />
+    <Compile Include="..\ExactOnline.Api.Client.Authentication.Storage.SqlServer\ExactTokenStorageEntityFrameworkCoreService.cs" Link="ExactTokenStorageEntityFrameworkCoreService.cs" />
     <Compile Include="..\ExactOnline.Api.Client.Authentication.Storage.SqlServer\Options\ExactOnlineEntityFrameworkCoreStorageOptions.cs" Link="Options\ExactOnlineEntityFrameworkCoreStorageOptions.cs" />
   </ItemGroup>
 

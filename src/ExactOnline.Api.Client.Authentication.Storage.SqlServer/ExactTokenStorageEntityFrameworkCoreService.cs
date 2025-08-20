@@ -8,8 +8,8 @@ using Microsoft.Extensions.Options;
 
 namespace ExactOnline.Api.Client.Authentication.Storage.SqlServer;
 
-internal class ExactTokenStorageEntityFrameworkCore(
-    ILogger<ExactTokenStorageEntityFrameworkCore> logger,
+internal class ExactTokenStorageEntityFrameworkCoreService(
+    ILogger<ExactTokenStorageEntityFrameworkCoreService> logger,
     IOptions<ExactOnlineEntityFrameworkCoreStorageOptions> options,
     IMemoryCache memoryCache,
     ExactOnlineTokenDbContext dbContext) : IExactTokenStorageService

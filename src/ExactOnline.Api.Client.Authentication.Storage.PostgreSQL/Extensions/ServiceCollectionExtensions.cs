@@ -18,6 +18,8 @@ public static class ServiceCollectionExtensions
             .ValidateDataAnnotations()
             .ValidateOnStart();
 
+        services.AddMemoryCache();
+
         services.AddDbContext<ExactOnlineTokenDbContext>((serviceProvider, options) =>
         {
             var storageOptions = serviceProvider.GetRequiredService<IOptions<ExactOnlineEntityFrameworkCoreStorageOptions>>().Value;
@@ -36,6 +38,6 @@ public static class ServiceCollectionExtensions
             }
         }
 
-        return services.AddScoped<IExactTokenStorageService, ExactTokenStorageEntityFrameworkCore>();
+        return services.AddScoped<IExactTokenStorageService, ExactTokenStorageEntityFrameworkCoreService>();
     }
 }
