@@ -2,7 +2,7 @@
   "profiles": {
     "ExactOnline.OpenApiGenerator": {
       "commandName": "Project",
-      "commandLineArgs": "--destination \"../../../../../resources/exactonline-openapi.json\" --clearcache false"
+      "commandLineArgs": "--destination \"../../../../../resources/exactonline-openapi.json\" --cache true --clearcache false"
     }
   }
 }
