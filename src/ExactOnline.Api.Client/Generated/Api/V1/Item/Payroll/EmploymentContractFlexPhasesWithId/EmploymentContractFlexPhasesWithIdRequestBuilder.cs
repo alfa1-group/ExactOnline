@@ -20,10 +20,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContractFlexPhase
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContractFlexPhasesWithId.EmploymentContractFlexPhasesWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the PayrollEmploymentContractFlexPhases</param>
+        /// <param name="id">Unique identifier (int32) of the PayrollEmploymentContractFlexPhases</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmploymentContractFlexPhasesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/payroll/EmploymentContractFlexPhases(guid'{id}')", pathParameters)
+        public EmploymentContractFlexPhasesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/payroll/EmploymentContractFlexPhases(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }

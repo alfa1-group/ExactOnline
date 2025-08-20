@@ -55,7 +55,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox
         /// Use this endpoint to retrieve the digital postbox of an administration. If there is none assigned to this administration, it will grab the first digital postbox it encounters for the account. For more information about digital postbox, kindly refer to the following help file Digital Postbox.Important notes:To use this endpoint, the Mailbox feature set is required in the license.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.DefaultMailboxWithId.DefaultMailboxWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadMailboxDefaultMailbox</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadMailboxDefaultMailbox</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.DefaultMailboxWithId.DefaultMailboxWithIdRequestBuilder DefaultMailboxWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -65,7 +65,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox
         /// Important notes:To use this endpoint, the Mailbox feature set is required in the license.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxForOperationWithId.PreferredMailboxForOperationWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadMailboxPreferredMailboxForOperation</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadMailboxPreferredMailboxForOperation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxForOperationWithId.PreferredMailboxForOperationWithIdRequestBuilder PreferredMailboxForOperationWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -75,7 +75,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox
         /// Important notes:To use this endpoint, the Mailbox feature set is required in the license.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxWithId.PreferredMailboxWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadMailboxPreferredMailbox</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadMailboxPreferredMailbox</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxWithId.PreferredMailboxWithIdRequestBuilder PreferredMailboxWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

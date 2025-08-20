@@ -57,3 +57,4 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item
     }
 }
 #pragma warning restore CS0618
+

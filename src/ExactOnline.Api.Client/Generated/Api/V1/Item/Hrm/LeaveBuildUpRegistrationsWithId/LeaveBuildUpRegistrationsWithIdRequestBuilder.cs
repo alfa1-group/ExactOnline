@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveBuildUpRegistrationsWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveBuildUpRegistrationsWithId.LeaveBuildUpRegistrationsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the HRMLeaveBuildUpRegistrations</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMLeaveBuildUpRegistrations</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public LeaveBuildUpRegistrationsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/hrm/LeaveBuildUpRegistrations(guid'{id}')", pathParameters)

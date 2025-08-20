@@ -7,7 +7,7 @@ using ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrderLines;
 using ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrderLinesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders;
-using ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithPurchaseorderid;
 using ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLines;
 using ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLinesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturns;
@@ -76,7 +76,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
         /// Use this endpoint to : • Create new goods receipt lines. • Read existing goods receipt lines. Note: Goods receipt lines should not be posted individually. They should be part of the GoodsReceipts Post. For creating goods receipt lines, it is mandatory to supply PurchaseOrderLineID. If QuantityReceived is not supplied, then the count of the remaining quantity will be used. The received quantity cannot be greater than quantity to be received unless the company enables &apos;Receipt of more than ordered is allowed&apos; setting.For more information about the  functionality in Exact Online, see Goods receipts.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptLinesWithId.GoodsReceiptLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the PurchaseOrderGoodsReceiptLines</param>
+        /// <param name="id">Unique identifier (uuid) of the PurchaseOrderGoodsReceiptLines</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptLinesWithId.GoodsReceiptLinesWithIdRequestBuilder GoodsReceiptLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -86,7 +86,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
         /// Use this endpoint to : • Create new goods receipts. • Read existing goods receipts. • Update existing goods receipts. Note: For creating a GoodsReceipts, it is mandatory to supply one or more GoodReceiptLines and ReceiptDate.For more information about the  functionality in Exact Online, see Goods receipts.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptsWithId.GoodsReceiptsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the PurchaseOrderGoodsReceipts</param>
+        /// <param name="id">Unique identifier (uuid) of the PurchaseOrderGoodsReceipts</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptsWithId.GoodsReceiptsWithIdRequestBuilder GoodsReceiptsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -96,7 +96,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
         /// Use this endpoint to : • Create a new purchase order line. • Read existing purchase order lines. • Update an existing purchase order line • Remove an existing purchase order line. Purchase order lines may not be posted individually. They should be part of the PurchaseOrder Post. When using the POST method of this endpoint to create a purchase order line it is mandatory to provide an Item and Quantity. When deleting a purchase order line, a purchase order must have at least one line. If necessary delete the complete purchase order.For more information about the  functionality in Exact Online, see Overview | Purchase orders.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrderLinesWithId.PurchaseOrderLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the PurchaseOrderPurchaseOrderLines</param>
+        /// <param name="id">Unique identifier (uuid) of the PurchaseOrderPurchaseOrderLines</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrderLinesWithId.PurchaseOrderLinesWithIdRequestBuilder PurchaseOrderLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -105,18 +105,18 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
         /// <summary>
         /// Use this endpoint to : • Create a new purchase order. • Read existing purchase orders. • Update existing purchase orders. • Remove an existing purchase order. When using the POST method of this endpoint to create a purchase order, it is mandatory to provide a valid supplier and purchase order lines. The purchase order lines is not necessary when you PUT to this endpoint.For more information about the  functionality in Exact Online, see Overview | Purchase orders.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithId.PurchaseOrdersWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the PurchaseOrderPurchaseOrders</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithId.PurchaseOrdersWithIdRequestBuilder PurchaseOrdersWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithPurchaseorderid.PurchaseOrdersWithPurchaseorderidRequestBuilder"/></returns>
+        /// <param name="purchaseorderid">Unique identifier (uuid) of the PurchaseOrderPurchaseOrders</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithPurchaseorderid.PurchaseOrdersWithPurchaseorderidRequestBuilder PurchaseOrdersWithPurchaseorderid(Guid? purchaseorderid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithId.PurchaseOrdersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = purchaseorderid ?? throw new ArgumentNullException(nameof(purchaseorderid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithPurchaseorderid.PurchaseOrdersWithPurchaseorderidRequestBuilder(PathParameters, RequestAdapter, purchaseorderid);
         }
         /// <summary>
         /// Use this endpoint to : • Create a new purchase return line.(Adding a new line to existing purchase return is not allowed) • Retrieve an existing purchase return line. • Update an existing purchase return line Note: Purchase return lines should not be posted individually. They should be part of the PurchaseReturn Post. For creating purchase return lines, it is mandatory to supply PurchaseOrderLineID,ReturnQuantity and GoodsReceiptLineID. The returned quantity cannot be greater than quantity received
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLinesWithId.PurchaseReturnLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the PurchaseOrderPurchaseReturnLines</param>
+        /// <param name="id">Unique identifier (uuid) of the PurchaseOrderPurchaseReturnLines</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLinesWithId.PurchaseReturnLinesWithIdRequestBuilder PurchaseReturnLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -126,7 +126,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
         /// Use this endpoint to : • Create a new purchase return. • Retrieve an existing purchase return. • Update an existing purchase return. Note: For creating a PurchaseReturn, it is mandatory to supply one or more PurchaseReturnLines and ReturnDate.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnsWithId.PurchaseReturnsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the PurchaseOrderPurchaseReturns</param>
+        /// <param name="id">Unique identifier (uuid) of the PurchaseOrderPurchaseReturns</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnsWithId.PurchaseReturnsWithIdRequestBuilder PurchaseReturnsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

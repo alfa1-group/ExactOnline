@@ -53,7 +53,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics
         /// Use this endpoint to read division items.Add CustomDescriptionLanguage=&apos;[ NL | FR-BE | NL-BE | ... ]&apos; to the header to retrieve language sensitive properties such as descriptions in a specific language.This endpoint will return all the division items. Using the accountID as a filter will not have any effect on the result.For more information about the Items functionality in Exact Online, see Working with items.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.AccountItemsWithId.AccountItemsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadLogisticsAccountItems</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadLogisticsAccountItems</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.AccountItemsWithId.AccountItemsWithIdRequestBuilder AccountItemsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -79,7 +79,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics
         /// Use this endpoint to read Item Details.Add CustomDescriptionLanguage=&apos;[ NL | FR-BE | NL-BE | ... ]&apos; to the header to retrieve language sensitive properties such as descriptions in a specific language.Retrieve item details.For more information about the Items functionality in Exact Online, see Working with items.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.ItemDetailsByIDWithId.ItemDetailsByIDWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadLogisticsItemDetailsByID</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadLogisticsItemDetailsByID</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.ItemDetailsByIDWithId.ItemDetailsByIDWithIdRequestBuilder ItemDetailsByIDWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -89,30 +89,30 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics
         /// Use this endpoint to retrieve extra information store in item. This extra information could be defined and access via Item maintenance and Free field master data.itemId and modified can be use for filter.For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.ItemExtraFieldWithId.ItemExtraFieldWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadLogisticsItemExtraField</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.ItemExtraFieldWithId.ItemExtraFieldWithIdRequestBuilder ItemExtraFieldWithId(Guid? id)
+        /// <param name="id">Unique identifier of the ReadLogisticsItemExtraField</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.ItemExtraFieldWithId.ItemExtraFieldWithIdRequestBuilder ItemExtraFieldWithId(string id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.ItemExtraFieldWithId.ItemExtraFieldWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// Use this endpoint to read price of sales item.Add CustomDescriptionLanguage=&apos;[ NL | FR-BE | NL-BE | ... ]&apos; to the header to retrieve language sensitive properties such as descriptions in a specific language.This endpoint retrieves the sales price of an item for an account based on the specified date.Price agreement will take precedence over Price List (Pricelist functionality is checked) and if both do not exist, it will search for the usual sales prices defined.For more information about the sales price management functionality in Exact Online, see Sales price management.For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPriceWithId.SalesItemPriceWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadLogisticsSalesItemPrice</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPriceWithId.SalesItemPriceWithIdRequestBuilder SalesItemPriceWithId(Guid? id)
+        /// <param name="id">Unique identifier of the ReadLogisticsSalesItemPrice</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPriceWithId.SalesItemPriceWithIdRequestBuilder SalesItemPriceWithId(string id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.SalesItemPriceWithId.SalesItemPriceWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// Use this endpoint to read stock position.Retrieve item current stock levels and projected stock level with planned movements of stock.For more information about the stock position functionality in Exact Online, see Stock position.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.StockPositionWithId.StockPositionWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadLogisticsStockPosition</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.StockPositionWithId.StockPositionWithIdRequestBuilder StockPositionWithId(Guid? id)
+        /// <param name="id">Unique identifier of the ReadLogisticsStockPosition</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.StockPositionWithId.StockPositionWithIdRequestBuilder StockPositionWithId(string id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.StockPositionWithId.StockPositionWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

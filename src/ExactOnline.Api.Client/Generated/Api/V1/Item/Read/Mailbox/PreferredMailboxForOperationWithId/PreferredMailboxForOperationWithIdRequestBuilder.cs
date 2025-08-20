@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxForOpe
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxForOperationWithId.PreferredMailboxForOperationWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the ReadMailboxPreferredMailboxForOperation</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadMailboxPreferredMailboxForOperation</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PreferredMailboxForOperationWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/mailbox/PreferredMailboxForOperation(guid'{id}')", pathParameters)

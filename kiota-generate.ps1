@@ -56,17 +56,25 @@ foreach ($file in $responseModelFiles) {
     }
 }
 
-Write-Output "🔧 Patching WithId request builders ..."
-$withIdRequestBuilderFiles = Get-ChildItem -Path $buildersGeneratedPath -Recurse -Filter "*WithIdRequestBuilder.cs"
+Write-Output "🔧 Patching WithId and WithUserId request builders ..."
+$withIdRequestBuilderFiles = Get-ChildItem -Path $buildersGeneratedPath -Recurse -Filter "*With*RequestBuilder.cs"
 foreach ($file in $withIdRequestBuilderFiles) {
     $content = Get-Content -Path $file.FullName -Raw
     $oldString = '({id})'
     $newString = '(guid''{id}'')'
     
     if ($content -match [regex]::Escape($oldString)) {
-        $newContent = $content.Replace($oldString, $newString)
-        Set-Content -Path $file.FullName -Value $newContent -Encoding UTF8
+        $content = $content.Replace($oldString, $newString)
     }
+
+    $oldString = '({userid})'
+    $newString = '(guid''{userid}'')'
+    
+    if ($content -match [regex]::Escape($oldString)) {
+        $content = $content.Replace($oldString, $newString)
+    }
+
+    Set-Content -Path $file.FullName -Value $content -Encoding UTF8
 }
 
 $requestBuildersPath = "./src/ExactOnline.Api.Client/Extensions/RequestBuilders"
@@ -74,7 +82,7 @@ Write-Output "🧹 Cleaning RequestBuilders folder..."
 Remove-Item -Path "$requestBuildersPath\*" -Recurse -Force
 
 Write-Output "🔄 Generating partial RequestBuilder classes..."
-$requestBuilderFiles = Get-ChildItem -Path $buildersGeneratedPath -Recurse -Filter "*RequestBuilder.cs" | Where-Object { $_.Name -notlike '*WithIdRequestBuilder.cs' -and $_.Name -notlike '*WithTimestampRequestBuilder.cs' }
+$requestBuilderFiles = Get-ChildItem -Path $buildersGeneratedPath -Recurse -Filter "*RequestBuilder.cs" | Where-Object { $_.Name -notlike '*With*RequestBuilder.cs' }
 foreach ($file in $requestBuilderFiles) {
     $className = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
 

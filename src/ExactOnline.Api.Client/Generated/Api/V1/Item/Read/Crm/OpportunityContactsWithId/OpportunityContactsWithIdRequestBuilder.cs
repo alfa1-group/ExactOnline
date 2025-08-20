@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityContactsWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityContactsWithId.OpportunityContactsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the ReadCRMOpportunityContacts</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMOpportunityContacts</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public OpportunityContactsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/crm/OpportunityContacts(guid'{id}')", pathParameters)

@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingAccountD
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingAccountDetailsWithId.TimeAndBillingAccountDetailsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingAccountDetails</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingAccountDetails</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public TimeAndBillingAccountDetailsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/TimeAndBillingAccountDetails(guid'{id}')", pathParameters)

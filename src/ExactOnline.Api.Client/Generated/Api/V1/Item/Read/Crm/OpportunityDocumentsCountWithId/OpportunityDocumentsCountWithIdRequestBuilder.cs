@@ -20,12 +20,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsCountW
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsCountWithId.OpportunityDocumentsCountWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the ReadCRMOpportunityDocumentsCount</param>
+        /// <param name="id">Unique identifier of the ReadCRMOpportunityDocumentsCount</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OpportunityDocumentsCountWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/crm/OpportunityDocumentsCount(guid'{id}')", pathParameters)
+        public OpportunityDocumentsCountWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string id = "") : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/crm/OpportunityDocumentsCount(guid'{id}')", pathParameters)
         {
-            if (id != null) PathParameters.Add("id", id);
+            if (!string.IsNullOrWhiteSpace(id)) PathParameters.Add("id", id);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsCountWithId.OpportunityDocumentsCountWithIdRequestBuilder"/> and sets the default values.

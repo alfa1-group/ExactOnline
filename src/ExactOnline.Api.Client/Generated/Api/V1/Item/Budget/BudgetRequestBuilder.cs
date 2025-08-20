@@ -25,7 +25,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Budget
         /// Use this endpoint to get the budgets that you have allocated to a G/L account in your administration. For more information about budget, you can refer to Budgets.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Budget.BudgetsWithId.BudgetsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BudgetBudgets</param>
+        /// <param name="id">Unique identifier (uuid) of the BudgetBudgets</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Budget.BudgetsWithId.BudgetsWithIdRequestBuilder BudgetsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

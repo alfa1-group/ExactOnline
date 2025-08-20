@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachmentsWit
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachmentsWithId.RequestAttachmentsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the WorkflowRequestAttachments</param>
+        /// <param name="id">Unique identifier (uuid) of the WorkflowRequestAttachments</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public RequestAttachmentsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/workflow/RequestAttachments(guid'{id}')", pathParameters)

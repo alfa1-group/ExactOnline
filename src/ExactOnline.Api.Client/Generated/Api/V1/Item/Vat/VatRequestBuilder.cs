@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Vat
         /// Use this endpoint to create, update, view and delete VAT codes. VAT codes can only be deleted, when they are not yet used in financial entries.In order to fill percentages, you need to add one ore more VATPercentage lines to the VAT code. This is only possible when you POST a VAT code.Below is an example of the body request to POST VatCode with VatPercentages.{ Code : value, Description : value, Type : value, GLToClaim : value, GLToPay : value, VATPercentages: [ {  Percentage : value,  Type : value  } ]}
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Vat.VATCodesWithId.VATCodesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the VATVATCodes</param>
+        /// <param name="id">Unique identifier (uuid) of the VATVATCodes</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Vat.VATCodesWithId.VATCodesWithIdRequestBuilder VATCodesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Vat
         /// VAT rates change from time to time, use this endpoint to get all the VAT percentages of all the VAT codes of an administration.If there is an old VAT percentage linked to the VAT code, it will also be retrieved. To POST VAT percentages, please use VAT Codes endpoint.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Vat.VatPercentagesWithId.VatPercentagesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the VATVatPercentages</param>
+        /// <param name="id">Unique identifier (uuid) of the VATVatPercentages</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Vat.VatPercentagesWithId.VatPercentagesWithIdRequestBuilder VatPercentagesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

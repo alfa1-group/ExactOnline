@@ -20,10 +20,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnLinesW
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnLinesWithId.PlannedSalesReturnLinesWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderPlannedSalesReturnLines</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesOrderPlannedSalesReturnLines</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PlannedSalesReturnLinesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/PlannedSalesReturnLines(guid'{id}')", pathParameters)
+        public PlannedSalesReturnLinesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/PlannedSalesReturnLines({id})", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }
@@ -32,7 +32,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnLinesW
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PlannedSalesReturnLinesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/PlannedSalesReturnLines(guid'{id}')", rawUrl)
+        public PlannedSalesReturnLinesWithIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/PlannedSalesReturnLines({id})", rawUrl)
         {
         }
         /// <summary>
@@ -206,4 +206,3 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnLinesW
     }
 }
 #pragma warning restore CS0618
-

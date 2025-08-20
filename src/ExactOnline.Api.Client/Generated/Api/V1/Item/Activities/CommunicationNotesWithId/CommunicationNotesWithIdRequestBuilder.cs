@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotesWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotesWithId.CommunicationNotesWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the ActivitiesCommunicationNotes</param>
+        /// <param name="id">Unique identifier (uuid) of the ActivitiesCommunicationNotes</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CommunicationNotesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/activities/CommunicationNotes(guid'{id}')", pathParameters)

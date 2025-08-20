@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics
         /// This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics.ItemsWithId.ItemsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkLogisticsItems</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkLogisticsItems</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics.ItemsWithId.ItemsWithIdRequestBuilder ItemsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics
         /// This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.Only the following filters are supported for this endpoint:Account, EndDate, ID, Item, Price, Quantity, StartDate, Unit
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics.SalesItemPricesWithId.SalesItemPricesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkLogisticsSalesItemPrices</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkLogisticsSalesItemPrices</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics.SalesItemPricesWithId.SalesItemPricesWithIdRequestBuilder SalesItemPricesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

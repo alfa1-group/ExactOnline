@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalE
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntryLinesWithId.GeneralJournalEntryLinesWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the GeneralJournalEntryGeneralJournalEntryLines</param>
+        /// <param name="id">Unique identifier (uuid) of the GeneralJournalEntryGeneralJournalEntryLines</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GeneralJournalEntryLinesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/generaljournalentry/GeneralJournalEntryLines(guid'{id}')", pathParameters)

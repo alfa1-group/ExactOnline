@@ -55,7 +55,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll
         /// Use this endpoint to read employment conditions groups.Employment conditions groups contain components that define the employment conditions. A division&apos;s employment conditions group is based on a predefined collective agreement. This endpoint gives the basic information of the employment conditions group.For more information about the employment conditions groups functionality in Exact Online, see Work with employment conditions groups.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.EmploymentConditionGroupsWithId.EmploymentConditionGroupsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the PayrollEmploymentConditionGroups</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentConditionGroups</param>
         public global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.EmploymentConditionGroupsWithId.EmploymentConditionGroupsWithIdRequestBuilder EmploymentConditionGroupsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -65,7 +65,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll
         /// Use this endpoint to read payroll components.This endpoint gives a list of payroll components that are part of the specified employment conditions group.For more information about the payrol components functionality in Exact Online, see Work with payroll components.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponentsWithId.PayrollComponentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the PayrollPayrollComponents</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollPayrollComponents</param>
         public global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponentsWithId.PayrollComponentsWithIdRequestBuilder PayrollComponentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -75,7 +75,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll
         /// This bulk service has a page size of 1000.Only the following filters are supported for this endpoint:Employment, Frequency, PayrollComponent, PayrollYear, Period, Status
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollTransactionsByPayrollYearWithId.PayrollTransactionsByPayrollYearWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the PayrollPayrollTransactionsByPayrollYear</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollPayrollTransactionsByPayrollYear</param>
         public global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollTransactionsByPayrollYearWithId.PayrollTransactionsByPayrollYearWithIdRequestBuilder PayrollTransactionsByPayrollYearWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

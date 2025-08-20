@@ -23,16 +23,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Financial.GLAccountsWithTimest
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="timestamp">The Timestamp of the SyncFinancialGLAccounts</param>
-        public GLAccountsWithTimestampRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string timestamp = "") : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Financial/GLAccounts({Timestamp})", pathParameters)
+        public GLAccountsWithTimestampRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string timestamp = "") : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Financial/GLAccounts({timestamp})", pathParameters)
         {
-            if (!string.IsNullOrWhiteSpace(timestamp)) PathParameters.Add("Timestamp", timestamp);
+            if (!string.IsNullOrWhiteSpace(timestamp)) PathParameters.Add("timestamp", timestamp);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Sync.Financial.GLAccountsWithTimestamp.GLAccountsWithTimestampRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GLAccountsWithTimestampRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Financial/GLAccounts({Timestamp})", rawUrl)
+        public GLAccountsWithTimestampRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Financial/GLAccounts({timestamp})", rawUrl)
         {
         }
         /// <summary>
@@ -99,3 +99,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Financial.GLAccountsWithTimest
     }
 }
 #pragma warning restore CS0618
+

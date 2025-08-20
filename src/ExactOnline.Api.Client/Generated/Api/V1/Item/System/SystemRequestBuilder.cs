@@ -3,13 +3,13 @@
 using ExactOnline.Api.Client.Api.V1.Item.System.AccountantInfo;
 using ExactOnline.Api.Client.Api.V1.Item.System.AccountantInfoWithId;
 using ExactOnline.Api.Client.Api.V1.Item.System.AllDivisions;
-using ExactOnline.Api.Client.Api.V1.Item.System.AllDivisionsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.System.AllDivisionsWithCode;
 using ExactOnline.Api.Client.Api.V1.Item.System.AvailableFeatures;
 using ExactOnline.Api.Client.Api.V1.Item.System.AvailableFeaturesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.System.Divisions;
-using ExactOnline.Api.Client.Api.V1.Item.System.DivisionsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.System.DivisionsWithCode;
 using ExactOnline.Api.Client.Api.V1.Item.System.GetMostRecentlyUsedDivisions;
-using ExactOnline.Api.Client.Api.V1.Item.System.GetMostRecentlyUsedDivisionsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.System.GetMostRecentlyUsedDivisionsWithCode;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -53,7 +53,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.System
         /// This end point shows info related to the accountant of the customer. If the customer is an accountant himself, the service will show the info of the customer.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.System.AccountantInfoWithId.AccountantInfoWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SystemSystemAccountantInfo</param>
+        /// <param name="id">Unique identifier (uuid) of the SystemSystemAccountantInfo</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.System.AccountantInfoWithId.AccountantInfoWithIdRequestBuilder AccountantInfoWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -62,19 +62,19 @@ namespace ExactOnline.Api.Client.Api.V1.Item.System
         /// <summary>
         /// Returns all (non-deleted) divisions of a single license, being the license that owns the division specified in the URI. Typically this will be the signed-in user&apos;s license, but for an accountant it can be a client&apos;s license instead. Most users will see all divisions that are in the relevant license (including divisions they do not have access rights to), but if the license is not user&apos;s (i.e. accountant in client&apos;s division), or if the user has limited rights (&apos;view user&apos;), then only divisions that are accessible to the user will be returned.Please note that divisions returned are only those which the user has granted permission to.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.System.AllDivisionsWithId.AllDivisionsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SystemSystemAllDivisions</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.System.AllDivisionsWithId.AllDivisionsWithIdRequestBuilder AllDivisionsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.System.AllDivisionsWithCode.AllDivisionsWithCodeRequestBuilder"/></returns>
+        /// <param name="code">Unique identifier (int32) of the SystemSystemAllDivisions</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.System.AllDivisionsWithCode.AllDivisionsWithCodeRequestBuilder AllDivisionsWithCode(int? code)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.System.AllDivisionsWithId.AllDivisionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = code ?? throw new ArgumentNullException(nameof(code));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.System.AllDivisionsWithCode.AllDivisionsWithCodeRequestBuilder(PathParameters, RequestAdapter, code);
         }
         /// <summary>
         /// This end point shows all features that are available in the current licence.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.System.AvailableFeaturesWithId.AvailableFeaturesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SystemSystemAvailableFeatures</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.System.AvailableFeaturesWithId.AvailableFeaturesWithIdRequestBuilder AvailableFeaturesWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the SystemSystemAvailableFeatures</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.System.AvailableFeaturesWithId.AvailableFeaturesWithIdRequestBuilder AvailableFeaturesWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.System.AvailableFeaturesWithId.AvailableFeaturesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -98,22 +98,22 @@ namespace ExactOnline.Api.Client.Api.V1.Item.System
         /// <summary>
         /// Returns only divisions that are accessible to the signed-in user, as configured in the user card under &apos;Companies: Access rights&apos;. Accountants will see both their own divisions and those belonging to their clients.Please note that divisions returned are only those which the user has granted permission to.For delete the user has to have sufficient access rights to perform the delete operation.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.System.DivisionsWithId.DivisionsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SystemSystemDivisions</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.System.DivisionsWithId.DivisionsWithIdRequestBuilder DivisionsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.System.DivisionsWithCode.DivisionsWithCodeRequestBuilder"/></returns>
+        /// <param name="code">Unique identifier (int32) of the SystemSystemDivisions</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.System.DivisionsWithCode.DivisionsWithCodeRequestBuilder DivisionsWithCode(int? code)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.System.DivisionsWithId.DivisionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = code ?? throw new ArgumentNullException(nameof(code));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.System.DivisionsWithCode.DivisionsWithCodeRequestBuilder(PathParameters, RequestAdapter, code);
         }
         /// <summary>
         /// The end point retrieves the top 5 most recently used companies.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.System.GetMostRecentlyUsedDivisionsWithId.GetMostRecentlyUsedDivisionsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SystemSystemGetMostRecentlyUsedDivisions</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.System.GetMostRecentlyUsedDivisionsWithId.GetMostRecentlyUsedDivisionsWithIdRequestBuilder GetMostRecentlyUsedDivisionsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.System.GetMostRecentlyUsedDivisionsWithCode.GetMostRecentlyUsedDivisionsWithCodeRequestBuilder"/></returns>
+        /// <param name="code">Unique identifier (int32) of the SystemSystemGetMostRecentlyUsedDivisions</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.System.GetMostRecentlyUsedDivisionsWithCode.GetMostRecentlyUsedDivisionsWithCodeRequestBuilder GetMostRecentlyUsedDivisionsWithCode(int? code)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.System.GetMostRecentlyUsedDivisionsWithId.GetMostRecentlyUsedDivisionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = code ?? throw new ArgumentNullException(nameof(code));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.System.GetMostRecentlyUsedDivisionsWithCode.GetMostRecentlyUsedDivisionsWithCodeRequestBuilder(PathParameters, RequestAdapter, code);
         }
     }
 }

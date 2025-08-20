@@ -4,48 +4,48 @@ using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryExpensesByProject
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryExpensesByProjectWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccounts;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsByProject;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsByProjectWithId;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsByProjectWithAccountid;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsWithAccountid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypes;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesByProject;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesByProjectWithId;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesByProjectWithItemid;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesWithItemid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentExpensesByProject;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentExpensesByProjectWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProjects;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProjectsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProjectsWithProjectid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypes;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByDate;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByDateWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByDateWithItemid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndDate;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndDateWithId;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndDateWithItemid;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesWithItemid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByDate;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByDateWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsById;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByIdWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourCostTypes;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourCostTypesWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourCostTypesWithItemid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryActivitiesByProject;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryActivitiesByProjectWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccounts;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsByProject;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsByProjectWithId;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsByProjectWithAccountid;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsWithAccountid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentActivitiesByProject;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentActivitiesByProjectWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypes;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesByProject;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesByProjectWithId;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesByProjectWithItemid;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesWithItemid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentProjects;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentProjectsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentProjectsWithProjectid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypes;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByDate;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByDateWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByDateWithItemid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndDate;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndDateWithId;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndDateWithItemid;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesWithItemid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByDate;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByDateWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursById;
@@ -74,24 +74,24 @@ using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingActivitiesAn
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingActivitiesAndExpensesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccounts;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByDate;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByDateWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByDateWithAccountid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByProjectAndDate;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByProjectAndDateWithId;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByProjectAndDateWithAccountid;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsWithAccountid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjects;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByAccountAndDate;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByAccountAndDateWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByAccountAndDateWithProjectid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByDate;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByDateWithId;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByDateWithProjectid;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsWithProjectid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentAccounts;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentAccountsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentAccountsWithAccountid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentActivitiesAndExpenses;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentActivitiesAndExpensesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentHourCostTypes;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentHourCostTypesWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentHourCostTypesWithItemid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjects;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjectsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjectsWithProjectid;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDetails;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDetailsByID;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDetailsByIDWithId;
@@ -101,7 +101,7 @@ using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingProjectDetai
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingProjectDetailsByIDWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingProjectDetailsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingRecentProjects;
-using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingRecentProjectsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingRecentProjectsWithProjectid;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -391,7 +391,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// This endpoint enables users to retrieve a list of Expenses and its parent Deliverable based on the project ID provided.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryExpensesByProjectWithId.CostEntryExpensesByProjectWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectCostEntryExpensesByProject</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectCostEntryExpensesByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryExpensesByProjectWithId.CostEntryExpensesByProjectWithIdRequestBuilder CostEntryExpensesByProjectWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -400,48 +400,48 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <summary>
         /// This endpoint enables users to retrieve a list of Accounts used by an employee for cost entries based on the Project Id provided. The list Is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsByProjectWithId.CostEntryRecentAccountsByProjectWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectCostEntryRecentAccountsByProject</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsByProjectWithId.CostEntryRecentAccountsByProjectWithIdRequestBuilder CostEntryRecentAccountsByProjectWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsByProjectWithAccountid.CostEntryRecentAccountsByProjectWithAccountidRequestBuilder"/></returns>
+        /// <param name="accountid">Unique identifier (uuid) of the ReadProjectCostEntryRecentAccountsByProject</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsByProjectWithAccountid.CostEntryRecentAccountsByProjectWithAccountidRequestBuilder CostEntryRecentAccountsByProjectWithAccountid(Guid? accountid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsByProjectWithId.CostEntryRecentAccountsByProjectWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsByProjectWithAccountid.CostEntryRecentAccountsByProjectWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve a list of Accounts used by an employee for cost entries. The list Is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsWithId.CostEntryRecentAccountsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectCostEntryRecentAccounts</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsWithId.CostEntryRecentAccountsWithIdRequestBuilder CostEntryRecentAccountsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsWithAccountid.CostEntryRecentAccountsWithAccountidRequestBuilder"/></returns>
+        /// <param name="accountid">Unique identifier (uuid) of the ReadProjectCostEntryRecentAccounts</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsWithAccountid.CostEntryRecentAccountsWithAccountidRequestBuilder CostEntryRecentAccountsWithAccountid(Guid? accountid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsWithId.CostEntryRecentAccountsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsWithAccountid.CostEntryRecentAccountsWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve a list of Items used by an employee for cost entries based on the Project Id provided. The list is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesByProjectWithId.CostEntryRecentCostTypesByProjectWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectCostEntryRecentCostTypesByProject</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesByProjectWithId.CostEntryRecentCostTypesByProjectWithIdRequestBuilder CostEntryRecentCostTypesByProjectWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesByProjectWithItemid.CostEntryRecentCostTypesByProjectWithItemidRequestBuilder"/></returns>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectCostEntryRecentCostTypesByProject</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesByProjectWithItemid.CostEntryRecentCostTypesByProjectWithItemidRequestBuilder CostEntryRecentCostTypesByProjectWithItemid(Guid? itemid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesByProjectWithId.CostEntryRecentCostTypesByProjectWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesByProjectWithItemid.CostEntryRecentCostTypesByProjectWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve a list of Items used by an employee for cost entries. The list is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesWithId.CostEntryRecentCostTypesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectCostEntryRecentCostTypes</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesWithId.CostEntryRecentCostTypesWithIdRequestBuilder CostEntryRecentCostTypesWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesWithItemid.CostEntryRecentCostTypesWithItemidRequestBuilder"/></returns>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectCostEntryRecentCostTypes</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesWithItemid.CostEntryRecentCostTypesWithItemidRequestBuilder CostEntryRecentCostTypesWithItemid(Guid? itemid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesWithId.CostEntryRecentCostTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesWithItemid.CostEntryRecentCostTypesWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve a list of Expenses and its parent Deliverable used by an employee for cost entries based on the Project Id provided. The list is ordered by the most recently used first.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentExpensesByProjectWithId.CostEntryRecentExpensesByProjectWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectCostEntryRecentExpensesByProject</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectCostEntryRecentExpensesByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentExpensesByProjectWithId.CostEntryRecentExpensesByProjectWithIdRequestBuilder CostEntryRecentExpensesByProjectWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -450,19 +450,19 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <summary>
         /// This endpoint enables users to retrieve a list of Projects used by an employee for cost entries. The list is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProjectsWithId.CostEntryRecentProjectsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectCostEntryRecentProjects</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProjectsWithId.CostEntryRecentProjectsWithIdRequestBuilder CostEntryRecentProjectsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProjectsWithProjectid.CostEntryRecentProjectsWithProjectidRequestBuilder"/></returns>
+        /// <param name="projectid">Unique identifier (uuid) of the ReadProjectCostEntryRecentProjects</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProjectsWithProjectid.CostEntryRecentProjectsWithProjectidRequestBuilder CostEntryRecentProjectsWithProjectid(Guid? projectid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProjectsWithId.CostEntryRecentProjectsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProjectsWithProjectid.CostEntryRecentProjectsWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
         /// <summary>
         /// Use this endpoint to read , filter and display all cost entries by employee based on the Date provided.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByDateWithId.CostsByDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectCostsByDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByDateWithId.CostsByDateWithIdRequestBuilder CostsByDateWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the ReadProjectCostsByDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByDateWithId.CostsByDateWithIdRequestBuilder CostsByDateWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByDateWithId.CostsByDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -471,8 +471,8 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// This endpoint enables users to retrieve a cost entry&apos;s information for an employee.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByIdWithId.CostsByIdWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectCostsById</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByIdWithId.CostsByIdWithIdRequestBuilder CostsByIdWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the ReadProjectCostsById</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByIdWithId.CostsByIdWithIdRequestBuilder CostsByIdWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByIdWithId.CostsByIdWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -480,48 +480,48 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <summary>
         /// This endpoint enables users to retrieve active Cost types based on date provided.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByDateWithId.CostTypesByDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectCostTypesByDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByDateWithId.CostTypesByDateWithIdRequestBuilder CostTypesByDateWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByDateWithItemid.CostTypesByDateWithItemidRequestBuilder"/></returns>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectCostTypesByDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByDateWithItemid.CostTypesByDateWithItemidRequestBuilder CostTypesByDateWithItemid(Guid? itemid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByDateWithId.CostTypesByDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByDateWithItemid.CostTypesByDateWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve active Cost types based on Project and date provided.For this function to work correctly, you must supply all parameters.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndDateWithId.CostTypesByProjectAndDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectCostTypesByProjectAndDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndDateWithId.CostTypesByProjectAndDateWithIdRequestBuilder CostTypesByProjectAndDateWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndDateWithItemid.CostTypesByProjectAndDateWithItemidRequestBuilder"/></returns>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectCostTypesByProjectAndDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndDateWithItemid.CostTypesByProjectAndDateWithItemidRequestBuilder CostTypesByProjectAndDateWithItemid(Guid? itemid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndDateWithId.CostTypesByProjectAndDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndDateWithItemid.CostTypesByProjectAndDateWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve up to date active Cost types.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesWithId.CostTypesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectCostTypes</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesWithId.CostTypesWithIdRequestBuilder CostTypesWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesWithItemid.CostTypesWithItemidRequestBuilder"/></returns>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectCostTypes</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesWithItemid.CostTypesWithItemidRequestBuilder CostTypesWithItemid(Guid? itemid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesWithId.CostTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesWithItemid.CostTypesWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve up to date active Hour and Cost types.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourCostTypesWithId.HourCostTypesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHourCostTypes</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourCostTypesWithId.HourCostTypesWithIdRequestBuilder HourCostTypesWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourCostTypesWithItemid.HourCostTypesWithItemidRequestBuilder"/></returns>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourCostTypes</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourCostTypesWithItemid.HourCostTypesWithItemidRequestBuilder HourCostTypesWithItemid(Guid? itemid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourCostTypesWithId.HourCostTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourCostTypesWithItemid.HourCostTypesWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve a list of WBS Activities and its parent Deliverable based on the project ID provided.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryActivitiesByProjectWithId.HourEntryActivitiesByProjectWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHourEntryActivitiesByProject</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectHourEntryActivitiesByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryActivitiesByProjectWithId.HourEntryActivitiesByProjectWithIdRequestBuilder HourEntryActivitiesByProjectWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -530,28 +530,28 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <summary>
         /// This endpoint enables users to retrieve a list of Accounts used by an employee for hour entries based on the Project Id provided. The list is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsByProjectWithId.HourEntryRecentAccountsByProjectWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHourEntryRecentAccountsByProject</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsByProjectWithId.HourEntryRecentAccountsByProjectWithIdRequestBuilder HourEntryRecentAccountsByProjectWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsByProjectWithAccountid.HourEntryRecentAccountsByProjectWithAccountidRequestBuilder"/></returns>
+        /// <param name="accountid">Unique identifier (uuid) of the ReadProjectHourEntryRecentAccountsByProject</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsByProjectWithAccountid.HourEntryRecentAccountsByProjectWithAccountidRequestBuilder HourEntryRecentAccountsByProjectWithAccountid(Guid? accountid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsByProjectWithId.HourEntryRecentAccountsByProjectWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsByProjectWithAccountid.HourEntryRecentAccountsByProjectWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
         /// Use this endpoint to read a list of accounts that is used by an employee to create hour entries. The list is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsWithId.HourEntryRecentAccountsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHourEntryRecentAccounts</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsWithId.HourEntryRecentAccountsWithIdRequestBuilder HourEntryRecentAccountsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsWithAccountid.HourEntryRecentAccountsWithAccountidRequestBuilder"/></returns>
+        /// <param name="accountid">Unique identifier (uuid) of the ReadProjectHourEntryRecentAccounts</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsWithAccountid.HourEntryRecentAccountsWithAccountidRequestBuilder HourEntryRecentAccountsWithAccountid(Guid? accountid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsWithId.HourEntryRecentAccountsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsWithAccountid.HourEntryRecentAccountsWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve a list of Activities and its parent Deliverable used by an employee for hour entries based on the Project Id provided. The list is ordered by the most recently used first.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentActivitiesByProjectWithId.HourEntryRecentActivitiesByProjectWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHourEntryRecentActivitiesByProject</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectHourEntryRecentActivitiesByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentActivitiesByProjectWithId.HourEntryRecentActivitiesByProjectWithIdRequestBuilder HourEntryRecentActivitiesByProjectWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -560,39 +560,39 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <summary>
         /// This endpoint enables users to retrieve a list of Items used by an employee for hour entries based on the Project Id provided. The list is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesByProjectWithId.HourEntryRecentHourTypesByProjectWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHourEntryRecentHourTypesByProject</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesByProjectWithId.HourEntryRecentHourTypesByProjectWithIdRequestBuilder HourEntryRecentHourTypesByProjectWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesByProjectWithItemid.HourEntryRecentHourTypesByProjectWithItemidRequestBuilder"/></returns>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourEntryRecentHourTypesByProject</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesByProjectWithItemid.HourEntryRecentHourTypesByProjectWithItemidRequestBuilder HourEntryRecentHourTypesByProjectWithItemid(Guid? itemid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesByProjectWithId.HourEntryRecentHourTypesByProjectWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesByProjectWithItemid.HourEntryRecentHourTypesByProjectWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
         /// Use this endpoint to read a list of items that is used by an employee to create hour entries. The list is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesWithId.HourEntryRecentHourTypesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHourEntryRecentHourTypes</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesWithId.HourEntryRecentHourTypesWithIdRequestBuilder HourEntryRecentHourTypesWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesWithItemid.HourEntryRecentHourTypesWithItemidRequestBuilder"/></returns>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourEntryRecentHourTypes</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesWithItemid.HourEntryRecentHourTypesWithItemidRequestBuilder HourEntryRecentHourTypesWithItemid(Guid? itemid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesWithId.HourEntryRecentHourTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesWithItemid.HourEntryRecentHourTypesWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
         /// Use this endpoint to read and retrieve projects that employees have used for entering hour entries order by most recently.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentProjectsWithId.HourEntryRecentProjectsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHourEntryRecentProjects</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentProjectsWithId.HourEntryRecentProjectsWithIdRequestBuilder HourEntryRecentProjectsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentProjectsWithProjectid.HourEntryRecentProjectsWithProjectidRequestBuilder"/></returns>
+        /// <param name="projectid">Unique identifier (uuid) of the ReadProjectHourEntryRecentProjects</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentProjectsWithProjectid.HourEntryRecentProjectsWithProjectidRequestBuilder HourEntryRecentProjectsWithProjectid(Guid? projectid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentProjectsWithId.HourEntryRecentProjectsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentProjectsWithProjectid.HourEntryRecentProjectsWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
         /// <summary>
         /// Use this endpoint to read , filter and display all hour entries by employee based on the Date provided.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByDateWithId.HoursByDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHoursByDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByDateWithId.HoursByDateWithIdRequestBuilder HoursByDateWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the ReadProjectHoursByDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByDateWithId.HoursByDateWithIdRequestBuilder HoursByDateWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByDateWithId.HoursByDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -601,8 +601,8 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// This endpoint enables users to retrieve an hour entry&apos;s information for an employee.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByIdWithId.HoursByIdWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHoursById</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByIdWithId.HoursByIdWithIdRequestBuilder HoursByIdWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the ReadProjectHoursById</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByIdWithId.HoursByIdWithIdRequestBuilder HoursByIdWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByIdWithId.HoursByIdWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -610,38 +610,38 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <summary>
         /// This endpoint enables users to retrieve active Hour types based on date provided.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByDateWithId.HourTypesByDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHourTypesByDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByDateWithId.HourTypesByDateWithIdRequestBuilder HourTypesByDateWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByDateWithItemid.HourTypesByDateWithItemidRequestBuilder"/></returns>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourTypesByDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByDateWithItemid.HourTypesByDateWithItemidRequestBuilder HourTypesByDateWithItemid(Guid? itemid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByDateWithId.HourTypesByDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByDateWithItemid.HourTypesByDateWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
         /// Use this endpoint to read active hour types by providing project id and a reference check date.Note: Employee Id parameter is optional. Hour types listed will be based on a hierachy with project employee hour type restriction, project hour type restriction and employee restriction by providing this additional parameter. For this function to work correctly, you must supply all parameters.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndDateWithId.HourTypesByProjectAndDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHourTypesByProjectAndDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndDateWithId.HourTypesByProjectAndDateWithIdRequestBuilder HourTypesByProjectAndDateWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndDateWithItemid.HourTypesByProjectAndDateWithItemidRequestBuilder"/></returns>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourTypesByProjectAndDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndDateWithItemid.HourTypesByProjectAndDateWithItemidRequestBuilder HourTypesByProjectAndDateWithItemid(Guid? itemid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndDateWithId.HourTypesByProjectAndDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndDateWithItemid.HourTypesByProjectAndDateWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve up to date active Hour types.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesWithId.HourTypesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHourTypes</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesWithId.HourTypesWithIdRequestBuilder HourTypesWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesWithItemid.HourTypesWithItemidRequestBuilder"/></returns>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourTypes</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesWithItemid.HourTypesWithItemidRequestBuilder HourTypesWithItemid(Guid? itemid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesWithId.HourTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesWithItemid.HourTypesWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve Work Breakdown Structure (WBS) line information based on the project ID  And WBS ID provided.For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectAndWBSWithId.ProjectWBSByProjectAndWBSWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectProjectWBSByProjectAndWBS</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectProjectWBSByProjectAndWBS</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectAndWBSWithId.ProjectWBSByProjectAndWBSWithIdRequestBuilder ProjectWBSByProjectAndWBSWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -651,7 +651,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// Use this endpoint to read Work Breakdown Structure (WBS) information based on the project ID provided.Note: WBS used as a method to separate deliverables and project work into smaller component. It allows better manage the scope of projects and clearly defining the expected deliverables and outcomes.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectWithId.ProjectWBSByProjectWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectProjectWBSByProject</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectProjectWBSByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectWithId.ProjectWBSByProjectWithIdRequestBuilder ProjectWBSByProjectWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -661,8 +661,8 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// Use this endpoint to read cost entries in the last specified number of ISO weeks based on a reference date.For time and billing project users to gather insight on the cost based on status by the user per week ordered by a reference date, in turn aid in generate powerful reports.For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksByDateWithId.RecentCostsByNumberOfWeeksByDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectRecentCostsByNumberOfWeeksByDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksByDateWithId.RecentCostsByNumberOfWeeksByDateWithIdRequestBuilder RecentCostsByNumberOfWeeksByDateWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the ReadProjectRecentCostsByNumberOfWeeksByDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksByDateWithId.RecentCostsByNumberOfWeeksByDateWithIdRequestBuilder RecentCostsByNumberOfWeeksByDateWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksByDateWithId.RecentCostsByNumberOfWeeksByDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -671,8 +671,8 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// Use this endpoint to read cost entries in the last specified number of ISO weeks.For time and billing project users to gather insight on the cost based on status by the user per week ordered by the most recent date, in turn aid in generate powerful reports.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksWithId.RecentCostsByNumberOfWeeksWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectRecentCostsByNumberOfWeeks</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksWithId.RecentCostsByNumberOfWeeksWithIdRequestBuilder RecentCostsByNumberOfWeeksWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the ReadProjectRecentCostsByNumberOfWeeks</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksWithId.RecentCostsByNumberOfWeeksWithIdRequestBuilder RecentCostsByNumberOfWeeksWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksWithId.RecentCostsByNumberOfWeeksWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -681,8 +681,8 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// Builds and executes requests for operations under \api\v1\{division}\read\project\RecentCosts({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsWithId.RecentCostsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectRecentCosts</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsWithId.RecentCostsWithIdRequestBuilder RecentCostsWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the ReadProjectRecentCosts</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsWithId.RecentCostsWithIdRequestBuilder RecentCostsWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsWithId.RecentCostsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -691,8 +691,8 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// Use this endpoint to read hour entries in the last specified number of ISO weeks based on a reference date.For time and billing project users to gather insight on the amount of hours based on status by the user per week ordered by a reference date, in turn aid in generate powerful reports.For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfWeeksByDateWithId.RecentHoursByNumberOfWeeksByDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectRecentHoursByNumberOfWeeksByDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfWeeksByDateWithId.RecentHoursByNumberOfWeeksByDateWithIdRequestBuilder RecentHoursByNumberOfWeeksByDateWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the ReadProjectRecentHoursByNumberOfWeeksByDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfWeeksByDateWithId.RecentHoursByNumberOfWeeksByDateWithIdRequestBuilder RecentHoursByNumberOfWeeksByDateWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfWeeksByDateWithId.RecentHoursByNumberOfWeeksByDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -701,8 +701,8 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// Use this endpoint to read hour entries in the last specified number of ISO weeks.For time and billing project users to gather insight on the amount of hours based on status by the user per week ordered by the most recent date, in turn aid in generate powerful reports.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfWeeksWithId.RecentHoursByNumberOfWeeksWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectRecentHoursByNumberOfWeeks</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfWeeksWithId.RecentHoursByNumberOfWeeksWithIdRequestBuilder RecentHoursByNumberOfWeeksWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the ReadProjectRecentHoursByNumberOfWeeks</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfWeeksWithId.RecentHoursByNumberOfWeeksWithIdRequestBuilder RecentHoursByNumberOfWeeksWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfWeeksWithId.RecentHoursByNumberOfWeeksWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -711,8 +711,8 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// This endpoint enables users to retrieve hour entries in the last 4 ISO weeks, including the current week. The list is ordered by most recent date first.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursWithId.RecentHoursWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectRecentHours</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursWithId.RecentHoursWithIdRequestBuilder RecentHoursWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the ReadProjectRecentHours</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursWithId.RecentHoursWithIdRequestBuilder RecentHoursWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursWithId.RecentHoursWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -721,7 +721,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// This endpoint enables users to retrieve the account details.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingAccountDetailsByIDWithId.TimeAndBillingAccountDetailsByIDWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingAccountDetailsByID</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingAccountDetailsByID</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingAccountDetailsByIDWithId.TimeAndBillingAccountDetailsByIDWithIdRequestBuilder TimeAndBillingAccountDetailsByIDWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -731,7 +731,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// This endpoint enables users to retrieve the account details.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingAccountDetailsWithId.TimeAndBillingAccountDetailsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingAccountDetails</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingAccountDetails</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingAccountDetailsWithId.TimeAndBillingAccountDetailsWithIdRequestBuilder TimeAndBillingAccountDetailsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -741,7 +741,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// Use this endpoint to retrieve a list of Activities, Expenses and its parent Deliverable.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingActivitiesAndExpensesWithId.TimeAndBillingActivitiesAndExpensesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingActivitiesAndExpenses</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingActivitiesAndExpenses</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingActivitiesAndExpensesWithId.TimeAndBillingActivitiesAndExpensesWithIdRequestBuilder TimeAndBillingActivitiesAndExpensesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -750,78 +750,78 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <summary>
         /// This endpoint enables users to retrieve all accounts still active as of the date provided as the parameter.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByDateWithId.TimeAndBillingEntryAccountsByDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingEntryAccountsByDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByDateWithId.TimeAndBillingEntryAccountsByDateWithIdRequestBuilder TimeAndBillingEntryAccountsByDateWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByDateWithAccountid.TimeAndBillingEntryAccountsByDateWithAccountidRequestBuilder"/></returns>
+        /// <param name="accountid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryAccountsByDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByDateWithAccountid.TimeAndBillingEntryAccountsByDateWithAccountidRequestBuilder TimeAndBillingEntryAccountsByDateWithAccountid(Guid? accountid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByDateWithId.TimeAndBillingEntryAccountsByDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByDateWithAccountid.TimeAndBillingEntryAccountsByDateWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve the account related to the project ID as of the date provided as the parameters.For this function to work correctly, you must supply all parameters.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByProjectAndDateWithId.TimeAndBillingEntryAccountsByProjectAndDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingEntryAccountsByProjectAndDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByProjectAndDateWithId.TimeAndBillingEntryAccountsByProjectAndDateWithIdRequestBuilder TimeAndBillingEntryAccountsByProjectAndDateWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByProjectAndDateWithAccountid.TimeAndBillingEntryAccountsByProjectAndDateWithAccountidRequestBuilder"/></returns>
+        /// <param name="accountid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryAccountsByProjectAndDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByProjectAndDateWithAccountid.TimeAndBillingEntryAccountsByProjectAndDateWithAccountidRequestBuilder TimeAndBillingEntryAccountsByProjectAndDateWithAccountid(Guid? accountid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByProjectAndDateWithId.TimeAndBillingEntryAccountsByProjectAndDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByProjectAndDateWithAccountid.TimeAndBillingEntryAccountsByProjectAndDateWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve currently active account details.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsWithId.TimeAndBillingEntryAccountsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingEntryAccounts</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsWithId.TimeAndBillingEntryAccountsWithIdRequestBuilder TimeAndBillingEntryAccountsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsWithAccountid.TimeAndBillingEntryAccountsWithAccountidRequestBuilder"/></returns>
+        /// <param name="accountid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryAccounts</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsWithAccountid.TimeAndBillingEntryAccountsWithAccountidRequestBuilder TimeAndBillingEntryAccountsWithAccountid(Guid? accountid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsWithId.TimeAndBillingEntryAccountsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsWithAccountid.TimeAndBillingEntryAccountsWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve a list of projects allowed for an employee based on the Account and Date provided.For this function to work correctly, you must supply all parameters.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByAccountAndDateWithId.TimeAndBillingEntryProjectsByAccountAndDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingEntryProjectsByAccountAndDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByAccountAndDateWithId.TimeAndBillingEntryProjectsByAccountAndDateWithIdRequestBuilder TimeAndBillingEntryProjectsByAccountAndDateWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByAccountAndDateWithProjectid.TimeAndBillingEntryProjectsByAccountAndDateWithProjectidRequestBuilder"/></returns>
+        /// <param name="projectid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryProjectsByAccountAndDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByAccountAndDateWithProjectid.TimeAndBillingEntryProjectsByAccountAndDateWithProjectidRequestBuilder TimeAndBillingEntryProjectsByAccountAndDateWithProjectid(Guid? projectid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByAccountAndDateWithId.TimeAndBillingEntryProjectsByAccountAndDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByAccountAndDateWithProjectid.TimeAndBillingEntryProjectsByAccountAndDateWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
         /// <summary>
         /// Use this endpoint to read a list of projects allowed for an employee based on the Date provided.Note: For getting the list, it is mandatory to supply check date.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByDateWithId.TimeAndBillingEntryProjectsByDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingEntryProjectsByDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByDateWithId.TimeAndBillingEntryProjectsByDateWithIdRequestBuilder TimeAndBillingEntryProjectsByDateWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByDateWithProjectid.TimeAndBillingEntryProjectsByDateWithProjectidRequestBuilder"/></returns>
+        /// <param name="projectid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryProjectsByDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByDateWithProjectid.TimeAndBillingEntryProjectsByDateWithProjectidRequestBuilder TimeAndBillingEntryProjectsByDateWithProjectid(Guid? projectid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByDateWithId.TimeAndBillingEntryProjectsByDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByDateWithProjectid.TimeAndBillingEntryProjectsByDateWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve project code and project description based on the project ID provided.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsWithId.TimeAndBillingEntryProjectsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingEntryProjects</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsWithId.TimeAndBillingEntryProjectsWithIdRequestBuilder TimeAndBillingEntryProjectsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsWithProjectid.TimeAndBillingEntryProjectsWithProjectidRequestBuilder"/></returns>
+        /// <param name="projectid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryProjects</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsWithProjectid.TimeAndBillingEntryProjectsWithProjectidRequestBuilder TimeAndBillingEntryProjectsWithProjectid(Guid? projectid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsWithId.TimeAndBillingEntryProjectsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsWithProjectid.TimeAndBillingEntryProjectsWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve a list of Accounts used by an employee for hour and cost entries. The list is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentAccountsWithId.TimeAndBillingEntryRecentAccountsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingEntryRecentAccounts</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentAccountsWithId.TimeAndBillingEntryRecentAccountsWithIdRequestBuilder TimeAndBillingEntryRecentAccountsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentAccountsWithAccountid.TimeAndBillingEntryRecentAccountsWithAccountidRequestBuilder"/></returns>
+        /// <param name="accountid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryRecentAccounts</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentAccountsWithAccountid.TimeAndBillingEntryRecentAccountsWithAccountidRequestBuilder TimeAndBillingEntryRecentAccountsWithAccountid(Guid? accountid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentAccountsWithId.TimeAndBillingEntryRecentAccountsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentAccountsWithAccountid.TimeAndBillingEntryRecentAccountsWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve a list of Activites and Expenses together with its corresponding parent Deliverable used by an employee for hour and cost entries. The list is ordered by the most recently used first.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentActivitiesAndExpensesWithId.TimeAndBillingEntryRecentActivitiesAndExpensesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentActivitiesAndExpensesWithId.TimeAndBillingEntryRecentActivitiesAndExpensesWithIdRequestBuilder TimeAndBillingEntryRecentActivitiesAndExpensesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -830,28 +830,28 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <summary>
         /// This endpoint enables users to retrieve a list of Items used by an employee for hour and cost entries. The list is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentHourCostTypesWithId.TimeAndBillingEntryRecentHourCostTypesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingEntryRecentHourCostTypes</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentHourCostTypesWithId.TimeAndBillingEntryRecentHourCostTypesWithIdRequestBuilder TimeAndBillingEntryRecentHourCostTypesWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentHourCostTypesWithItemid.TimeAndBillingEntryRecentHourCostTypesWithItemidRequestBuilder"/></returns>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryRecentHourCostTypes</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentHourCostTypesWithItemid.TimeAndBillingEntryRecentHourCostTypesWithItemidRequestBuilder TimeAndBillingEntryRecentHourCostTypesWithItemid(Guid? itemid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentHourCostTypesWithId.TimeAndBillingEntryRecentHourCostTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentHourCostTypesWithItemid.TimeAndBillingEntryRecentHourCostTypesWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
         /// This endpoint enables users to retrieve a list of Projects used by an employee for hour and cost entries. The list is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjectsWithId.TimeAndBillingEntryRecentProjectsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingEntryRecentProjects</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjectsWithId.TimeAndBillingEntryRecentProjectsWithIdRequestBuilder TimeAndBillingEntryRecentProjectsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjectsWithProjectid.TimeAndBillingEntryRecentProjectsWithProjectidRequestBuilder"/></returns>
+        /// <param name="projectid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryRecentProjects</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjectsWithProjectid.TimeAndBillingEntryRecentProjectsWithProjectidRequestBuilder TimeAndBillingEntryRecentProjectsWithProjectid(Guid? projectid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjectsWithId.TimeAndBillingEntryRecentProjectsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjectsWithProjectid.TimeAndBillingEntryRecentProjectsWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
         /// <summary>
         /// Use this endpoint to read an Item used in hour and cost entries with details based on the Item Id provided.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDetailsByIDWithId.TimeAndBillingItemDetailsByIDWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingItemDetailsByID</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingItemDetailsByID</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDetailsByIDWithId.TimeAndBillingItemDetailsByIDWithIdRequestBuilder TimeAndBillingItemDetailsByIDWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -861,7 +861,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// This endpoint enables users to retrieve a list of Items with details.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDetailsWithId.TimeAndBillingItemDetailsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingItemDetails</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingItemDetails</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDetailsWithId.TimeAndBillingItemDetailsWithIdRequestBuilder TimeAndBillingItemDetailsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -871,7 +871,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// Use this endpoint to read and retrieve time and billing project details based on the project ID provided.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingProjectDetailsByIDWithId.TimeAndBillingProjectDetailsByIDWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingProjectDetailsByID</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingProjectDetailsByID</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingProjectDetailsByIDWithId.TimeAndBillingProjectDetailsByIDWithIdRequestBuilder TimeAndBillingProjectDetailsByIDWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -881,7 +881,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// This endpoint enables users to retrieve a list of Projects with details.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingProjectDetailsWithId.TimeAndBillingProjectDetailsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingProjectDetails</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingProjectDetails</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingProjectDetailsWithId.TimeAndBillingProjectDetailsWithIdRequestBuilder TimeAndBillingProjectDetailsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -890,12 +890,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <summary>
         /// This endpoint enables users to retrieve a list of Projects used by an employee for hour and cost entries. The list is ordered by the most recently used first.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingRecentProjectsWithId.TimeAndBillingRecentProjectsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectTimeAndBillingRecentProjects</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingRecentProjectsWithId.TimeAndBillingRecentProjectsWithIdRequestBuilder TimeAndBillingRecentProjectsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingRecentProjectsWithProjectid.TimeAndBillingRecentProjectsWithProjectidRequestBuilder"/></returns>
+        /// <param name="projectid">Unique identifier (uuid) of the ReadProjectTimeAndBillingRecentProjects</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingRecentProjectsWithProjectid.TimeAndBillingRecentProjectsWithProjectidRequestBuilder TimeAndBillingRecentProjectsWithProjectid(Guid? projectid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingRecentProjectsWithId.TimeAndBillingRecentProjectsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingRecentProjectsWithProjectid.TimeAndBillingRecentProjectsWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
     }
 }

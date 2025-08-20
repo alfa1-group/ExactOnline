@@ -55,17 +55,17 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Users
         /// This function can be used to check whether the current user has rights for an action on a specific endpoint. The endpoint should have format &apos;service/endpoint&apos;, the action should be either GET, POST, PUT or DELETE.For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Users.UserHasRightsWithId.UserHasRightsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the UsersUserHasRights</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Users.UserHasRightsWithId.UserHasRightsWithIdRequestBuilder UserHasRightsWithId(Guid? id)
+        /// <param name="id">Unique identifier of the UsersUserHasRights</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Users.UserHasRightsWithId.UserHasRightsWithIdRequestBuilder UserHasRightsWithId(string id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Users.UserHasRightsWithId.UserHasRightsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// This end point returns a list of roles per user for a given company.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesPerDivisionWithId.UserRolesPerDivisionWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the UsersUserRolesPerDivision</param>
+        /// <param name="id">Unique identifier (uuid) of the UsersUserRolesPerDivision</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesPerDivisionWithId.UserRolesPerDivisionWithIdRequestBuilder UserRolesPerDivisionWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -75,7 +75,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Users
         /// This end point returns a list of roles per user.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesWithId.UserRolesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the UsersUserRoles</param>
+        /// <param name="id">Unique identifier (uuid) of the UsersUserRoles</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesWithId.UserRolesWithIdRequestBuilder UserRolesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

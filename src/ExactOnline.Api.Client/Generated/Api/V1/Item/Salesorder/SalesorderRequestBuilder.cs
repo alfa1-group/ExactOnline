@@ -3,27 +3,27 @@
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrder;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderLine;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderLineWithId;
-using ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithOrderid;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLines;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipments;
-using ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentsWithEntryid;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveries;
-using ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveriesWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveriesWithEntryid;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveryLines;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveryLinesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnLines;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnLinesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturns;
-using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnsWithPlannedsalesreturnid;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrders;
-using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithOrderid;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderLines;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderLinesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderOrderChargeLines;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderOrderChargeLinesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrders;
-using ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithOrderid;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -102,7 +102,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// Use this endpoint to : • Complete a sales order line for - Goods delivery and/or - Sales invoiceYou can no longer perform the remaining delivery and invoice the outstanding amount for the sales order line.Once completed, this action cannot be undone.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderLineWithId.CompleteSalesOrderLineWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderCompleteSalesOrderLine</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesOrderCompleteSalesOrderLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderLineWithId.CompleteSalesOrderLineWithIdRequestBuilder CompleteSalesOrderLineWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -111,12 +111,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <summary>
         /// Use this endpoint to complete a sales order either the remaining goods delivery, the outstanding invoice or both. The sales order will be completed without further goods deliveries, invoice or both.Once completed, this action cannot be undone.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithId.CompleteSalesOrderWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderCompleteSalesOrder</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithId.CompleteSalesOrderWithIdRequestBuilder CompleteSalesOrderWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithOrderid.CompleteSalesOrderWithOrderidRequestBuilder"/></returns>
+        /// <param name="orderid">Unique identifier (uuid) of the SalesOrderCompleteSalesOrder</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithOrderid.CompleteSalesOrderWithOrderidRequestBuilder CompleteSalesOrderWithOrderid(Guid? orderid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithId.CompleteSalesOrderWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = orderid ?? throw new ArgumentNullException(nameof(orderid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithOrderid.CompleteSalesOrderWithOrderidRequestBuilder(PathParameters, RequestAdapter, orderid);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesorderRequestBuilder"/> and sets the default values.
@@ -138,7 +138,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// Use this endpoint to : • Create new drop shipment lines. • Read existing drop shipment lines. • Update existing drop shipment lines.Delivery lines support trade-in lines. For more details, please refer description under properties QuantityDelivered. Note: DropShipmentLines may not be posted individually. They should be part of the DropShipments Post. For creating drop shipment lines, it is mandatory to supply SalesOrderLineID, PurchaseOrderId and QuantityDelivered.For more information about the  functionality in Exact Online, see Drop Shipments - New.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId.DropShipmentLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderDropShipmentLines</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesOrderDropShipmentLines</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId.DropShipmentLinesWithIdRequestBuilder DropShipmentLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -147,28 +147,28 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <summary>
         /// Use this endpoint to : • Create new drop shipments. • Read existing drop shipments. • Update existing drop shipments.Delivery lines support trade-in lines. For more details, please refer description under properties DropShipmentLines &amp;gt; QuantityDelivered Note: For creating a DropShipments, it is mandatory to supply one or more DropShipmentLines and DeliveryDate.For more information about the  functionality in Exact Online, see Drop Shipment - New.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentsWithId.DropShipmentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderDropShipments</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentsWithId.DropShipmentsWithIdRequestBuilder DropShipmentsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentsWithEntryid.DropShipmentsWithEntryidRequestBuilder"/></returns>
+        /// <param name="entryid">Unique identifier (uuid) of the SalesOrderDropShipments</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentsWithEntryid.DropShipmentsWithEntryidRequestBuilder DropShipmentsWithEntryid(Guid? entryid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentsWithId.DropShipmentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentsWithEntryid.DropShipmentsWithEntryidRequestBuilder(PathParameters, RequestAdapter, entryid);
         }
         /// <summary>
         /// Use this endpoint to : • Create new goods deliveries. • Read existing goods deliveries. • Update existing goods deliveries.Delivery lines support trade-in lines. For more details, please refer description under properties GoodsDeliveryLines &amp;gt; QuantityDelivered Note: For creating a GoodsDeliveries, it is mandatory to supply one or more GoodsDeliveryLines and DeliveryDate.Business example API goods deliveryFor more information about the  functionality in Exact Online, see Goods delivery - New.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveriesWithId.GoodsDeliveriesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderGoodsDeliveries</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveriesWithId.GoodsDeliveriesWithIdRequestBuilder GoodsDeliveriesWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveriesWithEntryid.GoodsDeliveriesWithEntryidRequestBuilder"/></returns>
+        /// <param name="entryid">Unique identifier (uuid) of the SalesOrderGoodsDeliveries</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveriesWithEntryid.GoodsDeliveriesWithEntryidRequestBuilder GoodsDeliveriesWithEntryid(Guid? entryid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveriesWithId.GoodsDeliveriesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveriesWithEntryid.GoodsDeliveriesWithEntryidRequestBuilder(PathParameters, RequestAdapter, entryid);
         }
         /// <summary>
         /// Use this endpoint to : • Create new goods delivery lines. • Read existing goods delivery lines. • Update existing goods delivery lines.Delivery lines support trade-in lines. For more details, please refer description under properties QuantityDelivered. Note: GoodsDeliveryLines may not be posted individually. They should be part of the GoodsDeliveries Post. For creating goods delivery lines, it is mandatory to supply SalesOrderLineID and QuantityDelivered.Business example API goods deliveryFor more information about the  functionality in Exact Online, see Goods delivery - New.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveryLinesWithId.GoodsDeliveryLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderGoodsDeliveryLines</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesOrderGoodsDeliveryLines</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveryLinesWithId.GoodsDeliveryLinesWithIdRequestBuilder GoodsDeliveryLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -178,7 +178,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// Use this endpoint to : • Create a new planned sales return line.(Adding a new line to existing planned sales return is not allowed) • Retrieve an existing planned sales return line. • Update the draft planned sales return&apos;s planned quantity, receive quantity, storage location and the return option. • Delete a draft planned sales return line.For more information about the planned sales return line functionality in Exact Online, see Sales Return.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnLinesWithId.PlannedSalesReturnLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderPlannedSalesReturnLines</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesOrderPlannedSalesReturnLines</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnLinesWithId.PlannedSalesReturnLinesWithIdRequestBuilder PlannedSalesReturnLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -187,28 +187,28 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <summary>
         /// Use this endpoint to : • Create a new planned sales return. • Retrieve an existing planned sales return. • Update the draft planned sales return&apos;s description and planned return date • Delete a draft planned sales return.A planned sales return allows a more efficient handling of legitimate returns from your customer.For more information about the planned sales return functionality in Exact Online, see Sales Return.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnsWithId.PlannedSalesReturnsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderPlannedSalesReturns</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnsWithId.PlannedSalesReturnsWithIdRequestBuilder PlannedSalesReturnsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnsWithPlannedsalesreturnid.PlannedSalesReturnsWithPlannedsalesreturnidRequestBuilder"/></returns>
+        /// <param name="plannedsalesreturnid">Unique identifier (uuid) of the SalesOrderPlannedSalesReturns</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnsWithPlannedsalesreturnid.PlannedSalesReturnsWithPlannedsalesreturnidRequestBuilder PlannedSalesReturnsWithPlannedsalesreturnid(Guid? plannedsalesreturnid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnsWithId.PlannedSalesReturnsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = plannedsalesreturnid ?? throw new ArgumentNullException(nameof(plannedsalesreturnid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnsWithPlannedsalesreturnid.PlannedSalesReturnsWithPlannedsalesreturnidRequestBuilder(PathParameters, RequestAdapter, plannedsalesreturnid);
         }
         /// <summary>
         /// Use this endpoint to print or send a sales order document.The document is created through the given &apos;OrderId&apos;, and is sent to the respective receiver based on the given &apos;SendEmailToCustomer&apos; and &apos;SenderEmailAddress&apos;.An existing sales order entry must be located to create a sales order document. When you have created a sales order, you can print it for internal use or to send it to a customer. You cannot print sales orders that have been cancelled.For more information about the sales order functionality in Exact Online, see Print sales orders.To view an example of the business use of this endpoint, see Rest API - Business example API sales order.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithId.PrintedSalesOrdersWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderPrintedSalesOrders</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithId.PrintedSalesOrdersWithIdRequestBuilder PrintedSalesOrdersWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithOrderid.PrintedSalesOrdersWithOrderidRequestBuilder"/></returns>
+        /// <param name="orderid">Unique identifier (uuid) of the SalesOrderPrintedSalesOrders</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithOrderid.PrintedSalesOrdersWithOrderidRequestBuilder PrintedSalesOrdersWithOrderid(Guid? orderid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithId.PrintedSalesOrdersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = orderid ?? throw new ArgumentNullException(nameof(orderid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithOrderid.PrintedSalesOrdersWithOrderidRequestBuilder(PathParameters, RequestAdapter, orderid);
         }
         /// <summary>
         /// Use this endpoint to create, read, update and delete sales order lines.Sales order lines support trade-in lines. For more details, please refer description under properties QuantitySales orders describe the items that you plan to sell to your customers.For more information about the sales order functionality in Exact Online, see About sales orders.To view an example of the business use of this endpoint, see Rest API - Business example API sales order.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderLinesWithId.SalesOrderLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderSalesOrderLines</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesOrderSalesOrderLines</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderLinesWithId.SalesOrderLinesWithIdRequestBuilder SalesOrderLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -218,7 +218,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// Use this endpoint to create, read, update and delete sales order shipping cost and order charge lines. Note:  • If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa.  • If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.To view an example of the business use of this endpoint, see Rest API - Business example API sales order.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderOrderChargeLinesWithId.SalesOrderOrderChargeLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderSalesOrderOrderChargeLines</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesOrderSalesOrderOrderChargeLines</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderOrderChargeLinesWithId.SalesOrderOrderChargeLinesWithIdRequestBuilder SalesOrderOrderChargeLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -227,12 +227,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <summary>
         /// Use this endpoint to create, read, update and delete sales orders.Note: You must include a parameter for &apos;SalesOrderLines&apos; to add sales order lines when you POST to the SalesOrders endpoint. This parameter is not necessary when you PUT to this endpoint.It is not recommended to make changes to sales orders after it is completed. If you use an API command to update a completed sales order, it will not be successful. However, you can still make changes to it from Exact Online by retrieving the sales order and clicking Edit. The updated sales order may need to be approved again depending on your settings. Sales order lines support trade-in lines. For more details, please refer description under properties SalesOrderLines &amp;gt; QuantitySales orders describe the items that you plan to sell to your customers.For more information about the sales order functionality in Exact Online, see About sales orders.To view an example of the business use of this endpoint, see Rest API - Business example API sales order.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithId.SalesOrdersWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the SalesOrderSalesOrders</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithId.SalesOrdersWithIdRequestBuilder SalesOrdersWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithOrderid.SalesOrdersWithOrderidRequestBuilder"/></returns>
+        /// <param name="orderid">Unique identifier (uuid) of the SalesOrderSalesOrders</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithOrderid.SalesOrdersWithOrderidRequestBuilder SalesOrdersWithOrderid(Guid? orderid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithId.SalesOrdersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = orderid ?? throw new ArgumentNullException(nameof(orderid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithOrderid.SalesOrdersWithOrderidRequestBuilder(PathParameters, RequestAdapter, orderid);
         }
     }
 }

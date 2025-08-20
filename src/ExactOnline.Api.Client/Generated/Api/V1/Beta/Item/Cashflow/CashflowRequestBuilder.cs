@@ -25,7 +25,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Cashflow
         /// Builds and executes requests for operations under \api\v1\beta\{division}\cashflow\AllocationRule({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Beta.Item.Cashflow.AllocationRuleWithId.AllocationRuleWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the CashflowAllocationRule</param>
+        /// <param name="id">Unique identifier (uuid) of the CashflowAllocationRule</param>
         public global::ExactOnline.Api.Client.Api.V1.Beta.Item.Cashflow.AllocationRuleWithId.AllocationRuleWithIdRequestBuilder AllocationRuleWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

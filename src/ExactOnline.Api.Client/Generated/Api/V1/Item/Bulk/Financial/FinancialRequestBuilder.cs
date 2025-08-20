@@ -55,7 +55,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial
         /// Use this endpoint to retrieve a large number of G/L accounts. To view more information or maintain individual G/L accounts you can use the following end point Exact Online REST API - GLAccounts.This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.Only the following filters are supported for this endpoint:AssimilatedVATBox, BelcotaxType, Code, Costcenter, Costunit, Created, Creator, ID, Modified, Modifier, PrivateGLAccount, SearchCode, Type, VATNonDeductibleGLAccount, YearEndCostGLAccount, YearEndReflectionGLAccount
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.GLAccountsWithId.GLAccountsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkFinancialGLAccounts</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkFinancialGLAccounts</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.GLAccountsWithId.GLAccountsWithIdRequestBuilder GLAccountsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -65,7 +65,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial
         /// Use this endpoint to retrieve a large number of G/L Classifications To view more information of the G/L classification you can use the following end point Exact Online REST API - GLClassifications.This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.Only the following filters are supported for this endpoint:Code, ID, Name, Parent, TaxonomyNamespace, Type
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.GLClassificationsWithId.GLClassificationsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkFinancialGLClassifications</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkFinancialGLClassifications</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.GLClassificationsWithId.GLClassificationsWithIdRequestBuilder GLClassificationsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -75,7 +75,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial
         /// Use this endpoint to read all kind of transactions created in Exact.Find more details on the attributes in the relevant topic description for BankEntries, CashEntries, GeneralJournalEntries, PurchaseEntries or SalesEntries.This bulk service has a page size of 1000.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.TransactionLinesWithId.TransactionLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkFinancialTransactionLines</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkFinancialTransactionLines</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.TransactionLinesWithId.TransactionLinesWithIdRequestBuilder TransactionLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

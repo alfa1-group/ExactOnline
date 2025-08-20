@@ -20,12 +20,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentEndReasonsOn
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentEndReasonsOnFocusDateWithId.EmploymentEndReasonsOnFocusDateWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the ReadPayrollEmploymentEndReasonsOnFocusDate</param>
+        /// <param name="id">Unique identifier of the ReadPayrollEmploymentEndReasonsOnFocusDate</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmploymentEndReasonsOnFocusDateWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/payroll/EmploymentEndReasonsOnFocusDate(guid'{id}')", pathParameters)
+        public EmploymentEndReasonsOnFocusDateWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string id = "") : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/payroll/EmploymentEndReasonsOnFocusDate(guid'{id}')", pathParameters)
         {
-            if (id != null) PathParameters.Add("id", id);
+            if (!string.IsNullOrWhiteSpace(id)) PathParameters.Add("id", id);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentEndReasonsOnFocusDateWithId.EmploymentEndReasonsOnFocusDateWithIdRequestBuilder"/> and sets the default values.

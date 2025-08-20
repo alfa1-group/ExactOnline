@@ -204,24 +204,29 @@ internal class EndpointCrawler
                 { "__metadata", metaDataRef }
             };
 
+            string? keyName = null;
+            IOpenApiSchema? keyType = null;
+
             var requiredProperties = new HashSet<string>();
 
             // Rows from the tabel which:
             // - are not headers (no class='header')
             // - are not hidden (no style='display: none')
-            var propertyRows = document.DocumentNode.SelectNodes("//table[@id='referencetable']//tr[not(contains(@style, 'display: none'))]");
+            var tableRows = document.DocumentNode.SelectNodes("//table[@id='referencetable']//tr[not(contains(@style, 'display: none'))]");
             // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
-            if (propertyRows != null)
+            if (tableRows != null)
             {
                 var nameColumnIndex = 1;
                 var typeColumnIndex = 5;
-                var descriptionColumnIndex = propertyRows.FirstOrDefault()?.SelectNodes("th")
+                var descriptionColumnIndex = tableRows.FirstOrDefault()?.SelectNodes("th")
                     .Select((node, idx) => new { node, idx })
                     .Where(x => x.node.InnerText.Contains("Description"))
                     .Select(x => x.idx)
                     .FirstOrDefault();
 
-                foreach (var row in propertyRows.Skip(1))
+                var propertyRows = tableRows.Skip(1).ToArray();
+
+                foreach (var row in propertyRows)
                 {
                     var rowIsKey = row.GetClasses().Contains("key");
 
@@ -299,6 +304,12 @@ internal class EndpointCrawler
                         }
 
                         properties.Add(name, property);
+
+                        if (rowIsKey)
+                        {
+                            keyName = name;
+                            keyType = property;
+                        }
                     }
                 }
             }
@@ -313,7 +324,7 @@ internal class EndpointCrawler
             var schemaName = httpMethod == HttpMethod.Get ? baseSchemaName : baseSchemaName + httpMethod.ToString().ToPascalCase();
             openApiDoc.Components!.Schemas!.Add(schemaName, entityComponent);
 
-            AddOperations(openApiDoc, httpMethod, baseEndpointUri, baseSchemaName, endpointDescription, queryParameters, isSyncInterface, isSingleResponse);
+            AddOperations(openApiDoc, httpMethod, baseEndpointUri, baseSchemaName, endpointDescription, queryParameters, keyName, keyType, isSyncInterface, isSingleResponse);
         }
     }
 
@@ -344,7 +355,6 @@ internal class EndpointCrawler
         var operation = new OpenApiOperation
         {
             Summary = $"{httpMethod} {baseSchemaName}",
-            // Description = $"{httpMethod} {baseSchemaName}",
             Parameters = new List<IOpenApiParameter>(),
             Responses = new OpenApiResponses
             {
@@ -379,6 +389,8 @@ internal class EndpointCrawler
         string baseSchemaName,
         string endpointDescription,
         HashSet<OpenApiParameter> queryParameters,
+        string? keyName,
+        IOpenApiSchema? keyType,
         bool isSyncInterface,
         bool isSingleResponse
     )
@@ -541,44 +553,41 @@ internal class EndpointCrawler
             AddOperationToPath(openApiDoc, httpMethod, baseEndpointUri, endpointDescription, postOperation);
         }
 
-        // WithId
+        // WithId or WithTimestamp or WithCode operations
         if (httpMethod == HttpMethod.Get || httpMethod == HttpMethod.Put || httpMethod == HttpMethod.Delete)
         {
             var withIdOperation = CreateDefaultOperation(httpMethod, baseSchemaName, baseEndpointUri);
 
-            OpenApiParameter idParameter;
-            string append;
-            if (isSyncInterface)
+            var name = keyName?.ToLowerInvariant() ?? (isSyncInterface ? "timestamp" : "id");
+            var type = (keyType == null || name == "timestamp") ? new OpenApiSchema { Type = JsonSchemaType.String } : keyType;
+            //type.Description = null;
+
+            if (name == "hid")
             {
-                idParameter = new OpenApiParameter
-                {
-                    Name = "Timestamp",
-                    In = ParameterLocation.Path,
-                    Required = true,
-                    Schema = new OpenApiSchema
-                    {
-                        Type = JsonSchemaType.String
-                    },
-                    Description = $"The Timestamp of the {baseSchemaName}"
-                };
-                append = "({Timestamp})";
+                name = "id"; // Normalize 'hid' to 'id' for consistency
+            }
+
+            string description;
+            if (name == "timestamp")
+            {
+                description = $"The Timestamp of the {baseSchemaName}";
             }
             else
             {
-                idParameter = new OpenApiParameter
-                {
-                    Name = "id",
-                    In = ParameterLocation.Path,
-                    Required = true,
-                    Schema = new OpenApiSchema
-                    {
-                        Type = JsonSchemaType.String,
-                        Format = "uuid"
-                    },
-                    Description = $"Unique identifier (GUID) of the {baseSchemaName}"
-                };
-                append = "({id})";
+                var format = !string.IsNullOrEmpty(type.Format) ? $" ({type.Format})" : string.Empty;
+                description = $"Unique identifier{format} of the {baseSchemaName}";
             }
+
+            var idParameter = new OpenApiParameter
+            {
+                Name = name,
+                In = ParameterLocation.Path,
+                Required = true,
+                Schema = type,
+                Description = description
+            };
+            var append = $"({{{name}}})";
+
             withIdOperation.Parameters!.Add(idParameter);
 
             if (httpMethod == HttpMethod.Get)

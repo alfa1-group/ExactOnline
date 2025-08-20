@@ -53,7 +53,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities
         /// Builds and executes requests for operations under \api\v1\{division}\activities\CommunicationNotes({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotesWithId.CommunicationNotesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ActivitiesCommunicationNotes</param>
+        /// <param name="id">Unique identifier (uuid) of the ActivitiesCommunicationNotes</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotesWithId.CommunicationNotesWithIdRequestBuilder CommunicationNotesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -63,7 +63,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities
         /// Builds and executes requests for operations under \api\v1\{division}\activities\Complaints({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Activities.ComplaintsWithId.ComplaintsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ActivitiesComplaints</param>
+        /// <param name="id">Unique identifier (uuid) of the ActivitiesComplaints</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Activities.ComplaintsWithId.ComplaintsWithIdRequestBuilder ComplaintsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -89,7 +89,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities
         /// Builds and executes requests for operations under \api\v1\{division}\activities\Events({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Activities.EventsWithId.EventsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ActivitiesEvents</param>
+        /// <param name="id">Unique identifier (uuid) of the ActivitiesEvents</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Activities.EventsWithId.EventsWithIdRequestBuilder EventsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -99,7 +99,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities
         /// Builds and executes requests for operations under \api\v1\{division}\activities\ServiceRequests({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Activities.ServiceRequestsWithId.ServiceRequestsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ActivitiesServiceRequests</param>
+        /// <param name="id">Unique identifier (uuid) of the ActivitiesServiceRequests</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Activities.ServiceRequestsWithId.ServiceRequestsWithIdRequestBuilder ServiceRequestsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -109,7 +109,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities
         /// Builds and executes requests for operations under \api\v1\{division}\activities\Tasks({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Activities.TasksWithId.TasksWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ActivitiesTasks</param>
+        /// <param name="id">Unique identifier (uuid) of the ActivitiesTasks</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Activities.TasksWithId.TasksWithIdRequestBuilder TasksWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

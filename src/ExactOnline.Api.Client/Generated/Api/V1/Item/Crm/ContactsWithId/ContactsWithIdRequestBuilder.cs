@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.ContactsWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.ContactsWithId.ContactsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the CRMContacts</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMContacts</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ContactsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/crm/Contacts(guid'{id}')", pathParameters)

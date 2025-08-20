@@ -25,7 +25,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Budget
         /// Builds and executes requests for operations under \api\v1\beta\{division}\budget\BudgetScenarios({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Beta.Item.Budget.BudgetScenariosWithId.BudgetScenariosWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BudgetBudgetScenarios</param>
+        /// <param name="id">Unique identifier (uuid) of the BudgetBudgetScenarios</param>
         public global::ExactOnline.Api.Client.Api.V1.Beta.Item.Budget.BudgetScenariosWithId.BudgetScenariosWithIdRequestBuilder BudgetScenariosWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

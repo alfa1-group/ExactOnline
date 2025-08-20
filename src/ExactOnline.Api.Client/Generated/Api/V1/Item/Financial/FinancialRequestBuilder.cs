@@ -23,7 +23,7 @@ using ExactOnline.Api.Client.Api.V1.Item.Financial.JournalsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Financial.OfficialReturns;
 using ExactOnline.Api.Client.Api.V1.Item.Financial.OfficialReturnsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Financial.ProcessReturn;
-using ExactOnline.Api.Client.Api.V1.Item.Financial.ProcessReturnWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Financial.ProcessReturnWithRequest;
 using ExactOnline.Api.Client.Api.V1.Item.Financial.ReportingBalance;
 using ExactOnline.Api.Client.Api.V1.Item.Financial.ReportingBalanceWithId;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -125,7 +125,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// Deductibility percentages change from time to time, use this endpoint to get all the Deductibility percentages of all the G/L account of an administration.If there is an old Deductibility percentage linked to the G/L account, it will also be retrieved. To POST Deductibility percentages, please use GLAccounts endpoint.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.DeductibilityPercentagesWithId.DeductibilityPercentagesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialDeductibilityPercentages</param>
+        /// <param name="id">Unique identifier (uuid) of the FinancialDeductibilityPercentages</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.DeductibilityPercentagesWithId.DeductibilityPercentagesWithIdRequestBuilder DeductibilityPercentagesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -135,7 +135,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// Use this endpoint to create, update, view and delete exchange rates. The exchange rate of a foreign currency is defined related to the default currency of the company. Example: 1 EUR = XXX,XX in foreign currency (source currency).
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.ExchangeRatesWithId.ExchangeRatesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialExchangeRates</param>
+        /// <param name="id">Unique identifier (uuid) of the FinancialExchangeRates</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.ExchangeRatesWithId.ExchangeRatesWithIdRequestBuilder ExchangeRatesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -145,7 +145,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// This endpoint provides insight in how the financial year of a company is set up. A financial year can differ from a calendar year. FinancialPeriods provides all periods of the financial year with their start and end date.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.FinancialPeriodsWithId.FinancialPeriodsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialFinancialPeriods</param>
+        /// <param name="id">Unique identifier (uuid) of the FinancialFinancialPeriods</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.FinancialPeriodsWithId.FinancialPeriodsWithIdRequestBuilder FinancialPeriodsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -155,7 +155,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// Builds and executes requests for operations under \api\v1\{division}\financial\GLAccountClassificationMappings({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountClassificationMappingsWithId.GLAccountClassificationMappingsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialGLAccountClassificationMappings</param>
+        /// <param name="id">Unique identifier (uuid) of the FinancialGLAccountClassificationMappings</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountClassificationMappingsWithId.GLAccountClassificationMappingsWithIdRequestBuilder GLAccountClassificationMappingsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -165,7 +165,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// Use this endpoint to retrieve information of all the G/L accounts of your administration. Aside from that you can also create, update or delete G/L account.Add CustomDescriptionLanguage=&apos;[ NL | FR-BE | NL-BE | ... ]&apos; to the header to retrieve language sensitive properties such as descriptions in a specific language.For more information about G/L accounts, you can visit the following help file Working with G/L accounts.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountsWithId.GLAccountsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialGLAccounts</param>
+        /// <param name="id">Unique identifier (uuid) of the FinancialGLAccounts</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountsWithId.GLAccountsWithIdRequestBuilder GLAccountsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -175,7 +175,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// G/L Classifications are used to group G/L account balances in p&amp;amp;l and balance sheet. Use this endpoint to retrieve information about the G/L classifications available.Add CustomDescriptionLanguage=&apos;[ NL | FR-BE | NL-BE | ... ]&apos; to the header to retrieve language sensitive properties such as descriptions in a specific language.Code example API G/L account
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLClassificationsWithId.GLClassificationsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialGLClassifications</param>
+        /// <param name="id">Unique identifier (uuid) of the FinancialGLClassifications</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLClassificationsWithId.GLClassificationsWithIdRequestBuilder GLClassificationsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -185,7 +185,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// Use this endpoint to retrieve the G/L schemes used in an administration. Depending on package used, there is one or more scheme (e.g. RGS in different versions) available. For more information about G/L schemes, you can visit the following help file G/L account schemes.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLSchemesWithId.GLSchemesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialGLSchemes</param>
+        /// <param name="id">Unique identifier (uuid) of the FinancialGLSchemes</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLSchemesWithId.GLSchemesWithIdRequestBuilder GLSchemesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -195,8 +195,8 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// Use this endpoint to retrieve all transaction sources. Transaction sources are used in financial entries and provide insight in how an entry is created. Example: 101 - Sales invoice: This entry is created from a sales invoice entered in the sales module.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionSourcesWithId.GLTransactionSourcesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialGLTransactionSources</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionSourcesWithId.GLTransactionSourcesWithIdRequestBuilder GLTransactionSourcesWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the FinancialGLTransactionSources</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionSourcesWithId.GLTransactionSourcesWithIdRequestBuilder GLTransactionSourcesWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionSourcesWithId.GLTransactionSourcesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -205,8 +205,8 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// Use this endpoint to retrieve all transaction types. Financial entries are created as specific types, some are created based on journals, like sales or purchase, other are created automatically, like from the revaluation process. Example: 80: This entry is created from revaluation. G/L transaction types can be monitored in the G/L account transactions overview. They can help to easily select the required entries.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionTypesWithId.GLTransactionTypesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialGLTransactionTypes</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionTypesWithId.GLTransactionTypesWithIdRequestBuilder GLTransactionTypesWithId(Guid? id)
+        /// <param name="id">Unique identifier (int32) of the FinancialGLTransactionTypes</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionTypesWithId.GLTransactionTypesWithIdRequestBuilder GLTransactionTypesWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionTypesWithId.GLTransactionTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
@@ -215,7 +215,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// Journals are used to create different types of entries in the most efficient way.Use this endpoint to create, update, view or delete journals.Note: Journals can only be deleted if they are not used in entries! Depending on type of journal different fields are relevant for setting up a journal code.Payment service provider types are depending on legislation and package.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.JournalsWithId.JournalsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialJournals</param>
+        /// <param name="id">Unique identifier (uuid) of the FinancialJournals</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.JournalsWithId.JournalsWithIdRequestBuilder JournalsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -225,7 +225,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// This service it is only to be used in Spain.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.OfficialReturnsWithId.OfficialReturnsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialOfficialReturns</param>
+        /// <param name="id">Unique identifier (uuid) of the FinancialOfficialReturns</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.OfficialReturnsWithId.OfficialReturnsWithIdRequestBuilder OfficialReturnsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -234,19 +234,19 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <summary>
         /// Use this endpoint to process Realized VAT or EC Sales List declaration with sent method Manual (with approval).
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.ProcessReturnWithId.ProcessReturnWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialProcessReturn</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Financial.ProcessReturnWithId.ProcessReturnWithIdRequestBuilder ProcessReturnWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.ProcessReturnWithRequest.ProcessReturnWithRequestRequestBuilder"/></returns>
+        /// <param name="request">Unique identifier (uuid) of the FinancialProcessReturn</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Financial.ProcessReturnWithRequest.ProcessReturnWithRequestRequestBuilder ProcessReturnWithRequest(Guid? request)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.ProcessReturnWithId.ProcessReturnWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = request ?? throw new ArgumentNullException(nameof(request));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.ProcessReturnWithRequest.ProcessReturnWithRequestRequestBuilder(PathParameters, RequestAdapter, request);
         }
         /// <summary>
         /// This service returns summarized data of financial transactions. It&apos;s intended for reporting balances and period totals. The summarized amounts are grouped by: Division, ReportingYear, ReportingPeriod, G/L account, Cost center, Cost unit, Type, Status. For optimal filter, only include a reporting year in the filter.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financial.ReportingBalanceWithId.ReportingBalanceWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the FinancialReportingBalance</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Financial.ReportingBalanceWithId.ReportingBalanceWithIdRequestBuilder ReportingBalanceWithId(Guid? id)
+        /// <param name="id">Unique identifier (int64) of the FinancialReportingBalance</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Financial.ReportingBalanceWithId.ReportingBalanceWithIdRequestBuilder ReportingBalanceWithId(long? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.ReportingBalanceWithId.ReportingBalanceWithIdRequestBuilder(PathParameters, RequestAdapter, id);

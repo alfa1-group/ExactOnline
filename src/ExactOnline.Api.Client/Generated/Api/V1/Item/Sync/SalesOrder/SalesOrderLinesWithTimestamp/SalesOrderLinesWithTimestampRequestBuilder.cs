@@ -23,16 +23,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.SalesOrder.SalesOrderLinesWith
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="timestamp">The Timestamp of the SyncSalesOrderSalesOrderLines</param>
-        public SalesOrderLinesWithTimestampRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string timestamp = "") : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/SalesOrder/SalesOrderLines({Timestamp})", pathParameters)
+        public SalesOrderLinesWithTimestampRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string timestamp = "") : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/SalesOrder/SalesOrderLines({timestamp})", pathParameters)
         {
-            if (!string.IsNullOrWhiteSpace(timestamp)) PathParameters.Add("Timestamp", timestamp);
+            if (!string.IsNullOrWhiteSpace(timestamp)) PathParameters.Add("timestamp", timestamp);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Sync.SalesOrder.SalesOrderLinesWithTimestamp.SalesOrderLinesWithTimestampRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesOrderLinesWithTimestampRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/SalesOrder/SalesOrderLines({Timestamp})", rawUrl)
+        public SalesOrderLinesWithTimestampRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/SalesOrder/SalesOrderLines({timestamp})", rawUrl)
         {
         }
         /// <summary>
@@ -99,3 +99,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.SalesOrder.SalesOrderLinesWith
     }
 }
 #pragma warning restore CS0618
+

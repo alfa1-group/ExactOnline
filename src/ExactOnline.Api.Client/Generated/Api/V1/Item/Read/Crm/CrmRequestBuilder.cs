@@ -81,7 +81,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// The function will return a document folder description that consists ofdescription and count of documents in this folder in the brackets based on the accountIdthat has been requested.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentFoldersWithId.AccountDocumentFoldersWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadCRMAccountDocumentFolders</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMAccountDocumentFolders</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentFoldersWithId.AccountDocumentFoldersWithIdRequestBuilder AccountDocumentFoldersWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -91,17 +91,17 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentsCountWithId.AccountDocumentsCountWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadCRMAccountDocumentsCount</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentsCountWithId.AccountDocumentsCountWithIdRequestBuilder AccountDocumentsCountWithId(Guid? id)
+        /// <param name="id">Unique identifier of the ReadCRMAccountDocumentsCount</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentsCountWithId.AccountDocumentsCountWithIdRequestBuilder AccountDocumentsCountWithId(string id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentsCountWithId.AccountDocumentsCountWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentsWithId.AccountDocumentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadCRMAccountDocuments</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMAccountDocuments</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentsWithId.AccountDocumentsWithIdRequestBuilder AccountDocumentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -127,7 +127,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// The function will return a single address based on the type of address that has been requested.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DefaultAddressForAccountWithId.DefaultAddressForAccountWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadCRMDefaultAddressForAccount</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMDefaultAddressForAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DefaultAddressForAccountWithId.DefaultAddressForAccountWithIdRequestBuilder DefaultAddressForAccountWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -137,7 +137,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\read\crm\DocumentsAttachments({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsAttachmentsWithId.DocumentsAttachmentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadCRMDocumentsAttachments</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMDocumentsAttachments</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsAttachmentsWithId.DocumentsAttachmentsWithIdRequestBuilder DocumentsAttachmentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -147,7 +147,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\read\crm\Documents({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsWithId.DocumentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadCRMDocuments</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMDocuments</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsWithId.DocumentsWithIdRequestBuilder DocumentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -157,7 +157,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\read\crm\OpportunityContacts({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityContactsWithId.OpportunityContactsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadCRMOpportunityContacts</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMOpportunityContacts</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityContactsWithId.OpportunityContactsWithIdRequestBuilder OpportunityContactsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -167,17 +167,17 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsCountWithId.OpportunityDocumentsCountWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadCRMOpportunityDocumentsCount</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsCountWithId.OpportunityDocumentsCountWithIdRequestBuilder OpportunityDocumentsCountWithId(Guid? id)
+        /// <param name="id">Unique identifier of the ReadCRMOpportunityDocumentsCount</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsCountWithId.OpportunityDocumentsCountWithIdRequestBuilder OpportunityDocumentsCountWithId(string id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsCountWithId.OpportunityDocumentsCountWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsWithId.OpportunityDocumentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadCRMOpportunityDocuments</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMOpportunityDocuments</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsWithId.OpportunityDocumentsWithIdRequestBuilder OpportunityDocumentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

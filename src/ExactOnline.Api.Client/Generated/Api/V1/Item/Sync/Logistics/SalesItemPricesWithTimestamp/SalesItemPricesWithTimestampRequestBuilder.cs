@@ -23,16 +23,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SalesItemPricesWithT
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="timestamp">The Timestamp of the SyncLogisticsSalesItemPrices</param>
-        public SalesItemPricesWithTimestampRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string timestamp = "") : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Logistics/SalesItemPrices({Timestamp})", pathParameters)
+        public SalesItemPricesWithTimestampRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string timestamp = "") : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Logistics/SalesItemPrices({timestamp})", pathParameters)
         {
-            if (!string.IsNullOrWhiteSpace(timestamp)) PathParameters.Add("Timestamp", timestamp);
+            if (!string.IsNullOrWhiteSpace(timestamp)) PathParameters.Add("timestamp", timestamp);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SalesItemPricesWithTimestamp.SalesItemPricesWithTimestampRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesItemPricesWithTimestampRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Logistics/SalesItemPrices({Timestamp})", rawUrl)
+        public SalesItemPricesWithTimestampRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Logistics/SalesItemPrices({timestamp})", rawUrl)
         {
         }
         /// <summary>
@@ -99,3 +99,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SalesItemPricesWithT
     }
 }
 #pragma warning restore CS0618
+

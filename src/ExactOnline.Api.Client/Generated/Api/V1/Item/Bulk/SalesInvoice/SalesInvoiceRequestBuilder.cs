@@ -3,7 +3,7 @@
 using ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoiceLines;
 using ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoiceLinesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoices;
-using ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoicesWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoicesWithInvoiceid;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice
         /// This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoiceLinesWithId.SalesInvoiceLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkSalesInvoiceSalesInvoiceLines</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkSalesInvoiceSalesInvoiceLines</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoiceLinesWithId.SalesInvoiceLinesWithIdRequestBuilder SalesInvoiceLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -57,12 +57,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice
         /// <summary>
         /// This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoicesWithId.SalesInvoicesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkSalesInvoiceSalesInvoices</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoicesWithId.SalesInvoicesWithIdRequestBuilder SalesInvoicesWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoicesWithInvoiceid.SalesInvoicesWithInvoiceidRequestBuilder"/></returns>
+        /// <param name="invoiceid">Unique identifier (uuid) of the BulkSalesInvoiceSalesInvoices</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoicesWithInvoiceid.SalesInvoicesWithInvoiceidRequestBuilder SalesInvoicesWithInvoiceid(Guid? invoiceid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoicesWithId.SalesInvoicesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = invoiceid ?? throw new ArgumentNullException(nameof(invoiceid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoicesWithInvoiceid.SalesInvoicesWithInvoiceidRequestBuilder(PathParameters, RequestAdapter, invoiceid);
         }
     }
 }

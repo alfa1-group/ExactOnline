@@ -60,7 +60,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy
         /// This resource will show all accounts which are involved for a specific account and will also show the type of the relation between the accounts. This functionality is only available in a practice management company.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountInvolvedAccountsWithId.AccountInvolvedAccountsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the AccountancyAccountInvolvedAccounts</param>
+        /// <param name="id">Unique identifier (uuid) of the AccountancyAccountInvolvedAccounts</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountInvolvedAccountsWithId.AccountInvolvedAccountsWithIdRequestBuilder AccountInvolvedAccountsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -70,7 +70,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy
         /// The account owners are accounts which represents the owners or shareholders for a specific account. In this resource also the percentage of shares which the account holds are stored. This functionality is only available in a practice management company.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId.AccountOwnersWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the AccountancyAccountOwners</param>
+        /// <param name="id">Unique identifier (uuid) of the AccountancyAccountOwners</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId.AccountOwnersWithIdRequestBuilder AccountOwnersWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -96,7 +96,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy
         /// An involved user role represents a role which a user can have in an accountancy firm. This involved user role can be used to indicate the role that a user have for a certain client. This functionality is only available in a practice company.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.InvolvedUserRolesWithId.InvolvedUserRolesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the AccountancyInvolvedUserRoles</param>
+        /// <param name="id">Unique identifier (uuid) of the AccountancyInvolvedUserRoles</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.InvolvedUserRolesWithId.InvolvedUserRolesWithIdRequestBuilder InvolvedUserRolesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -106,7 +106,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy
         /// The involved users keeps track on all users which are involved for a certain client of the accountant. The involved user also shows the role that the user has for the involved client. This functionality is only available in a practice company.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.InvolvedUsersWithId.InvolvedUsersWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the AccountancyInvolvedUsers</param>
+        /// <param name="id">Unique identifier (uuid) of the AccountancyInvolvedUsers</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.InvolvedUsersWithId.InvolvedUsersWithIdRequestBuilder InvolvedUsersWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -116,7 +116,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy
         /// Solution links are used to store which bookkeeping solution is used for a certain account. This can be the bookkeeping solution of Exact Online which is mentioned as ‘internal’ or a bookkeeping solution of another vender which is mentioned as ‘external’.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.SolutionLinksWithId.SolutionLinksWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the AccountancySolutionLinks</param>
+        /// <param name="id">Unique identifier (uuid) of the AccountancySolutionLinks</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.SolutionLinksWithId.SolutionLinksWithIdRequestBuilder SolutionLinksWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -126,7 +126,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy
         /// The task types are specific types defined by the user of the accountancy firm.This resource shows the custom types defined within a company.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.TaskTypesWithId.TaskTypesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the AccountancyTaskTypes</param>
+        /// <param name="id">Unique identifier (uuid) of the AccountancyTaskTypes</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.TaskTypesWithId.TaskTypesWithIdRequestBuilder TaskTypesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

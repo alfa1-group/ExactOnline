@@ -41,7 +41,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Webhooks
         /// Use this endpoint to subscribe your app to one or more webhook topics.For more information about the functionality see Exact Online webhooks.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Webhooks.WebhookSubscriptionsWithId.WebhookSubscriptionsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the WebhooksWebhookSubscriptions</param>
+        /// <param name="id">Unique identifier (uuid) of the WebhooksWebhookSubscriptions</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Webhooks.WebhookSubscriptionsWithId.WebhookSubscriptionsWithIdRequestBuilder WebhookSubscriptionsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Vat.VATCodesWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Vat.VATCodesWithId.VATCodesWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the VATVATCodes</param>
+        /// <param name="id">Unique identifier (uuid) of the VATVATCodes</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public VATCodesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/vat/VATCodes(guid'{id}')", pathParameters)

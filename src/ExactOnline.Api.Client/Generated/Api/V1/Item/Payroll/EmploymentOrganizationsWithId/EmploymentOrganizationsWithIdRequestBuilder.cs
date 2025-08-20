@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentOrganizationsWith
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentOrganizationsWithId.EmploymentOrganizationsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the PayrollEmploymentOrganizations</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentOrganizations</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public EmploymentOrganizationsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/payroll/EmploymentOrganizations(guid'{id}')", pathParameters)

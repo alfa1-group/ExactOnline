@@ -243,3 +243,4 @@ namespace ExactOnline.Api.Client.Api.V1.Item
     }
 }
 #pragma warning restore CS0618
+

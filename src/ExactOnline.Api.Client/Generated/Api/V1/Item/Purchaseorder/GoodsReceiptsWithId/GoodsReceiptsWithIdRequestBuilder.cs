@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptsWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptsWithId.GoodsReceiptsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the PurchaseOrderGoodsReceipts</param>
+        /// <param name="id">Unique identifier (uuid) of the PurchaseOrderGoodsReceipts</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GoodsReceiptsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/purchaseorder/GoodsReceipts(guid'{id}')", pathParameters)

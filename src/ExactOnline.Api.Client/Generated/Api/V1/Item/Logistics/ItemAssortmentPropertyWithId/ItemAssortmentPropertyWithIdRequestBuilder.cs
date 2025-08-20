@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics.ItemAssortmentPropertyWit
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Logistics.ItemAssortmentPropertyWithId.ItemAssortmentPropertyWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the LogisticsItemAssortmentProperty</param>
+        /// <param name="id">Unique identifier (uuid) of the LogisticsItemAssortmentProperty</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ItemAssortmentPropertyWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/logistics/ItemAssortmentProperty(guid'{id}')", pathParameters)

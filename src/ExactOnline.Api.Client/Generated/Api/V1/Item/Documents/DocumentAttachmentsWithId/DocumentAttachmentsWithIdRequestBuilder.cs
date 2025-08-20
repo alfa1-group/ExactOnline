@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId.DocumentAttachmentsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the DocumentsDocumentAttachments</param>
+        /// <param name="id">Unique identifier (uuid) of the DocumentsDocumentAttachments</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public DocumentAttachmentsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/documents/DocumentAttachments(guid'{id}')", pathParameters)

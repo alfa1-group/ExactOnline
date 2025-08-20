@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Cashflow
         /// Use this endpoint to get an overview of all the payments in your administration. Paymentlines are grouped by own bank account, account bank account, payment reference, payment method, entry date and status. Payments of one entry have the same TransactionId. Among other things, with this endpoint you can get information like the payments status (e.g. Open, Processed) or when is the payment due.This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.Only the following filters are supported for this endpoint:Account, AccountBankAccountID, AccountContact, BankAccountID, Document, EndDate, EntryDate, EntryID, GLAccount, ID, InvoiceDate, InvoiceNumber, Source, Status, TransactionID, TransactionType
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Cashflow.PaymentsWithId.PaymentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkCashflowPayments</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkCashflowPayments</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Cashflow.PaymentsWithId.PaymentsWithIdRequestBuilder PaymentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Cashflow
         /// Use this endpoint to get an overview of all the payment to be received in your administration. Paymentlines are grouped by own bank account, account bank account, payment reference, payment method, entry date and status. Payments of one entry have the same TransactionId. Among other things, with this endpoint you can get information like the payments status (e.g. Open, Processed) or when is the collection is due.This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.Only the following filters are supported for this endpoint:Account, Document, EndDate, EndToEndID, EntryDate, EntryID, GLAccount, ID, InvoiceDate, InvoiceNumber, Source, Status, TransactionID, TransactionType
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Cashflow.ReceivablesWithId.ReceivablesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkCashflowReceivables</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkCashflowReceivables</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Cashflow.ReceivablesWithId.ReceivablesWithIdRequestBuilder ReceivablesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

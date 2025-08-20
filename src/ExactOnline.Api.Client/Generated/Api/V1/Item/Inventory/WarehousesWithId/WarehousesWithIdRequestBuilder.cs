@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehousesWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehousesWithId.WarehousesWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the InventoryWarehouses</param>
+        /// <param name="id">Unique identifier (uuid) of the InventoryWarehouses</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WarehousesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/inventory/Warehouses(guid'{id}')", pathParameters)

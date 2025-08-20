@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.InvolvedUsersWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.InvolvedUsersWithId.InvolvedUsersWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the AccountancyInvolvedUsers</param>
+        /// <param name="id">Unique identifier (uuid) of the AccountancyInvolvedUsers</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public InvolvedUsersWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/accountancy/InvolvedUsers(guid'{id}')", pathParameters)

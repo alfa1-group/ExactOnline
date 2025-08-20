@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.InvoiceSalesOrdersWith
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.InvoiceSalesOrdersWithId.InvoiceSalesOrdersWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the SalesInvoiceInvoiceSalesOrders</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesInvoiceInvoiceSalesOrders</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public InvoiceSalesOrdersWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesinvoice/InvoiceSalesOrders(guid'{id}')", pathParameters)

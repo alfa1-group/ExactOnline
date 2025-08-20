@@ -20,10 +20,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeCategoriesWit
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeCategoriesWithId.DocumentTypeCategoriesWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the DocumentsDocumentTypeCategories</param>
+        /// <param name="id">Unique identifier (int32) of the DocumentsDocumentTypeCategories</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DocumentTypeCategoriesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/documents/DocumentTypeCategories(guid'{id}')", pathParameters)
+        public DocumentTypeCategoriesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/documents/DocumentTypeCategories(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }

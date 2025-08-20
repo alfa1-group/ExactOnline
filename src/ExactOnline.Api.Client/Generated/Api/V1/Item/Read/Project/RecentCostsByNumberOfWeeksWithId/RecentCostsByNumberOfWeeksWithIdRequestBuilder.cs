@@ -20,10 +20,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfW
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksWithId.RecentCostsByNumberOfWeeksWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectRecentCostsByNumberOfWeeks</param>
+        /// <param name="id">Unique identifier (int32) of the ReadProjectRecentCostsByNumberOfWeeks</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecentCostsByNumberOfWeeksWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/RecentCostsByNumberOfWeeks(guid'{id}')", pathParameters)
+        public RecentCostsByNumberOfWeeksWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/RecentCostsByNumberOfWeeks(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }

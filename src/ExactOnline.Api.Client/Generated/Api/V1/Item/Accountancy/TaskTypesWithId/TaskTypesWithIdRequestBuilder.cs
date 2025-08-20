@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.TaskTypesWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.TaskTypesWithId.TaskTypesWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the AccountancyTaskTypes</param>
+        /// <param name="id">Unique identifier (uuid) of the AccountancyTaskTypes</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public TaskTypesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/accountancy/TaskTypes(guid'{id}')", pathParameters)

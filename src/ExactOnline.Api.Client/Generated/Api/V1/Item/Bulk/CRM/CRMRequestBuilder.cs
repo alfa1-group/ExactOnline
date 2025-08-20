@@ -9,7 +9,7 @@ using ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.ContactsWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationLines;
 using ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationLinesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.Quotations;
-using ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationsWithQuotationid;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -53,7 +53,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM
         /// This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.AccountsWithId.AccountsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkCRMAccounts</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkCRMAccounts</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.AccountsWithId.AccountsWithIdRequestBuilder AccountsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -63,7 +63,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM
         /// This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.Only the following filters are supported for this endpoint:Account, Contact, ID, Main, Type, Warehouse
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.AddressesWithId.AddressesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkCRMAddresses</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkCRMAddresses</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.AddressesWithId.AddressesWithIdRequestBuilder AddressesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -89,7 +89,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM
         /// This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.Only the following filters are supported for this endpoint:Account, ID, IdentificationDocument, IdentificationUser, Person
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.ContactsWithId.ContactsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkCRMContacts</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkCRMContacts</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.ContactsWithId.ContactsWithIdRequestBuilder ContactsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -99,7 +99,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM
         /// This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.Only the following filters are supported for this endpoint:Item, LineNumber, QuotationID, QuotationNumber, VersionNumber, VATCode
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationLinesWithId.QuotationLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkCRMQuotationLines</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkCRMQuotationLines</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationLinesWithId.QuotationLinesWithIdRequestBuilder QuotationLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -108,12 +108,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM
         /// <summary>
         /// This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.Only the following filters are supported for this endpoint:DeliveryAccount, DeliveryAccountContact, DeliveryAddress, Document, InvoiceAccount, InvoiceAccountContact, Opportunity, OrderAccount, OrderAccountContact, Project, QuotationID, QuotationNumber, QuotationDate, SelectionCode, Status, VersionNumber
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationsWithId.QuotationsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkCRMQuotations</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationsWithId.QuotationsWithIdRequestBuilder QuotationsWithId(Guid? id)
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationsWithQuotationid.QuotationsWithQuotationidRequestBuilder"/></returns>
+        /// <param name="quotationid">Unique identifier (uuid) of the BulkCRMQuotations</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationsWithQuotationid.QuotationsWithQuotationidRequestBuilder QuotationsWithQuotationid(Guid? quotationid)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
-            return new global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationsWithId.QuotationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            _ = quotationid ?? throw new ArgumentNullException(nameof(quotationid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationsWithQuotationid.QuotationsWithQuotationidRequestBuilder(PathParameters, RequestAdapter, quotationid);
         }
     }
 }

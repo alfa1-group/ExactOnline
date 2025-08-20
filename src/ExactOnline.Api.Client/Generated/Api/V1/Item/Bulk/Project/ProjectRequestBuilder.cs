@@ -41,7 +41,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Project
         /// The results are not ordered by WBS sequenceThis bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.Only the following filters are supported for this endpoint:DefaultItem, ID, Modified, Parent, Project, ProjectTerm, Type
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Project.ProjectWBSWithId.ProjectWBSWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkProjectProjectWBS</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkProjectProjectWBS</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Project.ProjectWBSWithId.ProjectWBSWithIdRequestBuilder ProjectWBSWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

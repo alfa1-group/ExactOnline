@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics.ItemsWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Logistics.ItemsWithId.ItemsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the LogisticsItems</param>
+        /// <param name="id">Unique identifier (uuid) of the LogisticsItems</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ItemsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/logistics/Items(guid'{id}')", pathParameters)

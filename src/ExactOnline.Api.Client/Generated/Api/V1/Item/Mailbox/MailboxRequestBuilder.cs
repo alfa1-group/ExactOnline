@@ -55,7 +55,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox
         /// Use this endpoint to retrieve, create, update or delete an accounts from digital postbox. For more information about digital postbox, kindly refer to the following help file Digital Postbox.Important notes:To use this endpoint, the Mailbox feature set is required in the license.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailboxesWithId.MailboxesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the MailboxMailboxes</param>
+        /// <param name="id">Unique identifier (uuid) of the MailboxMailboxes</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailboxesWithId.MailboxesWithIdRequestBuilder MailboxesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -65,7 +65,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox
         /// Use this endpoint to get information related to a mail message attachment or add an attachment to a mail message.Important notes:To use this endpoint, the Mailbox feature set is required in the license.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachmentsWithId.MailMessageAttachmentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the MailboxMailMessageAttachments</param>
+        /// <param name="id">Unique identifier (uuid) of the MailboxMailMessageAttachments</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachmentsWithId.MailMessageAttachmentsWithIdRequestBuilder MailMessageAttachmentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -75,7 +75,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox
         /// Use this endpoint to get information related to a mail message or create a mail message.Important notes:To use this endpoint, the Mailbox feature set is required in the license.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessagesSentWithId.MailMessagesSentWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the MailboxMailMessagesSent</param>
+        /// <param name="id">Unique identifier (uuid) of the MailboxMailMessagesSent</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessagesSentWithId.MailMessagesSentWithIdRequestBuilder MailMessagesSentWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

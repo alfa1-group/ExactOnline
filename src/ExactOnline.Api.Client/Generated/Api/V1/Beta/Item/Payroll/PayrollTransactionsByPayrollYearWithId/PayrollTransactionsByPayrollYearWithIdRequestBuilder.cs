@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollTransactionsByP
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollTransactionsByPayrollYearWithId.PayrollTransactionsByPayrollYearWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the PayrollPayrollTransactionsByPayrollYear</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollPayrollTransactionsByPayrollYear</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PayrollTransactionsByPayrollYearWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/beta/{division}/payroll/PayrollTransactionsByPayrollYear(guid'{id}')", pathParameters)

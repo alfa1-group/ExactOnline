@@ -20,10 +20,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByDateWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByDateWithId.HoursByDateWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the ReadProjectHoursByDate</param>
+        /// <param name="id">Unique identifier (int32) of the ReadProjectHoursByDate</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HoursByDateWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/HoursByDate(guid'{id}')", pathParameters)
+        public HoursByDateWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/HoursByDate(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }

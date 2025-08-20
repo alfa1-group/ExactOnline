@@ -47,7 +47,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Documents
         /// To be able to upload an attachment (i.e. a PDF file) you first need to create a (empty) document.This bulk service has a page size of 1000.Only the following filters are supported for this endpoint:Document, ID
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Documents.DocumentAttachmentsWithId.DocumentAttachmentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkDocumentsDocumentAttachments</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkDocumentsDocumentAttachments</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Documents.DocumentAttachmentsWithId.DocumentAttachmentsWithIdRequestBuilder DocumentAttachmentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -57,7 +57,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Documents
         /// This end point returns one or more documents of a given company.This bulk service has a page size of 1000.Only the following filters are supported for this endpoint:Account, Category, Contact, Created, Creator, Division, DocumentDate, DocumentFolder, FinancialTransactionEntryID, HID, ID, Modified, Opportunity, Project, SalesInvoiceNumber, Subject, Type
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Documents.DocumentsWithId.DocumentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the BulkDocumentsDocuments</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkDocumentsDocuments</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Documents.DocumentsWithId.DocumentsWithIdRequestBuilder DocumentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

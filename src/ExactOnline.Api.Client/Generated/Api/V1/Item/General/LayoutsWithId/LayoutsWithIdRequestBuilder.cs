@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.General.LayoutsWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.General.LayoutsWithId.LayoutsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the GeneralLayouts</param>
+        /// <param name="id">Unique identifier (uuid) of the GeneralLayouts</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public LayoutsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/general/Layouts(guid'{id}')", pathParameters)

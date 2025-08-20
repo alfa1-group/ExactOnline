@@ -20,10 +20,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccoun
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountAndAgeGroupWithId.PayablesListByAccountAndAgeGroupWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the ReadFinancialPayablesListByAccountAndAgeGroup</param>
+        /// <param name="id">Unique identifier (int64) of the ReadFinancialPayablesListByAccountAndAgeGroup</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayablesListByAccountAndAgeGroupWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/PayablesListByAccountAndAgeGroup(guid'{id}')", pathParameters)
+        public PayablesListByAccountAndAgeGroupWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, long? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/financial/PayablesListByAccountAndAgeGroup(guid'{id}')", pathParameters)
         {
             if (id != null) PathParameters.Add("id", id);
         }

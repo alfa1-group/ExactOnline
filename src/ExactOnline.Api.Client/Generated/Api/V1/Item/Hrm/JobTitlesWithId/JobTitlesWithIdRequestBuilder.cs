@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.JobTitlesWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.JobTitlesWithId.JobTitlesWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (GUID) of the HRMJobTitles</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMJobTitles</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public JobTitlesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/hrm/JobTitles(guid'{id}')", pathParameters)

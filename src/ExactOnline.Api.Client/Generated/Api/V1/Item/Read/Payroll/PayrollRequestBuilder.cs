@@ -48,20 +48,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Payroll
         /// Use this endpoint to read employment contract flex phases on focus date.The phase is set in the employment contract, that can be read using the EmploymentContracts endpoint.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentContractFlexPhasesOnFocusDateWithId.EmploymentContractFlexPhasesOnFocusDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadPayrollEmploymentContractFlexPhasesOnFocusDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentContractFlexPhasesOnFocusDateWithId.EmploymentContractFlexPhasesOnFocusDateWithIdRequestBuilder EmploymentContractFlexPhasesOnFocusDateWithId(Guid? id)
+        /// <param name="id">Unique identifier of the ReadPayrollEmploymentContractFlexPhasesOnFocusDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentContractFlexPhasesOnFocusDateWithId.EmploymentContractFlexPhasesOnFocusDateWithIdRequestBuilder EmploymentContractFlexPhasesOnFocusDateWithId(string id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentContractFlexPhasesOnFocusDateWithId.EmploymentContractFlexPhasesOnFocusDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// Use this endpoint to read employment end reasons on focus date.The reason is set when the employment is ended. Use this end point from payroll year 2020 and onwards.For more information about the employments functionality in Exact Online, see End an employee&apos;s contract.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentEndReasonsOnFocusDateWithId.EmploymentEndReasonsOnFocusDateWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (GUID) of the ReadPayrollEmploymentEndReasonsOnFocusDate</param>
-        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentEndReasonsOnFocusDateWithId.EmploymentEndReasonsOnFocusDateWithIdRequestBuilder EmploymentEndReasonsOnFocusDateWithId(Guid? id)
+        /// <param name="id">Unique identifier of the ReadPayrollEmploymentEndReasonsOnFocusDate</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentEndReasonsOnFocusDateWithId.EmploymentEndReasonsOnFocusDateWithIdRequestBuilder EmploymentEndReasonsOnFocusDateWithId(string id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Payroll.EmploymentEndReasonsOnFocusDateWithId.EmploymentEndReasonsOnFocusDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }
