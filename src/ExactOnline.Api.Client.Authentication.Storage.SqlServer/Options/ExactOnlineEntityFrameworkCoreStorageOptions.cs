@@ -8,7 +8,7 @@ public class ExactOnlineEntityFrameworkCoreStorageOptions
     public string ConnectionStringName { get; set; } = "ExactTokens";
 
     [Required]
-    public string TableName { get; set; } = "Exact";
+    public string TableName { get; set; } = "ExactTokens";
 
     [Required]
     public string RefreshTokenColumnName { get; set; } = "RefreshToken";

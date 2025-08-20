@@ -26,3 +26,6 @@ jobs:
 
     - name: 'Build'
       run: dotnet build ./ExactOnline.sln -c Release
+
+    - name: 'Test'
+      run: dotnet test ./test/ExactOnline.Api.Client.Tests/ExactOnline.Api.Client.Tests.csproj --no-build -c Release
