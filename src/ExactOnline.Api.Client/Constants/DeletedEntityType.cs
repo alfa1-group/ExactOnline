@@ -1,10 +1,73 @@
-﻿namespace ExactOnline.Api.Client.Constants;
+﻿using Microsoft.Kiota.Abstractions.Serialization;
+
+namespace ExactOnline.Api.Client.Constants;
 
 /// <summary>
 /// All possible Entity Types.
 /// </summary>
 public static class DeletedEntityType
 {
+    private static readonly Dictionary<string, int> EntityTypeMap = new(StringComparer.OrdinalIgnoreCase)
+    {
+        { "SyncCRMAccounts", Accounts },
+        { "SyncCRMAddresses", Addresses },
+        { "SyncCRMContacts", Contacts },
+        { "SyncCRMQuotationHeaders", QuotationHeaders },
+        { "SyncCRMQuotationLines", QuotationLines },
+        { "SyncCashflowPaymentTerms", PaymentTerms },
+        { "SyncDocumentsDocumentAttachments", Attachments },
+        { "SyncDocumentsDocuments", Documents },
+        { "SyncFinancialGLAccounts", GLAccounts },
+        { "SyncFinancialGLClassifications", GLClassifications },
+        { "SyncFinancialTransactionLines", TransactionLines },
+        { "SyncHRMAbsenceRegistrationTransactions", AbsenceRegistrationTransactions },
+        { "SyncHRMAbsenceRegistrations", AbsenceRegistrations },
+        { "SyncHRMLeaveAbsenceHoursByDay", LeaveAbsenceHoursByDay },
+        { "SyncHRMLeaveBuildUpRegistrations", LeaveBuildUpRegistrations },
+        { "SyncHRMLeaveRegistrations", LeaveRegistrations },
+        { "SyncHRMScheduleEntries", ScheduleEntries },
+        { "SyncHRMSchedules", Schedules },
+        { "SyncInventoryItemStorageLocations", ItemStorageLocations },
+        { "SyncInventoryItemWarehouses", ItemWarehouses },
+        { "SyncInventorySerialBatchNumbers", SerialBatchNumbers },
+        { "SyncInventoryStockPositions", StockPositions },
+        { "SyncInventoryStockSerialBatchNumbers", StockSerialBatchNumbers },
+        { "SyncInventoryStorageLocationStockPositions", StorageLocationStockPositions },
+        { "SyncLogisticsItems", Items },
+        { "SyncLogisticsPurchaseItemPrices", ItemPrices },
+        { "SyncLogisticsSalesItemPrices", ItemPrices },
+        { "SyncLogisticsSupplierItem", ItemAccounts },
+        { "SyncManufacturingBillOfMaterialMaterials", BillOfMaterialMaterials },
+        { "SyncManufacturingBillOfMaterialVersions", BillOfMaterialVersions },
+        { "SyncManufacturingMaterialIssues", RequirementIssues },
+        { "SyncManufacturingShopOrderMaterialPlans", ShopOrderMaterialPlans },
+        { "SyncManufacturingShopOrderPurchasePlanning", ShopOrderPurchasePlanning },
+        { "SyncManufacturingShopOrderRoutingStepPlans", ShopOrderRoutingStepPlans },
+        { "SyncManufacturingShopOrderSubOrders", ShopOrderSubOrders },
+        { "SyncManufacturingShopOrders", ShopOrders },
+        { "SyncPayrollBankAccounts", BankAccounts },
+        { "SyncPayrollEmployees", Employees },
+        { "SyncPayrollEmploymentCLAs", EmploymentCLAs },
+        { "SyncPayrollEmploymentContracts", EmploymentContracts },
+        { "SyncPayrollEmploymentOrganizations", EmploymentOrganizations },
+        { "SyncPayrollEmploymentSalaries", EmploymentSalaries },
+        { "SyncPayrollEmploymentTaxAuthoritiesGeneral", EmploymentTaxAuthoritiesGeneral },
+        { "SyncPayrollEmployments", Employments },
+        { "SyncProjectProjectPlanning", ProjectPlanning },
+        { "SyncProjectProjectWBS", ProjectWBS },
+        { "SyncProjectProjects", Projects },
+        { "SyncProjectTimeCostTransactions", TimeCostTransactions },
+        { "SyncPurchaseOrderPurchaseOrders", PurchaseOrders },
+        { "SyncSalesInvoiceSalesInvoices", SalesInvoices },
+        { "SyncSalesOrderGoodsDeliveries", GoodsDeliveries },
+        { "SyncSalesOrderGoodsDeliveryLines", GoodsDeliveryLines },
+        { "SyncSalesOrderSalesOrderHeaders", SalesOrderHeaders },
+        { "SyncSalesOrderSalesOrderLines", SalesOrderLines },
+        { "SyncSalesSalesPriceListVolumeDiscounts", DiscountTables },
+        { "SyncSubscriptionSubscriptionLines", SubscriptionLines },
+        { "SyncSubscriptionSubscriptions", Subscriptions }
+    };
+
     public const int TransactionLines = 1;
 
     public const int Accounts = 2;
@@ -25,7 +88,9 @@ public static class DeletedEntityType
 
     public const int PaymentTerms = 10;
 
-    /// <summary>This entity is going to be removed. Please refer to the new entity SalesOrderHeaders, SalesOrderLines.</summary>
+    /// <summary>
+    /// This entity is going to be removed. Please refer to the new entity SalesOrderHeaders, SalesOrderLines.
+    /// </summary>
     public const int SalesOrders = 12;
 
     public const int SalesInvoices = 13;
@@ -119,4 +184,14 @@ public static class DeletedEntityType
     public const int AbsenceRegistrationTransactions = 58;
 
     public const int AbsenceRegistrations = 59;
+
+    public static bool TryParse(string entityTypeString, out int entityTypeId)
+    {
+        return EntityTypeMap.TryGetValue(entityTypeString, out entityTypeId);
+    }
+
+    public static bool TryParse<T>(out int entityTypeId) where T : IParsable
+    {
+        return EntityTypeMap.TryGetValue(typeof(T).Name, out entityTypeId);
+    }
 }

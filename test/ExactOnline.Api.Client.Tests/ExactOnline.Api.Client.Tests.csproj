@@ -11,4 +11,8 @@
     <PackageReference Include="TUnit" Version="0.56.44" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ExactOnline.Api.Client\ExactOnline.Api.Client.csproj" />
+  </ItemGroup>
+
 </Project>
