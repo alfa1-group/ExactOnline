@@ -1,4 +1,5 @@
-﻿using ExactOnline.Api.Client;
+﻿using System.Collections.Generic;
+using ExactOnline.Api.Client;
 using ExactOnline.Api.Client.Authentication.Options;
 using ExactOnline.Api.Client.Builders.Filter;
 using ExactOnline.Api.Client.Builders.OrderBy;
@@ -59,7 +60,37 @@ var me = await RunAsync(async () =>
     return me;
 });
 
-var division = me!.CurrentDivision!.Value;
+var division = isDevelopment ? me!.CurrentDivision!.Value : 3137281;
+
+var all = await RunAsync(async () =>
+{
+    Console.WriteLine("Getting System Divisions - GetAll");
+    var list = await client.Api.V1[division].System.Divisions.GetAllAsync().AsItems();
+
+    foreach (var x in list)
+    {
+        Console.WriteLine($"Division: {x.Code}, {x.Description}");
+    }
+
+    return list;
+});
+
+await RunAsync(async () =>
+{
+    Console.WriteLine("Getting Sync Deleted - GetAll");
+    var list = await client.Api.V1[division].Sync.Deleted.GetAllAsync(x =>
+    {
+        x.QueryParameters.Filter = TimestampFilterBuilder.Build(t => t.Timestamp >= 10000000);
+        x.QueryParameters.Select = SelectBuilder<SyncDeleted>.Build();
+    }).AsItems();
+
+    foreach (var x in list)
+    {
+        Console.WriteLine($"Sync Sync Deleted: {x.ID}, {x.EntityKey} {x.EntityType}");
+    }
+
+    return list;
+});
 
 await RunAsync(async () =>
 {
