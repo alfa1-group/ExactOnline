@@ -5,7 +5,7 @@ namespace ExactOnline.Api.Client.Authentication.Storage.SqlServer.Options;
 public class ExactOnlineEntityFrameworkCoreStorageOptions
 {
     [Required]
-    public string ConnectionString { get; set; } = null!;
+    public string ConnectionStringName { get; set; } = "ExactTokens";
 
     [Required]
     public string TableName { get; set; } = "Exact";

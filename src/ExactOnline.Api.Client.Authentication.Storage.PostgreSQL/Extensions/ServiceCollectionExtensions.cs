@@ -21,7 +21,10 @@ public static class ServiceCollectionExtensions
         services.AddDbContext<ExactOnlineTokenDbContext>((serviceProvider, options) =>
         {
             var storageOptions = serviceProvider.GetRequiredService<IOptions<ExactOnlineEntityFrameworkCoreStorageOptions>>().Value;
-            options.UseNpgsql(storageOptions.ConnectionString);
+
+            var connectionString = configuration.GetConnectionString(storageOptions.ConnectionStringName);
+
+            options.UseNpgsql(connectionString);
         });
 
         using (var serviceProvider = services.BuildServiceProvider())
