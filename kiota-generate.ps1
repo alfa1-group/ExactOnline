@@ -213,8 +213,6 @@ $modelFiles = Get-ChildItem -Path $modelsPath -Filter "*.cs" | Where-Object {
     $_.Name -notlike "*Post.cs" -and $_.Name -notlike "*Put.cs" -and $_.Name -notlike "*_Response.cs" -and $_.Name -notlike "*Post_Response.cs" -and $_.Name -notlike "*Put_Response.cs" -and $_.Name -notlike "*_Results.cs" -and $_.Name -notlike "ExactOnlineMetadata*.cs" -and $_.Name -notlike "ODataError*.cs"
 }
 foreach ($file in $modelFiles) {
-    # Write-Output "--> ${file}"
-
     $className = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
     $responseFileName = "${className}_Response.cs"
     $responseFilePath = Join-Path $extensionsModelsPath "${className}_ResponseExtensions.cs"
@@ -259,7 +257,7 @@ foreach ($file in $modelFiles) {
 
 # Find all 'Post' and 'Get' response model files in the models directory
 $modelFiles = Get-ChildItem -Path $modelsPath -Filter "*.cs" | Where-Object {
-    $_.Name -like "*Post_Response.cs" -or $_.Name -like "*Get_Response.cs"
+    $_.Name -clike "*Post_Response.cs" -or $_.Name -clike "*Get_Response.cs"
 }
 foreach ($file in $modelFiles) {
     $responseClassName = ([System.IO.Path]::GetFileNameWithoutExtension($file.Name))

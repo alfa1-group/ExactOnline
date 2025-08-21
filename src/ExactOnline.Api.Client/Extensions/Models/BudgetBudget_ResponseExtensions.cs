@@ -9,4 +9,5 @@ public static class BudgetBudget_ResponseExtensions
         var d = (await task)?.D;
         return d == null ? [] : d.BudgetBudget ?? d.BudgetBudgetResults?.Results ?? [];
     }
+
 }

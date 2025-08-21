@@ -100504,7 +100504,7 @@
             }
           }
         },
-        "description": "The BudgetBudget entity.",
+        "description": "A collection of BudgetBudget entities.",
         "readOnly": true
       },
       "BudgetBudgetGet_Response": {

@@ -15,7 +15,7 @@ internal class EndpointCrawler
     private const int MaxRetries = 3;
     private static readonly Regex EndpointUriRegex = new(@"\{(\w+)\}", RegexOptions.Compiled);
     private static readonly Regex EndpointUriEdmTypeRegex = new(@"(\w+)=\{([^}]+)\}", RegexOptions.Compiled);
-    private static readonly string[] ReturnsSingleItem = ["SystemSystemMe", "ReadSyncSyncSyncTimestamp", "BudgetBudgets"];
+    private static readonly string[] ReturnsSingleItem = ["SystemSystemMe", "ReadSyncSyncSyncTimestamp"];
 
     private readonly OpenApiDocument _openApiDoc;
     private readonly PuppeteerHtmlLoader _puppeteerHtmlLoader;
@@ -186,8 +186,10 @@ internal class EndpointCrawler
     {
         var docGet = docs[HttpMethod.Get];
 
-        var baseSchemaName = pageUrl.Split("?name=").Last().Trim().Singularize();
-        var isSingleResponse = ReturnsSingleItem.Contains(baseSchemaName);
+        var nameFromUrl = pageUrl.Split("?name=").Last().Trim();
+        var isSingleResponse = ReturnsSingleItem.Contains(nameFromUrl);
+
+        var baseSchemaName = nameFromUrl.Singularize();
         var endpointDescription = docGet.DocumentNode.SelectSingleNode("//p[@id='goodToKnow']")?.InnerText.Trim() ?? string.Empty;
         var (baseEndpointUri, queryParameters) = GetEndpointUriDetails(docGet);
         var isSyncInterface = baseSchemaName.StartsWith("Sync");
@@ -210,9 +212,7 @@ internal class EndpointCrawler
 
             var requiredProperties = new HashSet<string>();
 
-            // Rows from the tabel which:
-            // - are not headers (no class='header')
-            // - are not hidden (no style='display: none')
+            // Rows from the tabel which are not hidden
             var tableRows = document.DocumentNode.SelectNodes("//table[@id='referencetable']//tr[not(contains(@style, 'display: none'))]");
             // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
             if (tableRows != null)

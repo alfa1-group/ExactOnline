@@ -9,4 +9,5 @@ public static class ProjectProjectHourBudget_ResponseExtensions
         var d = (await task)?.D;
         return d == null ? [] : d.ProjectProjectHourBudget ?? d.ProjectProjectHourBudgetResults?.Results ?? [];
     }
+
 }
