@@ -29,10 +29,6 @@ Console.WriteLine($"{me.CurrentDivision} {me.Email}");
 ```
 
 
-## ExactOnline.Api.Client.Interfaces
-Source analyzer generated interfaces for the Exact Online API client. Which makes it easier to mock the client in unit tests.
-
-
 ## ExactOnline.Api.Client.Authentication
 Implementation of the OAuth authentication for Exact Online.
 It uses the `ExactOnline.Api.Client.Authentication.Abstractions` interfaces package to store the Refresh Token in a storage.
@@ -43,7 +39,7 @@ Contains an implementation of the `IAuthenticationProvider` interface for Kiota,
 
 
 ## ExactOnline.Api.Client.Authentication.Abstractions
-An interface which defines how to store and retrieve the Refresh and Access Tokens.
+An interface `IExactTokenStorageService` which defines how to store and retrieve the Refresh and Access Tokens.
 
 This interface is implemented by several packages, like:
 - [ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs)
