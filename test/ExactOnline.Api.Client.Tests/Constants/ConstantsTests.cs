@@ -25,7 +25,7 @@ public class ConstantsTests
     [Test]
     public async Task DeletedEntityType_TryParse_Known_Type()
     {
-        var result = DeletedEntityType.TryParse<SyncCRMAddresses>(out var entityType);
+        var result = DeletedEntityType.TryParse<SyncCRMAddress>(out var entityType);
 
         await Assert.That(result).IsTrue();
         await Assert.That(entityType).IsEqualTo(3);
@@ -34,7 +34,7 @@ public class ConstantsTests
     [Test]
     public async Task DeletedEntityType_TryParse_Unknown_Type()
     {
-        var result = DeletedEntityType.TryParse<SystemSystemDivisions>(out var entityType);
+        var result = DeletedEntityType.TryParse<SystemSystemDivision>(out var entityType);
 
         await Assert.That(result).IsFalse();
     }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Kiota.Abstractions.Serialization;
+﻿using ExactOnline.Api.Client.Models;
+using Microsoft.Kiota.Abstractions.Serialization;
 
 namespace ExactOnline.Api.Client.Constants;
 
@@ -7,7 +8,7 @@ namespace ExactOnline.Api.Client.Constants;
 /// </summary>
 public static class DeletedEntityType
 {
-    private static readonly Dictionary<string, int> EntityTypeMap = new(StringComparer.OrdinalIgnoreCase)
+    private static readonly Dictionary<string, int> NameToIdMap = new(StringComparer.OrdinalIgnoreCase)
     {
         { "SyncCRMAccounts", Accounts },
         { "SyncCRMAddresses", Addresses },
@@ -67,6 +68,67 @@ public static class DeletedEntityType
         { "SyncSubscriptionSubscriptionLines", SubscriptionLines },
         { "SyncSubscriptionSubscriptions", Subscriptions }
     };
+
+    private static readonly Dictionary<Type, int> TypeToIdMap = new()
+{
+    { typeof(SyncCRMAccount), Accounts },
+    { typeof(SyncCRMAddress), Addresses },
+    { typeof(SyncCRMContact), Contacts },
+    { typeof(SyncCRMQuotationHeader), QuotationHeaders },
+    { typeof(SyncCRMQuotationLine), QuotationLines },
+    { typeof(SyncCashflowPaymentTerm), PaymentTerms },
+    { typeof(SyncDocumentsDocumentAttachment), Attachments },
+    { typeof(SyncDocumentsDocument), Documents },
+    { typeof(SyncFinancialGLAccount), GLAccounts },
+    { typeof(SyncFinancialGLClassification), GLClassifications },
+    { typeof(SyncFinancialTransactionLine), TransactionLines },
+    { typeof(SyncHRMAbsenceRegistrationTransaction), AbsenceRegistrationTransactions },
+    { typeof(SyncHRMAbsenceRegistration), AbsenceRegistrations },
+    { typeof(SyncHRMLeaveAbsenceHoursByDay), LeaveAbsenceHoursByDay },
+    { typeof(SyncHRMLeaveBuildUpRegistration), LeaveBuildUpRegistrations },
+    { typeof(SyncHRMLeaveRegistration), LeaveRegistrations },
+    { typeof(SyncHRMScheduleEntry), ScheduleEntries },
+    { typeof(SyncHRMSchedule), Schedules },
+    { typeof(SyncInventoryItemStorageLocation), ItemStorageLocations },
+    { typeof(SyncInventoryItemWarehouse), ItemWarehouses },
+    { typeof(SyncInventorySerialBatchNumber), SerialBatchNumbers },
+    { typeof(SyncInventoryStockPosition), StockPositions },
+    { typeof(SyncInventoryStockSerialBatchNumber), StockSerialBatchNumbers },
+    { typeof(SyncInventoryStorageLocationStockPosition), StorageLocationStockPositions },
+    { typeof(SyncLogisticsItem), Items },
+    { typeof(SyncLogisticsPurchaseItemPrice), ItemPrices },
+    { typeof(SyncLogisticsSalesItemPrice), ItemPrices },
+    { typeof(SyncLogisticsSupplierItem), ItemAccounts },
+    { typeof(SyncManufacturingBillOfMaterialMaterial), BillOfMaterialMaterials },
+    { typeof(SyncManufacturingBillOfMaterialVersion), BillOfMaterialVersions },
+    { typeof(SyncManufacturingMaterialIssue), RequirementIssues },
+    { typeof(SyncManufacturingShopOrderMaterialPlan), ShopOrderMaterialPlans },
+    { typeof(SyncManufacturingShopOrderPurchasePlanning), ShopOrderPurchasePlanning },
+    { typeof(SyncManufacturingShopOrderRoutingStepPlan), ShopOrderRoutingStepPlans },
+    { typeof(SyncManufacturingShopOrderSubOrder), ShopOrderSubOrders },
+    { typeof(SyncManufacturingShopOrder), ShopOrders },
+    { typeof(SyncPayrollBankAccount), BankAccounts },
+    { typeof(SyncPayrollEmployee), Employees },
+    { typeof(SyncPayrollEmploymentCLA), EmploymentCLAs },
+    { typeof(SyncPayrollEmploymentContract), EmploymentContracts },
+    { typeof(SyncPayrollEmploymentOrganization), EmploymentOrganizations },
+    { typeof(SyncPayrollEmploymentSalary), EmploymentSalaries },
+    { typeof(SyncPayrollEmploymentTaxAuthoritiesGeneral), EmploymentTaxAuthoritiesGeneral },
+    { typeof(SyncPayrollEmployment), Employments },
+    { typeof(SyncProjectProjectPlanning), ProjectPlanning },
+    { typeof(SyncProjectProjectWB), ProjectWBS },
+    { typeof(SyncProjectProject), Projects },
+    { typeof(SyncProjectTimeCostTransaction), TimeCostTransactions },
+    { typeof(SyncPurchaseOrderPurchaseOrder), PurchaseOrders },
+    { typeof(SyncSalesInvoiceSalesInvoice), SalesInvoices },
+    { typeof(SyncSalesOrderGoodsDelivery), GoodsDeliveries },
+    { typeof(SyncSalesOrderGoodsDeliveryLine), GoodsDeliveryLines },
+    { typeof(SyncSalesOrderSalesOrderHeader), SalesOrderHeaders },
+    { typeof(SyncSalesOrderSalesOrderLine), SalesOrderLines },
+    { typeof(SyncSalesSalesPriceListVolumeDiscount), DiscountTables },
+    { typeof(SyncSubscriptionSubscriptionLine), SubscriptionLines },
+    { typeof(SyncSubscriptionSubscription), Subscriptions }
+};
 
     public const int TransactionLines = 1;
 
@@ -187,11 +249,11 @@ public static class DeletedEntityType
 
     public static bool TryParse(string entityTypeString, out int entityTypeId)
     {
-        return EntityTypeMap.TryGetValue(entityTypeString, out entityTypeId);
+        return NameToIdMap.TryGetValue(entityTypeString, out entityTypeId);
     }
 
     public static bool TryParse<T>(out int entityTypeId) where T : IParsable
     {
-        return EntityTypeMap.TryGetValue(typeof(T).Name, out entityTypeId);
+        return TypeToIdMap.TryGetValue(typeof(T), out entityTypeId);
     }
 }
