@@ -5,7 +5,6 @@ Some projects to access the Exact Online REST API using C#.
 ## ExactOnline.Api.Client
 A Kiota generated C# client for Exact Online to access the REST API.
 
-### Installation
 [![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client)](https://www.nuget.org/packages/ExactOnline.Api.Client)
 
 
@@ -33,19 +32,30 @@ Console.WriteLine($"{me.CurrentDivision} {me.Email}");
 Implementation of the OAuth authentication for Exact Online.
 It uses the `ExactOnline.Api.Client.Authentication.Abstractions` interfaces package to store the Refresh Token in a storage.
 
+[![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication)
+
 
 ## ExactOnline.Api.Client.Authentication.Kiota
 Contains an implementation of the `IAuthenticationProvider` interface for Kiota, which is used to authenticate requests to the Exact Online API.
+
+[![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication.Kiota)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Kiota)
 
 
 ## ExactOnline.Api.Client.Authentication.Abstractions
 An interface `IExactTokenStorageService` which defines how to store and retrieve the Refresh and Access Tokens.
 
+
+
+
 This interface is implemented by several packages, like:
-- [ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs)
-- [ExactOnline.Api.Client.Authentication.Storage.FileSystem](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.FileSystem)
-- [ExactOnline.Api.Client.Authentication.Storage.SqlServer](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.SqlServer)
-- [ExactOnline.Api.Client.Authentication.Storage.PostgreSQL](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.PostgreSQL)
+
+| Package | NuGet |
+| :- | :- |
+| ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs | [![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs)
+| ExactOnline.Api.Client.Authentication.Storage.FileSystem | [![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication.Storage.FileSystem)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.FileSystem)
+| ExactOnline.Api.Client.Authentication.Storage.SqlServer | [![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication.Storage.SqlServer)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.SqlServer)
+| ExactOnline.Api.Client.Authentication.Storage.PostgreSQL | [![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication.Storage.PostgreSQL)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.PostgreSQL)
+
 
 ---
 
