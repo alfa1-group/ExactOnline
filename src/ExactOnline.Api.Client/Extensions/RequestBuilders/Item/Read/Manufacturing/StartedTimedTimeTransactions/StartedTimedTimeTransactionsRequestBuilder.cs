@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing.StartedTimedTime
 
 public partial class StartedTimedTimeTransactionsRequestBuilder
 {
-    public async Task<ReadManufacturingStartedTimedTimeTransactions_Response?> GetAllAsync(Action<RequestConfiguration<StartedTimedTimeTransactionsRequestBuilder.StartedTimedTimeTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadManufacturingStartedTimedTimeTransaction_Response?> GetAllAsync(Action<RequestConfiguration<StartedTimedTimeTransactionsRequestBuilder.StartedTimedTimeTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadManufacturingStartedTimedTimeTransactionsResults is null)
+        if (response?.D?.ReadManufacturingStartedTimedTimeTransactionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadManufacturingStartedTimedTimeTransactions>();
+        var allItems = new List<ReadManufacturingStartedTimedTimeTransaction>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadManufacturingStartedTimedTimeTransactionsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadManufacturingStartedTimedTimeTransactionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadManufacturingStartedTimedTimeTransactionsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadManufacturingStartedTimedTimeTransactionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class StartedTimedTimeTransactionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadManufacturingStartedTimedTimeTransactions_Response
+        var finalResponse = new ReadManufacturingStartedTimedTimeTransaction_Response
         {
-            D = new ReadManufacturingStartedTimedTimeTransactions_Response.ReadManufacturingStartedTimedTimeTransactions_Response_d
+            D = new ReadManufacturingStartedTimedTimeTransaction_Response.ReadManufacturingStartedTimedTimeTransaction_Response_d
             {
-                ReadManufacturingStartedTimedTimeTransactions = allItems
+                ReadManufacturingStartedTimedTimeTransaction = allItems
             }
         };
 

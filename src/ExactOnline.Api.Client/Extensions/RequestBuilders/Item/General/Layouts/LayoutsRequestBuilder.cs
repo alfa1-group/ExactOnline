@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.General.Layouts;
 
 public partial class LayoutsRequestBuilder
 {
-    public async Task<GeneralLayouts_Response?> GetAllAsync(Action<RequestConfiguration<LayoutsRequestBuilder.LayoutsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<GeneralLayout_Response?> GetAllAsync(Action<RequestConfiguration<LayoutsRequestBuilder.LayoutsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.GeneralLayoutsResults is null)
+        if (response?.D?.GeneralLayoutResults is null)
         {
             return response;
         }
 
-        var allItems = new List<GeneralLayouts>();
+        var allItems = new List<GeneralLayout>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.GeneralLayoutsResults?.Results is { } results)
+            if (currentResponse?.D?.GeneralLayoutResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.GeneralLayoutsResults?.Next;
+            var nextUrl = currentResponse?.D?.GeneralLayoutResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class LayoutsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new GeneralLayouts_Response
+        var finalResponse = new GeneralLayout_Response
         {
-            D = new GeneralLayouts_Response.GeneralLayouts_Response_d
+            D = new GeneralLayout_Response.GeneralLayout_Response_d
             {
-                GeneralLayouts = allItems
+                GeneralLayout = allItems
             }
         };
 

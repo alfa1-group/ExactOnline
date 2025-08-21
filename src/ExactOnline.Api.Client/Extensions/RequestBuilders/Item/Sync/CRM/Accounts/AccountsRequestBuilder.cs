@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.CRM.Accounts;
 
 public partial class AccountsRequestBuilder
 {
-    public async Task<SyncCRMAccounts_Response?> GetAllAsync(Action<RequestConfiguration<AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncCRMAccount_Response?> GetAllAsync(Action<RequestConfiguration<AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncCRMAccountsResults is null)
+        if (response?.D?.SyncCRMAccountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncCRMAccounts>();
+        var allItems = new List<SyncCRMAccount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncCRMAccountsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncCRMAccountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncCRMAccountsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncCRMAccountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AccountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncCRMAccounts_Response
+        var finalResponse = new SyncCRMAccount_Response
         {
-            D = new SyncCRMAccounts_Response.SyncCRMAccounts_Response_d
+            D = new SyncCRMAccount_Response.SyncCRMAccount_Response_d
             {
-                SyncCRMAccounts = allItems
+                SyncCRMAccount = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.CRM.Addresses;
 
 public partial class AddressesRequestBuilder
 {
-    public async Task<SyncCRMAddresses_Response?> GetAllAsync(Action<RequestConfiguration<AddressesRequestBuilder.AddressesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncCRMAddress_Response?> GetAllAsync(Action<RequestConfiguration<AddressesRequestBuilder.AddressesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncCRMAddressesResults is null)
+        if (response?.D?.SyncCRMAddressResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncCRMAddresses>();
+        var allItems = new List<SyncCRMAddress>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncCRMAddressesResults?.Results is { } results)
+            if (currentResponse?.D?.SyncCRMAddressResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncCRMAddressesResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncCRMAddressResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AddressesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncCRMAddresses_Response
+        var finalResponse = new SyncCRMAddress_Response
         {
-            D = new SyncCRMAddresses_Response.SyncCRMAddresses_Response_d
+            D = new SyncCRMAddress_Response.SyncCRMAddress_Response_d
             {
-                SyncCRMAddresses = allItems
+                SyncCRMAddress = allItems
             }
         };
 

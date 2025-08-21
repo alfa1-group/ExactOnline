@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.HRM.Schedules;
 
 public partial class SchedulesRequestBuilder
 {
-    public async Task<SyncHRMSchedules_Response?> GetAllAsync(Action<RequestConfiguration<SchedulesRequestBuilder.SchedulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncHRMSchedule_Response?> GetAllAsync(Action<RequestConfiguration<SchedulesRequestBuilder.SchedulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncHRMSchedulesResults is null)
+        if (response?.D?.SyncHRMScheduleResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncHRMSchedules>();
+        var allItems = new List<SyncHRMSchedule>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncHRMSchedulesResults?.Results is { } results)
+            if (currentResponse?.D?.SyncHRMScheduleResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncHRMSchedulesResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncHRMScheduleResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SchedulesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncHRMSchedules_Response
+        var finalResponse = new SyncHRMSchedule_Response
         {
-            D = new SyncHRMSchedules_Response.SyncHRMSchedules_Response_d
+            D = new SyncHRMSchedule_Response.SyncHRMSchedule_Response_d
             {
-                SyncHRMSchedules = allItems
+                SyncHRMSchedule = allItems
             }
         };
 

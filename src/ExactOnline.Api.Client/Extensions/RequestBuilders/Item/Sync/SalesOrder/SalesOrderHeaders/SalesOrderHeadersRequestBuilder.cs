@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.SalesOrder.SalesOrderHeaders;
 
 public partial class SalesOrderHeadersRequestBuilder
 {
-    public async Task<SyncSalesOrderSalesOrderHeaders_Response?> GetAllAsync(Action<RequestConfiguration<SalesOrderHeadersRequestBuilder.SalesOrderHeadersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncSalesOrderSalesOrderHeader_Response?> GetAllAsync(Action<RequestConfiguration<SalesOrderHeadersRequestBuilder.SalesOrderHeadersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncSalesOrderSalesOrderHeadersResults is null)
+        if (response?.D?.SyncSalesOrderSalesOrderHeaderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncSalesOrderSalesOrderHeaders>();
+        var allItems = new List<SyncSalesOrderSalesOrderHeader>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncSalesOrderSalesOrderHeadersResults?.Results is { } results)
+            if (currentResponse?.D?.SyncSalesOrderSalesOrderHeaderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncSalesOrderSalesOrderHeadersResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncSalesOrderSalesOrderHeaderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesOrderHeadersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncSalesOrderSalesOrderHeaders_Response
+        var finalResponse = new SyncSalesOrderSalesOrderHeader_Response
         {
-            D = new SyncSalesOrderSalesOrderHeaders_Response.SyncSalesOrderSalesOrderHeaders_Response_d
+            D = new SyncSalesOrderSalesOrderHeader_Response.SyncSalesOrderSalesOrderHeader_Response_d
             {
-                SyncSalesOrderSalesOrderHeaders = allItems
+                SyncSalesOrderSalesOrderHeader = allItems
             }
         };
 

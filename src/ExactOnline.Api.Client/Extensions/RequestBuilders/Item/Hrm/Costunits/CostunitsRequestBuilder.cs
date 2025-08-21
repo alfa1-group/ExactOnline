@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.Costunits;
 
 public partial class CostunitsRequestBuilder
 {
-    public async Task<HRMCostunits_Response?> GetAllAsync(Action<RequestConfiguration<CostunitsRequestBuilder.CostunitsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<HRMCostunit_Response?> GetAllAsync(Action<RequestConfiguration<CostunitsRequestBuilder.CostunitsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.HRMCostunitsResults is null)
+        if (response?.D?.HRMCostunitResults is null)
         {
             return response;
         }
 
-        var allItems = new List<HRMCostunits>();
+        var allItems = new List<HRMCostunit>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.HRMCostunitsResults?.Results is { } results)
+            if (currentResponse?.D?.HRMCostunitResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.HRMCostunitsResults?.Next;
+            var nextUrl = currentResponse?.D?.HRMCostunitResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class CostunitsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new HRMCostunits_Response
+        var finalResponse = new HRMCostunit_Response
         {
-            D = new HRMCostunits_Response.HRMCostunits_Response_d
+            D = new HRMCostunit_Response.HRMCostunit_Response_d
             {
-                HRMCostunits = allItems
+                HRMCostunit = allItems
             }
         };
 

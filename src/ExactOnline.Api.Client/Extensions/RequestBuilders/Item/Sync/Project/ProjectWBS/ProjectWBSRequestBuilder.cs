@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Project.ProjectWBS;
 
 public partial class ProjectWBSRequestBuilder
 {
-    public async Task<SyncProjectProjectWBS_Response?> GetAllAsync(Action<RequestConfiguration<ProjectWBSRequestBuilder.ProjectWBSRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncProjectProjectWB_Response?> GetAllAsync(Action<RequestConfiguration<ProjectWBSRequestBuilder.ProjectWBSRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncProjectProjectWBSResults is null)
+        if (response?.D?.SyncProjectProjectWBResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncProjectProjectWBS>();
+        var allItems = new List<SyncProjectProjectWB>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncProjectProjectWBSResults?.Results is { } results)
+            if (currentResponse?.D?.SyncProjectProjectWBResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncProjectProjectWBSResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncProjectProjectWBResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectWBSRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncProjectProjectWBS_Response
+        var finalResponse = new SyncProjectProjectWB_Response
         {
-            D = new SyncProjectProjectWBS_Response.SyncProjectProjectWBS_Response_d
+            D = new SyncProjectProjectWB_Response.SyncProjectProjectWB_Response_d
             {
-                SyncProjectProjectWBS = allItems
+                SyncProjectProjectWB = allItems
             }
         };
 

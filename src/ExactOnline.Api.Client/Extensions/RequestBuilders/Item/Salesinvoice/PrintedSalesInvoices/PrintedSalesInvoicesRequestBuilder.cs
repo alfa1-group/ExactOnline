@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.PrintedSalesInvoices;
 
 public partial class PrintedSalesInvoicesRequestBuilder
 {
-    public async Task<SalesInvoicePrintedSalesInvoices_Response?> GetAllAsync(Action<RequestConfiguration<PrintedSalesInvoicesRequestBuilder.PrintedSalesInvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesInvoicePrintedSalesInvoice_Response?> GetAllAsync(Action<RequestConfiguration<PrintedSalesInvoicesRequestBuilder.PrintedSalesInvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesInvoicePrintedSalesInvoicesResults is null)
+        if (response?.D?.SalesInvoicePrintedSalesInvoiceResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesInvoicePrintedSalesInvoices>();
+        var allItems = new List<SalesInvoicePrintedSalesInvoice>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesInvoicePrintedSalesInvoicesResults?.Results is { } results)
+            if (currentResponse?.D?.SalesInvoicePrintedSalesInvoiceResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesInvoicePrintedSalesInvoicesResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesInvoicePrintedSalesInvoiceResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PrintedSalesInvoicesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesInvoicePrintedSalesInvoices_Response
+        var finalResponse = new SalesInvoicePrintedSalesInvoice_Response
         {
-            D = new SalesInvoicePrintedSalesInvoices_Response.SalesInvoicePrintedSalesInvoices_Response_d
+            D = new SalesInvoicePrintedSalesInvoice_Response.SalesInvoicePrintedSalesInvoice_Response_d
             {
-                SalesInvoicePrintedSalesInvoices = allItems
+                SalesInvoicePrintedSalesInvoice = allItems
             }
         };
 

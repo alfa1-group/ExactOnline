@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchase.PurchaseInvoiceLines;
 
 public partial class PurchaseInvoiceLinesRequestBuilder
 {
-    public async Task<PurchasePurchaseInvoiceLines_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseInvoiceLinesRequestBuilder.PurchaseInvoiceLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PurchasePurchaseInvoiceLine_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseInvoiceLinesRequestBuilder.PurchaseInvoiceLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PurchasePurchaseInvoiceLinesResults is null)
+        if (response?.D?.PurchasePurchaseInvoiceLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PurchasePurchaseInvoiceLines>();
+        var allItems = new List<PurchasePurchaseInvoiceLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PurchasePurchaseInvoiceLinesResults?.Results is { } results)
+            if (currentResponse?.D?.PurchasePurchaseInvoiceLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PurchasePurchaseInvoiceLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.PurchasePurchaseInvoiceLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PurchaseInvoiceLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PurchasePurchaseInvoiceLines_Response
+        var finalResponse = new PurchasePurchaseInvoiceLine_Response
         {
-            D = new PurchasePurchaseInvoiceLines_Response.PurchasePurchaseInvoiceLines_Response_d
+            D = new PurchasePurchaseInvoiceLine_Response.PurchasePurchaseInvoiceLine_Response_d
             {
-                PurchasePurchaseInvoiceLines = allItems
+                PurchasePurchaseInvoiceLine = allItems
             }
         };
 

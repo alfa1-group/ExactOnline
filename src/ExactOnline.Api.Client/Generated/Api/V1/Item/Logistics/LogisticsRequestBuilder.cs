@@ -132,7 +132,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics
         /// Use this endpoint to create, read, update and delete customer items.In some cases companies need to adopt and use the item code of their customer. They need to easily communicate sales related transactions with their item code.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Logistics.CustomerItemsWithId.CustomerItemsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the LogisticsCustomerItems</param>
+        /// <param name="id">Unique identifier (uuid) of the LogisticsCustomerItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Logistics.CustomerItemsWithId.CustomerItemsWithIdRequestBuilder CustomerItemsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -142,7 +142,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics
         /// Use this endpoint to read incoterms.Retrieve all available incoterms.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Logistics.IncotermsWithId.IncotermsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (int16) of the LogisticsIncoterms</param>
+        /// <param name="id">Unique identifier (int16) of the LogisticsIncoterm</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Logistics.IncotermsWithId.IncotermsWithIdRequestBuilder IncotermsWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -182,7 +182,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics
         /// Use this endpoint to read item groups.Item groups are used to organize items.For more information about the item groups functionality in Exact Online, see Working with item groups.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Logistics.ItemGroupsWithId.ItemGroupsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the LogisticsItemGroups</param>
+        /// <param name="id">Unique identifier (uuid) of the LogisticsItemGroup</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Logistics.ItemGroupsWithId.ItemGroupsWithIdRequestBuilder ItemGroupsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -192,7 +192,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics
         /// Use this endpoint to create, read, update and delete Items.Add CustomDescriptionLanguage=&apos;[ NL | FR-BE | NL-BE | ... ]&apos; to the header to retrieve language sensitive properties such as descriptions in a specific language.Items are used in sales, purchase orders, shop orders, and more. You can organise Items into item groups, assortments, storage locations, and warehouses.For more information about the Items functionality in Exact Online, see Working with items.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Logistics.ItemsWithId.ItemsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the LogisticsItems</param>
+        /// <param name="id">Unique identifier (uuid) of the LogisticsItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Logistics.ItemsWithId.ItemsWithIdRequestBuilder ItemsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -202,7 +202,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics
         /// This endpoint is obsolete. Refer to the BillOfMaterialVersions endpoint under Manufacturing.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Logistics.ItemVersionsWithId.ItemVersionsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the LogisticsItemVersions</param>
+        /// <param name="id">Unique identifier (uuid) of the LogisticsItemVersion</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Logistics.ItemVersionsWithId.ItemVersionsWithIdRequestBuilder ItemVersionsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -212,7 +212,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics
         /// Use this endpoint to read reason code for logistics type.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Logistics.ReasonCodesLinkTypesWithId.ReasonCodesLinkTypesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the LogisticsReasonCodesLinkTypes</param>
+        /// <param name="id">Unique identifier (uuid) of the LogisticsReasonCodesLinkType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Logistics.ReasonCodesLinkTypesWithId.ReasonCodesLinkTypesWithIdRequestBuilder ReasonCodesLinkTypesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -222,7 +222,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics
         /// Use this endpoint to read reason code for logistics.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Logistics.ReasonCodesWithId.ReasonCodesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the LogisticsReasonCodes</param>
+        /// <param name="id">Unique identifier (uuid) of the LogisticsReasonCode</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Logistics.ReasonCodesWithId.ReasonCodesWithIdRequestBuilder ReasonCodesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -232,7 +232,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics
         /// Use this endpoint to : • Create a new sales item price. It will be treated as &apos;Price Agreement&apos; when an account is provided. If is not provided,it will be treated as the usual sales price. • Retrieve an existing sales item price. • Update an existing sales item price. • Delete an existing sales item price.There are several ways of defining sales price of an item. You can manage prices according to different items and customers.You can also create for seasonal offers within a specified period.For more information about the sales price management functionality in Exact Online, see Sales price management.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Logistics.SalesItemPricesWithId.SalesItemPricesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the LogisticsSalesItemPrices</param>
+        /// <param name="id">Unique identifier (uuid) of the LogisticsSalesItemPrice</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Logistics.SalesItemPricesWithId.SalesItemPricesWithIdRequestBuilder SalesItemPricesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -242,7 +242,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics
         /// Use this endpoint to read selection codes.Selection codes can be used for different reasons within your sales/manufacturing/purchase orders. The selection codes can be defined by the users themselves and are therefore very flexible in the way a customer uses it.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Logistics.SelectionCodesWithId.SelectionCodesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the LogisticsSelectionCodes</param>
+        /// <param name="id">Unique identifier (uuid) of the LogisticsSelectionCode</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Logistics.SelectionCodesWithId.SelectionCodesWithIdRequestBuilder SelectionCodesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -262,7 +262,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics
         /// Use this endpoint to read units.A unit shows how and in what quantity you sell an item.For more information about the units functionality in Exact Online, see Working with units.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Logistics.UnitsWithId.UnitsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the LogisticsUnits</param>
+        /// <param name="id">Unique identifier (uuid) of the LogisticsUnit</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Logistics.UnitsWithId.UnitsWithIdRequestBuilder UnitsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

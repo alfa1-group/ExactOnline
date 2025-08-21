@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocuments;
 
 public partial class AccountDocumentsRequestBuilder
 {
-    public async Task<ReadCRMAccountDocuments_Response?> GetAllAsync(Action<RequestConfiguration<AccountDocumentsRequestBuilder.AccountDocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadCRMAccountDocument_Response?> GetAllAsync(Action<RequestConfiguration<AccountDocumentsRequestBuilder.AccountDocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadCRMAccountDocumentsResults is null)
+        if (response?.D?.ReadCRMAccountDocumentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadCRMAccountDocuments>();
+        var allItems = new List<ReadCRMAccountDocument>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadCRMAccountDocumentsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadCRMAccountDocumentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadCRMAccountDocumentsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadCRMAccountDocumentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AccountDocumentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadCRMAccountDocuments_Response
+        var finalResponse = new ReadCRMAccountDocument_Response
         {
-            D = new ReadCRMAccountDocuments_Response.ReadCRMAccountDocuments_Response_d
+            D = new ReadCRMAccountDocument_Response.ReadCRMAccountDocument_Response_d
             {
-                ReadCRMAccountDocuments = allItems
+                ReadCRMAccountDocument = allItems
             }
         };
 

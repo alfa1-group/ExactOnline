@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccounts;
 
 public partial class GLAccountsRequestBuilder
 {
-    public async Task<FinancialGLAccounts_Response?> GetAllAsync(Action<RequestConfiguration<GLAccountsRequestBuilder.GLAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialGLAccount_Response?> GetAllAsync(Action<RequestConfiguration<GLAccountsRequestBuilder.GLAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialGLAccountsResults is null)
+        if (response?.D?.FinancialGLAccountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialGLAccounts>();
+        var allItems = new List<FinancialGLAccount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialGLAccountsResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialGLAccountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialGLAccountsResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialGLAccountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GLAccountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialGLAccounts_Response
+        var finalResponse = new FinancialGLAccount_Response
         {
-            D = new FinancialGLAccounts_Response.FinancialGLAccounts_Response_d
+            D = new FinancialGLAccount_Response.FinancialGLAccount_Response_d
             {
-                FinancialGLAccounts = allItems
+                FinancialGLAccount = allItems
             }
         };
 

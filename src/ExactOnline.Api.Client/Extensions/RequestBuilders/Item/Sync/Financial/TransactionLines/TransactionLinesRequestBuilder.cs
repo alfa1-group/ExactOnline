@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Financial.TransactionLines;
 
 public partial class TransactionLinesRequestBuilder
 {
-    public async Task<SyncFinancialTransactionLines_Response?> GetAllAsync(Action<RequestConfiguration<TransactionLinesRequestBuilder.TransactionLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncFinancialTransactionLine_Response?> GetAllAsync(Action<RequestConfiguration<TransactionLinesRequestBuilder.TransactionLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncFinancialTransactionLinesResults is null)
+        if (response?.D?.SyncFinancialTransactionLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncFinancialTransactionLines>();
+        var allItems = new List<SyncFinancialTransactionLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncFinancialTransactionLinesResults?.Results is { } results)
+            if (currentResponse?.D?.SyncFinancialTransactionLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncFinancialTransactionLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncFinancialTransactionLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TransactionLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncFinancialTransactionLines_Response
+        var finalResponse = new SyncFinancialTransactionLine_Response
         {
-            D = new SyncFinancialTransactionLines_Response.SyncFinancialTransactionLines_Response_d
+            D = new SyncFinancialTransactionLine_Response.SyncFinancialTransactionLine_Response_d
             {
-                SyncFinancialTransactionLines = allItems
+                SyncFinancialTransactionLine = allItems
             }
         };
 

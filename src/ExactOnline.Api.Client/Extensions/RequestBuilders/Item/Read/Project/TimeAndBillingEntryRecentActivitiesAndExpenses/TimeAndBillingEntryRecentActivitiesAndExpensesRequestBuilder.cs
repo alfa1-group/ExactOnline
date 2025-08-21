@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRec
 
 public partial class TimeAndBillingEntryRecentActivitiesAndExpensesRequestBuilder
 {
-    public async Task<ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses_Response?> GetAllAsync(Action<RequestConfiguration<TimeAndBillingEntryRecentActivitiesAndExpensesRequestBuilder.TimeAndBillingEntryRecentActivitiesAndExpensesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectTimeAndBillingEntryRecentActivitiesAndExpense_Response?> GetAllAsync(Action<RequestConfiguration<TimeAndBillingEntryRecentActivitiesAndExpensesRequestBuilder.TimeAndBillingEntryRecentActivitiesAndExpensesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectTimeAndBillingEntryRecentActivitiesAndExpensesResults is null)
+        if (response?.D?.ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenseResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses>();
+        var allItems = new List<ReadProjectTimeAndBillingEntryRecentActivitiesAndExpense>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectTimeAndBillingEntryRecentActivitiesAndExpensesResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenseResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectTimeAndBillingEntryRecentActivitiesAndExpensesResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenseResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TimeAndBillingEntryRecentActivitiesAndExpensesRequestBuilde
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses_Response
+        var finalResponse = new ReadProjectTimeAndBillingEntryRecentActivitiesAndExpense_Response
         {
-            D = new ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses_Response.ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses_Response_d
+            D = new ReadProjectTimeAndBillingEntryRecentActivitiesAndExpense_Response.ReadProjectTimeAndBillingEntryRecentActivitiesAndExpense_Response_d
             {
-                ReadProjectTimeAndBillingEntryRecentActivitiesAndExpenses = allItems
+                ReadProjectTimeAndBillingEntryRecentActivitiesAndExpense = allItems
             }
         };
 

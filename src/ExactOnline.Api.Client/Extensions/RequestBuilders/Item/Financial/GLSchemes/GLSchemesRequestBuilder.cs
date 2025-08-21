@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.GLSchemes;
 
 public partial class GLSchemesRequestBuilder
 {
-    public async Task<FinancialGLSchemes_Response?> GetAllAsync(Action<RequestConfiguration<GLSchemesRequestBuilder.GLSchemesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialGLScheme_Response?> GetAllAsync(Action<RequestConfiguration<GLSchemesRequestBuilder.GLSchemesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialGLSchemesResults is null)
+        if (response?.D?.FinancialGLSchemeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialGLSchemes>();
+        var allItems = new List<FinancialGLScheme>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialGLSchemesResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialGLSchemeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialGLSchemesResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialGLSchemeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GLSchemesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialGLSchemes_Response
+        var finalResponse = new FinancialGLScheme_Response
         {
-            D = new FinancialGLSchemes_Response.FinancialGLSchemes_Response_d
+            D = new FinancialGLScheme_Response.FinancialGLScheme_Response_d
             {
-                FinancialGLSchemes = allItems
+                FinancialGLScheme = allItems
             }
         };
 

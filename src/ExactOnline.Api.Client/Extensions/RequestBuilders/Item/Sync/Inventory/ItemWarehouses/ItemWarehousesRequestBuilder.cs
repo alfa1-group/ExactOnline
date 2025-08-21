@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Inventory.ItemWarehouses;
 
 public partial class ItemWarehousesRequestBuilder
 {
-    public async Task<SyncInventoryItemWarehouses_Response?> GetAllAsync(Action<RequestConfiguration<ItemWarehousesRequestBuilder.ItemWarehousesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncInventoryItemWarehouse_Response?> GetAllAsync(Action<RequestConfiguration<ItemWarehousesRequestBuilder.ItemWarehousesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncInventoryItemWarehousesResults is null)
+        if (response?.D?.SyncInventoryItemWarehouseResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncInventoryItemWarehouses>();
+        var allItems = new List<SyncInventoryItemWarehouse>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncInventoryItemWarehousesResults?.Results is { } results)
+            if (currentResponse?.D?.SyncInventoryItemWarehouseResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncInventoryItemWarehousesResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncInventoryItemWarehouseResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ItemWarehousesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncInventoryItemWarehouses_Response
+        var finalResponse = new SyncInventoryItemWarehouse_Response
         {
-            D = new SyncInventoryItemWarehouses_Response.SyncInventoryItemWarehouses_Response_d
+            D = new SyncInventoryItemWarehouse_Response.SyncInventoryItemWarehouse_Response_d
             {
-                SyncInventoryItemWarehouses = allItems
+                SyncInventoryItemWarehouse = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.SalesOrder.GoodsDeliveryLines;
 
 public partial class GoodsDeliveryLinesRequestBuilder
 {
-    public async Task<SyncSalesOrderGoodsDeliveryLines_Response?> GetAllAsync(Action<RequestConfiguration<GoodsDeliveryLinesRequestBuilder.GoodsDeliveryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncSalesOrderGoodsDeliveryLine_Response?> GetAllAsync(Action<RequestConfiguration<GoodsDeliveryLinesRequestBuilder.GoodsDeliveryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncSalesOrderGoodsDeliveryLinesResults is null)
+        if (response?.D?.SyncSalesOrderGoodsDeliveryLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncSalesOrderGoodsDeliveryLines>();
+        var allItems = new List<SyncSalesOrderGoodsDeliveryLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncSalesOrderGoodsDeliveryLinesResults?.Results is { } results)
+            if (currentResponse?.D?.SyncSalesOrderGoodsDeliveryLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncSalesOrderGoodsDeliveryLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncSalesOrderGoodsDeliveryLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GoodsDeliveryLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncSalesOrderGoodsDeliveryLines_Response
+        var finalResponse = new SyncSalesOrderGoodsDeliveryLine_Response
         {
-            D = new SyncSalesOrderGoodsDeliveryLines_Response.SyncSalesOrderGoodsDeliveryLines_Response_d
+            D = new SyncSalesOrderGoodsDeliveryLine_Response.SyncSalesOrderGoodsDeliveryLine_Response_d
             {
-                SyncSalesOrderGoodsDeliveryLines = allItems
+                SyncSalesOrderGoodsDeliveryLine = allItems
             }
         };
 

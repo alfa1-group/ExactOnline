@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveBuildUpRegistrations;
 
 public partial class LeaveBuildUpRegistrationsRequestBuilder
 {
-    public async Task<HRMLeaveBuildUpRegistrations_Response?> GetAllAsync(Action<RequestConfiguration<LeaveBuildUpRegistrationsRequestBuilder.LeaveBuildUpRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<HRMLeaveBuildUpRegistration_Response?> GetAllAsync(Action<RequestConfiguration<LeaveBuildUpRegistrationsRequestBuilder.LeaveBuildUpRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.HRMLeaveBuildUpRegistrationsResults is null)
+        if (response?.D?.HRMLeaveBuildUpRegistrationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<HRMLeaveBuildUpRegistrations>();
+        var allItems = new List<HRMLeaveBuildUpRegistration>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.HRMLeaveBuildUpRegistrationsResults?.Results is { } results)
+            if (currentResponse?.D?.HRMLeaveBuildUpRegistrationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.HRMLeaveBuildUpRegistrationsResults?.Next;
+            var nextUrl = currentResponse?.D?.HRMLeaveBuildUpRegistrationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class LeaveBuildUpRegistrationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new HRMLeaveBuildUpRegistrations_Response
+        var finalResponse = new HRMLeaveBuildUpRegistration_Response
         {
-            D = new HRMLeaveBuildUpRegistrations_Response.HRMLeaveBuildUpRegistrations_Response_d
+            D = new HRMLeaveBuildUpRegistration_Response.HRMLeaveBuildUpRegistration_Response_d
             {
-                HRMLeaveBuildUpRegistrations = allItems
+                HRMLeaveBuildUpRegistration = allItems
             }
         };
 

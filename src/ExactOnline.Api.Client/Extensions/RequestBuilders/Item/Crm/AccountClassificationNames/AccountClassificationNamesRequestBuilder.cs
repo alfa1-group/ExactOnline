@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassificationNames;
 
 public partial class AccountClassificationNamesRequestBuilder
 {
-    public async Task<CRMAccountClassificationNames_Response?> GetAllAsync(Action<RequestConfiguration<AccountClassificationNamesRequestBuilder.AccountClassificationNamesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMAccountClassificationName_Response?> GetAllAsync(Action<RequestConfiguration<AccountClassificationNamesRequestBuilder.AccountClassificationNamesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMAccountClassificationNamesResults is null)
+        if (response?.D?.CRMAccountClassificationNameResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMAccountClassificationNames>();
+        var allItems = new List<CRMAccountClassificationName>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMAccountClassificationNamesResults?.Results is { } results)
+            if (currentResponse?.D?.CRMAccountClassificationNameResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMAccountClassificationNamesResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMAccountClassificationNameResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AccountClassificationNamesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMAccountClassificationNames_Response
+        var finalResponse = new CRMAccountClassificationName_Response
         {
-            D = new CRMAccountClassificationNames_Response.CRMAccountClassificationNames_Response_d
+            D = new CRMAccountClassificationName_Response.CRMAccountClassificationName_Response_d
             {
-                CRMAccountClassificationNames = allItems
+                CRMAccountClassificationName = allItems
             }
         };
 

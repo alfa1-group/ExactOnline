@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesentry.SalesEntryLines;
 
 public partial class SalesEntryLinesRequestBuilder
 {
-    public async Task<SalesEntrySalesEntryLines_Response?> GetAllAsync(Action<RequestConfiguration<SalesEntryLinesRequestBuilder.SalesEntryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesEntrySalesEntryLine_Response?> GetAllAsync(Action<RequestConfiguration<SalesEntryLinesRequestBuilder.SalesEntryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesEntrySalesEntryLinesResults is null)
+        if (response?.D?.SalesEntrySalesEntryLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesEntrySalesEntryLines>();
+        var allItems = new List<SalesEntrySalesEntryLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesEntrySalesEntryLinesResults?.Results is { } results)
+            if (currentResponse?.D?.SalesEntrySalesEntryLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesEntrySalesEntryLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesEntrySalesEntryLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesEntryLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesEntrySalesEntryLines_Response
+        var finalResponse = new SalesEntrySalesEntryLine_Response
         {
-            D = new SalesEntrySalesEntryLines_Response.SalesEntrySalesEntryLines_Response_d
+            D = new SalesEntrySalesEntryLine_Response.SalesEntrySalesEntryLine_Response_d
             {
-                SalesEntrySalesEntryLines = allItems
+                SalesEntrySalesEntryLine = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveries;
 
 public partial class GoodsDeliveriesRequestBuilder
 {
-    public async Task<SalesOrderGoodsDeliveries_Response?> GetAllAsync(Action<RequestConfiguration<GoodsDeliveriesRequestBuilder.GoodsDeliveriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesOrderGoodsDelivery_Response?> GetAllAsync(Action<RequestConfiguration<GoodsDeliveriesRequestBuilder.GoodsDeliveriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesOrderGoodsDeliveriesResults is null)
+        if (response?.D?.SalesOrderGoodsDeliveryResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesOrderGoodsDeliveries>();
+        var allItems = new List<SalesOrderGoodsDelivery>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesOrderGoodsDeliveriesResults?.Results is { } results)
+            if (currentResponse?.D?.SalesOrderGoodsDeliveryResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesOrderGoodsDeliveriesResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesOrderGoodsDeliveryResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GoodsDeliveriesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesOrderGoodsDeliveries_Response
+        var finalResponse = new SalesOrderGoodsDelivery_Response
         {
-            D = new SalesOrderGoodsDeliveries_Response.SalesOrderGoodsDeliveries_Response_d
+            D = new SalesOrderGoodsDelivery_Response.SalesOrderGoodsDelivery_Response_d
             {
-                SalesOrderGoodsDeliveries = allItems
+                SalesOrderGoodsDelivery = allItems
             }
         };
 

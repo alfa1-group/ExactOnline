@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.CRM.QuotationLines;
 
 public partial class QuotationLinesRequestBuilder
 {
-    public async Task<SyncCRMQuotationLines_Response?> GetAllAsync(Action<RequestConfiguration<QuotationLinesRequestBuilder.QuotationLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncCRMQuotationLine_Response?> GetAllAsync(Action<RequestConfiguration<QuotationLinesRequestBuilder.QuotationLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncCRMQuotationLinesResults is null)
+        if (response?.D?.SyncCRMQuotationLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncCRMQuotationLines>();
+        var allItems = new List<SyncCRMQuotationLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncCRMQuotationLinesResults?.Results is { } results)
+            if (currentResponse?.D?.SyncCRMQuotationLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncCRMQuotationLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncCRMQuotationLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class QuotationLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncCRMQuotationLines_Response
+        var finalResponse = new SyncCRMQuotationLine_Response
         {
-            D = new SyncCRMQuotationLines_Response.SyncCRMQuotationLines_Response_d
+            D = new SyncCRMQuotationLine_Response.SyncCRMQuotationLine_Response_d
             {
-                SyncCRMQuotationLines = allItems
+                SyncCRMQuotationLine = allItems
             }
         };
 

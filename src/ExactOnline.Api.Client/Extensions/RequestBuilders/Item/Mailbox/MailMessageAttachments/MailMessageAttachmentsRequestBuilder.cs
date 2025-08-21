@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachments;
 
 public partial class MailMessageAttachmentsRequestBuilder
 {
-    public async Task<MailboxMailMessageAttachments_Response?> GetAllAsync(Action<RequestConfiguration<MailMessageAttachmentsRequestBuilder.MailMessageAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<MailboxMailMessageAttachment_Response?> GetAllAsync(Action<RequestConfiguration<MailMessageAttachmentsRequestBuilder.MailMessageAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.MailboxMailMessageAttachmentsResults is null)
+        if (response?.D?.MailboxMailMessageAttachmentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<MailboxMailMessageAttachments>();
+        var allItems = new List<MailboxMailMessageAttachment>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.MailboxMailMessageAttachmentsResults?.Results is { } results)
+            if (currentResponse?.D?.MailboxMailMessageAttachmentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.MailboxMailMessageAttachmentsResults?.Next;
+            var nextUrl = currentResponse?.D?.MailboxMailMessageAttachmentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class MailMessageAttachmentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new MailboxMailMessageAttachments_Response
+        var finalResponse = new MailboxMailMessageAttachment_Response
         {
-            D = new MailboxMailMessageAttachments_Response.MailboxMailMessageAttachments_Response_d
+            D = new MailboxMailMessageAttachment_Response.MailboxMailMessageAttachment_Response_d
             {
-                MailboxMailMessageAttachments = allItems
+                MailboxMailMessageAttachment = allItems
             }
         };
 

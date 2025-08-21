@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.SolutionLinks;
 
 public partial class SolutionLinksRequestBuilder
 {
-    public async Task<AccountancySolutionLinks_Response?> GetAllAsync(Action<RequestConfiguration<SolutionLinksRequestBuilder.SolutionLinksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<AccountancySolutionLink_Response?> GetAllAsync(Action<RequestConfiguration<SolutionLinksRequestBuilder.SolutionLinksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.AccountancySolutionLinksResults is null)
+        if (response?.D?.AccountancySolutionLinkResults is null)
         {
             return response;
         }
 
-        var allItems = new List<AccountancySolutionLinks>();
+        var allItems = new List<AccountancySolutionLink>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.AccountancySolutionLinksResults?.Results is { } results)
+            if (currentResponse?.D?.AccountancySolutionLinkResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.AccountancySolutionLinksResults?.Next;
+            var nextUrl = currentResponse?.D?.AccountancySolutionLinkResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SolutionLinksRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new AccountancySolutionLinks_Response
+        var finalResponse = new AccountancySolutionLink_Response
         {
-            D = new AccountancySolutionLinks_Response.AccountancySolutionLinks_Response_d
+            D = new AccountancySolutionLink_Response.AccountancySolutionLink_Response_d
             {
-                AccountancySolutionLinks = allItems
+                AccountancySolutionLink = allItems
             }
         };
 

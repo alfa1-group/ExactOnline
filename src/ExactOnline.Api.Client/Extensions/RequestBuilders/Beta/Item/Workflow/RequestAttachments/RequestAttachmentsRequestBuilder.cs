@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachments;
 
 public partial class RequestAttachmentsRequestBuilder
 {
-    public async Task<WorkflowRequestAttachments_Response?> GetAllAsync(Action<RequestConfiguration<RequestAttachmentsRequestBuilder.RequestAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<WorkflowRequestAttachment_Response?> GetAllAsync(Action<RequestConfiguration<RequestAttachmentsRequestBuilder.RequestAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.WorkflowRequestAttachmentsResults is null)
+        if (response?.D?.WorkflowRequestAttachmentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<WorkflowRequestAttachments>();
+        var allItems = new List<WorkflowRequestAttachment>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.WorkflowRequestAttachmentsResults?.Results is { } results)
+            if (currentResponse?.D?.WorkflowRequestAttachmentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.WorkflowRequestAttachmentsResults?.Next;
+            var nextUrl = currentResponse?.D?.WorkflowRequestAttachmentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class RequestAttachmentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new WorkflowRequestAttachments_Response
+        var finalResponse = new WorkflowRequestAttachment_Response
         {
-            D = new WorkflowRequestAttachments_Response.WorkflowRequestAttachments_Response_d
+            D = new WorkflowRequestAttachment_Response.WorkflowRequestAttachment_Response_d
             {
-                WorkflowRequestAttachments = allItems
+                WorkflowRequestAttachment = allItems
             }
         };
 

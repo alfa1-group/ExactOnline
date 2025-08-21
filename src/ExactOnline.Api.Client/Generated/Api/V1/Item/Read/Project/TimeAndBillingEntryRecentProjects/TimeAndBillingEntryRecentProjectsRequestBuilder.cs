@@ -34,20 +34,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRec
         {
         }
         /// <summary>
-        /// GET ReadProjectTimeAndBillingEntryRecentProjects
+        /// GET ReadProjectTimeAndBillingEntryRecentProject
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingEntryRecentProjects_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingEntryRecentProject_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingEntryRecentProjects_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjects.TimeAndBillingEntryRecentProjectsRequestBuilder.TimeAndBillingEntryRecentProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingEntryRecentProject_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjects.TimeAndBillingEntryRecentProjectsRequestBuilder.TimeAndBillingEntryRecentProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingEntryRecentProjects_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjects.TimeAndBillingEntryRecentProjectsRequestBuilder.TimeAndBillingEntryRecentProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingEntryRecentProject_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjects.TimeAndBillingEntryRecentProjectsRequestBuilder.TimeAndBillingEntryRecentProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,10 +56,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRec
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingEntryRecentProjects_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingEntryRecentProjects_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingEntryRecentProject_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ReadProjectTimeAndBillingEntryRecentProject_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET ReadProjectTimeAndBillingEntryRecentProjects
+        /// GET ReadProjectTimeAndBillingEntryRecentProject
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRec
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjects.TimeAndBillingEntryRecentProjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET ReadProjectTimeAndBillingEntryRecentProjects
+        /// GET ReadProjectTimeAndBillingEntryRecentProject
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TimeAndBillingEntryRecentProjectsRequestBuilderGetQueryParameters 

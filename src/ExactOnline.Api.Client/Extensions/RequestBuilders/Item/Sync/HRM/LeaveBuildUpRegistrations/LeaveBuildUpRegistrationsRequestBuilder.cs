@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.HRM.LeaveBuildUpRegistrations;
 
 public partial class LeaveBuildUpRegistrationsRequestBuilder
 {
-    public async Task<SyncHRMLeaveBuildUpRegistrations_Response?> GetAllAsync(Action<RequestConfiguration<LeaveBuildUpRegistrationsRequestBuilder.LeaveBuildUpRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncHRMLeaveBuildUpRegistration_Response?> GetAllAsync(Action<RequestConfiguration<LeaveBuildUpRegistrationsRequestBuilder.LeaveBuildUpRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncHRMLeaveBuildUpRegistrationsResults is null)
+        if (response?.D?.SyncHRMLeaveBuildUpRegistrationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncHRMLeaveBuildUpRegistrations>();
+        var allItems = new List<SyncHRMLeaveBuildUpRegistration>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncHRMLeaveBuildUpRegistrationsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncHRMLeaveBuildUpRegistrationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncHRMLeaveBuildUpRegistrationsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncHRMLeaveBuildUpRegistrationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class LeaveBuildUpRegistrationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncHRMLeaveBuildUpRegistrations_Response
+        var finalResponse = new SyncHRMLeaveBuildUpRegistration_Response
         {
-            D = new SyncHRMLeaveBuildUpRegistrations_Response.SyncHRMLeaveBuildUpRegistrations_Response_d
+            D = new SyncHRMLeaveBuildUpRegistration_Response.SyncHRMLeaveBuildUpRegistration_Response_d
             {
-                SyncHRMLeaveBuildUpRegistrations = allItems
+                SyncHRMLeaveBuildUpRegistration = allItems
             }
         };
 

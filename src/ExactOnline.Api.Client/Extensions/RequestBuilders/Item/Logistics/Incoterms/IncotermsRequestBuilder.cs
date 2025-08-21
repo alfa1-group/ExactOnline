@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics.Incoterms;
 
 public partial class IncotermsRequestBuilder
 {
-    public async Task<LogisticsIncoterms_Response?> GetAllAsync(Action<RequestConfiguration<IncotermsRequestBuilder.IncotermsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<LogisticsIncoterm_Response?> GetAllAsync(Action<RequestConfiguration<IncotermsRequestBuilder.IncotermsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.LogisticsIncotermsResults is null)
+        if (response?.D?.LogisticsIncotermResults is null)
         {
             return response;
         }
 
-        var allItems = new List<LogisticsIncoterms>();
+        var allItems = new List<LogisticsIncoterm>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.LogisticsIncotermsResults?.Results is { } results)
+            if (currentResponse?.D?.LogisticsIncotermResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.LogisticsIncotermsResults?.Next;
+            var nextUrl = currentResponse?.D?.LogisticsIncotermResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class IncotermsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new LogisticsIncoterms_Response
+        var finalResponse = new LogisticsIncoterm_Response
         {
-            D = new LogisticsIncoterms_Response.LogisticsIncoterms_Response_d
+            D = new LogisticsIncoterm_Response.LogisticsIncoterm_Response_d
             {
-                LogisticsIncoterms = allItems
+                LogisticsIncoterm = allItems
             }
         };
 

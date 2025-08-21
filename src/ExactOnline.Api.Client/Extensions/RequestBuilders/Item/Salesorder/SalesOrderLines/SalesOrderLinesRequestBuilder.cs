@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderLines;
 
 public partial class SalesOrderLinesRequestBuilder
 {
-    public async Task<SalesOrderSalesOrderLines_Response?> GetAllAsync(Action<RequestConfiguration<SalesOrderLinesRequestBuilder.SalesOrderLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesOrderSalesOrderLine_Response?> GetAllAsync(Action<RequestConfiguration<SalesOrderLinesRequestBuilder.SalesOrderLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesOrderSalesOrderLinesResults is null)
+        if (response?.D?.SalesOrderSalesOrderLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesOrderSalesOrderLines>();
+        var allItems = new List<SalesOrderSalesOrderLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesOrderSalesOrderLinesResults?.Results is { } results)
+            if (currentResponse?.D?.SalesOrderSalesOrderLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesOrderSalesOrderLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesOrderSalesOrderLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesOrderLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesOrderSalesOrderLines_Response
+        var finalResponse = new SalesOrderSalesOrderLine_Response
         {
-            D = new SalesOrderSalesOrderLines_Response.SalesOrderSalesOrderLines_Response_d
+            D = new SalesOrderSalesOrderLine_Response.SalesOrderSalesOrderLine_Response_d
             {
-                SalesOrderSalesOrderLines = allItems
+                SalesOrderSalesOrderLine = allItems
             }
         };
 

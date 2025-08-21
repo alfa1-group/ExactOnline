@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities.Tasks;
 
 public partial class TasksRequestBuilder
 {
-    public async Task<ActivitiesTasks_Response?> GetAllAsync(Action<RequestConfiguration<TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ActivitiesTask_Response?> GetAllAsync(Action<RequestConfiguration<TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ActivitiesTasksResults is null)
+        if (response?.D?.ActivitiesTaskResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ActivitiesTasks>();
+        var allItems = new List<ActivitiesTask>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ActivitiesTasksResults?.Results is { } results)
+            if (currentResponse?.D?.ActivitiesTaskResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ActivitiesTasksResults?.Next;
+            var nextUrl = currentResponse?.D?.ActivitiesTaskResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TasksRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ActivitiesTasks_Response
+        var finalResponse = new ActivitiesTask_Response
         {
-            D = new ActivitiesTasks_Response.ActivitiesTasks_Response_d
+            D = new ActivitiesTask_Response.ActivitiesTask_Response_d
             {
-                ActivitiesTasks = allItems
+                ActivitiesTask = allItems
             }
         };
 

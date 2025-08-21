@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.Employments;
 
 public partial class EmploymentsRequestBuilder
 {
-    public async Task<PayrollEmployments_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentsRequestBuilder.EmploymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PayrollEmployment_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentsRequestBuilder.EmploymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PayrollEmploymentsResults is null)
+        if (response?.D?.PayrollEmploymentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PayrollEmployments>();
+        var allItems = new List<PayrollEmployment>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PayrollEmploymentsResults?.Results is { } results)
+            if (currentResponse?.D?.PayrollEmploymentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PayrollEmploymentsResults?.Next;
+            var nextUrl = currentResponse?.D?.PayrollEmploymentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EmploymentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PayrollEmployments_Response
+        var finalResponse = new PayrollEmployment_Response
         {
-            D = new PayrollEmployments_Response.PayrollEmployments_Response_d
+            D = new PayrollEmployment_Response.PayrollEmployment_Response_d
             {
-                PayrollEmployments = allItems
+                PayrollEmployment = allItems
             }
         };
 

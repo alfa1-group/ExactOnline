@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialMateria
 
 public partial class BillOfMaterialMaterialsRequestBuilder
 {
-    public async Task<ManufacturingBillOfMaterialMaterials_Response?> GetAllAsync(Action<RequestConfiguration<BillOfMaterialMaterialsRequestBuilder.BillOfMaterialMaterialsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingBillOfMaterialMaterial_Response?> GetAllAsync(Action<RequestConfiguration<BillOfMaterialMaterialsRequestBuilder.BillOfMaterialMaterialsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingBillOfMaterialMaterialsResults is null)
+        if (response?.D?.ManufacturingBillOfMaterialMaterialResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingBillOfMaterialMaterials>();
+        var allItems = new List<ManufacturingBillOfMaterialMaterial>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingBillOfMaterialMaterialsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingBillOfMaterialMaterialResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingBillOfMaterialMaterialsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingBillOfMaterialMaterialResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class BillOfMaterialMaterialsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingBillOfMaterialMaterials_Response
+        var finalResponse = new ManufacturingBillOfMaterialMaterial_Response
         {
-            D = new ManufacturingBillOfMaterialMaterials_Response.ManufacturingBillOfMaterialMaterials_Response_d
+            D = new ManufacturingBillOfMaterialMaterial_Response.ManufacturingBillOfMaterialMaterial_Response_d
             {
-                ManufacturingBillOfMaterialMaterials = allItems
+                ManufacturingBillOfMaterialMaterial = allItems
             }
         };
 

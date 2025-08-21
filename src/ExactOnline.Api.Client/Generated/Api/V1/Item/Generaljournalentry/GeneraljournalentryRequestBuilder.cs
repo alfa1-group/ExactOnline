@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry
         /// Use this endpoint to create, read or delete general entries not created in bank, cash, purchase or sales journal.Entries created with this service will get type 90 (Other). It Is Not possible to create entries of type 10 (Opening balance).
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntriesWithEntryid.GeneralJournalEntriesWithEntryidRequestBuilder"/></returns>
-        /// <param name="entryid">Unique identifier (uuid) of the GeneralJournalEntryGeneralJournalEntries</param>
+        /// <param name="entryid">Unique identifier (uuid) of the GeneralJournalEntryGeneralJournalEntry</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntriesWithEntryid.GeneralJournalEntriesWithEntryidRequestBuilder GeneralJournalEntriesWithEntryid(Guid? entryid)
         {
             _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry
         /// Use this endpoint to create and read general entries not created in bank, cash, purchase or sales journal.  Journals for general journal entries can be set up with and without VAT functionality (VAT checkbox in Journals). Specifying any VAT related property in a POST request is only useful if supported by the general journal of the entry.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntryLinesWithId.GeneralJournalEntryLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the GeneralJournalEntryGeneralJournalEntryLines</param>
+        /// <param name="id">Unique identifier (uuid) of the GeneralJournalEntryGeneralJournalEntryLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalEntryLinesWithId.GeneralJournalEntryLinesWithIdRequestBuilder GeneralJournalEntryLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

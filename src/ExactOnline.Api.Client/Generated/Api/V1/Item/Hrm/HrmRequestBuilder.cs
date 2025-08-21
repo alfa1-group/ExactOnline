@@ -123,7 +123,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// Use this endpoint to read Absence registrations.This endpoint shows the employee&apos;s illness registration information.Note: In case the division is linked to Exact Officient, new absence registrations will not be available in Exact Online anymore. Instead, the illness hours per day are available. Please refer to /api/v1/{division}/HRM/LeaveAbsenceHoursByDay.To see if a division is linked to Exact Officient, property IsHRDivision in /api/v1/{division}/system/Divisions can be used.For more information about the HRM functionality in Exact Online, see Work with leave and absence registrations.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.AbsenceRegistrationsWithId.AbsenceRegistrationsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMAbsenceRegistrations</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMAbsenceRegistration</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.AbsenceRegistrationsWithId.AbsenceRegistrationsWithIdRequestBuilder AbsenceRegistrationsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -133,7 +133,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// Use this endpoint to read Absence registrations.This endpoint shows the employee information which contains the details and recovery stages of the illness registrations.Note: In case the division is linked to Exact Officient, new absence registrations will not be available in Exact Online anymore. Instead, the illness hours per day are available. Please refer to /api/v1/{division}/HRM/LeaveAbsenceHoursByDay.To see if a division is linked to Exact Officient, property IsHRDivision in /api/v1/{division}/system/Divisions can be used.For more information about the HRM functionality in Exact Online, see Working with Absence registrations.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.AbsenceRegistrationTransactionsWithId.AbsenceRegistrationTransactionsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMAbsenceRegistrationTransactions</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMAbsenceRegistrationTransaction</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.AbsenceRegistrationTransactionsWithId.AbsenceRegistrationTransactionsWithIdRequestBuilder AbsenceRegistrationTransactionsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -159,7 +159,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// Use this endpoint to create, read, update and delete Cost centres.The code can only be changed in Exact Online by using the recode function.For more information about the Cost analysis functionality in Exact Online, see Working with cost centres and cost units.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.CostcentersWithId.CostcentersWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMCostcenters</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMCostcenter</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.CostcentersWithId.CostcentersWithIdRequestBuilder CostcentersWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -169,7 +169,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// Use this endpoint to create, read, update and delete Cost units.The code can only be changed in Exact Online by using the recode function.For more information about the Cost analysis functionality in Exact Online, see Working with cost centres and cost units.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.CostunitsWithId.CostunitsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMCostunits</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMCostunit</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.CostunitsWithId.CostunitsWithIdRequestBuilder CostunitsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -179,7 +179,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// Use this endpoint to read Departments.Departments are used in Employment organizations and Active employments.For more information about the HRM functionality in Exact Online, see Create and update departments.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DepartmentsWithId.DepartmentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMDepartments</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMDepartment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DepartmentsWithId.DepartmentsWithIdRequestBuilder DepartmentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -189,7 +189,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// This end point returns the possible choices per classification for a given company.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassesWithId.DivisionClassesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMDivisionClasses</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMDivisionClass</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassesWithId.DivisionClassesWithIdRequestBuilder DivisionClassesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -199,7 +199,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// Company classifications can be used to search for or filter on a specific company. This end point returns a list of those classifications.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassNamesWithId.DivisionClassNamesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMDivisionClassNames</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMDivisionClassName</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassNamesWithId.DivisionClassNamesWithIdRequestBuilder DivisionClassNamesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -209,7 +209,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// This end point returns the values as used per company classification for a given company.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassValuesWithId.DivisionClassValuesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMDivisionClassValues</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMDivisionClassValue</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassValuesWithId.DivisionClassValuesWithIdRequestBuilder DivisionClassValuesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -219,7 +219,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// Returns only divisions that are accessible to the signed-in user, as configured in the user card under &apos;Companies: Access rights&apos;. Accountants will only see divisions that belong to a single license (either their own or a client&apos;s), being the license that owns the division specified in the URI.Please note that divisions returned are only those which the user has granted permission to.Recommended alternative that is not limited to accessible divisions: /api/v1/{division}/system/AllDivisionsRecommended alternative that is not limited to a single license: /api/v1/{division}/system/Divisions
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionsWithCode.DivisionsWithCodeRequestBuilder"/></returns>
-        /// <param name="code">Unique identifier (int32) of the HRMDivisions</param>
+        /// <param name="code">Unique identifier (int32) of the HRMDivision</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionsWithCode.DivisionsWithCodeRequestBuilder DivisionsWithCode(int? code)
         {
             _ = code ?? throw new ArgumentNullException(nameof(code));
@@ -229,7 +229,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// Use this endpoint to read Job groups.Job groups are used to group Job titles.For more information about the HRM functionality in Exact Online, see Working with job groups.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.JobGroupsWithId.JobGroupsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMJobGroups</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMJobGroup</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.JobGroupsWithId.JobGroupsWithIdRequestBuilder JobGroupsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -239,7 +239,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// Use this endpoint to read Job titles.Job titles of employees are used in Employment organizations and Active employments.For more information about the HRM functionality in Exact Online, see Working with job titles.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.JobTitlesWithId.JobTitlesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMJobTitles</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMJobTitle</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.JobTitlesWithId.JobTitlesWithIdRequestBuilder JobTitlesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -259,7 +259,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// Use this endpoint to read Leave build up registrations.Note: In case the division is linked to Exact Officient, new leave build up registrations will not be available in Exact Online anymore.To see if a division is linked to Exact Officient, property IsHRDivision in /api/v1/{division}/system/Divisions can be used.For more information about the HRM functionality in Exact Online, see View leave build up registrations.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveBuildUpRegistrationsWithId.LeaveBuildUpRegistrationsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMLeaveBuildUpRegistrations</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMLeaveBuildUpRegistration</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveBuildUpRegistrationsWithId.LeaveBuildUpRegistrationsWithIdRequestBuilder LeaveBuildUpRegistrationsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -269,7 +269,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// Use this endpoint to read Leave registrations.Note: In case the division is linked to Exact Officient, new leave registrations will not be available in Exact Online anymore. Instead, the leave hours per day are available. Please refer to /api/v1/{division}/HRM/LeaveAbsenceHoursByDay.To see if a division is linked to Exact Officient, property IsHRDivision in /api/v1/{division}/system/Divisions can be used.For more information about the HRM functionality in Exact Online, see Work with leave and absence registrations.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveRegistrationsWithId.LeaveRegistrationsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMLeaveRegistrations</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMLeaveRegistration</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveRegistrationsWithId.LeaveRegistrationsWithIdRequestBuilder LeaveRegistrationsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -279,7 +279,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// Use this endpoint to read Schedules.For more information about the Payroll functionality in Exact Online, see Working with employee&apos;s schedules.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Hrm.SchedulesWithId.SchedulesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the HRMSchedules</param>
+        /// <param name="id">Unique identifier (uuid) of the HRMSchedule</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.SchedulesWithId.SchedulesWithIdRequestBuilder SchedulesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

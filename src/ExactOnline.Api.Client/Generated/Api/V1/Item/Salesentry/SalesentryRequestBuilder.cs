@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesentry
         /// Use this endpoint to create, read, update or delete sales entries as financial entries created for your sales invoices.Note: Sales entries are separated to header and line information. Endpoint SalesEntries is used for the header information. You must include a parameter for &apos;SalesEntryLines&apos; to add sales entry lines when you POST to the SalesEntries endpoint. This parameter is not necessary when you PUT to this endpoint.  The relevance of properties  is very much depending on the legislation and the package used.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesentry.SalesEntriesWithEntryid.SalesEntriesWithEntryidRequestBuilder"/></returns>
-        /// <param name="entryid">Unique identifier (uuid) of the SalesEntrySalesEntries</param>
+        /// <param name="entryid">Unique identifier (uuid) of the SalesEntrySalesEntry</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesentry.SalesEntriesWithEntryid.SalesEntriesWithEntryidRequestBuilder SalesEntriesWithEntryid(Guid? entryid)
         {
             _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesentry
         /// Use this endpoint to create, read, update or delete the entry lines of sales entries  created for your sales invoices. Note: Sales entries are separated to header and line information. Endpoint SalesEntryLines is used for the line information.  The relevance of properties is very much depending on the legislation and the package used.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesentry.SalesEntryLinesWithId.SalesEntryLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SalesEntrySalesEntryLines</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesEntrySalesEntryLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesentry.SalesEntryLinesWithId.SalesEntryLinesWithIdRequestBuilder SalesEntryLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

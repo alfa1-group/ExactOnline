@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.ProjectHourBudgets;
 
 public partial class ProjectHourBudgetsRequestBuilder
 {
-    public async Task<ProjectProjectHourBudgets_Response?> GetAllAsync(Action<RequestConfiguration<ProjectHourBudgetsRequestBuilder.ProjectHourBudgetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectProjectHourBudget_Response?> GetAllAsync(Action<RequestConfiguration<ProjectHourBudgetsRequestBuilder.ProjectHourBudgetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectProjectHourBudgetsResults is null)
+        if (response?.D?.ProjectProjectHourBudgetResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectProjectHourBudgets>();
+        var allItems = new List<ProjectProjectHourBudget>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectProjectHourBudgetsResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectProjectHourBudgetResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectProjectHourBudgetsResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectProjectHourBudgetResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectHourBudgetsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectProjectHourBudgets_Response
+        var finalResponse = new ProjectProjectHourBudget_Response
         {
-            D = new ProjectProjectHourBudgets_Response.ProjectProjectHourBudgets_Response_d
+            D = new ProjectProjectHourBudget_Response.ProjectProjectHourBudget_Response_d
             {
-                ProjectProjectHourBudgets = allItems
+                ProjectProjectHourBudget = allItems
             }
         };
 

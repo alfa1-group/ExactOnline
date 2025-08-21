@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyOrders;
 
 public partial class AssemblyOrdersRequestBuilder
 {
-    public async Task<InventoryAssemblyOrders_Response?> GetAllAsync(Action<RequestConfiguration<AssemblyOrdersRequestBuilder.AssemblyOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventoryAssemblyOrder_Response?> GetAllAsync(Action<RequestConfiguration<AssemblyOrdersRequestBuilder.AssemblyOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventoryAssemblyOrdersResults is null)
+        if (response?.D?.InventoryAssemblyOrderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventoryAssemblyOrders>();
+        var allItems = new List<InventoryAssemblyOrder>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventoryAssemblyOrdersResults?.Results is { } results)
+            if (currentResponse?.D?.InventoryAssemblyOrderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventoryAssemblyOrdersResults?.Next;
+            var nextUrl = currentResponse?.D?.InventoryAssemblyOrderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AssemblyOrdersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventoryAssemblyOrders_Response
+        var finalResponse = new InventoryAssemblyOrder_Response
         {
-            D = new InventoryAssemblyOrders_Response.InventoryAssemblyOrders_Response_d
+            D = new InventoryAssemblyOrder_Response.InventoryAssemblyOrder_Response_d
             {
-                InventoryAssemblyOrders = allItems
+                InventoryAssemblyOrder = allItems
             }
         };
 

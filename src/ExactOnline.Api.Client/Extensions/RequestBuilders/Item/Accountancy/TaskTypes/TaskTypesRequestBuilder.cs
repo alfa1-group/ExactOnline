@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.TaskTypes;
 
 public partial class TaskTypesRequestBuilder
 {
-    public async Task<AccountancyTaskTypes_Response?> GetAllAsync(Action<RequestConfiguration<TaskTypesRequestBuilder.TaskTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<AccountancyTaskType_Response?> GetAllAsync(Action<RequestConfiguration<TaskTypesRequestBuilder.TaskTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.AccountancyTaskTypesResults is null)
+        if (response?.D?.AccountancyTaskTypeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<AccountancyTaskTypes>();
+        var allItems = new List<AccountancyTaskType>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.AccountancyTaskTypesResults?.Results is { } results)
+            if (currentResponse?.D?.AccountancyTaskTypeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.AccountancyTaskTypesResults?.Next;
+            var nextUrl = currentResponse?.D?.AccountancyTaskTypeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TaskTypesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new AccountancyTaskTypes_Response
+        var finalResponse = new AccountancyTaskType_Response
         {
-            D = new AccountancyTaskTypes_Response.AccountancyTaskTypes_Response_d
+            D = new AccountancyTaskType_Response.AccountancyTaskType_Response_d
             {
-                AccountancyTaskTypes = allItems
+                AccountancyTaskType = allItems
             }
         };
 

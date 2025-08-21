@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeFolders;
 
 public partial class DocumentTypeFoldersRequestBuilder
 {
-    public async Task<DocumentsDocumentTypeFolders_Response?> GetAllAsync(Action<RequestConfiguration<DocumentTypeFoldersRequestBuilder.DocumentTypeFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<DocumentsDocumentTypeFolder_Response?> GetAllAsync(Action<RequestConfiguration<DocumentTypeFoldersRequestBuilder.DocumentTypeFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.DocumentsDocumentTypeFoldersResults is null)
+        if (response?.D?.DocumentsDocumentTypeFolderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<DocumentsDocumentTypeFolders>();
+        var allItems = new List<DocumentsDocumentTypeFolder>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.DocumentsDocumentTypeFoldersResults?.Results is { } results)
+            if (currentResponse?.D?.DocumentsDocumentTypeFolderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.DocumentsDocumentTypeFoldersResults?.Next;
+            var nextUrl = currentResponse?.D?.DocumentsDocumentTypeFolderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DocumentTypeFoldersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new DocumentsDocumentTypeFolders_Response
+        var finalResponse = new DocumentsDocumentTypeFolder_Response
         {
-            D = new DocumentsDocumentTypeFolders_Response.DocumentsDocumentTypeFolders_Response_d
+            D = new DocumentsDocumentTypeFolder_Response.DocumentsDocumentTypeFolder_Response_d
             {
-                DocumentsDocumentTypeFolders = allItems
+                DocumentsDocumentTypeFolder = allItems
             }
         };
 

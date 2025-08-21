@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.SerialNumbers;
 
 public partial class SerialNumbersRequestBuilder
 {
-    public async Task<InventorySerialNumbers_Response?> GetAllAsync(Action<RequestConfiguration<SerialNumbersRequestBuilder.SerialNumbersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventorySerialNumber_Response?> GetAllAsync(Action<RequestConfiguration<SerialNumbersRequestBuilder.SerialNumbersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventorySerialNumbersResults is null)
+        if (response?.D?.InventorySerialNumberResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventorySerialNumbers>();
+        var allItems = new List<InventorySerialNumber>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventorySerialNumbersResults?.Results is { } results)
+            if (currentResponse?.D?.InventorySerialNumberResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventorySerialNumbersResults?.Next;
+            var nextUrl = currentResponse?.D?.InventorySerialNumberResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SerialNumbersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventorySerialNumbers_Response
+        var finalResponse = new InventorySerialNumber_Response
         {
-            D = new InventorySerialNumbers_Response.InventorySerialNumbers_Response_d
+            D = new InventorySerialNumber_Response.InventorySerialNumber_Response_d
             {
-                InventorySerialNumbers = allItems
+                InventorySerialNumber = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow.ProcessPayments;
 
 public partial class ProcessPaymentsRequestBuilder
 {
-    public async Task<CashflowProcessPayments_Response?> GetAllAsync(Action<RequestConfiguration<ProcessPaymentsRequestBuilder.ProcessPaymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CashflowProcessPayment_Response?> GetAllAsync(Action<RequestConfiguration<ProcessPaymentsRequestBuilder.ProcessPaymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CashflowProcessPaymentsResults is null)
+        if (response?.D?.CashflowProcessPaymentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CashflowProcessPayments>();
+        var allItems = new List<CashflowProcessPayment>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CashflowProcessPaymentsResults?.Results is { } results)
+            if (currentResponse?.D?.CashflowProcessPaymentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CashflowProcessPaymentsResults?.Next;
+            var nextUrl = currentResponse?.D?.CashflowProcessPaymentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProcessPaymentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CashflowProcessPayments_Response
+        var finalResponse = new CashflowProcessPayment_Response
         {
-            D = new CashflowProcessPayments_Response.CashflowProcessPayments_Response_d
+            D = new CashflowProcessPayment_Response.CashflowProcessPayment_Response_d
             {
-                CashflowProcessPayments = allItems
+                CashflowProcessPayment = allItems
             }
         };
 

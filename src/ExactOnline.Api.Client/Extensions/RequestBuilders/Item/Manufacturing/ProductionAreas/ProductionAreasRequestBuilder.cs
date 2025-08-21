@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ProductionAreas;
 
 public partial class ProductionAreasRequestBuilder
 {
-    public async Task<ManufacturingProductionAreas_Response?> GetAllAsync(Action<RequestConfiguration<ProductionAreasRequestBuilder.ProductionAreasRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingProductionArea_Response?> GetAllAsync(Action<RequestConfiguration<ProductionAreasRequestBuilder.ProductionAreasRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingProductionAreasResults is null)
+        if (response?.D?.ManufacturingProductionAreaResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingProductionAreas>();
+        var allItems = new List<ManufacturingProductionArea>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingProductionAreasResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingProductionAreaResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingProductionAreasResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingProductionAreaResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProductionAreasRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingProductionAreas_Response
+        var finalResponse = new ManufacturingProductionArea_Response
         {
-            D = new ManufacturingProductionAreas_Response.ManufacturingProductionAreas_Response_d
+            D = new ManufacturingProductionArea_Response.ManufacturingProductionArea_Response_d
             {
-                ManufacturingProductionAreas = allItems
+                ManufacturingProductionArea = allItems
             }
         };
 

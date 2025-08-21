@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.HRM.ScheduleEntries;
 
 public partial class ScheduleEntriesRequestBuilder
 {
-    public async Task<SyncHRMScheduleEntries_Response?> GetAllAsync(Action<RequestConfiguration<ScheduleEntriesRequestBuilder.ScheduleEntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncHRMScheduleEntry_Response?> GetAllAsync(Action<RequestConfiguration<ScheduleEntriesRequestBuilder.ScheduleEntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncHRMScheduleEntriesResults is null)
+        if (response?.D?.SyncHRMScheduleEntryResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncHRMScheduleEntries>();
+        var allItems = new List<SyncHRMScheduleEntry>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncHRMScheduleEntriesResults?.Results is { } results)
+            if (currentResponse?.D?.SyncHRMScheduleEntryResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncHRMScheduleEntriesResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncHRMScheduleEntryResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ScheduleEntriesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncHRMScheduleEntries_Response
+        var finalResponse = new SyncHRMScheduleEntry_Response
         {
-            D = new SyncHRMScheduleEntries_Response.SyncHRMScheduleEntries_Response_d
+            D = new SyncHRMScheduleEntry_Response.SyncHRMScheduleEntry_Response_d
             {
-                SyncHRMScheduleEntries = allItems
+                SyncHRMScheduleEntry = allItems
             }
         };
 

@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntriesWit
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntriesWithEntryid.CashEntriesWithEntryidRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="entryid">Unique identifier (uuid) of the FinancialTransactionCashEntries</param>
+        /// <param name="entryid">Unique identifier (uuid) of the FinancialTransactionCashEntry</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CashEntriesWithEntryidRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? entryid = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financialtransaction/CashEntries({entryid})", pathParameters)
@@ -36,7 +36,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntriesWit
         {
         }
         /// <summary>
-        /// DELETE FinancialTransactionCashEntries
+        /// DELETE FinancialTransactionCashEntry
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,20 +60,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntriesWit
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET FinancialTransactionCashEntries
+        /// GET FinancialTransactionCashEntry
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntriesGet_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryGet_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntriesGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntriesGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -82,10 +82,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntriesWit
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntriesGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntriesGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.FinancialTransactionCashEntryGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// DELETE FinancialTransactionCashEntries
+        /// DELETE FinancialTransactionCashEntry
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntriesWit
             return requestInfo;
         }
         /// <summary>
-        /// GET FinancialTransactionCashEntries
+        /// GET FinancialTransactionCashEntry
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

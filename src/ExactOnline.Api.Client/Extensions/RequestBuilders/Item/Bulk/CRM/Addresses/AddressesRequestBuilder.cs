@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.Addresses;
 
 public partial class AddressesRequestBuilder
 {
-    public async Task<BulkCRMAddresses_Response?> GetAllAsync(Action<RequestConfiguration<AddressesRequestBuilder.AddressesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkCRMAddress_Response?> GetAllAsync(Action<RequestConfiguration<AddressesRequestBuilder.AddressesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkCRMAddressesResults is null)
+        if (response?.D?.BulkCRMAddressResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkCRMAddresses>();
+        var allItems = new List<BulkCRMAddress>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkCRMAddressesResults?.Results is { } results)
+            if (currentResponse?.D?.BulkCRMAddressResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkCRMAddressesResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkCRMAddressResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AddressesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkCRMAddresses_Response
+        var finalResponse = new BulkCRMAddress_Response
         {
-            D = new BulkCRMAddresses_Response.BulkCRMAddresses_Response_d
+            D = new BulkCRMAddress_Response.BulkCRMAddress_Response_d
             {
-                BulkCRMAddresses = allItems
+                BulkCRMAddress = allItems
             }
         };
 

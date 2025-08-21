@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Sales.SalesPriceListVolumeDisc
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="timestamp">The Timestamp of the SyncSalesSalesPriceListVolumeDiscounts</param>
+        /// <param name="timestamp">The Timestamp of the SyncSalesSalesPriceListVolumeDiscount</param>
         public SalesPriceListVolumeDiscountsWithTimestampRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string timestamp = "") : base(requestAdapter, "{+baseurl}/api/v1/{division}/sync/Sales/SalesPriceListVolumeDiscounts({timestamp})", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(timestamp)) PathParameters.Add("timestamp", timestamp);
@@ -36,20 +36,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Sales.SalesPriceListVolumeDisc
         {
         }
         /// <summary>
-        /// GET SyncSalesSalesPriceListVolumeDiscounts
+        /// GET SyncSalesSalesPriceListVolumeDiscount
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.SyncSalesSalesPriceListVolumeDiscountsGet_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.SyncSalesSalesPriceListVolumeDiscountGet_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.SyncSalesSalesPriceListVolumeDiscountsGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.SyncSalesSalesPriceListVolumeDiscountGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.SyncSalesSalesPriceListVolumeDiscountsGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.SyncSalesSalesPriceListVolumeDiscountGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,10 +58,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Sales.SalesPriceListVolumeDisc
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.SyncSalesSalesPriceListVolumeDiscountsGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.SyncSalesSalesPriceListVolumeDiscountsGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.SyncSalesSalesPriceListVolumeDiscountGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.SyncSalesSalesPriceListVolumeDiscountGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET SyncSalesSalesPriceListVolumeDiscounts
+        /// GET SyncSalesSalesPriceListVolumeDiscount
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

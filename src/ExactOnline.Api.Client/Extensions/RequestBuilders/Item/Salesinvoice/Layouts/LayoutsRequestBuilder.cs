@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.Layouts;
 
 public partial class LayoutsRequestBuilder
 {
-    public async Task<SalesInvoiceLayouts_Response?> GetAllAsync(Action<RequestConfiguration<LayoutsRequestBuilder.LayoutsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesInvoiceLayout_Response?> GetAllAsync(Action<RequestConfiguration<LayoutsRequestBuilder.LayoutsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesInvoiceLayoutsResults is null)
+        if (response?.D?.SalesInvoiceLayoutResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesInvoiceLayouts>();
+        var allItems = new List<SalesInvoiceLayout>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesInvoiceLayoutsResults?.Results is { } results)
+            if (currentResponse?.D?.SalesInvoiceLayoutResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesInvoiceLayoutsResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesInvoiceLayoutResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class LayoutsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesInvoiceLayouts_Response
+        var finalResponse = new SalesInvoiceLayout_Response
         {
-            D = new SalesInvoiceLayouts_Response.SalesInvoiceLayouts_Response_d
+            D = new SalesInvoiceLayout_Response.SalesInvoiceLayout_Response_d
             {
-                SalesInvoiceLayouts = allItems
+                SalesInvoiceLayout = allItems
             }
         };
 

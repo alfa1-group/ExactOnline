@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceipts;
 
 public partial class GoodsReceiptsRequestBuilder
 {
-    public async Task<PurchaseOrderGoodsReceipts_Response?> GetAllAsync(Action<RequestConfiguration<GoodsReceiptsRequestBuilder.GoodsReceiptsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PurchaseOrderGoodsReceipt_Response?> GetAllAsync(Action<RequestConfiguration<GoodsReceiptsRequestBuilder.GoodsReceiptsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PurchaseOrderGoodsReceiptsResults is null)
+        if (response?.D?.PurchaseOrderGoodsReceiptResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PurchaseOrderGoodsReceipts>();
+        var allItems = new List<PurchaseOrderGoodsReceipt>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PurchaseOrderGoodsReceiptsResults?.Results is { } results)
+            if (currentResponse?.D?.PurchaseOrderGoodsReceiptResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PurchaseOrderGoodsReceiptsResults?.Next;
+            var nextUrl = currentResponse?.D?.PurchaseOrderGoodsReceiptResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GoodsReceiptsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PurchaseOrderGoodsReceipts_Response
+        var finalResponse = new PurchaseOrderGoodsReceipt_Response
         {
-            D = new PurchaseOrderGoodsReceipts_Response.PurchaseOrderGoodsReceipts_Response_d
+            D = new PurchaseOrderGoodsReceipt_Response.PurchaseOrderGoodsReceipt_Response_d
             {
-                PurchaseOrderGoodsReceipts = allItems
+                PurchaseOrderGoodsReceipt = allItems
             }
         };
 

@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchase
         /// Use this endpoint to create and read purchase invoice lines.A purchase invoice line is always part of a purchase invoice and describes an item that you purchased from a supplier. A purchase invoice line can not be POSTed by itself. It has to be part of a POST of a purchase invoice. Each purchase invoice line has to contain either an item or a purchase order line. In a POST request it is important to know the type (including or excluding) of the VAT code. This type determines how the VAT amount is calculated in relation to the amount or price. For example an amount of 100 with a &apos;21% including&apos; VAT code results in a VAT amount of 17.36. With a &apos;21% excluding&apos; VAT code the VAT amount will be 21.00. When you don&apos;t specify a VAT code a default value will be used that is based on the configuration of the supplier and the item. We recommend to always specify Amount and VATCode when you create a new purchase invoice line for an item.For more information about the purchase invoice functionality in Exact Online, see Create purchase invoices.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchase.PurchaseInvoiceLinesWithId.PurchaseInvoiceLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the PurchasePurchaseInvoiceLines</param>
+        /// <param name="id">Unique identifier (uuid) of the PurchasePurchaseInvoiceLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchase.PurchaseInvoiceLinesWithId.PurchaseInvoiceLinesWithIdRequestBuilder PurchaseInvoiceLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchase
         /// Use this endpoint to create, read, update and delete purchase invoices.A purchase invoice describes the items that you purchased from a supplier. This endpoint supports purchase invoices and direct purchase invoices. Each purchase invoice line has to contain either an item or a purchase order line.The direct purchase invoice is a purchase invoice and receipt at the same time. A purchase order is not required and the stock positions and financial entries are updated directly.To create a direct purchase invoice you have to specify the warehouse that is receiving the purchased items. To get only direct purchase invoices apply this filter on warehouse: $filter=Warehouse ne nullCurrently project WBS (work breakdown structure) and rebilling functionality are not supported.For more information about the purchase invoice functionality in Exact Online, see Create purchase invoices.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchase.PurchaseInvoicesWithId.PurchaseInvoicesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the PurchasePurchaseInvoices</param>
+        /// <param name="id">Unique identifier (uuid) of the PurchasePurchaseInvoice</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchase.PurchaseInvoicesWithId.PurchaseInvoicesWithIdRequestBuilder PurchaseInvoicesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

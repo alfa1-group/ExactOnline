@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.Employees;
 
 public partial class EmployeesRequestBuilder
 {
-    public async Task<PayrollEmployees_Response?> GetAllAsync(Action<RequestConfiguration<EmployeesRequestBuilder.EmployeesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PayrollEmployee_Response?> GetAllAsync(Action<RequestConfiguration<EmployeesRequestBuilder.EmployeesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PayrollEmployeesResults is null)
+        if (response?.D?.PayrollEmployeeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PayrollEmployees>();
+        var allItems = new List<PayrollEmployee>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PayrollEmployeesResults?.Results is { } results)
+            if (currentResponse?.D?.PayrollEmployeeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PayrollEmployeesResults?.Next;
+            var nextUrl = currentResponse?.D?.PayrollEmployeeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EmployeesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PayrollEmployees_Response
+        var finalResponse = new PayrollEmployee_Response
         {
-            D = new PayrollEmployees_Response.PayrollEmployees_Response_d
+            D = new PayrollEmployee_Response.PayrollEmployee_Response_d
             {
-                PayrollEmployees = allItems
+                PayrollEmployee = allItems
             }
         };
 

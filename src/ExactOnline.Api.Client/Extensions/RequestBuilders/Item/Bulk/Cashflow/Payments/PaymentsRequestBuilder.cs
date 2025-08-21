@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Cashflow.Payments;
 
 public partial class PaymentsRequestBuilder
 {
-    public async Task<BulkCashflowPayments_Response?> GetAllAsync(Action<RequestConfiguration<PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkCashflowPayment_Response?> GetAllAsync(Action<RequestConfiguration<PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkCashflowPaymentsResults is null)
+        if (response?.D?.BulkCashflowPaymentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkCashflowPayments>();
+        var allItems = new List<BulkCashflowPayment>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkCashflowPaymentsResults?.Results is { } results)
+            if (currentResponse?.D?.BulkCashflowPaymentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkCashflowPaymentsResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkCashflowPaymentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PaymentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkCashflowPayments_Response
+        var finalResponse = new BulkCashflowPayment_Response
         {
-            D = new BulkCashflowPayments_Response.BulkCashflowPayments_Response_d
+            D = new BulkCashflowPayment_Response.BulkCashflowPayment_Response_d
             {
-                BulkCashflowPayments = allItems
+                BulkCashflowPayment = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnLines;
 
 public partial class PlannedSalesReturnLinesRequestBuilder
 {
-    public async Task<SalesOrderPlannedSalesReturnLines_Response?> GetAllAsync(Action<RequestConfiguration<PlannedSalesReturnLinesRequestBuilder.PlannedSalesReturnLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesOrderPlannedSalesReturnLine_Response?> GetAllAsync(Action<RequestConfiguration<PlannedSalesReturnLinesRequestBuilder.PlannedSalesReturnLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesOrderPlannedSalesReturnLinesResults is null)
+        if (response?.D?.SalesOrderPlannedSalesReturnLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesOrderPlannedSalesReturnLines>();
+        var allItems = new List<SalesOrderPlannedSalesReturnLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesOrderPlannedSalesReturnLinesResults?.Results is { } results)
+            if (currentResponse?.D?.SalesOrderPlannedSalesReturnLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesOrderPlannedSalesReturnLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesOrderPlannedSalesReturnLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PlannedSalesReturnLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesOrderPlannedSalesReturnLines_Response
+        var finalResponse = new SalesOrderPlannedSalesReturnLine_Response
         {
-            D = new SalesOrderPlannedSalesReturnLines_Response.SalesOrderPlannedSalesReturnLines_Response_d
+            D = new SalesOrderPlannedSalesReturnLine_Response.SalesOrderPlannedSalesReturnLine_Response_d
             {
-                SalesOrderPlannedSalesReturnLines = allItems
+                SalesOrderPlannedSalesReturnLine = allItems
             }
         };
 

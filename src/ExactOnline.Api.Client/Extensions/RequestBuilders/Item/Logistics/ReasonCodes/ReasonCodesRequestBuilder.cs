@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics.ReasonCodes;
 
 public partial class ReasonCodesRequestBuilder
 {
-    public async Task<LogisticsReasonCodes_Response?> GetAllAsync(Action<RequestConfiguration<ReasonCodesRequestBuilder.ReasonCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<LogisticsReasonCode_Response?> GetAllAsync(Action<RequestConfiguration<ReasonCodesRequestBuilder.ReasonCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.LogisticsReasonCodesResults is null)
+        if (response?.D?.LogisticsReasonCodeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<LogisticsReasonCodes>();
+        var allItems = new List<LogisticsReasonCode>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.LogisticsReasonCodesResults?.Results is { } results)
+            if (currentResponse?.D?.LogisticsReasonCodeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.LogisticsReasonCodesResults?.Next;
+            var nextUrl = currentResponse?.D?.LogisticsReasonCodeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ReasonCodesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new LogisticsReasonCodes_Response
+        var finalResponse = new LogisticsReasonCode_Response
         {
-            D = new LogisticsReasonCodes_Response.LogisticsReasonCodes_Response_d
+            D = new LogisticsReasonCode_Response.LogisticsReasonCode_Response_d
             {
-                LogisticsReasonCodes = allItems
+                LogisticsReasonCode = allItems
             }
         };
 

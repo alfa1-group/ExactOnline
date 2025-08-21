@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Sales.SalesPriceListVolumeDisc
 
 public partial class SalesPriceListVolumeDiscountsRequestBuilder
 {
-    public async Task<SyncSalesSalesPriceListVolumeDiscounts_Response?> GetAllAsync(Action<RequestConfiguration<SalesPriceListVolumeDiscountsRequestBuilder.SalesPriceListVolumeDiscountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncSalesSalesPriceListVolumeDiscount_Response?> GetAllAsync(Action<RequestConfiguration<SalesPriceListVolumeDiscountsRequestBuilder.SalesPriceListVolumeDiscountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncSalesSalesPriceListVolumeDiscountsResults is null)
+        if (response?.D?.SyncSalesSalesPriceListVolumeDiscountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncSalesSalesPriceListVolumeDiscounts>();
+        var allItems = new List<SyncSalesSalesPriceListVolumeDiscount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncSalesSalesPriceListVolumeDiscountsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncSalesSalesPriceListVolumeDiscountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncSalesSalesPriceListVolumeDiscountsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncSalesSalesPriceListVolumeDiscountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesPriceListVolumeDiscountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncSalesSalesPriceListVolumeDiscounts_Response
+        var finalResponse = new SyncSalesSalesPriceListVolumeDiscount_Response
         {
-            D = new SyncSalesSalesPriceListVolumeDiscounts_Response.SyncSalesSalesPriceListVolumeDiscounts_Response_d
+            D = new SyncSalesSalesPriceListVolumeDiscount_Response.SyncSalesSalesPriceListVolumeDiscount_Response_d
             {
-                SyncSalesSalesPriceListVolumeDiscounts = allItems
+                SyncSalesSalesPriceListVolumeDiscount = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialVersion
 
 public partial class BillOfMaterialVersionsRequestBuilder
 {
-    public async Task<ManufacturingBillOfMaterialVersions_Response?> GetAllAsync(Action<RequestConfiguration<BillOfMaterialVersionsRequestBuilder.BillOfMaterialVersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingBillOfMaterialVersion_Response?> GetAllAsync(Action<RequestConfiguration<BillOfMaterialVersionsRequestBuilder.BillOfMaterialVersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingBillOfMaterialVersionsResults is null)
+        if (response?.D?.ManufacturingBillOfMaterialVersionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingBillOfMaterialVersions>();
+        var allItems = new List<ManufacturingBillOfMaterialVersion>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingBillOfMaterialVersionsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingBillOfMaterialVersionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingBillOfMaterialVersionsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingBillOfMaterialVersionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class BillOfMaterialVersionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingBillOfMaterialVersions_Response
+        var finalResponse = new ManufacturingBillOfMaterialVersion_Response
         {
-            D = new ManufacturingBillOfMaterialVersions_Response.ManufacturingBillOfMaterialVersions_Response_d
+            D = new ManufacturingBillOfMaterialVersion_Response.ManufacturingBillOfMaterialVersion_Response_d
             {
-                ManufacturingBillOfMaterialVersions = allItems
+                ManufacturingBillOfMaterialVersion = allItems
             }
         };
 

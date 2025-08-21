@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesOrder.GoodsDeliveries;
 
 public partial class GoodsDeliveriesRequestBuilder
 {
-    public async Task<BulkSalesOrderGoodsDeliveries_Response?> GetAllAsync(Action<RequestConfiguration<GoodsDeliveriesRequestBuilder.GoodsDeliveriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkSalesOrderGoodsDelivery_Response?> GetAllAsync(Action<RequestConfiguration<GoodsDeliveriesRequestBuilder.GoodsDeliveriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkSalesOrderGoodsDeliveriesResults is null)
+        if (response?.D?.BulkSalesOrderGoodsDeliveryResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkSalesOrderGoodsDeliveries>();
+        var allItems = new List<BulkSalesOrderGoodsDelivery>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkSalesOrderGoodsDeliveriesResults?.Results is { } results)
+            if (currentResponse?.D?.BulkSalesOrderGoodsDeliveryResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkSalesOrderGoodsDeliveriesResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkSalesOrderGoodsDeliveryResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GoodsDeliveriesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkSalesOrderGoodsDeliveries_Response
+        var finalResponse = new BulkSalesOrderGoodsDelivery_Response
         {
-            D = new BulkSalesOrderGoodsDeliveries_Response.BulkSalesOrderGoodsDeliveries_Response_d
+            D = new BulkSalesOrderGoodsDelivery_Response.BulkSalesOrderGoodsDelivery_Response_d
             {
-                BulkSalesOrderGoodsDeliveries = allItems
+                BulkSalesOrderGoodsDelivery = allItems
             }
         };
 

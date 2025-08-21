@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.WBSActivities;
 
 public partial class WBSActivitiesRequestBuilder
 {
-    public async Task<ProjectWBSActivities_Response?> GetAllAsync(Action<RequestConfiguration<WBSActivitiesRequestBuilder.WBSActivitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectWBSActivity_Response?> GetAllAsync(Action<RequestConfiguration<WBSActivitiesRequestBuilder.WBSActivitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectWBSActivitiesResults is null)
+        if (response?.D?.ProjectWBSActivityResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectWBSActivities>();
+        var allItems = new List<ProjectWBSActivity>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectWBSActivitiesResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectWBSActivityResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectWBSActivitiesResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectWBSActivityResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class WBSActivitiesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectWBSActivities_Response
+        var finalResponse = new ProjectWBSActivity_Response
         {
-            D = new ProjectWBSActivities_Response.ProjectWBSActivities_Response_d
+            D = new ProjectWBSActivity_Response.ProjectWBSActivity_Response_d
             {
-                ProjectWBSActivities = allItems
+                ProjectWBSActivity = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Cashflow.Receivables;
 
 public partial class ReceivablesRequestBuilder
 {
-    public async Task<BulkCashflowReceivables_Response?> GetAllAsync(Action<RequestConfiguration<ReceivablesRequestBuilder.ReceivablesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkCashflowReceivable_Response?> GetAllAsync(Action<RequestConfiguration<ReceivablesRequestBuilder.ReceivablesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkCashflowReceivablesResults is null)
+        if (response?.D?.BulkCashflowReceivableResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkCashflowReceivables>();
+        var allItems = new List<BulkCashflowReceivable>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkCashflowReceivablesResults?.Results is { } results)
+            if (currentResponse?.D?.BulkCashflowReceivableResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkCashflowReceivablesResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkCashflowReceivableResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ReceivablesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkCashflowReceivables_Response
+        var finalResponse = new BulkCashflowReceivable_Response
         {
-            D = new BulkCashflowReceivables_Response.BulkCashflowReceivables_Response_d
+            D = new BulkCashflowReceivable_Response.BulkCashflowReceivable_Response_d
             {
-                BulkCashflowReceivables = allItems
+                BulkCashflowReceivable = allItems
             }
         };
 

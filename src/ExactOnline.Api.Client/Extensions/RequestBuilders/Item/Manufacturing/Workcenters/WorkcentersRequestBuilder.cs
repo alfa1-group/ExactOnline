@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.Workcenters;
 
 public partial class WorkcentersRequestBuilder
 {
-    public async Task<ManufacturingWorkcenters_Response?> GetAllAsync(Action<RequestConfiguration<WorkcentersRequestBuilder.WorkcentersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingWorkcenter_Response?> GetAllAsync(Action<RequestConfiguration<WorkcentersRequestBuilder.WorkcentersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingWorkcentersResults is null)
+        if (response?.D?.ManufacturingWorkcenterResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingWorkcenters>();
+        var allItems = new List<ManufacturingWorkcenter>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingWorkcentersResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingWorkcenterResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingWorkcentersResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingWorkcenterResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class WorkcentersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingWorkcenters_Response
+        var finalResponse = new ManufacturingWorkcenter_Response
         {
-            D = new ManufacturingWorkcenters_Response.ManufacturingWorkcenters_Response_d
+            D = new ManufacturingWorkcenter_Response.ManufacturingWorkcenter_Response_d
             {
-                ManufacturingWorkcenters = allItems
+                ManufacturingWorkcenter = allItems
             }
         };
 

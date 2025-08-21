@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehouseStorageLocat
 
 public partial class ItemWarehouseStorageLocationsRequestBuilder
 {
-    public async Task<InventoryItemWarehouseStorageLocations_Response?> GetAllAsync(Action<RequestConfiguration<ItemWarehouseStorageLocationsRequestBuilder.ItemWarehouseStorageLocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventoryItemWarehouseStorageLocation_Response?> GetAllAsync(Action<RequestConfiguration<ItemWarehouseStorageLocationsRequestBuilder.ItemWarehouseStorageLocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventoryItemWarehouseStorageLocationsResults is null)
+        if (response?.D?.InventoryItemWarehouseStorageLocationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventoryItemWarehouseStorageLocations>();
+        var allItems = new List<InventoryItemWarehouseStorageLocation>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventoryItemWarehouseStorageLocationsResults?.Results is { } results)
+            if (currentResponse?.D?.InventoryItemWarehouseStorageLocationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventoryItemWarehouseStorageLocationsResults?.Next;
+            var nextUrl = currentResponse?.D?.InventoryItemWarehouseStorageLocationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ItemWarehouseStorageLocationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventoryItemWarehouseStorageLocations_Response
+        var finalResponse = new InventoryItemWarehouseStorageLocation_Response
         {
-            D = new InventoryItemWarehouseStorageLocations_Response.InventoryItemWarehouseStorageLocations_Response_d
+            D = new InventoryItemWarehouseStorageLocation_Response.InventoryItemWarehouseStorageLocation_Response_d
             {
-                InventoryItemWarehouseStorageLocations = allItems
+                InventoryItemWarehouseStorageLocation = allItems
             }
         };
 

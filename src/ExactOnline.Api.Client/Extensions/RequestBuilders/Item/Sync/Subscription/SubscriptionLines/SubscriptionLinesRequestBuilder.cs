@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Subscription.SubscriptionLines
 
 public partial class SubscriptionLinesRequestBuilder
 {
-    public async Task<SyncSubscriptionSubscriptionLines_Response?> GetAllAsync(Action<RequestConfiguration<SubscriptionLinesRequestBuilder.SubscriptionLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncSubscriptionSubscriptionLine_Response?> GetAllAsync(Action<RequestConfiguration<SubscriptionLinesRequestBuilder.SubscriptionLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncSubscriptionSubscriptionLinesResults is null)
+        if (response?.D?.SyncSubscriptionSubscriptionLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncSubscriptionSubscriptionLines>();
+        var allItems = new List<SyncSubscriptionSubscriptionLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncSubscriptionSubscriptionLinesResults?.Results is { } results)
+            if (currentResponse?.D?.SyncSubscriptionSubscriptionLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncSubscriptionSubscriptionLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncSubscriptionSubscriptionLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SubscriptionLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncSubscriptionSubscriptionLines_Response
+        var finalResponse = new SyncSubscriptionSubscriptionLine_Response
         {
-            D = new SyncSubscriptionSubscriptionLines_Response.SyncSubscriptionSubscriptionLines_Response_d
+            D = new SyncSubscriptionSubscriptionLine_Response.SyncSubscriptionSubscriptionLine_Response_d
             {
-                SyncSubscriptionSubscriptionLines = allItems
+                SyncSubscriptionSubscriptionLine = allItems
             }
         };
 

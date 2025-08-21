@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow.DirectDebitMandates;
 
 public partial class DirectDebitMandatesRequestBuilder
 {
-    public async Task<CashflowDirectDebitMandates_Response?> GetAllAsync(Action<RequestConfiguration<DirectDebitMandatesRequestBuilder.DirectDebitMandatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CashflowDirectDebitMandate_Response?> GetAllAsync(Action<RequestConfiguration<DirectDebitMandatesRequestBuilder.DirectDebitMandatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CashflowDirectDebitMandatesResults is null)
+        if (response?.D?.CashflowDirectDebitMandateResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CashflowDirectDebitMandates>();
+        var allItems = new List<CashflowDirectDebitMandate>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CashflowDirectDebitMandatesResults?.Results is { } results)
+            if (currentResponse?.D?.CashflowDirectDebitMandateResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CashflowDirectDebitMandatesResults?.Next;
+            var nextUrl = currentResponse?.D?.CashflowDirectDebitMandateResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DirectDebitMandatesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CashflowDirectDebitMandates_Response
+        var finalResponse = new CashflowDirectDebitMandate_Response
         {
-            D = new CashflowDirectDebitMandates_Response.CashflowDirectDebitMandates_Response_d
+            D = new CashflowDirectDebitMandate_Response.CashflowDirectDebitMandate_Response_d
             {
-                CashflowDirectDebitMandates = allItems
+                CashflowDirectDebitMandate = allItems
             }
         };
 

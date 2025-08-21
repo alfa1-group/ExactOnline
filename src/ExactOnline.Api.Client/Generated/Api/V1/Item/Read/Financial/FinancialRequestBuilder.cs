@@ -385,7 +385,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// Use this endpoint to retrieve information regarding to VAT, EC Sales List or Payroll declaration document of an administration.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReturnsWithDocumentid.ReturnsWithDocumentidRequestBuilder"/></returns>
-        /// <param name="documentid">Unique identifier (uuid) of the ReadFinancialReturns</param>
+        /// <param name="documentid">Unique identifier (uuid) of the ReadFinancialReturn</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReturnsWithDocumentid.ReturnsWithDocumentidRequestBuilder ReturnsWithDocumentid(Guid? documentid)
         {
             _ = documentid ?? throw new ArgumentNullException(nameof(documentid));
@@ -395,7 +395,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// Use this endpoint to get an overview of the revenue per period in a chosen year. Revenue amount is calculated from all G/L accounts of type revenue. AfterEntry parameter helps to decide whether calculation should be done on entered entries or only on finally processed entries.For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearAndStatusWithYear.RevenueListByYearAndStatusWithYearRequestBuilder"/></returns>
-        /// <param name="year">Unique identifier (int32) of the ReadFinancialRevenueListByYearAndStatus</param>
+        /// <param name="year">Unique identifier (int32) of the ReadFinancialRevenueListByYearAndStatu</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearAndStatusWithYear.RevenueListByYearAndStatusWithYearRequestBuilder RevenueListByYearAndStatusWithYear(int? year)
         {
             _ = year ?? throw new ArgumentNullException(nameof(year));

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionEmployees
 
 public partial class ProjectRestrictionEmployeesRequestBuilder
 {
-    public async Task<ProjectProjectRestrictionEmployees_Response?> GetAllAsync(Action<RequestConfiguration<ProjectRestrictionEmployeesRequestBuilder.ProjectRestrictionEmployeesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectProjectRestrictionEmployee_Response?> GetAllAsync(Action<RequestConfiguration<ProjectRestrictionEmployeesRequestBuilder.ProjectRestrictionEmployeesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectProjectRestrictionEmployeesResults is null)
+        if (response?.D?.ProjectProjectRestrictionEmployeeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectProjectRestrictionEmployees>();
+        var allItems = new List<ProjectProjectRestrictionEmployee>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectProjectRestrictionEmployeesResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectProjectRestrictionEmployeeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectProjectRestrictionEmployeesResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectProjectRestrictionEmployeeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectRestrictionEmployeesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectProjectRestrictionEmployees_Response
+        var finalResponse = new ProjectProjectRestrictionEmployee_Response
         {
-            D = new ProjectProjectRestrictionEmployees_Response.ProjectProjectRestrictionEmployees_Response_d
+            D = new ProjectProjectRestrictionEmployee_Response.ProjectProjectRestrictionEmployee_Response_d
             {
-                ProjectProjectRestrictionEmployees = allItems
+                ProjectProjectRestrictionEmployee = allItems
             }
         };
 

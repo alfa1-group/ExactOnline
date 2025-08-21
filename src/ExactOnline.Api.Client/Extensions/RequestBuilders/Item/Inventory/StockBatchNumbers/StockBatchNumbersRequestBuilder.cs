@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.StockBatchNumbers;
 
 public partial class StockBatchNumbersRequestBuilder
 {
-    public async Task<InventoryStockBatchNumbers_Response?> GetAllAsync(Action<RequestConfiguration<StockBatchNumbersRequestBuilder.StockBatchNumbersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventoryStockBatchNumber_Response?> GetAllAsync(Action<RequestConfiguration<StockBatchNumbersRequestBuilder.StockBatchNumbersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventoryStockBatchNumbersResults is null)
+        if (response?.D?.InventoryStockBatchNumberResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventoryStockBatchNumbers>();
+        var allItems = new List<InventoryStockBatchNumber>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventoryStockBatchNumbersResults?.Results is { } results)
+            if (currentResponse?.D?.InventoryStockBatchNumberResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventoryStockBatchNumbersResults?.Next;
+            var nextUrl = currentResponse?.D?.InventoryStockBatchNumberResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class StockBatchNumbersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventoryStockBatchNumbers_Response
+        var finalResponse = new InventoryStockBatchNumber_Response
         {
-            D = new InventoryStockBatchNumbers_Response.InventoryStockBatchNumbers_Response_d
+            D = new InventoryStockBatchNumber_Response.InventoryStockBatchNumber_Response_d
             {
-                InventoryStockBatchNumbers = allItems
+                InventoryStockBatchNumber = allItems
             }
         };
 

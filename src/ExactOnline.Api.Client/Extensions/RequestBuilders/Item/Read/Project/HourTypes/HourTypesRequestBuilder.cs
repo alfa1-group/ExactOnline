@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypes;
 
 public partial class HourTypesRequestBuilder
 {
-    public async Task<ReadProjectHourTypes_Response?> GetAllAsync(Action<RequestConfiguration<HourTypesRequestBuilder.HourTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectHourType_Response?> GetAllAsync(Action<RequestConfiguration<HourTypesRequestBuilder.HourTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectHourTypesResults is null)
+        if (response?.D?.ReadProjectHourTypeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectHourTypes>();
+        var allItems = new List<ReadProjectHourType>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectHourTypesResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectHourTypeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectHourTypesResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectHourTypeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class HourTypesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectHourTypes_Response
+        var finalResponse = new ReadProjectHourType_Response
         {
-            D = new ReadProjectHourTypes_Response.ReadProjectHourTypes_Response_d
+            D = new ReadProjectHourType_Response.ReadProjectHourType_Response_d
             {
-                ReadProjectHourTypes = allItems
+                ReadProjectHourType = allItems
             }
         };
 

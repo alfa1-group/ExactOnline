@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlan
 
 public partial class ShopOrderMaterialPlanDetailsRequestBuilder
 {
-    public async Task<ManufacturingShopOrderMaterialPlanDetails_Response?> GetAllAsync(Action<RequestConfiguration<ShopOrderMaterialPlanDetailsRequestBuilder.ShopOrderMaterialPlanDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingShopOrderMaterialPlanDetail_Response?> GetAllAsync(Action<RequestConfiguration<ShopOrderMaterialPlanDetailsRequestBuilder.ShopOrderMaterialPlanDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingShopOrderMaterialPlanDetailsResults is null)
+        if (response?.D?.ManufacturingShopOrderMaterialPlanDetailResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingShopOrderMaterialPlanDetails>();
+        var allItems = new List<ManufacturingShopOrderMaterialPlanDetail>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingShopOrderMaterialPlanDetailsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingShopOrderMaterialPlanDetailResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingShopOrderMaterialPlanDetailsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingShopOrderMaterialPlanDetailResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ShopOrderMaterialPlanDetailsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingShopOrderMaterialPlanDetails_Response
+        var finalResponse = new ManufacturingShopOrderMaterialPlanDetail_Response
         {
-            D = new ManufacturingShopOrderMaterialPlanDetails_Response.ManufacturingShopOrderMaterialPlanDetails_Response_d
+            D = new ManufacturingShopOrderMaterialPlanDetail_Response.ManufacturingShopOrderMaterialPlanDetail_Response_d
             {
-                ManufacturingShopOrderMaterialPlanDetails = allItems
+                ManufacturingShopOrderMaterialPlanDetail = allItems
             }
         };
 

@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId.AccountOwnersWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (uuid) of the AccountancyAccountOwners</param>
+        /// <param name="id">Unique identifier (uuid) of the AccountancyAccountOwner</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public AccountOwnersWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/accountancy/AccountOwners(guid'{id}')", pathParameters)
@@ -36,7 +36,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId
         {
         }
         /// <summary>
-        /// DELETE AccountancyAccountOwners
+        /// DELETE AccountancyAccountOwner
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,20 +60,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET AccountancyAccountOwners
+        /// GET AccountancyAccountOwner
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.AccountancyAccountOwnersGet_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.AccountancyAccountOwnerGet_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.AccountancyAccountOwnersGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.AccountancyAccountOwnerGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.AccountancyAccountOwnersGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.AccountancyAccountOwnerGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -82,10 +82,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.AccountancyAccountOwnersGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.AccountancyAccountOwnersGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.AccountancyAccountOwnerGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.AccountancyAccountOwnerGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// PUT AccountancyAccountOwners
+        /// PUT AccountancyAccountOwner
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,11 +94,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PutAsync(global::ExactOnline.Api.Client.Models.AccountancyAccountOwnersPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PutAsync(global::ExactOnline.Api.Client.Models.AccountancyAccountOwnerPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PutAsync(global::ExactOnline.Api.Client.Models.AccountancyAccountOwnersPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PutAsync(global::ExactOnline.Api.Client.Models.AccountancyAccountOwnerPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -111,7 +111,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// DELETE AccountancyAccountOwners
+        /// DELETE AccountancyAccountOwner
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId
             return requestInfo;
         }
         /// <summary>
-        /// GET AccountancyAccountOwners
+        /// GET AccountancyAccountOwner
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,18 +149,18 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId
             return requestInfo;
         }
         /// <summary>
-        /// PUT AccountancyAccountOwners
+        /// PUT AccountancyAccountOwner
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.AccountancyAccountOwnersPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.AccountancyAccountOwnerPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.AccountancyAccountOwnersPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.AccountancyAccountOwnerPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

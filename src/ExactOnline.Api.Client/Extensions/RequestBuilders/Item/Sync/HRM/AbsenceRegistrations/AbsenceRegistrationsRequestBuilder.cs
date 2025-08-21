@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.HRM.AbsenceRegistrations;
 
 public partial class AbsenceRegistrationsRequestBuilder
 {
-    public async Task<SyncHRMAbsenceRegistrations_Response?> GetAllAsync(Action<RequestConfiguration<AbsenceRegistrationsRequestBuilder.AbsenceRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncHRMAbsenceRegistration_Response?> GetAllAsync(Action<RequestConfiguration<AbsenceRegistrationsRequestBuilder.AbsenceRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncHRMAbsenceRegistrationsResults is null)
+        if (response?.D?.SyncHRMAbsenceRegistrationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncHRMAbsenceRegistrations>();
+        var allItems = new List<SyncHRMAbsenceRegistration>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncHRMAbsenceRegistrationsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncHRMAbsenceRegistrationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncHRMAbsenceRegistrationsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncHRMAbsenceRegistrationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AbsenceRegistrationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncHRMAbsenceRegistrations_Response
+        var finalResponse = new SyncHRMAbsenceRegistration_Response
         {
-            D = new SyncHRMAbsenceRegistrations_Response.SyncHRMAbsenceRegistrations_Response_d
+            D = new SyncHRMAbsenceRegistration_Response.SyncHRMAbsenceRegistration_Response_d
             {
-                SyncHRMAbsenceRegistrations = allItems
+                SyncHRMAbsenceRegistration = allItems
             }
         };
 

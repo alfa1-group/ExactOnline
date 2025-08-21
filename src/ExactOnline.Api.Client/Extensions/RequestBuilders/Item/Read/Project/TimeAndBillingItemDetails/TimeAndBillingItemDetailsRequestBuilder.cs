@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDeta
 
 public partial class TimeAndBillingItemDetailsRequestBuilder
 {
-    public async Task<ReadProjectTimeAndBillingItemDetails_Response?> GetAllAsync(Action<RequestConfiguration<TimeAndBillingItemDetailsRequestBuilder.TimeAndBillingItemDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectTimeAndBillingItemDetail_Response?> GetAllAsync(Action<RequestConfiguration<TimeAndBillingItemDetailsRequestBuilder.TimeAndBillingItemDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectTimeAndBillingItemDetailsResults is null)
+        if (response?.D?.ReadProjectTimeAndBillingItemDetailResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectTimeAndBillingItemDetails>();
+        var allItems = new List<ReadProjectTimeAndBillingItemDetail>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectTimeAndBillingItemDetailsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectTimeAndBillingItemDetailResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectTimeAndBillingItemDetailsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectTimeAndBillingItemDetailResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TimeAndBillingItemDetailsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectTimeAndBillingItemDetails_Response
+        var finalResponse = new ReadProjectTimeAndBillingItemDetail_Response
         {
-            D = new ReadProjectTimeAndBillingItemDetails_Response.ReadProjectTimeAndBillingItemDetails_Response_d
+            D = new ReadProjectTimeAndBillingItemDetail_Response.ReadProjectTimeAndBillingItemDetail_Response_d
             {
-                ReadProjectTimeAndBillingItemDetails = allItems
+                ReadProjectTimeAndBillingItemDetail = allItems
             }
         };
 

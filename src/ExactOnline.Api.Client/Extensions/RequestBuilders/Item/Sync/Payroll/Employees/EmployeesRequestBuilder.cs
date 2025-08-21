@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Payroll.Employees;
 
 public partial class EmployeesRequestBuilder
 {
-    public async Task<SyncPayrollEmployees_Response?> GetAllAsync(Action<RequestConfiguration<EmployeesRequestBuilder.EmployeesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncPayrollEmployee_Response?> GetAllAsync(Action<RequestConfiguration<EmployeesRequestBuilder.EmployeesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncPayrollEmployeesResults is null)
+        if (response?.D?.SyncPayrollEmployeeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncPayrollEmployees>();
+        var allItems = new List<SyncPayrollEmployee>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncPayrollEmployeesResults?.Results is { } results)
+            if (currentResponse?.D?.SyncPayrollEmployeeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncPayrollEmployeesResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncPayrollEmployeeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EmployeesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncPayrollEmployees_Response
+        var finalResponse = new SyncPayrollEmployee_Response
         {
-            D = new SyncPayrollEmployees_Response.SyncPayrollEmployees_Response_d
+            D = new SyncPayrollEmployee_Response.SyncPayrollEmployee_Response_d
             {
-                SyncPayrollEmployees = allItems
+                SyncPayrollEmployee = allItems
             }
         };
 

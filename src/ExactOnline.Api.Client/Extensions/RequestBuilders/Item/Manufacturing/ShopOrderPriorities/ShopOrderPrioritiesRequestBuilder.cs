@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderPriorities;
 
 public partial class ShopOrderPrioritiesRequestBuilder
 {
-    public async Task<ManufacturingShopOrderPriorities_Response?> GetAllAsync(Action<RequestConfiguration<ShopOrderPrioritiesRequestBuilder.ShopOrderPrioritiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingShopOrderPriority_Response?> GetAllAsync(Action<RequestConfiguration<ShopOrderPrioritiesRequestBuilder.ShopOrderPrioritiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingShopOrderPrioritiesResults is null)
+        if (response?.D?.ManufacturingShopOrderPriorityResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingShopOrderPriorities>();
+        var allItems = new List<ManufacturingShopOrderPriority>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingShopOrderPrioritiesResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingShopOrderPriorityResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingShopOrderPrioritiesResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingShopOrderPriorityResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ShopOrderPrioritiesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingShopOrderPriorities_Response
+        var finalResponse = new ManufacturingShopOrderPriority_Response
         {
-            D = new ManufacturingShopOrderPriorities_Response.ManufacturingShopOrderPriorities_Response_d
+            D = new ManufacturingShopOrderPriority_Response.ManufacturingShopOrderPriority_Response_d
             {
-                ManufacturingShopOrderPriorities = allItems
+                ManufacturingShopOrderPriority = allItems
             }
         };
 

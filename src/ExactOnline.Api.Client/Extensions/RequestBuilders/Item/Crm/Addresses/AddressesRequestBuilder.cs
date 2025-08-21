@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.Addresses;
 
 public partial class AddressesRequestBuilder
 {
-    public async Task<CRMAddresses_Response?> GetAllAsync(Action<RequestConfiguration<AddressesRequestBuilder.AddressesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMAddress_Response?> GetAllAsync(Action<RequestConfiguration<AddressesRequestBuilder.AddressesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMAddressesResults is null)
+        if (response?.D?.CRMAddressResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMAddresses>();
+        var allItems = new List<CRMAddress>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMAddressesResults?.Results is { } results)
+            if (currentResponse?.D?.CRMAddressResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMAddressesResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMAddressResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AddressesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMAddresses_Response
+        var finalResponse = new CRMAddress_Response
         {
-            D = new CRMAddresses_Response.CRMAddresses_Response_d
+            D = new CRMAddress_Response.CRMAddress_Response_d
             {
-                CRMAddresses = allItems
+                CRMAddress = allItems
             }
         };
 

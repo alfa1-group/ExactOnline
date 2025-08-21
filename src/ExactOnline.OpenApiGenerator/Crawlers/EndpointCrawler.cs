@@ -4,6 +4,7 @@ using ExactOnline.OpenApiGenerator.Extensions;
 using ExactOnline.OpenApiGenerator.HtmlDocumentLoaders;
 using ExactOnline.OpenApiGenerator.Parsers;
 using HtmlAgilityPack;
+using Humanizer;
 using Microsoft.OpenApi;
 using MonkeyCache.FileStore;
 
@@ -14,7 +15,7 @@ internal class EndpointCrawler
     private const int MaxRetries = 3;
     private static readonly Regex EndpointUriRegex = new(@"\{(\w+)\}", RegexOptions.Compiled);
     private static readonly Regex EndpointUriEdmTypeRegex = new(@"(\w+)=\{([^}]+)\}", RegexOptions.Compiled);
-    private static readonly string[] ReturnsSingleItem = ["SystemSystemMe", "ReadSyncSyncSyncTimestamp"];
+    private static readonly string[] ReturnsSingleItem = ["SystemSystemMe", "ReadSyncSyncSyncTimestamp", "BudgetBudgets"];
 
     private readonly OpenApiDocument _openApiDoc;
     private readonly PuppeteerHtmlLoader _puppeteerHtmlLoader;
@@ -185,9 +186,9 @@ internal class EndpointCrawler
     {
         var docGet = docs[HttpMethod.Get];
 
-        var baseSchemaName = pageUrl.Split("?name=").Last().Trim();
-        var endpointDescription = docGet.DocumentNode.SelectSingleNode("//p[@id='goodToKnow']")?.InnerText.Trim() ?? string.Empty;
+        var baseSchemaName = pageUrl.Split("?name=").Last().Trim().Singularize();
         var isSingleResponse = ReturnsSingleItem.Contains(baseSchemaName);
+        var endpointDescription = docGet.DocumentNode.SelectSingleNode("//p[@id='goodToKnow']")?.InnerText.Trim() ?? string.Empty;
         var (baseEndpointUri, queryParameters) = GetEndpointUriDetails(docGet);
         var isSyncInterface = baseSchemaName.StartsWith("Sync");
         var isGetOnly = docs.Count == 1;

@@ -34,20 +34,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotes
         {
         }
         /// <summary>
-        /// GET ActivitiesCommunicationNotes
+        /// GET ActivitiesCommunicationNote
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotes_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNote_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotes_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotes.CommunicationNotesRequestBuilder.CommunicationNotesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNote_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotes.CommunicationNotesRequestBuilder.CommunicationNotesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotes_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotes.CommunicationNotesRequestBuilder.CommunicationNotesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNote_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotes.CommunicationNotesRequestBuilder.CommunicationNotesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,12 +56,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotes
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotes_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotes_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNote_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNote_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST ActivitiesCommunicationNotes
+        /// POST ActivitiesCommunicationNote
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotesPost_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotePost_Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,11 +69,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotes
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotesPost_Response?> PostAsync(global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotesPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotePost_Response?> PostAsync(global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotePost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotesPost_Response> PostAsync(global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotesPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotePost_Response> PostAsync(global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotePost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -83,10 +83,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotes
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotesPost_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotesPost_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotePost_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotePost_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET ActivitiesCommunicationNotes
+        /// GET ActivitiesCommunicationNote
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,18 +105,18 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotes
             return requestInfo;
         }
         /// <summary>
-        /// POST ActivitiesCommunicationNotes
+        /// POST ActivitiesCommunicationNote
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotesPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotePost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotesPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.ActivitiesCommunicationNotePost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -136,7 +136,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotes
             return new global::ExactOnline.Api.Client.Api.V1.Item.Activities.CommunicationNotes.CommunicationNotesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET ActivitiesCommunicationNotes
+        /// GET ActivitiesCommunicationNote
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CommunicationNotesRequestBuilderGetQueryParameters 

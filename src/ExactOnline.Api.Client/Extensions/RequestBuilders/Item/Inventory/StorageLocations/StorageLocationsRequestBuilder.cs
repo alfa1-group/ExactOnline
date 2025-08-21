@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.StorageLocations;
 
 public partial class StorageLocationsRequestBuilder
 {
-    public async Task<InventoryStorageLocations_Response?> GetAllAsync(Action<RequestConfiguration<StorageLocationsRequestBuilder.StorageLocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventoryStorageLocation_Response?> GetAllAsync(Action<RequestConfiguration<StorageLocationsRequestBuilder.StorageLocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventoryStorageLocationsResults is null)
+        if (response?.D?.InventoryStorageLocationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventoryStorageLocations>();
+        var allItems = new List<InventoryStorageLocation>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventoryStorageLocationsResults?.Results is { } results)
+            if (currentResponse?.D?.InventoryStorageLocationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventoryStorageLocationsResults?.Next;
+            var nextUrl = currentResponse?.D?.InventoryStorageLocationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class StorageLocationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventoryStorageLocations_Response
+        var finalResponse = new InventoryStorageLocation_Response
         {
-            D = new InventoryStorageLocations_Response.InventoryStorageLocations_Response_d
+            D = new InventoryStorageLocation_Response.InventoryStorageLocation_Response_d
             {
-                InventoryStorageLocations = allItems
+                InventoryStorageLocation = allItems
             }
         };
 

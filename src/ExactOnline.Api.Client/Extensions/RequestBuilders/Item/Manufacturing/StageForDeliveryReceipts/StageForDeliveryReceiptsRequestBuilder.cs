@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryRecei
 
 public partial class StageForDeliveryReceiptsRequestBuilder
 {
-    public async Task<ManufacturingStageForDeliveryReceipts_Response?> GetAllAsync(Action<RequestConfiguration<StageForDeliveryReceiptsRequestBuilder.StageForDeliveryReceiptsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingStageForDeliveryReceipt_Response?> GetAllAsync(Action<RequestConfiguration<StageForDeliveryReceiptsRequestBuilder.StageForDeliveryReceiptsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingStageForDeliveryReceiptsResults is null)
+        if (response?.D?.ManufacturingStageForDeliveryReceiptResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingStageForDeliveryReceipts>();
+        var allItems = new List<ManufacturingStageForDeliveryReceipt>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingStageForDeliveryReceiptsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingStageForDeliveryReceiptResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingStageForDeliveryReceiptsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingStageForDeliveryReceiptResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class StageForDeliveryReceiptsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingStageForDeliveryReceipts_Response
+        var finalResponse = new ManufacturingStageForDeliveryReceipt_Response
         {
-            D = new ManufacturingStageForDeliveryReceipts_Response.ManufacturingStageForDeliveryReceipts_Response_d
+            D = new ManufacturingStageForDeliveryReceipt_Response.ManufacturingStageForDeliveryReceipt_Response_d
             {
-                ManufacturingStageForDeliveryReceipts = allItems
+                ManufacturingStageForDeliveryReceipt = allItems
             }
         };
 

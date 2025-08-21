@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.FinancialPeriods;
 
 public partial class FinancialPeriodsRequestBuilder
 {
-    public async Task<FinancialFinancialPeriods_Response?> GetAllAsync(Action<RequestConfiguration<FinancialPeriodsRequestBuilder.FinancialPeriodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialFinancialPeriod_Response?> GetAllAsync(Action<RequestConfiguration<FinancialPeriodsRequestBuilder.FinancialPeriodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialFinancialPeriodsResults is null)
+        if (response?.D?.FinancialFinancialPeriodResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialFinancialPeriods>();
+        var allItems = new List<FinancialFinancialPeriod>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialFinancialPeriodsResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialFinancialPeriodResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialFinancialPeriodsResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialFinancialPeriodResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class FinancialPeriodsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialFinancialPeriods_Response
+        var finalResponse = new FinancialFinancialPeriod_Response
         {
-            D = new FinancialFinancialPeriods_Response.FinancialFinancialPeriods_Response_d
+            D = new FinancialFinancialPeriod_Response.FinancialFinancialPeriod_Response_d
             {
-                FinancialFinancialPeriods = allItems
+                FinancialFinancialPeriod = allItems
             }
         };
 

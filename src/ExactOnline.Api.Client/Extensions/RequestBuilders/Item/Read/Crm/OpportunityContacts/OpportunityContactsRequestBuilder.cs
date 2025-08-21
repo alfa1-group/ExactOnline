@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityContacts;
 
 public partial class OpportunityContactsRequestBuilder
 {
-    public async Task<ReadCRMOpportunityContacts_Response?> GetAllAsync(Action<RequestConfiguration<OpportunityContactsRequestBuilder.OpportunityContactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadCRMOpportunityContact_Response?> GetAllAsync(Action<RequestConfiguration<OpportunityContactsRequestBuilder.OpportunityContactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadCRMOpportunityContactsResults is null)
+        if (response?.D?.ReadCRMOpportunityContactResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadCRMOpportunityContacts>();
+        var allItems = new List<ReadCRMOpportunityContact>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadCRMOpportunityContactsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadCRMOpportunityContactResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadCRMOpportunityContactsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadCRMOpportunityContactResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class OpportunityContactsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadCRMOpportunityContacts_Response
+        var finalResponse = new ReadCRMOpportunityContact_Response
         {
-            D = new ReadCRMOpportunityContacts_Response.ReadCRMOpportunityContacts_Response_d
+            D = new ReadCRMOpportunityContact_Response.ReadCRMOpportunityContact_Response_d
             {
-                ReadCRMOpportunityContacts = allItems
+                ReadCRMOpportunityContact = allItems
             }
         };
 

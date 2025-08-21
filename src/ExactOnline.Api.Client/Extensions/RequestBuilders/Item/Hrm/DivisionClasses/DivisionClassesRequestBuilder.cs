@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClasses;
 
 public partial class DivisionClassesRequestBuilder
 {
-    public async Task<HRMDivisionClasses_Response?> GetAllAsync(Action<RequestConfiguration<DivisionClassesRequestBuilder.DivisionClassesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<HRMDivisionClass_Response?> GetAllAsync(Action<RequestConfiguration<DivisionClassesRequestBuilder.DivisionClassesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.HRMDivisionClassesResults is null)
+        if (response?.D?.HRMDivisionClassResults is null)
         {
             return response;
         }
 
-        var allItems = new List<HRMDivisionClasses>();
+        var allItems = new List<HRMDivisionClass>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.HRMDivisionClassesResults?.Results is { } results)
+            if (currentResponse?.D?.HRMDivisionClassResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.HRMDivisionClassesResults?.Next;
+            var nextUrl = currentResponse?.D?.HRMDivisionClassResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DivisionClassesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new HRMDivisionClasses_Response
+        var finalResponse = new HRMDivisionClass_Response
         {
-            D = new HRMDivisionClasses_Response.HRMDivisionClasses_Response_d
+            D = new HRMDivisionClass_Response.HRMDivisionClass_Response_d
             {
-                HRMDivisionClasses = allItems
+                HRMDivisionClass = allItems
             }
         };
 

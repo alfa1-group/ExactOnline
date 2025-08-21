@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionEmployeeI
 
 public partial class ProjectRestrictionEmployeeItemsRequestBuilder
 {
-    public async Task<ProjectProjectRestrictionEmployeeItems_Response?> GetAllAsync(Action<RequestConfiguration<ProjectRestrictionEmployeeItemsRequestBuilder.ProjectRestrictionEmployeeItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectProjectRestrictionEmployeeItem_Response?> GetAllAsync(Action<RequestConfiguration<ProjectRestrictionEmployeeItemsRequestBuilder.ProjectRestrictionEmployeeItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectProjectRestrictionEmployeeItemsResults is null)
+        if (response?.D?.ProjectProjectRestrictionEmployeeItemResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectProjectRestrictionEmployeeItems>();
+        var allItems = new List<ProjectProjectRestrictionEmployeeItem>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectProjectRestrictionEmployeeItemsResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectProjectRestrictionEmployeeItemResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectProjectRestrictionEmployeeItemsResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectProjectRestrictionEmployeeItemResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectRestrictionEmployeeItemsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectProjectRestrictionEmployeeItems_Response
+        var finalResponse = new ProjectProjectRestrictionEmployeeItem_Response
         {
-            D = new ProjectProjectRestrictionEmployeeItems_Response.ProjectProjectRestrictionEmployeeItems_Response_d
+            D = new ProjectProjectRestrictionEmployeeItem_Response.ProjectProjectRestrictionEmployeeItem_Response_d
             {
-                ProjectProjectRestrictionEmployeeItems = allItems
+                ProjectProjectRestrictionEmployeeItem = allItems
             }
         };
 

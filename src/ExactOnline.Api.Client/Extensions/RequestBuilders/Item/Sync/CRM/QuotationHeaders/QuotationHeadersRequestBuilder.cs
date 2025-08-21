@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.CRM.QuotationHeaders;
 
 public partial class QuotationHeadersRequestBuilder
 {
-    public async Task<SyncCRMQuotationHeaders_Response?> GetAllAsync(Action<RequestConfiguration<QuotationHeadersRequestBuilder.QuotationHeadersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncCRMQuotationHeader_Response?> GetAllAsync(Action<RequestConfiguration<QuotationHeadersRequestBuilder.QuotationHeadersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncCRMQuotationHeadersResults is null)
+        if (response?.D?.SyncCRMQuotationHeaderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncCRMQuotationHeaders>();
+        var allItems = new List<SyncCRMQuotationHeader>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncCRMQuotationHeadersResults?.Results is { } results)
+            if (currentResponse?.D?.SyncCRMQuotationHeaderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncCRMQuotationHeadersResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncCRMQuotationHeaderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class QuotationHeadersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncCRMQuotationHeaders_Response
+        var finalResponse = new SyncCRMQuotationHeader_Response
         {
-            D = new SyncCRMQuotationHeaders_Response.SyncCRMQuotationHeaders_Response_d
+            D = new SyncCRMQuotationHeader_Response.SyncCRMQuotationHeader_Response_d
             {
-                SyncCRMQuotationHeaders = allItems
+                SyncCRMQuotationHeader = allItems
             }
         };
 

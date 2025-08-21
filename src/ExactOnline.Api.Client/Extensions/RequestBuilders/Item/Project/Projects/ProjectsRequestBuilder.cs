@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.Projects;
 
 public partial class ProjectsRequestBuilder
 {
-    public async Task<ProjectProjects_Response?> GetAllAsync(Action<RequestConfiguration<ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectProject_Response?> GetAllAsync(Action<RequestConfiguration<ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectProjectsResults is null)
+        if (response?.D?.ProjectProjectResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectProjects>();
+        var allItems = new List<ProjectProject>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectProjectsResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectProjectResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectProjectsResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectProjectResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectProjects_Response
+        var finalResponse = new ProjectProject_Response
         {
-            D = new ProjectProjects_Response.ProjectProjects_Response_d
+            D = new ProjectProject_Response.ProjectProject_Response_d
             {
-                ProjectProjects = allItems
+                ProjectProject = allItems
             }
         };
 

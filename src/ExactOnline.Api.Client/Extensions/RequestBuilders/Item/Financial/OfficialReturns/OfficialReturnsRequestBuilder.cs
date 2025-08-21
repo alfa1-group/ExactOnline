@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.OfficialReturns;
 
 public partial class OfficialReturnsRequestBuilder
 {
-    public async Task<FinancialOfficialReturns_Response?> GetAllAsync(Action<RequestConfiguration<OfficialReturnsRequestBuilder.OfficialReturnsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialOfficialReturn_Response?> GetAllAsync(Action<RequestConfiguration<OfficialReturnsRequestBuilder.OfficialReturnsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialOfficialReturnsResults is null)
+        if (response?.D?.FinancialOfficialReturnResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialOfficialReturns>();
+        var allItems = new List<FinancialOfficialReturn>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialOfficialReturnsResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialOfficialReturnResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialOfficialReturnsResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialOfficialReturnResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class OfficialReturnsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialOfficialReturns_Response
+        var finalResponse = new FinancialOfficialReturn_Response
         {
-            D = new FinancialOfficialReturns_Response.FinancialOfficialReturns_Response_d
+            D = new FinancialOfficialReturn_Response.FinancialOfficialReturn_Response_d
             {
-                FinancialOfficialReturns = allItems
+                FinancialOfficialReturn = allItems
             }
         };
 

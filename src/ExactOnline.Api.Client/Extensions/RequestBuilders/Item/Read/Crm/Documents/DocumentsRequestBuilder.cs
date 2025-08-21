@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm.Documents;
 
 public partial class DocumentsRequestBuilder
 {
-    public async Task<ReadCRMDocuments_Response?> GetAllAsync(Action<RequestConfiguration<DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadCRMDocument_Response?> GetAllAsync(Action<RequestConfiguration<DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadCRMDocumentsResults is null)
+        if (response?.D?.ReadCRMDocumentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadCRMDocuments>();
+        var allItems = new List<ReadCRMDocument>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadCRMDocumentsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadCRMDocumentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadCRMDocumentsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadCRMDocumentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DocumentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadCRMDocuments_Response
+        var finalResponse = new ReadCRMDocument_Response
         {
-            D = new ReadCRMDocuments_Response.ReadCRMDocuments_Response_d
+            D = new ReadCRMDocument_Response.ReadCRMDocument_Response_d
             {
-                ReadCRMDocuments = allItems
+                ReadCRMDocument = allItems
             }
         };
 

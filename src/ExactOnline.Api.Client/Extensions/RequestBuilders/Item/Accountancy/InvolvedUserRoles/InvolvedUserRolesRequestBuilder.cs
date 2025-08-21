@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.InvolvedUserRoles;
 
 public partial class InvolvedUserRolesRequestBuilder
 {
-    public async Task<AccountancyInvolvedUserRoles_Response?> GetAllAsync(Action<RequestConfiguration<InvolvedUserRolesRequestBuilder.InvolvedUserRolesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<AccountancyInvolvedUserRole_Response?> GetAllAsync(Action<RequestConfiguration<InvolvedUserRolesRequestBuilder.InvolvedUserRolesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.AccountancyInvolvedUserRolesResults is null)
+        if (response?.D?.AccountancyInvolvedUserRoleResults is null)
         {
             return response;
         }
 
-        var allItems = new List<AccountancyInvolvedUserRoles>();
+        var allItems = new List<AccountancyInvolvedUserRole>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.AccountancyInvolvedUserRolesResults?.Results is { } results)
+            if (currentResponse?.D?.AccountancyInvolvedUserRoleResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.AccountancyInvolvedUserRolesResults?.Next;
+            var nextUrl = currentResponse?.D?.AccountancyInvolvedUserRoleResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class InvolvedUserRolesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new AccountancyInvolvedUserRoles_Response
+        var finalResponse = new AccountancyInvolvedUserRole_Response
         {
-            D = new AccountancyInvolvedUserRoles_Response.AccountancyInvolvedUserRoles_Response_d
+            D = new AccountancyInvolvedUserRole_Response.AccountancyInvolvedUserRole_Response_d
             {
-                AccountancyInvolvedUserRoles = allItems
+                AccountancyInvolvedUserRole = allItems
             }
         };
 

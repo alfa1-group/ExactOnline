@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.Costcenters;
 
 public partial class CostcentersRequestBuilder
 {
-    public async Task<HRMCostcenters_Response?> GetAllAsync(Action<RequestConfiguration<CostcentersRequestBuilder.CostcentersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<HRMCostcenter_Response?> GetAllAsync(Action<RequestConfiguration<CostcentersRequestBuilder.CostcentersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.HRMCostcentersResults is null)
+        if (response?.D?.HRMCostcenterResults is null)
         {
             return response;
         }
 
-        var allItems = new List<HRMCostcenters>();
+        var allItems = new List<HRMCostcenter>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.HRMCostcentersResults?.Results is { } results)
+            if (currentResponse?.D?.HRMCostcenterResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.HRMCostcentersResults?.Next;
+            var nextUrl = currentResponse?.D?.HRMCostcenterResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class CostcentersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new HRMCostcenters_Response
+        var finalResponse = new HRMCostcenter_Response
         {
-            D = new HRMCostcenters_Response.HRMCostcenters_Response_d
+            D = new HRMCostcenter_Response.HRMCostcenter_Response_d
             {
-                HRMCostcenters = allItems
+                HRMCostcenter = allItems
             }
         };
 

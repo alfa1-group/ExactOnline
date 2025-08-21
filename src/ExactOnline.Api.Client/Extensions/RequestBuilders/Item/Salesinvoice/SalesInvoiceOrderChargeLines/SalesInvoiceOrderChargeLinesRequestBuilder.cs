@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceOrderCharg
 
 public partial class SalesInvoiceOrderChargeLinesRequestBuilder
 {
-    public async Task<SalesInvoiceSalesInvoiceOrderChargeLines_Response?> GetAllAsync(Action<RequestConfiguration<SalesInvoiceOrderChargeLinesRequestBuilder.SalesInvoiceOrderChargeLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesInvoiceSalesInvoiceOrderChargeLine_Response?> GetAllAsync(Action<RequestConfiguration<SalesInvoiceOrderChargeLinesRequestBuilder.SalesInvoiceOrderChargeLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesInvoiceSalesInvoiceOrderChargeLinesResults is null)
+        if (response?.D?.SalesInvoiceSalesInvoiceOrderChargeLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesInvoiceSalesInvoiceOrderChargeLines>();
+        var allItems = new List<SalesInvoiceSalesInvoiceOrderChargeLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesInvoiceSalesInvoiceOrderChargeLinesResults?.Results is { } results)
+            if (currentResponse?.D?.SalesInvoiceSalesInvoiceOrderChargeLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesInvoiceSalesInvoiceOrderChargeLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesInvoiceSalesInvoiceOrderChargeLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesInvoiceOrderChargeLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesInvoiceSalesInvoiceOrderChargeLines_Response
+        var finalResponse = new SalesInvoiceSalesInvoiceOrderChargeLine_Response
         {
-            D = new SalesInvoiceSalesInvoiceOrderChargeLines_Response.SalesInvoiceSalesInvoiceOrderChargeLines_Response_d
+            D = new SalesInvoiceSalesInvoiceOrderChargeLine_Response.SalesInvoiceSalesInvoiceOrderChargeLine_Response_d
             {
-                SalesInvoiceSalesInvoiceOrderChargeLines = allItems
+                SalesInvoiceSalesInvoiceOrderChargeLine = allItems
             }
         };
 

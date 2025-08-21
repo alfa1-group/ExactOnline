@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveryLines;
 
 public partial class GoodsDeliveryLinesRequestBuilder
 {
-    public async Task<SalesOrderGoodsDeliveryLines_Response?> GetAllAsync(Action<RequestConfiguration<GoodsDeliveryLinesRequestBuilder.GoodsDeliveryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesOrderGoodsDeliveryLine_Response?> GetAllAsync(Action<RequestConfiguration<GoodsDeliveryLinesRequestBuilder.GoodsDeliveryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesOrderGoodsDeliveryLinesResults is null)
+        if (response?.D?.SalesOrderGoodsDeliveryLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesOrderGoodsDeliveryLines>();
+        var allItems = new List<SalesOrderGoodsDeliveryLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesOrderGoodsDeliveryLinesResults?.Results is { } results)
+            if (currentResponse?.D?.SalesOrderGoodsDeliveryLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesOrderGoodsDeliveryLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesOrderGoodsDeliveryLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GoodsDeliveryLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesOrderGoodsDeliveryLines_Response
+        var finalResponse = new SalesOrderGoodsDeliveryLine_Response
         {
-            D = new SalesOrderGoodsDeliveryLines_Response.SalesOrderGoodsDeliveryLines_Response_d
+            D = new SalesOrderGoodsDeliveryLine_Response.SalesOrderGoodsDeliveryLine_Response_d
             {
-                SalesOrderGoodsDeliveryLines = allItems
+                SalesOrderGoodsDeliveryLine = allItems
             }
         };
 

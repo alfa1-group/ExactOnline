@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities.Complaints;
 
 public partial class ComplaintsRequestBuilder
 {
-    public async Task<ActivitiesComplaints_Response?> GetAllAsync(Action<RequestConfiguration<ComplaintsRequestBuilder.ComplaintsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ActivitiesComplaint_Response?> GetAllAsync(Action<RequestConfiguration<ComplaintsRequestBuilder.ComplaintsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ActivitiesComplaintsResults is null)
+        if (response?.D?.ActivitiesComplaintResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ActivitiesComplaints>();
+        var allItems = new List<ActivitiesComplaint>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ActivitiesComplaintsResults?.Results is { } results)
+            if (currentResponse?.D?.ActivitiesComplaintResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ActivitiesComplaintsResults?.Next;
+            var nextUrl = currentResponse?.D?.ActivitiesComplaintResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ComplaintsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ActivitiesComplaints_Response
+        var finalResponse = new ActivitiesComplaint_Response
         {
-            D = new ActivitiesComplaints_Response.ActivitiesComplaints_Response_d
+            D = new ActivitiesComplaint_Response.ActivitiesComplaint_Response_d
             {
-                ActivitiesComplaints = allItems
+                ActivitiesComplaint = allItems
             }
         };
 

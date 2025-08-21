@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccount
 
 public partial class HourEntryRecentAccountsRequestBuilder
 {
-    public async Task<ReadProjectHourEntryRecentAccounts_Response?> GetAllAsync(Action<RequestConfiguration<HourEntryRecentAccountsRequestBuilder.HourEntryRecentAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectHourEntryRecentAccount_Response?> GetAllAsync(Action<RequestConfiguration<HourEntryRecentAccountsRequestBuilder.HourEntryRecentAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectHourEntryRecentAccountsResults is null)
+        if (response?.D?.ReadProjectHourEntryRecentAccountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectHourEntryRecentAccounts>();
+        var allItems = new List<ReadProjectHourEntryRecentAccount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectHourEntryRecentAccountsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectHourEntryRecentAccountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectHourEntryRecentAccountsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectHourEntryRecentAccountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class HourEntryRecentAccountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectHourEntryRecentAccounts_Response
+        var finalResponse = new ReadProjectHourEntryRecentAccount_Response
         {
-            D = new ReadProjectHourEntryRecentAccounts_Response.ReadProjectHourEntryRecentAccounts_Response_d
+            D = new ReadProjectHourEntryRecentAccount_Response.ReadProjectHourEntryRecentAccount_Response_d
             {
-                ReadProjectHourEntryRecentAccounts = allItems
+                ReadProjectHourEntryRecentAccount = allItems
             }
         };
 

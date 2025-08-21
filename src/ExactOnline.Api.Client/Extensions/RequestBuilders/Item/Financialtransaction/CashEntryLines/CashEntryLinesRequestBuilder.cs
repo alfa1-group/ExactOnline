@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntryLines
 
 public partial class CashEntryLinesRequestBuilder
 {
-    public async Task<FinancialTransactionCashEntryLines_Response?> GetAllAsync(Action<RequestConfiguration<CashEntryLinesRequestBuilder.CashEntryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialTransactionCashEntryLine_Response?> GetAllAsync(Action<RequestConfiguration<CashEntryLinesRequestBuilder.CashEntryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialTransactionCashEntryLinesResults is null)
+        if (response?.D?.FinancialTransactionCashEntryLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialTransactionCashEntryLines>();
+        var allItems = new List<FinancialTransactionCashEntryLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialTransactionCashEntryLinesResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialTransactionCashEntryLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialTransactionCashEntryLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialTransactionCashEntryLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class CashEntryLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialTransactionCashEntryLines_Response
+        var finalResponse = new FinancialTransactionCashEntryLine_Response
         {
-            D = new FinancialTransactionCashEntryLines_Response.FinancialTransactionCashEntryLines_Response_d
+            D = new FinancialTransactionCashEntryLine_Response.FinancialTransactionCashEntryLine_Response_d
             {
-                FinancialTransactionCashEntryLines = allItems
+                FinancialTransactionCashEntryLine = allItems
             }
         };
 

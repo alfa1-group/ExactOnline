@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.Items;
 
 public partial class ItemsRequestBuilder
 {
-    public async Task<SyncLogisticsItems_Response?> GetAllAsync(Action<RequestConfiguration<ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncLogisticsItem_Response?> GetAllAsync(Action<RequestConfiguration<ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncLogisticsItemsResults is null)
+        if (response?.D?.SyncLogisticsItemResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncLogisticsItems>();
+        var allItems = new List<SyncLogisticsItem>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncLogisticsItemsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncLogisticsItemResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncLogisticsItemsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncLogisticsItemResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ItemsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncLogisticsItems_Response
+        var finalResponse = new SyncLogisticsItem_Response
         {
-            D = new SyncLogisticsItems_Response.SyncLogisticsItems_Response_d
+            D = new SyncLogisticsItem_Response.SyncLogisticsItem_Response_d
             {
-                SyncLogisticsItems = allItems
+                SyncLogisticsItem = allItems
             }
         };
 

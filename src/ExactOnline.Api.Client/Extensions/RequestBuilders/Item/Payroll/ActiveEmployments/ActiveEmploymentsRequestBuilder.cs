@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.ActiveEmployments;
 
 public partial class ActiveEmploymentsRequestBuilder
 {
-    public async Task<PayrollActiveEmployments_Response?> GetAllAsync(Action<RequestConfiguration<ActiveEmploymentsRequestBuilder.ActiveEmploymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PayrollActiveEmployment_Response?> GetAllAsync(Action<RequestConfiguration<ActiveEmploymentsRequestBuilder.ActiveEmploymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PayrollActiveEmploymentsResults is null)
+        if (response?.D?.PayrollActiveEmploymentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PayrollActiveEmployments>();
+        var allItems = new List<PayrollActiveEmployment>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PayrollActiveEmploymentsResults?.Results is { } results)
+            if (currentResponse?.D?.PayrollActiveEmploymentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PayrollActiveEmploymentsResults?.Next;
+            var nextUrl = currentResponse?.D?.PayrollActiveEmploymentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ActiveEmploymentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PayrollActiveEmployments_Response
+        var finalResponse = new PayrollActiveEmployment_Response
         {
-            D = new PayrollActiveEmployments_Response.PayrollActiveEmployments_Response_d
+            D = new PayrollActiveEmployment_Response.PayrollActiveEmployment_Response_d
             {
-                PayrollActiveEmployments = allItems
+                PayrollActiveEmployment = allItems
             }
         };
 

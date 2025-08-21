@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Payroll.BankAccounts;
 
 public partial class BankAccountsRequestBuilder
 {
-    public async Task<SyncPayrollBankAccounts_Response?> GetAllAsync(Action<RequestConfiguration<BankAccountsRequestBuilder.BankAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncPayrollBankAccount_Response?> GetAllAsync(Action<RequestConfiguration<BankAccountsRequestBuilder.BankAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncPayrollBankAccountsResults is null)
+        if (response?.D?.SyncPayrollBankAccountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncPayrollBankAccounts>();
+        var allItems = new List<SyncPayrollBankAccount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncPayrollBankAccountsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncPayrollBankAccountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncPayrollBankAccountsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncPayrollBankAccountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class BankAccountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncPayrollBankAccounts_Response
+        var finalResponse = new SyncPayrollBankAccount_Response
         {
-            D = new SyncPayrollBankAccounts_Response.SyncPayrollBankAccounts_Response_d
+            D = new SyncPayrollBankAccount_Response.SyncPayrollBankAccount_Response_d
             {
-                SyncPayrollBankAccounts = allItems
+                SyncPayrollBankAccount = allItems
             }
         };
 

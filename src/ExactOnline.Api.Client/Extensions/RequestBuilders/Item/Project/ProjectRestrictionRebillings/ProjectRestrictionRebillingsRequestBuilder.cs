@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionRebilling
 
 public partial class ProjectRestrictionRebillingsRequestBuilder
 {
-    public async Task<ProjectProjectRestrictionRebillings_Response?> GetAllAsync(Action<RequestConfiguration<ProjectRestrictionRebillingsRequestBuilder.ProjectRestrictionRebillingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectProjectRestrictionRebilling_Response?> GetAllAsync(Action<RequestConfiguration<ProjectRestrictionRebillingsRequestBuilder.ProjectRestrictionRebillingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectProjectRestrictionRebillingsResults is null)
+        if (response?.D?.ProjectProjectRestrictionRebillingResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectProjectRestrictionRebillings>();
+        var allItems = new List<ProjectProjectRestrictionRebilling>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectProjectRestrictionRebillingsResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectProjectRestrictionRebillingResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectProjectRestrictionRebillingsResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectProjectRestrictionRebillingResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectRestrictionRebillingsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectProjectRestrictionRebillings_Response
+        var finalResponse = new ProjectProjectRestrictionRebilling_Response
         {
-            D = new ProjectProjectRestrictionRebillings_Response.ProjectProjectRestrictionRebillings_Response_d
+            D = new ProjectProjectRestrictionRebilling_Response.ProjectProjectRestrictionRebilling_Response_d
             {
-                ProjectProjectRestrictionRebillings = allItems
+                ProjectProjectRestrictionRebilling = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.InvolvedUsers;
 
 public partial class InvolvedUsersRequestBuilder
 {
-    public async Task<AccountancyInvolvedUsers_Response?> GetAllAsync(Action<RequestConfiguration<InvolvedUsersRequestBuilder.InvolvedUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<AccountancyInvolvedUser_Response?> GetAllAsync(Action<RequestConfiguration<InvolvedUsersRequestBuilder.InvolvedUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.AccountancyInvolvedUsersResults is null)
+        if (response?.D?.AccountancyInvolvedUserResults is null)
         {
             return response;
         }
 
-        var allItems = new List<AccountancyInvolvedUsers>();
+        var allItems = new List<AccountancyInvolvedUser>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.AccountancyInvolvedUsersResults?.Results is { } results)
+            if (currentResponse?.D?.AccountancyInvolvedUserResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.AccountancyInvolvedUsersResults?.Next;
+            var nextUrl = currentResponse?.D?.AccountancyInvolvedUserResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class InvolvedUsersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new AccountancyInvolvedUsers_Response
+        var finalResponse = new AccountancyInvolvedUser_Response
         {
-            D = new AccountancyInvolvedUsers_Response.AccountancyInvolvedUsers_Response_d
+            D = new AccountancyInvolvedUser_Response.AccountancyInvolvedUser_Response_d
             {
-                AccountancyInvolvedUsers = allItems
+                AccountancyInvolvedUser = allItems
             }
         };
 

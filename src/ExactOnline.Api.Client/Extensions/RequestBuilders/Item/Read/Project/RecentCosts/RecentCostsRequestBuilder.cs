@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCosts;
 
 public partial class RecentCostsRequestBuilder
 {
-    public async Task<ReadProjectRecentCosts_Response?> GetAllAsync(Action<RequestConfiguration<RecentCostsRequestBuilder.RecentCostsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectRecentCost_Response?> GetAllAsync(Action<RequestConfiguration<RecentCostsRequestBuilder.RecentCostsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectRecentCostsResults is null)
+        if (response?.D?.ReadProjectRecentCostResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectRecentCosts>();
+        var allItems = new List<ReadProjectRecentCost>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectRecentCostsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectRecentCostResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectRecentCostsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectRecentCostResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class RecentCostsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectRecentCosts_Response
+        var finalResponse = new ReadProjectRecentCost_Response
         {
-            D = new ReadProjectRecentCosts_Response.ReadProjectRecentCosts_Response_d
+            D = new ReadProjectRecentCost_Response.ReadProjectRecentCost_Response_d
             {
-                ReadProjectRecentCosts = allItems
+                ReadProjectRecentCost = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.AccountItems;
 
 public partial class AccountItemsRequestBuilder
 {
-    public async Task<ReadLogisticsAccountItems_Response?> GetAllAsync(Action<RequestConfiguration<AccountItemsRequestBuilder.AccountItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadLogisticsAccountItem_Response?> GetAllAsync(Action<RequestConfiguration<AccountItemsRequestBuilder.AccountItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadLogisticsAccountItemsResults is null)
+        if (response?.D?.ReadLogisticsAccountItemResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadLogisticsAccountItems>();
+        var allItems = new List<ReadLogisticsAccountItem>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadLogisticsAccountItemsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadLogisticsAccountItemResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadLogisticsAccountItemsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadLogisticsAccountItemResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AccountItemsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadLogisticsAccountItems_Response
+        var finalResponse = new ReadLogisticsAccountItem_Response
         {
-            D = new ReadLogisticsAccountItems_Response.ReadLogisticsAccountItems_Response_d
+            D = new ReadLogisticsAccountItem_Response.ReadLogisticsAccountItem_Response_d
             {
-                ReadLogisticsAccountItems = allItems
+                ReadLogisticsAccountItem = allItems
             }
         };
 

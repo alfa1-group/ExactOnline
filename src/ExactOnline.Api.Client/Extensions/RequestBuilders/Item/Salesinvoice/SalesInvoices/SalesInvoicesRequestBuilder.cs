@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoices;
 
 public partial class SalesInvoicesRequestBuilder
 {
-    public async Task<SalesInvoiceSalesInvoices_Response?> GetAllAsync(Action<RequestConfiguration<SalesInvoicesRequestBuilder.SalesInvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesInvoiceSalesInvoice_Response?> GetAllAsync(Action<RequestConfiguration<SalesInvoicesRequestBuilder.SalesInvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesInvoiceSalesInvoicesResults is null)
+        if (response?.D?.SalesInvoiceSalesInvoiceResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesInvoiceSalesInvoices>();
+        var allItems = new List<SalesInvoiceSalesInvoice>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesInvoiceSalesInvoicesResults?.Results is { } results)
+            if (currentResponse?.D?.SalesInvoiceSalesInvoiceResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesInvoiceSalesInvoicesResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesInvoiceSalesInvoiceResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesInvoicesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesInvoiceSalesInvoices_Response
+        var finalResponse = new SalesInvoiceSalesInvoice_Response
         {
-            D = new SalesInvoiceSalesInvoices_Response.SalesInvoiceSalesInvoices_Response_d
+            D = new SalesInvoiceSalesInvoice_Response.SalesInvoiceSalesInvoice_Response_d
             {
-                SalesInvoiceSalesInvoices = allItems
+                SalesInvoiceSalesInvoice = allItems
             }
         };
 

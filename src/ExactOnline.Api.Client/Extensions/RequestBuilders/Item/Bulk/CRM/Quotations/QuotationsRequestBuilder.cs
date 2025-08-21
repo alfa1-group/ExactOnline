@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.Quotations;
 
 public partial class QuotationsRequestBuilder
 {
-    public async Task<BulkCRMQuotations_Response?> GetAllAsync(Action<RequestConfiguration<QuotationsRequestBuilder.QuotationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkCRMQuotation_Response?> GetAllAsync(Action<RequestConfiguration<QuotationsRequestBuilder.QuotationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkCRMQuotationsResults is null)
+        if (response?.D?.BulkCRMQuotationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkCRMQuotations>();
+        var allItems = new List<BulkCRMQuotation>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkCRMQuotationsResults?.Results is { } results)
+            if (currentResponse?.D?.BulkCRMQuotationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkCRMQuotationsResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkCRMQuotationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class QuotationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkCRMQuotations_Response
+        var finalResponse = new BulkCRMQuotation_Response
         {
-            D = new BulkCRMQuotations_Response.BulkCRMQuotations_Response_d
+            D = new BulkCRMQuotation_Response.BulkCRMQuotation_Response_d
             {
-                BulkCRMQuotations = allItems
+                BulkCRMQuotation = allItems
             }
         };
 

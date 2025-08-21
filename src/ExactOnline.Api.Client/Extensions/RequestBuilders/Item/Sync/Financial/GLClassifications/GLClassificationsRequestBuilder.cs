@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Financial.GLClassifications;
 
 public partial class GLClassificationsRequestBuilder
 {
-    public async Task<SyncFinancialGLClassifications_Response?> GetAllAsync(Action<RequestConfiguration<GLClassificationsRequestBuilder.GLClassificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncFinancialGLClassification_Response?> GetAllAsync(Action<RequestConfiguration<GLClassificationsRequestBuilder.GLClassificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncFinancialGLClassificationsResults is null)
+        if (response?.D?.SyncFinancialGLClassificationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncFinancialGLClassifications>();
+        var allItems = new List<SyncFinancialGLClassification>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncFinancialGLClassificationsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncFinancialGLClassificationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncFinancialGLClassificationsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncFinancialGLClassificationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GLClassificationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncFinancialGLClassifications_Response
+        var finalResponse = new SyncFinancialGLClassification_Response
         {
-            D = new SyncFinancialGLClassifications_Response.SyncFinancialGLClassifications_Response_d
+            D = new SyncFinancialGLClassification_Response.SyncFinancialGLClassification_Response_d
             {
-                SyncFinancialGLClassifications = allItems
+                SyncFinancialGLClassification = allItems
             }
         };
 

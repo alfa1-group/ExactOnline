@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.General.Currencies;
 
 public partial class CurrenciesRequestBuilder
 {
-    public async Task<GeneralCurrencies_Response?> GetAllAsync(Action<RequestConfiguration<CurrenciesRequestBuilder.CurrenciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<GeneralCurrency_Response?> GetAllAsync(Action<RequestConfiguration<CurrenciesRequestBuilder.CurrenciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.GeneralCurrenciesResults is null)
+        if (response?.D?.GeneralCurrencyResults is null)
         {
             return response;
         }
 
-        var allItems = new List<GeneralCurrencies>();
+        var allItems = new List<GeneralCurrency>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.GeneralCurrenciesResults?.Results is { } results)
+            if (currentResponse?.D?.GeneralCurrencyResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.GeneralCurrenciesResults?.Next;
+            var nextUrl = currentResponse?.D?.GeneralCurrencyResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class CurrenciesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new GeneralCurrencies_Response
+        var finalResponse = new GeneralCurrency_Response
         {
-            D = new GeneralCurrencies_Response.GeneralCurrencies_Response_d
+            D = new GeneralCurrency_Response.GeneralCurrency_Response_d
             {
-                GeneralCurrencies = allItems
+                GeneralCurrency = allItems
             }
         };
 

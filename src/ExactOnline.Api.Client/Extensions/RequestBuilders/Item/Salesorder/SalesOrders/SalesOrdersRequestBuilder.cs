@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrders;
 
 public partial class SalesOrdersRequestBuilder
 {
-    public async Task<SalesOrderSalesOrders_Response?> GetAllAsync(Action<RequestConfiguration<SalesOrdersRequestBuilder.SalesOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesOrderSalesOrder_Response?> GetAllAsync(Action<RequestConfiguration<SalesOrdersRequestBuilder.SalesOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesOrderSalesOrdersResults is null)
+        if (response?.D?.SalesOrderSalesOrderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesOrderSalesOrders>();
+        var allItems = new List<SalesOrderSalesOrder>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesOrderSalesOrdersResults?.Results is { } results)
+            if (currentResponse?.D?.SalesOrderSalesOrderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesOrderSalesOrdersResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesOrderSalesOrderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesOrdersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesOrderSalesOrders_Response
+        var finalResponse = new SalesOrderSalesOrder_Response
         {
-            D = new SalesOrderSalesOrders_Response.SalesOrderSalesOrders_Response_d
+            D = new SalesOrderSalesOrder_Response.SalesOrderSalesOrder_Response_d
             {
-                SalesOrderSalesOrders = allItems
+                SalesOrderSalesOrder = allItems
             }
         };
 

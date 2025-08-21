@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTyp
 
 public partial class CostEntryRecentCostTypesRequestBuilder
 {
-    public async Task<ReadProjectCostEntryRecentCostTypes_Response?> GetAllAsync(Action<RequestConfiguration<CostEntryRecentCostTypesRequestBuilder.CostEntryRecentCostTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectCostEntryRecentCostType_Response?> GetAllAsync(Action<RequestConfiguration<CostEntryRecentCostTypesRequestBuilder.CostEntryRecentCostTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectCostEntryRecentCostTypesResults is null)
+        if (response?.D?.ReadProjectCostEntryRecentCostTypeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectCostEntryRecentCostTypes>();
+        var allItems = new List<ReadProjectCostEntryRecentCostType>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectCostEntryRecentCostTypesResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectCostEntryRecentCostTypeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectCostEntryRecentCostTypesResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectCostEntryRecentCostTypeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class CostEntryRecentCostTypesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectCostEntryRecentCostTypes_Response
+        var finalResponse = new ReadProjectCostEntryRecentCostType_Response
         {
-            D = new ReadProjectCostEntryRecentCostTypes_Response.ReadProjectCostEntryRecentCostTypes_Response_d
+            D = new ReadProjectCostEntryRecentCostType_Response.ReadProjectCostEntryRecentCostType_Response_d
             {
-                ReadProjectCostEntryRecentCostTypes = allItems
+                ReadProjectCostEntryRecentCostType = allItems
             }
         };
 

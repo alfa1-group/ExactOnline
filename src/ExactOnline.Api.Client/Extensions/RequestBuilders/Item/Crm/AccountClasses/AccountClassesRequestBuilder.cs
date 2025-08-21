@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClasses;
 
 public partial class AccountClassesRequestBuilder
 {
-    public async Task<CRMAccountClasses_Response?> GetAllAsync(Action<RequestConfiguration<AccountClassesRequestBuilder.AccountClassesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMAccountClass_Response?> GetAllAsync(Action<RequestConfiguration<AccountClassesRequestBuilder.AccountClassesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMAccountClassesResults is null)
+        if (response?.D?.CRMAccountClassResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMAccountClasses>();
+        var allItems = new List<CRMAccountClass>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMAccountClassesResults?.Results is { } results)
+            if (currentResponse?.D?.CRMAccountClassResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMAccountClassesResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMAccountClassResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AccountClassesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMAccountClasses_Response
+        var finalResponse = new CRMAccountClass_Response
         {
-            D = new CRMAccountClasses_Response.CRMAccountClasses_Response_d
+            D = new CRMAccountClass_Response.CRMAccountClass_Response_d
             {
-                CRMAccountClasses = allItems
+                CRMAccountClass = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.WBSDeliverables;
 
 public partial class WBSDeliverablesRequestBuilder
 {
-    public async Task<ProjectWBSDeliverables_Response?> GetAllAsync(Action<RequestConfiguration<WBSDeliverablesRequestBuilder.WBSDeliverablesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectWBSDeliverable_Response?> GetAllAsync(Action<RequestConfiguration<WBSDeliverablesRequestBuilder.WBSDeliverablesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectWBSDeliverablesResults is null)
+        if (response?.D?.ProjectWBSDeliverableResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectWBSDeliverables>();
+        var allItems = new List<ProjectWBSDeliverable>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectWBSDeliverablesResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectWBSDeliverableResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectWBSDeliverablesResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectWBSDeliverableResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class WBSDeliverablesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectWBSDeliverables_Response
+        var finalResponse = new ProjectWBSDeliverable_Response
         {
-            D = new ProjectWBSDeliverables_Response.ProjectWBSDeliverables_Response_d
+            D = new ProjectWBSDeliverable_Response.ProjectWBSDeliverable_Response_d
             {
-                ProjectWBSDeliverables = allItems
+                ProjectWBSDeliverable = allItems
             }
         };
 

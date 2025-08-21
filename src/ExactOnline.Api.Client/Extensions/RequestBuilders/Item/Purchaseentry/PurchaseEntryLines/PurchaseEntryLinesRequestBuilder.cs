@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseentry.PurchaseEntryLines;
 
 public partial class PurchaseEntryLinesRequestBuilder
 {
-    public async Task<PurchaseEntryPurchaseEntryLines_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseEntryLinesRequestBuilder.PurchaseEntryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PurchaseEntryPurchaseEntryLine_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseEntryLinesRequestBuilder.PurchaseEntryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PurchaseEntryPurchaseEntryLinesResults is null)
+        if (response?.D?.PurchaseEntryPurchaseEntryLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PurchaseEntryPurchaseEntryLines>();
+        var allItems = new List<PurchaseEntryPurchaseEntryLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PurchaseEntryPurchaseEntryLinesResults?.Results is { } results)
+            if (currentResponse?.D?.PurchaseEntryPurchaseEntryLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PurchaseEntryPurchaseEntryLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.PurchaseEntryPurchaseEntryLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PurchaseEntryLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PurchaseEntryPurchaseEntryLines_Response
+        var finalResponse = new PurchaseEntryPurchaseEntryLine_Response
         {
-            D = new PurchaseEntryPurchaseEntryLines_Response.PurchaseEntryPurchaseEntryLines_Response_d
+            D = new PurchaseEntryPurchaseEntryLine_Response.PurchaseEntryPurchaseEntryLine_Response_d
             {
-                PurchaseEntryPurchaseEntryLines = allItems
+                PurchaseEntryPurchaseEntryLine = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentProject
 
 public partial class HourEntryRecentProjectsRequestBuilder
 {
-    public async Task<ReadProjectHourEntryRecentProjects_Response?> GetAllAsync(Action<RequestConfiguration<HourEntryRecentProjectsRequestBuilder.HourEntryRecentProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectHourEntryRecentProject_Response?> GetAllAsync(Action<RequestConfiguration<HourEntryRecentProjectsRequestBuilder.HourEntryRecentProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectHourEntryRecentProjectsResults is null)
+        if (response?.D?.ReadProjectHourEntryRecentProjectResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectHourEntryRecentProjects>();
+        var allItems = new List<ReadProjectHourEntryRecentProject>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectHourEntryRecentProjectsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectHourEntryRecentProjectResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectHourEntryRecentProjectsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectHourEntryRecentProjectResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class HourEntryRecentProjectsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectHourEntryRecentProjects_Response
+        var finalResponse = new ReadProjectHourEntryRecentProject_Response
         {
-            D = new ReadProjectHourEntryRecentProjects_Response.ReadProjectHourEntryRecentProjects_Response_d
+            D = new ReadProjectHourEntryRecentProject_Response.ReadProjectHourEntryRecentProject_Response_d
             {
-                ReadProjectHourEntryRecentProjects = allItems
+                ReadProjectHourEntryRecentProject = allItems
             }
         };
 

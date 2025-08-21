@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.Opportunities;
 
 public partial class OpportunitiesRequestBuilder
 {
-    public async Task<CRMOpportunities_Response?> GetAllAsync(Action<RequestConfiguration<OpportunitiesRequestBuilder.OpportunitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMOpportunity_Response?> GetAllAsync(Action<RequestConfiguration<OpportunitiesRequestBuilder.OpportunitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMOpportunitiesResults is null)
+        if (response?.D?.CRMOpportunityResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMOpportunities>();
+        var allItems = new List<CRMOpportunity>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMOpportunitiesResults?.Results is { } results)
+            if (currentResponse?.D?.CRMOpportunityResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMOpportunitiesResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMOpportunityResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class OpportunitiesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMOpportunities_Response
+        var finalResponse = new CRMOpportunity_Response
         {
-            D = new CRMOpportunities_Response.CRMOpportunities_Response_d
+            D = new CRMOpportunity_Response.CRMOpportunity_Response_d
             {
-                CRMOpportunities = allItems
+                CRMOpportunity = allItems
             }
         };
 

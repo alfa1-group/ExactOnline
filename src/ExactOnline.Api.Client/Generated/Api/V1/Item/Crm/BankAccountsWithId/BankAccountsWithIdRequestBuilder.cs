@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId.BankAccountsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (uuid) of the CRMBankAccounts</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMBankAccount</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public BankAccountsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/crm/BankAccounts(guid'{id}')", pathParameters)
@@ -36,7 +36,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId
         {
         }
         /// <summary>
-        /// DELETE CRMBankAccounts
+        /// DELETE CRMBankAccount
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,20 +60,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET CRMBankAccounts
+        /// GET CRMBankAccount
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.CRMBankAccountsGet_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.CRMBankAccountGet_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.CRMBankAccountsGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.CRMBankAccountGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.CRMBankAccountsGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.CRMBankAccountGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -82,10 +82,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.CRMBankAccountsGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.CRMBankAccountsGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.CRMBankAccountGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.CRMBankAccountGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// PUT CRMBankAccounts
+        /// PUT CRMBankAccount
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,11 +94,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PutAsync(global::ExactOnline.Api.Client.Models.CRMBankAccountsPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PutAsync(global::ExactOnline.Api.Client.Models.CRMBankAccountPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PutAsync(global::ExactOnline.Api.Client.Models.CRMBankAccountsPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PutAsync(global::ExactOnline.Api.Client.Models.CRMBankAccountPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -111,7 +111,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// DELETE CRMBankAccounts
+        /// DELETE CRMBankAccount
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId
             return requestInfo;
         }
         /// <summary>
-        /// GET CRMBankAccounts
+        /// GET CRMBankAccount
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,18 +149,18 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId
             return requestInfo;
         }
         /// <summary>
-        /// PUT CRMBankAccounts
+        /// PUT CRMBankAccount
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.CRMBankAccountsPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.CRMBankAccountPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.CRMBankAccountsPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.CRMBankAccountPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

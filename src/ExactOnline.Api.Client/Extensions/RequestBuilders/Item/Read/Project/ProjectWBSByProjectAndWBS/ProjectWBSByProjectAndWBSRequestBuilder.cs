@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectAnd
 
 public partial class ProjectWBSByProjectAndWBSRequestBuilder
 {
-    public async Task<ReadProjectProjectWBSByProjectAndWBS_Response?> GetAllAsync(Action<RequestConfiguration<ProjectWBSByProjectAndWBSRequestBuilder.ProjectWBSByProjectAndWBSRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectProjectWBSByProjectAndWB_Response?> GetAllAsync(Action<RequestConfiguration<ProjectWBSByProjectAndWBSRequestBuilder.ProjectWBSByProjectAndWBSRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectProjectWBSByProjectAndWBSResults is null)
+        if (response?.D?.ReadProjectProjectWBSByProjectAndWBResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectProjectWBSByProjectAndWBS>();
+        var allItems = new List<ReadProjectProjectWBSByProjectAndWB>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectProjectWBSByProjectAndWBSResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectProjectWBSByProjectAndWBResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectProjectWBSByProjectAndWBSResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectProjectWBSByProjectAndWBResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectWBSByProjectAndWBSRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectProjectWBSByProjectAndWBS_Response
+        var finalResponse = new ReadProjectProjectWBSByProjectAndWB_Response
         {
-            D = new ReadProjectProjectWBSByProjectAndWBS_Response.ReadProjectProjectWBSByProjectAndWBS_Response_d
+            D = new ReadProjectProjectWBSByProjectAndWB_Response.ReadProjectProjectWBSByProjectAndWB_Response_d
             {
-                ReadProjectProjectWBSByProjectAndWBS = allItems
+                ReadProjectProjectWBSByProjectAndWB = allItems
             }
         };
 

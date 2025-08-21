@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypes;
 
 public partial class DocumentTypesRequestBuilder
 {
-    public async Task<DocumentsDocumentTypes_Response?> GetAllAsync(Action<RequestConfiguration<DocumentTypesRequestBuilder.DocumentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<DocumentsDocumentType_Response?> GetAllAsync(Action<RequestConfiguration<DocumentTypesRequestBuilder.DocumentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.DocumentsDocumentTypesResults is null)
+        if (response?.D?.DocumentsDocumentTypeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<DocumentsDocumentTypes>();
+        var allItems = new List<DocumentsDocumentType>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.DocumentsDocumentTypesResults?.Results is { } results)
+            if (currentResponse?.D?.DocumentsDocumentTypeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.DocumentsDocumentTypesResults?.Next;
+            var nextUrl = currentResponse?.D?.DocumentsDocumentTypeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DocumentTypesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new DocumentsDocumentTypes_Response
+        var finalResponse = new DocumentsDocumentType_Response
         {
-            D = new DocumentsDocumentTypes_Response.DocumentsDocumentTypes_Response_d
+            D = new DocumentsDocumentType_Response.DocumentsDocumentType_Response_d
             {
-                DocumentsDocumentTypes = allItems
+                DocumentsDocumentType = allItems
             }
         };
 

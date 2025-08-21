@@ -45,7 +45,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Assets
         /// Use this endpoint to get all information related to the asset groups of the administration.  Asset groups are used to maintain depreciation method and G/L accounts for a group of assets.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Assets.AssetGroupsWithId.AssetGroupsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the AssetsAssetGroups</param>
+        /// <param name="id">Unique identifier (uuid) of the AssetsAssetGroup</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Assets.AssetGroupsWithId.AssetGroupsWithIdRequestBuilder AssetGroupsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -55,7 +55,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Assets
         /// Use this endpoint to get all information related to your admininstrations asset master data. This REST API returns the information as seen on the asset card.To retrieve the total depreciated amount and the last depreciation date as calculated in Exact Online, you must use XML API.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Assets.AssetsWithId.AssetsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the AssetsAssets</param>
+        /// <param name="id">Unique identifier (uuid) of the AssetsAsset</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Assets.AssetsWithId.AssetsWithIdRequestBuilder AssetsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -65,7 +65,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Assets
         /// Use this endpoint to get all information related to commercial buildings values.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Assets.CommercialBuildingValuesWithId.CommercialBuildingValuesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the AssetsCommercialBuildingValues</param>
+        /// <param name="id">Unique identifier (uuid) of the AssetsCommercialBuildingValue</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Assets.CommercialBuildingValuesWithId.CommercialBuildingValuesWithIdRequestBuilder CommercialBuildingValuesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -91,7 +91,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Assets
         /// Use this endpoint to get all information related to the depreciation methods of the administration. You can also use this endpoint to create, modify or delete a depreciation method.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Assets.DepreciationMethodsWithId.DepreciationMethodsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the AssetsDepreciationMethods</param>
+        /// <param name="id">Unique identifier (uuid) of the AssetsDepreciationMethod</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Assets.DepreciationMethodsWithId.DepreciationMethodsWithIdRequestBuilder DepreciationMethodsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

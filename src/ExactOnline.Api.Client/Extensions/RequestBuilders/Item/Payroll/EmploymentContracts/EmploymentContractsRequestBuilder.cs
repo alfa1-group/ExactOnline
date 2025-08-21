@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContracts;
 
 public partial class EmploymentContractsRequestBuilder
 {
-    public async Task<PayrollEmploymentContracts_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentContractsRequestBuilder.EmploymentContractsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PayrollEmploymentContract_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentContractsRequestBuilder.EmploymentContractsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PayrollEmploymentContractsResults is null)
+        if (response?.D?.PayrollEmploymentContractResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PayrollEmploymentContracts>();
+        var allItems = new List<PayrollEmploymentContract>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PayrollEmploymentContractsResults?.Results is { } results)
+            if (currentResponse?.D?.PayrollEmploymentContractResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PayrollEmploymentContractsResults?.Next;
+            var nextUrl = currentResponse?.D?.PayrollEmploymentContractResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EmploymentContractsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PayrollEmploymentContracts_Response
+        var finalResponse = new PayrollEmploymentContract_Response
         {
-            D = new PayrollEmploymentContracts_Response.PayrollEmploymentContracts_Response_d
+            D = new PayrollEmploymentContract_Response.PayrollEmploymentContract_Response_d
             {
-                PayrollEmploymentContracts = allItems
+                PayrollEmploymentContract = allItems
             }
         };
 

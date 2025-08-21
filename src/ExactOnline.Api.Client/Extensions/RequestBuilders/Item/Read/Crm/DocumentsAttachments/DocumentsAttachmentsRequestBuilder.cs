@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsAttachments;
 
 public partial class DocumentsAttachmentsRequestBuilder
 {
-    public async Task<ReadCRMDocumentsAttachments_Response?> GetAllAsync(Action<RequestConfiguration<DocumentsAttachmentsRequestBuilder.DocumentsAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadCRMDocumentsAttachment_Response?> GetAllAsync(Action<RequestConfiguration<DocumentsAttachmentsRequestBuilder.DocumentsAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadCRMDocumentsAttachmentsResults is null)
+        if (response?.D?.ReadCRMDocumentsAttachmentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadCRMDocumentsAttachments>();
+        var allItems = new List<ReadCRMDocumentsAttachment>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadCRMDocumentsAttachmentsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadCRMDocumentsAttachmentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadCRMDocumentsAttachmentsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadCRMDocumentsAttachmentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DocumentsAttachmentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadCRMDocumentsAttachments_Response
+        var finalResponse = new ReadCRMDocumentsAttachment_Response
         {
-            D = new ReadCRMDocumentsAttachments_Response.ReadCRMDocumentsAttachments_Response_d
+            D = new ReadCRMDocumentsAttachment_Response.ReadCRMDocumentsAttachment_Response_d
             {
-                ReadCRMDocumentsAttachments = allItems
+                ReadCRMDocumentsAttachment = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesentry.SalesEntries;
 
 public partial class SalesEntriesRequestBuilder
 {
-    public async Task<SalesEntrySalesEntries_Response?> GetAllAsync(Action<RequestConfiguration<SalesEntriesRequestBuilder.SalesEntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesEntrySalesEntry_Response?> GetAllAsync(Action<RequestConfiguration<SalesEntriesRequestBuilder.SalesEntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesEntrySalesEntriesResults is null)
+        if (response?.D?.SalesEntrySalesEntryResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesEntrySalesEntries>();
+        var allItems = new List<SalesEntrySalesEntry>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesEntrySalesEntriesResults?.Results is { } results)
+            if (currentResponse?.D?.SalesEntrySalesEntryResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesEntrySalesEntriesResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesEntrySalesEntryResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesEntriesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesEntrySalesEntries_Response
+        var finalResponse = new SalesEntrySalesEntry_Response
         {
-            D = new SalesEntrySalesEntries_Response.SalesEntrySalesEntries_Response_d
+            D = new SalesEntrySalesEntry_Response.SalesEntrySalesEntry_Response_d
             {
-                SalesEntrySalesEntries = allItems
+                SalesEntrySalesEntry = allItems
             }
         };
 

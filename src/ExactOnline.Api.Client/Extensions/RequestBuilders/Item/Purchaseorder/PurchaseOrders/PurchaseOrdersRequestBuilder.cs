@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders;
 
 public partial class PurchaseOrdersRequestBuilder
 {
-    public async Task<PurchaseOrderPurchaseOrders_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseOrdersRequestBuilder.PurchaseOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PurchaseOrderPurchaseOrder_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseOrdersRequestBuilder.PurchaseOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PurchaseOrderPurchaseOrdersResults is null)
+        if (response?.D?.PurchaseOrderPurchaseOrderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PurchaseOrderPurchaseOrders>();
+        var allItems = new List<PurchaseOrderPurchaseOrder>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PurchaseOrderPurchaseOrdersResults?.Results is { } results)
+            if (currentResponse?.D?.PurchaseOrderPurchaseOrderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PurchaseOrderPurchaseOrdersResults?.Next;
+            var nextUrl = currentResponse?.D?.PurchaseOrderPurchaseOrderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PurchaseOrdersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PurchaseOrderPurchaseOrders_Response
+        var finalResponse = new PurchaseOrderPurchaseOrder_Response
         {
-            D = new PurchaseOrderPurchaseOrders_Response.PurchaseOrderPurchaseOrders_Response_d
+            D = new PurchaseOrderPurchaseOrder_Response.PurchaseOrderPurchaseOrder_Response_d
             {
-                PurchaseOrderPurchaseOrders = allItems
+                PurchaseOrderPurchaseOrder = allItems
             }
         };
 

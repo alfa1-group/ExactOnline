@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContractFlexPhase
 
 public partial class EmploymentContractFlexPhasesRequestBuilder
 {
-    public async Task<PayrollEmploymentContractFlexPhases_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentContractFlexPhasesRequestBuilder.EmploymentContractFlexPhasesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PayrollEmploymentContractFlexPhase_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentContractFlexPhasesRequestBuilder.EmploymentContractFlexPhasesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PayrollEmploymentContractFlexPhasesResults is null)
+        if (response?.D?.PayrollEmploymentContractFlexPhaseResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PayrollEmploymentContractFlexPhases>();
+        var allItems = new List<PayrollEmploymentContractFlexPhase>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PayrollEmploymentContractFlexPhasesResults?.Results is { } results)
+            if (currentResponse?.D?.PayrollEmploymentContractFlexPhaseResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PayrollEmploymentContractFlexPhasesResults?.Next;
+            var nextUrl = currentResponse?.D?.PayrollEmploymentContractFlexPhaseResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EmploymentContractFlexPhasesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PayrollEmploymentContractFlexPhases_Response
+        var finalResponse = new PayrollEmploymentContractFlexPhase_Response
         {
-            D = new PayrollEmploymentContractFlexPhases_Response.PayrollEmploymentContractFlexPhases_Response_d
+            D = new PayrollEmploymentContractFlexPhase_Response.PayrollEmploymentContractFlexPhase_Response_d
             {
-                PayrollEmploymentContractFlexPhases = allItems
+                PayrollEmploymentContractFlexPhase = allItems
             }
         };
 

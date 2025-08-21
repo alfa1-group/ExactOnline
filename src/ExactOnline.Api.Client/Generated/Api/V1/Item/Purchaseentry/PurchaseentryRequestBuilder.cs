@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseentry
         /// Use this endpoint to create, read, update or delete purchase entries as financial entries created for your purchase invoices.Note: Purchase entries are separated to header and line information. Endpoint PurchaseEntries is used for the header information. You must include a parameter for &apos;PurchaseEntryLines&apos; to add purchase entry lines when you POST to the PurchaseEntries endpoint. This parameter is not necessary when you PUT to this endpoint.The relevance of properties is very much depending on the legislation and the package used.For optimal performance, refer &apos;Example usage&apos; below to call our API.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseentry.PurchaseEntriesWithEntryid.PurchaseEntriesWithEntryidRequestBuilder"/></returns>
-        /// <param name="entryid">Unique identifier (uuid) of the PurchaseEntryPurchaseEntries</param>
+        /// <param name="entryid">Unique identifier (uuid) of the PurchaseEntryPurchaseEntry</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseentry.PurchaseEntriesWithEntryid.PurchaseEntriesWithEntryidRequestBuilder PurchaseEntriesWithEntryid(Guid? entryid)
         {
             _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseentry
         /// Use this endpoint to create, read, update or delete the entry lines of purchase entries created for your purchase invoices.Note: Purchase entries are separated to header and line information. Endpoint PurchaseEntryLines is used for the line information.The relevance of properties is very much depending on the legislation and the package used.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Purchaseentry.PurchaseEntryLinesWithId.PurchaseEntryLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the PurchaseEntryPurchaseEntryLines</param>
+        /// <param name="id">Unique identifier (uuid) of the PurchaseEntryPurchaseEntryLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseentry.PurchaseEntryLinesWithId.PurchaseEntryLinesWithIdRequestBuilder PurchaseEntryLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

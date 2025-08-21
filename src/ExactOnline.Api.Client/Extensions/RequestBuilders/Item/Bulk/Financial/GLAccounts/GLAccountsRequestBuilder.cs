@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.GLAccounts;
 
 public partial class GLAccountsRequestBuilder
 {
-    public async Task<BulkFinancialGLAccounts_Response?> GetAllAsync(Action<RequestConfiguration<GLAccountsRequestBuilder.GLAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkFinancialGLAccount_Response?> GetAllAsync(Action<RequestConfiguration<GLAccountsRequestBuilder.GLAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkFinancialGLAccountsResults is null)
+        if (response?.D?.BulkFinancialGLAccountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkFinancialGLAccounts>();
+        var allItems = new List<BulkFinancialGLAccount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkFinancialGLAccountsResults?.Results is { } results)
+            if (currentResponse?.D?.BulkFinancialGLAccountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkFinancialGLAccountsResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkFinancialGLAccountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GLAccountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkFinancialGLAccounts_Response
+        var finalResponse = new BulkFinancialGLAccount_Response
         {
-            D = new BulkFinancialGLAccounts_Response.BulkFinancialGLAccounts_Response_d
+            D = new BulkFinancialGLAccount_Response.BulkFinancialGLAccount_Response_d
             {
-                BulkFinancialGLAccounts = allItems
+                BulkFinancialGLAccount = allItems
             }
         };
 

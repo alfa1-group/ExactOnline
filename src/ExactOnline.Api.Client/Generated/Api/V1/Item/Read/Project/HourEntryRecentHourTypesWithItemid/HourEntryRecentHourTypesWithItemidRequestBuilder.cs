@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTyp
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesWithItemid.HourEntryRecentHourTypesWithItemidRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourEntryRecentHourTypes</param>
+        /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourEntryRecentHourType</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public HourEntryRecentHourTypesWithItemidRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? itemid = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/HourEntryRecentHourTypes({itemid})", pathParameters)
@@ -36,20 +36,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTyp
         {
         }
         /// <summary>
-        /// GET ReadProjectHourEntryRecentHourTypes
+        /// GET ReadProjectHourEntryRecentHourType
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentHourTypesGet_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentHourTypeGet_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentHourTypesGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentHourTypeGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentHourTypesGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentHourTypeGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,10 +58,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTyp
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentHourTypesGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentHourTypesGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentHourTypeGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentHourTypeGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET ReadProjectHourEntryRecentHourTypes
+        /// GET ReadProjectHourEntryRecentHourType
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

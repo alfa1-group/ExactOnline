@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalE
 
 public partial class GeneralJournalEntriesRequestBuilder
 {
-    public async Task<GeneralJournalEntryGeneralJournalEntries_Response?> GetAllAsync(Action<RequestConfiguration<GeneralJournalEntriesRequestBuilder.GeneralJournalEntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<GeneralJournalEntryGeneralJournalEntry_Response?> GetAllAsync(Action<RequestConfiguration<GeneralJournalEntriesRequestBuilder.GeneralJournalEntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.GeneralJournalEntryGeneralJournalEntriesResults is null)
+        if (response?.D?.GeneralJournalEntryGeneralJournalEntryResults is null)
         {
             return response;
         }
 
-        var allItems = new List<GeneralJournalEntryGeneralJournalEntries>();
+        var allItems = new List<GeneralJournalEntryGeneralJournalEntry>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.GeneralJournalEntryGeneralJournalEntriesResults?.Results is { } results)
+            if (currentResponse?.D?.GeneralJournalEntryGeneralJournalEntryResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.GeneralJournalEntryGeneralJournalEntriesResults?.Next;
+            var nextUrl = currentResponse?.D?.GeneralJournalEntryGeneralJournalEntryResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GeneralJournalEntriesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new GeneralJournalEntryGeneralJournalEntries_Response
+        var finalResponse = new GeneralJournalEntryGeneralJournalEntry_Response
         {
-            D = new GeneralJournalEntryGeneralJournalEntries_Response.GeneralJournalEntryGeneralJournalEntries_Response_d
+            D = new GeneralJournalEntryGeneralJournalEntry_Response.GeneralJournalEntryGeneralJournalEntry_Response_d
             {
-                GeneralJournalEntryGeneralJournalEntries = allItems
+                GeneralJournalEntryGeneralJournalEntry = allItems
             }
         };
 

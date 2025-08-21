@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities.ServiceRequests;
 
 public partial class ServiceRequestsRequestBuilder
 {
-    public async Task<ActivitiesServiceRequests_Response?> GetAllAsync(Action<RequestConfiguration<ServiceRequestsRequestBuilder.ServiceRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ActivitiesServiceRequest_Response?> GetAllAsync(Action<RequestConfiguration<ServiceRequestsRequestBuilder.ServiceRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ActivitiesServiceRequestsResults is null)
+        if (response?.D?.ActivitiesServiceRequestResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ActivitiesServiceRequests>();
+        var allItems = new List<ActivitiesServiceRequest>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ActivitiesServiceRequestsResults?.Results is { } results)
+            if (currentResponse?.D?.ActivitiesServiceRequestResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ActivitiesServiceRequestsResults?.Next;
+            var nextUrl = currentResponse?.D?.ActivitiesServiceRequestResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ServiceRequestsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ActivitiesServiceRequests_Response
+        var finalResponse = new ActivitiesServiceRequest_Response
         {
-            D = new ActivitiesServiceRequests_Response.ActivitiesServiceRequests_Response_d
+            D = new ActivitiesServiceRequest_Response.ActivitiesServiceRequest_Response_d
             {
-                ActivitiesServiceRequests = allItems
+                ActivitiesServiceRequest = allItems
             }
         };
 

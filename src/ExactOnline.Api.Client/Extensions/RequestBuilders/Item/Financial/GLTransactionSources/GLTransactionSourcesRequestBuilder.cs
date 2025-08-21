@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionSources;
 
 public partial class GLTransactionSourcesRequestBuilder
 {
-    public async Task<FinancialGLTransactionSources_Response?> GetAllAsync(Action<RequestConfiguration<GLTransactionSourcesRequestBuilder.GLTransactionSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialGLTransactionSource_Response?> GetAllAsync(Action<RequestConfiguration<GLTransactionSourcesRequestBuilder.GLTransactionSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialGLTransactionSourcesResults is null)
+        if (response?.D?.FinancialGLTransactionSourceResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialGLTransactionSources>();
+        var allItems = new List<FinancialGLTransactionSource>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialGLTransactionSourcesResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialGLTransactionSourceResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialGLTransactionSourcesResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialGLTransactionSourceResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GLTransactionSourcesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialGLTransactionSources_Response
+        var finalResponse = new FinancialGLTransactionSource_Response
         {
-            D = new FinancialGLTransactionSources_Response.FinancialGLTransactionSources_Response_d
+            D = new FinancialGLTransactionSource_Response.FinancialGLTransactionSource_Response_d
             {
-                FinancialGLTransactionSources = allItems
+                FinancialGLTransactionSource = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.AbsenceRegistrations;
 
 public partial class AbsenceRegistrationsRequestBuilder
 {
-    public async Task<HRMAbsenceRegistrations_Response?> GetAllAsync(Action<RequestConfiguration<AbsenceRegistrationsRequestBuilder.AbsenceRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<HRMAbsenceRegistration_Response?> GetAllAsync(Action<RequestConfiguration<AbsenceRegistrationsRequestBuilder.AbsenceRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.HRMAbsenceRegistrationsResults is null)
+        if (response?.D?.HRMAbsenceRegistrationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<HRMAbsenceRegistrations>();
+        var allItems = new List<HRMAbsenceRegistration>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.HRMAbsenceRegistrationsResults?.Results is { } results)
+            if (currentResponse?.D?.HRMAbsenceRegistrationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.HRMAbsenceRegistrationsResults?.Next;
+            var nextUrl = currentResponse?.D?.HRMAbsenceRegistrationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AbsenceRegistrationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new HRMAbsenceRegistrations_Response
+        var finalResponse = new HRMAbsenceRegistration_Response
         {
-            D = new HRMAbsenceRegistrations_Response.HRMAbsenceRegistrations_Response_d
+            D = new HRMAbsenceRegistration_Response.HRMAbsenceRegistration_Response_d
             {
-                HRMAbsenceRegistrations = allItems
+                HRMAbsenceRegistration = allItems
             }
         };
 

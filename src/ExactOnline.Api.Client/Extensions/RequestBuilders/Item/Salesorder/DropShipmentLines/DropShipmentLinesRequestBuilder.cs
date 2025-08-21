@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLines;
 
 public partial class DropShipmentLinesRequestBuilder
 {
-    public async Task<SalesOrderDropShipmentLines_Response?> GetAllAsync(Action<RequestConfiguration<DropShipmentLinesRequestBuilder.DropShipmentLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesOrderDropShipmentLine_Response?> GetAllAsync(Action<RequestConfiguration<DropShipmentLinesRequestBuilder.DropShipmentLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesOrderDropShipmentLinesResults is null)
+        if (response?.D?.SalesOrderDropShipmentLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesOrderDropShipmentLines>();
+        var allItems = new List<SalesOrderDropShipmentLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesOrderDropShipmentLinesResults?.Results is { } results)
+            if (currentResponse?.D?.SalesOrderDropShipmentLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesOrderDropShipmentLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesOrderDropShipmentLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DropShipmentLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesOrderDropShipmentLines_Response
+        var finalResponse = new SalesOrderDropShipmentLine_Response
         {
-            D = new SalesOrderDropShipmentLines_Response.SalesOrderDropShipmentLines_Response_d
+            D = new SalesOrderDropShipmentLine_Response.SalesOrderDropShipmentLine_Response_d
             {
-                SalesOrderDropShipmentLines = allItems
+                SalesOrderDropShipmentLine = allItems
             }
         };
 

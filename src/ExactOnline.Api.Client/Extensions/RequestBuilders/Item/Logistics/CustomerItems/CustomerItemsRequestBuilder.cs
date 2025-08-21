@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics.CustomerItems;
 
 public partial class CustomerItemsRequestBuilder
 {
-    public async Task<LogisticsCustomerItems_Response?> GetAllAsync(Action<RequestConfiguration<CustomerItemsRequestBuilder.CustomerItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<LogisticsCustomerItem_Response?> GetAllAsync(Action<RequestConfiguration<CustomerItemsRequestBuilder.CustomerItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.LogisticsCustomerItemsResults is null)
+        if (response?.D?.LogisticsCustomerItemResults is null)
         {
             return response;
         }
 
-        var allItems = new List<LogisticsCustomerItems>();
+        var allItems = new List<LogisticsCustomerItem>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.LogisticsCustomerItemsResults?.Results is { } results)
+            if (currentResponse?.D?.LogisticsCustomerItemResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.LogisticsCustomerItemsResults?.Next;
+            var nextUrl = currentResponse?.D?.LogisticsCustomerItemResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class CustomerItemsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new LogisticsCustomerItems_Response
+        var finalResponse = new LogisticsCustomerItem_Response
         {
-            D = new LogisticsCustomerItems_Response.LogisticsCustomerItems_Response_d
+            D = new LogisticsCustomerItem_Response.LogisticsCustomerItem_Response_d
             {
-                LogisticsCustomerItems = allItems
+                LogisticsCustomerItem = allItems
             }
         };
 

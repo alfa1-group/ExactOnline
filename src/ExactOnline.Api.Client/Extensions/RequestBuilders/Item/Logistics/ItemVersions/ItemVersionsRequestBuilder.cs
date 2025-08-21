@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics.ItemVersions;
 
 public partial class ItemVersionsRequestBuilder
 {
-    public async Task<LogisticsItemVersions_Response?> GetAllAsync(Action<RequestConfiguration<ItemVersionsRequestBuilder.ItemVersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<LogisticsItemVersion_Response?> GetAllAsync(Action<RequestConfiguration<ItemVersionsRequestBuilder.ItemVersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.LogisticsItemVersionsResults is null)
+        if (response?.D?.LogisticsItemVersionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<LogisticsItemVersions>();
+        var allItems = new List<LogisticsItemVersion>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.LogisticsItemVersionsResults?.Results is { } results)
+            if (currentResponse?.D?.LogisticsItemVersionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.LogisticsItemVersionsResults?.Next;
+            var nextUrl = currentResponse?.D?.LogisticsItemVersionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ItemVersionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new LogisticsItemVersions_Response
+        var finalResponse = new LogisticsItemVersion_Response
         {
-            D = new LogisticsItemVersions_Response.LogisticsItemVersions_Response_d
+            D = new LogisticsItemVersion_Response.LogisticsItemVersion_Response_d
             {
-                LogisticsItemVersions = allItems
+                LogisticsItemVersion = allItems
             }
         };
 

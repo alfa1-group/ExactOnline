@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.LeadSources;
 
 public partial class LeadSourcesRequestBuilder
 {
-    public async Task<CRMLeadSources_Response?> GetAllAsync(Action<RequestConfiguration<LeadSourcesRequestBuilder.LeadSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMLeadSource_Response?> GetAllAsync(Action<RequestConfiguration<LeadSourcesRequestBuilder.LeadSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMLeadSourcesResults is null)
+        if (response?.D?.CRMLeadSourceResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMLeadSources>();
+        var allItems = new List<CRMLeadSource>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMLeadSourcesResults?.Results is { } results)
+            if (currentResponse?.D?.CRMLeadSourceResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMLeadSourcesResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMLeadSourceResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class LeadSourcesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMLeadSources_Response
+        var finalResponse = new CRMLeadSource_Response
         {
-            D = new CRMLeadSources_Response.CRMLeadSources_Response_d
+            D = new CRMLeadSource_Response.CRMLeadSource_Response_d
             {
-                CRMLeadSources = allItems
+                CRMLeadSource = allItems
             }
         };
 

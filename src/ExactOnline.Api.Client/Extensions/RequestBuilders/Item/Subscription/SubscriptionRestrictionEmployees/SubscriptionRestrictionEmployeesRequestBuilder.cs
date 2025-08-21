@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictio
 
 public partial class SubscriptionRestrictionEmployeesRequestBuilder
 {
-    public async Task<SubscriptionSubscriptionRestrictionEmployees_Response?> GetAllAsync(Action<RequestConfiguration<SubscriptionRestrictionEmployeesRequestBuilder.SubscriptionRestrictionEmployeesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SubscriptionSubscriptionRestrictionEmployee_Response?> GetAllAsync(Action<RequestConfiguration<SubscriptionRestrictionEmployeesRequestBuilder.SubscriptionRestrictionEmployeesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SubscriptionSubscriptionRestrictionEmployeesResults is null)
+        if (response?.D?.SubscriptionSubscriptionRestrictionEmployeeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SubscriptionSubscriptionRestrictionEmployees>();
+        var allItems = new List<SubscriptionSubscriptionRestrictionEmployee>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SubscriptionSubscriptionRestrictionEmployeesResults?.Results is { } results)
+            if (currentResponse?.D?.SubscriptionSubscriptionRestrictionEmployeeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SubscriptionSubscriptionRestrictionEmployeesResults?.Next;
+            var nextUrl = currentResponse?.D?.SubscriptionSubscriptionRestrictionEmployeeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SubscriptionRestrictionEmployeesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SubscriptionSubscriptionRestrictionEmployees_Response
+        var finalResponse = new SubscriptionSubscriptionRestrictionEmployee_Response
         {
-            D = new SubscriptionSubscriptionRestrictionEmployees_Response.SubscriptionSubscriptionRestrictionEmployees_Response_d
+            D = new SubscriptionSubscriptionRestrictionEmployee_Response.SubscriptionSubscriptionRestrictionEmployee_Response_d
             {
-                SubscriptionSubscriptionRestrictionEmployees = allItems
+                SubscriptionSubscriptionRestrictionEmployee = allItems
             }
         };
 

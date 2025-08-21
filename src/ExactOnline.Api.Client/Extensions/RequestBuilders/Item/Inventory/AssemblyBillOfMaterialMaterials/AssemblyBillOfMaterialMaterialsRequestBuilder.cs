@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyBillOfMaterialMat
 
 public partial class AssemblyBillOfMaterialMaterialsRequestBuilder
 {
-    public async Task<InventoryAssemblyBillOfMaterialMaterials_Response?> GetAllAsync(Action<RequestConfiguration<AssemblyBillOfMaterialMaterialsRequestBuilder.AssemblyBillOfMaterialMaterialsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventoryAssemblyBillOfMaterialMaterial_Response?> GetAllAsync(Action<RequestConfiguration<AssemblyBillOfMaterialMaterialsRequestBuilder.AssemblyBillOfMaterialMaterialsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventoryAssemblyBillOfMaterialMaterialsResults is null)
+        if (response?.D?.InventoryAssemblyBillOfMaterialMaterialResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventoryAssemblyBillOfMaterialMaterials>();
+        var allItems = new List<InventoryAssemblyBillOfMaterialMaterial>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventoryAssemblyBillOfMaterialMaterialsResults?.Results is { } results)
+            if (currentResponse?.D?.InventoryAssemblyBillOfMaterialMaterialResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventoryAssemblyBillOfMaterialMaterialsResults?.Next;
+            var nextUrl = currentResponse?.D?.InventoryAssemblyBillOfMaterialMaterialResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AssemblyBillOfMaterialMaterialsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventoryAssemblyBillOfMaterialMaterials_Response
+        var finalResponse = new InventoryAssemblyBillOfMaterialMaterial_Response
         {
-            D = new InventoryAssemblyBillOfMaterialMaterials_Response.InventoryAssemblyBillOfMaterialMaterials_Response_d
+            D = new InventoryAssemblyBillOfMaterialMaterial_Response.InventoryAssemblyBillOfMaterialMaterial_Response_d
             {
-                InventoryAssemblyBillOfMaterialMaterials = allItems
+                InventoryAssemblyBillOfMaterialMaterial = allItems
             }
         };
 

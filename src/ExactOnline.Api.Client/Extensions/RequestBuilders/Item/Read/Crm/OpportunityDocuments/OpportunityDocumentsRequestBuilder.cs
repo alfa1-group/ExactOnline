@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocuments;
 
 public partial class OpportunityDocumentsRequestBuilder
 {
-    public async Task<ReadCRMOpportunityDocuments_Response?> GetAllAsync(Action<RequestConfiguration<OpportunityDocumentsRequestBuilder.OpportunityDocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadCRMOpportunityDocument_Response?> GetAllAsync(Action<RequestConfiguration<OpportunityDocumentsRequestBuilder.OpportunityDocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadCRMOpportunityDocumentsResults is null)
+        if (response?.D?.ReadCRMOpportunityDocumentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadCRMOpportunityDocuments>();
+        var allItems = new List<ReadCRMOpportunityDocument>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadCRMOpportunityDocumentsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadCRMOpportunityDocumentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadCRMOpportunityDocumentsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadCRMOpportunityDocumentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class OpportunityDocumentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadCRMOpportunityDocuments_Response
+        var finalResponse = new ReadCRMOpportunityDocument_Response
         {
-            D = new ReadCRMOpportunityDocuments_Response.ReadCRMOpportunityDocuments_Response_d
+            D = new ReadCRMOpportunityDocument_Response.ReadCRMOpportunityDocument_Response_d
             {
-                ReadCRMOpportunityDocuments = allItems
+                ReadCRMOpportunityDocument = allItems
             }
         };
 

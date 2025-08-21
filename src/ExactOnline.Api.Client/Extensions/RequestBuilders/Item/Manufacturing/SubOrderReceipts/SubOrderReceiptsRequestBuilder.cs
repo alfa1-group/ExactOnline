@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReceipts;
 
 public partial class SubOrderReceiptsRequestBuilder
 {
-    public async Task<ManufacturingSubOrderReceipts_Response?> GetAllAsync(Action<RequestConfiguration<SubOrderReceiptsRequestBuilder.SubOrderReceiptsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingSubOrderReceipt_Response?> GetAllAsync(Action<RequestConfiguration<SubOrderReceiptsRequestBuilder.SubOrderReceiptsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingSubOrderReceiptsResults is null)
+        if (response?.D?.ManufacturingSubOrderReceiptResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingSubOrderReceipts>();
+        var allItems = new List<ManufacturingSubOrderReceipt>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingSubOrderReceiptsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingSubOrderReceiptResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingSubOrderReceiptsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingSubOrderReceiptResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SubOrderReceiptsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingSubOrderReceipts_Response
+        var finalResponse = new ManufacturingSubOrderReceipt_Response
         {
-            D = new ManufacturingSubOrderReceipts_Response.ManufacturingSubOrderReceipts_Response_d
+            D = new ManufacturingSubOrderReceipt_Response.ManufacturingSubOrderReceipt_Response_d
             {
-                ManufacturingSubOrderReceipts = allItems
+                ManufacturingSubOrderReceipt = allItems
             }
         };
 

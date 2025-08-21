@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.ProjectAccountMutations;
 
 public partial class ProjectAccountMutationsRequestBuilder
 {
-    public async Task<ProjectProjectAccountMutations_Response?> GetAllAsync(Action<RequestConfiguration<ProjectAccountMutationsRequestBuilder.ProjectAccountMutationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectProjectAccountMutation_Response?> GetAllAsync(Action<RequestConfiguration<ProjectAccountMutationsRequestBuilder.ProjectAccountMutationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectProjectAccountMutationsResults is null)
+        if (response?.D?.ProjectProjectAccountMutationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectProjectAccountMutations>();
+        var allItems = new List<ProjectProjectAccountMutation>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectProjectAccountMutationsResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectProjectAccountMutationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectProjectAccountMutationsResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectProjectAccountMutationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectAccountMutationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectProjectAccountMutations_Response
+        var finalResponse = new ProjectProjectAccountMutation_Response
         {
-            D = new ProjectProjectAccountMutations_Response.ProjectProjectAccountMutations_Response_d
+            D = new ProjectProjectAccountMutation_Response.ProjectProjectAccountMutation_Response_d
             {
-                ProjectProjectAccountMutations = allItems
+                ProjectProjectAccountMutation = allItems
             }
         };
 

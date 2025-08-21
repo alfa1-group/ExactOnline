@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SalesItemPrices;
 
 public partial class SalesItemPricesRequestBuilder
 {
-    public async Task<SyncLogisticsSalesItemPrices_Response?> GetAllAsync(Action<RequestConfiguration<SalesItemPricesRequestBuilder.SalesItemPricesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncLogisticsSalesItemPrice_Response?> GetAllAsync(Action<RequestConfiguration<SalesItemPricesRequestBuilder.SalesItemPricesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncLogisticsSalesItemPricesResults is null)
+        if (response?.D?.SyncLogisticsSalesItemPriceResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncLogisticsSalesItemPrices>();
+        var allItems = new List<SyncLogisticsSalesItemPrice>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncLogisticsSalesItemPricesResults?.Results is { } results)
+            if (currentResponse?.D?.SyncLogisticsSalesItemPriceResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncLogisticsSalesItemPricesResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncLogisticsSalesItemPriceResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesItemPricesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncLogisticsSalesItemPrices_Response
+        var finalResponse = new SyncLogisticsSalesItemPrice_Response
         {
-            D = new SyncLogisticsSalesItemPrices_Response.SyncLogisticsSalesItemPrices_Response_d
+            D = new SyncLogisticsSalesItemPrice_Response.SyncLogisticsSalesItemPrice_Response_d
             {
-                SyncLogisticsSalesItemPrices = allItems
+                SyncLogisticsSalesItemPrice = allItems
             }
         };
 

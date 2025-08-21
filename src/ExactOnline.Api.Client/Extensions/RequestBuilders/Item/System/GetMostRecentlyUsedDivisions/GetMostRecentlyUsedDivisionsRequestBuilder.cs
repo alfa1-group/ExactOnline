@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.System.GetMostRecentlyUsedDivisions
 
 public partial class GetMostRecentlyUsedDivisionsRequestBuilder
 {
-    public async Task<SystemSystemGetMostRecentlyUsedDivisions_Response?> GetAllAsync(Action<RequestConfiguration<GetMostRecentlyUsedDivisionsRequestBuilder.GetMostRecentlyUsedDivisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SystemSystemGetMostRecentlyUsedDivision_Response?> GetAllAsync(Action<RequestConfiguration<GetMostRecentlyUsedDivisionsRequestBuilder.GetMostRecentlyUsedDivisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SystemSystemGetMostRecentlyUsedDivisionsResults is null)
+        if (response?.D?.SystemSystemGetMostRecentlyUsedDivisionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SystemSystemGetMostRecentlyUsedDivisions>();
+        var allItems = new List<SystemSystemGetMostRecentlyUsedDivision>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SystemSystemGetMostRecentlyUsedDivisionsResults?.Results is { } results)
+            if (currentResponse?.D?.SystemSystemGetMostRecentlyUsedDivisionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SystemSystemGetMostRecentlyUsedDivisionsResults?.Next;
+            var nextUrl = currentResponse?.D?.SystemSystemGetMostRecentlyUsedDivisionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GetMostRecentlyUsedDivisionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SystemSystemGetMostRecentlyUsedDivisions_Response
+        var finalResponse = new SystemSystemGetMostRecentlyUsedDivision_Response
         {
-            D = new SystemSystemGetMostRecentlyUsedDivisions_Response.SystemSystemGetMostRecentlyUsedDivisions_Response_d
+            D = new SystemSystemGetMostRecentlyUsedDivision_Response.SystemSystemGetMostRecentlyUsedDivision_Response_d
             {
-                SystemSystemGetMostRecentlyUsedDivisions = allItems
+                SystemSystemGetMostRecentlyUsedDivision = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderOrderChargeLin
 
 public partial class SalesOrderOrderChargeLinesRequestBuilder
 {
-    public async Task<SalesOrderSalesOrderOrderChargeLines_Response?> GetAllAsync(Action<RequestConfiguration<SalesOrderOrderChargeLinesRequestBuilder.SalesOrderOrderChargeLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesOrderSalesOrderOrderChargeLine_Response?> GetAllAsync(Action<RequestConfiguration<SalesOrderOrderChargeLinesRequestBuilder.SalesOrderOrderChargeLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesOrderSalesOrderOrderChargeLinesResults is null)
+        if (response?.D?.SalesOrderSalesOrderOrderChargeLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesOrderSalesOrderOrderChargeLines>();
+        var allItems = new List<SalesOrderSalesOrderOrderChargeLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesOrderSalesOrderOrderChargeLinesResults?.Results is { } results)
+            if (currentResponse?.D?.SalesOrderSalesOrderOrderChargeLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesOrderSalesOrderOrderChargeLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesOrderSalesOrderOrderChargeLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesOrderOrderChargeLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesOrderSalesOrderOrderChargeLines_Response
+        var finalResponse = new SalesOrderSalesOrderOrderChargeLine_Response
         {
-            D = new SalesOrderSalesOrderOrderChargeLines_Response.SalesOrderSalesOrderOrderChargeLines_Response_d
+            D = new SalesOrderSalesOrderOrderChargeLine_Response.SalesOrderSalesOrderOrderChargeLine_Response_d
             {
-                SalesOrderSalesOrderOrderChargeLines = allItems
+                SalesOrderSalesOrderOrderChargeLine = allItems
             }
         };
 

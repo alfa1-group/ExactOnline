@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialRouting
 
 public partial class BillOfMaterialRoutingsRequestBuilder
 {
-    public async Task<ManufacturingBillOfMaterialRoutings_Response?> GetAllAsync(Action<RequestConfiguration<BillOfMaterialRoutingsRequestBuilder.BillOfMaterialRoutingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingBillOfMaterialRouting_Response?> GetAllAsync(Action<RequestConfiguration<BillOfMaterialRoutingsRequestBuilder.BillOfMaterialRoutingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingBillOfMaterialRoutingsResults is null)
+        if (response?.D?.ManufacturingBillOfMaterialRoutingResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingBillOfMaterialRoutings>();
+        var allItems = new List<ManufacturingBillOfMaterialRouting>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingBillOfMaterialRoutingsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingBillOfMaterialRoutingResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingBillOfMaterialRoutingsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingBillOfMaterialRoutingResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class BillOfMaterialRoutingsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingBillOfMaterialRoutings_Response
+        var finalResponse = new ManufacturingBillOfMaterialRouting_Response
         {
-            D = new ManufacturingBillOfMaterialRoutings_Response.ManufacturingBillOfMaterialRoutings_Response_d
+            D = new ManufacturingBillOfMaterialRouting_Response.ManufacturingBillOfMaterialRouting_Response_d
             {
-                ManufacturingBillOfMaterialRoutings = allItems
+                ManufacturingBillOfMaterialRouting = allItems
             }
         };
 

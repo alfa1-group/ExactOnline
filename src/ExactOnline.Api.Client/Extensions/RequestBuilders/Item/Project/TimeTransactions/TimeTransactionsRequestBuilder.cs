@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.TimeTransactions;
 
 public partial class TimeTransactionsRequestBuilder
 {
-    public async Task<ProjectTimeTransactions_Response?> GetAllAsync(Action<RequestConfiguration<TimeTransactionsRequestBuilder.TimeTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectTimeTransaction_Response?> GetAllAsync(Action<RequestConfiguration<TimeTransactionsRequestBuilder.TimeTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectTimeTransactionsResults is null)
+        if (response?.D?.ProjectTimeTransactionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectTimeTransactions>();
+        var allItems = new List<ProjectTimeTransaction>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectTimeTransactionsResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectTimeTransactionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectTimeTransactionsResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectTimeTransactionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TimeTransactionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectTimeTransactions_Response
+        var finalResponse = new ProjectTimeTransaction_Response
         {
-            D = new ProjectTimeTransactions_Response.ProjectTimeTransactions_Response_d
+            D = new ProjectTimeTransaction_Response.ProjectTimeTransaction_Response_d
             {
-                ProjectTimeTransactions = allItems
+                ProjectTimeTransaction = allItems
             }
         };
 

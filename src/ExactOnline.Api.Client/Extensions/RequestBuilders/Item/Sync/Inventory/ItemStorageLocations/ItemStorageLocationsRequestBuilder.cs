@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Inventory.ItemStorageLocations
 
 public partial class ItemStorageLocationsRequestBuilder
 {
-    public async Task<SyncInventoryItemStorageLocations_Response?> GetAllAsync(Action<RequestConfiguration<ItemStorageLocationsRequestBuilder.ItemStorageLocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncInventoryItemStorageLocation_Response?> GetAllAsync(Action<RequestConfiguration<ItemStorageLocationsRequestBuilder.ItemStorageLocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncInventoryItemStorageLocationsResults is null)
+        if (response?.D?.SyncInventoryItemStorageLocationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncInventoryItemStorageLocations>();
+        var allItems = new List<SyncInventoryItemStorageLocation>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncInventoryItemStorageLocationsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncInventoryItemStorageLocationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncInventoryItemStorageLocationsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncInventoryItemStorageLocationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ItemStorageLocationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncInventoryItemStorageLocations_Response
+        var finalResponse = new SyncInventoryItemStorageLocation_Response
         {
-            D = new SyncInventoryItemStorageLocations_Response.SyncInventoryItemStorageLocations_Response_d
+            D = new SyncInventoryItemStorageLocation_Response.SyncInventoryItemStorageLocation_Response_d
             {
-                SyncInventoryItemStorageLocations = allItems
+                SyncInventoryItemStorageLocation = allItems
             }
         };
 

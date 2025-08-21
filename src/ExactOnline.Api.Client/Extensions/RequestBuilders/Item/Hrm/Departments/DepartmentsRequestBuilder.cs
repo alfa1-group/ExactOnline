@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.Departments;
 
 public partial class DepartmentsRequestBuilder
 {
-    public async Task<HRMDepartments_Response?> GetAllAsync(Action<RequestConfiguration<DepartmentsRequestBuilder.DepartmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<HRMDepartment_Response?> GetAllAsync(Action<RequestConfiguration<DepartmentsRequestBuilder.DepartmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.HRMDepartmentsResults is null)
+        if (response?.D?.HRMDepartmentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<HRMDepartments>();
+        var allItems = new List<HRMDepartment>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.HRMDepartmentsResults?.Results is { } results)
+            if (currentResponse?.D?.HRMDepartmentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.HRMDepartmentsResults?.Next;
+            var nextUrl = currentResponse?.D?.HRMDepartmentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DepartmentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new HRMDepartments_Response
+        var finalResponse = new HRMDepartment_Response
         {
-            D = new HRMDepartments_Response.HRMDepartments_Response_d
+            D = new HRMDepartment_Response.HRMDepartment_Response_d
             {
-                HRMDepartments = allItems
+                HRMDepartment = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Budget.Budgets;
 
 public partial class BudgetsRequestBuilder
 {
-    public async Task<BudgetBudgets_Response?> GetAllAsync(Action<RequestConfiguration<BudgetsRequestBuilder.BudgetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BudgetBudget_Response?> GetAllAsync(Action<RequestConfiguration<BudgetsRequestBuilder.BudgetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BudgetBudgetsResults is null)
+        if (response?.D?.BudgetBudgetResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BudgetBudgets>();
+        var allItems = new List<BudgetBudget>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BudgetBudgetsResults?.Results is { } results)
+            if (currentResponse?.D?.BudgetBudgetResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BudgetBudgetsResults?.Next;
+            var nextUrl = currentResponse?.D?.BudgetBudgetResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class BudgetsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BudgetBudgets_Response
+        var finalResponse = new BudgetBudget_Response
         {
-            D = new BudgetBudgets_Response.BudgetBudgets_Response_d
+            D = new BudgetBudget_Response.BudgetBudget_Response_d
             {
-                BudgetBudgets = allItems
+                BudgetBudget = allItems
             }
         };
 

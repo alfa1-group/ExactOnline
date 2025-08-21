@@ -81,7 +81,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// The function will return a document folder description that consists ofdescription and count of documents in this folder in the brackets based on the accountIdthat has been requested.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentFoldersWithId.AccountDocumentFoldersWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ReadCRMAccountDocumentFolders</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMAccountDocumentFolder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentFoldersWithId.AccountDocumentFoldersWithIdRequestBuilder AccountDocumentFoldersWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -101,7 +101,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentsWithId.AccountDocumentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ReadCRMAccountDocuments</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMAccountDocument</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentsWithId.AccountDocumentsWithIdRequestBuilder AccountDocumentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -137,7 +137,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\read\crm\DocumentsAttachments({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsAttachmentsWithId.DocumentsAttachmentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ReadCRMDocumentsAttachments</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMDocumentsAttachment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsAttachmentsWithId.DocumentsAttachmentsWithIdRequestBuilder DocumentsAttachmentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -147,7 +147,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\read\crm\Documents({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsWithId.DocumentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ReadCRMDocuments</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMDocument</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsWithId.DocumentsWithIdRequestBuilder DocumentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -157,7 +157,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\read\crm\OpportunityContacts({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityContactsWithId.OpportunityContactsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ReadCRMOpportunityContacts</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMOpportunityContact</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityContactsWithId.OpportunityContactsWithIdRequestBuilder OpportunityContactsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -177,7 +177,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// For this function to work correctly, you must supply all parameters.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsWithId.OpportunityDocumentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ReadCRMOpportunityDocuments</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadCRMOpportunityDocument</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsWithId.OpportunityDocumentsWithIdRequestBuilder OpportunityDocumentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

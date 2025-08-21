@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationLines;
 
 public partial class QuotationLinesRequestBuilder
 {
-    public async Task<CRMQuotationLines_Response?> GetAllAsync(Action<RequestConfiguration<QuotationLinesRequestBuilder.QuotationLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMQuotationLine_Response?> GetAllAsync(Action<RequestConfiguration<QuotationLinesRequestBuilder.QuotationLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMQuotationLinesResults is null)
+        if (response?.D?.CRMQuotationLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMQuotationLines>();
+        var allItems = new List<CRMQuotationLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMQuotationLinesResults?.Results is { } results)
+            if (currentResponse?.D?.CRMQuotationLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMQuotationLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMQuotationLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class QuotationLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMQuotationLines_Response
+        var finalResponse = new CRMQuotationLine_Response
         {
-            D = new CRMQuotationLines_Response.CRMQuotationLines_Response_d
+            D = new CRMQuotationLine_Response.CRMQuotationLine_Response_d
             {
-                CRMQuotationLines = allItems
+                CRMQuotationLine = allItems
             }
         };
 

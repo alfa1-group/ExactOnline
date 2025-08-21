@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Payroll.EmploymentOrganization
 
 public partial class EmploymentOrganizationsRequestBuilder
 {
-    public async Task<SyncPayrollEmploymentOrganizations_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentOrganizationsRequestBuilder.EmploymentOrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncPayrollEmploymentOrganization_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentOrganizationsRequestBuilder.EmploymentOrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncPayrollEmploymentOrganizationsResults is null)
+        if (response?.D?.SyncPayrollEmploymentOrganizationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncPayrollEmploymentOrganizations>();
+        var allItems = new List<SyncPayrollEmploymentOrganization>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncPayrollEmploymentOrganizationsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncPayrollEmploymentOrganizationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncPayrollEmploymentOrganizationsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncPayrollEmploymentOrganizationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EmploymentOrganizationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncPayrollEmploymentOrganizations_Response
+        var finalResponse = new SyncPayrollEmploymentOrganization_Response
         {
-            D = new SyncPayrollEmploymentOrganizations_Response.SyncPayrollEmploymentOrganizations_Response_d
+            D = new SyncPayrollEmploymentOrganization_Response.SyncPayrollEmploymentOrganization_Response_d
             {
-                SyncPayrollEmploymentOrganizations = allItems
+                SyncPayrollEmploymentOrganization = allItems
             }
         };
 

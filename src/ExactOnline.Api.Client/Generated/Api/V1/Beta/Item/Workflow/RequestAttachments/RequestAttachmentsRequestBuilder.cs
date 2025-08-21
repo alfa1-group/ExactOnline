@@ -34,20 +34,20 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachments
         {
         }
         /// <summary>
-        /// GET WorkflowRequestAttachments
+        /// GET WorkflowRequestAttachment
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.WorkflowRequestAttachments_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.WorkflowRequestAttachment_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.WorkflowRequestAttachments_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachments.RequestAttachmentsRequestBuilder.RequestAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.WorkflowRequestAttachment_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachments.RequestAttachmentsRequestBuilder.RequestAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.WorkflowRequestAttachments_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachments.RequestAttachmentsRequestBuilder.RequestAttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.WorkflowRequestAttachment_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachments.RequestAttachmentsRequestBuilder.RequestAttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,10 +56,10 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachments
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.WorkflowRequestAttachments_Response>(requestInfo, global::ExactOnline.Api.Client.Models.WorkflowRequestAttachments_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.WorkflowRequestAttachment_Response>(requestInfo, global::ExactOnline.Api.Client.Models.WorkflowRequestAttachment_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET WorkflowRequestAttachments
+        /// GET WorkflowRequestAttachment
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachments
             return new global::ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachments.RequestAttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET WorkflowRequestAttachments
+        /// GET WorkflowRequestAttachment
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RequestAttachmentsRequestBuilderGetQueryParameters 

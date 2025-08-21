@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Inventory.StockPositions;
 
 public partial class StockPositionsRequestBuilder
 {
-    public async Task<SyncInventoryStockPositions_Response?> GetAllAsync(Action<RequestConfiguration<StockPositionsRequestBuilder.StockPositionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncInventoryStockPosition_Response?> GetAllAsync(Action<RequestConfiguration<StockPositionsRequestBuilder.StockPositionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncInventoryStockPositionsResults is null)
+        if (response?.D?.SyncInventoryStockPositionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncInventoryStockPositions>();
+        var allItems = new List<SyncInventoryStockPosition>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncInventoryStockPositionsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncInventoryStockPositionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncInventoryStockPositionsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncInventoryStockPositionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class StockPositionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncInventoryStockPositions_Response
+        var finalResponse = new SyncInventoryStockPosition_Response
         {
-            D = new SyncInventoryStockPositions_Response.SyncInventoryStockPositions_Response_d
+            D = new SyncInventoryStockPosition_Response.SyncInventoryStockPosition_Response_d
             {
-                SyncInventoryStockPositions = allItems
+                SyncInventoryStockPosition = allItems
             }
         };
 

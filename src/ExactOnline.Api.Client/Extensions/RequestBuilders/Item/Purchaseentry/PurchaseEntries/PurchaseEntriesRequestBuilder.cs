@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseentry.PurchaseEntries;
 
 public partial class PurchaseEntriesRequestBuilder
 {
-    public async Task<PurchaseEntryPurchaseEntries_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseEntriesRequestBuilder.PurchaseEntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PurchaseEntryPurchaseEntry_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseEntriesRequestBuilder.PurchaseEntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PurchaseEntryPurchaseEntriesResults is null)
+        if (response?.D?.PurchaseEntryPurchaseEntryResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PurchaseEntryPurchaseEntries>();
+        var allItems = new List<PurchaseEntryPurchaseEntry>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PurchaseEntryPurchaseEntriesResults?.Results is { } results)
+            if (currentResponse?.D?.PurchaseEntryPurchaseEntryResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PurchaseEntryPurchaseEntriesResults?.Next;
+            var nextUrl = currentResponse?.D?.PurchaseEntryPurchaseEntryResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PurchaseEntriesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PurchaseEntryPurchaseEntries_Response
+        var finalResponse = new PurchaseEntryPurchaseEntry_Response
         {
-            D = new PurchaseEntryPurchaseEntries_Response.PurchaseEntryPurchaseEntries_Response_d
+            D = new PurchaseEntryPurchaseEntry_Response.PurchaseEntryPurchaseEntry_Response_d
             {
-                PurchaseEntryPurchaseEntries = allItems
+                PurchaseEntryPurchaseEntry = allItems
             }
         };
 

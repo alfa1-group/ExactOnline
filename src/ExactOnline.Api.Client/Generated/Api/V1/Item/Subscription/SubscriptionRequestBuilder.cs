@@ -83,7 +83,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// Use this endpoint to create, read, update and delete subscription lines.Note: For creating a SubscriptionLines, it is mandatory to supply one or more EntryID and Item.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionLinesWithId.SubscriptionLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionLines</param>
+        /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionLinesWithId.SubscriptionLinesWithIdRequestBuilder SubscriptionLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -93,7 +93,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// This endpoint enables users to retrieve the types of subscription lines.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionLineTypesWithId.SubscriptionLineTypesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (int16) of the SubscriptionSubscriptionLineTypes</param>
+        /// <param name="id">Unique identifier (int16) of the SubscriptionSubscriptionLineType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionLineTypesWithId.SubscriptionLineTypesWithIdRequestBuilder SubscriptionLineTypesWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -103,7 +103,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// Use this endpoint to read information about the reasons for subscription cancellation.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionReasonCodesWithId.SubscriptionReasonCodesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionReasonCodes</param>
+        /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionReasonCode</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionReasonCodesWithId.SubscriptionReasonCodesWithIdRequestBuilder SubscriptionReasonCodesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -113,7 +113,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// Use this endpoint to restrict which employee is able to enter time/cost entries on the subscription.Note: For creating subscription restriction employee, it is mandatory to supply Employee Id and Subscription Id
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictionEmployeesWithId.SubscriptionRestrictionEmployeesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionRestrictionEmployees</param>
+        /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionRestrictionEmployee</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictionEmployeesWithId.SubscriptionRestrictionEmployeesWithIdRequestBuilder SubscriptionRestrictionEmployeesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -123,7 +123,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// Use this endpoint to restrict which hour/cost types can be used in time/cost entries for the subscription.Note: For creating subscription restriction item, it is mandatory to supply Subscription Id
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictionItemsWithId.SubscriptionRestrictionItemsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionRestrictionItems</param>
+        /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionRestrictionItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictionItemsWithId.SubscriptionRestrictionItemsWithIdRequestBuilder SubscriptionRestrictionItemsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -133,7 +133,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// Use this endpoint to create, read, update and delete subscriptions.Note: You must include a parameter for &apos;SubscriptionLines&apos; to add subscription lines when you POST to the Subscriptions endpoint. This parameter is not necessary when you PUT to this endpoint.For more information about the Subscription functionality in Exact Online, see About Subscriptions.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionsWithEntryid.SubscriptionsWithEntryidRequestBuilder"/></returns>
-        /// <param name="entryid">Unique identifier (uuid) of the SubscriptionSubscriptions</param>
+        /// <param name="entryid">Unique identifier (uuid) of the SubscriptionSubscription</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionsWithEntryid.SubscriptionsWithEntryidRequestBuilder SubscriptionsWithEntryid(Guid? entryid)
         {
             _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
@@ -143,7 +143,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// Use this endpoint to retrieve the susbcription types information.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionTypesWithId.SubscriptionTypesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionTypes</param>
+        /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionTypesWithId.SubscriptionTypesWithIdRequestBuilder SubscriptionTypesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

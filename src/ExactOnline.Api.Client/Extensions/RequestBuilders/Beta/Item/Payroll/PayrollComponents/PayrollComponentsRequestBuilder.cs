@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponents;
 
 public partial class PayrollComponentsRequestBuilder
 {
-    public async Task<PayrollPayrollComponents_Response?> GetAllAsync(Action<RequestConfiguration<PayrollComponentsRequestBuilder.PayrollComponentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PayrollPayrollComponent_Response?> GetAllAsync(Action<RequestConfiguration<PayrollComponentsRequestBuilder.PayrollComponentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PayrollPayrollComponentsResults is null)
+        if (response?.D?.PayrollPayrollComponentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PayrollPayrollComponents>();
+        var allItems = new List<PayrollPayrollComponent>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PayrollPayrollComponentsResults?.Results is { } results)
+            if (currentResponse?.D?.PayrollPayrollComponentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PayrollPayrollComponentsResults?.Next;
+            var nextUrl = currentResponse?.D?.PayrollPayrollComponentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PayrollComponentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PayrollPayrollComponents_Response
+        var finalResponse = new PayrollPayrollComponent_Response
         {
-            D = new PayrollPayrollComponents_Response.PayrollPayrollComponents_Response_d
+            D = new PayrollPayrollComponent_Response.PayrollPayrollComponent_Response_d
             {
-                PayrollPayrollComponents = allItems
+                PayrollPayrollComponent = allItems
             }
         };
 

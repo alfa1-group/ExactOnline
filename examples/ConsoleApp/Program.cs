@@ -28,18 +28,18 @@ var isDevelopment = !options.Value.ClientId.StartsWith("e4a2");
 
 var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>();
 
-var someLogisticsItems = SelectBuilder<LogisticsItems>.Build(l => l.Description, l => l.FreeTextField01);
-var selectAllLogisticsItems = SelectBuilder<LogisticsItems>.Build();
-var filterLogisticsItems = FilterBuilder<LogisticsItems>.Build(l => l.Description == "abc" && l.FreeNumberField07 == 1.0d);
+var someLogisticsItems = SelectBuilder<LogisticsItem>.Build(l => l.Description, l => l.FreeTextField01);
+var selectAllLogisticsItems = SelectBuilder<LogisticsItem>.Build();
+var filterLogisticsItems = FilterBuilder<LogisticsItem>.Build(l => l.Description == "abc" && l.FreeNumberField07 == 1.0d);
 var s1 = SelectBuilder<SystemSystemMe>.Build(s => s.UserID, s => s.CurrentDivision, s => s.Email);
 var s2 = SelectBuilder<SystemSystemMe>.Build(s => new { s.UserID, s.CurrentDivision, s.Email });
-var orderBy = OrderByBuilder<WebhooksWebhookSubscriptions>
+var orderBy = OrderByBuilder<WebhooksWebhookSubscription>
     .OrderBy(w => w.ID)
     .ThenByDescending(w => w.CallbackURL)
     .Build();
-var filter = FilterBuilder<WebhooksWebhookSubscriptions>.Build(a => a.CallbackURL!.Equals("abc") && (a.Division > 100 || a.Created > TimeProvider.System.GetUtcNow().AddDays(-30)));
+var filter = FilterBuilder<WebhooksWebhookSubscription>.Build(a => a.CallbackURL!.Equals("abc") && (a.Division > 100 || a.Created > TimeProvider.System.GetUtcNow().AddDays(-30)));
 var syncFilter = TimestampFilterBuilder.Build(t => t.Timestamp >= 13361108664);
-var selectAll = SelectBuilder<SyncProjectTimeCostTransactions>.Build();
+var selectAll = SelectBuilder<SyncProjectTimeCostTransaction>.Build();
 
 await RunAsync(async () =>
 {
@@ -97,7 +97,7 @@ await RunAsync(async () =>
     var list = await client.Api.V1[division].Sync.Project.Projects.GetAllAsync(a =>
     {
         a.QueryParameters.Filter = TimestampFilterBuilder.Build(t => t.Timestamp >= 1);
-        a.QueryParameters.Select = SelectBuilder<SyncProjectProjects>.Build();
+        a.QueryParameters.Select = SelectBuilder<SyncProjectProject>.Build();
     }).AsItems();
 
     foreach (var a in list)
@@ -114,7 +114,7 @@ await RunAsync(async () =>
     var list = await client.Api.V1[division].Sync.CRM.Accounts.GetAllAsync(a =>
     {
         a.QueryParameters.Filter = TimestampFilterBuilder.Build(t => t.Timestamp >= 1);
-        a.QueryParameters.Select = SelectBuilder<SyncCRMAccounts>.Build();
+        a.QueryParameters.Select = SelectBuilder<SyncCRMAccount>.Build();
     }).AsItems();
 
     foreach (var a in list)
@@ -131,7 +131,7 @@ await RunAsync(async () =>
     var list = await client.Api.V1[division].Sync.Payroll.Employees.GetAllAsync(a =>
     {
         a.QueryParameters.Filter = TimestampFilterBuilder.Build(t => t.Timestamp >= 1);
-        a.QueryParameters.Select = SelectBuilder<SyncPayrollEmployees>.Build();
+        a.QueryParameters.Select = SelectBuilder<SyncPayrollEmployee>.Build();
     }).AsItems();
 
     foreach (var a in list)
@@ -148,7 +148,7 @@ await RunAsync(async () =>
     var list = await client.Api.V1[division].Sync.Logistics.Items.GetAllAsync(a =>
     {
         a.QueryParameters.Filter = TimestampFilterBuilder.Build(t => t.Timestamp >= 1);
-        a.QueryParameters.Select = SelectBuilder<SyncLogisticsItems>.Build();
+        a.QueryParameters.Select = SelectBuilder<SyncLogisticsItem>.Build();
     }).AsItems();
 
     foreach (var a in list)
@@ -201,7 +201,7 @@ await RunAsync(async () =>
     }
 
     Console.WriteLine("Post WebHook");
-    var postResult = await client.Api.V1[division].Webhooks.WebhookSubscriptions.PostAsync(new WebhooksWebhookSubscriptionsPost
+    var postResult = await client.Api.V1[division].Webhooks.WebhookSubscriptions.PostAsync(new WebhooksWebhookSubscriptionPost
     {
         CallbackURL = "https://mstack.nl",
         Topic = "StockPositions"
@@ -244,7 +244,7 @@ var projectTimeTransaction = await RunAsync(async () =>
     var list = await client.Api.V1[division].Project.TimeTransactions.GetAsync(p =>
     {
         p.QueryParameters.Top = 10;
-        p.QueryParameters.Filter = FilterBuilder<ProjectTimeTransactions>.Build(t => t.Created >= TimeProvider.System.GetUtcNow().AddDays(-30));
+        p.QueryParameters.Filter = FilterBuilder<ProjectTimeTransaction>.Build(t => t.Created >= TimeProvider.System.GetUtcNow().AddDays(-30));
     }).AsItems();
 
     foreach (var tt in list)
@@ -261,7 +261,7 @@ await RunAsync(async () =>
     var list = await client.Api.V1[division].Project.TimeTransactions.GetAllAsync(p =>
     {
         p.QueryParameters.Top = 70;
-        p.QueryParameters.Filter = FilterBuilder<ProjectTimeTransactions>.Build(t => t.Created >= TimeProvider.System.GetUtcNow().AddDays(-30));
+        p.QueryParameters.Filter = FilterBuilder<ProjectTimeTransaction>.Build(t => t.Created >= TimeProvider.System.GetUtcNow().AddDays(-30));
     }).AsItems();
 
     foreach (var tt in list)
@@ -281,7 +281,7 @@ await RunAsync(async () =>
     }
 
     Console.WriteLine("Updating Project.TimeTransaction with ID {0}", projectTimeTransaction?.ID);
-    await client.Api.V1[division].Project.TimeTransactionsWithId(projectTimeTransaction?.ID).PutAsync(new ProjectTimeTransactionsPut
+    await client.Api.V1[division].Project.TimeTransactionsWithId(projectTimeTransaction?.ID).PutAsync(new ProjectTimeTransactionPut
     {
         Notes = "Updated via API at " + TimeProvider.System.GetUtcNow().ToString("o")
     });
@@ -311,7 +311,7 @@ await RunAsync(async () =>
     Console.WriteLine("Getting Sync.Project.TimeCostTransactions - select");
     var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAsync(p =>
     {
-        p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransactions>.Build(t => t.ID, t => t.Timestamp, t => t.Type, t => t.Created);
+        p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransaction>.Build(t => t.ID, t => t.Timestamp, t => t.Type, t => t.Created);
         p.QueryParameters.Filter = syncFilter;
     }).AsItems();
 
@@ -343,7 +343,7 @@ await RunAsync(async () =>
     var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAllAsync(p =>
     {
         p.QueryParameters.Top = 1100;
-        p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransactions>.Build();
+        p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransaction>.Build();
         p.QueryParameters.Filter = syncFilter;
     }).AsItems();
 
@@ -361,7 +361,7 @@ await RunAsync(async () =>
     var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.GetAsync(p =>
     {
         p.QueryParameters.Top = 2;
-        p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransactions>.Build(t => t.ID, t => t.Timestamp, t => t.Type, t => t.Created);
+        p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransaction>.Build(t => t.ID, t => t.Timestamp, t => t.Type, t => t.Created);
         p.QueryParameters.Filter = syncFilter;
     }).AsItems();
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Manufacturing.BillOfMaterialVe
 
 public partial class BillOfMaterialVersionsRequestBuilder
 {
-    public async Task<SyncManufacturingBillOfMaterialVersions_Response?> GetAllAsync(Action<RequestConfiguration<BillOfMaterialVersionsRequestBuilder.BillOfMaterialVersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncManufacturingBillOfMaterialVersion_Response?> GetAllAsync(Action<RequestConfiguration<BillOfMaterialVersionsRequestBuilder.BillOfMaterialVersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncManufacturingBillOfMaterialVersionsResults is null)
+        if (response?.D?.SyncManufacturingBillOfMaterialVersionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncManufacturingBillOfMaterialVersions>();
+        var allItems = new List<SyncManufacturingBillOfMaterialVersion>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncManufacturingBillOfMaterialVersionsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncManufacturingBillOfMaterialVersionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncManufacturingBillOfMaterialVersionsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncManufacturingBillOfMaterialVersionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class BillOfMaterialVersionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncManufacturingBillOfMaterialVersions_Response
+        var finalResponse = new SyncManufacturingBillOfMaterialVersion_Response
         {
-            D = new SyncManufacturingBillOfMaterialVersions_Response.SyncManufacturingBillOfMaterialVersions_Response_d
+            D = new SyncManufacturingBillOfMaterialVersion_Response.SyncManufacturingBillOfMaterialVersion_Response_d
             {
-                SyncManufacturingBillOfMaterialVersions = allItems
+                SyncManufacturingBillOfMaterialVersion = allItems
             }
         };
 

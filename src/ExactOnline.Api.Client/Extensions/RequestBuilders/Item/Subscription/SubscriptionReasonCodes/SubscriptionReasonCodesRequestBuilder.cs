@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionReasonCode
 
 public partial class SubscriptionReasonCodesRequestBuilder
 {
-    public async Task<SubscriptionSubscriptionReasonCodes_Response?> GetAllAsync(Action<RequestConfiguration<SubscriptionReasonCodesRequestBuilder.SubscriptionReasonCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SubscriptionSubscriptionReasonCode_Response?> GetAllAsync(Action<RequestConfiguration<SubscriptionReasonCodesRequestBuilder.SubscriptionReasonCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SubscriptionSubscriptionReasonCodesResults is null)
+        if (response?.D?.SubscriptionSubscriptionReasonCodeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SubscriptionSubscriptionReasonCodes>();
+        var allItems = new List<SubscriptionSubscriptionReasonCode>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SubscriptionSubscriptionReasonCodesResults?.Results is { } results)
+            if (currentResponse?.D?.SubscriptionSubscriptionReasonCodeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SubscriptionSubscriptionReasonCodesResults?.Next;
+            var nextUrl = currentResponse?.D?.SubscriptionSubscriptionReasonCodeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SubscriptionReasonCodesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SubscriptionSubscriptionReasonCodes_Response
+        var finalResponse = new SubscriptionSubscriptionReasonCode_Response
         {
-            D = new SubscriptionSubscriptionReasonCodes_Response.SubscriptionSubscriptionReasonCodes_Response_d
+            D = new SubscriptionSubscriptionReasonCode_Response.SubscriptionSubscriptionReasonCode_Response_d
             {
-                SubscriptionSubscriptionReasonCodes = allItems
+                SubscriptionSubscriptionReasonCode = allItems
             }
         };
 

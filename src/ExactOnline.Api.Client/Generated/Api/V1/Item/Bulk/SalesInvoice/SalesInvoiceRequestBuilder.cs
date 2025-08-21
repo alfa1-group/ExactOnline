@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice
         /// This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoiceLinesWithId.SalesInvoiceLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the BulkSalesInvoiceSalesInvoiceLines</param>
+        /// <param name="id">Unique identifier (uuid) of the BulkSalesInvoiceSalesInvoiceLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoiceLinesWithId.SalesInvoiceLinesWithIdRequestBuilder SalesInvoiceLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice
         /// This bulk service has a page size of 1000.It is mandatory to provide the $select query option with a selection of one or more of the resource properties.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoicesWithInvoiceid.SalesInvoicesWithInvoiceidRequestBuilder"/></returns>
-        /// <param name="invoiceid">Unique identifier (uuid) of the BulkSalesInvoiceSalesInvoices</param>
+        /// <param name="invoiceid">Unique identifier (uuid) of the BulkSalesInvoiceSalesInvoice</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoicesWithInvoiceid.SalesInvoicesWithInvoiceidRequestBuilder SalesInvoicesWithInvoiceid(Guid? invoiceid)
         {
             _ = invoiceid ?? throw new ArgumentNullException(nameof(invoiceid));

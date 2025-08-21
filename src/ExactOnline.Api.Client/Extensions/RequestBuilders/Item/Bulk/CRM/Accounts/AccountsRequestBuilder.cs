@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.Accounts;
 
 public partial class AccountsRequestBuilder
 {
-    public async Task<BulkCRMAccounts_Response?> GetAllAsync(Action<RequestConfiguration<AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkCRMAccount_Response?> GetAllAsync(Action<RequestConfiguration<AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkCRMAccountsResults is null)
+        if (response?.D?.BulkCRMAccountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkCRMAccounts>();
+        var allItems = new List<BulkCRMAccount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkCRMAccountsResults?.Results is { } results)
+            if (currentResponse?.D?.BulkCRMAccountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkCRMAccountsResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkCRMAccountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AccountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkCRMAccounts_Response
+        var finalResponse = new BulkCRMAccount_Response
         {
-            D = new BulkCRMAccounts_Response.BulkCRMAccounts_Response_d
+            D = new BulkCRMAccount_Response.BulkCRMAccount_Response_d
             {
-                BulkCRMAccounts = allItems
+                BulkCRMAccount = allItems
             }
         };
 

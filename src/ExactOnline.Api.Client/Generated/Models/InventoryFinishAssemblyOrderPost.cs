@@ -21,10 +21,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The collection of batch numbers that belongs to the assembled and part items in the assembly order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>? BatchNumbers { get; set; }
+        public List<UntypedNode>? BatchNumbers { get; set; }
 #nullable restore
 #else
-        public List<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers> BatchNumbers { get; set; }
+        public List<UntypedNode> BatchNumbers { get; set; }
 #endif
         /// <summary>Description of assembly order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,10 +55,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>The collection of serial numbers that belongs to the assembled and part items in the assembly order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>? SerialNumbers { get; set; }
+        public List<UntypedNode>? SerialNumbers { get; set; }
 #nullable restore
 #else
-        public List<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers> SerialNumbers { get; set; }
+        public List<UntypedNode> SerialNumbers { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -81,12 +81,12 @@ namespace ExactOnline.Api.Client.Models
                 { "AssembledItemStorageLocation", n => { AssembledItemStorageLocation = n.GetGuidValue(); } },
                 { "AssemblyDate", n => { AssemblyDate = n.GetDateTimeOffsetValue(); } },
                 { "AssemblyOrder", n => { AssemblyOrder = n.GetGuidValue(); } },
-                { "BatchNumbers", n => { BatchNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "BatchNumbers", n => { BatchNumbers = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
                 { "Description", n => { Description = n.GetStringValue(); } },
                 { "FinishOrderQuantity", n => { FinishOrderQuantity = n.GetDoubleValue(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
                 { "Notes", n => { Notes = n.GetStringValue(); } },
-                { "SerialNumbers", n => { SerialNumbers = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>(global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "SerialNumbers", n => { SerialNumbers = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -99,11 +99,11 @@ namespace ExactOnline.Api.Client.Models
             writer.WriteGuidValue("AssembledItemStorageLocation", AssembledItemStorageLocation);
             writer.WriteDateTimeOffsetValue("AssemblyDate", AssemblyDate);
             writer.WriteGuidValue("AssemblyOrder", AssemblyOrder);
-            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockBatchNumbers>("BatchNumbers", BatchNumbers);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("BatchNumbers", BatchNumbers);
             writer.WriteStringValue("Description", Description);
             writer.WriteDoubleValue("FinishOrderQuantity", FinishOrderQuantity);
             writer.WriteStringValue("Notes", Notes);
-            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryStockSerialNumbers>("SerialNumbers", SerialNumbers);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("SerialNumbers", SerialNumbers);
         }
     }
 }

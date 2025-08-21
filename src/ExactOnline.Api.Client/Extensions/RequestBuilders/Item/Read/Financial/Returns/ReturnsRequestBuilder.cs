@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.Returns;
 
 public partial class ReturnsRequestBuilder
 {
-    public async Task<ReadFinancialReturns_Response?> GetAllAsync(Action<RequestConfiguration<ReturnsRequestBuilder.ReturnsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadFinancialReturn_Response?> GetAllAsync(Action<RequestConfiguration<ReturnsRequestBuilder.ReturnsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadFinancialReturnsResults is null)
+        if (response?.D?.ReadFinancialReturnResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadFinancialReturns>();
+        var allItems = new List<ReadFinancialReturn>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadFinancialReturnsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadFinancialReturnResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadFinancialReturnsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadFinancialReturnResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ReturnsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadFinancialReturns_Response
+        var finalResponse = new ReadFinancialReturn_Response
         {
-            D = new ReadFinancialReturns_Response.ReadFinancialReturns_Response_d
+            D = new ReadFinancialReturn_Response.ReadFinancialReturn_Response_d
             {
-                ReadFinancialReturns = allItems
+                ReadFinancialReturn = allItems
             }
         };
 

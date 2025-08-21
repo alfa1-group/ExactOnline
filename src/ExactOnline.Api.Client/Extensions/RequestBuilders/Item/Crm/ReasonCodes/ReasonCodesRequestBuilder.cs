@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.ReasonCodes;
 
 public partial class ReasonCodesRequestBuilder
 {
-    public async Task<CRMReasonCodes_Response?> GetAllAsync(Action<RequestConfiguration<ReasonCodesRequestBuilder.ReasonCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMReasonCode_Response?> GetAllAsync(Action<RequestConfiguration<ReasonCodesRequestBuilder.ReasonCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMReasonCodesResults is null)
+        if (response?.D?.CRMReasonCodeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMReasonCodes>();
+        var allItems = new List<CRMReasonCode>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMReasonCodesResults?.Results is { } results)
+            if (currentResponse?.D?.CRMReasonCodeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMReasonCodesResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMReasonCodeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ReasonCodesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMReasonCodes_Response
+        var finalResponse = new CRMReasonCode_Response
         {
-            D = new CRMReasonCodes_Response.CRMReasonCodes_Response_d
+            D = new CRMReasonCode_Response.CRMReasonCode_Response_d
             {
-                CRMReasonCodes = allItems
+                CRMReasonCode = allItems
             }
         };
 

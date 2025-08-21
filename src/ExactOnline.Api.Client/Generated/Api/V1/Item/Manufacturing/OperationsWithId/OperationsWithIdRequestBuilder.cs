@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationsWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationsWithId.OperationsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (uuid) of the ManufacturingOperations</param>
+        /// <param name="id">Unique identifier (uuid) of the ManufacturingOperation</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public OperationsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/manufacturing/Operations(guid'{id}')", pathParameters)
@@ -36,7 +36,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationsWithId
         {
         }
         /// <summary>
-        /// DELETE ManufacturingOperations
+        /// DELETE ManufacturingOperation
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,20 +60,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationsWithId
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET ManufacturingOperations
+        /// GET ManufacturingOperation
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ManufacturingOperationsGet_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ManufacturingOperationGet_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.ManufacturingOperationsGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ManufacturingOperationGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.ManufacturingOperationsGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ManufacturingOperationGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -82,10 +82,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationsWithId
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ManufacturingOperationsGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ManufacturingOperationsGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ManufacturingOperationGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ManufacturingOperationGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// PUT ManufacturingOperations
+        /// PUT ManufacturingOperation
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,11 +94,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationsWithId
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PutAsync(global::ExactOnline.Api.Client.Models.ManufacturingOperationsPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PutAsync(global::ExactOnline.Api.Client.Models.ManufacturingOperationPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PutAsync(global::ExactOnline.Api.Client.Models.ManufacturingOperationsPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PutAsync(global::ExactOnline.Api.Client.Models.ManufacturingOperationPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -111,7 +111,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationsWithId
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// DELETE ManufacturingOperations
+        /// DELETE ManufacturingOperation
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationsWithId
             return requestInfo;
         }
         /// <summary>
-        /// GET ManufacturingOperations
+        /// GET ManufacturingOperation
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,18 +149,18 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationsWithId
             return requestInfo;
         }
         /// <summary>
-        /// PUT ManufacturingOperations
+        /// PUT ManufacturingOperation
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.ManufacturingOperationsPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.ManufacturingOperationPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.ManufacturingOperationsPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.ManufacturingOperationPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

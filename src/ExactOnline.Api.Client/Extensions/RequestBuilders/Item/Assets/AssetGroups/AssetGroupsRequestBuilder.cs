@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Assets.AssetGroups;
 
 public partial class AssetGroupsRequestBuilder
 {
-    public async Task<AssetsAssetGroups_Response?> GetAllAsync(Action<RequestConfiguration<AssetGroupsRequestBuilder.AssetGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<AssetsAssetGroup_Response?> GetAllAsync(Action<RequestConfiguration<AssetGroupsRequestBuilder.AssetGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.AssetsAssetGroupsResults is null)
+        if (response?.D?.AssetsAssetGroupResults is null)
         {
             return response;
         }
 
-        var allItems = new List<AssetsAssetGroups>();
+        var allItems = new List<AssetsAssetGroup>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.AssetsAssetGroupsResults?.Results is { } results)
+            if (currentResponse?.D?.AssetsAssetGroupResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.AssetsAssetGroupsResults?.Next;
+            var nextUrl = currentResponse?.D?.AssetsAssetGroupResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AssetGroupsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new AssetsAssetGroups_Response
+        var finalResponse = new AssetsAssetGroup_Response
         {
-            D = new AssetsAssetGroups_Response.AssetsAssetGroups_Response_d
+            D = new AssetsAssetGroup_Response.AssetsAssetGroup_Response_d
             {
-                AssetsAssetGroups = allItems
+                AssetsAssetGroup = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Documents.Documents;
 
 public partial class DocumentsRequestBuilder
 {
-    public async Task<SyncDocumentsDocuments_Response?> GetAllAsync(Action<RequestConfiguration<DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncDocumentsDocument_Response?> GetAllAsync(Action<RequestConfiguration<DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncDocumentsDocumentsResults is null)
+        if (response?.D?.SyncDocumentsDocumentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncDocumentsDocuments>();
+        var allItems = new List<SyncDocumentsDocument>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncDocumentsDocumentsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncDocumentsDocumentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncDocumentsDocumentsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncDocumentsDocumentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DocumentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncDocumentsDocuments_Response
+        var finalResponse = new SyncDocumentsDocument_Response
         {
-            D = new SyncDocumentsDocuments_Response.SyncDocumentsDocuments_Response_d
+            D = new SyncDocumentsDocument_Response.SyncDocumentsDocument_Response_d
             {
-                SyncDocumentsDocuments = allItems
+                SyncDocumentsDocument = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Project.Projects;
 
 public partial class ProjectsRequestBuilder
 {
-    public async Task<SyncProjectProjects_Response?> GetAllAsync(Action<RequestConfiguration<ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncProjectProject_Response?> GetAllAsync(Action<RequestConfiguration<ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncProjectProjectsResults is null)
+        if (response?.D?.SyncProjectProjectResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncProjectProjects>();
+        var allItems = new List<SyncProjectProject>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncProjectProjectsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncProjectProjectResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncProjectProjectsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncProjectProjectResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncProjectProjects_Response
+        var finalResponse = new SyncProjectProject_Response
         {
-            D = new SyncProjectProjects_Response.SyncProjectProjects_Response_d
+            D = new SyncProjectProject_Response.SyncProjectProject_Response_d
             {
-                SyncProjectProjects = allItems
+                SyncProjectProject = allItems
             }
         };
 

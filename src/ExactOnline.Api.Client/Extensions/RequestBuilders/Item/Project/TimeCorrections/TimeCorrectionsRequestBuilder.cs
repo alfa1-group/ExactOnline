@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.TimeCorrections;
 
 public partial class TimeCorrectionsRequestBuilder
 {
-    public async Task<ProjectTimeCorrections_Response?> GetAllAsync(Action<RequestConfiguration<TimeCorrectionsRequestBuilder.TimeCorrectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectTimeCorrection_Response?> GetAllAsync(Action<RequestConfiguration<TimeCorrectionsRequestBuilder.TimeCorrectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectTimeCorrectionsResults is null)
+        if (response?.D?.ProjectTimeCorrectionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectTimeCorrections>();
+        var allItems = new List<ProjectTimeCorrection>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectTimeCorrectionsResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectTimeCorrectionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectTimeCorrectionsResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectTimeCorrectionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TimeCorrectionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectTimeCorrections_Response
+        var finalResponse = new ProjectTimeCorrection_Response
         {
-            D = new ProjectTimeCorrections_Response.ProjectTimeCorrections_Response_d
+            D = new ProjectTimeCorrection_Response.ProjectTimeCorrection_Response_d
             {
-                ProjectTimeCorrections = allItems
+                ProjectTimeCorrection = allItems
             }
         };
 

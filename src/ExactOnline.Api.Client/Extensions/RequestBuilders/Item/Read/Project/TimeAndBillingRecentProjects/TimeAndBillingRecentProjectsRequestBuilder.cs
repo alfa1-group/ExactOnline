@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingRecentPr
 
 public partial class TimeAndBillingRecentProjectsRequestBuilder
 {
-    public async Task<ReadProjectTimeAndBillingRecentProjects_Response?> GetAllAsync(Action<RequestConfiguration<TimeAndBillingRecentProjectsRequestBuilder.TimeAndBillingRecentProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectTimeAndBillingRecentProject_Response?> GetAllAsync(Action<RequestConfiguration<TimeAndBillingRecentProjectsRequestBuilder.TimeAndBillingRecentProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectTimeAndBillingRecentProjectsResults is null)
+        if (response?.D?.ReadProjectTimeAndBillingRecentProjectResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectTimeAndBillingRecentProjects>();
+        var allItems = new List<ReadProjectTimeAndBillingRecentProject>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectTimeAndBillingRecentProjectsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectTimeAndBillingRecentProjectResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectTimeAndBillingRecentProjectsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectTimeAndBillingRecentProjectResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TimeAndBillingRecentProjectsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectTimeAndBillingRecentProjects_Response
+        var finalResponse = new ReadProjectTimeAndBillingRecentProject_Response
         {
-            D = new ReadProjectTimeAndBillingRecentProjects_Response.ReadProjectTimeAndBillingRecentProjects_Response_d
+            D = new ReadProjectTimeAndBillingRecentProject_Response.ReadProjectTimeAndBillingRecentProject_Response_d
             {
-                ReadProjectTimeAndBillingRecentProjects = allItems
+                ReadProjectTimeAndBillingRecentProject = allItems
             }
         };
 

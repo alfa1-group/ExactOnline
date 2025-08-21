@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.BankEntries;
 
 public partial class BankEntriesRequestBuilder
 {
-    public async Task<FinancialTransactionBankEntries_Response?> GetAllAsync(Action<RequestConfiguration<BankEntriesRequestBuilder.BankEntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialTransactionBankEntry_Response?> GetAllAsync(Action<RequestConfiguration<BankEntriesRequestBuilder.BankEntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialTransactionBankEntriesResults is null)
+        if (response?.D?.FinancialTransactionBankEntryResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialTransactionBankEntries>();
+        var allItems = new List<FinancialTransactionBankEntry>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialTransactionBankEntriesResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialTransactionBankEntryResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialTransactionBankEntriesResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialTransactionBankEntryResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class BankEntriesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialTransactionBankEntries_Response
+        var finalResponse = new FinancialTransactionBankEntry_Response
         {
-            D = new FinancialTransactionBankEntries_Response.FinancialTransactionBankEntries_Response_d
+            D = new FinancialTransactionBankEntry_Response.FinancialTransactionBankEntry_Response_d
             {
-                FinancialTransactionBankEntries = allItems
+                FinancialTransactionBankEntry = allItems
             }
         };
 

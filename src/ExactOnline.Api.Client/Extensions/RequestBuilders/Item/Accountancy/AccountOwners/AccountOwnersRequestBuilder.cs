@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwners;
 
 public partial class AccountOwnersRequestBuilder
 {
-    public async Task<AccountancyAccountOwners_Response?> GetAllAsync(Action<RequestConfiguration<AccountOwnersRequestBuilder.AccountOwnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<AccountancyAccountOwner_Response?> GetAllAsync(Action<RequestConfiguration<AccountOwnersRequestBuilder.AccountOwnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.AccountancyAccountOwnersResults is null)
+        if (response?.D?.AccountancyAccountOwnerResults is null)
         {
             return response;
         }
 
-        var allItems = new List<AccountancyAccountOwners>();
+        var allItems = new List<AccountancyAccountOwner>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.AccountancyAccountOwnersResults?.Results is { } results)
+            if (currentResponse?.D?.AccountancyAccountOwnerResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.AccountancyAccountOwnersResults?.Next;
+            var nextUrl = currentResponse?.D?.AccountancyAccountOwnerResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AccountOwnersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new AccountancyAccountOwners_Response
+        var finalResponse = new AccountancyAccountOwner_Response
         {
-            D = new AccountancyAccountOwners_Response.AccountancyAccountOwners_Response_d
+            D = new AccountancyAccountOwner_Response.AccountancyAccountOwner_Response_d
             {
-                AccountancyAccountOwners = allItems
+                AccountancyAccountOwner = allItems
             }
         };
 

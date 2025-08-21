@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId.DocumentAttachmentsWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (uuid) of the DocumentsDocumentAttachments</param>
+        /// <param name="id">Unique identifier (uuid) of the DocumentsDocumentAttachment</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public DocumentAttachmentsWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/documents/DocumentAttachments(guid'{id}')", pathParameters)
@@ -36,7 +36,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId
         {
         }
         /// <summary>
-        /// DELETE DocumentsDocumentAttachments
+        /// DELETE DocumentsDocumentAttachment
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,20 +60,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET DocumentsDocumentAttachments
+        /// GET DocumentsDocumentAttachment
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachmentsGet_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachmentGet_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachmentsGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachmentGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachmentsGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachmentGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -82,10 +82,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachmentsGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachmentsGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachmentGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.DocumentsDocumentAttachmentGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// DELETE DocumentsDocumentAttachments
+        /// DELETE DocumentsDocumentAttachment
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId
             return requestInfo;
         }
         /// <summary>
-        /// GET DocumentsDocumentAttachments
+        /// GET DocumentsDocumentAttachment
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassNames;
 
 public partial class DivisionClassNamesRequestBuilder
 {
-    public async Task<HRMDivisionClassNames_Response?> GetAllAsync(Action<RequestConfiguration<DivisionClassNamesRequestBuilder.DivisionClassNamesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<HRMDivisionClassName_Response?> GetAllAsync(Action<RequestConfiguration<DivisionClassNamesRequestBuilder.DivisionClassNamesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.HRMDivisionClassNamesResults is null)
+        if (response?.D?.HRMDivisionClassNameResults is null)
         {
             return response;
         }
 
-        var allItems = new List<HRMDivisionClassNames>();
+        var allItems = new List<HRMDivisionClassName>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.HRMDivisionClassNamesResults?.Results is { } results)
+            if (currentResponse?.D?.HRMDivisionClassNameResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.HRMDivisionClassNamesResults?.Next;
+            var nextUrl = currentResponse?.D?.HRMDivisionClassNameResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DivisionClassNamesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new HRMDivisionClassNames_Response
+        var finalResponse = new HRMDivisionClassName_Response
         {
-            D = new HRMDivisionClassNames_Response.HRMDivisionClassNames_Response_d
+            D = new HRMDivisionClassName_Response.HRMDivisionClassName_Response_d
             {
-                HRMDivisionClassNames = allItems
+                HRMDivisionClassName = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Manufacturing.ShopOrderMateria
 
 public partial class ShopOrderMaterialPlansRequestBuilder
 {
-    public async Task<SyncManufacturingShopOrderMaterialPlans_Response?> GetAllAsync(Action<RequestConfiguration<ShopOrderMaterialPlansRequestBuilder.ShopOrderMaterialPlansRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncManufacturingShopOrderMaterialPlan_Response?> GetAllAsync(Action<RequestConfiguration<ShopOrderMaterialPlansRequestBuilder.ShopOrderMaterialPlansRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncManufacturingShopOrderMaterialPlansResults is null)
+        if (response?.D?.SyncManufacturingShopOrderMaterialPlanResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncManufacturingShopOrderMaterialPlans>();
+        var allItems = new List<SyncManufacturingShopOrderMaterialPlan>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncManufacturingShopOrderMaterialPlansResults?.Results is { } results)
+            if (currentResponse?.D?.SyncManufacturingShopOrderMaterialPlanResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncManufacturingShopOrderMaterialPlansResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncManufacturingShopOrderMaterialPlanResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ShopOrderMaterialPlansRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncManufacturingShopOrderMaterialPlans_Response
+        var finalResponse = new SyncManufacturingShopOrderMaterialPlan_Response
         {
-            D = new SyncManufacturingShopOrderMaterialPlans_Response.SyncManufacturingShopOrderMaterialPlans_Response_d
+            D = new SyncManufacturingShopOrderMaterialPlan_Response.SyncManufacturingShopOrderMaterialPlan_Response_d
             {
-                SyncManufacturingShopOrderMaterialPlans = allItems
+                SyncManufacturingShopOrderMaterialPlan = allItems
             }
         };
 

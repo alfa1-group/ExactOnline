@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictio
 
 public partial class SubscriptionRestrictionItemsRequestBuilder
 {
-    public async Task<SubscriptionSubscriptionRestrictionItems_Response?> GetAllAsync(Action<RequestConfiguration<SubscriptionRestrictionItemsRequestBuilder.SubscriptionRestrictionItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SubscriptionSubscriptionRestrictionItem_Response?> GetAllAsync(Action<RequestConfiguration<SubscriptionRestrictionItemsRequestBuilder.SubscriptionRestrictionItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SubscriptionSubscriptionRestrictionItemsResults is null)
+        if (response?.D?.SubscriptionSubscriptionRestrictionItemResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SubscriptionSubscriptionRestrictionItems>();
+        var allItems = new List<SubscriptionSubscriptionRestrictionItem>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SubscriptionSubscriptionRestrictionItemsResults?.Results is { } results)
+            if (currentResponse?.D?.SubscriptionSubscriptionRestrictionItemResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SubscriptionSubscriptionRestrictionItemsResults?.Next;
+            var nextUrl = currentResponse?.D?.SubscriptionSubscriptionRestrictionItemResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SubscriptionRestrictionItemsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SubscriptionSubscriptionRestrictionItems_Response
+        var finalResponse = new SubscriptionSubscriptionRestrictionItem_Response
         {
-            D = new SubscriptionSubscriptionRestrictionItems_Response.SubscriptionSubscriptionRestrictionItems_Response_d
+            D = new SubscriptionSubscriptionRestrictionItem_Response.SubscriptionSubscriptionRestrictionItem_Response_d
             {
-                SubscriptionSubscriptionRestrictionItems = allItems
+                SubscriptionSubscriptionRestrictionItem = allItems
             }
         };
 

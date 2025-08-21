@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.System.Divisions;
 
 public partial class DivisionsRequestBuilder
 {
-    public async Task<SystemSystemDivisions_Response?> GetAllAsync(Action<RequestConfiguration<DivisionsRequestBuilder.DivisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SystemSystemDivision_Response?> GetAllAsync(Action<RequestConfiguration<DivisionsRequestBuilder.DivisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SystemSystemDivisionsResults is null)
+        if (response?.D?.SystemSystemDivisionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SystemSystemDivisions>();
+        var allItems = new List<SystemSystemDivision>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SystemSystemDivisionsResults?.Results is { } results)
+            if (currentResponse?.D?.SystemSystemDivisionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SystemSystemDivisionsResults?.Next;
+            var nextUrl = currentResponse?.D?.SystemSystemDivisionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DivisionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SystemSystemDivisions_Response
+        var finalResponse = new SystemSystemDivision_Response
         {
-            D = new SystemSystemDivisions_Response.SystemSystemDivisions_Response_d
+            D = new SystemSystemDivision_Response.SystemSystemDivision_Response_d
             {
-                SystemSystemDivisions = allItems
+                SystemSystemDivision = allItems
             }
         };
 

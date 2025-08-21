@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Vat.VATCodes;
 
 public partial class VATCodesRequestBuilder
 {
-    public async Task<VATVATCodes_Response?> GetAllAsync(Action<RequestConfiguration<VATCodesRequestBuilder.VATCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<VATVATCode_Response?> GetAllAsync(Action<RequestConfiguration<VATCodesRequestBuilder.VATCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.VATVATCodesResults is null)
+        if (response?.D?.VATVATCodeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<VATVATCodes>();
+        var allItems = new List<VATVATCode>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.VATVATCodesResults?.Results is { } results)
+            if (currentResponse?.D?.VATVATCodeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.VATVATCodesResults?.Next;
+            var nextUrl = currentResponse?.D?.VATVATCodeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class VATCodesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new VATVATCodes_Response
+        var finalResponse = new VATVATCode_Response
         {
-            D = new VATVATCodes_Response.VATVATCodes_Response_d
+            D = new VATVATCode_Response.VATVATCode_Response_d
             {
-                VATVATCodes = allItems
+                VATVATCode = allItems
             }
         };
 

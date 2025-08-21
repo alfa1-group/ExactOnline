@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccounts;
 
 public partial class BankAccountsRequestBuilder
 {
-    public async Task<CRMBankAccounts_Response?> GetAllAsync(Action<RequestConfiguration<BankAccountsRequestBuilder.BankAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMBankAccount_Response?> GetAllAsync(Action<RequestConfiguration<BankAccountsRequestBuilder.BankAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMBankAccountsResults is null)
+        if (response?.D?.CRMBankAccountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMBankAccounts>();
+        var allItems = new List<CRMBankAccount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMBankAccountsResults?.Results is { } results)
+            if (currentResponse?.D?.CRMBankAccountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMBankAccountsResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMBankAccountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class BankAccountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMBankAccounts_Response
+        var finalResponse = new CRMBankAccount_Response
         {
-            D = new CRMBankAccounts_Response.CRMBankAccounts_Response_d
+            D = new CRMBankAccount_Response.CRMBankAccount_Response_d
             {
-                CRMBankAccounts = allItems
+                CRMBankAccount = allItems
             }
         };
 

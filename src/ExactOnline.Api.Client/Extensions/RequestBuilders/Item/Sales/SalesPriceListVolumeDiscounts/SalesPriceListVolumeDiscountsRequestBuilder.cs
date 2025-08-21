@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListVolumeDiscounts
 
 public partial class SalesPriceListVolumeDiscountsRequestBuilder
 {
-    public async Task<SalesSalesPriceListVolumeDiscounts_Response?> GetAllAsync(Action<RequestConfiguration<SalesPriceListVolumeDiscountsRequestBuilder.SalesPriceListVolumeDiscountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesSalesPriceListVolumeDiscount_Response?> GetAllAsync(Action<RequestConfiguration<SalesPriceListVolumeDiscountsRequestBuilder.SalesPriceListVolumeDiscountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesSalesPriceListVolumeDiscountsResults is null)
+        if (response?.D?.SalesSalesPriceListVolumeDiscountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesSalesPriceListVolumeDiscounts>();
+        var allItems = new List<SalesSalesPriceListVolumeDiscount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesSalesPriceListVolumeDiscountsResults?.Results is { } results)
+            if (currentResponse?.D?.SalesSalesPriceListVolumeDiscountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesSalesPriceListVolumeDiscountsResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesSalesPriceListVolumeDiscountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesPriceListVolumeDiscountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesSalesPriceListVolumeDiscounts_Response
+        var finalResponse = new SalesSalesPriceListVolumeDiscount_Response
         {
-            D = new SalesSalesPriceListVolumeDiscounts_Response.SalesSalesPriceListVolumeDiscounts_Response_d
+            D = new SalesSalesPriceListVolumeDiscount_Response.SalesSalesPriceListVolumeDiscount_Response_d
             {
-                SalesSalesPriceListVolumeDiscounts = allItems
+                SalesSalesPriceListVolumeDiscount = allItems
             }
         };
 

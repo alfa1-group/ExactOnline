@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.TimeTransactions;
 
 public partial class TimeTransactionsRequestBuilder
 {
-    public async Task<ManufacturingTimeTransactions_Response?> GetAllAsync(Action<RequestConfiguration<TimeTransactionsRequestBuilder.TimeTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingTimeTransaction_Response?> GetAllAsync(Action<RequestConfiguration<TimeTransactionsRequestBuilder.TimeTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingTimeTransactionsResults is null)
+        if (response?.D?.ManufacturingTimeTransactionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingTimeTransactions>();
+        var allItems = new List<ManufacturingTimeTransaction>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingTimeTransactionsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingTimeTransactionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingTimeTransactionsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingTimeTransactionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TimeTransactionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingTimeTransactions_Response
+        var finalResponse = new ManufacturingTimeTransaction_Response
         {
-            D = new ManufacturingTimeTransactions_Response.ManufacturingTimeTransactions_Response_d
+            D = new ManufacturingTimeTransaction_Response.ManufacturingTimeTransaction_Response_d
             {
-                ManufacturingTimeTransactions = allItems
+                ManufacturingTimeTransaction = allItems
             }
         };
 

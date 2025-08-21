@@ -95,7 +95,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// Use this endpoint to read active employments.This endpoint gives the basic information of the employee&apos;s employment that is active at this moment. An employment consists of multiple parts, like contract, organization and salary.  For each, the detailed information can be read using the specifc endpoint.For more information about the employments functionality in Exact Online, see Working with employees in Exact Online.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Payroll.ActiveEmploymentsWithId.ActiveEmploymentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the PayrollActiveEmployments</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollActiveEmployment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.ActiveEmploymentsWithId.ActiveEmploymentsWithIdRequestBuilder ActiveEmploymentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -121,7 +121,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// Use this endpoint to read employees.For more information about the employees functionality in Exact Online, see Working with employees in Exact Online.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmployeesWithId.EmployeesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the PayrollEmployees</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollEmployee</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmployeesWithId.EmployeesWithIdRequestBuilder EmployeesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -131,7 +131,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// Use this endpoint to read employment contract flex phases.An employment contract flex phase is used for flexworkers to indicate the phase   in which the income ratio is, in context of the &apos;Wet Flexibiliteit en Zekerheid&apos;.  With the tax authority this phase is known as &apos;Code fase indeling F&amp;amp;Z&apos;.  The phase is set in the employment contract, that can be read using the EmploymentContracts endpoint.  This API has been deprecated and only returns the employment contract flex phases that were active before 2022.  Please Use the EmploymentContractFlexPhasesOnFocusDate for payroll year 2022 and onwards.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContractFlexPhasesWithId.EmploymentContractFlexPhasesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (int32) of the PayrollEmploymentContractFlexPhases</param>
+        /// <param name="id">Unique identifier (int32) of the PayrollEmploymentContractFlexPhase</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContractFlexPhasesWithId.EmploymentContractFlexPhasesWithIdRequestBuilder EmploymentContractFlexPhasesWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -141,7 +141,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// Use this endpoint to read employment contracts.The employment contract contains the basic information about the employee&apos;s contract.For more information about the employment contracts functionality in Exact Online, see Modify an employee&apos;s contract.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContractsWithId.EmploymentContractsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentContracts</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentContract</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContractsWithId.EmploymentContractsWithIdRequestBuilder EmploymentContractsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -151,7 +151,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// Use this endpoint to read employment end reasons.The reason is set when the employment is ended. This API has been deprecated and only returns the employment end reasons that were active before 2020. Use the EmploymentEndReasonsOnFocusDate for payroll year 2020 and onwards.For more information about the employments functionality in Exact Online, see End an employee&apos;s contract.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentEndReasonsWithId.EmploymentEndReasonsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (int32) of the PayrollEmploymentEndReasons</param>
+        /// <param name="id">Unique identifier (int32) of the PayrollEmploymentEndReason</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentEndReasonsWithId.EmploymentEndReasonsWithIdRequestBuilder EmploymentEndReasonsWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -161,7 +161,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// Use this endpoint to read employment organizations.The employment organization contains the basic information about the employee&apos;s organizational data, like job title and department.For more information about the employment organizations functionality in Exact Online, see Maintenance organization.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentOrganizationsWithId.EmploymentOrganizationsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentOrganizations</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentOrganization</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentOrganizationsWithId.EmploymentOrganizationsWithIdRequestBuilder EmploymentOrganizationsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -171,7 +171,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// Use this endpoint to read employment salaries.The employment salary contains the basic information about the employee&apos;s salary, like full and parttime salary, hourly wage and scale.For more information about the employment salaries functionality in Exact Online, see Modify an employee&apos;s salary or rate.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentSalariesWithId.EmploymentSalariesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentSalaries</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentSalary</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentSalariesWithId.EmploymentSalariesWithIdRequestBuilder EmploymentSalariesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -181,7 +181,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// Use this endpoint to read employments.This endpoint gives the basic information of the employee&apos;s employment. An employment consists of multiple parts, like contract, organization and salary.  For each, the detailed information can be read using the specifc endpoint. To get the active employments only, the endpoint ActiveEmployments can be used.For more information about the employments functionality in Exact Online, see Working with employees in Exact Online.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentsWithId.EmploymentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the PayrollEmployments</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollEmployment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentsWithId.EmploymentsWithIdRequestBuilder EmploymentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -201,7 +201,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// Use this endpoint to read employment end flex codes.An employment end flex code is used for flexworkers to indicate the reason that the employment is ended.  With the tax authority this phase is known as &apos;Code reden einde inkomstenverhouding flexwerker&apos;.  The reason is set in the employment, that can be read using the Employments endpoint.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Payroll.TaxEmploymentEndFlexCodesWithId.TaxEmploymentEndFlexCodesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the PayrollTaxEmploymentEndFlexCodes</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollTaxEmploymentEndFlexCode</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.TaxEmploymentEndFlexCodesWithId.TaxEmploymentEndFlexCodesWithIdRequestBuilder TaxEmploymentEndFlexCodesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -211,7 +211,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// Use this endpoint to : • Create a new variable mutation entry. It is mandatory to provide the value for PayrollYear, PayrollPeriod, EmployeeHID, and Type.If the Type is payroll component, then PayrollComponent property is also mandatory. • Get the details of variable mutation entry. Filters can be used to reduce the amount of data retrieved. • Update a variable mutation entry. It is mandatory to provide the ID of the entry to update.Note: To access the API using OAuth 2.0 authentication process, see Using OAuth 2.0 to access Exact Online API. You can find examples for setting up each API request in Make the request - REST For more information about the  functionality in Exact Online, see Payroll through variable mutations.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Payroll.VariableMutationsWithId.VariableMutationsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the PayrollVariableMutations</param>
+        /// <param name="id">Unique identifier (uuid) of the PayrollVariableMutation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.VariableMutationsWithId.VariableMutationsWithIdRequestBuilder VariableMutationsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

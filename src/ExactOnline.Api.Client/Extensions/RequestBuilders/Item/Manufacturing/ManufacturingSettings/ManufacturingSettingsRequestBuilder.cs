@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ManufacturingSettings
 
 public partial class ManufacturingSettingsRequestBuilder
 {
-    public async Task<ManufacturingManufacturingSettings_Response?> GetAllAsync(Action<RequestConfiguration<ManufacturingSettingsRequestBuilder.ManufacturingSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingManufacturingSetting_Response?> GetAllAsync(Action<RequestConfiguration<ManufacturingSettingsRequestBuilder.ManufacturingSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingManufacturingSettingsResults is null)
+        if (response?.D?.ManufacturingManufacturingSettingResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingManufacturingSettings>();
+        var allItems = new List<ManufacturingManufacturingSetting>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingManufacturingSettingsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingManufacturingSettingResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingManufacturingSettingsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingManufacturingSettingResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ManufacturingSettingsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingManufacturingSettings_Response
+        var finalResponse = new ManufacturingManufacturingSetting_Response
         {
-            D = new ManufacturingManufacturingSettings_Response.ManufacturingManufacturingSettings_Response_d
+            D = new ManufacturingManufacturingSetting_Response.ManufacturingManufacturingSetting_Response_d
             {
-                ManufacturingManufacturingSettings = allItems
+                ManufacturingManufacturingSetting = allItems
             }
         };
 

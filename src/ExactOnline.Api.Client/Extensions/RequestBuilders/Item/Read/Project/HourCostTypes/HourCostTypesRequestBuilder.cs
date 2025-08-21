@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourCostTypes;
 
 public partial class HourCostTypesRequestBuilder
 {
-    public async Task<ReadProjectHourCostTypes_Response?> GetAllAsync(Action<RequestConfiguration<HourCostTypesRequestBuilder.HourCostTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectHourCostType_Response?> GetAllAsync(Action<RequestConfiguration<HourCostTypesRequestBuilder.HourCostTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectHourCostTypesResults is null)
+        if (response?.D?.ReadProjectHourCostTypeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectHourCostTypes>();
+        var allItems = new List<ReadProjectHourCostType>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectHourCostTypesResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectHourCostTypeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectHourCostTypesResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectHourCostTypeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class HourCostTypesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectHourCostTypes_Response
+        var finalResponse = new ReadProjectHourCostType_Response
         {
-            D = new ReadProjectHourCostTypes_Response.ReadProjectHourCostTypes_Response_d
+            D = new ReadProjectHourCostType_Response.ReadProjectHourCostType_Response_d
             {
-                ReadProjectHourCostTypes = allItems
+                ReadProjectHourCostType = allItems
             }
         };
 

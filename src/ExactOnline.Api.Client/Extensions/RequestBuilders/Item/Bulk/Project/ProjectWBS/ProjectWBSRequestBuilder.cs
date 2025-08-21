@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Project.ProjectWBS;
 
 public partial class ProjectWBSRequestBuilder
 {
-    public async Task<BulkProjectProjectWBS_Response?> GetAllAsync(Action<RequestConfiguration<ProjectWBSRequestBuilder.ProjectWBSRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkProjectProjectWB_Response?> GetAllAsync(Action<RequestConfiguration<ProjectWBSRequestBuilder.ProjectWBSRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkProjectProjectWBSResults is null)
+        if (response?.D?.BulkProjectProjectWBResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkProjectProjectWBS>();
+        var allItems = new List<BulkProjectProjectWB>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkProjectProjectWBSResults?.Results is { } results)
+            if (currentResponse?.D?.BulkProjectProjectWBResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkProjectProjectWBSResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkProjectProjectWBResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectWBSRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkProjectProjectWBS_Response
+        var finalResponse = new BulkProjectProjectWB_Response
         {
-            D = new BulkProjectProjectWBS_Response.BulkProjectProjectWBS_Response_d
+            D = new BulkProjectProjectWB_Response.BulkProjectProjectWB_Response_d
             {
-                BulkProjectProjectWBS = allItems
+                BulkProjectProjectWB = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehouseTransferLines;
 
 public partial class WarehouseTransferLinesRequestBuilder
 {
-    public async Task<InventoryWarehouseTransferLines_Response?> GetAllAsync(Action<RequestConfiguration<WarehouseTransferLinesRequestBuilder.WarehouseTransferLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventoryWarehouseTransferLine_Response?> GetAllAsync(Action<RequestConfiguration<WarehouseTransferLinesRequestBuilder.WarehouseTransferLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventoryWarehouseTransferLinesResults is null)
+        if (response?.D?.InventoryWarehouseTransferLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventoryWarehouseTransferLines>();
+        var allItems = new List<InventoryWarehouseTransferLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventoryWarehouseTransferLinesResults?.Results is { } results)
+            if (currentResponse?.D?.InventoryWarehouseTransferLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventoryWarehouseTransferLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.InventoryWarehouseTransferLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class WarehouseTransferLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventoryWarehouseTransferLines_Response
+        var finalResponse = new InventoryWarehouseTransferLine_Response
         {
-            D = new InventoryWarehouseTransferLines_Response.InventoryWarehouseTransferLines_Response_d
+            D = new InventoryWarehouseTransferLine_Response.InventoryWarehouseTransferLine_Response_d
             {
-                InventoryWarehouseTransferLines = allItems
+                InventoryWarehouseTransferLine = allItems
             }
         };
 

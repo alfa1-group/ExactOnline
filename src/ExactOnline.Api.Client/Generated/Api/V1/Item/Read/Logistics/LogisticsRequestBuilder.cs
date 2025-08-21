@@ -53,7 +53,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics
         /// Use this endpoint to read division items.Add CustomDescriptionLanguage=&apos;[ NL | FR-BE | NL-BE | ... ]&apos; to the header to retrieve language sensitive properties such as descriptions in a specific language.This endpoint will return all the division items. Using the accountID as a filter will not have any effect on the result.For more information about the Items functionality in Exact Online, see Working with items.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.AccountItemsWithId.AccountItemsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ReadLogisticsAccountItems</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadLogisticsAccountItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.AccountItemsWithId.AccountItemsWithIdRequestBuilder AccountItemsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

@@ -41,7 +41,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow
         /// Builds and executes requests for operations under \api\v1\beta\{division}\workflow\RequestAttachments({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachmentsWithId.RequestAttachmentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the WorkflowRequestAttachments</param>
+        /// <param name="id">Unique identifier (uuid) of the WorkflowRequestAttachment</param>
         public global::ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachmentsWithId.RequestAttachmentsWithIdRequestBuilder RequestAttachmentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

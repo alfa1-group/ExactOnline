@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Inventory.SerialBatchNumbers;
 
 public partial class SerialBatchNumbersRequestBuilder
 {
-    public async Task<SyncInventorySerialBatchNumbers_Response?> GetAllAsync(Action<RequestConfiguration<SerialBatchNumbersRequestBuilder.SerialBatchNumbersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncInventorySerialBatchNumber_Response?> GetAllAsync(Action<RequestConfiguration<SerialBatchNumbersRequestBuilder.SerialBatchNumbersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncInventorySerialBatchNumbersResults is null)
+        if (response?.D?.SyncInventorySerialBatchNumberResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncInventorySerialBatchNumbers>();
+        var allItems = new List<SyncInventorySerialBatchNumber>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncInventorySerialBatchNumbersResults?.Results is { } results)
+            if (currentResponse?.D?.SyncInventorySerialBatchNumberResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncInventorySerialBatchNumbersResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncInventorySerialBatchNumberResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SerialBatchNumbersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncInventorySerialBatchNumbers_Response
+        var finalResponse = new SyncInventorySerialBatchNumber_Response
         {
-            D = new SyncInventorySerialBatchNumbers_Response.SyncInventorySerialBatchNumbers_Response_d
+            D = new SyncInventorySerialBatchNumber_Response.SyncInventorySerialBatchNumber_Response_d
             {
-                SyncInventorySerialBatchNumbers = allItems
+                SyncInventorySerialBatchNumber = allItems
             }
         };
 

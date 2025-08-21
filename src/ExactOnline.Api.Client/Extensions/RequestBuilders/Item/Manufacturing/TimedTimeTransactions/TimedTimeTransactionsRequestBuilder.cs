@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.TimedTimeTransactions
 
 public partial class TimedTimeTransactionsRequestBuilder
 {
-    public async Task<ManufacturingTimedTimeTransactions_Response?> GetAllAsync(Action<RequestConfiguration<TimedTimeTransactionsRequestBuilder.TimedTimeTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingTimedTimeTransaction_Response?> GetAllAsync(Action<RequestConfiguration<TimedTimeTransactionsRequestBuilder.TimedTimeTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingTimedTimeTransactionsResults is null)
+        if (response?.D?.ManufacturingTimedTimeTransactionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingTimedTimeTransactions>();
+        var allItems = new List<ManufacturingTimedTimeTransaction>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingTimedTimeTransactionsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingTimedTimeTransactionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingTimedTimeTransactionsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingTimedTimeTransactionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TimedTimeTransactionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingTimedTimeTransactions_Response
+        var finalResponse = new ManufacturingTimedTimeTransaction_Response
         {
-            D = new ManufacturingTimedTimeTransactions_Response.ManufacturingTimedTimeTransactions_Response_d
+            D = new ManufacturingTimedTimeTransaction_Response.ManufacturingTimedTimeTransaction_Response_d
             {
-                ManufacturingTimedTimeTransactions = allItems
+                ManufacturingTimedTimeTransaction = allItems
             }
         };
 

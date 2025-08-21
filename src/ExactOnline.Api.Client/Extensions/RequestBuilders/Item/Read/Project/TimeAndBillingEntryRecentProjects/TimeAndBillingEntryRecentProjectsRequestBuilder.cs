@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRec
 
 public partial class TimeAndBillingEntryRecentProjectsRequestBuilder
 {
-    public async Task<ReadProjectTimeAndBillingEntryRecentProjects_Response?> GetAllAsync(Action<RequestConfiguration<TimeAndBillingEntryRecentProjectsRequestBuilder.TimeAndBillingEntryRecentProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectTimeAndBillingEntryRecentProject_Response?> GetAllAsync(Action<RequestConfiguration<TimeAndBillingEntryRecentProjectsRequestBuilder.TimeAndBillingEntryRecentProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectTimeAndBillingEntryRecentProjectsResults is null)
+        if (response?.D?.ReadProjectTimeAndBillingEntryRecentProjectResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectTimeAndBillingEntryRecentProjects>();
+        var allItems = new List<ReadProjectTimeAndBillingEntryRecentProject>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectTimeAndBillingEntryRecentProjectsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectTimeAndBillingEntryRecentProjectResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectTimeAndBillingEntryRecentProjectsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectTimeAndBillingEntryRecentProjectResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TimeAndBillingEntryRecentProjectsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectTimeAndBillingEntryRecentProjects_Response
+        var finalResponse = new ReadProjectTimeAndBillingEntryRecentProject_Response
         {
-            D = new ReadProjectTimeAndBillingEntryRecentProjects_Response.ReadProjectTimeAndBillingEntryRecentProjects_Response_d
+            D = new ReadProjectTimeAndBillingEntryRecentProject_Response.ReadProjectTimeAndBillingEntryRecentProject_Response_d
             {
-                ReadProjectTimeAndBillingEntryRecentProjects = allItems
+                ReadProjectTimeAndBillingEntryRecentProject = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.WBSExpenses;
 
 public partial class WBSExpensesRequestBuilder
 {
-    public async Task<ProjectWBSExpenses_Response?> GetAllAsync(Action<RequestConfiguration<WBSExpensesRequestBuilder.WBSExpensesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectWBSExpense_Response?> GetAllAsync(Action<RequestConfiguration<WBSExpensesRequestBuilder.WBSExpensesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectWBSExpensesResults is null)
+        if (response?.D?.ProjectWBSExpenseResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectWBSExpenses>();
+        var allItems = new List<ProjectWBSExpense>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectWBSExpensesResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectWBSExpenseResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectWBSExpensesResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectWBSExpenseResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class WBSExpensesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectWBSExpenses_Response
+        var finalResponse = new ProjectWBSExpense_Response
         {
-            D = new ProjectWBSExpenses_Response.ProjectWBSExpenses_Response_d
+            D = new ProjectWBSExpense_Response.ProjectWBSExpense_Response_d
             {
-                ProjectWBSExpenses = allItems
+                ProjectWBSExpense = allItems
             }
         };
 

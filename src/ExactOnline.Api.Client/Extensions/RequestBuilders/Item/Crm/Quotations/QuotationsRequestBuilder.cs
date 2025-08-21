@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.Quotations;
 
 public partial class QuotationsRequestBuilder
 {
-    public async Task<CRMQuotations_Response?> GetAllAsync(Action<RequestConfiguration<QuotationsRequestBuilder.QuotationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMQuotation_Response?> GetAllAsync(Action<RequestConfiguration<QuotationsRequestBuilder.QuotationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMQuotationsResults is null)
+        if (response?.D?.CRMQuotationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMQuotations>();
+        var allItems = new List<CRMQuotation>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMQuotationsResults?.Results is { } results)
+            if (currentResponse?.D?.CRMQuotationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMQuotationsResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMQuotationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class QuotationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMQuotations_Response
+        var finalResponse = new CRMQuotation_Response
         {
-            D = new CRMQuotations_Response.CRMQuotations_Response_d
+            D = new CRMQuotation_Response.CRMQuotation_Response_d
             {
-                CRMQuotations = allItems
+                CRMQuotation = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHours;
 
 public partial class RecentHoursRequestBuilder
 {
-    public async Task<ReadProjectRecentHours_Response?> GetAllAsync(Action<RequestConfiguration<RecentHoursRequestBuilder.RecentHoursRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectRecentHour_Response?> GetAllAsync(Action<RequestConfiguration<RecentHoursRequestBuilder.RecentHoursRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectRecentHoursResults is null)
+        if (response?.D?.ReadProjectRecentHourResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectRecentHours>();
+        var allItems = new List<ReadProjectRecentHour>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectRecentHoursResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectRecentHourResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectRecentHoursResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectRecentHourResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class RecentHoursRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectRecentHours_Response
+        var finalResponse = new ReadProjectRecentHour_Response
         {
-            D = new ReadProjectRecentHours_Response.ReadProjectRecentHours_Response_d
+            D = new ReadProjectRecentHour_Response.ReadProjectRecentHour_Response_d
             {
-                ReadProjectRecentHours = allItems
+                ReadProjectRecentHour = allItems
             }
         };
 

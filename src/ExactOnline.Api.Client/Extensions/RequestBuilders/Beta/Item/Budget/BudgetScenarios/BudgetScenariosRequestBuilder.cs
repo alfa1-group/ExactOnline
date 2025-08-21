@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Budget.BudgetScenarios;
 
 public partial class BudgetScenariosRequestBuilder
 {
-    public async Task<BudgetBudgetScenarios_Response?> GetAllAsync(Action<RequestConfiguration<BudgetScenariosRequestBuilder.BudgetScenariosRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BudgetBudgetScenario_Response?> GetAllAsync(Action<RequestConfiguration<BudgetScenariosRequestBuilder.BudgetScenariosRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BudgetBudgetScenariosResults is null)
+        if (response?.D?.BudgetBudgetScenarioResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BudgetBudgetScenarios>();
+        var allItems = new List<BudgetBudgetScenario>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BudgetBudgetScenariosResults?.Results is { } results)
+            if (currentResponse?.D?.BudgetBudgetScenarioResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BudgetBudgetScenariosResults?.Next;
+            var nextUrl = currentResponse?.D?.BudgetBudgetScenarioResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class BudgetScenariosRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BudgetBudgetScenarios_Response
+        var finalResponse = new BudgetBudgetScenario_Response
         {
-            D = new BudgetBudgetScenarios_Response.BudgetBudgetScenarios_Response_d
+            D = new BudgetBudgetScenario_Response.BudgetBudgetScenario_Response_d
             {
-                BudgetBudgetScenarios = allItems
+                BudgetBudgetScenario = allItems
             }
         };
 

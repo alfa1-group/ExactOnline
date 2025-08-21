@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow.PaymentConditions;
 
 public partial class PaymentConditionsRequestBuilder
 {
-    public async Task<CashflowPaymentConditions_Response?> GetAllAsync(Action<RequestConfiguration<PaymentConditionsRequestBuilder.PaymentConditionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CashflowPaymentCondition_Response?> GetAllAsync(Action<RequestConfiguration<PaymentConditionsRequestBuilder.PaymentConditionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CashflowPaymentConditionsResults is null)
+        if (response?.D?.CashflowPaymentConditionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CashflowPaymentConditions>();
+        var allItems = new List<CashflowPaymentCondition>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CashflowPaymentConditionsResults?.Results is { } results)
+            if (currentResponse?.D?.CashflowPaymentConditionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CashflowPaymentConditionsResults?.Next;
+            var nextUrl = currentResponse?.D?.CashflowPaymentConditionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PaymentConditionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CashflowPaymentConditions_Response
+        var finalResponse = new CashflowPaymentCondition_Response
         {
-            D = new CashflowPaymentConditions_Response.CashflowPaymentConditions_Response_d
+            D = new CashflowPaymentCondition_Response.CashflowPaymentCondition_Response_d
             {
-                CashflowPaymentConditions = allItems
+                CashflowPaymentCondition = allItems
             }
         };
 

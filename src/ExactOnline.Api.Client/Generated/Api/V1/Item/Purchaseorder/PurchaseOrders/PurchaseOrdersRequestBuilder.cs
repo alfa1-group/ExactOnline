@@ -34,20 +34,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders
         {
         }
         /// <summary>
-        /// GET PurchaseOrderPurchaseOrders
+        /// GET PurchaseOrderPurchaseOrder
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrders_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrder_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrders_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders.PurchaseOrdersRequestBuilder.PurchaseOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrder_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders.PurchaseOrdersRequestBuilder.PurchaseOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrders_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders.PurchaseOrdersRequestBuilder.PurchaseOrdersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrder_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders.PurchaseOrdersRequestBuilder.PurchaseOrdersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,12 +56,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrders_Response>(requestInfo, global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrders_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrder_Response>(requestInfo, global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrder_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST PurchaseOrderPurchaseOrders
+        /// POST PurchaseOrderPurchaseOrder
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrdersPost_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderPost_Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,11 +69,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrdersPost_Response?> PostAsync(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrdersPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderPost_Response?> PostAsync(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrdersPost_Response> PostAsync(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrdersPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderPost_Response> PostAsync(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -83,10 +83,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrdersPost_Response>(requestInfo, global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrdersPost_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderPost_Response>(requestInfo, global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderPost_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET PurchaseOrderPurchaseOrders
+        /// GET PurchaseOrderPurchaseOrder
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,18 +105,18 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders
             return requestInfo;
         }
         /// <summary>
-        /// POST PurchaseOrderPurchaseOrders
+        /// POST PurchaseOrderPurchaseOrder
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrdersPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrdersPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.PurchaseOrderPurchaseOrderPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -136,7 +136,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrders.PurchaseOrdersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET PurchaseOrderPurchaseOrders
+        /// GET PurchaseOrderPurchaseOrder
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PurchaseOrdersRequestBuilderGetQueryParameters 

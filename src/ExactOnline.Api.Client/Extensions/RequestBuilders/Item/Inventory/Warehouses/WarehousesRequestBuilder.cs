@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.Warehouses;
 
 public partial class WarehousesRequestBuilder
 {
-    public async Task<InventoryWarehouses_Response?> GetAllAsync(Action<RequestConfiguration<WarehousesRequestBuilder.WarehousesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventoryWarehouse_Response?> GetAllAsync(Action<RequestConfiguration<WarehousesRequestBuilder.WarehousesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventoryWarehousesResults is null)
+        if (response?.D?.InventoryWarehouseResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventoryWarehouses>();
+        var allItems = new List<InventoryWarehouse>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventoryWarehousesResults?.Results is { } results)
+            if (currentResponse?.D?.InventoryWarehouseResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventoryWarehousesResults?.Next;
+            var nextUrl = currentResponse?.D?.InventoryWarehouseResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class WarehousesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventoryWarehouses_Response
+        var finalResponse = new InventoryWarehouse_Response
         {
-            D = new InventoryWarehouses_Response.InventoryWarehouses_Response_d
+            D = new InventoryWarehouse_Response.InventoryWarehouse_Response_d
             {
-                InventoryWarehouses = allItems
+                InventoryWarehouse = allItems
             }
         };
 

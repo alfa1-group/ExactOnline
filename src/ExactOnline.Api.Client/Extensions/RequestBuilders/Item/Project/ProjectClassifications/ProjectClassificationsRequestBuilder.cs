@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.ProjectClassifications;
 
 public partial class ProjectClassificationsRequestBuilder
 {
-    public async Task<ProjectProjectClassifications_Response?> GetAllAsync(Action<RequestConfiguration<ProjectClassificationsRequestBuilder.ProjectClassificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectProjectClassification_Response?> GetAllAsync(Action<RequestConfiguration<ProjectClassificationsRequestBuilder.ProjectClassificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectProjectClassificationsResults is null)
+        if (response?.D?.ProjectProjectClassificationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectProjectClassifications>();
+        var allItems = new List<ProjectProjectClassification>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectProjectClassificationsResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectProjectClassificationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectProjectClassificationsResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectProjectClassificationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectClassificationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectProjectClassifications_Response
+        var finalResponse = new ProjectProjectClassification_Response
         {
-            D = new ProjectProjectClassifications_Response.ProjectProjectClassifications_Response_d
+            D = new ProjectProjectClassification_Response.ProjectProjectClassification_Response_d
             {
-                ProjectProjectClassifications = allItems
+                ProjectProjectClassification = allItems
             }
         };
 

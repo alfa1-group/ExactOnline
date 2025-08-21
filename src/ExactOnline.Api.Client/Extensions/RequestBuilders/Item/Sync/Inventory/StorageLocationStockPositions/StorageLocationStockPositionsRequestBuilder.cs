@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Inventory.StorageLocationStock
 
 public partial class StorageLocationStockPositionsRequestBuilder
 {
-    public async Task<SyncInventoryStorageLocationStockPositions_Response?> GetAllAsync(Action<RequestConfiguration<StorageLocationStockPositionsRequestBuilder.StorageLocationStockPositionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncInventoryStorageLocationStockPosition_Response?> GetAllAsync(Action<RequestConfiguration<StorageLocationStockPositionsRequestBuilder.StorageLocationStockPositionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncInventoryStorageLocationStockPositionsResults is null)
+        if (response?.D?.SyncInventoryStorageLocationStockPositionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncInventoryStorageLocationStockPositions>();
+        var allItems = new List<SyncInventoryStorageLocationStockPosition>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncInventoryStorageLocationStockPositionsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncInventoryStorageLocationStockPositionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncInventoryStorageLocationStockPositionsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncInventoryStorageLocationStockPositionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class StorageLocationStockPositionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncInventoryStorageLocationStockPositions_Response
+        var finalResponse = new SyncInventoryStorageLocationStockPosition_Response
         {
-            D = new SyncInventoryStorageLocationStockPositions_Response.SyncInventoryStorageLocationStockPositions_Response_d
+            D = new SyncInventoryStorageLocationStockPosition_Response.SyncInventoryStorageLocationStockPosition_Response_d
             {
-                SyncInventoryStorageLocationStockPositions = allItems
+                SyncInventoryStorageLocationStockPosition = allItems
             }
         };
 

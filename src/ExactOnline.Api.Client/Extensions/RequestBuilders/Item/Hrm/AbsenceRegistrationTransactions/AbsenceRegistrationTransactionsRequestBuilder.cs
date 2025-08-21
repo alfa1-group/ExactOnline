@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.AbsenceRegistrationTransactions
 
 public partial class AbsenceRegistrationTransactionsRequestBuilder
 {
-    public async Task<HRMAbsenceRegistrationTransactions_Response?> GetAllAsync(Action<RequestConfiguration<AbsenceRegistrationTransactionsRequestBuilder.AbsenceRegistrationTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<HRMAbsenceRegistrationTransaction_Response?> GetAllAsync(Action<RequestConfiguration<AbsenceRegistrationTransactionsRequestBuilder.AbsenceRegistrationTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.HRMAbsenceRegistrationTransactionsResults is null)
+        if (response?.D?.HRMAbsenceRegistrationTransactionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<HRMAbsenceRegistrationTransactions>();
+        var allItems = new List<HRMAbsenceRegistrationTransaction>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.HRMAbsenceRegistrationTransactionsResults?.Results is { } results)
+            if (currentResponse?.D?.HRMAbsenceRegistrationTransactionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.HRMAbsenceRegistrationTransactionsResults?.Next;
+            var nextUrl = currentResponse?.D?.HRMAbsenceRegistrationTransactionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AbsenceRegistrationTransactionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new HRMAbsenceRegistrationTransactions_Response
+        var finalResponse = new HRMAbsenceRegistrationTransaction_Response
         {
-            D = new HRMAbsenceRegistrationTransactions_Response.HRMAbsenceRegistrationTransactions_Response_d
+            D = new HRMAbsenceRegistrationTransaction_Response.HRMAbsenceRegistrationTransaction_Response_d
             {
-                HRMAbsenceRegistrationTransactions = allItems
+                HRMAbsenceRegistrationTransaction = allItems
             }
         };
 

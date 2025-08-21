@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentCategories;
 
 public partial class DocumentCategoriesRequestBuilder
 {
-    public async Task<DocumentsDocumentCategories_Response?> GetAllAsync(Action<RequestConfiguration<DocumentCategoriesRequestBuilder.DocumentCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<DocumentsDocumentCategory_Response?> GetAllAsync(Action<RequestConfiguration<DocumentCategoriesRequestBuilder.DocumentCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.DocumentsDocumentCategoriesResults is null)
+        if (response?.D?.DocumentsDocumentCategoryResults is null)
         {
             return response;
         }
 
-        var allItems = new List<DocumentsDocumentCategories>();
+        var allItems = new List<DocumentsDocumentCategory>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.DocumentsDocumentCategoriesResults?.Results is { } results)
+            if (currentResponse?.D?.DocumentsDocumentCategoryResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.DocumentsDocumentCategoriesResults?.Next;
+            var nextUrl = currentResponse?.D?.DocumentsDocumentCategoryResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DocumentCategoriesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new DocumentsDocumentCategories_Response
+        var finalResponse = new DocumentsDocumentCategory_Response
         {
-            D = new DocumentsDocumentCategories_Response.DocumentsDocumentCategories_Response_d
+            D = new DocumentsDocumentCategory_Response.DocumentsDocumentCategory_Response_d
             {
-                DocumentsDocumentCategories = allItems
+                DocumentsDocumentCategory = allItems
             }
         };
 

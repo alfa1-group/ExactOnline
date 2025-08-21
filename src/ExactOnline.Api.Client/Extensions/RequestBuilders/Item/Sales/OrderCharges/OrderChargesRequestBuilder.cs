@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales.OrderCharges;
 
 public partial class OrderChargesRequestBuilder
 {
-    public async Task<SalesOrderCharges_Response?> GetAllAsync(Action<RequestConfiguration<OrderChargesRequestBuilder.OrderChargesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesOrderCharge_Response?> GetAllAsync(Action<RequestConfiguration<OrderChargesRequestBuilder.OrderChargesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesOrderChargesResults is null)
+        if (response?.D?.SalesOrderChargeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesOrderCharges>();
+        var allItems = new List<SalesOrderCharge>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesOrderChargesResults?.Results is { } results)
+            if (currentResponse?.D?.SalesOrderChargeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesOrderChargesResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesOrderChargeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class OrderChargesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesOrderCharges_Response
+        var finalResponse = new SalesOrderCharge_Response
         {
-            D = new SalesOrderCharges_Response.SalesOrderCharges_Response_d
+            D = new SalesOrderCharge_Response.SalesOrderCharge_Response_d
             {
-                SalesOrderCharges = allItems
+                SalesOrderCharge = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.Contacts;
 
 public partial class ContactsRequestBuilder
 {
-    public async Task<BulkCRMContacts_Response?> GetAllAsync(Action<RequestConfiguration<ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkCRMContact_Response?> GetAllAsync(Action<RequestConfiguration<ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkCRMContactsResults is null)
+        if (response?.D?.BulkCRMContactResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkCRMContacts>();
+        var allItems = new List<BulkCRMContact>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkCRMContactsResults?.Results is { } results)
+            if (currentResponse?.D?.BulkCRMContactResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkCRMContactsResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkCRMContactResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ContactsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkCRMContacts_Response
+        var finalResponse = new BulkCRMContact_Response
         {
-            D = new BulkCRMContacts_Response.BulkCRMContacts_Response_d
+            D = new BulkCRMContact_Response.BulkCRMContact_Response_d
             {
-                BulkCRMContacts = allItems
+                BulkCRMContact = allItems
             }
         };
 

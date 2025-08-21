@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.EmploymentInternalRates;
 
 public partial class EmploymentInternalRatesRequestBuilder
 {
-    public async Task<ProjectEmploymentInternalRates_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentInternalRatesRequestBuilder.EmploymentInternalRatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectEmploymentInternalRate_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentInternalRatesRequestBuilder.EmploymentInternalRatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectEmploymentInternalRatesResults is null)
+        if (response?.D?.ProjectEmploymentInternalRateResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectEmploymentInternalRates>();
+        var allItems = new List<ProjectEmploymentInternalRate>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectEmploymentInternalRatesResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectEmploymentInternalRateResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectEmploymentInternalRatesResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectEmploymentInternalRateResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EmploymentInternalRatesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectEmploymentInternalRates_Response
+        var finalResponse = new ProjectEmploymentInternalRate_Response
         {
-            D = new ProjectEmploymentInternalRates_Response.ProjectEmploymentInternalRates_Response_d
+            D = new ProjectEmploymentInternalRate_Response.ProjectEmploymentInternalRate_Response_d
             {
-                ProjectEmploymentInternalRates = allItems
+                ProjectEmploymentInternalRate = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Cashflow.PaymentTerms;
 
 public partial class PaymentTermsRequestBuilder
 {
-    public async Task<SyncCashflowPaymentTerms_Response?> GetAllAsync(Action<RequestConfiguration<PaymentTermsRequestBuilder.PaymentTermsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncCashflowPaymentTerm_Response?> GetAllAsync(Action<RequestConfiguration<PaymentTermsRequestBuilder.PaymentTermsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncCashflowPaymentTermsResults is null)
+        if (response?.D?.SyncCashflowPaymentTermResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncCashflowPaymentTerms>();
+        var allItems = new List<SyncCashflowPaymentTerm>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncCashflowPaymentTermsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncCashflowPaymentTermResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncCashflowPaymentTermsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncCashflowPaymentTermResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PaymentTermsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncCashflowPaymentTerms_Response
+        var finalResponse = new SyncCashflowPaymentTerm_Response
         {
-            D = new SyncCashflowPaymentTerms_Response.SyncCashflowPaymentTerms_Response_d
+            D = new SyncCashflowPaymentTerm_Response.SyncCashflowPaymentTerm_Response_d
             {
-                SyncCashflowPaymentTerms = allItems
+                SyncCashflowPaymentTerm = allItems
             }
         };
 

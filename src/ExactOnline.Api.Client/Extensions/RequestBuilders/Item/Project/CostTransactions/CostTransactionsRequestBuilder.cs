@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.CostTransactions;
 
 public partial class CostTransactionsRequestBuilder
 {
-    public async Task<ProjectCostTransactions_Response?> GetAllAsync(Action<RequestConfiguration<CostTransactionsRequestBuilder.CostTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectCostTransaction_Response?> GetAllAsync(Action<RequestConfiguration<CostTransactionsRequestBuilder.CostTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectCostTransactionsResults is null)
+        if (response?.D?.ProjectCostTransactionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectCostTransactions>();
+        var allItems = new List<ProjectCostTransaction>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectCostTransactionsResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectCostTransactionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectCostTransactionsResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectCostTransactionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class CostTransactionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectCostTransactions_Response
+        var finalResponse = new ProjectCostTransaction_Response
         {
-            D = new ProjectCostTransactions_Response.ProjectCostTransactions_Response_d
+            D = new ProjectCostTransaction_Response.ProjectCostTransaction_Response_d
             {
-                ProjectCostTransactions = allItems
+                ProjectCostTransaction = allItems
             }
         };
 

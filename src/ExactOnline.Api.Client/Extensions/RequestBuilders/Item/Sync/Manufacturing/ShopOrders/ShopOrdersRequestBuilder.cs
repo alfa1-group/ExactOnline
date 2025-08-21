@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Manufacturing.ShopOrders;
 
 public partial class ShopOrdersRequestBuilder
 {
-    public async Task<SyncManufacturingShopOrders_Response?> GetAllAsync(Action<RequestConfiguration<ShopOrdersRequestBuilder.ShopOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncManufacturingShopOrder_Response?> GetAllAsync(Action<RequestConfiguration<ShopOrdersRequestBuilder.ShopOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncManufacturingShopOrdersResults is null)
+        if (response?.D?.SyncManufacturingShopOrderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncManufacturingShopOrders>();
+        var allItems = new List<SyncManufacturingShopOrder>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncManufacturingShopOrdersResults?.Results is { } results)
+            if (currentResponse?.D?.SyncManufacturingShopOrderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncManufacturingShopOrdersResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncManufacturingShopOrderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ShopOrdersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncManufacturingShopOrders_Response
+        var finalResponse = new SyncManufacturingShopOrder_Response
         {
-            D = new SyncManufacturingShopOrders_Response.SyncManufacturingShopOrders_Response_d
+            D = new SyncManufacturingShopOrder_Response.SyncManufacturingShopOrder_Response_d
             {
-                SyncManufacturingShopOrders = allItems
+                SyncManufacturingShopOrder = allItems
             }
         };
 

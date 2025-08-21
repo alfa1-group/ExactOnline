@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow.Payments;
 
 public partial class PaymentsRequestBuilder
 {
-    public async Task<CashflowPayments_Response?> GetAllAsync(Action<RequestConfiguration<PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CashflowPayment_Response?> GetAllAsync(Action<RequestConfiguration<PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CashflowPaymentsResults is null)
+        if (response?.D?.CashflowPaymentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CashflowPayments>();
+        var allItems = new List<CashflowPayment>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CashflowPaymentsResults?.Results is { } results)
+            if (currentResponse?.D?.CashflowPaymentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CashflowPaymentsResults?.Next;
+            var nextUrl = currentResponse?.D?.CashflowPaymentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PaymentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CashflowPayments_Response
+        var finalResponse = new CashflowPayment_Response
         {
-            D = new CashflowPayments_Response.CashflowPayments_Response_d
+            D = new CashflowPayment_Response.CashflowPayment_Response_d
             {
-                CashflowPayments = allItems
+                CashflowPayment = allItems
             }
         };
 

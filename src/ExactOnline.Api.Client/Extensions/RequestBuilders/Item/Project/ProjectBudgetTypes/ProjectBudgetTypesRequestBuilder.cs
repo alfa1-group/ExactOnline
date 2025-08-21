@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypes;
 
 public partial class ProjectBudgetTypesRequestBuilder
 {
-    public async Task<ProjectProjectBudgetTypes_Response?> GetAllAsync(Action<RequestConfiguration<ProjectBudgetTypesRequestBuilder.ProjectBudgetTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectProjectBudgetType_Response?> GetAllAsync(Action<RequestConfiguration<ProjectBudgetTypesRequestBuilder.ProjectBudgetTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectProjectBudgetTypesResults is null)
+        if (response?.D?.ProjectProjectBudgetTypeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectProjectBudgetTypes>();
+        var allItems = new List<ProjectProjectBudgetType>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectProjectBudgetTypesResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectProjectBudgetTypeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectProjectBudgetTypesResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectProjectBudgetTypeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectBudgetTypesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectProjectBudgetTypes_Response
+        var finalResponse = new ProjectProjectBudgetType_Response
         {
-            D = new ProjectProjectBudgetTypes_Response.ProjectProjectBudgetTypes_Response_d
+            D = new ProjectProjectBudgetType_Response.ProjectProjectBudgetType_Response_d
             {
-                ProjectProjectBudgetTypes = allItems
+                ProjectProjectBudgetType = allItems
             }
         };
 

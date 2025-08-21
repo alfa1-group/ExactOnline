@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Users.UserRoles;
 
 public partial class UserRolesRequestBuilder
 {
-    public async Task<UsersUserRoles_Response?> GetAllAsync(Action<RequestConfiguration<UserRolesRequestBuilder.UserRolesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<UsersUserRole_Response?> GetAllAsync(Action<RequestConfiguration<UserRolesRequestBuilder.UserRolesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.UsersUserRolesResults is null)
+        if (response?.D?.UsersUserRoleResults is null)
         {
             return response;
         }
 
-        var allItems = new List<UsersUserRoles>();
+        var allItems = new List<UsersUserRole>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.UsersUserRolesResults?.Results is { } results)
+            if (currentResponse?.D?.UsersUserRoleResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.UsersUserRolesResults?.Next;
+            var nextUrl = currentResponse?.D?.UsersUserRoleResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class UserRolesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new UsersUserRoles_Response
+        var finalResponse = new UsersUserRole_Response
         {
-            D = new UsersUserRoles_Response.UsersUserRoles_Response_d
+            D = new UsersUserRole_Response.UsersUserRole_Response_d
             {
-                UsersUserRoles = allItems
+                UsersUserRole = allItems
             }
         };
 

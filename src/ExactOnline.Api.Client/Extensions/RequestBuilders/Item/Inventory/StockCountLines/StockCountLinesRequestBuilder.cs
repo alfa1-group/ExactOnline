@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.StockCountLines;
 
 public partial class StockCountLinesRequestBuilder
 {
-    public async Task<InventoryStockCountLines_Response?> GetAllAsync(Action<RequestConfiguration<StockCountLinesRequestBuilder.StockCountLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventoryStockCountLine_Response?> GetAllAsync(Action<RequestConfiguration<StockCountLinesRequestBuilder.StockCountLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventoryStockCountLinesResults is null)
+        if (response?.D?.InventoryStockCountLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventoryStockCountLines>();
+        var allItems = new List<InventoryStockCountLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventoryStockCountLinesResults?.Results is { } results)
+            if (currentResponse?.D?.InventoryStockCountLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventoryStockCountLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.InventoryStockCountLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class StockCountLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventoryStockCountLines_Response
+        var finalResponse = new InventoryStockCountLine_Response
         {
-            D = new InventoryStockCountLines_Response.InventoryStockCountLines_Response_d
+            D = new InventoryStockCountLine_Response.InventoryStockCountLine_Response_d
             {
-                InventoryStockCountLines = allItems
+                InventoryStockCountLine = allItems
             }
         };
 

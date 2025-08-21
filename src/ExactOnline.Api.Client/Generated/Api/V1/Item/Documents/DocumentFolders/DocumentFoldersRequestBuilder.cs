@@ -34,20 +34,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFolders
         {
         }
         /// <summary>
-        /// GET DocumentsDocumentFolders
+        /// GET DocumentsDocumentFolder
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.DocumentsDocumentFolders_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.DocumentsDocumentFolder_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.DocumentsDocumentFolders_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFolders.DocumentFoldersRequestBuilder.DocumentFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.DocumentsDocumentFolder_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFolders.DocumentFoldersRequestBuilder.DocumentFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.DocumentsDocumentFolders_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFolders.DocumentFoldersRequestBuilder.DocumentFoldersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.DocumentsDocumentFolder_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFolders.DocumentFoldersRequestBuilder.DocumentFoldersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,12 +56,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFolders
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.DocumentsDocumentFolders_Response>(requestInfo, global::ExactOnline.Api.Client.Models.DocumentsDocumentFolders_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.DocumentsDocumentFolder_Response>(requestInfo, global::ExactOnline.Api.Client.Models.DocumentsDocumentFolder_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST DocumentsDocumentFolders
+        /// POST DocumentsDocumentFolder
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.DocumentsDocumentFoldersPost_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.DocumentsDocumentFolderPost_Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,11 +69,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFolders
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.DocumentsDocumentFoldersPost_Response?> PostAsync(global::ExactOnline.Api.Client.Models.DocumentsDocumentFoldersPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.DocumentsDocumentFolderPost_Response?> PostAsync(global::ExactOnline.Api.Client.Models.DocumentsDocumentFolderPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.DocumentsDocumentFoldersPost_Response> PostAsync(global::ExactOnline.Api.Client.Models.DocumentsDocumentFoldersPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.DocumentsDocumentFolderPost_Response> PostAsync(global::ExactOnline.Api.Client.Models.DocumentsDocumentFolderPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -83,10 +83,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFolders
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.DocumentsDocumentFoldersPost_Response>(requestInfo, global::ExactOnline.Api.Client.Models.DocumentsDocumentFoldersPost_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.DocumentsDocumentFolderPost_Response>(requestInfo, global::ExactOnline.Api.Client.Models.DocumentsDocumentFolderPost_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET DocumentsDocumentFolders
+        /// GET DocumentsDocumentFolder
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,18 +105,18 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFolders
             return requestInfo;
         }
         /// <summary>
-        /// POST DocumentsDocumentFolders
+        /// POST DocumentsDocumentFolder
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.DocumentsDocumentFoldersPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.DocumentsDocumentFolderPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.DocumentsDocumentFoldersPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.DocumentsDocumentFolderPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -136,7 +136,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFolders
             return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFolders.DocumentFoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET DocumentsDocumentFolders
+        /// GET DocumentsDocumentFolder
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DocumentFoldersRequestBuilderGetQueryParameters 

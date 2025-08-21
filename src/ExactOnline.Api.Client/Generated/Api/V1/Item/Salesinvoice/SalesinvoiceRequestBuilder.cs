@@ -83,7 +83,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// Use this endpoint to invoice sales orders.Note: You must include a parameter for &apos;SalesOrderID&apos; to add a collection of sales orders IDs to be invoiced. When you invoice more than one sales order, the maximum total number of sales order lines is 500.The To be invoiced page in Exact Online contains a list of all sales orders for which you need to create invoices.For more information about the Sales order to be invoiced functionality in Exact Online, see About sales orders to be invoiced.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.InvoiceSalesOrdersWithId.InvoiceSalesOrdersWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SalesInvoiceInvoiceSalesOrders</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesInvoiceInvoiceSalesOrder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.InvoiceSalesOrdersWithId.InvoiceSalesOrdersWithIdRequestBuilder InvoiceSalesOrdersWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -93,7 +93,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// Use this endpoint to read sales invoice layouts.Sales invoice layout retrieved can be used in &apos;PrintedSalesInvoice&apos; endpoint.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.LayoutsWithId.LayoutsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SalesInvoiceLayouts</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesInvoiceLayout</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.LayoutsWithId.LayoutsWithIdRequestBuilder LayoutsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -103,7 +103,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// Use this endpoint to print or send a sales invoice document.The document is created through the given &apos;InvoiceID&apos;, and is sent to the respective receiver based on the given &apos;SendEmailToCustomer&apos;, &apos;SenderEmailAddress&apos;, &apos;SendInvoiceToCustomerPostbox&apos; , &apos;SendInvoiceViaPeppol&apos; and &apos;SendOutputBasedOnAccount&apos;.An existing sales invoice entry must be located to create a sales invoice document. When you create sales invoices, you can print them for internal use or send them to your customers.For more information about the sales invoice functionality in Exact Online, see Print sales invoices.To view an example of the business use of this endpoint, see Rest API - Business example API sales invoice.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.PrintedSalesInvoicesWithInvoiceid.PrintedSalesInvoicesWithInvoiceidRequestBuilder"/></returns>
-        /// <param name="invoiceid">Unique identifier (uuid) of the SalesInvoicePrintedSalesInvoices</param>
+        /// <param name="invoiceid">Unique identifier (uuid) of the SalesInvoicePrintedSalesInvoice</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.PrintedSalesInvoicesWithInvoiceid.PrintedSalesInvoicesWithInvoiceidRequestBuilder PrintedSalesInvoicesWithInvoiceid(Guid? invoiceid)
         {
             _ = invoiceid ?? throw new ArgumentNullException(nameof(invoiceid));
@@ -113,7 +113,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// Use this endpoint to create, read, update and delete sales invoice lines.Sales invoice describe the items that you sell to your customers.For more information about the sales invoice functionality in Exact Online, see About sales invoices.To view an example of the business use of this endpoint, see Rest API - Business example API sales invoice.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceLinesWithId.SalesInvoiceLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SalesInvoiceSalesInvoiceLines</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesInvoiceSalesInvoiceLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceLinesWithId.SalesInvoiceLinesWithIdRequestBuilder SalesInvoiceLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -123,7 +123,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// Use this endpoint to create, read, update and delete sales invoice shipping cost and order charge lines. Note:  • If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa.  • If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.To view an example of the business use of this endpoint, see Rest API - Business example API sales invoice.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceOrderChargeLinesWithId.SalesInvoiceOrderChargeLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SalesInvoiceSalesInvoiceOrderChargeLines</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesInvoiceSalesInvoiceOrderChargeLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceOrderChargeLinesWithId.SalesInvoiceOrderChargeLinesWithIdRequestBuilder SalesInvoiceOrderChargeLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -133,7 +133,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// Use this endpoint to create, read, update and delete sales invoices or direct sales invoices.Note: You must include a parameter for &apos;SalesInvoiceLines&apos; to add sales invoice lines when you POST to the SalesInvoices endpoint. This parameter is not necessary when you PUT to this endpoint. Currently, assigning serial or batch numbers is not supported when you create or update direct sales invoices.Sales invoice describe the items that you sell to your customers.For more information about the sales invoice functionality in Exact Online, see About sales invoices  Direct sales invoices are entries that combine a normal sales invoice with a stock movement, whether it is in or out. For more information about the direct sales invoice functionality in Exact Online, see Create direct sales invoices or direct credit notes To view an example of the business use of this endpoint, see Rest API - Business example API sales invoice.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoicesWithInvoiceid.SalesInvoicesWithInvoiceidRequestBuilder"/></returns>
-        /// <param name="invoiceid">Unique identifier (uuid) of the SalesInvoiceSalesInvoices</param>
+        /// <param name="invoiceid">Unique identifier (uuid) of the SalesInvoiceSalesInvoice</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoicesWithInvoiceid.SalesInvoicesWithInvoiceidRequestBuilder SalesInvoicesWithInvoiceid(Guid? invoiceid)
         {
             _ = invoiceid ?? throw new ArgumentNullException(nameof(invoiceid));

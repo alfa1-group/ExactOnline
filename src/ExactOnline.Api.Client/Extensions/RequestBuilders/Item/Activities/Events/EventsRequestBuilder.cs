@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Activities.Events;
 
 public partial class EventsRequestBuilder
 {
-    public async Task<ActivitiesEvents_Response?> GetAllAsync(Action<RequestConfiguration<EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ActivitiesEvent_Response?> GetAllAsync(Action<RequestConfiguration<EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ActivitiesEventsResults is null)
+        if (response?.D?.ActivitiesEventResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ActivitiesEvents>();
+        var allItems = new List<ActivitiesEvent>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ActivitiesEventsResults?.Results is { } results)
+            if (currentResponse?.D?.ActivitiesEventResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ActivitiesEventsResults?.Next;
+            var nextUrl = currentResponse?.D?.ActivitiesEventResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EventsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ActivitiesEvents_Response
+        var finalResponse = new ActivitiesEvent_Response
         {
-            D = new ActivitiesEvents_Response.ActivitiesEvents_Response_d
+            D = new ActivitiesEvent_Response.ActivitiesEvent_Response_d
             {
-                ActivitiesEvents = allItems
+                ActivitiesEvent = allItems
             }
         };
 

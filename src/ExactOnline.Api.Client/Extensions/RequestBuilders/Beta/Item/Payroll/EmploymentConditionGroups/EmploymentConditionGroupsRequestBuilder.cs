@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.EmploymentConditionGro
 
 public partial class EmploymentConditionGroupsRequestBuilder
 {
-    public async Task<PayrollEmploymentConditionGroups_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentConditionGroupsRequestBuilder.EmploymentConditionGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PayrollEmploymentConditionGroup_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentConditionGroupsRequestBuilder.EmploymentConditionGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PayrollEmploymentConditionGroupsResults is null)
+        if (response?.D?.PayrollEmploymentConditionGroupResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PayrollEmploymentConditionGroups>();
+        var allItems = new List<PayrollEmploymentConditionGroup>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PayrollEmploymentConditionGroupsResults?.Results is { } results)
+            if (currentResponse?.D?.PayrollEmploymentConditionGroupResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PayrollEmploymentConditionGroupsResults?.Next;
+            var nextUrl = currentResponse?.D?.PayrollEmploymentConditionGroupResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EmploymentConditionGroupsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PayrollEmploymentConditionGroups_Response
+        var finalResponse = new PayrollEmploymentConditionGroup_Response
         {
-            D = new PayrollEmploymentConditionGroups_Response.PayrollEmploymentConditionGroups_Response_d
+            D = new PayrollEmploymentConditionGroup_Response.PayrollEmploymentConditionGroup_Response_d
             {
-                PayrollEmploymentConditionGroups = allItems
+                PayrollEmploymentConditionGroup = allItems
             }
         };
 

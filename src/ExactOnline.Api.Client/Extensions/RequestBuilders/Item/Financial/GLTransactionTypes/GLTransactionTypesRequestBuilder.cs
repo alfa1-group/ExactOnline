@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionTypes;
 
 public partial class GLTransactionTypesRequestBuilder
 {
-    public async Task<FinancialGLTransactionTypes_Response?> GetAllAsync(Action<RequestConfiguration<GLTransactionTypesRequestBuilder.GLTransactionTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialGLTransactionType_Response?> GetAllAsync(Action<RequestConfiguration<GLTransactionTypesRequestBuilder.GLTransactionTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialGLTransactionTypesResults is null)
+        if (response?.D?.FinancialGLTransactionTypeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialGLTransactionTypes>();
+        var allItems = new List<FinancialGLTransactionType>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialGLTransactionTypesResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialGLTransactionTypeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialGLTransactionTypesResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialGLTransactionTypeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GLTransactionTypesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialGLTransactionTypes_Response
+        var finalResponse = new FinancialGLTransactionType_Response
         {
-            D = new FinancialGLTransactionTypes_Response.FinancialGLTransactionTypes_Response_d
+            D = new FinancialGLTransactionType_Response.FinancialGLTransactionType_Response_d
             {
-                FinancialGLTransactionTypes = allItems
+                FinancialGLTransactionType = allItems
             }
         };
 

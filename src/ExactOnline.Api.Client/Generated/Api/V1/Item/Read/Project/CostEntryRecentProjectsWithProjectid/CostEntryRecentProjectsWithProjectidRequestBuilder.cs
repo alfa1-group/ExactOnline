@@ -21,7 +21,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProject
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProjectsWithProjectid.CostEntryRecentProjectsWithProjectidRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        /// <param name="projectid">Unique identifier (uuid) of the ReadProjectCostEntryRecentProjects</param>
+        /// <param name="projectid">Unique identifier (uuid) of the ReadProjectCostEntryRecentProject</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CostEntryRecentProjectsWithProjectidRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? projectid = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/CostEntryRecentProjects({projectid})", pathParameters)
         {
@@ -36,20 +36,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProject
         {
         }
         /// <summary>
-        /// GET ReadProjectCostEntryRecentProjects
+        /// GET ReadProjectCostEntryRecentProject
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentProjectsGet_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentProjectGet_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentProjectsGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentProjectGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentProjectsGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentProjectGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,10 +58,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProject
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentProjectsGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentProjectsGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentProjectGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ReadProjectCostEntryRecentProjectGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET ReadProjectCostEntryRecentProjects
+        /// GET ReadProjectCostEntryRecentProject
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

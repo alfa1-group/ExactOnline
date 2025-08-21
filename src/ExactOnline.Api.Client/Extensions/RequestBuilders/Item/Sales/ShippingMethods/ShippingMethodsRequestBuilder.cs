@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales.ShippingMethods;
 
 public partial class ShippingMethodsRequestBuilder
 {
-    public async Task<SalesShippingMethods_Response?> GetAllAsync(Action<RequestConfiguration<ShippingMethodsRequestBuilder.ShippingMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesShippingMethod_Response?> GetAllAsync(Action<RequestConfiguration<ShippingMethodsRequestBuilder.ShippingMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesShippingMethodsResults is null)
+        if (response?.D?.SalesShippingMethodResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesShippingMethods>();
+        var allItems = new List<SalesShippingMethod>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesShippingMethodsResults?.Results is { } results)
+            if (currentResponse?.D?.SalesShippingMethodResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesShippingMethodsResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesShippingMethodResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ShippingMethodsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesShippingMethods_Response
+        var finalResponse = new SalesShippingMethod_Response
         {
-            D = new SalesShippingMethods_Response.SalesShippingMethods_Response_d
+            D = new SalesShippingMethod_Response.SalesShippingMethod_Response_d
             {
-                SalesShippingMethods = allItems
+                SalesShippingMethod = allItems
             }
         };
 

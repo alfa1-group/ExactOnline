@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.AddressStates;
 
 public partial class AddressStatesRequestBuilder
 {
-    public async Task<CRMAddressStates_Response?> GetAllAsync(Action<RequestConfiguration<AddressStatesRequestBuilder.AddressStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMAddressState_Response?> GetAllAsync(Action<RequestConfiguration<AddressStatesRequestBuilder.AddressStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMAddressStatesResults is null)
+        if (response?.D?.CRMAddressStateResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMAddressStates>();
+        var allItems = new List<CRMAddressState>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMAddressStatesResults?.Results is { } results)
+            if (currentResponse?.D?.CRMAddressStateResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMAddressStatesResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMAddressStateResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AddressStatesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMAddressStates_Response
+        var finalResponse = new CRMAddressState_Response
         {
-            D = new CRMAddressStates_Response.CRMAddressStates_Response_d
+            D = new CRMAddressState_Response.CRMAddressState_Response_d
             {
-                CRMAddressStates = allItems
+                CRMAddressState = allItems
             }
         };
 

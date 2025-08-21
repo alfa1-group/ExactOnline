@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.TransactionLines;
 
 public partial class TransactionLinesRequestBuilder
 {
-    public async Task<BulkFinancialTransactionLines_Response?> GetAllAsync(Action<RequestConfiguration<TransactionLinesRequestBuilder.TransactionLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkFinancialTransactionLine_Response?> GetAllAsync(Action<RequestConfiguration<TransactionLinesRequestBuilder.TransactionLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkFinancialTransactionLinesResults is null)
+        if (response?.D?.BulkFinancialTransactionLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkFinancialTransactionLines>();
+        var allItems = new List<BulkFinancialTransactionLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkFinancialTransactionLinesResults?.Results is { } results)
+            if (currentResponse?.D?.BulkFinancialTransactionLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkFinancialTransactionLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkFinancialTransactionLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TransactionLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkFinancialTransactionLines_Response
+        var finalResponse = new BulkFinancialTransactionLine_Response
         {
-            D = new BulkFinancialTransactionLines_Response.BulkFinancialTransactionLines_Response_d
+            D = new BulkFinancialTransactionLine_Response.BulkFinancialTransactionLine_Response_d
             {
-                BulkFinancialTransactionLines = allItems
+                BulkFinancialTransactionLine = allItems
             }
         };
 

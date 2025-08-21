@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrders;
 
 public partial class ShopOrdersRequestBuilder
 {
-    public async Task<ManufacturingShopOrders_Response?> GetAllAsync(Action<RequestConfiguration<ShopOrdersRequestBuilder.ShopOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingShopOrder_Response?> GetAllAsync(Action<RequestConfiguration<ShopOrdersRequestBuilder.ShopOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingShopOrdersResults is null)
+        if (response?.D?.ManufacturingShopOrderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingShopOrders>();
+        var allItems = new List<ManufacturingShopOrder>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingShopOrdersResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingShopOrderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingShopOrdersResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingShopOrderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ShopOrdersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingShopOrders_Response
+        var finalResponse = new ManufacturingShopOrder_Response
         {
-            D = new ManufacturingShopOrders_Response.ManufacturingShopOrders_Response_d
+            D = new ManufacturingShopOrder_Response.ManufacturingShopOrder_Response_d
             {
-                ManufacturingShopOrders = allItems
+                ManufacturingShopOrder = allItems
             }
         };
 

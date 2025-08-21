@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.Contacts;
 
 public partial class ContactsRequestBuilder
 {
-    public async Task<CRMContacts_Response?> GetAllAsync(Action<RequestConfiguration<ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMContact_Response?> GetAllAsync(Action<RequestConfiguration<ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMContactsResults is null)
+        if (response?.D?.CRMContactResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMContacts>();
+        var allItems = new List<CRMContact>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMContactsResults?.Results is { } results)
+            if (currentResponse?.D?.CRMContactResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMContactsResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMContactResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ContactsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMContacts_Response
+        var finalResponse = new CRMContact_Response
         {
-            D = new CRMContacts_Response.CRMContacts_Response_d
+            D = new CRMContact_Response.CRMContact_Response_d
             {
-                CRMContacts = allItems
+                CRMContact = allItems
             }
         };
 

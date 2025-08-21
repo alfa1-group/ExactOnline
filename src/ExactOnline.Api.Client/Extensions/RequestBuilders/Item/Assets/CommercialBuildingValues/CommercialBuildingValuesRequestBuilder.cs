@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Assets.CommercialBuildingValues;
 
 public partial class CommercialBuildingValuesRequestBuilder
 {
-    public async Task<AssetsCommercialBuildingValues_Response?> GetAllAsync(Action<RequestConfiguration<CommercialBuildingValuesRequestBuilder.CommercialBuildingValuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<AssetsCommercialBuildingValue_Response?> GetAllAsync(Action<RequestConfiguration<CommercialBuildingValuesRequestBuilder.CommercialBuildingValuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.AssetsCommercialBuildingValuesResults is null)
+        if (response?.D?.AssetsCommercialBuildingValueResults is null)
         {
             return response;
         }
 
-        var allItems = new List<AssetsCommercialBuildingValues>();
+        var allItems = new List<AssetsCommercialBuildingValue>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.AssetsCommercialBuildingValuesResults?.Results is { } results)
+            if (currentResponse?.D?.AssetsCommercialBuildingValueResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.AssetsCommercialBuildingValuesResults?.Next;
+            var nextUrl = currentResponse?.D?.AssetsCommercialBuildingValueResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class CommercialBuildingValuesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new AssetsCommercialBuildingValues_Response
+        var finalResponse = new AssetsCommercialBuildingValue_Response
         {
-            D = new AssetsCommercialBuildingValues_Response.AssetsCommercialBuildingValues_Response_d
+            D = new AssetsCommercialBuildingValue_Response.AssetsCommercialBuildingValue_Response_d
             {
-                AssetsCommercialBuildingValues = allItems
+                AssetsCommercialBuildingValue = allItems
             }
         };
 

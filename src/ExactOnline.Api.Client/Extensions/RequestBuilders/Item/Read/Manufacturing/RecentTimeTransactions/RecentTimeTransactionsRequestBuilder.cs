@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing.RecentTimeTransa
 
 public partial class RecentTimeTransactionsRequestBuilder
 {
-    public async Task<ReadManufacturingRecentTimeTransactions_Response?> GetAllAsync(Action<RequestConfiguration<RecentTimeTransactionsRequestBuilder.RecentTimeTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadManufacturingRecentTimeTransaction_Response?> GetAllAsync(Action<RequestConfiguration<RecentTimeTransactionsRequestBuilder.RecentTimeTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadManufacturingRecentTimeTransactionsResults is null)
+        if (response?.D?.ReadManufacturingRecentTimeTransactionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadManufacturingRecentTimeTransactions>();
+        var allItems = new List<ReadManufacturingRecentTimeTransaction>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadManufacturingRecentTimeTransactionsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadManufacturingRecentTimeTransactionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadManufacturingRecentTimeTransactionsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadManufacturingRecentTimeTransactionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class RecentTimeTransactionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadManufacturingRecentTimeTransactions_Response
+        var finalResponse = new ReadManufacturingRecentTimeTransaction_Response
         {
-            D = new ReadManufacturingRecentTimeTransactions_Response.ReadManufacturingRecentTimeTransactions_Response_d
+            D = new ReadManufacturingRecentTimeTransaction_Response.ReadManufacturingRecentTimeTransaction_Response_d
             {
-                ReadManufacturingRecentTimeTransactions = allItems
+                ReadManufacturingRecentTimeTransaction = allItems
             }
         };
 

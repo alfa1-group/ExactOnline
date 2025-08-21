@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListPeriods;
 
 public partial class SalesPriceListPeriodsRequestBuilder
 {
-    public async Task<SalesSalesPriceListPeriods_Response?> GetAllAsync(Action<RequestConfiguration<SalesPriceListPeriodsRequestBuilder.SalesPriceListPeriodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesSalesPriceListPeriod_Response?> GetAllAsync(Action<RequestConfiguration<SalesPriceListPeriodsRequestBuilder.SalesPriceListPeriodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesSalesPriceListPeriodsResults is null)
+        if (response?.D?.SalesSalesPriceListPeriodResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesSalesPriceListPeriods>();
+        var allItems = new List<SalesSalesPriceListPeriod>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesSalesPriceListPeriodsResults?.Results is { } results)
+            if (currentResponse?.D?.SalesSalesPriceListPeriodResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesSalesPriceListPeriodsResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesSalesPriceListPeriodResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesPriceListPeriodsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesSalesPriceListPeriods_Response
+        var finalResponse = new SalesSalesPriceListPeriod_Response
         {
-            D = new SalesSalesPriceListPeriods_Response.SalesSalesPriceListPeriods_Response_d
+            D = new SalesSalesPriceListPeriod_Response.SalesSalesPriceListPeriod_Response_d
             {
-                SalesSalesPriceListPeriods = allItems
+                SalesSalesPriceListPeriod = allItems
             }
         };
 

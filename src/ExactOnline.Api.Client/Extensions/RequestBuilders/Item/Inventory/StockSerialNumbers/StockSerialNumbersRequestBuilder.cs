@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.StockSerialNumbers;
 
 public partial class StockSerialNumbersRequestBuilder
 {
-    public async Task<InventoryStockSerialNumbers_Response?> GetAllAsync(Action<RequestConfiguration<StockSerialNumbersRequestBuilder.StockSerialNumbersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventoryStockSerialNumber_Response?> GetAllAsync(Action<RequestConfiguration<StockSerialNumbersRequestBuilder.StockSerialNumbersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventoryStockSerialNumbersResults is null)
+        if (response?.D?.InventoryStockSerialNumberResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventoryStockSerialNumbers>();
+        var allItems = new List<InventoryStockSerialNumber>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventoryStockSerialNumbersResults?.Results is { } results)
+            if (currentResponse?.D?.InventoryStockSerialNumberResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventoryStockSerialNumbersResults?.Next;
+            var nextUrl = currentResponse?.D?.InventoryStockSerialNumberResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class StockSerialNumbersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventoryStockSerialNumbers_Response
+        var finalResponse = new InventoryStockSerialNumber_Response
         {
-            D = new InventoryStockSerialNumbers_Response.InventoryStockSerialNumbers_Response_d
+            D = new InventoryStockSerialNumber_Response.InventoryStockSerialNumber_Response_d
             {
-                InventoryStockSerialNumbers = allItems
+                InventoryStockSerialNumber = allItems
             }
         };
 

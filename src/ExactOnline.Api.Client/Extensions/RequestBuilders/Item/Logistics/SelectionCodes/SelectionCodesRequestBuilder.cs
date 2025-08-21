@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics.SelectionCodes;
 
 public partial class SelectionCodesRequestBuilder
 {
-    public async Task<LogisticsSelectionCodes_Response?> GetAllAsync(Action<RequestConfiguration<SelectionCodesRequestBuilder.SelectionCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<LogisticsSelectionCode_Response?> GetAllAsync(Action<RequestConfiguration<SelectionCodesRequestBuilder.SelectionCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.LogisticsSelectionCodesResults is null)
+        if (response?.D?.LogisticsSelectionCodeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<LogisticsSelectionCodes>();
+        var allItems = new List<LogisticsSelectionCode>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.LogisticsSelectionCodesResults?.Results is { } results)
+            if (currentResponse?.D?.LogisticsSelectionCodeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.LogisticsSelectionCodesResults?.Next;
+            var nextUrl = currentResponse?.D?.LogisticsSelectionCodeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SelectionCodesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new LogisticsSelectionCodes_Response
+        var finalResponse = new LogisticsSelectionCode_Response
         {
-            D = new LogisticsSelectionCodes_Response.LogisticsSelectionCodes_Response_d
+            D = new LogisticsSelectionCode_Response.LogisticsSelectionCode_Response_d
             {
-                LogisticsSelectionCodes = allItems
+                LogisticsSelectionCode = allItems
             }
         };
 

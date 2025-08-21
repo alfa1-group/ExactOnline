@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Financial.GLAccounts;
 
 public partial class GLAccountsRequestBuilder
 {
-    public async Task<SyncFinancialGLAccounts_Response?> GetAllAsync(Action<RequestConfiguration<GLAccountsRequestBuilder.GLAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncFinancialGLAccount_Response?> GetAllAsync(Action<RequestConfiguration<GLAccountsRequestBuilder.GLAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncFinancialGLAccountsResults is null)
+        if (response?.D?.SyncFinancialGLAccountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncFinancialGLAccounts>();
+        var allItems = new List<SyncFinancialGLAccount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncFinancialGLAccountsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncFinancialGLAccountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncFinancialGLAccountsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncFinancialGLAccountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GLAccountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncFinancialGLAccounts_Response
+        var finalResponse = new SyncFinancialGLAccount_Response
         {
-            D = new SyncFinancialGLAccounts_Response.SyncFinancialGLAccounts_Response_d
+            D = new SyncFinancialGLAccount_Response.SyncFinancialGLAccount_Response_d
             {
-                SyncFinancialGLAccounts = allItems
+                SyncFinancialGLAccount = allItems
             }
         };
 

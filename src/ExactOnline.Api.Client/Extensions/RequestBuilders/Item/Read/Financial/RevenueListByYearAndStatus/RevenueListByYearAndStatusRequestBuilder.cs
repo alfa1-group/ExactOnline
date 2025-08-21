@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearAnd
 
 public partial class RevenueListByYearAndStatusRequestBuilder
 {
-    public async Task<ReadFinancialRevenueListByYearAndStatus_Response?> GetAllAsync(Action<RequestConfiguration<RevenueListByYearAndStatusRequestBuilder.RevenueListByYearAndStatusRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadFinancialRevenueListByYearAndStatu_Response?> GetAllAsync(Action<RequestConfiguration<RevenueListByYearAndStatusRequestBuilder.RevenueListByYearAndStatusRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadFinancialRevenueListByYearAndStatusResults is null)
+        if (response?.D?.ReadFinancialRevenueListByYearAndStatuResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadFinancialRevenueListByYearAndStatus>();
+        var allItems = new List<ReadFinancialRevenueListByYearAndStatu>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadFinancialRevenueListByYearAndStatusResults?.Results is { } results)
+            if (currentResponse?.D?.ReadFinancialRevenueListByYearAndStatuResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadFinancialRevenueListByYearAndStatusResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadFinancialRevenueListByYearAndStatuResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class RevenueListByYearAndStatusRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadFinancialRevenueListByYearAndStatus_Response
+        var finalResponse = new ReadFinancialRevenueListByYearAndStatu_Response
         {
-            D = new ReadFinancialRevenueListByYearAndStatus_Response.ReadFinancialRevenueListByYearAndStatus_Response_d
+            D = new ReadFinancialRevenueListByYearAndStatu_Response.ReadFinancialRevenueListByYearAndStatu_Response_d
             {
-                ReadFinancialRevenueListByYearAndStatus = allItems
+                ReadFinancialRevenueListByYearAndStatu = allItems
             }
         };
 

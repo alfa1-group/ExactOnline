@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.Operations;
 
 public partial class OperationsRequestBuilder
 {
-    public async Task<ManufacturingOperations_Response?> GetAllAsync(Action<RequestConfiguration<OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingOperation_Response?> GetAllAsync(Action<RequestConfiguration<OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingOperationsResults is null)
+        if (response?.D?.ManufacturingOperationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingOperations>();
+        var allItems = new List<ManufacturingOperation>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingOperationsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingOperationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingOperationsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingOperationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class OperationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingOperations_Response
+        var finalResponse = new ManufacturingOperation_Response
         {
-            D = new ManufacturingOperations_Response.ManufacturingOperations_Response_d
+            D = new ManufacturingOperation_Response.ManufacturingOperation_Response_d
             {
-                ManufacturingOperations = allItems
+                ManufacturingOperation = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox.Mailboxes;
 
 public partial class MailboxesRequestBuilder
 {
-    public async Task<MailboxMailboxes_Response?> GetAllAsync(Action<RequestConfiguration<MailboxesRequestBuilder.MailboxesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<MailboxMailbox_Response?> GetAllAsync(Action<RequestConfiguration<MailboxesRequestBuilder.MailboxesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.MailboxMailboxesResults is null)
+        if (response?.D?.MailboxMailboxResults is null)
         {
             return response;
         }
 
-        var allItems = new List<MailboxMailboxes>();
+        var allItems = new List<MailboxMailbox>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.MailboxMailboxesResults?.Results is { } results)
+            if (currentResponse?.D?.MailboxMailboxResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.MailboxMailboxesResults?.Next;
+            var nextUrl = currentResponse?.D?.MailboxMailboxResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class MailboxesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new MailboxMailboxes_Response
+        var finalResponse = new MailboxMailbox_Response
         {
-            D = new MailboxMailboxes_Response.MailboxMailboxes_Response_d
+            D = new MailboxMailbox_Response.MailboxMailbox_Response_d
             {
-                MailboxMailboxes = allItems
+                MailboxMailbox = allItems
             }
         };
 

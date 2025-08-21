@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics.SalesItemPrices;
 
 public partial class SalesItemPricesRequestBuilder
 {
-    public async Task<LogisticsSalesItemPrices_Response?> GetAllAsync(Action<RequestConfiguration<SalesItemPricesRequestBuilder.SalesItemPricesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<LogisticsSalesItemPrice_Response?> GetAllAsync(Action<RequestConfiguration<SalesItemPricesRequestBuilder.SalesItemPricesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.LogisticsSalesItemPricesResults is null)
+        if (response?.D?.LogisticsSalesItemPriceResults is null)
         {
             return response;
         }
 
-        var allItems = new List<LogisticsSalesItemPrices>();
+        var allItems = new List<LogisticsSalesItemPrice>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.LogisticsSalesItemPricesResults?.Results is { } results)
+            if (currentResponse?.D?.LogisticsSalesItemPriceResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.LogisticsSalesItemPricesResults?.Next;
+            var nextUrl = currentResponse?.D?.LogisticsSalesItemPriceResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesItemPricesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new LogisticsSalesItemPrices_Response
+        var finalResponse = new LogisticsSalesItemPrice_Response
         {
-            D = new LogisticsSalesItemPrices_Response.LogisticsSalesItemPrices_Response_d
+            D = new LogisticsSalesItemPrice_Response.LogisticsSalesItemPrice_Response_d
             {
-                LogisticsSalesItemPrices = allItems
+                LogisticsSalesItemPrice = allItems
             }
         };
 

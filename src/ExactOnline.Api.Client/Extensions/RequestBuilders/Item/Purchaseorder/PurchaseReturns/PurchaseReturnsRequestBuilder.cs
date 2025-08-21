@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturns;
 
 public partial class PurchaseReturnsRequestBuilder
 {
-    public async Task<PurchaseOrderPurchaseReturns_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseReturnsRequestBuilder.PurchaseReturnsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PurchaseOrderPurchaseReturn_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseReturnsRequestBuilder.PurchaseReturnsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PurchaseOrderPurchaseReturnsResults is null)
+        if (response?.D?.PurchaseOrderPurchaseReturnResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PurchaseOrderPurchaseReturns>();
+        var allItems = new List<PurchaseOrderPurchaseReturn>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PurchaseOrderPurchaseReturnsResults?.Results is { } results)
+            if (currentResponse?.D?.PurchaseOrderPurchaseReturnResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PurchaseOrderPurchaseReturnsResults?.Next;
+            var nextUrl = currentResponse?.D?.PurchaseOrderPurchaseReturnResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PurchaseReturnsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PurchaseOrderPurchaseReturns_Response
+        var finalResponse = new PurchaseOrderPurchaseReturn_Response
         {
-            D = new PurchaseOrderPurchaseReturns_Response.PurchaseOrderPurchaseReturns_Response_d
+            D = new PurchaseOrderPurchaseReturn_Response.PurchaseOrderPurchaseReturn_Response_d
             {
-                PurchaseOrderPurchaseReturns = allItems
+                PurchaseOrderPurchaseReturn = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturns;
 
 public partial class PlannedSalesReturnsRequestBuilder
 {
-    public async Task<SalesOrderPlannedSalesReturns_Response?> GetAllAsync(Action<RequestConfiguration<PlannedSalesReturnsRequestBuilder.PlannedSalesReturnsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesOrderPlannedSalesReturn_Response?> GetAllAsync(Action<RequestConfiguration<PlannedSalesReturnsRequestBuilder.PlannedSalesReturnsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesOrderPlannedSalesReturnsResults is null)
+        if (response?.D?.SalesOrderPlannedSalesReturnResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesOrderPlannedSalesReturns>();
+        var allItems = new List<SalesOrderPlannedSalesReturn>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesOrderPlannedSalesReturnsResults?.Results is { } results)
+            if (currentResponse?.D?.SalesOrderPlannedSalesReturnResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesOrderPlannedSalesReturnsResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesOrderPlannedSalesReturnResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PlannedSalesReturnsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesOrderPlannedSalesReturns_Response
+        var finalResponse = new SalesOrderPlannedSalesReturn_Response
         {
-            D = new SalesOrderPlannedSalesReturns_Response.SalesOrderPlannedSalesReturns_Response_d
+            D = new SalesOrderPlannedSalesReturn_Response.SalesOrderPlannedSalesReturn_Response_d
             {
-                SalesOrderPlannedSalesReturns = allItems
+                SalesOrderPlannedSalesReturn = allItems
             }
         };
 

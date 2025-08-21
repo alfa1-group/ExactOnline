@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.Documents;
 
 public partial class DocumentsRequestBuilder
 {
-    public async Task<DocumentsDocuments_Response?> GetAllAsync(Action<RequestConfiguration<DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<DocumentsDocument_Response?> GetAllAsync(Action<RequestConfiguration<DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.DocumentsDocumentsResults is null)
+        if (response?.D?.DocumentsDocumentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<DocumentsDocuments>();
+        var allItems = new List<DocumentsDocument>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.DocumentsDocumentsResults?.Results is { } results)
+            if (currentResponse?.D?.DocumentsDocumentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.DocumentsDocumentsResults?.Next;
+            var nextUrl = currentResponse?.D?.DocumentsDocumentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DocumentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new DocumentsDocuments_Response
+        var finalResponse = new DocumentsDocument_Response
         {
-            D = new DocumentsDocuments_Response.DocumentsDocuments_Response_d
+            D = new DocumentsDocument_Response.DocumentsDocument_Response_d
             {
-                DocumentsDocuments = allItems
+                DocumentsDocument = allItems
             }
         };
 

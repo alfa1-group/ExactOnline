@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Project.TimeCostTransactions;
 
 public partial class TimeCostTransactionsRequestBuilder
 {
-    public async Task<SyncProjectTimeCostTransactions_Response?> GetAllAsync(Action<RequestConfiguration<TimeCostTransactionsRequestBuilder.TimeCostTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncProjectTimeCostTransaction_Response?> GetAllAsync(Action<RequestConfiguration<TimeCostTransactionsRequestBuilder.TimeCostTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncProjectTimeCostTransactionsResults is null)
+        if (response?.D?.SyncProjectTimeCostTransactionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncProjectTimeCostTransactions>();
+        var allItems = new List<SyncProjectTimeCostTransaction>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncProjectTimeCostTransactionsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncProjectTimeCostTransactionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncProjectTimeCostTransactionsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncProjectTimeCostTransactionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TimeCostTransactionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncProjectTimeCostTransactions_Response
+        var finalResponse = new SyncProjectTimeCostTransaction_Response
         {
-            D = new SyncProjectTimeCostTransactions_Response.SyncProjectTimeCostTransactions_Response_d
+            D = new SyncProjectTimeCostTransaction_Response.SyncProjectTimeCostTransaction_Response_d
             {
-                SyncProjectTimeCostTransactions = allItems
+                SyncProjectTimeCostTransaction = allItems
             }
         };
 

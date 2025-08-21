@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId.DropShipmentLinesWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (uuid) of the SalesOrderDropShipmentLines</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesOrderDropShipmentLine</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public DropShipmentLinesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/salesorder/DropShipmentLines(guid'{id}')", pathParameters)
@@ -36,20 +36,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId
         {
         }
         /// <summary>
-        /// GET SalesOrderDropShipmentLines
+        /// GET SalesOrderDropShipmentLine
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinesGet_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLineGet_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinesGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLineGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinesGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLineGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,10 +58,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinesGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinesGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLineGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLineGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// PUT SalesOrderDropShipmentLines
+        /// PUT SalesOrderDropShipmentLine
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,11 +70,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PutAsync(global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinesPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PutAsync(global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinePut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PutAsync(global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinesPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PutAsync(global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinePut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -87,7 +87,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET SalesOrderDropShipmentLines
+        /// GET SalesOrderDropShipmentLine
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,18 +106,18 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId
             return requestInfo;
         }
         /// <summary>
-        /// PUT SalesOrderDropShipmentLines
+        /// PUT SalesOrderDropShipmentLine
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinesPut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinePut body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinesPut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::ExactOnline.Api.Client.Models.SalesOrderDropShipmentLinePut body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

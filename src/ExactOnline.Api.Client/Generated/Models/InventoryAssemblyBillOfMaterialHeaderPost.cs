@@ -17,10 +17,10 @@ namespace ExactOnline.Api.Client.Models
         /// <summary>Collection of materials</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialMaterials>? AssemblyBillOfMaterialMaterials { get; set; }
+        public List<UntypedNode>? AssemblyBillOfMaterialMaterials { get; set; }
 #nullable restore
 #else
-        public List<global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialMaterials> AssemblyBillOfMaterialMaterials { get; set; }
+        public List<UntypedNode> AssemblyBillOfMaterialMaterials { get; set; }
 #endif
         /// <summary>Quantity of the material needed to produce the batch</summary>
         public double? BatchQuantity { get; set; }
@@ -57,7 +57,7 @@ namespace ExactOnline.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "AssembledLeadDays", n => { AssembledLeadDays = n.GetIntValue(); } },
-                { "AssemblyBillOfMaterialMaterials", n => { AssemblyBillOfMaterialMaterials = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialMaterials>(global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialMaterials.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "AssemblyBillOfMaterialMaterials", n => { AssemblyBillOfMaterialMaterials = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
                 { "BatchQuantity", n => { BatchQuantity = n.GetDoubleValue(); } },
                 { "ID", n => { ID = n.GetGuidValue(); } },
                 { "__metadata", n => { Metadata = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ExactOnlineMetadata>(global::ExactOnline.Api.Client.Models.ExactOnlineMetadata.CreateFromDiscriminatorValue); } },
@@ -73,7 +73,7 @@ namespace ExactOnline.Api.Client.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("AssembledLeadDays", AssembledLeadDays);
-            writer.WriteCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.InventoryAssemblyBillOfMaterialMaterials>("AssemblyBillOfMaterialMaterials", AssemblyBillOfMaterialMaterials);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("AssemblyBillOfMaterialMaterials", AssemblyBillOfMaterialMaterials);
             writer.WriteDoubleValue("BatchQuantity", BatchQuantity);
             writer.WriteGuidValue("ID", ID);
             writer.WriteBoolValue("UpdateCostPrice", UpdateCostPrice);

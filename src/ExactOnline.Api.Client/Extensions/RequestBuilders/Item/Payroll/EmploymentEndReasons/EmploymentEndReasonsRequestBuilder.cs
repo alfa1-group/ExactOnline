@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentEndReasons;
 
 public partial class EmploymentEndReasonsRequestBuilder
 {
-    public async Task<PayrollEmploymentEndReasons_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentEndReasonsRequestBuilder.EmploymentEndReasonsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PayrollEmploymentEndReason_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentEndReasonsRequestBuilder.EmploymentEndReasonsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PayrollEmploymentEndReasonsResults is null)
+        if (response?.D?.PayrollEmploymentEndReasonResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PayrollEmploymentEndReasons>();
+        var allItems = new List<PayrollEmploymentEndReason>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PayrollEmploymentEndReasonsResults?.Results is { } results)
+            if (currentResponse?.D?.PayrollEmploymentEndReasonResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PayrollEmploymentEndReasonsResults?.Next;
+            var nextUrl = currentResponse?.D?.PayrollEmploymentEndReasonResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EmploymentEndReasonsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PayrollEmploymentEndReasons_Response
+        var finalResponse = new PayrollEmploymentEndReason_Response
         {
-            D = new PayrollEmploymentEndReasons_Response.PayrollEmploymentEndReasons_Response_d
+            D = new PayrollEmploymentEndReason_Response.PayrollEmploymentEndReason_Response_d
             {
-                PayrollEmploymentEndReasons = allItems
+                PayrollEmploymentEndReason = allItems
             }
         };
 

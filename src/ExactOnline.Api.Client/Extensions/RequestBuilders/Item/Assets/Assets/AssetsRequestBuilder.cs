@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Assets.Assets;
 
 public partial class AssetsRequestBuilder
 {
-    public async Task<AssetsAssets_Response?> GetAllAsync(Action<RequestConfiguration<AssetsRequestBuilder.AssetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<AssetsAsset_Response?> GetAllAsync(Action<RequestConfiguration<AssetsRequestBuilder.AssetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.AssetsAssetsResults is null)
+        if (response?.D?.AssetsAssetResults is null)
         {
             return response;
         }
 
-        var allItems = new List<AssetsAssets>();
+        var allItems = new List<AssetsAsset>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.AssetsAssetsResults?.Results is { } results)
+            if (currentResponse?.D?.AssetsAssetResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.AssetsAssetsResults?.Next;
+            var nextUrl = currentResponse?.D?.AssetsAssetResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AssetsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new AssetsAssets_Response
+        var finalResponse = new AssetsAsset_Response
         {
-            D = new AssetsAssets_Response.AssetsAssets_Response_d
+            D = new AssetsAsset_Response.AssetsAsset_Response_d
             {
-                AssetsAssets = allItems
+                AssetsAsset = allItems
             }
         };
 

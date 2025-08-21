@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Manufacturing.BillOfMaterialMa
 
 public partial class BillOfMaterialMaterialsRequestBuilder
 {
-    public async Task<SyncManufacturingBillOfMaterialMaterials_Response?> GetAllAsync(Action<RequestConfiguration<BillOfMaterialMaterialsRequestBuilder.BillOfMaterialMaterialsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncManufacturingBillOfMaterialMaterial_Response?> GetAllAsync(Action<RequestConfiguration<BillOfMaterialMaterialsRequestBuilder.BillOfMaterialMaterialsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncManufacturingBillOfMaterialMaterialsResults is null)
+        if (response?.D?.SyncManufacturingBillOfMaterialMaterialResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncManufacturingBillOfMaterialMaterials>();
+        var allItems = new List<SyncManufacturingBillOfMaterialMaterial>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncManufacturingBillOfMaterialMaterialsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncManufacturingBillOfMaterialMaterialResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncManufacturingBillOfMaterialMaterialsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncManufacturingBillOfMaterialMaterialResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class BillOfMaterialMaterialsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncManufacturingBillOfMaterialMaterials_Response
+        var finalResponse = new SyncManufacturingBillOfMaterialMaterial_Response
         {
-            D = new SyncManufacturingBillOfMaterialMaterials_Response.SyncManufacturingBillOfMaterialMaterials_Response_d
+            D = new SyncManufacturingBillOfMaterialMaterial_Response.SyncManufacturingBillOfMaterialMaterial_Response_d
             {
-                SyncManufacturingBillOfMaterialMaterials = allItems
+                SyncManufacturingBillOfMaterialMaterial = allItems
             }
         };
 

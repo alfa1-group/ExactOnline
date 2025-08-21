@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics.Items;
 
 public partial class ItemsRequestBuilder
 {
-    public async Task<BulkLogisticsItems_Response?> GetAllAsync(Action<RequestConfiguration<ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkLogisticsItem_Response?> GetAllAsync(Action<RequestConfiguration<ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkLogisticsItemsResults is null)
+        if (response?.D?.BulkLogisticsItemResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkLogisticsItems>();
+        var allItems = new List<BulkLogisticsItem>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkLogisticsItemsResults?.Results is { } results)
+            if (currentResponse?.D?.BulkLogisticsItemResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkLogisticsItemsResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkLogisticsItemResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ItemsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkLogisticsItems_Response
+        var finalResponse = new BulkLogisticsItem_Response
         {
-            D = new BulkLogisticsItems_Response.BulkLogisticsItems_Response_d
+            D = new BulkLogisticsItem_Response.BulkLogisticsItem_Response_d
             {
-                BulkLogisticsItems = allItems
+                BulkLogisticsItem = allItems
             }
         };
 

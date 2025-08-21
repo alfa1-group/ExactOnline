@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesInvoice.SalesInvoiceLines
 
 public partial class SalesInvoiceLinesRequestBuilder
 {
-    public async Task<BulkSalesInvoiceSalesInvoiceLines_Response?> GetAllAsync(Action<RequestConfiguration<SalesInvoiceLinesRequestBuilder.SalesInvoiceLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkSalesInvoiceSalesInvoiceLine_Response?> GetAllAsync(Action<RequestConfiguration<SalesInvoiceLinesRequestBuilder.SalesInvoiceLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkSalesInvoiceSalesInvoiceLinesResults is null)
+        if (response?.D?.BulkSalesInvoiceSalesInvoiceLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkSalesInvoiceSalesInvoiceLines>();
+        var allItems = new List<BulkSalesInvoiceSalesInvoiceLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkSalesInvoiceSalesInvoiceLinesResults?.Results is { } results)
+            if (currentResponse?.D?.BulkSalesInvoiceSalesInvoiceLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkSalesInvoiceSalesInvoiceLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkSalesInvoiceSalesInvoiceLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesInvoiceLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkSalesInvoiceSalesInvoiceLines_Response
+        var finalResponse = new BulkSalesInvoiceSalesInvoiceLine_Response
         {
-            D = new BulkSalesInvoiceSalesInvoiceLines_Response.BulkSalesInvoiceSalesInvoiceLines_Response_d
+            D = new BulkSalesInvoiceSalesInvoiceLine_Response.BulkSalesInvoiceSalesInvoiceLine_Response_d
             {
-                BulkSalesInvoiceSalesInvoiceLines = allItems
+                BulkSalesInvoiceSalesInvoiceLine = allItems
             }
         };
 

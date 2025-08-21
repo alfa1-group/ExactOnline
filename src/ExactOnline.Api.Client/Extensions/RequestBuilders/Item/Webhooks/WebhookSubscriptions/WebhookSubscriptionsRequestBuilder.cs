@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Webhooks.WebhookSubscriptions;
 
 public partial class WebhookSubscriptionsRequestBuilder
 {
-    public async Task<WebhooksWebhookSubscriptions_Response?> GetAllAsync(Action<RequestConfiguration<WebhookSubscriptionsRequestBuilder.WebhookSubscriptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<WebhooksWebhookSubscription_Response?> GetAllAsync(Action<RequestConfiguration<WebhookSubscriptionsRequestBuilder.WebhookSubscriptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.WebhooksWebhookSubscriptionsResults is null)
+        if (response?.D?.WebhooksWebhookSubscriptionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<WebhooksWebhookSubscriptions>();
+        var allItems = new List<WebhooksWebhookSubscription>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.WebhooksWebhookSubscriptionsResults?.Results is { } results)
+            if (currentResponse?.D?.WebhooksWebhookSubscriptionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.WebhooksWebhookSubscriptionsResults?.Next;
+            var nextUrl = currentResponse?.D?.WebhooksWebhookSubscriptionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class WebhookSubscriptionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new WebhooksWebhookSubscriptions_Response
+        var finalResponse = new WebhooksWebhookSubscription_Response
         {
-            D = new WebhooksWebhookSubscriptions_Response.WebhooksWebhookSubscriptions_Response_d
+            D = new WebhooksWebhookSubscription_Response.WebhooksWebhookSubscription_Response_d
             {
-                WebhooksWebhookSubscriptions = allItems
+                WebhooksWebhookSubscription = allItems
             }
         };
 

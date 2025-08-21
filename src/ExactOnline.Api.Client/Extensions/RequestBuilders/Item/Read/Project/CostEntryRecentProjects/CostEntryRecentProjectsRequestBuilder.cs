@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProject
 
 public partial class CostEntryRecentProjectsRequestBuilder
 {
-    public async Task<ReadProjectCostEntryRecentProjects_Response?> GetAllAsync(Action<RequestConfiguration<CostEntryRecentProjectsRequestBuilder.CostEntryRecentProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectCostEntryRecentProject_Response?> GetAllAsync(Action<RequestConfiguration<CostEntryRecentProjectsRequestBuilder.CostEntryRecentProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectCostEntryRecentProjectsResults is null)
+        if (response?.D?.ReadProjectCostEntryRecentProjectResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectCostEntryRecentProjects>();
+        var allItems = new List<ReadProjectCostEntryRecentProject>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectCostEntryRecentProjectsResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectCostEntryRecentProjectResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectCostEntryRecentProjectsResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectCostEntryRecentProjectResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class CostEntryRecentProjectsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectCostEntryRecentProjects_Response
+        var finalResponse = new ReadProjectCostEntryRecentProject_Response
         {
-            D = new ReadProjectCostEntryRecentProjects_Response.ReadProjectCostEntryRecentProjects_Response_d
+            D = new ReadProjectCostEntryRecentProject_Response.ReadProjectCostEntryRecentProject_Response_d
             {
-                ReadProjectCostEntryRecentProjects = allItems
+                ReadProjectCostEntryRecentProject = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentOrganizations;
 
 public partial class EmploymentOrganizationsRequestBuilder
 {
-    public async Task<PayrollEmploymentOrganizations_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentOrganizationsRequestBuilder.EmploymentOrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PayrollEmploymentOrganization_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentOrganizationsRequestBuilder.EmploymentOrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PayrollEmploymentOrganizationsResults is null)
+        if (response?.D?.PayrollEmploymentOrganizationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PayrollEmploymentOrganizations>();
+        var allItems = new List<PayrollEmploymentOrganization>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PayrollEmploymentOrganizationsResults?.Results is { } results)
+            if (currentResponse?.D?.PayrollEmploymentOrganizationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PayrollEmploymentOrganizationsResults?.Next;
+            var nextUrl = currentResponse?.D?.PayrollEmploymentOrganizationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EmploymentOrganizationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PayrollEmploymentOrganizations_Response
+        var finalResponse = new PayrollEmploymentOrganization_Response
         {
-            D = new PayrollEmploymentOrganizations_Response.PayrollEmploymentOrganizations_Response_d
+            D = new PayrollEmploymentOrganization_Response.PayrollEmploymentOrganization_Response_d
             {
-                PayrollEmploymentOrganizations = allItems
+                PayrollEmploymentOrganization = allItems
             }
         };
 

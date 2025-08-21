@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfW
 
 public partial class RecentHoursByNumberOfWeeksRequestBuilder
 {
-    public async Task<ReadProjectRecentHoursByNumberOfWeeks_Response?> GetAllAsync(Action<RequestConfiguration<RecentHoursByNumberOfWeeksRequestBuilder.RecentHoursByNumberOfWeeksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectRecentHoursByNumberOfWeek_Response?> GetAllAsync(Action<RequestConfiguration<RecentHoursByNumberOfWeeksRequestBuilder.RecentHoursByNumberOfWeeksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectRecentHoursByNumberOfWeeksResults is null)
+        if (response?.D?.ReadProjectRecentHoursByNumberOfWeekResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectRecentHoursByNumberOfWeeks>();
+        var allItems = new List<ReadProjectRecentHoursByNumberOfWeek>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectRecentHoursByNumberOfWeeksResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectRecentHoursByNumberOfWeekResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectRecentHoursByNumberOfWeeksResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectRecentHoursByNumberOfWeekResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class RecentHoursByNumberOfWeeksRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectRecentHoursByNumberOfWeeks_Response
+        var finalResponse = new ReadProjectRecentHoursByNumberOfWeek_Response
         {
-            D = new ReadProjectRecentHoursByNumberOfWeeks_Response.ReadProjectRecentHoursByNumberOfWeeks_Response_d
+            D = new ReadProjectRecentHoursByNumberOfWeek_Response.ReadProjectRecentHoursByNumberOfWeek_Response_d
             {
-                ReadProjectRecentHoursByNumberOfWeeks = allItems
+                ReadProjectRecentHoursByNumberOfWeek = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.ExchangeRates;
 
 public partial class ExchangeRatesRequestBuilder
 {
-    public async Task<FinancialExchangeRates_Response?> GetAllAsync(Action<RequestConfiguration<ExchangeRatesRequestBuilder.ExchangeRatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialExchangeRate_Response?> GetAllAsync(Action<RequestConfiguration<ExchangeRatesRequestBuilder.ExchangeRatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialExchangeRatesResults is null)
+        if (response?.D?.FinancialExchangeRateResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialExchangeRates>();
+        var allItems = new List<FinancialExchangeRate>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialExchangeRatesResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialExchangeRateResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialExchangeRatesResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialExchangeRateResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ExchangeRatesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialExchangeRates_Response
+        var finalResponse = new FinancialExchangeRate_Response
         {
-            D = new FinancialExchangeRates_Response.FinancialExchangeRates_Response_d
+            D = new FinancialExchangeRate_Response.FinancialExchangeRate_Response_d
             {
-                FinancialExchangeRates = allItems
+                FinancialExchangeRate = allItems
             }
         };
 

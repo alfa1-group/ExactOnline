@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.VariableMutations;
 
 public partial class VariableMutationsRequestBuilder
 {
-    public async Task<PayrollVariableMutations_Response?> GetAllAsync(Action<RequestConfiguration<VariableMutationsRequestBuilder.VariableMutationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PayrollVariableMutation_Response?> GetAllAsync(Action<RequestConfiguration<VariableMutationsRequestBuilder.VariableMutationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PayrollVariableMutationsResults is null)
+        if (response?.D?.PayrollVariableMutationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PayrollVariableMutations>();
+        var allItems = new List<PayrollVariableMutation>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PayrollVariableMutationsResults?.Results is { } results)
+            if (currentResponse?.D?.PayrollVariableMutationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PayrollVariableMutationsResults?.Next;
+            var nextUrl = currentResponse?.D?.PayrollVariableMutationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class VariableMutationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PayrollVariableMutations_Response
+        var finalResponse = new PayrollVariableMutation_Response
         {
-            D = new PayrollVariableMutations_Response.PayrollVariableMutations_Response_d
+            D = new PayrollVariableMutation_Response.PayrollVariableMutation_Response_d
             {
-                PayrollVariableMutations = allItems
+                PayrollVariableMutation = allItems
             }
         };
 

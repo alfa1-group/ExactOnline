@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow.Receivables;
 
 public partial class ReceivablesRequestBuilder
 {
-    public async Task<CashflowReceivables_Response?> GetAllAsync(Action<RequestConfiguration<ReceivablesRequestBuilder.ReceivablesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CashflowReceivable_Response?> GetAllAsync(Action<RequestConfiguration<ReceivablesRequestBuilder.ReceivablesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CashflowReceivablesResults is null)
+        if (response?.D?.CashflowReceivableResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CashflowReceivables>();
+        var allItems = new List<CashflowReceivable>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CashflowReceivablesResults?.Results is { } results)
+            if (currentResponse?.D?.CashflowReceivableResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CashflowReceivablesResults?.Next;
+            var nextUrl = currentResponse?.D?.CashflowReceivableResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ReceivablesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CashflowReceivables_Response
+        var finalResponse = new CashflowReceivable_Response
         {
-            D = new CashflowReceivables_Response.CashflowReceivables_Response_d
+            D = new CashflowReceivable_Response.CashflowReceivable_Response_d
             {
-                CashflowReceivables = allItems
+                CashflowReceivable = allItems
             }
         };
 

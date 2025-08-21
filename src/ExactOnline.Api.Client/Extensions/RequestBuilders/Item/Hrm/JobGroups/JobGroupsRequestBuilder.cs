@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.JobGroups;
 
 public partial class JobGroupsRequestBuilder
 {
-    public async Task<HRMJobGroups_Response?> GetAllAsync(Action<RequestConfiguration<JobGroupsRequestBuilder.JobGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<HRMJobGroup_Response?> GetAllAsync(Action<RequestConfiguration<JobGroupsRequestBuilder.JobGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.HRMJobGroupsResults is null)
+        if (response?.D?.HRMJobGroupResults is null)
         {
             return response;
         }
 
-        var allItems = new List<HRMJobGroups>();
+        var allItems = new List<HRMJobGroup>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.HRMJobGroupsResults?.Results is { } results)
+            if (currentResponse?.D?.HRMJobGroupResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.HRMJobGroupsResults?.Next;
+            var nextUrl = currentResponse?.D?.HRMJobGroupResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class JobGroupsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new HRMJobGroups_Response
+        var finalResponse = new HRMJobGroup_Response
         {
-            D = new HRMJobGroups_Response.HRMJobGroups_Response_d
+            D = new HRMJobGroup_Response.HRMJobGroup_Response_d
             {
-                HRMJobGroups = allItems
+                HRMJobGroup = allItems
             }
         };
 

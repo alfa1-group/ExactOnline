@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassValues;
 
 public partial class DivisionClassValuesRequestBuilder
 {
-    public async Task<HRMDivisionClassValues_Response?> GetAllAsync(Action<RequestConfiguration<DivisionClassValuesRequestBuilder.DivisionClassValuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<HRMDivisionClassValue_Response?> GetAllAsync(Action<RequestConfiguration<DivisionClassValuesRequestBuilder.DivisionClassValuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.HRMDivisionClassValuesResults is null)
+        if (response?.D?.HRMDivisionClassValueResults is null)
         {
             return response;
         }
 
-        var allItems = new List<HRMDivisionClassValues>();
+        var allItems = new List<HRMDivisionClassValue>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.HRMDivisionClassValuesResults?.Results is { } results)
+            if (currentResponse?.D?.HRMDivisionClassValueResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.HRMDivisionClassValuesResults?.Next;
+            var nextUrl = currentResponse?.D?.HRMDivisionClassValueResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DivisionClassValuesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new HRMDivisionClassValues_Response
+        var finalResponse = new HRMDivisionClassValue_Response
         {
-            D = new HRMDivisionClassValues_Response.HRMDivisionClassValues_Response_d
+            D = new HRMDivisionClassValue_Response.HRMDivisionClassValue_Response_d
             {
-                HRMDivisionClassValues = allItems
+                HRMDivisionClassValue = allItems
             }
         };
 

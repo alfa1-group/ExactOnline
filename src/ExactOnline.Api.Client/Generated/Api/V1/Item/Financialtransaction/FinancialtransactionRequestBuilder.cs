@@ -53,7 +53,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction
         /// Use this endpoint to create, delete or read bank entries for the bank statements received. Note: Bank entries are separated to header and line information. Endpoint BankEntries is used for the header information. You must include a parameter for &apos;BankEntryLines&apos; to add cash entry lines when you POST to the BankEntries endpoint.Bank entries have an opening balance which should be the end balance of the previous entry. Opening balance plus all bank entry lines should result in the closing balance.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.BankEntriesWithEntryid.BankEntriesWithEntryidRequestBuilder"/></returns>
-        /// <param name="entryid">Unique identifier (uuid) of the FinancialTransactionBankEntries</param>
+        /// <param name="entryid">Unique identifier (uuid) of the FinancialTransactionBankEntry</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.BankEntriesWithEntryid.BankEntriesWithEntryidRequestBuilder BankEntriesWithEntryid(Guid? entryid)
         {
             _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
@@ -63,7 +63,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction
         /// Use this endpoint to create or read bank entry lines for the bank statements received.Note: Bank entries are separated to header and line information. Endpoint BankEntryLines is used for the line information.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.BankEntryLinesWithId.BankEntryLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the FinancialTransactionBankEntryLines</param>
+        /// <param name="id">Unique identifier (uuid) of the FinancialTransactionBankEntryLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.BankEntryLinesWithId.BankEntryLinesWithIdRequestBuilder BankEntryLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -73,7 +73,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction
         /// Use this endpoint to create, delete or read cash entries.Note: Cash entries are separated to header and line information. Endpoint CashEntries is used for the header information. You must include a parameter for &apos;CashEntryLines&apos; to add cash entry lines when you POST to the CashEntries endpoint.Cash entries have an opening balance which should be the end balance of the previous entry. Opening balance plus all cash entry lines should result in the closing balance.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntriesWithEntryid.CashEntriesWithEntryidRequestBuilder"/></returns>
-        /// <param name="entryid">Unique identifier (uuid) of the FinancialTransactionCashEntries</param>
+        /// <param name="entryid">Unique identifier (uuid) of the FinancialTransactionCashEntry</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntriesWithEntryid.CashEntriesWithEntryidRequestBuilder CashEntriesWithEntryid(Guid? entryid)
         {
             _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
@@ -83,7 +83,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction
         /// Use this endpoint to create or read cash entry lines.  Note: Cash entries are separated to header and line information. Endpoint CashEntryLines is used for the line information.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntryLinesWithId.CashEntryLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the FinancialTransactionCashEntryLines</param>
+        /// <param name="id">Unique identifier (uuid) of the FinancialTransactionCashEntryLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntryLinesWithId.CashEntryLinesWithIdRequestBuilder CashEntryLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -109,7 +109,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction
         /// Use this endpoint to read all kind of transactions created in Exact.  Find more details on the attributes in the relevant topic description for BankEntries, CashEntries, GeneralJournalEntries, PurchaseEntries or SalesEntries.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.TransactionLinesWithId.TransactionLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the FinancialTransactionTransactionLines</param>
+        /// <param name="id">Unique identifier (uuid) of the FinancialTransactionTransactionLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.TransactionLinesWithId.TransactionLinesWithIdRequestBuilder TransactionLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

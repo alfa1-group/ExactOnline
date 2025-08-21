@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics.ReasonCodesLinkTypes;
 
 public partial class ReasonCodesLinkTypesRequestBuilder
 {
-    public async Task<LogisticsReasonCodesLinkTypes_Response?> GetAllAsync(Action<RequestConfiguration<ReasonCodesLinkTypesRequestBuilder.ReasonCodesLinkTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<LogisticsReasonCodesLinkType_Response?> GetAllAsync(Action<RequestConfiguration<ReasonCodesLinkTypesRequestBuilder.ReasonCodesLinkTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.LogisticsReasonCodesLinkTypesResults is null)
+        if (response?.D?.LogisticsReasonCodesLinkTypeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<LogisticsReasonCodesLinkTypes>();
+        var allItems = new List<LogisticsReasonCodesLinkType>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.LogisticsReasonCodesLinkTypesResults?.Results is { } results)
+            if (currentResponse?.D?.LogisticsReasonCodesLinkTypeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.LogisticsReasonCodesLinkTypesResults?.Next;
+            var nextUrl = currentResponse?.D?.LogisticsReasonCodesLinkTypeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ReasonCodesLinkTypesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new LogisticsReasonCodesLinkTypes_Response
+        var finalResponse = new LogisticsReasonCodesLinkType_Response
         {
-            D = new LogisticsReasonCodesLinkTypes_Response.LogisticsReasonCodesLinkTypes_Response_d
+            D = new LogisticsReasonCodesLinkType_Response.LogisticsReasonCodesLinkType_Response_d
             {
-                LogisticsReasonCodesLinkTypes = allItems
+                LogisticsReasonCodesLinkType = allItems
             }
         };
 

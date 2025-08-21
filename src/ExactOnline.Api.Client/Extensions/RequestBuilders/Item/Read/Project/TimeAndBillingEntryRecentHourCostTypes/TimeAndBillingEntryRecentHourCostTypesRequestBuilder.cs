@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRec
 
 public partial class TimeAndBillingEntryRecentHourCostTypesRequestBuilder
 {
-    public async Task<ReadProjectTimeAndBillingEntryRecentHourCostTypes_Response?> GetAllAsync(Action<RequestConfiguration<TimeAndBillingEntryRecentHourCostTypesRequestBuilder.TimeAndBillingEntryRecentHourCostTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectTimeAndBillingEntryRecentHourCostType_Response?> GetAllAsync(Action<RequestConfiguration<TimeAndBillingEntryRecentHourCostTypesRequestBuilder.TimeAndBillingEntryRecentHourCostTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectTimeAndBillingEntryRecentHourCostTypesResults is null)
+        if (response?.D?.ReadProjectTimeAndBillingEntryRecentHourCostTypeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectTimeAndBillingEntryRecentHourCostTypes>();
+        var allItems = new List<ReadProjectTimeAndBillingEntryRecentHourCostType>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectTimeAndBillingEntryRecentHourCostTypesResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectTimeAndBillingEntryRecentHourCostTypeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectTimeAndBillingEntryRecentHourCostTypesResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectTimeAndBillingEntryRecentHourCostTypeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TimeAndBillingEntryRecentHourCostTypesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectTimeAndBillingEntryRecentHourCostTypes_Response
+        var finalResponse = new ReadProjectTimeAndBillingEntryRecentHourCostType_Response
         {
-            D = new ReadProjectTimeAndBillingEntryRecentHourCostTypes_Response.ReadProjectTimeAndBillingEntryRecentHourCostTypes_Response_d
+            D = new ReadProjectTimeAndBillingEntryRecentHourCostType_Response.ReadProjectTimeAndBillingEntryRecentHourCostType_Response_d
             {
-                ReadProjectTimeAndBillingEntryRecentHourCostTypes = allItems
+                ReadProjectTimeAndBillingEntryRecentHourCostType = allItems
             }
         };
 

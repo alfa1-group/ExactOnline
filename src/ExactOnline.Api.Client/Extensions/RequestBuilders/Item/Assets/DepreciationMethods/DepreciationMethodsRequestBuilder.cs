@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Assets.DepreciationMethods;
 
 public partial class DepreciationMethodsRequestBuilder
 {
-    public async Task<AssetsDepreciationMethods_Response?> GetAllAsync(Action<RequestConfiguration<DepreciationMethodsRequestBuilder.DepreciationMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<AssetsDepreciationMethod_Response?> GetAllAsync(Action<RequestConfiguration<DepreciationMethodsRequestBuilder.DepreciationMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.AssetsDepreciationMethodsResults is null)
+        if (response?.D?.AssetsDepreciationMethodResults is null)
         {
             return response;
         }
 
-        var allItems = new List<AssetsDepreciationMethods>();
+        var allItems = new List<AssetsDepreciationMethod>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.AssetsDepreciationMethodsResults?.Results is { } results)
+            if (currentResponse?.D?.AssetsDepreciationMethodResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.AssetsDepreciationMethodsResults?.Next;
+            var nextUrl = currentResponse?.D?.AssetsDepreciationMethodResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DepreciationMethodsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new AssetsDepreciationMethods_Response
+        var finalResponse = new AssetsDepreciationMethod_Response
         {
-            D = new AssetsDepreciationMethods_Response.AssetsDepreciationMethods_Response_d
+            D = new AssetsDepreciationMethod_Response.AssetsDepreciationMethod_Response_d
             {
-                AssetsDepreciationMethods = allItems
+                AssetsDepreciationMethod = allItems
             }
         };
 

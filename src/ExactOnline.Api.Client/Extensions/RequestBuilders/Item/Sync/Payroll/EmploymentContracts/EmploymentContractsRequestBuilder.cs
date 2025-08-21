@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Payroll.EmploymentContracts;
 
 public partial class EmploymentContractsRequestBuilder
 {
-    public async Task<SyncPayrollEmploymentContracts_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentContractsRequestBuilder.EmploymentContractsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncPayrollEmploymentContract_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentContractsRequestBuilder.EmploymentContractsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncPayrollEmploymentContractsResults is null)
+        if (response?.D?.SyncPayrollEmploymentContractResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncPayrollEmploymentContracts>();
+        var allItems = new List<SyncPayrollEmploymentContract>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncPayrollEmploymentContractsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncPayrollEmploymentContractResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncPayrollEmploymentContractsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncPayrollEmploymentContractResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EmploymentContractsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncPayrollEmploymentContracts_Response
+        var finalResponse = new SyncPayrollEmploymentContract_Response
         {
-            D = new SyncPayrollEmploymentContracts_Response.SyncPayrollEmploymentContracts_Response_d
+            D = new SyncPayrollEmploymentContract_Response.SyncPayrollEmploymentContract_Response_d
             {
-                SyncPayrollEmploymentContracts = allItems
+                SyncPayrollEmploymentContract = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrderLines;
 
 public partial class PurchaseOrderLinesRequestBuilder
 {
-    public async Task<PurchaseOrderPurchaseOrderLines_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseOrderLinesRequestBuilder.PurchaseOrderLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PurchaseOrderPurchaseOrderLine_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseOrderLinesRequestBuilder.PurchaseOrderLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PurchaseOrderPurchaseOrderLinesResults is null)
+        if (response?.D?.PurchaseOrderPurchaseOrderLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PurchaseOrderPurchaseOrderLines>();
+        var allItems = new List<PurchaseOrderPurchaseOrderLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PurchaseOrderPurchaseOrderLinesResults?.Results is { } results)
+            if (currentResponse?.D?.PurchaseOrderPurchaseOrderLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PurchaseOrderPurchaseOrderLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.PurchaseOrderPurchaseOrderLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PurchaseOrderLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PurchaseOrderPurchaseOrderLines_Response
+        var finalResponse = new PurchaseOrderPurchaseOrderLine_Response
         {
-            D = new PurchaseOrderPurchaseOrderLines_Response.PurchaseOrderPurchaseOrderLines_Response_d
+            D = new PurchaseOrderPurchaseOrderLine_Response.PurchaseOrderPurchaseOrderLine_Response_d
             {
-                PurchaseOrderPurchaseOrderLines = allItems
+                PurchaseOrderPurchaseOrderLine = allItems
             }
         };
 

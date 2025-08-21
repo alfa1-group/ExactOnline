@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.CRM.Contacts;
 
 public partial class ContactsRequestBuilder
 {
-    public async Task<SyncCRMContacts_Response?> GetAllAsync(Action<RequestConfiguration<ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncCRMContact_Response?> GetAllAsync(Action<RequestConfiguration<ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncCRMContactsResults is null)
+        if (response?.D?.SyncCRMContactResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncCRMContacts>();
+        var allItems = new List<SyncCRMContact>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncCRMContactsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncCRMContactResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncCRMContactsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncCRMContactResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ContactsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncCRMContacts_Response
+        var finalResponse = new SyncCRMContact_Response
         {
-            D = new SyncCRMContacts_Response.SyncCRMContacts_Response_d
+            D = new SyncCRMContact_Response.SyncCRMContact_Response_d
             {
-                SyncCRMContacts = allItems
+                SyncCRMContact = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Payroll.EmploymentSalaries;
 
 public partial class EmploymentSalariesRequestBuilder
 {
-    public async Task<SyncPayrollEmploymentSalaries_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentSalariesRequestBuilder.EmploymentSalariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncPayrollEmploymentSalary_Response?> GetAllAsync(Action<RequestConfiguration<EmploymentSalariesRequestBuilder.EmploymentSalariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncPayrollEmploymentSalariesResults is null)
+        if (response?.D?.SyncPayrollEmploymentSalaryResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncPayrollEmploymentSalaries>();
+        var allItems = new List<SyncPayrollEmploymentSalary>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncPayrollEmploymentSalariesResults?.Results is { } results)
+            if (currentResponse?.D?.SyncPayrollEmploymentSalaryResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncPayrollEmploymentSalariesResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncPayrollEmploymentSalaryResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class EmploymentSalariesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncPayrollEmploymentSalaries_Response
+        var finalResponse = new SyncPayrollEmploymentSalary_Response
         {
-            D = new SyncPayrollEmploymentSalaries_Response.SyncPayrollEmploymentSalaries_Response_d
+            D = new SyncPayrollEmploymentSalary_Response.SyncPayrollEmploymentSalary_Response_d
             {
-                SyncPayrollEmploymentSalaries = allItems
+                SyncPayrollEmploymentSalary = allItems
             }
         };
 

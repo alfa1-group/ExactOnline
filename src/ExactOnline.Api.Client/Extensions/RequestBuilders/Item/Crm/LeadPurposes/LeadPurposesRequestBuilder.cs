@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.LeadPurposes;
 
 public partial class LeadPurposesRequestBuilder
 {
-    public async Task<CRMLeadPurposes_Response?> GetAllAsync(Action<RequestConfiguration<LeadPurposesRequestBuilder.LeadPurposesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMLeadPurpose_Response?> GetAllAsync(Action<RequestConfiguration<LeadPurposesRequestBuilder.LeadPurposesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMLeadPurposesResults is null)
+        if (response?.D?.CRMLeadPurposeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMLeadPurposes>();
+        var allItems = new List<CRMLeadPurpose>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMLeadPurposesResults?.Results is { } results)
+            if (currentResponse?.D?.CRMLeadPurposeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMLeadPurposesResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMLeadPurposeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class LeadPurposesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMLeadPurposes_Response
+        var finalResponse = new CRMLeadPurpose_Response
         {
-            D = new CRMLeadPurposes_Response.CRMLeadPurposes_Response_d
+            D = new CRMLeadPurpose_Response.CRMLeadPurpose_Response_d
             {
-                CRMLeadPurposes = allItems
+                CRMLeadPurpose = allItems
             }
         };
 

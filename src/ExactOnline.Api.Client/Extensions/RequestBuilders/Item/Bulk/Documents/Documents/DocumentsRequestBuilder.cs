@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Documents.Documents;
 
 public partial class DocumentsRequestBuilder
 {
-    public async Task<BulkDocumentsDocuments_Response?> GetAllAsync(Action<RequestConfiguration<DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkDocumentsDocument_Response?> GetAllAsync(Action<RequestConfiguration<DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkDocumentsDocumentsResults is null)
+        if (response?.D?.BulkDocumentsDocumentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkDocumentsDocuments>();
+        var allItems = new List<BulkDocumentsDocument>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkDocumentsDocumentsResults?.Results is { } results)
+            if (currentResponse?.D?.BulkDocumentsDocumentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkDocumentsDocumentsResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkDocumentsDocumentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DocumentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkDocumentsDocuments_Response
+        var finalResponse = new BulkDocumentsDocument_Response
         {
-            D = new BulkDocumentsDocuments_Response.BulkDocumentsDocuments_Response_d
+            D = new BulkDocumentsDocument_Response.BulkDocumentsDocument_Response_d
             {
-                BulkDocumentsDocuments = allItems
+                BulkDocumentsDocument = allItems
             }
         };
 

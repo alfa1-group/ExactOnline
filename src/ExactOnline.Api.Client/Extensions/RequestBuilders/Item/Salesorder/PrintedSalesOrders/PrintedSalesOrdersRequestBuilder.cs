@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrders;
 
 public partial class PrintedSalesOrdersRequestBuilder
 {
-    public async Task<SalesOrderPrintedSalesOrders_Response?> GetAllAsync(Action<RequestConfiguration<PrintedSalesOrdersRequestBuilder.PrintedSalesOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesOrderPrintedSalesOrder_Response?> GetAllAsync(Action<RequestConfiguration<PrintedSalesOrdersRequestBuilder.PrintedSalesOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesOrderPrintedSalesOrdersResults is null)
+        if (response?.D?.SalesOrderPrintedSalesOrderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesOrderPrintedSalesOrders>();
+        var allItems = new List<SalesOrderPrintedSalesOrder>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesOrderPrintedSalesOrdersResults?.Results is { } results)
+            if (currentResponse?.D?.SalesOrderPrintedSalesOrderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesOrderPrintedSalesOrdersResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesOrderPrintedSalesOrderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PrintedSalesOrdersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesOrderPrintedSalesOrders_Response
+        var finalResponse = new SalesOrderPrintedSalesOrder_Response
         {
-            D = new SalesOrderPrintedSalesOrders_Response.SalesOrderPrintedSalesOrders_Response_d
+            D = new SalesOrderPrintedSalesOrder_Response.SalesOrderPrintedSalesOrder_Response_d
             {
-                SalesOrderPrintedSalesOrders = allItems
+                SalesOrderPrintedSalesOrder = allItems
             }
         };
 

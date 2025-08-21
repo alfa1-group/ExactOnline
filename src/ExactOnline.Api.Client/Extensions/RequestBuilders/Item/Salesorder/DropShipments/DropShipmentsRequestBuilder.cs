@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipments;
 
 public partial class DropShipmentsRequestBuilder
 {
-    public async Task<SalesOrderDropShipments_Response?> GetAllAsync(Action<RequestConfiguration<DropShipmentsRequestBuilder.DropShipmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesOrderDropShipment_Response?> GetAllAsync(Action<RequestConfiguration<DropShipmentsRequestBuilder.DropShipmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesOrderDropShipmentsResults is null)
+        if (response?.D?.SalesOrderDropShipmentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesOrderDropShipments>();
+        var allItems = new List<SalesOrderDropShipment>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesOrderDropShipmentsResults?.Results is { } results)
+            if (currentResponse?.D?.SalesOrderDropShipmentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesOrderDropShipmentsResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesOrderDropShipmentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DropShipmentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesOrderDropShipments_Response
+        var finalResponse = new SalesOrderDropShipment_Response
         {
-            D = new SalesOrderDropShipments_Response.SalesOrderDropShipments_Response_d
+            D = new SalesOrderDropShipment_Response.SalesOrderDropShipment_Response_d
             {
-                SalesOrderDropShipments = allItems
+                SalesOrderDropShipment = allItems
             }
         };
 

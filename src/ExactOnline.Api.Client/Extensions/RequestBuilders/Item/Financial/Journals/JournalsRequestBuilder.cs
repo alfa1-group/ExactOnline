@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.Journals;
 
 public partial class JournalsRequestBuilder
 {
-    public async Task<FinancialJournals_Response?> GetAllAsync(Action<RequestConfiguration<JournalsRequestBuilder.JournalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialJournal_Response?> GetAllAsync(Action<RequestConfiguration<JournalsRequestBuilder.JournalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialJournalsResults is null)
+        if (response?.D?.FinancialJournalResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialJournals>();
+        var allItems = new List<FinancialJournal>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialJournalsResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialJournalResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialJournalsResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialJournalResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class JournalsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialJournals_Response
+        var finalResponse = new FinancialJournal_Response
         {
-            D = new FinancialJournals_Response.FinancialJournals_Response_d
+            D = new FinancialJournal_Response.FinancialJournal_Response_d
             {
-                FinancialJournals = allItems
+                FinancialJournal = allItems
             }
         };
 

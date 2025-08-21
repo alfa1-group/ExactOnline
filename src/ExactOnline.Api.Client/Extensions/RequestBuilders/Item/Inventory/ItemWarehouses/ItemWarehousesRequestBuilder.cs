@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehouses;
 
 public partial class ItemWarehousesRequestBuilder
 {
-    public async Task<InventoryItemWarehouses_Response?> GetAllAsync(Action<RequestConfiguration<ItemWarehousesRequestBuilder.ItemWarehousesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventoryItemWarehouse_Response?> GetAllAsync(Action<RequestConfiguration<ItemWarehousesRequestBuilder.ItemWarehousesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventoryItemWarehousesResults is null)
+        if (response?.D?.InventoryItemWarehouseResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventoryItemWarehouses>();
+        var allItems = new List<InventoryItemWarehouse>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventoryItemWarehousesResults?.Results is { } results)
+            if (currentResponse?.D?.InventoryItemWarehouseResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventoryItemWarehousesResults?.Next;
+            var nextUrl = currentResponse?.D?.InventoryItemWarehouseResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ItemWarehousesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventoryItemWarehouses_Response
+        var finalResponse = new InventoryItemWarehouse_Response
         {
-            D = new InventoryItemWarehouses_Response.InventoryItemWarehouses_Response_d
+            D = new InventoryItemWarehouse_Response.InventoryItemWarehouse_Response_d
             {
-                InventoryItemWarehouses = allItems
+                InventoryItemWarehouse = allItems
             }
         };
 

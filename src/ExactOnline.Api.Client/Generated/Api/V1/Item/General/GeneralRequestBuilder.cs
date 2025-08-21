@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.General
         /// Use this endpoint to get all the currencies enabled.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.General.CurrenciesWithCode.CurrenciesWithCodeRequestBuilder"/></returns>
-        /// <param name="code">Unique identifier of the GeneralCurrencies</param>
+        /// <param name="code">Unique identifier of the GeneralCurrency</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.General.CurrenciesWithCode.CurrenciesWithCodeRequestBuilder CurrenciesWithCode(string code)
         {
             if(string.IsNullOrEmpty(code)) throw new ArgumentNullException(nameof(code));
@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.General
         /// Use this endpoint to get all the layouts.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.General.LayoutsWithId.LayoutsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the GeneralLayouts</param>
+        /// <param name="id">Unique identifier (uuid) of the GeneralLayout</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.General.LayoutsWithId.LayoutsWithIdRequestBuilder LayoutsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

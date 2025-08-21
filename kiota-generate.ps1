@@ -263,7 +263,7 @@ $modelFiles = Get-ChildItem -Path $modelsPath -Filter "*.cs" | Where-Object {
 }
 foreach ($file in $modelFiles) {
     $responseClassName = ([System.IO.Path]::GetFileNameWithoutExtension($file.Name))
-    $className = $responseClassName.Replace("_Response", "") -replace "Get$", ""
+    $className = $responseClassName.Replace("_Response", "") -creplace "Get$", ""
     $responseFilePath = Join-Path $extensionsModelsPath "${responseClassName}Extensions.cs"
 
     $contentLines = @(

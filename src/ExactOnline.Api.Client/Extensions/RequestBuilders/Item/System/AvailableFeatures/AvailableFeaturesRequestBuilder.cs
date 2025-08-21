@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.System.AvailableFeatures;
 
 public partial class AvailableFeaturesRequestBuilder
 {
-    public async Task<SystemSystemAvailableFeatures_Response?> GetAllAsync(Action<RequestConfiguration<AvailableFeaturesRequestBuilder.AvailableFeaturesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SystemSystemAvailableFeature_Response?> GetAllAsync(Action<RequestConfiguration<AvailableFeaturesRequestBuilder.AvailableFeaturesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SystemSystemAvailableFeaturesResults is null)
+        if (response?.D?.SystemSystemAvailableFeatureResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SystemSystemAvailableFeatures>();
+        var allItems = new List<SystemSystemAvailableFeature>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SystemSystemAvailableFeaturesResults?.Results is { } results)
+            if (currentResponse?.D?.SystemSystemAvailableFeatureResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SystemSystemAvailableFeaturesResults?.Next;
+            var nextUrl = currentResponse?.D?.SystemSystemAvailableFeatureResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AvailableFeaturesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SystemSystemAvailableFeatures_Response
+        var finalResponse = new SystemSystemAvailableFeature_Response
         {
-            D = new SystemSystemAvailableFeatures_Response.SystemSystemAvailableFeatures_Response_d
+            D = new SystemSystemAvailableFeature_Response.SystemSystemAvailableFeature_Response_d
             {
-                SystemSystemAvailableFeatures = allItems
+                SystemSystemAvailableFeature = allItems
             }
         };
 

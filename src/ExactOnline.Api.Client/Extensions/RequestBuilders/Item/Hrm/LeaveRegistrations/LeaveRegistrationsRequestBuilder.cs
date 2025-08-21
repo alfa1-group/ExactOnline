@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveRegistrations;
 
 public partial class LeaveRegistrationsRequestBuilder
 {
-    public async Task<HRMLeaveRegistrations_Response?> GetAllAsync(Action<RequestConfiguration<LeaveRegistrationsRequestBuilder.LeaveRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<HRMLeaveRegistration_Response?> GetAllAsync(Action<RequestConfiguration<LeaveRegistrationsRequestBuilder.LeaveRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.HRMLeaveRegistrationsResults is null)
+        if (response?.D?.HRMLeaveRegistrationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<HRMLeaveRegistrations>();
+        var allItems = new List<HRMLeaveRegistration>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.HRMLeaveRegistrationsResults?.Results is { } results)
+            if (currentResponse?.D?.HRMLeaveRegistrationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.HRMLeaveRegistrationsResults?.Next;
+            var nextUrl = currentResponse?.D?.HRMLeaveRegistrationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class LeaveRegistrationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new HRMLeaveRegistrations_Response
+        var finalResponse = new HRMLeaveRegistration_Response
         {
-            D = new HRMLeaveRegistrations_Response.HRMLeaveRegistrations_Response_d
+            D = new HRMLeaveRegistration_Response.HRMLeaveRegistration_Response_d
             {
-                HRMLeaveRegistrations = allItems
+                HRMLeaveRegistration = allItems
             }
         };
 

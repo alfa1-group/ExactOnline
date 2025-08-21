@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversals;
 
 public partial class ByProductReversalsRequestBuilder
 {
-    public async Task<ManufacturingByProductReversals_Response?> GetAllAsync(Action<RequestConfiguration<ByProductReversalsRequestBuilder.ByProductReversalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingByProductReversal_Response?> GetAllAsync(Action<RequestConfiguration<ByProductReversalsRequestBuilder.ByProductReversalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingByProductReversalsResults is null)
+        if (response?.D?.ManufacturingByProductReversalResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingByProductReversals>();
+        var allItems = new List<ManufacturingByProductReversal>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingByProductReversalsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingByProductReversalResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingByProductReversalsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingByProductReversalResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ByProductReversalsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingByProductReversals_Response
+        var finalResponse = new ManufacturingByProductReversal_Response
         {
-            D = new ManufacturingByProductReversals_Response.ManufacturingByProductReversals_Response_d
+            D = new ManufacturingByProductReversal_Response.ManufacturingByProductReversal_Response_d
             {
-                ManufacturingByProductReversals = allItems
+                ManufacturingByProductReversal = allItems
             }
         };
 

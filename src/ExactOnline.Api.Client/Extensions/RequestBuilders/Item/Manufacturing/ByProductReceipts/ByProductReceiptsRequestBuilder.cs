@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReceipts;
 
 public partial class ByProductReceiptsRequestBuilder
 {
-    public async Task<ManufacturingByProductReceipts_Response?> GetAllAsync(Action<RequestConfiguration<ByProductReceiptsRequestBuilder.ByProductReceiptsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingByProductReceipt_Response?> GetAllAsync(Action<RequestConfiguration<ByProductReceiptsRequestBuilder.ByProductReceiptsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingByProductReceiptsResults is null)
+        if (response?.D?.ManufacturingByProductReceiptResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingByProductReceipts>();
+        var allItems = new List<ManufacturingByProductReceipt>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingByProductReceiptsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingByProductReceiptResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingByProductReceiptsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingByProductReceiptResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ByProductReceiptsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingByProductReceipts_Response
+        var finalResponse = new ManufacturingByProductReceipt_Response
         {
-            D = new ManufacturingByProductReceipts_Response.ManufacturingByProductReceipts_Response_d
+            D = new ManufacturingByProductReceipt_Response.ManufacturingByProductReceipt_Response_d
             {
-                ManufacturingByProductReceipts = allItems
+                ManufacturingByProductReceipt = allItems
             }
         };
 

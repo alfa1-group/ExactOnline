@@ -55,7 +55,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing
         /// Builds and executes requests for operations under \api\v1\{division}\read\manufacturing\RecentTimeTransactions({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing.RecentTimeTransactionsWithId.RecentTimeTransactionsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ReadManufacturingRecentTimeTransactions</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadManufacturingRecentTimeTransaction</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing.RecentTimeTransactionsWithId.RecentTimeTransactionsWithIdRequestBuilder RecentTimeTransactionsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -75,7 +75,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing
         /// Builds and executes requests for operations under \api\v1\{division}\read\manufacturing\StartedTimedTimeTransactions({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing.StartedTimedTimeTransactionsWithId.StartedTimedTimeTransactionsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ReadManufacturingStartedTimedTimeTransactions</param>
+        /// <param name="id">Unique identifier (uuid) of the ReadManufacturingStartedTimedTimeTransaction</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing.StartedTimedTimeTransactionsWithId.StartedTimedTimeTransactionsWithIdRequestBuilder StartedTimedTimeTransactionsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

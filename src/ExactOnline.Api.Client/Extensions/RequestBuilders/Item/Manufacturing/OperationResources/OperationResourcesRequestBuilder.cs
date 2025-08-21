@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationResources;
 
 public partial class OperationResourcesRequestBuilder
 {
-    public async Task<ManufacturingOperationResources_Response?> GetAllAsync(Action<RequestConfiguration<OperationResourcesRequestBuilder.OperationResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingOperationResource_Response?> GetAllAsync(Action<RequestConfiguration<OperationResourcesRequestBuilder.OperationResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingOperationResourcesResults is null)
+        if (response?.D?.ManufacturingOperationResourceResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingOperationResources>();
+        var allItems = new List<ManufacturingOperationResource>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingOperationResourcesResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingOperationResourceResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingOperationResourcesResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingOperationResourceResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class OperationResourcesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingOperationResources_Response
+        var finalResponse = new ManufacturingOperationResource_Response
         {
-            D = new ManufacturingOperationResources_Response.ManufacturingOperationResources_Response_d
+            D = new ManufacturingOperationResource_Response.ManufacturingOperationResource_Response_d
             {
-                ManufacturingOperationResources = allItems
+                ManufacturingOperationResource = allItems
             }
         };
 

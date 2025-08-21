@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales.SalesChannels;
 
 public partial class SalesChannelsRequestBuilder
 {
-    public async Task<SalesSalesChannels_Response?> GetAllAsync(Action<RequestConfiguration<SalesChannelsRequestBuilder.SalesChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesSalesChannel_Response?> GetAllAsync(Action<RequestConfiguration<SalesChannelsRequestBuilder.SalesChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesSalesChannelsResults is null)
+        if (response?.D?.SalesSalesChannelResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesSalesChannels>();
+        var allItems = new List<SalesSalesChannel>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesSalesChannelsResults?.Results is { } results)
+            if (currentResponse?.D?.SalesSalesChannelResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesSalesChannelsResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesSalesChannelResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesChannelsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesSalesChannels_Response
+        var finalResponse = new SalesSalesChannel_Response
         {
-            D = new SalesSalesChannels_Response.SalesSalesChannels_Response_d
+            D = new SalesSalesChannel_Response.SalesSalesChannel_Response_d
             {
-                SalesSalesChannels = allItems
+                SalesSalesChannel = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountClassificationMa
 
 public partial class GLAccountClassificationMappingsRequestBuilder
 {
-    public async Task<FinancialGLAccountClassificationMappings_Response?> GetAllAsync(Action<RequestConfiguration<GLAccountClassificationMappingsRequestBuilder.GLAccountClassificationMappingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialGLAccountClassificationMapping_Response?> GetAllAsync(Action<RequestConfiguration<GLAccountClassificationMappingsRequestBuilder.GLAccountClassificationMappingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialGLAccountClassificationMappingsResults is null)
+        if (response?.D?.FinancialGLAccountClassificationMappingResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialGLAccountClassificationMappings>();
+        var allItems = new List<FinancialGLAccountClassificationMapping>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialGLAccountClassificationMappingsResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialGLAccountClassificationMappingResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialGLAccountClassificationMappingsResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialGLAccountClassificationMappingResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GLAccountClassificationMappingsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialGLAccountClassificationMappings_Response
+        var finalResponse = new FinancialGLAccountClassificationMapping_Response
         {
-            D = new FinancialGLAccountClassificationMappings_Response.FinancialGLAccountClassificationMappings_Response_d
+            D = new FinancialGLAccountClassificationMapping_Response.FinancialGLAccountClassificationMapping_Response_d
             {
-                FinancialGLAccountClassificationMappings = allItems
+                FinancialGLAccountClassificationMapping = allItems
             }
         };
 

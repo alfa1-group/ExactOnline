@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.HRM.AbsenceRegistrationTransac
 
 public partial class AbsenceRegistrationTransactionsRequestBuilder
 {
-    public async Task<SyncHRMAbsenceRegistrationTransactions_Response?> GetAllAsync(Action<RequestConfiguration<AbsenceRegistrationTransactionsRequestBuilder.AbsenceRegistrationTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncHRMAbsenceRegistrationTransaction_Response?> GetAllAsync(Action<RequestConfiguration<AbsenceRegistrationTransactionsRequestBuilder.AbsenceRegistrationTransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncHRMAbsenceRegistrationTransactionsResults is null)
+        if (response?.D?.SyncHRMAbsenceRegistrationTransactionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncHRMAbsenceRegistrationTransactions>();
+        var allItems = new List<SyncHRMAbsenceRegistrationTransaction>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncHRMAbsenceRegistrationTransactionsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncHRMAbsenceRegistrationTransactionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncHRMAbsenceRegistrationTransactionsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncHRMAbsenceRegistrationTransactionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AbsenceRegistrationTransactionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncHRMAbsenceRegistrationTransactions_Response
+        var finalResponse = new SyncHRMAbsenceRegistrationTransaction_Response
         {
-            D = new SyncHRMAbsenceRegistrationTransactions_Response.SyncHRMAbsenceRegistrationTransactions_Response_d
+            D = new SyncHRMAbsenceRegistrationTransaction_Response.SyncHRMAbsenceRegistrationTransaction_Response_d
             {
-                SyncHRMAbsenceRegistrationTransactions = allItems
+                SyncHRMAbsenceRegistrationTransaction = allItems
             }
         };
 

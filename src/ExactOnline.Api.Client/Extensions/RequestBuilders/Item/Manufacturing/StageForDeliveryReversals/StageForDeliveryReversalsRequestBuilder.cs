@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryRever
 
 public partial class StageForDeliveryReversalsRequestBuilder
 {
-    public async Task<ManufacturingStageForDeliveryReversals_Response?> GetAllAsync(Action<RequestConfiguration<StageForDeliveryReversalsRequestBuilder.StageForDeliveryReversalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingStageForDeliveryReversal_Response?> GetAllAsync(Action<RequestConfiguration<StageForDeliveryReversalsRequestBuilder.StageForDeliveryReversalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingStageForDeliveryReversalsResults is null)
+        if (response?.D?.ManufacturingStageForDeliveryReversalResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingStageForDeliveryReversals>();
+        var allItems = new List<ManufacturingStageForDeliveryReversal>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingStageForDeliveryReversalsResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingStageForDeliveryReversalResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingStageForDeliveryReversalsResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingStageForDeliveryReversalResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class StageForDeliveryReversalsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingStageForDeliveryReversals_Response
+        var finalResponse = new ManufacturingStageForDeliveryReversal_Response
         {
-            D = new ManufacturingStageForDeliveryReversals_Response.ManufacturingStageForDeliveryReversals_Response_d
+            D = new ManufacturingStageForDeliveryReversal_Response.ManufacturingStageForDeliveryReversal_Response_d
             {
-                ManufacturingStageForDeliveryReversals = allItems
+                ManufacturingStageForDeliveryReversal = allItems
             }
         };
 

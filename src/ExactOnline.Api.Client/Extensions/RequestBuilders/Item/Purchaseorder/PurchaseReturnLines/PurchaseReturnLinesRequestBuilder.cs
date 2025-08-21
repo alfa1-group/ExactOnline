@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLines;
 
 public partial class PurchaseReturnLinesRequestBuilder
 {
-    public async Task<PurchaseOrderPurchaseReturnLines_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseReturnLinesRequestBuilder.PurchaseReturnLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PurchaseOrderPurchaseReturnLine_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseReturnLinesRequestBuilder.PurchaseReturnLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PurchaseOrderPurchaseReturnLinesResults is null)
+        if (response?.D?.PurchaseOrderPurchaseReturnLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PurchaseOrderPurchaseReturnLines>();
+        var allItems = new List<PurchaseOrderPurchaseReturnLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PurchaseOrderPurchaseReturnLinesResults?.Results is { } results)
+            if (currentResponse?.D?.PurchaseOrderPurchaseReturnLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PurchaseOrderPurchaseReturnLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.PurchaseOrderPurchaseReturnLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PurchaseReturnLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PurchaseOrderPurchaseReturnLines_Response
+        var finalResponse = new PurchaseOrderPurchaseReturnLine_Response
         {
-            D = new PurchaseOrderPurchaseReturnLines_Response.PurchaseOrderPurchaseReturnLines_Response_d
+            D = new PurchaseOrderPurchaseReturnLine_Response.PurchaseOrderPurchaseReturnLine_Response_d
             {
-                PurchaseOrderPurchaseReturnLines = allItems
+                PurchaseOrderPurchaseReturnLine = allItems
             }
         };
 

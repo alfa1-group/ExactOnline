@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.SalesInvoice.SalesInvoices;
 
 public partial class SalesInvoicesRequestBuilder
 {
-    public async Task<SyncSalesInvoiceSalesInvoices_Response?> GetAllAsync(Action<RequestConfiguration<SalesInvoicesRequestBuilder.SalesInvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncSalesInvoiceSalesInvoice_Response?> GetAllAsync(Action<RequestConfiguration<SalesInvoicesRequestBuilder.SalesInvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncSalesInvoiceSalesInvoicesResults is null)
+        if (response?.D?.SyncSalesInvoiceSalesInvoiceResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncSalesInvoiceSalesInvoices>();
+        var allItems = new List<SyncSalesInvoiceSalesInvoice>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncSalesInvoiceSalesInvoicesResults?.Results is { } results)
+            if (currentResponse?.D?.SyncSalesInvoiceSalesInvoiceResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncSalesInvoiceSalesInvoicesResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncSalesInvoiceSalesInvoiceResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesInvoicesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncSalesInvoiceSalesInvoices_Response
+        var finalResponse = new SyncSalesInvoiceSalesInvoice_Response
         {
-            D = new SyncSalesInvoiceSalesInvoices_Response.SyncSalesInvoiceSalesInvoices_Response_d
+            D = new SyncSalesInvoiceSalesInvoice_Response.SyncSalesInvoiceSalesInvoice_Response_d
             {
-                SyncSalesInvoiceSalesInvoices = allItems
+                SyncSalesInvoiceSalesInvoice = allItems
             }
         };
 

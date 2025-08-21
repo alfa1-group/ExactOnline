@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.InvoiceSalesOrders;
 
 public partial class InvoiceSalesOrdersRequestBuilder
 {
-    public async Task<SalesInvoiceInvoiceSalesOrders_Response?> GetAllAsync(Action<RequestConfiguration<InvoiceSalesOrdersRequestBuilder.InvoiceSalesOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesInvoiceInvoiceSalesOrder_Response?> GetAllAsync(Action<RequestConfiguration<InvoiceSalesOrdersRequestBuilder.InvoiceSalesOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesInvoiceInvoiceSalesOrdersResults is null)
+        if (response?.D?.SalesInvoiceInvoiceSalesOrderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesInvoiceInvoiceSalesOrders>();
+        var allItems = new List<SalesInvoiceInvoiceSalesOrder>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesInvoiceInvoiceSalesOrdersResults?.Results is { } results)
+            if (currentResponse?.D?.SalesInvoiceInvoiceSalesOrderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesInvoiceInvoiceSalesOrdersResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesInvoiceInvoiceSalesOrderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class InvoiceSalesOrdersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesInvoiceInvoiceSalesOrders_Response
+        var finalResponse = new SalesInvoiceInvoiceSalesOrder_Response
         {
-            D = new SalesInvoiceInvoiceSalesOrders_Response.SalesInvoiceInvoiceSalesOrders_Response_d
+            D = new SalesInvoiceInvoiceSalesOrder_Response.SalesInvoiceInvoiceSalesOrder_Response_d
             {
-                SalesInvoiceInvoiceSalesOrders = allItems
+                SalesInvoiceInvoiceSalesOrder = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Documents.DocumentAttachments;
 
 public partial class DocumentAttachmentsRequestBuilder
 {
-    public async Task<BulkDocumentsDocumentAttachments_Response?> GetAllAsync(Action<RequestConfiguration<DocumentAttachmentsRequestBuilder.DocumentAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkDocumentsDocumentAttachment_Response?> GetAllAsync(Action<RequestConfiguration<DocumentAttachmentsRequestBuilder.DocumentAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkDocumentsDocumentAttachmentsResults is null)
+        if (response?.D?.BulkDocumentsDocumentAttachmentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkDocumentsDocumentAttachments>();
+        var allItems = new List<BulkDocumentsDocumentAttachment>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkDocumentsDocumentAttachmentsResults?.Results is { } results)
+            if (currentResponse?.D?.BulkDocumentsDocumentAttachmentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkDocumentsDocumentAttachmentsResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkDocumentsDocumentAttachmentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DocumentAttachmentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkDocumentsDocumentAttachments_Response
+        var finalResponse = new BulkDocumentsDocumentAttachment_Response
         {
-            D = new BulkDocumentsDocumentAttachments_Response.BulkDocumentsDocumentAttachments_Response_d
+            D = new BulkDocumentsDocumentAttachment_Response.BulkDocumentsDocumentAttachment_Response_d
             {
-                BulkDocumentsDocumentAttachments = allItems
+                BulkDocumentsDocumentAttachment = allItems
             }
         };
 

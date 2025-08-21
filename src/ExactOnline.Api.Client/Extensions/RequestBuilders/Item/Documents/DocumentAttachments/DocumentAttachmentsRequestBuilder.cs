@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachments;
 
 public partial class DocumentAttachmentsRequestBuilder
 {
-    public async Task<DocumentsDocumentAttachments_Response?> GetAllAsync(Action<RequestConfiguration<DocumentAttachmentsRequestBuilder.DocumentAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<DocumentsDocumentAttachment_Response?> GetAllAsync(Action<RequestConfiguration<DocumentAttachmentsRequestBuilder.DocumentAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.DocumentsDocumentAttachmentsResults is null)
+        if (response?.D?.DocumentsDocumentAttachmentResults is null)
         {
             return response;
         }
 
-        var allItems = new List<DocumentsDocumentAttachments>();
+        var allItems = new List<DocumentsDocumentAttachment>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.DocumentsDocumentAttachmentsResults?.Results is { } results)
+            if (currentResponse?.D?.DocumentsDocumentAttachmentResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.DocumentsDocumentAttachmentsResults?.Next;
+            var nextUrl = currentResponse?.D?.DocumentsDocumentAttachmentResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DocumentAttachmentsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new DocumentsDocumentAttachments_Response
+        var finalResponse = new DocumentsDocumentAttachment_Response
         {
-            D = new DocumentsDocumentAttachments_Response.DocumentsDocumentAttachments_Response_d
+            D = new DocumentsDocumentAttachment_Response.DocumentsDocumentAttachment_Response_d
             {
-                DocumentsDocumentAttachments = allItems
+                DocumentsDocumentAttachment = allItems
             }
         };
 

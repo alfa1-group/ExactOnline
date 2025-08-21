@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceLists;
 
 public partial class SalesPriceListsRequestBuilder
 {
-    public async Task<SalesSalesPriceLists_Response?> GetAllAsync(Action<RequestConfiguration<SalesPriceListsRequestBuilder.SalesPriceListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesSalesPriceList_Response?> GetAllAsync(Action<RequestConfiguration<SalesPriceListsRequestBuilder.SalesPriceListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesSalesPriceListsResults is null)
+        if (response?.D?.SalesSalesPriceListResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesSalesPriceLists>();
+        var allItems = new List<SalesSalesPriceList>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesSalesPriceListsResults?.Results is { } results)
+            if (currentResponse?.D?.SalesSalesPriceListResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesSalesPriceListsResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesSalesPriceListResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesPriceListsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesSalesPriceLists_Response
+        var finalResponse = new SalesSalesPriceList_Response
         {
-            D = new SalesSalesPriceLists_Response.SalesSalesPriceLists_Response_d
+            D = new SalesSalesPriceList_Response.SalesSalesPriceList_Response_d
             {
-                SalesSalesPriceLists = allItems
+                SalesSalesPriceList = allItems
             }
         };
 

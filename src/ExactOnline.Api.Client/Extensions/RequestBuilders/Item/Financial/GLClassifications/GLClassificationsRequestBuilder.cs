@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.GLClassifications;
 
 public partial class GLClassificationsRequestBuilder
 {
-    public async Task<FinancialGLClassifications_Response?> GetAllAsync(Action<RequestConfiguration<GLClassificationsRequestBuilder.GLClassificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialGLClassification_Response?> GetAllAsync(Action<RequestConfiguration<GLClassificationsRequestBuilder.GLClassificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialGLClassificationsResults is null)
+        if (response?.D?.FinancialGLClassificationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialGLClassifications>();
+        var allItems = new List<FinancialGLClassification>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialGLClassificationsResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialGLClassificationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialGLClassificationsResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialGLClassificationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GLClassificationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialGLClassifications_Response
+        var finalResponse = new FinancialGLClassification_Response
         {
-            D = new FinancialGLClassifications_Response.FinancialGLClassifications_Response_d
+            D = new FinancialGLClassification_Response.FinancialGLClassification_Response_d
             {
-                FinancialGLClassifications = allItems
+                FinancialGLClassification = allItems
             }
         };
 

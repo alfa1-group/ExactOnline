@@ -182,7 +182,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\crm\AccountClasses({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassesWithId.AccountClassesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMAccountClasses</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMAccountClass</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassesWithId.AccountClassesWithIdRequestBuilder AccountClassesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -192,7 +192,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\crm\AccountClassificationNames({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassificationNamesWithId.AccountClassificationNamesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMAccountClassificationNames</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMAccountClassificationName</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassificationNamesWithId.AccountClassificationNamesWithIdRequestBuilder AccountClassificationNamesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -202,7 +202,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\crm\AccountClassifications({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassificationsWithId.AccountClassificationsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMAccountClassifications</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMAccountClassification</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassificationsWithId.AccountClassificationsWithIdRequestBuilder AccountClassificationsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -212,7 +212,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\crm\Accounts({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountsWithId.AccountsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMAccounts</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountsWithId.AccountsWithIdRequestBuilder AccountsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -222,7 +222,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// When using the POST method, it is first checked whether the specified address already exists. If so, the ID property of the existing address is returned. Otherwise, the new address is created.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.AddressesWithId.AddressesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMAddresses</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMAddress</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AddressesWithId.AddressesWithIdRequestBuilder AddressesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -232,7 +232,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\crm\AddressStates({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.AddressStatesWithId.AddressStatesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMAddressStates</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMAddressState</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AddressStatesWithId.AddressStatesWithIdRequestBuilder AddressStatesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -242,7 +242,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\crm\BankAccounts({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId.BankAccountsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMBankAccounts</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMBankAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId.BankAccountsWithIdRequestBuilder BankAccountsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -268,7 +268,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\crm\Contacts({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.ContactsWithId.ContactsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMContacts</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMContact</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.ContactsWithId.ContactsWithIdRequestBuilder ContactsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -288,7 +288,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// With this endpoint you can get information about master data for LeadPurpose associated with Account or Contact. Furthermore, you can also get a specific LeadPurpose data by providing LeadPurpose ID as filter.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.LeadPurposesWithId.LeadPurposesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMLeadPurposes</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMLeadPurpose</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.LeadPurposesWithId.LeadPurposesWithIdRequestBuilder LeadPurposesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -298,7 +298,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// With this endpoint you can get information about master data for LeadSource associated with Account or Contact. Furthermore, you can also get a specific LeadSource data by providing LeadSource ID as filter.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.LeadSourcesWithId.LeadSourcesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMLeadSources</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMLeadSource</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.LeadSourcesWithId.LeadSourcesWithIdRequestBuilder LeadSourcesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -308,7 +308,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\crm\Opportunities({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.OpportunitiesWithId.OpportunitiesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMOpportunities</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMOpportunity</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.OpportunitiesWithId.OpportunitiesWithIdRequestBuilder OpportunitiesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -338,7 +338,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\crm\QuotationLines({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationLinesWithId.QuotationLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMQuotationLines</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMQuotationLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationLinesWithId.QuotationLinesWithIdRequestBuilder QuotationLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -348,7 +348,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// Use this endpoint to create, read, update and delete quotation&apos;s order charge lines.  Note:   • If only AmountFCExclVAT is posted, system will recalculate AmountFCInclVAT and vice versa. • If both AmountFCExclVAT and AmountFCInclVAT are posted, AmountFCExclVAT will be leading. System will recalculate AmountFCInclVAT based on the posted AmountFCExclVAT.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationOrderChargeLinesWithId.QuotationOrderChargeLinesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMQuotationOrderChargeLines</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMQuotationOrderChargeLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationOrderChargeLinesWithId.QuotationOrderChargeLinesWithIdRequestBuilder QuotationOrderChargeLinesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -358,7 +358,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\crm\Quotations({quotationid})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationsWithQuotationid.QuotationsWithQuotationidRequestBuilder"/></returns>
-        /// <param name="quotationid">Unique identifier (uuid) of the CRMQuotations</param>
+        /// <param name="quotationid">Unique identifier (uuid) of the CRMQuotation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationsWithQuotationid.QuotationsWithQuotationidRequestBuilder QuotationsWithQuotationid(Guid? quotationid)
         {
             _ = quotationid ?? throw new ArgumentNullException(nameof(quotationid));
@@ -368,7 +368,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// Builds and executes requests for operations under \api\v1\{division}\crm\ReasonCodes({id})
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Crm.ReasonCodesWithId.ReasonCodesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CRMReasonCodes</param>
+        /// <param name="id">Unique identifier (uuid) of the CRMReasonCode</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.ReasonCodesWithId.ReasonCodesWithIdRequestBuilder ReasonCodesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

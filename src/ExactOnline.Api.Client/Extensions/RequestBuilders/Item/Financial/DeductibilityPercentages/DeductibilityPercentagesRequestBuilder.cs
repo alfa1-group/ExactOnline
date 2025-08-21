@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial.DeductibilityPercentages;
 
 public partial class DeductibilityPercentagesRequestBuilder
 {
-    public async Task<FinancialDeductibilityPercentages_Response?> GetAllAsync(Action<RequestConfiguration<DeductibilityPercentagesRequestBuilder.DeductibilityPercentagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialDeductibilityPercentage_Response?> GetAllAsync(Action<RequestConfiguration<DeductibilityPercentagesRequestBuilder.DeductibilityPercentagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialDeductibilityPercentagesResults is null)
+        if (response?.D?.FinancialDeductibilityPercentageResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialDeductibilityPercentages>();
+        var allItems = new List<FinancialDeductibilityPercentage>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialDeductibilityPercentagesResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialDeductibilityPercentageResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialDeductibilityPercentagesResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialDeductibilityPercentageResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class DeductibilityPercentagesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialDeductibilityPercentages_Response
+        var finalResponse = new FinancialDeductibilityPercentage_Response
         {
-            D = new FinancialDeductibilityPercentages_Response.FinancialDeductibilityPercentages_Response_d
+            D = new FinancialDeductibilityPercentage_Response.FinancialDeductibilityPercentage_Response_d
             {
-                FinancialDeductibilityPercentages = allItems
+                FinancialDeductibilityPercentage = allItems
             }
         };
 

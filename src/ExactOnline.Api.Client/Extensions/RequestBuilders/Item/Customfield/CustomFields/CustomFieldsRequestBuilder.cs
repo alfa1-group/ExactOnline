@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Customfield.CustomFields;
 
 public partial class CustomFieldsRequestBuilder
 {
-    public async Task<CustomFieldCustomFields_Response?> GetAllAsync(Action<RequestConfiguration<CustomFieldsRequestBuilder.CustomFieldsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CustomFieldCustomField_Response?> GetAllAsync(Action<RequestConfiguration<CustomFieldsRequestBuilder.CustomFieldsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CustomFieldCustomFieldsResults is null)
+        if (response?.D?.CustomFieldCustomFieldResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CustomFieldCustomFields>();
+        var allItems = new List<CustomFieldCustomField>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CustomFieldCustomFieldsResults?.Results is { } results)
+            if (currentResponse?.D?.CustomFieldCustomFieldResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CustomFieldCustomFieldsResults?.Next;
+            var nextUrl = currentResponse?.D?.CustomFieldCustomFieldResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class CustomFieldsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CustomFieldCustomFields_Response
+        var finalResponse = new CustomFieldCustomField_Response
         {
-            D = new CustomFieldCustomFields_Response.CustomFieldCustomFields_Response_d
+            D = new CustomFieldCustomField_Response.CustomFieldCustomField_Response_d
             {
-                CustomFieldCustomFields = allItems
+                CustomFieldCustomField = allItems
             }
         };
 

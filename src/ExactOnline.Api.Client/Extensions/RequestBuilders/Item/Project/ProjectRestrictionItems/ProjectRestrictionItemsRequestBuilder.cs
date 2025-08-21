@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionItems;
 
 public partial class ProjectRestrictionItemsRequestBuilder
 {
-    public async Task<ProjectProjectRestrictionItems_Response?> GetAllAsync(Action<RequestConfiguration<ProjectRestrictionItemsRequestBuilder.ProjectRestrictionItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectProjectRestrictionItem_Response?> GetAllAsync(Action<RequestConfiguration<ProjectRestrictionItemsRequestBuilder.ProjectRestrictionItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectProjectRestrictionItemsResults is null)
+        if (response?.D?.ProjectProjectRestrictionItemResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectProjectRestrictionItems>();
+        var allItems = new List<ProjectProjectRestrictionItem>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectProjectRestrictionItemsResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectProjectRestrictionItemResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectProjectRestrictionItemsResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectProjectRestrictionItemResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ProjectRestrictionItemsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectProjectRestrictionItems_Response
+        var finalResponse = new ProjectProjectRestrictionItem_Response
         {
-            D = new ProjectProjectRestrictionItems_Response.ProjectProjectRestrictionItems_Response_d
+            D = new ProjectProjectRestrictionItem_Response.ProjectProjectRestrictionItem_Response_d
             {
-                ProjectProjectRestrictionItems = allItems
+                ProjectProjectRestrictionItem = allItems
             }
         };
 

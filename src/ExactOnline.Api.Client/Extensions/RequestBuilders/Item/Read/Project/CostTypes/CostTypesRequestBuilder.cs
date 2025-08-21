@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypes;
 
 public partial class CostTypesRequestBuilder
 {
-    public async Task<ReadProjectCostTypes_Response?> GetAllAsync(Action<RequestConfiguration<CostTypesRequestBuilder.CostTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadProjectCostType_Response?> GetAllAsync(Action<RequestConfiguration<CostTypesRequestBuilder.CostTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadProjectCostTypesResults is null)
+        if (response?.D?.ReadProjectCostTypeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadProjectCostTypes>();
+        var allItems = new List<ReadProjectCostType>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadProjectCostTypesResults?.Results is { } results)
+            if (currentResponse?.D?.ReadProjectCostTypeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadProjectCostTypesResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadProjectCostTypeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class CostTypesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadProjectCostTypes_Response
+        var finalResponse = new ReadProjectCostType_Response
         {
-            D = new ReadProjectCostTypes_Response.ReadProjectCostTypes_Response_d
+            D = new ReadProjectCostType_Response.ReadProjectCostType_Response_d
             {
-                ReadProjectCostTypes = allItems
+                ReadProjectCostType = allItems
             }
         };
 

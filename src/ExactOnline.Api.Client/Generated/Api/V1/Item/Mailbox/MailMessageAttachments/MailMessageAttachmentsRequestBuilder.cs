@@ -34,20 +34,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachments
         {
         }
         /// <summary>
-        /// GET MailboxMailMessageAttachments
+        /// GET MailboxMailMessageAttachment
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachments_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachment_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachments_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachments.MailMessageAttachmentsRequestBuilder.MailMessageAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachment_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachments.MailMessageAttachmentsRequestBuilder.MailMessageAttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachments_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachments.MailMessageAttachmentsRequestBuilder.MailMessageAttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachment_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachments.MailMessageAttachmentsRequestBuilder.MailMessageAttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,12 +56,12 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachments
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachments_Response>(requestInfo, global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachments_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachment_Response>(requestInfo, global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachment_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST MailboxMailMessageAttachments
+        /// POST MailboxMailMessageAttachment
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentsPost_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentPost_Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,11 +69,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachments
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentsPost_Response?> PostAsync(global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentsPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentPost_Response?> PostAsync(global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentsPost_Response> PostAsync(global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentsPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentPost_Response> PostAsync(global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -83,10 +83,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachments
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentsPost_Response>(requestInfo, global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentsPost_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentPost_Response>(requestInfo, global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentPost_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET MailboxMailMessageAttachments
+        /// GET MailboxMailMessageAttachment
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,18 +105,18 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachments
             return requestInfo;
         }
         /// <summary>
-        /// POST MailboxMailMessageAttachments
+        /// POST MailboxMailMessageAttachment
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentsPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentsPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ExactOnline.Api.Client.Models.MailboxMailMessageAttachmentPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -136,7 +136,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachments
             return new global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachments.MailMessageAttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET MailboxMailMessageAttachments
+        /// GET MailboxMailMessageAttachment
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailMessageAttachmentsRequestBuilderGetQueryParameters 

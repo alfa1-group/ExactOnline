@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialIssues;
 
 public partial class MaterialIssuesRequestBuilder
 {
-    public async Task<ManufacturingMaterialIssues_Response?> GetAllAsync(Action<RequestConfiguration<MaterialIssuesRequestBuilder.MaterialIssuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ManufacturingMaterialIssue_Response?> GetAllAsync(Action<RequestConfiguration<MaterialIssuesRequestBuilder.MaterialIssuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ManufacturingMaterialIssuesResults is null)
+        if (response?.D?.ManufacturingMaterialIssueResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ManufacturingMaterialIssues>();
+        var allItems = new List<ManufacturingMaterialIssue>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ManufacturingMaterialIssuesResults?.Results is { } results)
+            if (currentResponse?.D?.ManufacturingMaterialIssueResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ManufacturingMaterialIssuesResults?.Next;
+            var nextUrl = currentResponse?.D?.ManufacturingMaterialIssueResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class MaterialIssuesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ManufacturingMaterialIssues_Response
+        var finalResponse = new ManufacturingMaterialIssue_Response
         {
-            D = new ManufacturingMaterialIssues_Response.ManufacturingMaterialIssues_Response_d
+            D = new ManufacturingMaterialIssue_Response.ManufacturingMaterialIssue_Response_d
             {
-                ManufacturingMaterialIssues = allItems
+                ManufacturingMaterialIssue = allItems
             }
         };
 

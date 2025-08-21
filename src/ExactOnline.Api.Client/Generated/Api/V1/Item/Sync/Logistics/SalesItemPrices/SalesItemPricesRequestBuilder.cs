@@ -34,20 +34,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SalesItemPrices
         {
         }
         /// <summary>
-        /// GET SyncLogisticsSalesItemPrices
+        /// GET SyncLogisticsSalesItemPrice
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.SyncLogisticsSalesItemPrices_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.SyncLogisticsSalesItemPrice_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.SyncLogisticsSalesItemPrices_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SalesItemPrices.SalesItemPricesRequestBuilder.SalesItemPricesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.SyncLogisticsSalesItemPrice_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SalesItemPrices.SalesItemPricesRequestBuilder.SalesItemPricesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.SyncLogisticsSalesItemPrices_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SalesItemPrices.SalesItemPricesRequestBuilder.SalesItemPricesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.SyncLogisticsSalesItemPrice_Response> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SalesItemPrices.SalesItemPricesRequestBuilder.SalesItemPricesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,10 +56,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SalesItemPrices
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.SyncLogisticsSalesItemPrices_Response>(requestInfo, global::ExactOnline.Api.Client.Models.SyncLogisticsSalesItemPrices_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.SyncLogisticsSalesItemPrice_Response>(requestInfo, global::ExactOnline.Api.Client.Models.SyncLogisticsSalesItemPrice_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET SyncLogisticsSalesItemPrices
+        /// GET SyncLogisticsSalesItemPrice
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SalesItemPrices
             return new global::ExactOnline.Api.Client.Api.V1.Item.Sync.Logistics.SalesItemPrices.SalesItemPricesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET SyncLogisticsSalesItemPrices
+        /// GET SyncLogisticsSalesItemPrice
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SalesItemPricesRequestBuilderGetQueryParameters 

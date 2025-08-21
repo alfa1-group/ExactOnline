@@ -60,7 +60,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow
         /// Use this endpoint to get all the banks that are supported by EOL.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.BanksWithId.BanksWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CashflowBanks</param>
+        /// <param name="id">Unique identifier (uuid) of the CashflowBank</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.BanksWithId.BanksWithIdRequestBuilder BanksWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -86,7 +86,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow
         /// Use this endpoint to retrieve, create, update or delete a mandate of your administration. For more information about mandate, you can visit the following help file Mandates.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.DirectDebitMandatesWithId.DirectDebitMandatesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CashflowDirectDebitMandates</param>
+        /// <param name="id">Unique identifier (uuid) of the CashflowDirectDebitMandate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.DirectDebitMandatesWithId.DirectDebitMandatesWithIdRequestBuilder DirectDebitMandatesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -96,7 +96,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow
         /// Use this endpoint to retrieve or create payment conditions to be used by your invoices. For more information about payment condition, you can visit the following help file Payment Condition.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.PaymentConditionsWithId.PaymentConditionsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CashflowPaymentConditions</param>
+        /// <param name="id">Unique identifier (uuid) of the CashflowPaymentCondition</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.PaymentConditionsWithId.PaymentConditionsWithIdRequestBuilder PaymentConditionsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -106,7 +106,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow
         /// Use this endpoint to get an overview of all the payments in your administration. Paymentlines are grouped by own bank account, account bank account, payment reference, payment method, entry date and status. Payments of one entry have the same TransactionId. Among other things, with this endpoint you can get information like the payments status (e.g. Open, Processed) or when the payment is due.PUT to this endpoint allows you to prepare an invoice for payment by adjusting the payment method, description and payment reference.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.PaymentsWithId.PaymentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CashflowPayments</param>
+        /// <param name="id">Unique identifier (uuid) of the CashflowPayment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.PaymentsWithId.PaymentsWithIdRequestBuilder PaymentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -116,7 +116,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow
         /// Use this endpoint to process a payment.For more information about processing payment you can go to the following help files Payment process in Exact Online, Process payments.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.ProcessPaymentsWithId.ProcessPaymentsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CashflowProcessPayments</param>
+        /// <param name="id">Unique identifier (uuid) of the CashflowProcessPayment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.ProcessPaymentsWithId.ProcessPaymentsWithIdRequestBuilder ProcessPaymentsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -126,7 +126,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow
         /// Use this endpoint to get an overview of all the payment to be received in your administration. Paymentlines are grouped by own bank account, account bank account, payment reference, payment method, entry date and status. Payments of one entry have the same TransactionId. Among other things, with this endpoint you can get information like the payments status (e.g. Open, Processed) or when the collection is due.PUT to this endpoint allows you to prepare collections for sales invoices by adjusting the payment method,description and payment reference.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.ReceivablesWithId.ReceivablesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the CashflowReceivables</param>
+        /// <param name="id">Unique identifier (uuid) of the CashflowReceivable</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.ReceivablesWithId.ReceivablesWithIdRequestBuilder ReceivablesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

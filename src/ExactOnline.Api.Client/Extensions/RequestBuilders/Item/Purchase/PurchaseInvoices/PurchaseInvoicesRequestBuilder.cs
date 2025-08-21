@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchase.PurchaseInvoices;
 
 public partial class PurchaseInvoicesRequestBuilder
 {
-    public async Task<PurchasePurchaseInvoices_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseInvoicesRequestBuilder.PurchaseInvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PurchasePurchaseInvoice_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseInvoicesRequestBuilder.PurchaseInvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PurchasePurchaseInvoicesResults is null)
+        if (response?.D?.PurchasePurchaseInvoiceResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PurchasePurchaseInvoices>();
+        var allItems = new List<PurchasePurchaseInvoice>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PurchasePurchaseInvoicesResults?.Results is { } results)
+            if (currentResponse?.D?.PurchasePurchaseInvoiceResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PurchasePurchaseInvoicesResults?.Next;
+            var nextUrl = currentResponse?.D?.PurchasePurchaseInvoiceResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PurchaseInvoicesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PurchasePurchaseInvoices_Response
+        var finalResponse = new PurchasePurchaseInvoice_Response
         {
-            D = new PurchasePurchaseInvoices_Response.PurchasePurchaseInvoices_Response_d
+            D = new PurchasePurchaseInvoice_Response.PurchasePurchaseInvoice_Response_d
             {
-                PurchasePurchaseInvoices = allItems
+                PurchasePurchaseInvoice = allItems
             }
         };
 

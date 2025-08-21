@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationOrderChargeLines;
 
 public partial class QuotationOrderChargeLinesRequestBuilder
 {
-    public async Task<CRMQuotationOrderChargeLines_Response?> GetAllAsync(Action<RequestConfiguration<QuotationOrderChargeLinesRequestBuilder.QuotationOrderChargeLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMQuotationOrderChargeLine_Response?> GetAllAsync(Action<RequestConfiguration<QuotationOrderChargeLinesRequestBuilder.QuotationOrderChargeLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMQuotationOrderChargeLinesResults is null)
+        if (response?.D?.CRMQuotationOrderChargeLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMQuotationOrderChargeLines>();
+        var allItems = new List<CRMQuotationOrderChargeLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMQuotationOrderChargeLinesResults?.Results is { } results)
+            if (currentResponse?.D?.CRMQuotationOrderChargeLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMQuotationOrderChargeLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMQuotationOrderChargeLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class QuotationOrderChargeLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMQuotationOrderChargeLines_Response
+        var finalResponse = new CRMQuotationOrderChargeLine_Response
         {
-            D = new CRMQuotationOrderChargeLines_Response.CRMQuotationOrderChargeLines_Response_d
+            D = new CRMQuotationOrderChargeLine_Response.CRMQuotationOrderChargeLine_Response_d
             {
-                CRMQuotationOrderChargeLines = allItems
+                CRMQuotationOrderChargeLine = allItems
             }
         };
 

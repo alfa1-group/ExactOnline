@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.CRM.QuotationLines;
 
 public partial class QuotationLinesRequestBuilder
 {
-    public async Task<BulkCRMQuotationLines_Response?> GetAllAsync(Action<RequestConfiguration<QuotationLinesRequestBuilder.QuotationLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkCRMQuotationLine_Response?> GetAllAsync(Action<RequestConfiguration<QuotationLinesRequestBuilder.QuotationLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkCRMQuotationLinesResults is null)
+        if (response?.D?.BulkCRMQuotationLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkCRMQuotationLines>();
+        var allItems = new List<BulkCRMQuotationLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkCRMQuotationLinesResults?.Results is { } results)
+            if (currentResponse?.D?.BulkCRMQuotationLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkCRMQuotationLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkCRMQuotationLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class QuotationLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkCRMQuotationLines_Response
+        var finalResponse = new BulkCRMQuotationLine_Response
         {
-            D = new BulkCRMQuotationLines_Response.BulkCRMQuotationLines_Response_d
+            D = new BulkCRMQuotationLine_Response.BulkCRMQuotationLine_Response_d
             {
-                BulkCRMQuotationLines = allItems
+                BulkCRMQuotationLine = allItems
             }
         };
 

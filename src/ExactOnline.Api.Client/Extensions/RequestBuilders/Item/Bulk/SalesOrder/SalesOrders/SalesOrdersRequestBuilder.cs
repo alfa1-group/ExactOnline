@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.SalesOrder.SalesOrders;
 
 public partial class SalesOrdersRequestBuilder
 {
-    public async Task<BulkSalesOrderSalesOrders_Response?> GetAllAsync(Action<RequestConfiguration<SalesOrdersRequestBuilder.SalesOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<BulkSalesOrderSalesOrder_Response?> GetAllAsync(Action<RequestConfiguration<SalesOrdersRequestBuilder.SalesOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.BulkSalesOrderSalesOrdersResults is null)
+        if (response?.D?.BulkSalesOrderSalesOrderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<BulkSalesOrderSalesOrders>();
+        var allItems = new List<BulkSalesOrderSalesOrder>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.BulkSalesOrderSalesOrdersResults?.Results is { } results)
+            if (currentResponse?.D?.BulkSalesOrderSalesOrderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.BulkSalesOrderSalesOrdersResults?.Next;
+            var nextUrl = currentResponse?.D?.BulkSalesOrderSalesOrderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesOrdersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new BulkSalesOrderSalesOrders_Response
+        var finalResponse = new BulkSalesOrderSalesOrder_Response
         {
-            D = new BulkSalesOrderSalesOrders_Response.BulkSalesOrderSalesOrders_Response_d
+            D = new BulkSalesOrderSalesOrder_Response.BulkSalesOrderSalesOrder_Response_d
             {
-                BulkSalesOrderSalesOrders = allItems
+                BulkSalesOrderSalesOrder = allItems
             }
         };
 

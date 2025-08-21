@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Logistics.ItemGroups;
 
 public partial class ItemGroupsRequestBuilder
 {
-    public async Task<LogisticsItemGroups_Response?> GetAllAsync(Action<RequestConfiguration<ItemGroupsRequestBuilder.ItemGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<LogisticsItemGroup_Response?> GetAllAsync(Action<RequestConfiguration<ItemGroupsRequestBuilder.ItemGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.LogisticsItemGroupsResults is null)
+        if (response?.D?.LogisticsItemGroupResults is null)
         {
             return response;
         }
 
-        var allItems = new List<LogisticsItemGroups>();
+        var allItems = new List<LogisticsItemGroup>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.LogisticsItemGroupsResults?.Results is { } results)
+            if (currentResponse?.D?.LogisticsItemGroupResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.LogisticsItemGroupsResults?.Next;
+            var nextUrl = currentResponse?.D?.LogisticsItemGroupResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ItemGroupsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new LogisticsItemGroups_Response
+        var finalResponse = new LogisticsItemGroup_Response
         {
-            D = new LogisticsItemGroups_Response.LogisticsItemGroups_Response_d
+            D = new LogisticsItemGroup_Response.LogisticsItemGroup_Response_d
             {
-                LogisticsItemGroups = allItems
+                LogisticsItemGroup = allItems
             }
         };
 

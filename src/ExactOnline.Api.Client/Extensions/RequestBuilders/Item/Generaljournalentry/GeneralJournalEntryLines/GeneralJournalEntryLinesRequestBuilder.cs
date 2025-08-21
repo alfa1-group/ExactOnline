@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Generaljournalentry.GeneralJournalE
 
 public partial class GeneralJournalEntryLinesRequestBuilder
 {
-    public async Task<GeneralJournalEntryGeneralJournalEntryLines_Response?> GetAllAsync(Action<RequestConfiguration<GeneralJournalEntryLinesRequestBuilder.GeneralJournalEntryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<GeneralJournalEntryGeneralJournalEntryLine_Response?> GetAllAsync(Action<RequestConfiguration<GeneralJournalEntryLinesRequestBuilder.GeneralJournalEntryLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.GeneralJournalEntryGeneralJournalEntryLinesResults is null)
+        if (response?.D?.GeneralJournalEntryGeneralJournalEntryLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<GeneralJournalEntryGeneralJournalEntryLines>();
+        var allItems = new List<GeneralJournalEntryGeneralJournalEntryLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.GeneralJournalEntryGeneralJournalEntryLinesResults?.Results is { } results)
+            if (currentResponse?.D?.GeneralJournalEntryGeneralJournalEntryLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.GeneralJournalEntryGeneralJournalEntryLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.GeneralJournalEntryGeneralJournalEntryLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class GeneralJournalEntryLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new GeneralJournalEntryGeneralJournalEntryLines_Response
+        var finalResponse = new GeneralJournalEntryGeneralJournalEntryLine_Response
         {
-            D = new GeneralJournalEntryGeneralJournalEntryLines_Response.GeneralJournalEntryGeneralJournalEntryLines_Response_d
+            D = new GeneralJournalEntryGeneralJournalEntryLine_Response.GeneralJournalEntryGeneralJournalEntryLine_Response_d
             {
-                GeneralJournalEntryGeneralJournalEntryLines = allItems
+                GeneralJournalEntryGeneralJournalEntryLine = allItems
             }
         };
 

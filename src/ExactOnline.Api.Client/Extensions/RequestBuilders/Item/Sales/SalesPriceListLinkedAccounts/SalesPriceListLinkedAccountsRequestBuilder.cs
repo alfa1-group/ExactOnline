@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListLinkedAccounts;
 
 public partial class SalesPriceListLinkedAccountsRequestBuilder
 {
-    public async Task<SalesSalesPriceListLinkedAccounts_Response?> GetAllAsync(Action<RequestConfiguration<SalesPriceListLinkedAccountsRequestBuilder.SalesPriceListLinkedAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SalesSalesPriceListLinkedAccount_Response?> GetAllAsync(Action<RequestConfiguration<SalesPriceListLinkedAccountsRequestBuilder.SalesPriceListLinkedAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SalesSalesPriceListLinkedAccountsResults is null)
+        if (response?.D?.SalesSalesPriceListLinkedAccountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SalesSalesPriceListLinkedAccounts>();
+        var allItems = new List<SalesSalesPriceListLinkedAccount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SalesSalesPriceListLinkedAccountsResults?.Results is { } results)
+            if (currentResponse?.D?.SalesSalesPriceListLinkedAccountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SalesSalesPriceListLinkedAccountsResults?.Next;
+            var nextUrl = currentResponse?.D?.SalesSalesPriceListLinkedAccountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class SalesPriceListLinkedAccountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SalesSalesPriceListLinkedAccounts_Response
+        var finalResponse = new SalesSalesPriceListLinkedAccount_Response
         {
-            D = new SalesSalesPriceListLinkedAccounts_Response.SalesSalesPriceListLinkedAccounts_Response_d
+            D = new SalesSalesPriceListLinkedAccount_Response.SalesSalesPriceListLinkedAccount_Response_d
             {
-                SalesSalesPriceListLinkedAccounts = allItems
+                SalesSalesPriceListLinkedAccount = allItems
             }
         };
 

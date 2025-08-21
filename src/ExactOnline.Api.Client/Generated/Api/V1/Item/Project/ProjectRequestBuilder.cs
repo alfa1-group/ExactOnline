@@ -174,7 +174,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete cost transaction of the user.Note: For creating a cost transaction, it is mandatory to supply one of the following properties   • Account   • Project   • Subscription &amp;nbsp; And always supply   • Item   • Quantity
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.CostTransactionsWithId.CostTransactionsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectCostTransactions</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectCostTransaction</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.CostTransactionsWithId.CostTransactionsWithIdRequestBuilder CostTransactionsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -184,7 +184,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete employee restriction items, it restricts hour types that can be used in time entries for the employee..Note: For creating an employee restriction item, it is mandatory to supply employee and item. The supplied item needs to be a time unit item.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.EmployeeRestrictionItemsWithId.EmployeeRestrictionItemsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectEmployeeRestrictionItems</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectEmployeeRestrictionItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.EmployeeRestrictionItemsWithId.EmployeeRestrictionItemsWithIdRequestBuilder EmployeeRestrictionItemsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -194,7 +194,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to retrieve internal rates of employees.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.EmploymentInternalRatesWithId.EmploymentInternalRatesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectEmploymentInternalRates</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectEmploymentInternalRate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.EmploymentInternalRatesWithId.EmploymentInternalRatesWithIdRequestBuilder EmploymentInternalRatesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -204,7 +204,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete invoice terms for Fixed price/Prepaid project.Invoice terms are agreed-upon amounts that must be paid by certain dates. Invoice terms can be created for Fixed price and Prepaid projects.Note: For creating invoice term, it is mandatory to supply Project Id and Amount.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.InvoiceTermsWithId.InvoiceTermsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectInvoiceTerms</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectInvoiceTerm</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.InvoiceTermsWithId.InvoiceTermsWithIdRequestBuilder InvoiceTermsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -214,7 +214,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete project account mutations.Note: This endpoint only allow user to create last record and user is not allow to create record in between lines. For POST it is mandatory to provide Account, Project and StartDate.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectAccountMutationsWithId.ProjectAccountMutationsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectProjectAccountMutations</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectProjectAccountMutation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectAccountMutationsWithId.ProjectAccountMutationsWithIdRequestBuilder ProjectAccountMutationsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -224,7 +224,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// This endpoint enables users to retrieve a list of project budget types.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypesWithId.ProjectBudgetTypesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (int16) of the ProjectProjectBudgetTypes</param>
+        /// <param name="id">Unique identifier (int16) of the ProjectProjectBudgetType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypesWithId.ProjectBudgetTypesWithIdRequestBuilder ProjectBudgetTypesWithId(int? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -234,7 +234,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete project classifications.Note: For creating a project classifications, it is mandatory to supply Code and Description.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectClassificationsWithId.ProjectClassificationsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectProjectClassifications</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectProjectClassification</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectClassificationsWithId.ProjectClassificationsWithIdRequestBuilder ProjectClassificationsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -244,7 +244,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// This endpoint enables users to maintain budgeted hours per hour type of a project.Hours per hour type means you can budget the expected number of hours to finish the project and you create this for each hour type you need.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectHourBudgetsWithId.ProjectHourBudgetsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectProjectHourBudgets</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectProjectHourBudget</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectHourBudgetsWithId.ProjectHourBudgetsWithIdRequestBuilder ProjectHourBudgetsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -274,7 +274,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete project restriction employee items, it restricts employee&apos;s hour types that can be used in time entries for the project.Note: For creating project restriction employee item, you need to have existing project restriction employee. The supplied item needs to be a time unit item.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionEmployeeItemsWithId.ProjectRestrictionEmployeeItemsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectProjectRestrictionEmployeeItems</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectProjectRestrictionEmployeeItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionEmployeeItemsWithId.ProjectRestrictionEmployeeItemsWithIdRequestBuilder ProjectRestrictionEmployeeItemsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -284,7 +284,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete employees which are restricted to enter time/cost entries in specific project.Note: For creating a project restriction link, it is mandatory to supply one or more Employee and Project.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionEmployeesWithId.ProjectRestrictionEmployeesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectProjectRestrictionEmployees</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectProjectRestrictionEmployee</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionEmployeesWithId.ProjectRestrictionEmployeesWithIdRequestBuilder ProjectRestrictionEmployeesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -294,7 +294,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to restrict which hour/cost types can be used in time/cost entries for the project.Note: For creating project restriction item, it is mandatory to supply Item and Project.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionItemsWithId.ProjectRestrictionItemsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectProjectRestrictionItems</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectProjectRestrictionItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionItemsWithId.ProjectRestrictionItemsWithIdRequestBuilder ProjectRestrictionItemsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -304,7 +304,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// This endpoint enables users to restrict which cost types the project allows rebilling to customer.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionRebillingsWithId.ProjectRestrictionRebillingsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectProjectRestrictionRebillings</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectProjectRestrictionRebilling</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionRebillingsWithId.ProjectRestrictionRebillingsWithIdRequestBuilder ProjectRestrictionRebillingsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -314,7 +314,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete projects.Note: Projects enable you to bundle quotations, sales invoices, and time and cost entries, so that you can track work and progress by project. For POST it is mandatory to provide Code, Description and Type.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectsWithId.ProjectsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectProjects</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectsWithId.ProjectsWithIdRequestBuilder ProjectsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -324,7 +324,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete time correction to correct final time entries that already invoiced.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeCorrectionsWithId.TimeCorrectionsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectTimeCorrections</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectTimeCorrection</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeCorrectionsWithId.TimeCorrectionsWithIdRequestBuilder TimeCorrectionsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -334,7 +334,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete time transaction of the user.Note: For creating a time transaction, it is mandatory to supply one of the following properties   • Account   • Project   • Subscription &amp;nbsp; And always supply   • Item   • Quantity
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeTransactionsWithId.TimeTransactionsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectTimeTransactions</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectTimeTransaction</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeTransactionsWithId.TimeTransactionsWithIdRequestBuilder TimeTransactionsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -344,7 +344,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete Work Breakdown Structure (WBS) activity.Note: For creating a WBS activity, it is mandatory to supply Project and Description.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.WBSActivitiesWithId.WBSActivitiesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectWBSActivities</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectWBSActivity</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.WBSActivitiesWithId.WBSActivitiesWithIdRequestBuilder WBSActivitiesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -354,7 +354,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete Work Breakdown Structure (WBS) deliverable.Note: For creating a WBS deliverable, it is mandatory to supply Project and Description.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.WBSDeliverablesWithId.WBSDeliverablesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectWBSDeliverables</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectWBSDeliverable</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.WBSDeliverablesWithId.WBSDeliverablesWithIdRequestBuilder WBSDeliverablesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -364,7 +364,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// Use this endpoint to create, read, update and delete Work Breakdown Structure (WBS) expense.Note: For creating a WBS expense, it is mandatory to supply Project and Description.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.WBSExpensesWithId.WBSExpensesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the ProjectWBSExpenses</param>
+        /// <param name="id">Unique identifier (uuid) of the ProjectWBSExpense</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.WBSExpensesWithId.WBSExpensesWithIdRequestBuilder WBSExpensesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

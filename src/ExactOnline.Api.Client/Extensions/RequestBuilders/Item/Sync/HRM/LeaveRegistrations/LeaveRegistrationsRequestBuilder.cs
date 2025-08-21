@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.HRM.LeaveRegistrations;
 
 public partial class LeaveRegistrationsRequestBuilder
 {
-    public async Task<SyncHRMLeaveRegistrations_Response?> GetAllAsync(Action<RequestConfiguration<LeaveRegistrationsRequestBuilder.LeaveRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncHRMLeaveRegistration_Response?> GetAllAsync(Action<RequestConfiguration<LeaveRegistrationsRequestBuilder.LeaveRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncHRMLeaveRegistrationsResults is null)
+        if (response?.D?.SyncHRMLeaveRegistrationResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncHRMLeaveRegistrations>();
+        var allItems = new List<SyncHRMLeaveRegistration>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncHRMLeaveRegistrationsResults?.Results is { } results)
+            if (currentResponse?.D?.SyncHRMLeaveRegistrationResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncHRMLeaveRegistrationsResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncHRMLeaveRegistrationResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class LeaveRegistrationsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncHRMLeaveRegistrations_Response
+        var finalResponse = new SyncHRMLeaveRegistration_Response
         {
-            D = new SyncHRMLeaveRegistrations_Response.SyncHRMLeaveRegistrations_Response_d
+            D = new SyncHRMLeaveRegistration_Response.SyncHRMLeaveRegistration_Response_d
             {
-                SyncHRMLeaveRegistrations = allItems
+                SyncHRMLeaveRegistration = allItems
             }
         };
 

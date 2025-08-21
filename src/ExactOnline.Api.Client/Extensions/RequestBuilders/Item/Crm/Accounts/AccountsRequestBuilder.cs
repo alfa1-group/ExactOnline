@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm.Accounts;
 
 public partial class AccountsRequestBuilder
 {
-    public async Task<CRMAccounts_Response?> GetAllAsync(Action<RequestConfiguration<AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CRMAccount_Response?> GetAllAsync(Action<RequestConfiguration<AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CRMAccountsResults is null)
+        if (response?.D?.CRMAccountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CRMAccounts>();
+        var allItems = new List<CRMAccount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CRMAccountsResults?.Results is { } results)
+            if (currentResponse?.D?.CRMAccountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CRMAccountsResults?.Next;
+            var nextUrl = currentResponse?.D?.CRMAccountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AccountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CRMAccounts_Response
+        var finalResponse = new CRMAccount_Response
         {
-            D = new CRMAccounts_Response.CRMAccounts_Response_d
+            D = new CRMAccount_Response.CRMAccount_Response_d
             {
-                CRMAccounts = allItems
+                CRMAccount = allItems
             }
         };
 

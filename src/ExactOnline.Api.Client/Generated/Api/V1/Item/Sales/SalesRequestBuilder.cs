@@ -83,7 +83,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// Use this endpoint to read Order Charges.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Sales.OrderChargesWithId.OrderChargesWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SalesOrderCharges</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesOrderCharge</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.OrderChargesWithId.OrderChargesWithIdRequestBuilder OrderChargesWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -93,7 +93,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// Use this endpoint to create, read, update and delete Sales Channels.This endpoint allow you to manage the basic information of the sales channel.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesChannelsWithId.SalesChannelsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SalesSalesChannels</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesSalesChannel</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesChannelsWithId.SalesChannelsWithIdRequestBuilder SalesChannelsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -103,7 +103,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// Use this endpoint to : • retrieve customers linked to the price listsPrice lists allow you to manage prices for different items and customers. You can link several customers to a price list, but each customer can only be linked to one price list at a time.Use the following related endpoints to retrieve details of prices lists : • SalesPriceLists • SalesPriceListPeriods • SalesPriceListVolumeDiscountsFor more information about the  functionality in Exact Online, see Sales price management.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListLinkedAccountsWithId.SalesPriceListLinkedAccountsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SalesSalesPriceListLinkedAccounts</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesSalesPriceListLinkedAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListLinkedAccountsWithId.SalesPriceListLinkedAccountsWithIdRequestBuilder SalesPriceListLinkedAccountsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -113,7 +113,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// Use this endpoint to : • retrieve the validity periods in price listsPrice lists allow you to manage price in different periods, with for each period different items or discounts.Use the following related endpoints to retrieve details of prices lists : • SalesPriceLists • SalesPriceListLinkedAccounts • SalesPriceListVolumeDiscountsFor more information about the  functionality in Exact Online, see Sales price management.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListPeriodsWithId.SalesPriceListPeriodsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SalesSalesPriceListPeriods</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesSalesPriceListPeriod</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListPeriodsWithId.SalesPriceListPeriodsWithIdRequestBuilder SalesPriceListPeriodsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -123,7 +123,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// Use this endpoint to : • read basic information in price lists. Price lists allow you to manage prices  for different items and customers. Once created, these prices take effect for sales orders, and sales invoices, sales quotations.  Use the following related endpoints to retrieve details of prices lists : • SalesPriceListLinkedAccounts • SalesPriceListPeriods • SalesPriceListVolumeDiscounts API relationships: For more information about the  functionality in Exact Online, see Sales price management.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListsWithId.SalesPriceListsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SalesSalesPriceLists</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesSalesPriceList</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListsWithId.SalesPriceListsWithIdRequestBuilder SalesPriceListsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -133,7 +133,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// Use this endpoint to : • Get discountsPrice lists allow you to manage prices for different items and customers. You can link several customers to a price list, but each customer can only be linked to one price list at a time.Use the following related endpoints to retrieve details of prices lists : • SalesPriceLists • SalesPriceListPeriods • SalesPriceListLinkedAccounts For more information about the  functionality in Exact Online, see Sales price management.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListVolumeDiscountsWithId.SalesPriceListVolumeDiscountsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SalesSalesPriceListVolumeDiscounts</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesSalesPriceListVolumeDiscount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListVolumeDiscountsWithId.SalesPriceListVolumeDiscountsWithIdRequestBuilder SalesPriceListVolumeDiscountsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
@@ -143,7 +143,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// Use this endpoint to read Shipping Methods.The current range of shipping methods is available to dispatch/receive sales/purchase orders.For more information about the  functionality in Exact Online, see Overview | Shipping methods.
         /// </summary>
         /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Sales.ShippingMethodsWithId.ShippingMethodsWithIdRequestBuilder"/></returns>
-        /// <param name="id">Unique identifier (uuid) of the SalesShippingMethods</param>
+        /// <param name="id">Unique identifier (uuid) of the SalesShippingMethod</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.ShippingMethodsWithId.ShippingMethodsWithIdRequestBuilder ShippingMethodsWithId(Guid? id)
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));

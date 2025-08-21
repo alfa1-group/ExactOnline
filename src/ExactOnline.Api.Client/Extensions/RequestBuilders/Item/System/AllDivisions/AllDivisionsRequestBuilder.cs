@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.System.AllDivisions;
 
 public partial class AllDivisionsRequestBuilder
 {
-    public async Task<SystemSystemAllDivisions_Response?> GetAllAsync(Action<RequestConfiguration<AllDivisionsRequestBuilder.AllDivisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SystemSystemAllDivision_Response?> GetAllAsync(Action<RequestConfiguration<AllDivisionsRequestBuilder.AllDivisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SystemSystemAllDivisionsResults is null)
+        if (response?.D?.SystemSystemAllDivisionResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SystemSystemAllDivisions>();
+        var allItems = new List<SystemSystemAllDivision>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SystemSystemAllDivisionsResults?.Results is { } results)
+            if (currentResponse?.D?.SystemSystemAllDivisionResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SystemSystemAllDivisionsResults?.Next;
+            var nextUrl = currentResponse?.D?.SystemSystemAllDivisionResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AllDivisionsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SystemSystemAllDivisions_Response
+        var finalResponse = new SystemSystemAllDivision_Response
         {
-            D = new SystemSystemAllDivisions_Response.SystemSystemAllDivisions_Response_d
+            D = new SystemSystemAllDivision_Response.SystemSystemAllDivision_Response_d
             {
-                SystemSystemAllDivisions = allItems
+                SystemSystemAllDivision = allItems
             }
         };
 

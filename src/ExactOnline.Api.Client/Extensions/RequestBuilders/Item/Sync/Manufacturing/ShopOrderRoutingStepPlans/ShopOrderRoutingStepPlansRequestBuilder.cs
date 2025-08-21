@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.Manufacturing.ShopOrderRouting
 
 public partial class ShopOrderRoutingStepPlansRequestBuilder
 {
-    public async Task<SyncManufacturingShopOrderRoutingStepPlans_Response?> GetAllAsync(Action<RequestConfiguration<ShopOrderRoutingStepPlansRequestBuilder.ShopOrderRoutingStepPlansRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncManufacturingShopOrderRoutingStepPlan_Response?> GetAllAsync(Action<RequestConfiguration<ShopOrderRoutingStepPlansRequestBuilder.ShopOrderRoutingStepPlansRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncManufacturingShopOrderRoutingStepPlansResults is null)
+        if (response?.D?.SyncManufacturingShopOrderRoutingStepPlanResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncManufacturingShopOrderRoutingStepPlans>();
+        var allItems = new List<SyncManufacturingShopOrderRoutingStepPlan>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncManufacturingShopOrderRoutingStepPlansResults?.Results is { } results)
+            if (currentResponse?.D?.SyncManufacturingShopOrderRoutingStepPlanResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncManufacturingShopOrderRoutingStepPlansResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncManufacturingShopOrderRoutingStepPlanResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ShopOrderRoutingStepPlansRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncManufacturingShopOrderRoutingStepPlans_Response
+        var finalResponse = new SyncManufacturingShopOrderRoutingStepPlan_Response
         {
-            D = new SyncManufacturingShopOrderRoutingStepPlans_Response.SyncManufacturingShopOrderRoutingStepPlans_Response_d
+            D = new SyncManufacturingShopOrderRoutingStepPlan_Response.SyncManufacturingShopOrderRoutingStepPlan_Response_d
             {
-                SyncManufacturingShopOrderRoutingStepPlans = allItems
+                SyncManufacturingShopOrderRoutingStepPlan = allItems
             }
         };
 

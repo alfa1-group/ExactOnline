@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll.TaxEmploymentEndFlexCodes;
 
 public partial class TaxEmploymentEndFlexCodesRequestBuilder
 {
-    public async Task<PayrollTaxEmploymentEndFlexCodes_Response?> GetAllAsync(Action<RequestConfiguration<TaxEmploymentEndFlexCodesRequestBuilder.TaxEmploymentEndFlexCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<PayrollTaxEmploymentEndFlexCode_Response?> GetAllAsync(Action<RequestConfiguration<TaxEmploymentEndFlexCodesRequestBuilder.TaxEmploymentEndFlexCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.PayrollTaxEmploymentEndFlexCodesResults is null)
+        if (response?.D?.PayrollTaxEmploymentEndFlexCodeResults is null)
         {
             return response;
         }
 
-        var allItems = new List<PayrollTaxEmploymentEndFlexCodes>();
+        var allItems = new List<PayrollTaxEmploymentEndFlexCode>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.PayrollTaxEmploymentEndFlexCodesResults?.Results is { } results)
+            if (currentResponse?.D?.PayrollTaxEmploymentEndFlexCodeResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.PayrollTaxEmploymentEndFlexCodesResults?.Next;
+            var nextUrl = currentResponse?.D?.PayrollTaxEmploymentEndFlexCodeResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TaxEmploymentEndFlexCodesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new PayrollTaxEmploymentEndFlexCodes_Response
+        var finalResponse = new PayrollTaxEmploymentEndFlexCode_Response
         {
-            D = new PayrollTaxEmploymentEndFlexCodes_Response.PayrollTaxEmploymentEndFlexCodes_Response_d
+            D = new PayrollTaxEmploymentEndFlexCode_Response.PayrollTaxEmploymentEndFlexCode_Response_d
             {
-                PayrollTaxEmploymentEndFlexCodes = allItems
+                PayrollTaxEmploymentEndFlexCode = allItems
             }
         };
 

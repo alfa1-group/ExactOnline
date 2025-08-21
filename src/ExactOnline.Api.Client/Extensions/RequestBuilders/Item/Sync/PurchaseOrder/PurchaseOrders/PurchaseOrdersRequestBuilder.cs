@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sync.PurchaseOrder.PurchaseOrders;
 
 public partial class PurchaseOrdersRequestBuilder
 {
-    public async Task<SyncPurchaseOrderPurchaseOrders_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseOrdersRequestBuilder.PurchaseOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<SyncPurchaseOrderPurchaseOrder_Response?> GetAllAsync(Action<RequestConfiguration<PurchaseOrdersRequestBuilder.PurchaseOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.SyncPurchaseOrderPurchaseOrdersResults is null)
+        if (response?.D?.SyncPurchaseOrderPurchaseOrderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<SyncPurchaseOrderPurchaseOrders>();
+        var allItems = new List<SyncPurchaseOrderPurchaseOrder>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.SyncPurchaseOrderPurchaseOrdersResults?.Results is { } results)
+            if (currentResponse?.D?.SyncPurchaseOrderPurchaseOrderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.SyncPurchaseOrderPurchaseOrdersResults?.Next;
+            var nextUrl = currentResponse?.D?.SyncPurchaseOrderPurchaseOrderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class PurchaseOrdersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new SyncPurchaseOrderPurchaseOrders_Response
+        var finalResponse = new SyncPurchaseOrderPurchaseOrder_Response
         {
-            D = new SyncPurchaseOrderPurchaseOrders_Response.SyncPurchaseOrderPurchaseOrders_Response_d
+            D = new SyncPurchaseOrderPurchaseOrder_Response.SyncPurchaseOrderPurchaseOrder_Response_d
             {
-                SyncPurchaseOrderPurchaseOrders = allItems
+                SyncPurchaseOrderPurchaseOrder = allItems
             }
         };
 

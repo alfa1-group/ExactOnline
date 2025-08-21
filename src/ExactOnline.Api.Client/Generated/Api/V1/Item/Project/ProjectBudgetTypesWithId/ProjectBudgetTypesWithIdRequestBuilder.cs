@@ -20,7 +20,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypesWithId
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypesWithId.ProjectBudgetTypesWithIdRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="id">Unique identifier (int16) of the ProjectProjectBudgetTypes</param>
+        /// <param name="id">Unique identifier (int16) of the ProjectProjectBudgetType</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ProjectBudgetTypesWithIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? id = default) : base(requestAdapter, "{+baseurl}/api/v1/{division}/project/ProjectBudgetTypes(guid'{id}')", pathParameters)
@@ -36,20 +36,20 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypesWithId
         {
         }
         /// <summary>
-        /// GET ProjectProjectBudgetTypes
+        /// GET ProjectProjectBudgetType
         /// </summary>
-        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ProjectProjectBudgetTypesGet_Response"/></returns>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Models.ProjectProjectBudgetTypeGet_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ExactOnline.Api.Client.Models.ProjectProjectBudgetTypesGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ProjectProjectBudgetTypeGet_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ExactOnline.Api.Client.Models.ProjectProjectBudgetTypesGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ExactOnline.Api.Client.Models.ProjectProjectBudgetTypeGet_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,10 +58,10 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypesWithId
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ProjectProjectBudgetTypesGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ProjectProjectBudgetTypesGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ProjectProjectBudgetTypeGet_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ProjectProjectBudgetTypeGet_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET ProjectProjectBudgetTypes
+        /// GET ProjectProjectBudgetType
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

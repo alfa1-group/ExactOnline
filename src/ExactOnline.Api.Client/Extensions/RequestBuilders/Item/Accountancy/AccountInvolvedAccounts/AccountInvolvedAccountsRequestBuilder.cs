@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountInvolvedAccounts
 
 public partial class AccountInvolvedAccountsRequestBuilder
 {
-    public async Task<AccountancyAccountInvolvedAccounts_Response?> GetAllAsync(Action<RequestConfiguration<AccountInvolvedAccountsRequestBuilder.AccountInvolvedAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<AccountancyAccountInvolvedAccount_Response?> GetAllAsync(Action<RequestConfiguration<AccountInvolvedAccountsRequestBuilder.AccountInvolvedAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.AccountancyAccountInvolvedAccountsResults is null)
+        if (response?.D?.AccountancyAccountInvolvedAccountResults is null)
         {
             return response;
         }
 
-        var allItems = new List<AccountancyAccountInvolvedAccounts>();
+        var allItems = new List<AccountancyAccountInvolvedAccount>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.AccountancyAccountInvolvedAccountsResults?.Results is { } results)
+            if (currentResponse?.D?.AccountancyAccountInvolvedAccountResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.AccountancyAccountInvolvedAccountsResults?.Next;
+            var nextUrl = currentResponse?.D?.AccountancyAccountInvolvedAccountResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AccountInvolvedAccountsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new AccountancyAccountInvolvedAccounts_Response
+        var finalResponse = new AccountancyAccountInvolvedAccount_Response
         {
-            D = new AccountancyAccountInvolvedAccounts_Response.AccountancyAccountInvolvedAccounts_Response_d
+            D = new AccountancyAccountInvolvedAccount_Response.AccountancyAccountInvolvedAccount_Response_d
             {
-                AccountancyAccountInvolvedAccounts = allItems
+                AccountancyAccountInvolvedAccount = allItems
             }
         };
 

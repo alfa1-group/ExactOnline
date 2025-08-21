@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentFolders;
 
 public partial class AccountDocumentFoldersRequestBuilder
 {
-    public async Task<ReadCRMAccountDocumentFolders_Response?> GetAllAsync(Action<RequestConfiguration<AccountDocumentFoldersRequestBuilder.AccountDocumentFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ReadCRMAccountDocumentFolder_Response?> GetAllAsync(Action<RequestConfiguration<AccountDocumentFoldersRequestBuilder.AccountDocumentFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ReadCRMAccountDocumentFoldersResults is null)
+        if (response?.D?.ReadCRMAccountDocumentFolderResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ReadCRMAccountDocumentFolders>();
+        var allItems = new List<ReadCRMAccountDocumentFolder>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ReadCRMAccountDocumentFoldersResults?.Results is { } results)
+            if (currentResponse?.D?.ReadCRMAccountDocumentFolderResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ReadCRMAccountDocumentFoldersResults?.Next;
+            var nextUrl = currentResponse?.D?.ReadCRMAccountDocumentFolderResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class AccountDocumentFoldersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ReadCRMAccountDocumentFolders_Response
+        var finalResponse = new ReadCRMAccountDocumentFolder_Response
         {
-            D = new ReadCRMAccountDocumentFolders_Response.ReadCRMAccountDocumentFolders_Response_d
+            D = new ReadCRMAccountDocumentFolder_Response.ReadCRMAccountDocumentFolder_Response_d
             {
-                ReadCRMAccountDocumentFolders = allItems
+                ReadCRMAccountDocumentFolder = allItems
             }
         };
 

@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Users.UserHasRights;
 
 public partial class UserHasRightsRequestBuilder
 {
-    public async Task<UsersUserHasRights_Response?> GetAllAsync(Action<RequestConfiguration<UserHasRightsRequestBuilder.UserHasRightsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<UsersUserHasRight_Response?> GetAllAsync(Action<RequestConfiguration<UserHasRightsRequestBuilder.UserHasRightsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.UsersUserHasRightsResults is null)
+        if (response?.D?.UsersUserHasRightResults is null)
         {
             return response;
         }
 
-        var allItems = new List<UsersUserHasRights>();
+        var allItems = new List<UsersUserHasRight>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.UsersUserHasRightsResults?.Results is { } results)
+            if (currentResponse?.D?.UsersUserHasRightResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.UsersUserHasRightsResults?.Next;
+            var nextUrl = currentResponse?.D?.UsersUserHasRightResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class UserHasRightsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new UsersUserHasRights_Response
+        var finalResponse = new UsersUserHasRight_Response
         {
-            D = new UsersUserHasRights_Response.UsersUserHasRights_Response_d
+            D = new UsersUserHasRight_Response.UsersUserHasRight_Response_d
             {
-                UsersUserHasRights = allItems
+                UsersUserHasRight = allItems
             }
         };
 

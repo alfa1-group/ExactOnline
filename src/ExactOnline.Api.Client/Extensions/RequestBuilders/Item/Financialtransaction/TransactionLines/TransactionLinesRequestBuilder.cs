@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.TransactionLin
 
 public partial class TransactionLinesRequestBuilder
 {
-    public async Task<FinancialTransactionTransactionLines_Response?> GetAllAsync(Action<RequestConfiguration<TransactionLinesRequestBuilder.TransactionLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<FinancialTransactionTransactionLine_Response?> GetAllAsync(Action<RequestConfiguration<TransactionLinesRequestBuilder.TransactionLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.FinancialTransactionTransactionLinesResults is null)
+        if (response?.D?.FinancialTransactionTransactionLineResults is null)
         {
             return response;
         }
 
-        var allItems = new List<FinancialTransactionTransactionLines>();
+        var allItems = new List<FinancialTransactionTransactionLine>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.FinancialTransactionTransactionLinesResults?.Results is { } results)
+            if (currentResponse?.D?.FinancialTransactionTransactionLineResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.FinancialTransactionTransactionLinesResults?.Next;
+            var nextUrl = currentResponse?.D?.FinancialTransactionTransactionLineResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class TransactionLinesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new FinancialTransactionTransactionLines_Response
+        var finalResponse = new FinancialTransactionTransactionLine_Response
         {
-            D = new FinancialTransactionTransactionLines_Response.FinancialTransactionTransactionLines_Response_d
+            D = new FinancialTransactionTransactionLine_Response.FinancialTransactionTransactionLine_Response_d
             {
-                FinancialTransactionTransactionLines = allItems
+                FinancialTransactionTransactionLine = allItems
             }
         };
 

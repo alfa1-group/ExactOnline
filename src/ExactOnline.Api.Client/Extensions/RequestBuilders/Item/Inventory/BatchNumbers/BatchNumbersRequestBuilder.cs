@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.BatchNumbers;
 
 public partial class BatchNumbersRequestBuilder
 {
-    public async Task<InventoryBatchNumbers_Response?> GetAllAsync(Action<RequestConfiguration<BatchNumbersRequestBuilder.BatchNumbersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventoryBatchNumber_Response?> GetAllAsync(Action<RequestConfiguration<BatchNumbersRequestBuilder.BatchNumbersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventoryBatchNumbersResults is null)
+        if (response?.D?.InventoryBatchNumberResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventoryBatchNumbers>();
+        var allItems = new List<InventoryBatchNumber>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventoryBatchNumbersResults?.Results is { } results)
+            if (currentResponse?.D?.InventoryBatchNumberResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventoryBatchNumbersResults?.Next;
+            var nextUrl = currentResponse?.D?.InventoryBatchNumberResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class BatchNumbersRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventoryBatchNumbers_Response
+        var finalResponse = new InventoryBatchNumber_Response
         {
-            D = new InventoryBatchNumbers_Response.InventoryBatchNumbers_Response_d
+            D = new InventoryBatchNumber_Response.InventoryBatchNumber_Response_d
             {
-                InventoryBatchNumbers = allItems
+                InventoryBatchNumber = allItems
             }
         };
 

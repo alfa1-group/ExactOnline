@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project.InvoiceTerms;
 
 public partial class InvoiceTermsRequestBuilder
 {
-    public async Task<ProjectInvoiceTerms_Response?> GetAllAsync(Action<RequestConfiguration<InvoiceTermsRequestBuilder.InvoiceTermsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<ProjectInvoiceTerm_Response?> GetAllAsync(Action<RequestConfiguration<InvoiceTermsRequestBuilder.InvoiceTermsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.ProjectInvoiceTermsResults is null)
+        if (response?.D?.ProjectInvoiceTermResults is null)
         {
             return response;
         }
 
-        var allItems = new List<ProjectInvoiceTerms>();
+        var allItems = new List<ProjectInvoiceTerm>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.ProjectInvoiceTermsResults?.Results is { } results)
+            if (currentResponse?.D?.ProjectInvoiceTermResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.ProjectInvoiceTermsResults?.Next;
+            var nextUrl = currentResponse?.D?.ProjectInvoiceTermResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class InvoiceTermsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new ProjectInvoiceTerms_Response
+        var finalResponse = new ProjectInvoiceTerm_Response
         {
-            D = new ProjectInvoiceTerms_Response.ProjectInvoiceTerms_Response_d
+            D = new ProjectInvoiceTerm_Response.ProjectInvoiceTerm_Response_d
             {
-                ProjectInvoiceTerms = allItems
+                ProjectInvoiceTerm = allItems
             }
         };
 

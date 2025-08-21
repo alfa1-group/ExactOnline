@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Vat.VatPercentages;
 
 public partial class VatPercentagesRequestBuilder
 {
-    public async Task<VATVatPercentages_Response?> GetAllAsync(Action<RequestConfiguration<VatPercentagesRequestBuilder.VatPercentagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<VATVatPercentage_Response?> GetAllAsync(Action<RequestConfiguration<VatPercentagesRequestBuilder.VatPercentagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.VATVatPercentagesResults is null)
+        if (response?.D?.VATVatPercentageResults is null)
         {
             return response;
         }
 
-        var allItems = new List<VATVatPercentages>();
+        var allItems = new List<VATVatPercentage>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.VATVatPercentagesResults?.Results is { } results)
+            if (currentResponse?.D?.VATVatPercentageResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.VATVatPercentagesResults?.Next;
+            var nextUrl = currentResponse?.D?.VATVatPercentageResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class VatPercentagesRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new VATVatPercentages_Response
+        var finalResponse = new VATVatPercentage_Response
         {
-            D = new VATVatPercentages_Response.VATVatPercentages_Response_d
+            D = new VATVatPercentage_Response.VATVatPercentage_Response_d
             {
-                VATVatPercentages = allItems
+                VATVatPercentage = allItems
             }
         };
 

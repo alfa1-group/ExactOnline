@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow.Banks;
 
 public partial class BanksRequestBuilder
 {
-    public async Task<CashflowBanks_Response?> GetAllAsync(Action<RequestConfiguration<BanksRequestBuilder.BanksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<CashflowBank_Response?> GetAllAsync(Action<RequestConfiguration<BanksRequestBuilder.BanksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.CashflowBanksResults is null)
+        if (response?.D?.CashflowBankResults is null)
         {
             return response;
         }
 
-        var allItems = new List<CashflowBanks>();
+        var allItems = new List<CashflowBank>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.CashflowBanksResults?.Results is { } results)
+            if (currentResponse?.D?.CashflowBankResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.CashflowBanksResults?.Next;
+            var nextUrl = currentResponse?.D?.CashflowBankResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class BanksRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new CashflowBanks_Response
+        var finalResponse = new CashflowBank_Response
         {
-            D = new CashflowBanks_Response.CashflowBanks_Response_d
+            D = new CashflowBank_Response.CashflowBank_Response_d
             {
-                CashflowBanks = allItems
+                CashflowBank = allItems
             }
         };
 

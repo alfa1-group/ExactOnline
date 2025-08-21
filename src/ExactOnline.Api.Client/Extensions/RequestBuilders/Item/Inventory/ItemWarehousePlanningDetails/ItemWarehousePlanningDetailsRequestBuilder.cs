@@ -9,25 +9,25 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousePlanningDeta
 
 public partial class ItemWarehousePlanningDetailsRequestBuilder
 {
-    public async Task<InventoryItemWarehousePlanningDetails_Response?> GetAllAsync(Action<RequestConfiguration<ItemWarehousePlanningDetailsRequestBuilder.ItemWarehousePlanningDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<InventoryItemWarehousePlanningDetail_Response?> GetAllAsync(Action<RequestConfiguration<ItemWarehousePlanningDetailsRequestBuilder.ItemWarehousePlanningDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
         var response = await GetAsync(requestConfiguration, cancellationToken);
-        if (response?.D?.InventoryItemWarehousePlanningDetailsResults is null)
+        if (response?.D?.InventoryItemWarehousePlanningDetailResults is null)
         {
             return response;
         }
 
-        var allItems = new List<InventoryItemWarehousePlanningDetails>();
+        var allItems = new List<InventoryItemWarehousePlanningDetail>();
         var currentResponse = response;
 
         while (true)
         {
-            if (currentResponse?.D?.InventoryItemWarehousePlanningDetailsResults?.Results is { } results)
+            if (currentResponse?.D?.InventoryItemWarehousePlanningDetailResults?.Results is { } results)
             {
                 allItems.AddRange(results);
             }
 
-            var nextUrl = currentResponse?.D?.InventoryItemWarehousePlanningDetailsResults?.Next;
+            var nextUrl = currentResponse?.D?.InventoryItemWarehousePlanningDetailResults?.Next;
             if (string.IsNullOrEmpty(nextUrl))
             {
                 break;
@@ -37,11 +37,11 @@ public partial class ItemWarehousePlanningDetailsRequestBuilder
             currentResponse = await nextRequestBuilder.GetAsync(cancellationToken: cancellationToken);
         }
 
-        var finalResponse = new InventoryItemWarehousePlanningDetails_Response
+        var finalResponse = new InventoryItemWarehousePlanningDetail_Response
         {
-            D = new InventoryItemWarehousePlanningDetails_Response.InventoryItemWarehousePlanningDetails_Response_d
+            D = new InventoryItemWarehousePlanningDetail_Response.InventoryItemWarehousePlanningDetail_Response_d
             {
-                InventoryItemWarehousePlanningDetails = allItems
+                InventoryItemWarehousePlanningDetail = allItems
             }
         };
 
