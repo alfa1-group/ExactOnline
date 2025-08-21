@@ -23,5 +23,5 @@ public class ExactOnlineEntityFrameworkCoreStorageOptions
     public string AccessTokenUpdatedAtColumnName { get; set; } = "AccessTokenUpdatedAt";
 
     [Required]
-    public string AccessTokenExpireColumnName { get; set; } = "AccessTokenExpire";
+    public string AccessTokenExpireColumnName { get; set; } = "AccessTokenExpireAt";
 }
