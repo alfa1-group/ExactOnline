@@ -31,7 +31,7 @@ var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>(
 
 var someLogisticsItems = SelectBuilder<LogisticsItem>.Build(l => l.Description, l => l.FreeTextField01);
 var selectAllLogisticsItems = SelectBuilder<LogisticsItem>.Build();
-var filterLogisticsItems = FilterBuilder<LogisticsItem>.Build(l => l.Description == "abc" && l.FreeNumberField07 == 1.0d);
+var filterLogisticsItems = FilterBuilder<LogisticsItem>.Build(l => l.Description == "abc" && l.FreeTextField01 == "tst");
 var s1 = SelectBuilder<SystemSystemMe>.Build(s => s.UserID, s => s.CurrentDivision, s => s.Email);
 var s2 = SelectBuilder<SystemSystemMe>.Build(s => new { s.UserID, s.CurrentDivision, s.Email });
 var orderBy = OrderByBuilder<WebhooksWebhookSubscription>
@@ -101,7 +101,7 @@ await RunAsync(async () =>
 
     foreach (var x in list)
     {
-        Console.WriteLine($"Sync Sync Deleted: {x.ID}, {x.EntityKey} {x.EntityType}");
+        Console.WriteLine($"Sync Deleted: {x.ID}, {x.EntityKey} {x.EntityType}");
     }
 
     return list;
@@ -152,7 +152,7 @@ await RunAsync(async () =>
 
     foreach (var a in list)
     {
-        Console.WriteLine($"Sync Sync Payroll Employee ID: {a.ID}, Created: {a.Created}");
+        Console.WriteLine($"Sync Payroll Employee ID: {a.ID}, Created: {a.Created}");
     }
 
     return list;
@@ -192,52 +192,6 @@ await RunAsync(async () =>
     }).AsItems();
 
     return false;
-});
-
-await RunAsync(async () =>
-{
-    if (!isDevelopment)
-    {
-        Console.WriteLine("Skipping WebHook tests in production environment.");
-        return true;
-    }
-
-    Console.WriteLine("Post WebHook");
-    var postResult = await client.Api.V1[division].Webhooks.WebhookSubscriptions.PostAsync(new WebhooksWebhookSubscriptionPost
-    {
-        CallbackURL = "https://mstack.nl",
-        Topic = "StockPositions"
-    }).AsItem();
-
-    Console.WriteLine($"Post WebHook ID: {postResult?.ID}");
-
-    return true;
-});
-
-await RunAsync(async () =>
-{
-    var webhookSubscriptions = await client.Api.V1[division].Webhooks.WebhookSubscriptions.GetAsync(w =>
-    {
-        w.QueryParameters.Top = 100;
-        w.QueryParameters.Orderby = orderBy;
-    }).AsItems();
-
-    if (!webhookSubscriptions.Any())
-    {
-        Console.WriteLine("No WebhookSubscriptions found.");
-    }
-    else
-    {
-        var firstById = await client.Api.V1[division].Webhooks.WebhookSubscriptionsWithId(webhookSubscriptions.First().ID).GetAsync().AsItem();
-        Console.WriteLine($"Subscription ID: {firstById?.ID}, CallbackURL: {firstById?.CallbackURL}");
-    }
-
-    foreach (var webhookSubscription in webhookSubscriptions)
-    {
-        Console.WriteLine($"Subscription ID: {webhookSubscription.ID}, CallbackURL: {webhookSubscription.CallbackURL}");
-    }
-
-    return true;
 });
 
 var projectTimeTransaction = await RunAsync(async () =>
@@ -316,20 +270,6 @@ await RunAsync(async () =>
         p.QueryParameters.Select = SelectBuilder<SyncProjectTimeCostTransaction>.Build(t => t.ID, t => t.Timestamp, t => t.Type, t => t.Created);
         p.QueryParameters.Filter = syncFilter;
     }).AsItems();
-
-    foreach (var tt in list)
-    {
-        Console.WriteLine($"Sync.Project.TimeCostTransactions TS: {tt.Timestamp} ID: {tt.ID}, Type: {tt.Type}, Created: {tt.Created}");
-    }
-
-    return list;
-});
-
-await RunAsync(async () =>
-{
-    Console.WriteLine("Getting Sync.Project.TimeCostTransactions - select WithUrl");
-    var url = "https://start.exactonline.nl/api/v1/3137281/sync/project/TimeCostTransactions?$filter=(Timestamp%20ge%202)&$select=Timestamp,%20ID,%20Type,%20Created&$skiptoken=13419952052L";
-    var list = await client.Api.V1[division].Sync.Project.TimeCostTransactions.WithUrl(url).GetAsync().AsItems();
 
     foreach (var tt in list)
     {
