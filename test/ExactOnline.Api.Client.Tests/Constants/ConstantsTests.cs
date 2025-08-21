@@ -17,7 +17,7 @@ public class ConstantsTests
     [Test]
     public async Task DeletedEntityType_TryParse_Unknown_String()
     {
-        var result = DeletedEntityType.TryParse("test", out var entityType);
+        var result = DeletedEntityType.TryParse("test", out _);
 
         await Assert.That(result).IsFalse();
     }
@@ -34,7 +34,7 @@ public class ConstantsTests
     [Test]
     public async Task DeletedEntityType_TryParse_Unknown_Type()
     {
-        var result = DeletedEntityType.TryParse<SystemSystemDivision>(out var entityType);
+        var result = DeletedEntityType.TryParse<SystemSystemDivision>(out _);
 
         await Assert.That(result).IsFalse();
     }
