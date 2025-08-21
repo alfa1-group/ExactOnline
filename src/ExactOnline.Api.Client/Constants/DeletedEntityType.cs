@@ -15,8 +15,8 @@ public static class DeletedEntityType
         { "SyncCRMContacts", Contacts },
         { "SyncCRMQuotationHeaders", QuotationHeaders },
         { "SyncCRMQuotationLines", QuotationLines },
-        { "SyncDeleted", Deleted },
         { "SyncCashflowPaymentTerms", PaymentTerms },
+        { "SyncDeleted", Deleted },
         { "SyncDocumentsDocumentAttachments", Attachments },
         { "SyncDocumentsDocuments", Documents },
         { "SyncFinancialGLAccounts", GLAccounts },
@@ -77,8 +77,8 @@ public static class DeletedEntityType
         { typeof(SyncCRMContact), Contacts },
         { typeof(SyncCRMQuotationHeader), QuotationHeaders },
         { typeof(SyncCRMQuotationLine), QuotationLines },
-        { typeof(SyncDeleted), Deleted },
         { typeof(SyncCashflowPaymentTerm), PaymentTerms },
+        { typeof(SyncDeleted), Deleted },
         { typeof(SyncDocumentsDocumentAttachment), Attachments },
         { typeof(SyncDocumentsDocument), Documents },
         { typeof(SyncFinancialGLAccount), GLAccounts },
@@ -249,6 +249,9 @@ public static class DeletedEntityType
 
     public const int AbsenceRegistrations = 59;
 
+    /// <summary>
+    /// This 999 is used as a special value to represent the "Deleted" entity type.
+    /// </summary>
     public const int Deleted = 999;
 
     public static bool TryParse(string entityTypeString, out int entityTypeId)
