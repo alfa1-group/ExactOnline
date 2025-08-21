@@ -25,7 +25,7 @@ var host = builder.Build();
 using var scope = host.Services.CreateScope();
 
 var me = await client.Api.V1.Current.Me.GetAsync().AsItem();
-Console.WriteLine($"{me!.CurrentDivision} {me!.Email}");
+Console.WriteLine($"{me.CurrentDivision} {me.Email}");
 ```
 
 
@@ -43,13 +43,13 @@ Contains an implementation of the `IAuthenticationProvider` interface for Kiota,
 
 
 ## ExactOnline.Api.Client.Authentication.Abstractions
-An interface which defines how to store and retrieve the Refresh Token.
+An interface which defines how to store and retrieve the Refresh and Access Tokens.
 
 This interface is implemented by several packages, like:
+- [ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs)
 - [ExactOnline.Api.Client.Authentication.Storage.FileSystem](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.FileSystem)
 - [ExactOnline.Api.Client.Authentication.Storage.SqlServer](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.SqlServer)
-- [ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs)
-
+- [ExactOnline.Api.Client.Authentication.Storage.PostgreSQL](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.PostgreSQL)
 
 ---
 
