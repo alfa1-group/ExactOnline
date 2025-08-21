@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="Budget">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="BudgetScenario" Type="Edm.Guid" Nullable="true" />
+        <Property Name="BudgetScenarioCode" Type="Edm.String" Nullable="true" />
+        <Property Name="BudgetScenarioDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Costcenter" Type="Edm.String" Nullable="true" />
+        <Property Name="CostcenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Costunit" Type="Edm.String" Nullable="true" />
+        <Property Name="CostunitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="GLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="HID" Type="Edm.Int64" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="ReportingPeriod" Type="Edm.Int16" Nullable="true" />
+        <Property Name="ReportingYear" Type="Edm.Int16" Nullable="true" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Budget" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Budgets" EntityType="Exact.Web.Api.Models.Budget" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

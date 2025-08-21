@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models.PurchaseOrder" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="PurchaseOrder">
+        <Key>
+          <PropertyRef Name="PurchaseOrderID" />
+        </Key>
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountDiscount" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountDiscountExclVat" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountFCExclVat" Type="Edm.Double" Nullable="true" />
+        <Property Name="ApprovalStatus" Type="Edm.Int16" Nullable="false" />
+        <Property Name="ApprovalStatusDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Approved" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Approver" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ApproverFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="DeliveryAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DeliveryAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="DeliveryAccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="DeliveryAddress" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DeliveryContact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DeliveryContactPersonFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Discount" Type="Edm.Double" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentSubject" Type="Edm.String" Nullable="true" />
+        <Property Name="DropShipment" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="ExchangeRate" Type="Edm.Double" Nullable="true" />
+        <Property Name="IncotermAddress" Type="Edm.String" Nullable="true" />
+        <Property Name="IncotermCode" Type="Edm.String" Nullable="true" />
+        <Property Name="IncotermVersion" Type="Edm.Int16" Nullable="true" />
+        <Property Name="InvoiceStatus" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="OrderNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="OrderStatus" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PaymentCondition" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentConditionDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PurchaseOrderID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PurchaseAgent" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PurchaseAgentFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PurchaseOrderLineCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ReceiptDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ReceiptStatus" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+        <Property Name="SalesOrder" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesOrderNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SelectionCode" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SelectionCodeCode" Type="Edm.String" Nullable="true" />
+        <Property Name="SelectionCodeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ShippingMethod" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ShippingMethodCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ShippingMethodDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Source" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Supplier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SupplierCode" Type="Edm.String" Nullable="true" />
+        <Property Name="SupplierContact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SupplierContactPersonFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="SupplierName" Type="Edm.String" Nullable="true" />
+        <Property Name="VATAmount" Type="Edm.Double" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="YourRef" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="PurchaseOrderLines" Relationship="Exact.Web.Api.Models.PurchaseOrder.PurchaseOrder_PurchaseOrderLines" FromRole="PurchaseOrder" ToRole="PurchaseOrderLines" />
+      </EntityType>
+      <EntityType Name="PurchaseOrderLine">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="CostCenter" Type="Edm.String" Nullable="true" />
+        <Property Name="CostCenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CostUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="CostUnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Discount" Type="Edm.Double" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Expense" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ExpenseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InvoicedQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="InStock" Type="Edm.Double" Nullable="true" />
+        <Property Name="IsBatchNumberItem" Type="Edm.Byte" Nullable="false" />
+        <Property Name="IsSerialNumberItem" Type="Edm.Byte" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemBarcode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemBarcodeAdditional" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDivisable" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="NetPrice" Type="Edm.Double" Nullable="true" />
+        <Property Name="PurchaseOrderID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectedStock" Type="Edm.Double" Nullable="true" />
+        <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="QuantityInPurchaseUnits" Type="Edm.Double" Nullable="true" />
+        <Property Name="Rebill" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="ReceiptDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ReceivedQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalesOrder" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesOrderLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesOrderLineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SalesOrderNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ShopOrder" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ShopOrderMaterialPlan" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ShopOrderMaterialPlanLineNumber" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="ShopOrderMaterialPlans" Relationship="Exact.Web.Api.Models.PurchaseOrder.PurchaseOrderLine_ShopOrderMaterialPlans" FromRole="PurchaseOrderLine" ToRole="ShopOrderMaterialPlans" />
+        <Property Name="ShopOrderNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ShopOrderRoutingStepPlan" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ShopOrderRoutingStepPlanLineNumber" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="ShopOrderRoutingStepPlans" Relationship="Exact.Web.Api.Models.PurchaseOrder.PurchaseOrderLine_ShopOrderRoutingStepPlans" FromRole="PurchaseOrderLine" ToRole="ShopOrderRoutingStepPlans" />
+        <Property Name="SupplierItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="SupplierItemCopyRemarks" Type="Edm.Byte" Nullable="true" />
+        <Property Name="Unit" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitPrice" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATAmount" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATCode" Type="Edm.String" Nullable="true" />
+        <Property Name="VATDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATPercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="GoodsReceipt">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentSubject" Type="Edm.String" Nullable="true" />
+        <Property Name="EntryNumber" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="GoodsReceiptLines" Relationship="Exact.Web.Api.Models.PurchaseOrder.GoodsReceipt_GoodsReceiptLines" FromRole="GoodsReceipt" ToRole="GoodsReceiptLines" />
+        <Property Name="GoodsReceiptLineCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+        <Property Name="ReceiptDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ReceiptNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Supplier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SupplierCode" Type="Edm.String" Nullable="true" />
+        <Property Name="SupplierContact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SupplierContactFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="SupplierName" Type="Edm.String" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="YourRef" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="GoodsReceiptLine">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Expense" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ExpenseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="GoodsReceiptID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemUnitCode" Type="Edm.String" Nullable="true" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Location" Type="Edm.Guid" Nullable="true" />
+        <Property Name="LocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="LocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PurchaseOrderLineID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PurchaseOrderID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PurchaseOrderNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="QuantityOrdered" Type="Edm.Double" Nullable="true" />
+        <Property Name="QuantityReceived" Type="Edm.Double" Nullable="true" />
+        <Property Name="Rebill" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="SupplierItemCode" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="PurchaseReturn">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Supplier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SupplierContact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SupplierContactFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="SupplierAddress" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+        <Property Name="ReturnNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ReturnDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="TrackingNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="YourRef" Type="Edm.String" Nullable="true" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="PurchaseReturnLines" Relationship="Exact.Web.Api.Models.PurchaseOrder.PurchaseReturn_PurchaseReturnLines" FromRole="PurchaseReturn" ToRole="PurchaseReturnLines" />
+      </EntityType>
+      <EntityType Name="PurchaseReturnLines">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EntryID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GoodsReceiptLineID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="ReceiptNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PurchaseOrderNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PurchaseOrderLineID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="SupplierItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitCode" Type="Edm.String" Nullable="true" />
+        <Property Name="Location" Type="Edm.Guid" Nullable="true" />
+        <Property Name="LocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="LocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CreateCredit" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="ReceivedQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="ReturnQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="ReturnReasonCodeID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ReturnReasonCodeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Expense" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ExpenseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Rebill" Type="Edm.Boolean" Nullable="true" />
+      </EntityType>
+      <EntityType Name="PurchaseMaterialPlanning" BaseType="Exact.Web.Api.Models.PurchaseOrder.ShopOrderPurchasePlanning">
+        <Property Name="ShopOrderMaterialPlan" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="ShopOrderPurchasePlanning">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PurchaseOrderLine" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ShopOrder" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ShopOrderNumber" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="PurchaseSubcontractPlanning" BaseType="Exact.Web.Api.Models.PurchaseOrder.ShopOrderPurchasePlanning">
+        <Property Name="ShopOrderRoutingStepPlan" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <Association Name="PurchaseOrder_PurchaseOrderLines">
+        <End Role="PurchaseOrder" Type="Exact.Web.Api.Models.PurchaseOrder.PurchaseOrder" Multiplicity="*" />
+        <End Role="PurchaseOrderLines" Type="Exact.Web.Api.Models.PurchaseOrder.PurchaseOrderLine" Multiplicity="*" />
+      </Association>
+      <Association Name="PurchaseOrderLine_ShopOrderMaterialPlans">
+        <End Role="PurchaseOrderLine" Type="Exact.Web.Api.Models.PurchaseOrder.PurchaseOrderLine" Multiplicity="*" />
+        <End Role="ShopOrderMaterialPlans" Type="Exact.Web.Api.Models.PurchaseOrder.PurchaseMaterialPlanning" Multiplicity="*" />
+      </Association>
+      <Association Name="PurchaseOrderLine_ShopOrderRoutingStepPlans">
+        <End Role="PurchaseOrderLine" Type="Exact.Web.Api.Models.PurchaseOrder.PurchaseOrderLine" Multiplicity="*" />
+        <End Role="ShopOrderRoutingStepPlans" Type="Exact.Web.Api.Models.PurchaseOrder.PurchaseSubcontractPlanning" Multiplicity="*" />
+      </Association>
+      <Association Name="GoodsReceipt_GoodsReceiptLines">
+        <End Role="GoodsReceipt" Type="Exact.Web.Api.Models.PurchaseOrder.GoodsReceipt" Multiplicity="*" />
+        <End Role="GoodsReceiptLines" Type="Exact.Web.Api.Models.PurchaseOrder.GoodsReceiptLine" Multiplicity="*" />
+      </Association>
+      <Association Name="GoodsReceiptLine_BatchNumbers">
+        <End Role="GoodsReceiptLine" Type="Exact.Web.Api.Models.PurchaseOrder.GoodsReceiptLine" Multiplicity="*" />
+        <End Role="BatchNumbers" Type="Exact.Web.Api.Models.Inventory.StockBatchNumber" Multiplicity="*" />
+      </Association>
+      <Association Name="GoodsReceiptLine_SerialNumbers">
+        <End Role="GoodsReceiptLine" Type="Exact.Web.Api.Models.PurchaseOrder.GoodsReceiptLine" Multiplicity="*" />
+        <End Role="SerialNumbers" Type="Exact.Web.Api.Models.Inventory.StockSerialNumber" Multiplicity="*" />
+      </Association>
+      <Association Name="PurchaseReturn_PurchaseReturnLines">
+        <End Role="PurchaseReturn" Type="Exact.Web.Api.Models.PurchaseOrder.PurchaseReturn" Multiplicity="*" />
+        <End Role="PurchaseReturnLines" Type="Exact.Web.Api.Models.PurchaseOrder.PurchaseReturnLines" Multiplicity="*" />
+      </Association>
+      <Association Name="PurchaseReturnLines_BatchNumbers">
+        <End Role="PurchaseReturnLines" Type="Exact.Web.Api.Models.PurchaseOrder.PurchaseReturnLines" Multiplicity="*" />
+        <End Role="BatchNumbers" Type="Exact.Web.Api.Models.Inventory.StockBatchNumber" Multiplicity="*" />
+      </Association>
+      <Association Name="PurchaseReturnLines_SerialNumbers">
+        <End Role="PurchaseReturnLines" Type="Exact.Web.Api.Models.PurchaseOrder.PurchaseReturnLines" Multiplicity="*" />
+        <End Role="SerialNumbers" Type="Exact.Web.Api.Models.Inventory.StockSerialNumber" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.Inventory" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="BatchQuantitiesPerWarehouse" BaseType="Exact.Web.Api.Models.Inventory.BatchQuantitiesBase" />
+      <EntityType Name="BatchQuantitiesBase">
+        <Key>
+          <PropertyRef Name="BatchNumberId" />
+        </Key>
+        <Property Name="BatchNumberId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="AvailableQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="BatchQuantitiesPerLocation" BaseType="Exact.Web.Api.Models.Inventory.BatchQuantitiesBase">
+        <Property Name="StorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="StockBatchNumber">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="BatchNumberID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="BatchNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="DraftStockTransactionID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="IsBlocked" Type="Edm.Byte" Nullable="true" />
+        <Property Name="IsDraft" Type="Edm.Byte" Nullable="true" />
+        <Property Name="ParentID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PickOrderLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesReturnLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockCountLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesOrderLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockTransactionID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockTransactionType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseTransferLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="StockSerialNumber">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SerialNumberID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SerialNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ParentID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DraftStockTransactionID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="IsBlocked" Type="Edm.Byte" Nullable="true" />
+        <Property Name="IsDraft" Type="Edm.Byte" Nullable="true" />
+        <Property Name="PickOrderLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesReturnLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockCountLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesOrderLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockTransactionID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockTransactionType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseTransferLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.PurchaseOrder" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="PurchaseOrders" EntityType="Exact.Web.Api.Models.PurchaseOrder.PurchaseOrder" />
+        <EntitySet Name="PurchaseOrderLines" EntityType="Exact.Web.Api.Models.PurchaseOrder.PurchaseOrderLine" />
+        <EntitySet Name="GoodsReceipts" EntityType="Exact.Web.Api.Models.PurchaseOrder.GoodsReceipt" />
+        <EntitySet Name="GoodsReceiptLines" EntityType="Exact.Web.Api.Models.PurchaseOrder.GoodsReceiptLine" />
+        <EntitySet Name="BatchQuantitiesPerWarehouses" EntityType="Exact.Web.Api.Models.Inventory.BatchQuantitiesPerWarehouse" />
+        <EntitySet Name="BatchQuantitiesPerLocations" EntityType="Exact.Web.Api.Models.Inventory.BatchQuantitiesPerLocation" />
+        <EntitySet Name="StockBatchNumbers" EntityType="Exact.Web.Api.Models.Inventory.StockBatchNumber" />
+        <EntitySet Name="StockSerialNumbers" EntityType="Exact.Web.Api.Models.Inventory.StockSerialNumber" />
+        <EntitySet Name="PurchaseReturns" EntityType="Exact.Web.Api.Models.PurchaseOrder.PurchaseReturn" />
+        <EntitySet Name="PurchaseReturnLines" EntityType="Exact.Web.Api.Models.PurchaseOrder.PurchaseReturnLines" />
+        <EntitySet Name="PurchasePlanningShopOrderMaterialPlans" EntityType="Exact.Web.Api.Models.PurchaseOrder.PurchaseMaterialPlanning" />
+        <EntitySet Name="PurchasePlanningShopOrderRoutingStepPlans" EntityType="Exact.Web.Api.Models.PurchaseOrder.PurchaseSubcontractPlanning" />
+        <AssociationSet Name="PurchaseOrder_PurchaseOrderLines" Association="Exact.Web.Api.Models.PurchaseOrder.PurchaseOrder_PurchaseOrderLines">
+          <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+          <End Role="PurchaseOrderLines" EntitySet="PurchaseOrderLines" />
+        </AssociationSet>
+        <AssociationSet Name="PurchaseOrderLine_ShopOrderMaterialPlans" Association="Exact.Web.Api.Models.PurchaseOrder.PurchaseOrderLine_ShopOrderMaterialPlans">
+          <End Role="PurchaseOrderLine" EntitySet="PurchaseOrderLines" />
+          <End Role="ShopOrderMaterialPlans" EntitySet="PurchasePlanningShopOrderMaterialPlans" />
+        </AssociationSet>
+        <AssociationSet Name="PurchaseOrderLine_ShopOrderRoutingStepPlans" Association="Exact.Web.Api.Models.PurchaseOrder.PurchaseOrderLine_ShopOrderRoutingStepPlans">
+          <End Role="PurchaseOrderLine" EntitySet="PurchaseOrderLines" />
+          <End Role="ShopOrderRoutingStepPlans" EntitySet="PurchasePlanningShopOrderRoutingStepPlans" />
+        </AssociationSet>
+        <AssociationSet Name="GoodsReceipt_GoodsReceiptLines" Association="Exact.Web.Api.Models.PurchaseOrder.GoodsReceipt_GoodsReceiptLines">
+          <End Role="GoodsReceipt" EntitySet="GoodsReceipts" />
+          <End Role="GoodsReceiptLines" EntitySet="GoodsReceiptLines" />
+        </AssociationSet>
+        <AssociationSet Name="GoodsReceiptLine_BatchNumbers" Association="Exact.Web.Api.Models.PurchaseOrder.GoodsReceiptLine_BatchNumbers">
+          <End Role="GoodsReceiptLine" EntitySet="GoodsReceiptLines" />
+          <End Role="BatchNumbers" EntitySet="StockBatchNumbers" />
+        </AssociationSet>
+        <AssociationSet Name="GoodsReceiptLine_SerialNumbers" Association="Exact.Web.Api.Models.PurchaseOrder.GoodsReceiptLine_SerialNumbers">
+          <End Role="GoodsReceiptLine" EntitySet="GoodsReceiptLines" />
+          <End Role="SerialNumbers" EntitySet="StockSerialNumbers" />
+        </AssociationSet>
+        <AssociationSet Name="PurchaseReturn_PurchaseReturnLines" Association="Exact.Web.Api.Models.PurchaseOrder.PurchaseReturn_PurchaseReturnLines">
+          <End Role="PurchaseReturn" EntitySet="PurchaseReturns" />
+          <End Role="PurchaseReturnLines" EntitySet="PurchaseReturnLines" />
+        </AssociationSet>
+        <AssociationSet Name="PurchaseReturnLines_BatchNumbers" Association="Exact.Web.Api.Models.PurchaseOrder.PurchaseReturnLines_BatchNumbers">
+          <End Role="PurchaseReturnLines" EntitySet="PurchaseReturnLines" />
+          <End Role="BatchNumbers" EntitySet="StockBatchNumbers" />
+        </AssociationSet>
+        <AssociationSet Name="PurchaseReturnLines_SerialNumbers" Association="Exact.Web.Api.Models.PurchaseOrder.PurchaseReturnLines_SerialNumbers">
+          <End Role="PurchaseReturnLines" EntitySet="PurchaseReturnLines" />
+          <End Role="SerialNumbers" EntitySet="StockSerialNumbers" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models.Inventory" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="AssemblyOrder">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="OrderDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="AssemblyDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="PlannedQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="FinishedQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="OrderStatus" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationDescription" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="PartItems" Relationship="Exact.Web.Api.Models.Inventory.AssemblyOrder_PartItems" FromRole="AssemblyOrder" ToRole="PartItems" />
+        <Property Name="Unit" Type="Edm.Guid" Nullable="true" />
+        <Property Name="UnitCode" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationSequenceNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="FinishedAssemblyDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int16" Nullable="true" />
+      </EntityType>
+      <EntityType Name="AssemblyOrderPartItem">
+        <Key>
+          <PropertyRef Name="Item" />
+        </Key>
+        <Property Name="AssemblyOrder" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PlannedQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="Issued" Type="Edm.Double" Nullable="true" />
+        <Property Name="Unit" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationSequenceNumber" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ItemWarehouse">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="CurrentStock" Type="Edm.Double" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ItemBarcode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemIsFractionAllowedItem" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="ItemIsStockItem" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="ItemEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ItemStartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ItemUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemUnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PlanningDetailsUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="NextCountingCycle" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="PlannedStockIn" Type="Edm.Double" Nullable="true" />
+        <Property Name="PlannedStockOut" Type="Edm.Double" Nullable="true" />
+        <Property Name="ProjectedStock" Type="Edm.Double" Nullable="true" />
+        <Property Name="StorageLocationSequenceNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StorageLocationUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="CountingCycle" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="DefaultStorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DefaultStorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="DefaultStorageLocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="MaximumStock" Type="Edm.Double" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OrderPolicy" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Period" Type="Edm.Int16" Nullable="true" />
+        <Property Name="ReorderPoint" Type="Edm.Double" Nullable="true" />
+        <Property Name="ReorderQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="ReplenishmentType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="ReservedStock" Type="Edm.Double" Nullable="true" />
+        <Property Name="SafetyStock" Type="Edm.Double" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ItemWarehousePlanningDetail">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PlannedDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PlannedQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="PlanningSourceDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PlanningSourceID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PlanningSourceLineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PlanningSourceNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PlanningType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PlanningTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PlanningSourceUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="false" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ItemWarehouseStorageLocation">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemBarcode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ItemStartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ItemUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemUnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="IsFractionAllowedItem" Type="Edm.Byte" Nullable="false" />
+        <Property Name="IsStockItem" Type="Edm.Byte" Nullable="false" />
+        <Property Name="Stock" Type="Edm.Double" Nullable="true" />
+        <Property Name="StorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationSequenceNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="StorageLocation">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Main" Type="Edm.Byte" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PickSequence" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SerialNumber">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Available" Type="Edm.Byte" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="IsBlocked" Type="Edm.Byte" Nullable="true" />
+        <Property Name="SerialNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="BatchNumber">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="AvailableQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="BatchNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="ExpiryDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="IsBlocked" Type="Edm.Byte" Nullable="true" />
+        <NavigationProperty Name="Warehouses" Relationship="Exact.Web.Api.Models.Inventory.BatchNumber_Warehouses" FromRole="BatchNumber" ToRole="Warehouses" />
+        <NavigationProperty Name="StorageLocations" Relationship="Exact.Web.Api.Models.Inventory.BatchNumber_StorageLocations" FromRole="BatchNumber" ToRole="StorageLocations" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="BatchQuantitiesPerWarehouse" BaseType="Exact.Web.Api.Models.Inventory.BatchQuantitiesBase" />
+      <EntityType Name="BatchQuantitiesBase">
+        <Key>
+          <PropertyRef Name="BatchNumberId" />
+        </Key>
+        <Property Name="BatchNumberId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="AvailableQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="BatchQuantitiesPerLocation" BaseType="Exact.Web.Api.Models.Inventory.BatchQuantitiesBase">
+        <Property Name="StorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="StockSerialNumber">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SerialNumberID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SerialNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ParentID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DraftStockTransactionID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="IsBlocked" Type="Edm.Byte" Nullable="true" />
+        <Property Name="IsDraft" Type="Edm.Byte" Nullable="true" />
+        <Property Name="PickOrderLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesReturnLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockCountLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesOrderLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockTransactionID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockTransactionType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseTransferLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="StockBatchNumber">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="BatchNumberID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="BatchNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="DraftStockTransactionID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="IsBlocked" Type="Edm.Byte" Nullable="true" />
+        <Property Name="IsDraft" Type="Edm.Byte" Nullable="true" />
+        <Property Name="ParentID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PickOrderLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesReturnLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockCountLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesOrderLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockTransactionID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockTransactionType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseTransferLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="StockCount">
+        <Key>
+          <PropertyRef Name="StockCountID" />
+        </Key>
+        <Property Name="CountedBy" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EntryNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="OffsetGLInventory" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OffsetGLInventoryCode" Type="Edm.String" Nullable="true" />
+        <Property Name="OffsetGLInventoryDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Source" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+        <Property Name="StockCountID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="StockCountNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StockCountDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="StockCountLines" Relationship="Exact.Web.Api.Models.Inventory.StockCount_StockCountLines" FromRole="StockCount" ToRole="StockCountLines" />
+      </EntityType>
+      <EntityType Name="StockCountLine">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="CostPrice" Type="Edm.Double" Nullable="true" />
+        <Property Name="CountedBy" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemBarcode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemCostPrice" Type="Edm.Double" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDivisable" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="QuantityDifference" Type="Edm.Double" Nullable="true" />
+        <Property Name="QuantityInStock" Type="Edm.Double" Nullable="true" />
+        <Property Name="QuantityNew" Type="Edm.Double" Nullable="true" />
+        <Property Name="Source" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+        <Property Name="StockCountID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StockKeepingUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationDescription" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="BatchNumbers" Relationship="Exact.Web.Api.Models.Inventory.StockCountLine_BatchNumbers" FromRole="StockCountLine" ToRole="BatchNumbers" />
+        <NavigationProperty Name="SerialNumbers" Relationship="Exact.Web.Api.Models.Inventory.StockCountLine_SerialNumbers" FromRole="StockCountLine" ToRole="SerialNumbers" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ReasonCodeID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ReasonCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ReasonCodeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationSequenceNumber" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ProcessStockCount">
+        <Key>
+          <PropertyRef Name="StockCountID" />
+        </Key>
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StockCountID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SuccessMessage" Type="Edm.String" Nullable="true" />
+        <Property Name="ErrorMessage" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="WarehouseTransfer">
+        <Key>
+          <PropertyRef Name="TransferID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EntryDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="TransferredBy" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PickedBy" Type="Edm.Guid" Nullable="true" />
+        <Property Name="TransferID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PlannedDeliveryDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="PlannedReceiptDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+        <Property Name="Source" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="false" />
+        <Property Name="TransferDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="TransferNumber" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="WarehouseTransferLines" Relationship="Exact.Web.Api.Models.Inventory.WarehouseTransfer_WarehouseTransferLines" FromRole="WarehouseTransfer" ToRole="WarehouseTransferLines" />
+        <Property Name="WarehouseFrom" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseFromCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseFromDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseTo" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseToCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseToDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="WarehouseTransferLine">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <NavigationProperty Name="BatchNumbers" Relationship="Exact.Web.Api.Models.Inventory.WarehouseTransferLine_BatchNumbers" FromRole="WarehouseTransferLine" ToRole="BatchNumbers" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="TransferID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+        <NavigationProperty Name="SerialNumbers" Relationship="Exact.Web.Api.Models.Inventory.WarehouseTransferLine_SerialNumbers" FromRole="WarehouseTransferLine" ToRole="SerialNumbers" />
+        <Property Name="StorageLocationFrom" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationFromCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationFromDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationTo" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationToCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationToDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="TransferredBy" Type="Edm.Guid" Nullable="true" />
+        <Property Name="UnitCode" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationFromLocationSequence" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StorageLocationToLocationSequence" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PickedBy" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ProcessWarehouseTransfer">
+        <Key>
+          <PropertyRef Name="TransferID" />
+        </Key>
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="TransferDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="TransferID" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="FinishAssemblyOrder">
+        <Key>
+          <PropertyRef Name="AssemblyOrder" />
+        </Key>
+        <Property Name="AssembledItemStorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AssemblyDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="AssemblyOrder" Type="Edm.Guid" Nullable="false" />
+        <NavigationProperty Name="BatchNumbers" Relationship="Exact.Web.Api.Models.Inventory.FinishAssemblyOrder_BatchNumbers" FromRole="FinishAssemblyOrder" ToRole="BatchNumbers" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="FinishOrderQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="SerialNumbers" Relationship="Exact.Web.Api.Models.Inventory.FinishAssemblyOrder_SerialNumbers" FromRole="FinishAssemblyOrder" ToRole="SerialNumbers" />
+      </EntityType>
+      <EntityType Name="InventorySettings">
+        <Key>
+          <PropertyRef Name="Division" />
+        </Key>
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="BatchNumbers" Type="Edm.Byte" Nullable="false" />
+        <Property Name="DeliverMoreThanOrdered" Type="Edm.Byte" Nullable="false" />
+        <Property Name="InventoryReceivingLocation" Type="Edm.Int32" Nullable="false" />
+        <Property Name="MandatorySerialNumber" Type="Edm.Byte" Nullable="false" />
+        <Property Name="QuantityPrecision" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ReceiveMoreThanOrdered" Type="Edm.Byte" Nullable="false" />
+        <Property Name="SerialNumbers" Type="Edm.Byte" Nullable="false" />
+        <Property Name="AllowNegativeStock" Type="Edm.Byte" Nullable="false" />
+      </EntityType>
+      <EntityType Name="AssemblyBillOfMaterialMaterials">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AssembledItem" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AssembledItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="AssembledItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="AssembledLeadDays" Type="Edm.Int32" Nullable="true" />
+        <Property Name="BatchQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PartItem" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PartItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="PartItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="QuantityBatch" Type="Edm.Double" Nullable="true" />
+        <Property Name="UpdateCostPrice" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="UseExplosion" Type="Edm.Byte" Nullable="true" />
+      </EntityType>
+      <EntityType Name="AssemblyBillOfMaterialHeader">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AssembledLeadDays" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="AssemblyBillOfMaterialMaterials" Relationship="Exact.Web.Api.Models.Inventory.AssemblyBillOfMaterialHeader_AssemblyBillOfMaterialMaterials" FromRole="AssemblyBillOfMaterialHeader" ToRole="AssemblyBillOfMaterialMaterials" />
+        <Property Name="BatchQuantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="CostPrice" Type="Edm.Double" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="UpdateCostPrice" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="UseExplosion" Type="Edm.Byte" Nullable="true" />
+      </EntityType>
+      <EntityType Name="StorageLocationStockPositions">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FreeStock" Type="Edm.Double" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="QuantityToPicked" Type="Edm.Double" Nullable="true" />
+        <Property Name="ReservedPick" Type="Edm.Double" Nullable="true" />
+        <Property Name="SerialBatchReservedStock" Type="Edm.Double" Nullable="true" />
+        <Property Name="StorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="StorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StorageLocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Stock" Type="Edm.Double" Nullable="true" />
+        <Property Name="UnitCode" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+        <Property Name="WarehouseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="WarehouseDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <Association Name="AssemblyOrder_PartItems">
+        <End Role="AssemblyOrder" Type="Exact.Web.Api.Models.Inventory.AssemblyOrder" Multiplicity="*" />
+        <End Role="PartItems" Type="Exact.Web.Api.Models.Inventory.AssemblyOrderPartItem" Multiplicity="*" />
+      </Association>
+      <Association Name="BatchNumber_Warehouses">
+        <End Role="BatchNumber" Type="Exact.Web.Api.Models.Inventory.BatchNumber" Multiplicity="*" />
+        <End Role="Warehouses" Type="Exact.Web.Api.Models.Inventory.BatchQuantitiesPerWarehouse" Multiplicity="*" />
+      </Association>
+      <Association Name="BatchNumber_StorageLocations">
+        <End Role="BatchNumber" Type="Exact.Web.Api.Models.Inventory.BatchNumber" Multiplicity="*" />
+        <End Role="StorageLocations" Type="Exact.Web.Api.Models.Inventory.BatchQuantitiesPerLocation" Multiplicity="*" />
+      </Association>
+      <Association Name="StockCount_StockCountLines">
+        <End Role="StockCount" Type="Exact.Web.Api.Models.Inventory.StockCount" Multiplicity="*" />
+        <End Role="StockCountLines" Type="Exact.Web.Api.Models.Inventory.StockCountLine" Multiplicity="*" />
+      </Association>
+      <Association Name="StockCountLine_BatchNumbers">
+        <End Role="StockCountLine" Type="Exact.Web.Api.Models.Inventory.StockCountLine" Multiplicity="*" />
+        <End Role="BatchNumbers" Type="Exact.Web.Api.Models.Inventory.StockBatchNumber" Multiplicity="*" />
+      </Association>
+      <Association Name="StockCountLine_SerialNumbers">
+        <End Role="StockCountLine" Type="Exact.Web.Api.Models.Inventory.StockCountLine" Multiplicity="*" />
+        <End Role="SerialNumbers" Type="Exact.Web.Api.Models.Inventory.StockSerialNumber" Multiplicity="*" />
+      </Association>
+      <Association Name="WarehouseTransfer_WarehouseTransferLines">
+        <End Role="WarehouseTransfer" Type="Exact.Web.Api.Models.Inventory.WarehouseTransfer" Multiplicity="*" />
+        <End Role="WarehouseTransferLines" Type="Exact.Web.Api.Models.Inventory.WarehouseTransferLine" Multiplicity="*" />
+      </Association>
+      <Association Name="WarehouseTransferLine_BatchNumbers">
+        <End Role="WarehouseTransferLine" Type="Exact.Web.Api.Models.Inventory.WarehouseTransferLine" Multiplicity="*" />
+        <End Role="BatchNumbers" Type="Exact.Web.Api.Models.Inventory.StockBatchNumber" Multiplicity="*" />
+      </Association>
+      <Association Name="WarehouseTransferLine_SerialNumbers">
+        <End Role="WarehouseTransferLine" Type="Exact.Web.Api.Models.Inventory.WarehouseTransferLine" Multiplicity="*" />
+        <End Role="SerialNumbers" Type="Exact.Web.Api.Models.Inventory.StockSerialNumber" Multiplicity="*" />
+      </Association>
+      <Association Name="FinishAssemblyOrder_BatchNumbers">
+        <End Role="FinishAssemblyOrder" Type="Exact.Web.Api.Models.Inventory.FinishAssemblyOrder" Multiplicity="*" />
+        <End Role="BatchNumbers" Type="Exact.Web.Api.Models.Inventory.StockBatchNumber" Multiplicity="*" />
+      </Association>
+      <Association Name="FinishAssemblyOrder_SerialNumbers">
+        <End Role="FinishAssemblyOrder" Type="Exact.Web.Api.Models.Inventory.FinishAssemblyOrder" Multiplicity="*" />
+        <End Role="SerialNumbers" Type="Exact.Web.Api.Models.Inventory.StockSerialNumber" Multiplicity="*" />
+      </Association>
+      <Association Name="AssemblyBillOfMaterialHeader_AssemblyBillOfMaterialMaterials">
+        <End Role="AssemblyBillOfMaterialHeader" Type="Exact.Web.Api.Models.Inventory.AssemblyBillOfMaterialHeader" Multiplicity="*" />
+        <End Role="AssemblyBillOfMaterialMaterials" Type="Exact.Web.Api.Models.Inventory.AssemblyBillOfMaterialMaterials" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="Warehouse">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="DefaultStorageLocation" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DefaultStorageLocationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="DefaultStorageLocationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EMail" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Main" Type="Edm.Byte" Nullable="false" />
+        <Property Name="ManagerUser" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="UseStorageLocations" Type="Edm.Byte" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Inventory" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="AssemblyOrders" EntityType="Exact.Web.Api.Models.Inventory.AssemblyOrder" />
+        <EntitySet Name="AssemblyOrderPartItems" EntityType="Exact.Web.Api.Models.Inventory.AssemblyOrderPartItem" />
+        <EntitySet Name="Warehouses" EntityType="Exact.Web.Api.Models.Warehouse" />
+        <EntitySet Name="ItemWarehouses" EntityType="Exact.Web.Api.Models.Inventory.ItemWarehouse" />
+        <EntitySet Name="ItemWarehousePlanningDetails" EntityType="Exact.Web.Api.Models.Inventory.ItemWarehousePlanningDetail" />
+        <EntitySet Name="ItemWarehouseStorageLocations" EntityType="Exact.Web.Api.Models.Inventory.ItemWarehouseStorageLocation" />
+        <EntitySet Name="StorageLocations" EntityType="Exact.Web.Api.Models.Inventory.StorageLocation" />
+        <EntitySet Name="SerialNumbers" EntityType="Exact.Web.Api.Models.Inventory.SerialNumber" />
+        <EntitySet Name="BatchNumbers" EntityType="Exact.Web.Api.Models.Inventory.BatchNumber" />
+        <EntitySet Name="BatchQuantitiesPerWarehouses" EntityType="Exact.Web.Api.Models.Inventory.BatchQuantitiesPerWarehouse" />
+        <EntitySet Name="BatchQuantitiesPerLocations" EntityType="Exact.Web.Api.Models.Inventory.BatchQuantitiesPerLocation" />
+        <EntitySet Name="StockSerialNumbers" EntityType="Exact.Web.Api.Models.Inventory.StockSerialNumber" />
+        <EntitySet Name="StockBatchNumbers" EntityType="Exact.Web.Api.Models.Inventory.StockBatchNumber" />
+        <EntitySet Name="StockCounts" EntityType="Exact.Web.Api.Models.Inventory.StockCount" />
+        <EntitySet Name="StockCountLines" EntityType="Exact.Web.Api.Models.Inventory.StockCountLine" />
+        <EntitySet Name="ProcessStockCount" EntityType="Exact.Web.Api.Models.Inventory.ProcessStockCount" />
+        <EntitySet Name="WarehouseTransfers" EntityType="Exact.Web.Api.Models.Inventory.WarehouseTransfer" />
+        <EntitySet Name="WarehouseTransferLines" EntityType="Exact.Web.Api.Models.Inventory.WarehouseTransferLine" />
+        <EntitySet Name="ProcessWarehouseTransfer" EntityType="Exact.Web.Api.Models.Inventory.ProcessWarehouseTransfer" />
+        <EntitySet Name="FinishAssemblyOrder" EntityType="Exact.Web.Api.Models.Inventory.FinishAssemblyOrder" />
+        <EntitySet Name="InventorySettings" EntityType="Exact.Web.Api.Models.Inventory.InventorySettings" />
+        <EntitySet Name="AssemblyBillOfMaterialMaterials" EntityType="Exact.Web.Api.Models.Inventory.AssemblyBillOfMaterialMaterials" />
+        <EntitySet Name="AssemblyBillOfMaterialHeader" EntityType="Exact.Web.Api.Models.Inventory.AssemblyBillOfMaterialHeader" />
+        <EntitySet Name="StorageLocationStockPositions" EntityType="Exact.Web.Api.Models.Inventory.StorageLocationStockPositions" />
+        <AssociationSet Name="AssemblyOrder_PartItems" Association="Exact.Web.Api.Models.Inventory.AssemblyOrder_PartItems">
+          <End Role="AssemblyOrder" EntitySet="AssemblyOrders" />
+          <End Role="PartItems" EntitySet="AssemblyOrderPartItems" />
+        </AssociationSet>
+        <AssociationSet Name="BatchNumber_Warehouses" Association="Exact.Web.Api.Models.Inventory.BatchNumber_Warehouses">
+          <End Role="BatchNumber" EntitySet="BatchNumbers" />
+          <End Role="Warehouses" EntitySet="BatchQuantitiesPerWarehouses" />
+        </AssociationSet>
+        <AssociationSet Name="BatchNumber_StorageLocations" Association="Exact.Web.Api.Models.Inventory.BatchNumber_StorageLocations">
+          <End Role="BatchNumber" EntitySet="BatchNumbers" />
+          <End Role="StorageLocations" EntitySet="BatchQuantitiesPerLocations" />
+        </AssociationSet>
+        <AssociationSet Name="StockCount_StockCountLines" Association="Exact.Web.Api.Models.Inventory.StockCount_StockCountLines">
+          <End Role="StockCount" EntitySet="StockCounts" />
+          <End Role="StockCountLines" EntitySet="StockCountLines" />
+        </AssociationSet>
+        <AssociationSet Name="StockCountLine_BatchNumbers" Association="Exact.Web.Api.Models.Inventory.StockCountLine_BatchNumbers">
+          <End Role="StockCountLine" EntitySet="StockCountLines" />
+          <End Role="BatchNumbers" EntitySet="StockBatchNumbers" />
+        </AssociationSet>
+        <AssociationSet Name="StockCountLine_SerialNumbers" Association="Exact.Web.Api.Models.Inventory.StockCountLine_SerialNumbers">
+          <End Role="StockCountLine" EntitySet="StockCountLines" />
+          <End Role="SerialNumbers" EntitySet="StockSerialNumbers" />
+        </AssociationSet>
+        <AssociationSet Name="WarehouseTransfer_WarehouseTransferLines" Association="Exact.Web.Api.Models.Inventory.WarehouseTransfer_WarehouseTransferLines">
+          <End Role="WarehouseTransfer" EntitySet="WarehouseTransfers" />
+          <End Role="WarehouseTransferLines" EntitySet="WarehouseTransferLines" />
+        </AssociationSet>
+        <AssociationSet Name="WarehouseTransferLine_BatchNumbers" Association="Exact.Web.Api.Models.Inventory.WarehouseTransferLine_BatchNumbers">
+          <End Role="WarehouseTransferLine" EntitySet="WarehouseTransferLines" />
+          <End Role="BatchNumbers" EntitySet="StockBatchNumbers" />
+        </AssociationSet>
+        <AssociationSet Name="WarehouseTransferLine_SerialNumbers" Association="Exact.Web.Api.Models.Inventory.WarehouseTransferLine_SerialNumbers">
+          <End Role="WarehouseTransferLine" EntitySet="WarehouseTransferLines" />
+          <End Role="SerialNumbers" EntitySet="StockSerialNumbers" />
+        </AssociationSet>
+        <AssociationSet Name="FinishAssemblyOrder_BatchNumbers" Association="Exact.Web.Api.Models.Inventory.FinishAssemblyOrder_BatchNumbers">
+          <End Role="FinishAssemblyOrder" EntitySet="FinishAssemblyOrder" />
+          <End Role="BatchNumbers" EntitySet="StockBatchNumbers" />
+        </AssociationSet>
+        <AssociationSet Name="FinishAssemblyOrder_SerialNumbers" Association="Exact.Web.Api.Models.Inventory.FinishAssemblyOrder_SerialNumbers">
+          <End Role="FinishAssemblyOrder" EntitySet="FinishAssemblyOrder" />
+          <End Role="SerialNumbers" EntitySet="StockSerialNumbers" />
+        </AssociationSet>
+        <AssociationSet Name="AssemblyBillOfMaterialHeader_AssemblyBillOfMaterialMaterials" Association="Exact.Web.Api.Models.Inventory.AssemblyBillOfMaterialHeader_AssemblyBillOfMaterialMaterials">
+          <End Role="AssemblyBillOfMaterialHeader" EntitySet="AssemblyBillOfMaterialHeader" />
+          <End Role="AssemblyBillOfMaterialMaterials" EntitySet="AssemblyBillOfMaterialMaterials" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

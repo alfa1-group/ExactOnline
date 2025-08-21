@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityType Name="GLAccountPercentages">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ExpenseNonDeductiblePercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="GLAccount" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PrivateUsePercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATNonDeductiblePercentage" Type="Edm.Double" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ExchangeRate">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Rate" Type="Edm.Double" Nullable="true" />
+        <Property Name="SourceCurrency" Type="Edm.String" Nullable="true" />
+        <Property Name="SourceCurrencyDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="TargetCurrency" Type="Edm.String" Nullable="true" />
+        <Property Name="TargetCurrencyDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="FinancialPeriod">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="FinPeriod" Type="Edm.Int16" Nullable="true" />
+        <Property Name="FinYear" Type="Edm.Int16" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+      </EntityType>
+      <EntityType Name="GLAccount">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <NavigationProperty Name="DeductibilityPercentages" Relationship="Exact.Web.Api.Models.GLAccount_DeductibilityPercentages" FromRole="GLAccount" ToRole="DeductibilityPercentages" />
+        <Property Name="AssimilatedVATBox" Type="Edm.Int16" Nullable="true" />
+        <Property Name="BalanceSide" Type="Edm.String" Nullable="true" />
+        <Property Name="BalanceType" Type="Edm.String" Nullable="true" />
+        <Property Name="BelcotaxType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Compress" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Costcenter" Type="Edm.String" Nullable="true" />
+        <Property Name="CostcenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Costunit" Type="Edm.String" Nullable="true" />
+        <Property Name="CostunitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="DescriptionTermID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ExcludeVATListing" Type="Edm.Byte" Nullable="false" />
+        <Property Name="ExpenseNonDeductiblePercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="IsBlocked" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Matching" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PrivateGLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PrivatePercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="ReportingCode" Type="Edm.String" Nullable="true" />
+        <Property Name="RevalueCurrency" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="SearchCode" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="true" />
+        <Property Name="TypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="UseCostcenter" Type="Edm.Byte" Nullable="true" />
+        <Property Name="UseCostunit" Type="Edm.Byte" Nullable="true" />
+        <Property Name="VATCode" Type="Edm.String" Nullable="true" />
+        <Property Name="VATDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATGLAccountType" Type="Edm.String" Nullable="true" />
+        <Property Name="VATNonDeductibleGLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="VATNonDeductiblePercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATSystem" Type="Edm.String" Nullable="true" />
+        <Property Name="YearEndCostGLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="YearEndReflectionGLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AllowCostsInSales" Type="Edm.Byte" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="GLClassification">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Abstract" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Balance" Type="Edm.String" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="IsTupleSubElement" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Nillable" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Parent" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PeriodType" Type="Edm.String" Nullable="true" />
+        <Property Name="SubstitutionGroup" Type="Edm.String" Nullable="true" />
+        <Property Name="TaxonomyNamespace" Type="Edm.Guid" Nullable="true" />
+        <Property Name="TaxonomyNamespaceDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+      <EntityType Name="GLScheme">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Main" Type="Edm.Byte" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="TargetNamespace" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Journal">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AllowVariableCurrency" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="AllowVariableExchangeRate" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="AllowVAT" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="AutoSave" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Bank" Type="Edm.Guid" Nullable="true" />
+        <Property Name="BankAccountBICCode" Type="Edm.String" Nullable="true" />
+        <Property Name="BankAccountCountry" Type="Edm.String" Nullable="true" />
+        <Property Name="BankAccountDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="BankAccountIBAN" Type="Edm.String" Nullable="true" />
+        <Property Name="BankAccountID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="BankAccountIncludingMask" Type="Edm.String" Nullable="true" />
+        <Property Name="BankAccountUseSEPA" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="BankAccountUseSepaDirectDebit" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="BankName" Type="Edm.String" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="CurrencyDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="GLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IsBlocked" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentInTransitAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PaymentServiceAccountIdentifier" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentServiceProvider" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PaymentServiceProviderName" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="GLTaxonomyMapping">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Classification" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ClassificationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ClassificationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="GLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="GLSchemeCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLSchemeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="GLSchemeID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <Association Name="GLAccount_DeductibilityPercentages">
+        <End Role="GLAccount" Type="Exact.Web.Api.Models.GLAccount" Multiplicity="*" />
+        <End Role="DeductibilityPercentages" Type="Exact.Web.Api.Models.GLAccountPercentages" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.Financial" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityType Name="GLTransactionSource">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="DescriptionSuffix" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="GLTransactionType">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="DescriptionSuffix" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="OfficialReturn">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Amount" Type="Edm.Double" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentSubject" Type="Edm.String" Nullable="true" />
+        <Property Name="Frequency" Type="Edm.Int16" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IsCorrection" Type="Edm.Byte" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Period" Type="Edm.Int16" Nullable="true" />
+        <Property Name="PresentationDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Reference" Type="Edm.String" Nullable="true" />
+        <Property Name="Source" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Year" Type="Edm.Int16" Nullable="true" />
+        <Property Name="TypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PresentationData" Type="Edm.String" Nullable="true" />
+        <Property Name="PresentationFile" Type="Edm.Binary" Nullable="true" />
+        <Property Name="PresentationFileName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ReportingBalance">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Amount" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountCredit" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountDebit" Type="Edm.Double" Nullable="true" />
+        <Property Name="BalanceType" Type="Edm.String" Nullable="true" />
+        <Property Name="CostCenterCode" Type="Edm.String" Nullable="true" />
+        <Property Name="CostCenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CostUnitCode" Type="Edm.String" Nullable="true" />
+        <Property Name="CostUnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Count" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="GLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ReportingPeriod" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ReportingYear" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CashflowBalance">
+        <Key>
+          <PropertyRef Name="JournalID" />
+        </Key>
+        <Property Name="Amount" Type="Edm.Double" Nullable="true" />
+        <Property Name="BankAccountDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="BankAccountIBAN" Type="Edm.String" Nullable="true" />
+        <Property Name="BankAccountID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="BankAccountIncludingMask" Type="Edm.String" Nullable="true" />
+        <Property Name="BankAccountNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="BankLogoUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="CurrencyDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="JournalCode" Type="Edm.String" Nullable="true" />
+        <Property Name="JournalDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="JournalID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="JournalType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="LastUpdated" Type="Edm.DateTime" Nullable="true" />
+      </EntityType>
+      <EntityType Name="RGSBrugstaatDetails">
+        <Key>
+          <PropertyRef Name="LedgerAccountId" />
+        </Key>
+        <Property Name="RgsSchema" Type="Edm.Guid" Nullable="false" />
+        <Property Name="TargetNamespace" Type="Edm.String" Nullable="true" />
+        <Property Name="FinancialYear" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AfterEntry" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LedgerAccountId" Type="Edm.String" Nullable="false" />
+        <Property Name="LedgerDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="RgsCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ClosingBalance" Type="Edm.Double" Nullable="false" />
+        <Property Name="OpeningBalance" Type="Edm.Double" Nullable="false" />
+        <Property Name="ProfitLossLastYear" Type="Edm.Double" Nullable="false" />
+      </EntityType>
+      <EntityType Name="RGSAccountSchema">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="TargetNamespace" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Prefix" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountsLinked" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="ProcessReturn">
+        <Key>
+          <PropertyRef Name="Request" />
+        </Key>
+        <Property Name="Request" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Processed" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="RGSBrugstaatMetaData">
+        <Property Name="RgsSchema" Type="Edm.Guid" Nullable="false" />
+        <Property Name="TargetNamespace" Type="Edm.String" Nullable="true" />
+        <Property Name="FinancialYear" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Timestamp" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="RSIN" Type="Edm.String" Nullable="true" />
+        <Property Name="KVKNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="VatNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="CompanyName" Type="Edm.String" Nullable="true" />
+        <Property Name="SoftwarePackage" Type="Edm.String" Nullable="true" />
+        <Property Name="EmailaddressReceived" Type="Edm.String" Nullable="true" />
+        <Property Name="RgsVersion" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Financial" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="DeductibilityPercentages" EntityType="Exact.Web.Api.Models.GLAccountPercentages" />
+        <EntitySet Name="ExchangeRates" EntityType="Exact.Web.Api.Models.ExchangeRate" />
+        <EntitySet Name="FinancialPeriods" EntityType="Exact.Web.Api.Models.FinancialPeriod" />
+        <EntitySet Name="GLAccounts" EntityType="Exact.Web.Api.Models.GLAccount" />
+        <EntitySet Name="GLClassifications" EntityType="Exact.Web.Api.Models.GLClassification" />
+        <EntitySet Name="GLSchemes" EntityType="Exact.Web.Api.Models.GLScheme" />
+        <EntitySet Name="GLTransactionSources" EntityType="Exact.Web.Api.Models.Financial.GLTransactionSource" />
+        <EntitySet Name="GLTransactionTypes" EntityType="Exact.Web.Api.Models.Financial.GLTransactionType" />
+        <EntitySet Name="Journals" EntityType="Exact.Web.Api.Models.Journal" />
+        <EntitySet Name="OfficialReturns" EntityType="Exact.Web.Api.Models.Financial.OfficialReturn" />
+        <EntitySet Name="ReportingBalance" EntityType="Exact.Web.Api.Models.Financial.ReportingBalance" />
+        <EntitySet Name="CashflowBalance" EntityType="Exact.Web.Api.Models.Financial.CashflowBalance" />
+        <EntitySet Name="GLAccountClassificationMappings" EntityType="Exact.Web.Api.Models.GLTaxonomyMapping" />
+        <EntitySet Name="RgsBrugstaatDetailData" EntityType="Exact.Web.Api.Models.Financial.RGSBrugstaatDetails" />
+        <EntitySet Name="RgsAccountSchemes" EntityType="Exact.Web.Api.Models.Financial.RGSAccountSchema" />
+        <EntitySet Name="ProcessReturn" EntityType="Exact.Web.Api.Models.Financial.ProcessReturn" />
+        <AssociationSet Name="GLAccount_DeductibilityPercentages" Association="Exact.Web.Api.Models.GLAccount_DeductibilityPercentages">
+          <End Role="GLAccount" EntitySet="GLAccounts" />
+          <End Role="DeductibilityPercentages" EntitySet="DeductibilityPercentages" />
+        </AssociationSet>
+        <FunctionImport Name="RgsBrugstaatMetaData" ReturnType="Exact.Web.Api.Models.Financial.RGSBrugstaatMetaData" m:HttpMethod="GET">
+          <Parameter Name="financialYear" Type="Edm.Int32" Mode="In" />
+          <Parameter Name="rgsSchema" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="RgsBrugstaatDetailData" EntitySet="RgsBrugstaatDetailData" ReturnType="Collection(Exact.Web.Api.Models.Financial.RGSBrugstaatDetails)" m:HttpMethod="GET">
+          <Parameter Name="financialYear" Type="Edm.Int32" Mode="In" />
+          <Parameter Name="rgsSchema" Type="Edm.Guid" Mode="In" />
+          <Parameter Name="afterEntry" Type="Edm.Boolean" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="RgsAccountSchemes" EntitySet="RgsAccountSchemes" ReturnType="Collection(Exact.Web.Api.Models.Financial.RGSAccountSchema)" m:HttpMethod="GET" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Exact Online Kiota AuthenticationProvider for ExactOnlineServiceClient</Description>
+    <TargetFrameworks>netstandard2.1;net8.0</TargetFrameworks>
+    <PackageTags>Exact;ExactOnline;C#;APIs;Client;Authentication;Tokens;RefreshToken;AccessToken;Kiota;IAuthenticationProvider;AuthenticationProvider</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExactOnline.Api.Client.Authentication\ExactOnline.Api.Client.Authentication.csproj" />
+    <ProjectReference Include="..\ExactOnline.Api.Client\ExactOnline.Api.Client.csproj" />
+  </ItemGroup>
+
+</Project>

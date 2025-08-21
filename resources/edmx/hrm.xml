@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="Costcenter">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Active" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Costunit">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Division">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="BlockingStatus" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Code" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" />
+        <Property Name="CountryDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="CurrencyDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Customer" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CustomerCode" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomerName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="HID" Type="Edm.Int64" Nullable="true" />
+        <Property Name="Main" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="OBNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="SiretNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+        <Property Name="TaxOfficeNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="TaxReferenceNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="TemplateCode" Type="Edm.String" Nullable="true" />
+        <Property Name="VATNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="Website" Type="Edm.String" Nullable="true" />
+        <Property Name="ArchiveDate" Type="Edm.DateTime" Nullable="true" />
+      </EntityType>
+      <Association Name="Division_Class_01">
+        <End Role="Division" Type="Exact.Web.Api.Models.Division" Multiplicity="*" />
+        <End Role="Class_01" Type="Exact.Web.Api.Models.HRM.DivisionClass" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Division_Class_02">
+        <End Role="Division" Type="Exact.Web.Api.Models.Division" Multiplicity="*" />
+        <End Role="Class_02" Type="Exact.Web.Api.Models.HRM.DivisionClass" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Division_Class_03">
+        <End Role="Division" Type="Exact.Web.Api.Models.Division" Multiplicity="*" />
+        <End Role="Class_03" Type="Exact.Web.Api.Models.HRM.DivisionClass" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Division_Class_04">
+        <End Role="Division" Type="Exact.Web.Api.Models.Division" Multiplicity="*" />
+        <End Role="Class_04" Type="Exact.Web.Api.Models.HRM.DivisionClass" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Division_Class_05">
+        <End Role="Division" Type="Exact.Web.Api.Models.Division" Multiplicity="*" />
+        <End Role="Class_05" Type="Exact.Web.Api.Models.HRM.DivisionClass" Multiplicity="0..1" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.HRM" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="DivisionClass">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ClassNameCustomer" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ClassNameID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ClassNameDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="SequenceNr" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="DescriptionTermID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DivisionClassName">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Customer" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="DescriptionTermID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="SequenceNr" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="DivisionClassValue">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Class_01_ID" Type="Edm.Guid" Nullable="true" />
+        <NavigationProperty Name="Class_01" Relationship="Exact.Web.Api.Models.HRM.DivisionClassValue_Class_01" FromRole="DivisionClassValue" ToRole="Class_01" />
+        <Property Name="Class_02_ID" Type="Edm.Guid" Nullable="true" />
+        <NavigationProperty Name="Class_02" Relationship="Exact.Web.Api.Models.HRM.DivisionClassValue_Class_02" FromRole="DivisionClassValue" ToRole="Class_02" />
+        <Property Name="Class_03_ID" Type="Edm.Guid" Nullable="true" />
+        <NavigationProperty Name="Class_03" Relationship="Exact.Web.Api.Models.HRM.DivisionClassValue_Class_03" FromRole="DivisionClassValue" ToRole="Class_03" />
+        <Property Name="Class_04_ID" Type="Edm.Guid" Nullable="true" />
+        <NavigationProperty Name="Class_04" Relationship="Exact.Web.Api.Models.HRM.DivisionClassValue_Class_04" FromRole="DivisionClassValue" ToRole="Class_04" />
+        <Property Name="Class_05_ID" Type="Edm.Guid" Nullable="true" />
+        <NavigationProperty Name="Class_05" Relationship="Exact.Web.Api.Models.HRM.DivisionClassValue_Class_05" FromRole="DivisionClassValue" ToRole="Class_05" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Customer" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Department">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Costcenter" Type="Edm.String" Nullable="true" />
+        <Property Name="CostcenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="JobGroup">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="JobTitle">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="JobCode" Type="Edm.String" Nullable="true" />
+        <Property Name="JobGroup" Type="Edm.Guid" Nullable="true" />
+        <Property Name="JobGroupCode" Type="Edm.String" Nullable="true" />
+        <Property Name="JobGroupDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="JobLevelFrom" Type="Edm.Int32" Nullable="true" />
+        <Property Name="JobLevelTo" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Schedule">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Active" Type="Edm.Byte" Nullable="true" />
+        <Property Name="AverageHours" Type="Edm.Double" Nullable="true" />
+        <Property Name="Days" Type="Edm.Double" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmploymentCLA" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmploymentHID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EmploymentNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LeaveHoursCompensation" Type="Edm.Double" Nullable="true" />
+        <NavigationProperty Name="ScheduleEntries" Relationship="Exact.Web.Api.Models.HRM.Schedule_ScheduleEntries" FromRole="Schedule" ToRole="ScheduleEntries" />
+        <Property Name="ScheduleType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="BillabilityTarget" Type="Edm.Double" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employment" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Hours" Type="Edm.Double" Nullable="true" />
+        <Property Name="Main" Type="Edm.Byte" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentParttimeFactor" Type="Edm.Double" Nullable="true" />
+        <Property Name="ScheduleTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="StartWeek" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ScheduleEntry">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Break" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="BreakEndTime" Type="Edm.String" Nullable="true" />
+        <Property Name="BreakStartTime" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Day" Type="Edm.Int32" Nullable="true" />
+        <Property Name="DayIsSelected" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Employment" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmploymentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndTime" Type="Edm.String" Nullable="true" />
+        <Property Name="Hours" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Schedule" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ScheduleType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StartTime" Type="Edm.String" Nullable="true" />
+        <Property Name="WeekNumber" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="LeaveRegistration">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="EndTime" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Hours" Type="Edm.Double" Nullable="false" />
+        <Property Name="HoursFirstDay" Type="Edm.Double" Nullable="true" />
+        <Property Name="HoursLastDay" Type="Edm.Double" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="LeaveType" Type="Edm.Guid" Nullable="false" />
+        <Property Name="LeaveTypeCode" Type="Edm.String" Nullable="true" />
+        <Property Name="LeaveTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StartTime" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="false" />
+      </EntityType>
+      <EntityType Name="AbsenceRegistration">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Cause" Type="Edm.Int16" Nullable="true" />
+        <Property Name="CauseCode" Type="Edm.String" Nullable="true" />
+        <Property Name="CauseDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Kind" Type="Edm.Int16" Nullable="true" />
+        <Property Name="KindCode" Type="Edm.String" Nullable="true" />
+        <Property Name="KindDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="AbsenceRegistrationTransactions" Relationship="Exact.Web.Api.Models.HRM.AbsenceRegistration_AbsenceRegistrationTransactions" FromRole="AbsenceRegistration" ToRole="AbsenceRegistrationTransactions" />
+      </EntityType>
+      <EntityType Name="AbsenceRegistrationTransaction">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AbsenceRegistration" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EndTime" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ExpectedEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Hours" Type="Edm.Double" Nullable="false" />
+        <Property Name="HoursFirstDay" Type="Edm.Double" Nullable="true" />
+        <Property Name="HoursLastDay" Type="Edm.Double" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="NotificationMoment" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PercentageDisablement" Type="Edm.Double" Nullable="false" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StartTime" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="false" />
+      </EntityType>
+      <EntityType Name="LeaveBuildUpRegistration">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Date" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Hours" Type="Edm.Double" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="LeaveType" Type="Edm.Guid" Nullable="false" />
+        <Property Name="LeaveTypeCode" Type="Edm.String" Nullable="true" />
+        <Property Name="LeaveTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="false" />
+      </EntityType>
+      <EntityType Name="CompanyCar">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Asset" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AssetDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Brand" Type="Edm.String" Nullable="true" />
+        <Property Name="CatalogueAmount" Type="Edm.Double" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="false" />
+        <Property Name="DateFirstAdmission" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="LicensePlate" Type="Edm.String" Nullable="true" />
+        <Property Name="MarginCar" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Model" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="PictureUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="PictureFileName" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" />
+      </EntityType>
+      <EntityType Name="EmploymentCompanyCar">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="CompanyCar" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Employment" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+      <EntityType Name="LeaveAbsenceHoursByDay">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Date" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Employment" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmploymentHID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndTime" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ExternalIDInt" Type="Edm.Int64" Nullable="true" />
+        <Property Name="ExternalLeaveAbsenceType" Type="Edm.Int64" Nullable="true" />
+        <Property Name="Hours" Type="Edm.Double" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StartTime" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int16" Nullable="true" />
+      </EntityType>
+      <Association Name="DivisionClassValue_Class_01">
+        <End Role="DivisionClassValue" Type="Exact.Web.Api.Models.HRM.DivisionClassValue" Multiplicity="*" />
+        <End Role="Class_01" Type="Exact.Web.Api.Models.HRM.DivisionClass" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DivisionClassValue_Class_02">
+        <End Role="DivisionClassValue" Type="Exact.Web.Api.Models.HRM.DivisionClassValue" Multiplicity="*" />
+        <End Role="Class_02" Type="Exact.Web.Api.Models.HRM.DivisionClass" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DivisionClassValue_Class_03">
+        <End Role="DivisionClassValue" Type="Exact.Web.Api.Models.HRM.DivisionClassValue" Multiplicity="*" />
+        <End Role="Class_03" Type="Exact.Web.Api.Models.HRM.DivisionClass" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DivisionClassValue_Class_04">
+        <End Role="DivisionClassValue" Type="Exact.Web.Api.Models.HRM.DivisionClassValue" Multiplicity="*" />
+        <End Role="Class_04" Type="Exact.Web.Api.Models.HRM.DivisionClass" Multiplicity="0..1" />
+      </Association>
+      <Association Name="DivisionClassValue_Class_05">
+        <End Role="DivisionClassValue" Type="Exact.Web.Api.Models.HRM.DivisionClassValue" Multiplicity="*" />
+        <End Role="Class_05" Type="Exact.Web.Api.Models.HRM.DivisionClass" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Schedule_ScheduleEntries">
+        <End Role="Schedule" Type="Exact.Web.Api.Models.HRM.Schedule" Multiplicity="*" />
+        <End Role="ScheduleEntries" Type="Exact.Web.Api.Models.HRM.ScheduleEntry" Multiplicity="*" />
+      </Association>
+      <Association Name="AbsenceRegistration_AbsenceRegistrationTransactions">
+        <End Role="AbsenceRegistration" Type="Exact.Web.Api.Models.HRM.AbsenceRegistration" Multiplicity="*" />
+        <End Role="AbsenceRegistrationTransactions" Type="Exact.Web.Api.Models.HRM.AbsenceRegistrationTransaction" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.HRM" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Costcenters" EntityType="Exact.Web.Api.Models.Costcenter" />
+        <EntitySet Name="DivisionClasses" EntityType="Exact.Web.Api.Models.HRM.DivisionClass" />
+        <EntitySet Name="DivisionClassNames" EntityType="Exact.Web.Api.Models.HRM.DivisionClassName" />
+        <EntitySet Name="DivisionClassValues" EntityType="Exact.Web.Api.Models.HRM.DivisionClassValue" />
+        <EntitySet Name="Costunits" EntityType="Exact.Web.Api.Models.Costunit" />
+        <EntitySet Name="Divisions" EntityType="Exact.Web.Api.Models.Division" />
+        <EntitySet Name="Departments" EntityType="Exact.Web.Api.Models.HRM.Department" />
+        <EntitySet Name="JobGroups" EntityType="Exact.Web.Api.Models.HRM.JobGroup" />
+        <EntitySet Name="JobTitles" EntityType="Exact.Web.Api.Models.HRM.JobTitle" />
+        <EntitySet Name="Schedules" EntityType="Exact.Web.Api.Models.HRM.Schedule" />
+        <EntitySet Name="ScheduleEntries" EntityType="Exact.Web.Api.Models.HRM.ScheduleEntry" />
+        <EntitySet Name="LeaveRegistrations" EntityType="Exact.Web.Api.Models.HRM.LeaveRegistration" />
+        <EntitySet Name="AbsenceRegistrations" EntityType="Exact.Web.Api.Models.HRM.AbsenceRegistration" />
+        <EntitySet Name="AbsenceRegistrationTransactions" EntityType="Exact.Web.Api.Models.HRM.AbsenceRegistrationTransaction" />
+        <EntitySet Name="LeaveBuildUpRegistrations" EntityType="Exact.Web.Api.Models.HRM.LeaveBuildUpRegistration" />
+        <EntitySet Name="CompanyCars" EntityType="Exact.Web.Api.Models.HRM.CompanyCar" />
+        <EntitySet Name="EmploymentCompanyCars" EntityType="Exact.Web.Api.Models.HRM.EmploymentCompanyCar" />
+        <EntitySet Name="LeaveAbsenceHoursByDay" EntityType="Exact.Web.Api.Models.HRM.LeaveAbsenceHoursByDay" />
+        <AssociationSet Name="DivisionClassValue_Class_01" Association="Exact.Web.Api.Models.HRM.DivisionClassValue_Class_01">
+          <End Role="DivisionClassValue" EntitySet="DivisionClassValues" />
+          <End Role="Class_01" EntitySet="DivisionClasses" />
+        </AssociationSet>
+        <AssociationSet Name="DivisionClassValue_Class_02" Association="Exact.Web.Api.Models.HRM.DivisionClassValue_Class_02">
+          <End Role="DivisionClassValue" EntitySet="DivisionClassValues" />
+          <End Role="Class_02" EntitySet="DivisionClasses" />
+        </AssociationSet>
+        <AssociationSet Name="DivisionClassValue_Class_03" Association="Exact.Web.Api.Models.HRM.DivisionClassValue_Class_03">
+          <End Role="DivisionClassValue" EntitySet="DivisionClassValues" />
+          <End Role="Class_03" EntitySet="DivisionClasses" />
+        </AssociationSet>
+        <AssociationSet Name="DivisionClassValue_Class_04" Association="Exact.Web.Api.Models.HRM.DivisionClassValue_Class_04">
+          <End Role="DivisionClassValue" EntitySet="DivisionClassValues" />
+          <End Role="Class_04" EntitySet="DivisionClasses" />
+        </AssociationSet>
+        <AssociationSet Name="DivisionClassValue_Class_05" Association="Exact.Web.Api.Models.HRM.DivisionClassValue_Class_05">
+          <End Role="DivisionClassValue" EntitySet="DivisionClassValues" />
+          <End Role="Class_05" EntitySet="DivisionClasses" />
+        </AssociationSet>
+        <AssociationSet Name="Division_Class_01" Association="Exact.Web.Api.Models.Division_Class_01">
+          <End Role="Division" EntitySet="Divisions" />
+          <End Role="Class_01" EntitySet="DivisionClasses" />
+        </AssociationSet>
+        <AssociationSet Name="Division_Class_02" Association="Exact.Web.Api.Models.Division_Class_02">
+          <End Role="Division" EntitySet="Divisions" />
+          <End Role="Class_02" EntitySet="DivisionClasses" />
+        </AssociationSet>
+        <AssociationSet Name="Division_Class_03" Association="Exact.Web.Api.Models.Division_Class_03">
+          <End Role="Division" EntitySet="Divisions" />
+          <End Role="Class_03" EntitySet="DivisionClasses" />
+        </AssociationSet>
+        <AssociationSet Name="Division_Class_04" Association="Exact.Web.Api.Models.Division_Class_04">
+          <End Role="Division" EntitySet="Divisions" />
+          <End Role="Class_04" EntitySet="DivisionClasses" />
+        </AssociationSet>
+        <AssociationSet Name="Division_Class_05" Association="Exact.Web.Api.Models.Division_Class_05">
+          <End Role="Division" EntitySet="Divisions" />
+          <End Role="Class_05" EntitySet="DivisionClasses" />
+        </AssociationSet>
+        <AssociationSet Name="Schedule_ScheduleEntries" Association="Exact.Web.Api.Models.HRM.Schedule_ScheduleEntries">
+          <End Role="Schedule" EntitySet="Schedules" />
+          <End Role="ScheduleEntries" EntitySet="ScheduleEntries" />
+        </AssociationSet>
+        <AssociationSet Name="AbsenceRegistration_AbsenceRegistrationTransactions" Association="Exact.Web.Api.Models.HRM.AbsenceRegistration_AbsenceRegistrationTransactions">
+          <End Role="AbsenceRegistration" EntitySet="AbsenceRegistrations" />
+          <End Role="AbsenceRegistrationTransactions" EntitySet="AbsenceRegistrationTransactions" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

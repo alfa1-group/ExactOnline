@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models.Activities" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="Task">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ActionDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="Contact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ContactFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentSubject" Type="Edm.String" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="HID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Opportunity" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OpportunityName" Type="Edm.String" Nullable="true" />
+        <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StatusDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="TaskType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CustomTaskType" Type="Edm.Guid" Nullable="true" />
+        <Property Name="TaskTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="User" Type="Edm.Guid" Nullable="true" />
+        <Property Name="UserFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Complaint">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="AssignedTo" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AssignedToFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Complaint" Type="Edm.String" Nullable="true" />
+        <Property Name="Contact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ContactFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentSubject" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="HID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="NextAction" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="ReceiptDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StatusDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ServiceRequest">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="AssignedTo" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AssignedToFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Contact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ContactFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentSubject" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="HID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="NextAction" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="ReceiptDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StatusDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CommunicationNote">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="Campaign" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CampaignDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Contact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ContactFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Date" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentSubject" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="HID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Opportunity" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OpportunityName" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StatusDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Subject" Type="Edm.String" Nullable="true" />
+        <Property Name="User" Type="Edm.Guid" Nullable="true" />
+        <Property Name="UserFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Event">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="Campaign" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CampaignDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Contact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ContactFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentSubject" Type="Edm.String" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="HID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Opportunity" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OpportunityName" Type="Edm.String" Nullable="true" />
+        <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StatusDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="User" Type="Edm.Guid" Nullable="true" />
+        <Property Name="UserFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <Association Name="Task_Attachments">
+        <End Role="Task" Type="Exact.Web.Api.Models.Activities.Task" Multiplicity="*" />
+        <End Role="Attachments" Type="Exact.Web.Api.Models.Workflow.RequestAttachment" Multiplicity="*" />
+      </Association>
+      <Association Name="Complaint_Attachments">
+        <End Role="Complaint" Type="Exact.Web.Api.Models.Activities.Complaint" Multiplicity="*" />
+        <End Role="Attachments" Type="Exact.Web.Api.Models.Workflow.RequestAttachment" Multiplicity="*" />
+      </Association>
+      <Association Name="ServiceRequest_Attachments">
+        <End Role="ServiceRequest" Type="Exact.Web.Api.Models.Activities.ServiceRequest" Multiplicity="*" />
+        <End Role="Attachments" Type="Exact.Web.Api.Models.Workflow.RequestAttachment" Multiplicity="*" />
+      </Association>
+      <Association Name="CommunicationNote_Attachments">
+        <End Role="CommunicationNote" Type="Exact.Web.Api.Models.Activities.CommunicationNote" Multiplicity="*" />
+        <End Role="Attachments" Type="Exact.Web.Api.Models.Workflow.RequestAttachment" Multiplicity="*" />
+      </Association>
+      <Association Name="Event_Attachments">
+        <End Role="Event" Type="Exact.Web.Api.Models.Activities.Event" Multiplicity="*" />
+        <End Role="Attachments" Type="Exact.Web.Api.Models.Workflow.RequestAttachment" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.Activities.InContextQA" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="InContextQARequest">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="CreatedUtcDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="TypeHID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StatusDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ContextType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContextId" Type="Edm.Guid" Nullable="false" />
+        <NavigationProperty Name="Messages" Relationship="Exact.Web.Api.Models.Activities.InContextQA.InContextQARequest_Messages" FromRole="InContextQARequest" ToRole="Messages" />
+        <Property Name="IsRequestCreator" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityType Name="RequestMessage">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="UserId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Account" Type="Edm.Guid" Nullable="false" />
+        <Property Name="UserFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="RequestId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Content" Type="Edm.String" Nullable="true" />
+        <Property Name="CreatedUtcDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DocumentId" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentEntryId" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentStatus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IsSystem" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MailMessageId" Type="Edm.Guid" Nullable="true" />
+        <Property Name="RepliedMailMessageId" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+      <Association Name="InContextQARequest_Messages">
+        <End Role="InContextQARequest" Type="Exact.Web.Api.Models.Activities.InContextQA.InContextQARequest" Multiplicity="*" />
+        <End Role="Messages" Type="Exact.Web.Api.Models.Activities.InContextQA.RequestMessage" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.Workflow" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="RequestAttachment" BaseType="Exact.Web.Api.Models.General.BinaryAttachmentBase">
+        <Property Name="Request" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.General" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="BinaryAttachmentBase">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="DownloadUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="FileName" Type="Edm.String" Nullable="true" />
+        <Property Name="FileSize" Type="Edm.Double" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Activities" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Tasks" EntityType="Exact.Web.Api.Models.Activities.Task" />
+        <EntitySet Name="Complaints" EntityType="Exact.Web.Api.Models.Activities.Complaint" />
+        <EntitySet Name="ServiceRequests" EntityType="Exact.Web.Api.Models.Activities.ServiceRequest" />
+        <EntitySet Name="CommunicationNotes" EntityType="Exact.Web.Api.Models.Activities.CommunicationNote" />
+        <EntitySet Name="Events" EntityType="Exact.Web.Api.Models.Activities.Event" />
+        <EntitySet Name="InContextRequests" EntityType="Exact.Web.Api.Models.Activities.InContextQA.InContextQARequest" />
+        <EntitySet Name="Messages" EntityType="Exact.Web.Api.Models.Activities.InContextQA.RequestMessage" />
+        <EntitySet Name="RequestAttachments" EntityType="Exact.Web.Api.Models.Workflow.RequestAttachment" />
+        <AssociationSet Name="Task_Attachments" Association="Exact.Web.Api.Models.Activities.Task_Attachments">
+          <End Role="Task" EntitySet="Tasks" />
+          <End Role="Attachments" EntitySet="RequestAttachments" />
+        </AssociationSet>
+        <AssociationSet Name="Complaint_Attachments" Association="Exact.Web.Api.Models.Activities.Complaint_Attachments">
+          <End Role="Complaint" EntitySet="Complaints" />
+          <End Role="Attachments" EntitySet="RequestAttachments" />
+        </AssociationSet>
+        <AssociationSet Name="ServiceRequest_Attachments" Association="Exact.Web.Api.Models.Activities.ServiceRequest_Attachments">
+          <End Role="ServiceRequest" EntitySet="ServiceRequests" />
+          <End Role="Attachments" EntitySet="RequestAttachments" />
+        </AssociationSet>
+        <AssociationSet Name="CommunicationNote_Attachments" Association="Exact.Web.Api.Models.Activities.CommunicationNote_Attachments">
+          <End Role="CommunicationNote" EntitySet="CommunicationNotes" />
+          <End Role="Attachments" EntitySet="RequestAttachments" />
+        </AssociationSet>
+        <AssociationSet Name="Event_Attachments" Association="Exact.Web.Api.Models.Activities.Event_Attachments">
+          <End Role="Event" EntitySet="Events" />
+          <End Role="Attachments" EntitySet="RequestAttachments" />
+        </AssociationSet>
+        <AssociationSet Name="InContextQARequest_Messages" Association="Exact.Web.Api.Models.Activities.InContextQA.InContextQARequest_Messages">
+          <End Role="InContextQARequest" EntitySet="InContextRequests" />
+          <End Role="Messages" EntitySet="Messages" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

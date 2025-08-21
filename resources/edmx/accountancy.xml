@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityType Name="InvolvedUser">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountCity" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountLogoThumbnailUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountStatus" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountIsSupplier" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InvolvedUserRole" Type="Edm.Guid" Nullable="true" />
+        <Property Name="InvolvedUserRoleDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="IsMainContact" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="User" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PersonEmail" Type="Edm.String" Nullable="true" />
+        <Property Name="PersonPhone" Type="Edm.String" Nullable="true" />
+        <Property Name="PersonPhoneExtension" Type="Edm.String" Nullable="true" />
+        <Property Name="PersonPictureThumbnailUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="UserFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="InvolvedUserRole">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="DescriptionTermID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.Accountancy" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityType Name="TaskType">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="DescriptionTermID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="AccountInvolvedAccount">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InvolvedAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="InvolvedAccountRelationTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="InvolvedAccountRelationTypeDescriptionTermId" Type="Edm.Int32" Nullable="true" />
+        <Property Name="InvolvedAccountRelationTypeId" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SolutionLink">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Account" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ExternalSolutionCode" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ExternalSolutionName" Type="Edm.String" Nullable="true" />
+        <Property Name="ExternalSolutionUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InternalSolutionDivision" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="OtherExternalSolutionName" Type="Edm.String" Nullable="true" />
+        <Property Name="SolutionType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="ExcludedDivision">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ClientDivision" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Customer" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="AccountOwner">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="OwnerAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OwnerAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="OwnerAccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Shares" Type="Edm.Double" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CollaborationRequest">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Customer" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Accountant" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="false" />
+        <Property Name="InvitationID" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+      <EntityType Name="StopCollaboration">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Customer" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Accountant" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DeclarationUpload">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Action" Type="Edm.Int32" Nullable="false" />
+        <Property Name="XBRLDocument" Type="Edm.Binary" Nullable="true" />
+        <Property Name="Attachment" Type="Edm.Binary" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Amount" Type="Edm.Decimal" Nullable="true" />
+        <Property Name="YourReference" Type="Edm.String" Nullable="true" />
+        <Property Name="DueDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Status" Type="Exact.Web.Api.Models.Accountancy.DeclarationInfo_DeclarationStatus" Nullable="false" />
+        <Property Name="Type" Type="Exact.Web.Api.Models.Accountancy.DeclarationInfo_DeclarationType" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="DeclarationInfo_DeclarationStatus">
+        <Property Name="Code" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="ResponseMessage" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+      <ComplexType Name="DeclarationInfo_DeclarationType">
+        <Property Name="Code" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+      <EntityType Name="DeclarationData">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ParentID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="HasChildren" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Caption" Type="Edm.String" Nullable="true" />
+        <Property Name="DataType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Values" Type="Edm.String" Nullable="true" />
+        <Property Name="Level" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Dimensions" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="QuestionList">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Sender" Type="Exact.Web.Api.Models.Accountancy.Sender" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="Sender">
+        <Property Name="Id" Type="Edm.Guid" Nullable="true" />
+        <Property Name="FirstName" Type="Edm.String" Nullable="true" />
+        <Property Name="LastName" Type="Edm.String" Nullable="true" />
+        <Property Name="FullName" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+      <EntityType Name="QuestionListSection">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="QuestionlistId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="LinkedQuestionId" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ShowInState" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Questions" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SequenceNumber" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="QuestionListQuestion">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="QuestionlistId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="SectionId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SectionDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Answer" Type="Exact.Web.Api.Models.Accountancy.QuestionListAnswer" Nullable="false" />
+        <Property Name="DataType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DataTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="LinkedQuestionId" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ShowInState" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SequenceNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Level1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Level2" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Options" Type="Exact.Web.Api.Models.Accountancy.QuestionOptions" Nullable="false" />
+        <Property Name="DocumentId" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+      <ComplexType Name="QuestionListAnswer">
+        <Property Name="ValueType" Type="Edm.String" Nullable="true" />
+        <Property Name="DefaultValue" Type="Edm.String" Nullable="true" />
+        <Property Name="Value" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressValue" Type="Exact.Web.Api.Models.Accountancy.QuestionListAddressData" Nullable="false" />
+        <Property Name="MultiSelectValue" Type="Exact.Web.Api.Models.Accountancy.QuestionListMultiSelectData" Nullable="false" />
+        <Property Name="DateRangeValue" Type="Exact.Web.Api.Models.Accountancy.DateRange" Nullable="false" />
+        <Property Name="NotApplicable" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="true" />
+      </ComplexType>
+      <ComplexType Name="QuestionListAddressData">
+        <Property Name="AddressLine1" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressLine2" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressLine3" Type="Edm.String" Nullable="true" />
+        <Property Name="PostCode" Type="Edm.String" Nullable="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" />
+        <Property Name="State" Type="Edm.String" Nullable="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+      <ComplexType Name="QuestionListMultiSelectData">
+        <Property Name="MultiSelectValue1" Type="Exact.Web.Api.Models.Accountancy.QuestionListMultiSelectAnswerData" Nullable="false" />
+        <Property Name="MultiSelectValue2" Type="Exact.Web.Api.Models.Accountancy.QuestionListMultiSelectAnswerData" Nullable="false" />
+        <Property Name="MultiSelectValue3" Type="Exact.Web.Api.Models.Accountancy.QuestionListMultiSelectAnswerData" Nullable="false" />
+        <Property Name="MultiSelectValue4" Type="Exact.Web.Api.Models.Accountancy.QuestionListMultiSelectAnswerData" Nullable="false" />
+        <Property Name="MultiSelectValue5" Type="Exact.Web.Api.Models.Accountancy.QuestionListMultiSelectAnswerData" Nullable="false" />
+        <Property Name="MultiSelectValue6" Type="Exact.Web.Api.Models.Accountancy.QuestionListMultiSelectAnswerData" Nullable="false" />
+        <Property Name="MultiSelectValue7" Type="Exact.Web.Api.Models.Accountancy.QuestionListMultiSelectAnswerData" Nullable="false" />
+        <Property Name="MultiSelectValue8" Type="Exact.Web.Api.Models.Accountancy.QuestionListMultiSelectAnswerData" Nullable="false" />
+        <Property Name="MultiSelectValue9" Type="Exact.Web.Api.Models.Accountancy.QuestionListMultiSelectAnswerData" Nullable="false" />
+        <Property Name="MultiSelectValue10" Type="Exact.Web.Api.Models.Accountancy.QuestionListMultiSelectAnswerData" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="QuestionListMultiSelectAnswerData">
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Code" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+      <ComplexType Name="DateRange">
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+      </ComplexType>
+      <ComplexType Name="QuestionOptions">
+        <Property Name="Option1" Type="Exact.Web.Api.Models.Accountancy.QuestionOption" Nullable="false" />
+        <Property Name="Option2" Type="Exact.Web.Api.Models.Accountancy.QuestionOption" Nullable="false" />
+        <Property Name="Option3" Type="Exact.Web.Api.Models.Accountancy.QuestionOption" Nullable="false" />
+        <Property Name="Option4" Type="Exact.Web.Api.Models.Accountancy.QuestionOption" Nullable="false" />
+        <Property Name="Option5" Type="Exact.Web.Api.Models.Accountancy.QuestionOption" Nullable="false" />
+        <Property Name="Option6" Type="Exact.Web.Api.Models.Accountancy.QuestionOption" Nullable="false" />
+        <Property Name="Option7" Type="Exact.Web.Api.Models.Accountancy.QuestionOption" Nullable="false" />
+        <Property Name="Option8" Type="Exact.Web.Api.Models.Accountancy.QuestionOption" Nullable="false" />
+        <Property Name="Option9" Type="Exact.Web.Api.Models.Accountancy.QuestionOption" Nullable="false" />
+        <Property Name="Option10" Type="Exact.Web.Api.Models.Accountancy.QuestionOption" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="QuestionOption">
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Code" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+      <EntityType Name="StopCollaborationByAccountant">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Accountant" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Customer" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="DeclarationInfo">
+        <Property Name="Status" Type="Exact.Web.Api.Models.Accountancy.DeclarationInfo_DeclarationStatus" Nullable="false" />
+        <Property Name="Type" Type="Exact.Web.Api.Models.Accountancy.DeclarationInfo_DeclarationType" Nullable="false" />
+        <Property Name="AssignedDivision" Type="Edm.Int32" Nullable="true" />
+        <Property Name="YourReference" Type="Edm.String" Nullable="true" />
+        <Property Name="DueDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="SendThirdParty" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="DeclarationSummary">
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Amount" Type="Edm.Double" Nullable="true" />
+        <Property Name="FormattedAmount" Type="Edm.String" Nullable="true" />
+        <Property Name="AmountCaption" Type="Edm.String" Nullable="true" />
+        <Property Name="DaysToAction" Type="Edm.Int32" Nullable="true" />
+        <Property Name="DaysToActionCaption" Type="Edm.String" Nullable="true" />
+        <Property Name="Period" Type="Edm.String" Nullable="true" />
+        <Property Name="PeriodCaption" Type="Edm.String" Nullable="true" />
+        <Property Name="RefNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="RefNumberCaption" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StatusCaption" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TypeCaption" Type="Edm.String" Nullable="true" />
+        <Property Name="Title" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+      <ComplexType Name="QuestionListResult">
+        <Property Name="ErrorMessage" Type="Edm.String" Nullable="true" />
+        <Property Name="QuestionlistId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="QuestionId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Answer" Type="Edm.String" Nullable="true" />
+        <Property Name="DoubleValue" Type="Edm.Double" Nullable="true" />
+        <Property Name="DateValue" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EndDateValue" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="LongValue" Type="Edm.Int64" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="QuestionListMultiSelectAnswer" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AddressAnswer" Type="Exact.Web.Api.Models.Accountancy.AddressAnswerInfo" Nullable="false" />
+        <Property Name="AttachmentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IsNotApplicableValue" Type="Edm.Boolean" Nullable="true" />
+      </ComplexType>
+      <ComplexType Name="AddressAnswerInfo">
+        <Property Name="AddressLine1" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressLine2" Type="Edm.String" Nullable="true" />
+        <Property Name="AddressLine3" Type="Edm.String" Nullable="true" />
+        <Property Name="PostCode" Type="Edm.String" Nullable="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" />
+        <Property Name="State" Type="Edm.String" Nullable="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+      <ComplexType Name="PeriodClosingCheckListResult">
+        <Property Name="ErrorMessage" Type="Edm.String" Nullable="true" />
+        <Property Name="PeriodClosingChecklistId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PeriodClosingCheckId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Answer" Type="Edm.String" Nullable="true" />
+        <Property Name="DoubleValue" Type="Edm.Double" Nullable="true" />
+        <Property Name="DateValue" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="LongValue" Type="Edm.Int64" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CheckListMultiSelectAnswer" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AttachmentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IsNotApplicableValue" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="CheckListAction" Type="Edm.Int32" Nullable="true" />
+      </ComplexType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Accountancy" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="InvolvedUsers" EntityType="Exact.Web.Api.Models.InvolvedUser" />
+        <EntitySet Name="TaskTypes" EntityType="Exact.Web.Api.Models.Accountancy.TaskType" />
+        <EntitySet Name="AccountInvolvedAccounts" EntityType="Exact.Web.Api.Models.Accountancy.AccountInvolvedAccount" />
+        <EntitySet Name="InvolvedUserRoles" EntityType="Exact.Web.Api.Models.InvolvedUserRole" />
+        <EntitySet Name="SolutionLinks" EntityType="Exact.Web.Api.Models.Accountancy.SolutionLink" />
+        <EntitySet Name="ExcludedDivisions" EntityType="Exact.Web.Api.Models.Accountancy.ExcludedDivision" />
+        <EntitySet Name="AccountOwners" EntityType="Exact.Web.Api.Models.Accountancy.AccountOwner" />
+        <EntitySet Name="CollaborationRequests" EntityType="Exact.Web.Api.Models.Accountancy.CollaborationRequest" />
+        <EntitySet Name="StopCollaboration" EntityType="Exact.Web.Api.Models.Accountancy.StopCollaboration" />
+        <EntitySet Name="DeclarationUploads" EntityType="Exact.Web.Api.Models.Accountancy.DeclarationUpload" />
+        <EntitySet Name="DeclarationRenderData" EntityType="Exact.Web.Api.Models.Accountancy.DeclarationData" />
+        <EntitySet Name="QuestionlistClientLists" EntityType="Exact.Web.Api.Models.Accountancy.QuestionList" />
+        <EntitySet Name="QuestionlistClientSections" EntityType="Exact.Web.Api.Models.Accountancy.QuestionListSection" />
+        <EntitySet Name="QuestionlistClientQuestions" EntityType="Exact.Web.Api.Models.Accountancy.QuestionListQuestion" />
+        <EntitySet Name="StopCollaborationByAccountant" EntityType="Exact.Web.Api.Models.Accountancy.StopCollaborationByAccountant" />
+        <FunctionImport Name="DeclarationStatus" ReturnType="Exact.Web.Api.Models.Accountancy.DeclarationInfo" m:HttpMethod="GET">
+          <Parameter Name="declarationId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="DeclarationSent" ReturnType="Exact.Web.Api.Models.Accountancy.DeclarationInfo" m:HttpMethod="POST">
+          <Parameter Name="declarationId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="DeclarationAccept" ReturnType="Exact.Web.Api.Models.Accountancy.DeclarationInfo" m:HttpMethod="POST">
+          <Parameter Name="declarationId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="DeclarationAssign" ReturnType="Exact.Web.Api.Models.Accountancy.DeclarationInfo" m:HttpMethod="POST">
+          <Parameter Name="declarationId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="DeclarationDelete" ReturnType="Exact.Web.Api.Models.Accountancy.DeclarationInfo" m:HttpMethod="POST">
+          <Parameter Name="declarationId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="DeclarationSet3rdPartyTenantId" ReturnType="Edm.Boolean" m:HttpMethod="POST">
+          <Parameter Name="tenantId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="DeclarationRenderSummary" ReturnType="Exact.Web.Api.Models.Accountancy.DeclarationSummary" m:HttpMethod="GET">
+          <Parameter Name="declarationId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="DeclarationRenderData" EntitySet="DeclarationRenderData" ReturnType="Collection(Exact.Web.Api.Models.Accountancy.DeclarationData)" m:HttpMethod="GET">
+          <Parameter Name="declarationId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="DeclarationRenderSummaryByDocId" ReturnType="Exact.Web.Api.Models.Accountancy.DeclarationSummary" m:HttpMethod="GET">
+          <Parameter Name="documentId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="DeclarationRenderDataByDocId" EntitySet="DeclarationRenderData" ReturnType="Collection(Exact.Web.Api.Models.Accountancy.DeclarationData)" m:HttpMethod="GET">
+          <Parameter Name="documentId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="QuestionlistUpdateQuestion" ReturnType="Collection(Exact.Web.Api.Models.Accountancy.QuestionListResult)" m:HttpMethod="POST" />
+        <FunctionImport Name="PeriodClosingChecklistUpdateCheck" ReturnType="Collection(Exact.Web.Api.Models.Accountancy.PeriodClosingCheckListResult)" m:HttpMethod="POST" />
+        <FunctionImport Name="QuestionlistQuestion" ReturnType="Edm.Int32" m:HttpMethod="GET">
+          <Parameter Name="questionlistId" Type="Edm.Int32" Mode="In" />
+          <Parameter Name="questionId" Type="Edm.Int32" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="QuestionlistClientLists" EntitySet="QuestionlistClientLists" ReturnType="Collection(Exact.Web.Api.Models.Accountancy.QuestionList)" m:HttpMethod="GET" />
+        <FunctionImport Name="QuestionlistClientListByRequestId" EntitySet="QuestionlistClientLists" ReturnType="Exact.Web.Api.Models.Accountancy.QuestionList" m:HttpMethod="GET">
+          <Parameter Name="requestId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="QuestionlistClientSections" EntitySet="QuestionlistClientSections" ReturnType="Collection(Exact.Web.Api.Models.Accountancy.QuestionListSection)" m:HttpMethod="GET">
+          <Parameter Name="questionlistId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="QuestionlistClientQuestions" EntitySet="QuestionlistClientQuestions" ReturnType="Collection(Exact.Web.Api.Models.Accountancy.QuestionListQuestion)" m:HttpMethod="GET">
+          <Parameter Name="questionlistId" Type="Edm.Guid" Mode="In" />
+          <Parameter Name="sectionId" Type="Edm.Guid" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="QuestionlistClientAddDocumentAttachment" ReturnType="Collection(Exact.Web.Api.Models.Accountancy.QuestionListResult)" m:HttpMethod="POST" />
+        <FunctionImport Name="QuestionlistClientDeleteDocumentAttachment" ReturnType="Collection(Exact.Web.Api.Models.Accountancy.QuestionListResult)" m:HttpMethod="POST" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

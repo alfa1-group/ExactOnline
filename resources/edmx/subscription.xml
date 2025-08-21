@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="Subscription">
+        <Key>
+          <PropertyRef Name="EntryID" />
+        </Key>
+        <Property Name="EntryID" Type="Edm.Guid" Nullable="false" />
+        <NavigationProperty Name="SubscriptionLines" Relationship="Exact.Web.Api.Models.Subscription_SubscriptionLines" FromRole="Subscription" ToRole="SubscriptionLines" />
+        <NavigationProperty Name="SubscriptionRestrictionEmployees" Relationship="Exact.Web.Api.Models.Subscription_SubscriptionRestrictionEmployees" FromRole="Subscription" ToRole="SubscriptionRestrictionEmployees" />
+        <NavigationProperty Name="SubscriptionRestrictionItems" Relationship="Exact.Web.Api.Models.Subscription_SubscriptionRestrictionItems" FromRole="Subscription" ToRole="SubscriptionRestrictionItems" />
+        <Property Name="BlockEntry" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="CancellationDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Classification" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ClassificationCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ClassificationDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="false" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomerPONumber" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="InvoiceDay" Type="Edm.Byte" Nullable="true" />
+        <Property Name="InvoicedTo" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="InvoiceTo" Type="Edm.Guid" Nullable="true" />
+        <Property Name="InvoiceToName" Type="Edm.String" Nullable="true" />
+        <Property Name="InvoiceToContactPerson" Type="Edm.Guid" Nullable="true" />
+        <Property Name="InvoiceToContactPersonFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="InvoicingStartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderedBy" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OrderedByName" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderedByContactPerson" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OrderedByContactPersonFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Number" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PaymentCondition" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentConditionDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Printed" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ReasonCancelled" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ReasonCancelledCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ReasonCancelledDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SubscriptionType" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SubscriptionTypeCode" Type="Edm.String" Nullable="true" />
+        <Property Name="SubscriptionTypeDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SubscriptionLine">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="false" />
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="false" />
+        <Property Name="Costcenter" Type="Edm.String" Nullable="true" />
+        <Property Name="Costunit" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Discount" Type="Edm.Double" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EntryID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="FromDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LineType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="LineTypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="NetPrice" Type="Edm.Double" Nullable="false" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Quantity" Type="Edm.Double" Nullable="false" />
+        <Property Name="SubscriptionNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ToDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="UnitCode" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitPrice" Type="Edm.Double" Nullable="false" />
+        <Property Name="VATAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATCode" Type="Edm.String" Nullable="true" />
+        <Property Name="VATCodeDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SubscriptionType">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AutomaticGenerateInvoiceDays" Type="Edm.Int16" Nullable="true" />
+        <Property Name="AutomaticGenerateInvoiceDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="AutomaticGenerateInvoiceType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="AutomaticSendInvoiceDays" Type="Edm.Int16" Nullable="true" />
+        <Property Name="AutomaticSendInvoiceMethod" Type="Edm.Int16" Nullable="true" />
+        <Property Name="AutomaticSendInvoiceSender" Type="Edm.Int16" Nullable="true" />
+        <Property Name="AutomaticSendInvoiceSenderMailbox" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AutomaticSendInvoiceType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EnablePaymentLink" Type="Edm.Int16" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InvoiceCorrectionMethod" Type="Edm.Int16" Nullable="true" />
+        <Property Name="ManualRenewalMethod" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="ProlongationType" Type="Edm.Byte" Nullable="false" />
+        <Property Name="InvoicePeriod" Type="Edm.Int16" Nullable="false" />
+        <Property Name="InvoicePeriodUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="SubscriptionPeriod" Type="Edm.Int16" Nullable="false" />
+        <Property Name="SubscriptionPeriodUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="CancellationPeriod" Type="Edm.Int16" Nullable="false" />
+        <Property Name="CancellationPeriodUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="RenewalPeriod" Type="Edm.Int16" Nullable="false" />
+        <Property Name="RenewalPeriodUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="RenewalCancellationPeriod" Type="Edm.Int16" Nullable="false" />
+        <Property Name="RenewalCancellationPeriodUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SubscriptionReasonCode">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Active" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Code" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="false" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SubscriptionRestrictionEmployee" BaseType="Exact.Web.Api.Models.SubscriptionRestriction">
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EmployeeHID" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SubscriptionRestriction" Abstract="true">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Subscription" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SubscriptionNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SubscriptionDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SubscriptionRestrictionItem" BaseType="Exact.Web.Api.Models.SubscriptionRestriction">
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SubscriptionChargeType">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int16" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <Association Name="Subscription_SubscriptionLines">
+        <End Role="Subscription" Type="Exact.Web.Api.Models.Subscription" Multiplicity="*" />
+        <End Role="SubscriptionLines" Type="Exact.Web.Api.Models.SubscriptionLine" Multiplicity="*" />
+      </Association>
+      <Association Name="Subscription_SubscriptionRestrictionEmployees">
+        <End Role="Subscription" Type="Exact.Web.Api.Models.Subscription" Multiplicity="*" />
+        <End Role="SubscriptionRestrictionEmployees" Type="Exact.Web.Api.Models.SubscriptionRestrictionEmployee" Multiplicity="*" />
+      </Association>
+      <Association Name="Subscription_SubscriptionRestrictionItems">
+        <End Role="Subscription" Type="Exact.Web.Api.Models.Subscription" Multiplicity="*" />
+        <End Role="SubscriptionRestrictionItems" Type="Exact.Web.Api.Models.SubscriptionRestrictionItem" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Subscription" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Subscriptions" EntityType="Exact.Web.Api.Models.Subscription" />
+        <EntitySet Name="SubscriptionLines" EntityType="Exact.Web.Api.Models.SubscriptionLine" />
+        <EntitySet Name="SubscriptionTypes" EntityType="Exact.Web.Api.Models.SubscriptionType" />
+        <EntitySet Name="SubscriptionReasonCodes" EntityType="Exact.Web.Api.Models.SubscriptionReasonCode" />
+        <EntitySet Name="SubscriptionRestrictionEmployees" EntityType="Exact.Web.Api.Models.SubscriptionRestrictionEmployee" />
+        <EntitySet Name="SubscriptionRestrictionItems" EntityType="Exact.Web.Api.Models.SubscriptionRestrictionItem" />
+        <EntitySet Name="SubscriptionLineTypes" EntityType="Exact.Web.Api.Models.SubscriptionChargeType" />
+        <AssociationSet Name="Subscription_SubscriptionLines" Association="Exact.Web.Api.Models.Subscription_SubscriptionLines">
+          <End Role="Subscription" EntitySet="Subscriptions" />
+          <End Role="SubscriptionLines" EntitySet="SubscriptionLines" />
+        </AssociationSet>
+        <AssociationSet Name="Subscription_SubscriptionRestrictionEmployees" Association="Exact.Web.Api.Models.Subscription_SubscriptionRestrictionEmployees">
+          <End Role="Subscription" EntitySet="Subscriptions" />
+          <End Role="SubscriptionRestrictionEmployees" EntitySet="SubscriptionRestrictionEmployees" />
+        </AssociationSet>
+        <AssociationSet Name="Subscription_SubscriptionRestrictionItems" Association="Exact.Web.Api.Models.Subscription_SubscriptionRestrictionItems">
+          <End Role="Subscription" EntitySet="Subscriptions" />
+          <End Role="SubscriptionRestrictionItems" EntitySet="SubscriptionRestrictionItems" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

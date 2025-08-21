@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="SalesInvoice">
+        <Key>
+          <PropertyRef Name="InvoiceID" />
+        </Key>
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountDiscount" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountDiscountExclVat" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountFCExclVat" Type="Edm.Double" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="DeliverTo" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DeliverToContactPerson" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DeliverToContactPersonFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="DeliverToAddress" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DeliverToName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Discount" Type="Edm.Double" Nullable="true" />
+        <Property Name="DiscountType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="DocumentSubject" Type="Edm.String" Nullable="true" />
+        <Property Name="DueDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ExtraDutyAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="GAccountAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="IncotermAddress" Type="Edm.String" Nullable="true" />
+        <Property Name="IncotermCode" Type="Edm.String" Nullable="true" />
+        <Property Name="IncotermVersion" Type="Edm.Int16" Nullable="true" />
+        <Property Name="InvoiceDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="InvoiceID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InvoiceTo" Type="Edm.Guid" Nullable="true" />
+        <Property Name="InvoiceToContactPerson" Type="Edm.Guid" Nullable="true" />
+        <Property Name="InvoiceToContactPersonFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="InvoiceToName" Type="Edm.String" Nullable="true" />
+        <Property Name="InvoiceNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="IsExtraDuty" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Journal" Type="Edm.String" Nullable="true" />
+        <Property Name="JournalDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="OrderedBy" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OrderedByContactPerson" Type="Edm.Guid" Nullable="true" />
+        <Property Name="OrderedByContactPersonFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderedByName" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PaymentCondition" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentConditionDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentReference" Type="Edm.String" Nullable="true" />
+        <Property Name="Remarks" Type="Edm.String" Nullable="true" />
+        <Property Name="SalesChannel" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesChannelCode" Type="Edm.String" Nullable="true" />
+        <Property Name="SalesChannelDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Salesperson" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalespersonFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="SelectionCode" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SelectionCodeCode" Type="Edm.String" Nullable="true" />
+        <Property Name="SelectionCodeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ShippingMethod" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ShippingMethodCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ShippingMethodDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+        <Property Name="StatusDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="TaxSchedule" Type="Edm.Guid" Nullable="true" />
+        <Property Name="TaxScheduleCode" Type="Edm.String" Nullable="true" />
+        <Property Name="TaxScheduleDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="true" />
+        <Property Name="TypeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATAmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="YourRef" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="SalesInvoiceLines" Relationship="Exact.Web.Api.Models.SalesInvoice_SalesInvoiceLines" FromRole="SalesInvoice" ToRole="SalesInvoiceLines" />
+        <NavigationProperty Name="SalesInvoiceOrderChargeLines" Relationship="Exact.Web.Api.Models.SalesInvoice_SalesInvoiceOrderChargeLines" FromRole="SalesInvoice" ToRole="SalesInvoiceOrderChargeLines" />
+        <Property Name="StarterSalesInvoiceStatus" Type="Edm.Int16" Nullable="true" />
+        <Property Name="StarterSalesInvoiceStatusDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="WithholdingTaxAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="WithholdingTaxBaseAmount" Type="Edm.Double" Nullable="true" />
+        <Property Name="WithholdingTaxPercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="Warehouse" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SalesInvoiceLine">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="CostCenter" Type="Edm.String" Nullable="true" />
+        <Property Name="CostCenterDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CostUnit" Type="Edm.String" Nullable="true" />
+        <Property Name="CostUnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomerItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="DeliveryDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Discount" Type="Edm.Double" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Employee" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmployeeFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="EndTime" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ExtraDutyAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="ExtraDutyPercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="GLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InvoiceID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Item" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ItemDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="true" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="NetPrice" Type="Edm.Double" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Pricelist" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PricelistDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Project" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ProjectWBS" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ProjectWBSDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Quantity" Type="Edm.Double" Nullable="true" />
+        <Property Name="SalesOrder" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesOrderLine" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SalesOrderLineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SalesOrderNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="StartTime" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Subscription" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SubscriptionDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitCode" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="UnitPrice" Type="Edm.Double" Nullable="true" />
+        <Property Name="TaxSchedule" Type="Edm.Guid" Nullable="true" />
+        <Property Name="TaxScheduleCode" Type="Edm.String" Nullable="true" />
+        <Property Name="TaxScheduleDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATAmountFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATAmountDC" Type="Edm.Double" Nullable="true" />
+        <Property Name="VATCode" Type="Edm.String" Nullable="true" />
+        <Property Name="VATCodeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATPercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="CustomField" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SalesInvoiceOrderChargeLine">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="false" />
+        <Property Name="AmountFCExclVAT" Type="Edm.Double" Nullable="false" />
+        <Property Name="AmountFCInclVAT" Type="Edm.Double" Nullable="false" />
+        <Property Name="AmountVATFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="OrderChargesLineDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="GLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InvoiceID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IsShippingCost" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="OrderCharge" Type="Edm.Guid" Nullable="false" />
+        <Property Name="OrderChargeCode" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderChargeDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATCode" Type="Edm.String" Nullable="true" />
+        <Property Name="VATDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="VATPercentage" Type="Edm.Double" Nullable="true" />
+      </EntityType>
+      <EntityType Name="PrintedSalesInvoice">
+        <Key>
+          <PropertyRef Name="InvoiceID" />
+        </Key>
+        <Property Name="InvoiceID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ExtraText" Type="Edm.String" Nullable="true" />
+        <Property Name="InvoiceDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ReportingPeriod" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ReportingYear" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentCreationError" Type="Edm.String" Nullable="true" />
+        <Property Name="DocumentCreationSuccess" Type="Edm.String" Nullable="true" />
+        <Property Name="DocumentLayout" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EmailCreationError" Type="Edm.String" Nullable="true" />
+        <Property Name="EmailCreationSuccess" Type="Edm.String" Nullable="true" />
+        <Property Name="EmailLayout" Type="Edm.Guid" Nullable="true" />
+        <Property Name="SenderEmailAddress" Type="Edm.String" Nullable="true" />
+        <Property Name="PostboxSender" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PostboxMessageCreationError" Type="Edm.String" Nullable="true" />
+        <Property Name="PostboxMessageCreationSuccess" Type="Edm.String" Nullable="true" />
+        <Property Name="PeppolCreationError" Type="Edm.String" Nullable="true" />
+        <Property Name="PeppolCreationSuccess" Type="Edm.String" Nullable="true" />
+        <Property Name="SendEmailToCustomer" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="SendInvoiceToCustomerPostbox" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="SendInvoiceViaPeppol" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="SendOutputBasedOnAccount" Type="Edm.Boolean" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Layout">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Subject" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.Int16" Nullable="true" />
+      </EntityType>
+      <Association Name="SalesInvoice_SalesInvoiceLines">
+        <End Role="SalesInvoice" Type="Exact.Web.Api.Models.SalesInvoice" Multiplicity="*" />
+        <End Role="SalesInvoiceLines" Type="Exact.Web.Api.Models.SalesInvoiceLine" Multiplicity="*" />
+      </Association>
+      <Association Name="SalesInvoice_SalesInvoiceOrderChargeLines">
+        <End Role="SalesInvoice" Type="Exact.Web.Api.Models.SalesInvoice" Multiplicity="*" />
+        <End Role="SalesInvoiceOrderChargeLines" Type="Exact.Web.Api.Models.SalesInvoiceOrderChargeLine" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.General" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="GeneralLayout" BaseType="Exact.Web.Api.Models.Layout">
+        <Property Name="Category" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CategoryName" Type="Edm.String" Nullable="true" />
+        <Property Name="DDView" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Language" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.SalesInvoices" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="InvoiceSalesOrders">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="CreateMode" Type="Edm.Int32" Nullable="true" />
+        <Property Name="DeliveryNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InvoiceMode" Type="Edm.Int32" Nullable="true" />
+        <Property Name="JournalCode" Type="Edm.String" Nullable="true" />
+        <Property Name="NumberOfCreatedInvoices" Type="Edm.Int32" Nullable="true" />
+        <Property Name="NumberOfFailedInvoices" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Errors" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="UserInvoiceDate" Type="Edm.DateTime" Nullable="true" />
+        <NavigationProperty Name="SalesOrderIDs" Relationship="Exact.Web.Api.Models.SalesInvoices.InvoiceSalesOrders_SalesOrderIDs" FromRole="InvoiceSalesOrders" ToRole="SalesOrderIDs" />
+      </EntityType>
+      <EntityType Name="SalesOrderID">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <Association Name="InvoiceSalesOrders_SalesOrderIDs">
+        <End Role="InvoiceSalesOrders" Type="Exact.Web.Api.Models.SalesInvoices.InvoiceSalesOrders" Multiplicity="*" />
+        <End Role="SalesOrderIDs" Type="Exact.Web.Api.Models.SalesInvoices.SalesOrderID" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.SalesInvoice" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="SalesInvoices" EntityType="Exact.Web.Api.Models.SalesInvoice" />
+        <EntitySet Name="SalesInvoiceLines" EntityType="Exact.Web.Api.Models.SalesInvoiceLine" />
+        <EntitySet Name="SalesInvoiceOrderChargeLines" EntityType="Exact.Web.Api.Models.SalesInvoiceOrderChargeLine" />
+        <EntitySet Name="PrintedSalesInvoices" EntityType="Exact.Web.Api.Models.PrintedSalesInvoice" />
+        <EntitySet Name="Layouts" EntityType="Exact.Web.Api.Models.Layout" />
+        <EntitySet Name="InvoiceSalesOrders" EntityType="Exact.Web.Api.Models.SalesInvoices.InvoiceSalesOrders" />
+        <EntitySet Name="SalesOrderID" EntityType="Exact.Web.Api.Models.SalesInvoices.SalesOrderID" />
+        <AssociationSet Name="SalesInvoice_SalesInvoiceLines" Association="Exact.Web.Api.Models.SalesInvoice_SalesInvoiceLines">
+          <End Role="SalesInvoice" EntitySet="SalesInvoices" />
+          <End Role="SalesInvoiceLines" EntitySet="SalesInvoiceLines" />
+        </AssociationSet>
+        <AssociationSet Name="SalesInvoice_SalesInvoiceOrderChargeLines" Association="Exact.Web.Api.Models.SalesInvoice_SalesInvoiceOrderChargeLines">
+          <End Role="SalesInvoice" EntitySet="SalesInvoices" />
+          <End Role="SalesInvoiceOrderChargeLines" EntitySet="SalesInvoiceOrderChargeLines" />
+        </AssociationSet>
+        <AssociationSet Name="InvoiceSalesOrders_SalesOrderIDs" Association="Exact.Web.Api.Models.SalesInvoices.InvoiceSalesOrders_SalesOrderIDs">
+          <End Role="InvoiceSalesOrders" EntitySet="InvoiceSalesOrders" />
+          <End Role="SalesOrderIDs" EntitySet="SalesOrderID" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

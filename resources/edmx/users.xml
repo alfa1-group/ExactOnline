@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityType Name="User">
+        <Key>
+          <PropertyRef Name="UserID" />
+        </Key>
+        <Property Name="BirthDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="BirthName" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Customer" Type="Edm.Guid" Nullable="false" />
+        <Property Name="CustomerName" Type="Edm.String" Nullable="true" />
+        <Property Name="Email" Type="Edm.String" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="FirstName" Type="Edm.String" Nullable="true" />
+        <Property Name="FullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Gender" Type="Edm.String" Nullable="true" />
+        <Property Name="HasRegisteredForTwoStepVerification" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasTwoStepVerification" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Initials" Type="Edm.String" Nullable="true" />
+        <Property Name="IsAnonymised" Type="Edm.Byte" Nullable="false" />
+        <Property Name="Language" Type="Edm.String" Nullable="true" />
+        <Property Name="LastLogin" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="LastName" Type="Edm.String" Nullable="true" />
+        <Property Name="MiddleName" Type="Edm.String" Nullable="true" />
+        <Property Name="Mobile" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Nationality" Type="Edm.String" Nullable="true" />
+        <Property Name="Notes" Type="Edm.String" Nullable="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" />
+        <Property Name="PhoneExtension" Type="Edm.String" Nullable="true" />
+        <Property Name="ProfileCode" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="StartDivision" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" Nullable="true" />
+        <Property Name="UserID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="UserName" Type="Edm.String" Nullable="true" />
+        <Property Name="UserTypeCode" Type="Edm.String" Nullable="true" />
+        <Property Name="UserTypesList" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="UserRoles" Relationship="Exact.Web.Api.Models.User_UserRoles" FromRole="User" ToRole="UserRoles" />
+        <NavigationProperty Name="UserRolesPerDivision" Relationship="Exact.Web.Api.Models.User_UserRolesPerDivision" FromRole="User" ToRole="UserRolesPerDivision" />
+      </EntityType>
+      <EntityType Name="UserRole">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="UserID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Role" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RoleLevel" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="UserRolePerDivision">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Role" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RoleLevel" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="UserID" Type="Edm.Guid" Nullable="true" />
+      </EntityType>
+      <Association Name="User_UserRoles">
+        <End Role="User" Type="Exact.Web.Api.Models.User" Multiplicity="*" />
+        <End Role="UserRoles" Type="Exact.Web.Api.Models.UserRole" Multiplicity="*" />
+      </Association>
+      <Association Name="User_UserRolesPerDivision">
+        <End Role="User" Type="Exact.Web.Api.Models.User" Multiplicity="*" />
+        <End Role="UserRolesPerDivision" Type="Exact.Web.Api.Models.UserRolePerDivision" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Models.Users" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <ComplexType Name="OEIUserCustomerInfo">
+        <Property Name="UserID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="CustomerName" Type="Edm.String" Nullable="true" />
+        <Property Name="CustomerID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="UserType" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Users" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Users" EntityType="Exact.Web.Api.Models.User" />
+        <EntitySet Name="UserRoles" EntityType="Exact.Web.Api.Models.UserRole" />
+        <EntitySet Name="UserRolesPerDivision" EntityType="Exact.Web.Api.Models.UserRolePerDivision" />
+        <AssociationSet Name="User_UserRoles" Association="Exact.Web.Api.Models.User_UserRoles">
+          <End Role="User" EntitySet="Users" />
+          <End Role="UserRoles" EntitySet="UserRoles" />
+        </AssociationSet>
+        <AssociationSet Name="User_UserRolesPerDivision" Association="Exact.Web.Api.Models.User_UserRolesPerDivision">
+          <End Role="User" EntitySet="Users" />
+          <End Role="UserRolesPerDivision" EntitySet="UserRolesPerDivision" />
+        </AssociationSet>
+        <FunctionImport Name="UnlinkAllRoles" EntitySet="Users" ReturnType="Collection(Exact.Web.Api.Models.User)" m:HttpMethod="GET">
+          <Parameter Name="userId" Type="Edm.String" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="UserHasRights" ReturnType="Edm.Boolean" m:HttpMethod="GET">
+          <Parameter Name="endpoint" Type="Edm.String" Mode="In" />
+          <Parameter Name="action" Type="Edm.String" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="OEIUserCustomersInfo" ReturnType="Collection(Exact.Web.Api.Models.Users.OEIUserCustomerInfo)" m:HttpMethod="GET">
+          <Parameter Name="identityObjectID" Type="Edm.String" Mode="In" />
+        </FunctionImport>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

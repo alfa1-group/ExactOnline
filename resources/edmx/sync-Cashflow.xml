@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Exact.Web.Api.Models.Sync.Cashflow" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="PaymentTermSync">
+        <Key>
+          <PropertyRef Name="Timestamp" />
+        </Key>
+        <Property Name="Timestamp" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Account" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountBankAccountID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountBankAccountNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountContact" Type="Edm.Guid" Nullable="true" />
+        <Property Name="AccountContactName" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" Nullable="true" />
+        <Property Name="AmountDC" Type="Edm.Double" Nullable="false" />
+        <Property Name="AmountDiscountDC" Type="Edm.Double" Nullable="false" />
+        <Property Name="AmountFC" Type="Edm.Double" Nullable="false" />
+        <Property Name="AmountDiscountFC" Type="Edm.Double" Nullable="false" />
+        <Property Name="BankAccountID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="BankAccountNumber" Type="Edm.String" Nullable="true" />
+        <Property Name="CashflowTransactionBatchCode" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Creator" Type="Edm.Guid" Nullable="true" />
+        <Property Name="CreatorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="DiscountDueDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Division" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Document" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DocumentNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="DocumentSubject" Type="Edm.String" Nullable="true" />
+        <Property Name="DueDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EndPeriod" Type="Edm.Int16" Nullable="true" />
+        <Property Name="EndYear" Type="Edm.Int16" Nullable="true" />
+        <Property Name="EntryDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EntryID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="EntryNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="GLAccount" Type="Edm.Guid" Nullable="true" />
+        <Property Name="GLAccountCode" Type="Edm.String" Nullable="true" />
+        <Property Name="GLAccountDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="InvoiceDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="InvoiceNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="IsBatchBooking" Type="Edm.Byte" Nullable="true" />
+        <Property Name="Journal" Type="Edm.String" Nullable="true" />
+        <Property Name="JournalDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Modifier" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ModifierFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="OrderNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PaymentSelected" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="PaymentSelector" Type="Edm.Guid" Nullable="true" />
+        <Property Name="PaymentSelectorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentBatchNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PaymentCondition" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentConditionDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentDays" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PaymentDaysDiscount" Type="Edm.Int32" Nullable="true" />
+        <Property Name="PaymentDiscountPercentage" Type="Edm.Double" Nullable="true" />
+        <Property Name="PaymentMethod" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentReference" Type="Edm.String" Nullable="true" />
+        <Property Name="RateFC" Type="Edm.Double" Nullable="true" />
+        <Property Name="Source" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int16" Nullable="true" />
+        <Property Name="TransactionAmountDC" Type="Edm.Double" Nullable="false" />
+        <Property Name="TransactionAmountFC" Type="Edm.Double" Nullable="false" />
+        <Property Name="TransactionDueDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="TransactionEntryID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="TransactionID" Type="Edm.Guid" Nullable="true" />
+        <Property Name="TransactionIsReversal" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TransactionReportingPeriod" Type="Edm.Int16" Nullable="true" />
+        <Property Name="TransactionReportingYear" Type="Edm.Int16" Nullable="true" />
+        <Property Name="TransactionStatus" Type="Edm.Int16" Nullable="true" />
+        <Property Name="TransactionType" Type="Edm.Int32" Nullable="true" />
+        <Property Name="YourRef" Type="Edm.String" Nullable="true" />
+        <Property Name="AccountCountry" Type="Edm.String" Nullable="true" />
+        <Property Name="DirectDebitMandate" Type="Edm.Guid" Nullable="true" />
+        <Property Name="DirectDebitMandateDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="DirectDebitMandatePaymentType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="DirectDebitMandateReference" Type="Edm.String" Nullable="true" />
+        <Property Name="DirectDebitMandateType" Type="Edm.Int16" Nullable="true" />
+        <Property Name="EndToEndID" Type="Edm.String" Nullable="true" />
+        <Property Name="IsFullyPaid" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LastPaymentDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="PaymentInformationID" Type="Edm.String" Nullable="true" />
+        <Property Name="ReceivableSelected" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ReceivableSelector" Type="Edm.Guid" Nullable="true" />
+        <Property Name="ReceivableSelectorFullName" Type="Edm.String" Nullable="true" />
+        <Property Name="ReceivableBatchNumber" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ApprovalStatus" Type="Edm.Int16" Nullable="true" />
+        <Property Name="LineType" Type="Edm.Int16" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Exact.Web.Api.Entity.Sync.Cashflow" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="DataSource" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="PaymentTerms" EntityType="Exact.Web.Api.Models.Sync.Cashflow.PaymentTermSync" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
