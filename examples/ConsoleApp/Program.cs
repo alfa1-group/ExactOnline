@@ -5,6 +5,7 @@ using ExactOnline.Api.Client.Builders.OrderBy;
 using ExactOnline.Api.Client.Builders.Select;
 using ExactOnline.Api.Client.Extensions;
 using ExactOnline.Api.Client.Models;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
@@ -59,7 +60,7 @@ var me = await RunAsync(async () =>
     return me;
 });
 
-var division = isDevelopment ? me!.CurrentDivision!.Value : 3137281;
+var division = isDevelopment ? me!.CurrentDivision!.Value : scope.ServiceProvider.GetRequiredService<IConfiguration>().GetValue<int>("Division");
 
 var all = await RunAsync(async () =>
 {
