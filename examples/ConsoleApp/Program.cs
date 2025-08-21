@@ -39,7 +39,6 @@ var orderBy = OrderByBuilder<WebhooksWebhookSubscription>
     .ThenByDescending(w => w.CallbackURL)
     .Build();
 var filter = FilterBuilder<WebhooksWebhookSubscription>.Build(a => a.CallbackURL!.Equals("abc") && (a.Division > 100 || a.Created > TimeProvider.System.GetUtcNow().AddDays(-30)));
-var syncFilter = TimestampFilterBuilder.Build(t => t.Timestamp >= 13361108664);
 var selectAll = SelectBuilder<SyncProjectTimeCostTransaction>.Build();
 
 await RunAsync(async () =>
@@ -62,6 +61,22 @@ var me = await RunAsync(async () =>
 
 var division = isDevelopment ? me!.CurrentDivision!.Value : scope.ServiceProvider.GetRequiredService<IConfiguration>().GetValue<int>("Division");
 
+var ts = await RunAsync(async () =>
+{
+    Console.WriteLine("Getting Sync/SyncTimestamp");
+    var ts = await client.Api.V1[division].Read.Sync.Sync.SyncTimestamp.GetAsync(s =>
+    {
+        s.QueryParameters.Modified = new DateTimeOffset(2025, 8, 1, 0, 0, 0, TimeSpan.Zero).ToODataFormat();
+        s.QueryParameters.EndPoint = "TimeCostTransactions".ToODataFormat();
+    }).AsItem();
+
+    Console.WriteLine($"Timestamp: {ts?.Modified} {ts?.TimeStampAsBigInt} {ts?.API}");
+
+    return ts!.TimeStampAsBigInt;
+});
+
+var syncFilter = TimestampFilterBuilder.Build(t => t.Timestamp >= ts);
+
 var all = await RunAsync(async () =>
 {
     Console.WriteLine("Getting System Divisions - GetAll");
@@ -80,7 +95,7 @@ await RunAsync(async () =>
     Console.WriteLine("Getting Sync Deleted - GetAll");
     var list = await client.Api.V1[division].Sync.Deleted.GetAllAsync(x =>
     {
-        x.QueryParameters.Filter = TimestampFilterBuilder.Build(t => t.Timestamp >= 10000000);
+        x.QueryParameters.Filter = syncFilter;
         x.QueryParameters.Select = SelectBuilder<SyncDeleted>.Build();
     }).AsItems();
 
@@ -166,20 +181,6 @@ await RunAsync(async () =>
     Console.WriteLine($"After waiting: {meTop?.Email}");
 
     return true;
-});
-
-await RunAsync(async () =>
-{
-    Console.WriteLine("Getting Sync/SyncTimestamp");
-    var ts = await client.Api.V1[division].Read.Sync.Sync.SyncTimestamp.GetAsync(s =>
-    {
-        s.QueryParameters.Modified = new DateTimeOffset(2025, 1, 1, 0, 0, 0, TimeSpan.Zero).ToODataFormat();
-        s.QueryParameters.EndPoint = "TimeCostTransactions".ToODataFormat();
-    }).AsItem();
-
-    Console.WriteLine($"Timestamp: {ts?.Modified} {ts?.TimeStampAsBigInt} {ts?.API}");
-
-    return ts;
 });
 
 await RunAsync(async () =>

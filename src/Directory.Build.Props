@@ -7,14 +7,13 @@
     <Authors>Stef Heyenrath</Authors>
     <Owners>Stef Heyenrath</Owners>
     <Copyright>Copyright © Stef Heyenrath</Copyright>
-    <Copyright>Stef Heyenrath</Copyright>
     <!--<PackageReleaseNotes>See ReleaseNotes.md</PackageReleaseNotes>-->
     <PackageIcon>logo-128x128.png</PackageIcon>
     <ApplicationIcon>../../resources/logo.ico</ApplicationIcon>
-    <PackageProjectUrl>https://github.com/StefH/ExactOnline</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/alfa1-group/ExactOnline</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/StefH/ExactOnline</RepositoryUrl>
+    <RepositoryUrl>https://github.com/alfa1-group/ExactOnline</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
