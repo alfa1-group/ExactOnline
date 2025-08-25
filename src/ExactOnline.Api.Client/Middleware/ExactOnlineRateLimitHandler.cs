@@ -29,7 +29,7 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
     {
         if (!TryExtractDivision(request.RequestUri, out var division))
         {
-            // If we can't extract the company code, no need to apply rate limits.
+            // If we can't extract the division, no need to apply rate limits.
             return await base.SendAsync(request, cancellationToken);
         }
 
@@ -93,12 +93,12 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
             if (dailyRemaining <= 0)
             {
                 state.DailyLimitReached = true;
-                _logger.LogDebug("Daily rate limit reached for company {CompanyCode}. No more requests allowed until reset.", division);
+                _logger.LogDebug("Daily rate limit reached for division {Division}. No more requests allowed until reset.", division);
 
                 if (response.Headers.TryGetFirstValueAsLong("X-RateLimit-Reset", out var resetEpochMs))
                 {
                     state.DailyResetUtc = DateTimeOffset.FromUnixTimeMilliseconds(resetEpochMs);
-                    _logger.LogDebug("Daily rate limit for company {CompanyCode} will reset at {ResetTime}.", division, state.DailyResetUtc);
+                    _logger.LogDebug("Daily rate limit for division {Division} will reset at {ResetTime}.", division, state.DailyResetUtc);
                 }
             }
         }
@@ -107,7 +107,7 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
     }
 
     /// <summary>
-    /// Try to extract the company code from the request URI ("https://start.exactonline.nl/api/v1/{division}/...").
+    /// Try to extract the division from the request URI ("https://start.exactonline.nl/api/v1/{division}/...").
     /// </summary>
     private static bool TryExtractDivision(Uri? uri, out int division)
     {
@@ -117,7 +117,7 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
             return int.TryParse(segments[3].TrimEnd('/'), out division);
         }
 
-        division = default;
+        division = 0;
         return false;
     }
 
