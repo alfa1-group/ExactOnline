@@ -56,11 +56,11 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
 
             if (state.RequestsThisMinute >= MaxRequestsPerMinute)
             {
-                var waitMs = (int)(state.MinuteWindowStartUtc.AddMinutes(1) - now).TotalMilliseconds;
-                if (waitMs > 0)
+                var delay = (int)(state.MinuteWindowStartUtc.AddMinutes(1) - now).TotalMilliseconds;
+                if (delay > 0)
                 {
-                    _logger.LogDebug("Minutely rate limit reached for company {CompanyCode}. Waiting {WaitMs:F0} ms before next request.", division, waitMs);
-                    Task.Delay(waitMs, cancellationToken).Wait(cancellationToken);
+                    _logger.LogDebug("Minutely rate limit reached for division {Division}. Waiting {Delay} ms before next request.", division, delay);
+                    Task.Delay(delay, cancellationToken).Wait(cancellationToken);
 
                     state.RequestsThisMinute = 0;
                     state.MinuteWindowStartUtc = TimeProvider.System.GetUtcNow();
@@ -81,7 +81,7 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
                 var delay = waitUntil - TimeProvider.System.GetUtcNow();
                 if (delay > TimeSpan.Zero)
                 {
-                    _logger.LogDebug("Minutely rate limit reached for company {CompanyCode}. Waiting {Delay:F0} ms before next request.", division, delay.TotalMilliseconds);
+                    _logger.LogDebug("Minutely rate limit reached for division {Division}. Waiting {Delay:F0} ms before next request.", division, delay.TotalMilliseconds);
                     await Task.Delay(delay, cancellationToken);
                 }
             }
