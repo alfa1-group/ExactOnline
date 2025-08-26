@@ -1,7 +1,6 @@
 using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text.RegularExpressions;
 
 namespace ExactOnline.Api.Client.JsonConverters;
 
@@ -11,9 +10,6 @@ namespace ExactOnline.Api.Client.JsonConverters;
 /// </summary>
 internal class LegacyDateTimeConverter : JsonConverter<DateTime>
 {
-    // Regex to extract the millisecond value from the date string.
-    private static readonly Regex MicrosoftDateRegex = new(@"^\/Date\((\d+)\)\/$", RegexOptions.Compiled);
-
     public override bool CanConvert(Type typeToConvert)
     {
         return typeToConvert == typeof(DateTime);
@@ -27,7 +23,7 @@ internal class LegacyDateTimeConverter : JsonConverter<DateTime>
         }
 
         var dateString = reader.GetString() ?? throw new JsonException("DateTime string cannot be null.");
-        var match = MicrosoftDateRegex.Match(dateString);
+        var match = LegacyDateTimeOffsetConverter.MicrosoftDateRegex.Match(dateString);
 
         if (match.Success && long.TryParse(match.Groups[1].Value, out var milliseconds))
         {

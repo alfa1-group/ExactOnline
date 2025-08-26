@@ -12,7 +12,7 @@ namespace ExactOnline.Api.Client.Middleware;
 public class ExactOnlineRateLimitHandler : DelegatingHandler
 {
     private const int MaxRequestsPerMinute = 60;
-    private readonly ConcurrentDictionary<int, RateLimitState> _companyLimits = new(); // Track limits per company code
+    private readonly ConcurrentDictionary<int, RateLimitState> _divisionLimits = new(); // Track limits per division
 
     private readonly ILogger<ExactOnlineRateLimitHandler> _logger;
 
@@ -27,14 +27,14 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
 
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
-        if (!TryExtractCompanyCode(request.RequestUri, out var companyCode))
+        if (!TryExtractDivision(request.RequestUri, out var division))
         {
-            // If we can't extract the company code, no need to apply rate limits.
+            // If we can't extract the division, no need to apply rate limits.
             return await base.SendAsync(request, cancellationToken);
         }
 
         var now = TimeProvider.System.GetUtcNow();
-        var state = _companyLimits.GetOrAdd(companyCode, _ => new RateLimitState
+        var state = _divisionLimits.GetOrAdd(division, _ => new RateLimitState
         {
             MinuteWindowStartUtc = now
         });
@@ -42,7 +42,7 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
         // Check daily rate limit
         if (state is { DailyLimitReached: true, DailyResetUtc: not null } && now < state.DailyResetUtc.Value)
         {
-            throw new ExactOnlineDailyRateLimitReachedException(companyCode, state.DailyResetUtc.Value);
+            throw new ExactOnlineDailyRateLimitReachedException(division, state.DailyResetUtc.Value);
         }
 
         // Enforce 60/min proactive limit
@@ -56,11 +56,11 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
 
             if (state.RequestsThisMinute >= MaxRequestsPerMinute)
             {
-                var waitMs = (int)(state.MinuteWindowStartUtc.AddMinutes(1) - now).TotalMilliseconds;
-                if (waitMs > 0)
+                var delay = (int)(state.MinuteWindowStartUtc.AddMinutes(1) - now).TotalMilliseconds;
+                if (delay > 0)
                 {
-                    _logger.LogDebug("Minutely rate limit reached for company {CompanyCode}. Waiting {WaitMs:F0} ms before next request.", companyCode, waitMs);
-                    Task.Delay(waitMs, cancellationToken).Wait(cancellationToken);
+                    _logger.LogDebug("Minutely rate limit reached for division {Division}. Waiting {Delay} ms before next request.", division, delay);
+                    Task.Delay(delay, cancellationToken).Wait(cancellationToken);
 
                     state.RequestsThisMinute = 0;
                     state.MinuteWindowStartUtc = TimeProvider.System.GetUtcNow();
@@ -81,7 +81,7 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
                 var delay = waitUntil - TimeProvider.System.GetUtcNow();
                 if (delay > TimeSpan.Zero)
                 {
-                    _logger.LogDebug("Minutely rate limit reached for company {CompanyCode}. Waiting {Delay:F0} ms before next request.", companyCode, delay.TotalMilliseconds);
+                    _logger.LogDebug("Minutely rate limit reached for division {Division}. Waiting {Delay:F0} ms before next request.", division, delay.TotalMilliseconds);
                     await Task.Delay(delay, cancellationToken);
                 }
             }
@@ -93,12 +93,12 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
             if (dailyRemaining <= 0)
             {
                 state.DailyLimitReached = true;
-                _logger.LogDebug("Daily rate limit reached for company {CompanyCode}. No more requests allowed until reset.", companyCode);
+                _logger.LogDebug("Daily rate limit reached for division {Division}. No more requests allowed until reset.", division);
 
                 if (response.Headers.TryGetFirstValueAsLong("X-RateLimit-Reset", out var resetEpochMs))
                 {
                     state.DailyResetUtc = DateTimeOffset.FromUnixTimeMilliseconds(resetEpochMs);
-                    _logger.LogDebug("Daily rate limit for company {CompanyCode} will reset at {ResetTime}.", companyCode, state.DailyResetUtc);
+                    _logger.LogDebug("Daily rate limit for division {Division} will reset at {ResetTime}.", division, state.DailyResetUtc);
                 }
             }
         }
@@ -107,17 +107,17 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
     }
 
     /// <summary>
-    /// Try to extract the company code from the request URI ("https://start.exactonline.nl/api/v1/{companyCode}/...").
+    /// Try to extract the division from the request URI ("https://start.exactonline.nl/api/v1/{division}/...").
     /// </summary>
-    private static bool TryExtractCompanyCode(Uri? uri, out int companyCode)
+    private static bool TryExtractDivision(Uri? uri, out int division)
     {
         var segments = uri?.Segments ?? [];
         if (segments.Length > 3)
         {
-            return int.TryParse(segments[3].TrimEnd('/'), out companyCode);
+            return int.TryParse(segments[3].TrimEnd('/'), out division);
         }
 
-        companyCode = default;
+        division = 0;
         return false;
     }
 

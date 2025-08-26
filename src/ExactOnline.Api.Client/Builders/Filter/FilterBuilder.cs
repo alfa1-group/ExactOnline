@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Linq.Expressions;
 using System.Text;
 using ExactOnline.Api.Client.Extensions;
@@ -21,9 +22,11 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
     {
         if (node.Method.Name == "Equals")
         {
+            _filter.Append('(');
             Visit(node.Object);
             _filter.Append(" eq ");
             Visit(node.Arguments[0]);
+            _filter.Append(')');
             return node;
         }
 
@@ -89,6 +92,18 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
 
             case bool boolValue:
                 _filter.Append(boolValue.ToString().ToLower());
+                break;
+
+            case double doubleValue:
+                _filter.Append(doubleValue.ToString(CultureInfo.InvariantCulture));
+                break;
+
+            case short shortValue:
+                _filter.Append(shortValue.ToString(CultureInfo.InvariantCulture));
+                break;
+
+            case int intValue:
+                _filter.Append(intValue.ToString(CultureInfo.InvariantCulture));
                 break;
 
             case long longValue:

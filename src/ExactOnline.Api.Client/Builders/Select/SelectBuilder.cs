@@ -41,7 +41,7 @@ public static class SelectBuilder<T>
     /// <typeparam name="T">The source type</typeparam>
     /// <param name="expression">Lambda expression that returns an anonymous object with the desired properties</param>
     /// <returns>A comma-separated string of property names</returns>
-    public static string Build(Expression<Func<T, object>> expression)
+    public static string Build(Expression<Func<T, object?>> expression)
     {
         return expression.Body switch
         {

@@ -1,4 +1,5 @@
-﻿using ExactOnline.Api.Client.Models;
+﻿using System.Diagnostics.CodeAnalysis;
+using ExactOnline.Api.Client.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 
 namespace ExactOnline.Api.Client.Constants;
@@ -254,13 +255,25 @@ public static class DeletedEntityType
     /// </summary>
     public const int Deleted = 999;
 
-    public static bool TryParse(string entityTypeString, out int entityTypeId)
+    public static bool TryParse(string entityTypeName, out int entityTypeId)
     {
-        return NameToIdMap.TryGetValue(entityTypeString, out entityTypeId);
+        return NameToIdMap.TryGetValue(entityTypeName, out entityTypeId);
+    }
+
+    public static bool TryGetName(int entityTypeId, [NotNullWhen(true)] out string? entityTypeName)
+    {
+        entityTypeName = NameToIdMap.FirstOrDefault(kv => kv.Value == entityTypeId).Key;
+        return !string.IsNullOrEmpty(entityTypeName);
     }
 
     public static bool TryParse<T>(out int entityTypeId) where T : IParsable
     {
         return TypeToIdMap.TryGetValue(typeof(T), out entityTypeId);
+    }
+
+    public static bool TryGetType(int entityTypeId, [NotNullWhen(true)] out Type? entityType)
+    {
+        entityType = TypeToIdMap.FirstOrDefault(kv => kv.Value == entityTypeId).Key;
+        return entityType != default;
     }
 }

@@ -1,4 +1,6 @@
-﻿// ReSharper disable once CheckNamespace
+﻿using System.Globalization;
+
+// ReSharper disable once CheckNamespace
 namespace ExactOnline.Api.Client.Extensions;
 
 public static class LongExtensions
@@ -8,6 +10,7 @@ public static class LongExtensions
     /// </summary>
     public static string ToODataFormat(this long value)
     {
-        return value > int.MaxValue ? $"{value}L" : $"{value}";
+        var str = value.ToString(CultureInfo.InvariantCulture);
+        return value > int.MaxValue ? $"{str}L" : str;
     }
 }
