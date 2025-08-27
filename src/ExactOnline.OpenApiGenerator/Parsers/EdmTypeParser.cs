@@ -5,9 +5,9 @@ namespace ExactOnline.OpenApiGenerator.Parsers;
 
 internal static class EdmTypeParser
 {
-    internal static bool TryParse(string type, string? description, bool isSyncInterface, [NotNullWhen(true)] out IOpenApiSchema? schema)
+    internal static bool TryParse(string type, string? description, bool isGetOnly, [NotNullWhen(true)] out IOpenApiSchema? schema)
     {
-        if (TryParse(type, description, isSyncInterface, out (Type Type, IOpenApiSchema Schema) typeWithSchema))
+        if (TryParse(type, description, isGetOnly, out (Type Type, IOpenApiSchema Schema) typeWithSchema))
         {
             schema = typeWithSchema.Schema;
             return true;
@@ -17,12 +17,12 @@ internal static class EdmTypeParser
         return false;
     }
 
-    internal static bool TryParse(string type, string? description, bool isSyncInterface, out (Type Type, IOpenApiSchema Schema) typeWithSchema)
+    internal static bool TryParse(string type, string? description, bool isGetOnly, out (Type Type, IOpenApiSchema Schema) typeWithSchema)
     {
         var edmSchema = new OpenApiSchema
         {
             Description = description,
-            ReadOnly = isSyncInterface
+            ReadOnly = isGetOnly
         };
 
         switch (type)

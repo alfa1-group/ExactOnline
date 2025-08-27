@@ -96148,6 +96148,184 @@
           }
         }
       }
+    },
+    "/api/v1/{division}/users/Users": {
+      "description": "Get all Users",
+      "get": {
+        "summary": "GET UsersUsers",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Comma-separated list of fields to return, e.g., `ID`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Number of records to return, e.g., `100`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Number of records to skip, e.g., `10`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skiptoken",
+            "in": "query",
+            "description": "A server-generated token used to fetch the next page of results in a paginated query.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order by field, e.g., `ID desc`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Include count of items, e.g., `true`",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "$inlinecount",
+            "in": "query",
+            "description": "Include inline count, e.g., `allpages`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, e.g., `ParentEntity`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersUsers_Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{division}/users/Users({userid})": {
+      "description": "Get all Users",
+      "get": {
+        "summary": "GET UsersUsers",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "Unique identifier (uuid) of the UsersUsers",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersUsersGet_Response"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -208281,6 +208459,274 @@
           }
         },
         "description": "The WorkflowRequestAttachment entity.",
+        "readOnly": true
+      },
+      "UsersUsers": {
+        "required": [
+          "UserID"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "BirthDate": {
+            "type": "string",
+            "description": "",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "BirthName": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "Created": {
+            "type": "string",
+            "description": "",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "Creator": {
+            "type": "string",
+            "description": "",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "CreatorFullName": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "Customer": {
+            "type": "string",
+            "description": "",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "CustomerName": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "Email": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "EndDate": {
+            "type": "string",
+            "description": "",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "FirstName": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "FullName": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "Gender": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "HasRegisteredForTwoStepVerification": {
+            "type": "boolean",
+            "description": "",
+            "readOnly": true
+          },
+          "HasTwoStepVerification": {
+            "type": "boolean",
+            "description": "",
+            "readOnly": true
+          },
+          "Initials": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "IsAnonymised": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "",
+            "format": "int32",
+            "readOnly": true
+          },
+          "Language": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "LastLogin": {
+            "type": "string",
+            "description": "",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "LastName": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "MiddleName": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "Mobile": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "Modified": {
+            "type": "string",
+            "description": "",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "Modifier": {
+            "type": "string",
+            "description": "",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "ModifierFullName": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "Nationality": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "Notes": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "Phone": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "PhoneExtension": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "ProfileCode": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "StartDate": {
+            "type": "string",
+            "description": "",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "StartDivision": {
+            "type": "integer",
+            "description": "",
+            "format": "int32",
+            "readOnly": true
+          },
+          "Title": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "UserID": {
+            "type": "string",
+            "description": "",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "UserName": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "UserTypeCode": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          },
+          "UserTypesList": {
+            "type": "string",
+            "description": "",
+            "readOnly": true
+          }
+        }
+      },
+      "UsersUsers_Array": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/UsersUsers"
+        },
+        "readOnly": true
+      },
+      "UsersUsers_Results": {
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "$ref": "#/components/schemas/UsersUsers_Array"
+          },
+          "__next": {
+            "type": "string",
+            "description": "This property contains a link to request the next set of records including the option which are passed in the initial request with a $skiptoken option.",
+            "readOnly": true
+          }
+        },
+        "readOnly": true
+      },
+      "UsersUsers_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UsersUsers_Array"
+              },
+              {
+                "$ref": "#/components/schemas/UsersUsers_Results"
+              }
+            ],
+            "discriminator": {
+              "propertyName": "results",
+              "mapping": {
+                "_Results": "#/components/schemas/UsersUsers_Results"
+              }
+            }
+          }
+        },
+        "description": "A collection of UsersUsers entities.",
+        "readOnly": true
+      },
+      "UsersUsersGet_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/UsersUsers"
+          }
+        },
+        "description": "The UsersUsers entity.",
         "readOnly": true
       }
     }

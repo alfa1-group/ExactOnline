@@ -1,4 +1,5 @@
-﻿using ExactOnline.Api.Client;
+﻿using System.Collections.Generic;
+using ExactOnline.Api.Client;
 using ExactOnline.Api.Client.Authentication.Options;
 using ExactOnline.Api.Client.Builders.Filter;
 using ExactOnline.Api.Client.Builders.OrderBy;
@@ -60,6 +61,19 @@ var me = await RunAsync(async () =>
 });
 
 var division = isDevelopment ? me!.CurrentDivision!.Value : scope.ServiceProvider.GetRequiredService<IConfiguration>().GetValue<int>("Division");
+
+await RunAsync(async () =>
+{
+    Console.WriteLine("Getting Users/Users");
+    var list = await client.Api.V1[division].Users.Users.GetAllAsync().AsItems();
+
+    foreach (var x in list)
+    {
+        Console.WriteLine($"Fullname: {x.FullName}, UserID: {x.UserID}");
+    }
+
+    return list;
+});
 
 var ts = await RunAsync(async () =>
 {

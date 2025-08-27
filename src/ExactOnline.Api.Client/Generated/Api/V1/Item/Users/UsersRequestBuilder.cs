@@ -6,6 +6,7 @@ using ExactOnline.Api.Client.Api.V1.Item.Users.UserRoles;
 using ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesPerDivision;
 using ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesPerDivisionWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Users.UsersWithUserid;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -34,6 +35,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Users
         public global::ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesPerDivision.UserRolesPerDivisionRequestBuilder UserRolesPerDivision
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesPerDivision.UserRolesPerDivisionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Get all Users</summary>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Users.Users.UsersRequestBuilder Users
+        {
+            get => new global::ExactOnline.Api.Client.Api.V1.Item.Users.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Users.UsersRequestBuilder"/> and sets the default values.
@@ -80,6 +86,16 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Users
         {
             _ = id ?? throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesWithId.UserRolesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Get all Users
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Users.UsersWithUserid.UsersWithUseridRequestBuilder"/></returns>
+        /// <param name="userid">Unique identifier (uuid) of the UsersUsers</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Users.UsersWithUserid.UsersWithUseridRequestBuilder UsersWithUserid(Guid? userid)
+        {
+            _ = userid ?? throw new ArgumentNullException(nameof(userid));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Users.UsersWithUserid.UsersWithUseridRequestBuilder(PathParameters, RequestAdapter, userid);
         }
     }
 }
