@@ -10,12 +10,25 @@ using MonkeyCache.FileStore;
 
 namespace ExactOnline.OpenApiGenerator.Crawlers;
 
-internal class EndpointCrawler
+internal partial class EndpointCrawler
 {
     private const int MaxRetries = 3;
     private static readonly Regex EndpointUriRegex = new(@"\{(\w+)\}", RegexOptions.Compiled);
     private static readonly Regex EndpointUriEdmTypeRegex = new(@"(\w+)=\{([^}]+)\}", RegexOptions.Compiled);
     private static readonly string[] ReturnsSingleItem = ["SystemSystemMe", "ReadSyncSyncSyncTimestamp"];
+
+    private static readonly IOpenApiSchema MetaDataRef = new OpenApiSchemaReference("ExactOnlineMetadata")
+    {
+        ReadOnly = true
+    };
+    private static readonly IOpenApiSchema ODataNextRef = new OpenApiSchemaReference("ODataNext")
+    {
+        ReadOnly = true
+    };
+    private static readonly IOpenApiSchema ODataDeferredRef = new OpenApiSchemaReference("ODataDeferred")
+    {
+        ReadOnly = true
+    };
 
     private readonly OpenApiDocument _openApiDoc;
     private readonly PuppeteerHtmlLoader _puppeteerHtmlLoader;
@@ -85,6 +98,24 @@ internal class EndpointCrawler
             Required = new HashSet<string> { "error" }
         };
 
+        var next = new OpenApiSchema
+        {
+            Type = JsonSchemaType.String,
+            ReadOnly = true,
+            Description = "This property contains a link to request the next set of records including the option which are passed in the initial request with a $skiptoken option."
+        };
+
+        var deferred = new OpenApiSchema
+        {
+            Type = JsonSchemaType.Object,
+            ReadOnly = true,
+            Properties = new Dictionary<string, IOpenApiSchema>
+            {
+                { "uri", new OpenApiSchema { Type = JsonSchemaType.String, ReadOnly = true, Description = "The URL to fetch the related data." } }
+            },
+            Description = "This property contains a placeholder for a navigation property that provides a URL to fetch related data on demand instead of including it inline."
+        };
+
         _openApiDoc = new OpenApiDocument
         {
             Info = new OpenApiInfo
@@ -106,6 +137,8 @@ internal class EndpointCrawler
                 Schemas = new Dictionary<string, IOpenApiSchema>
                 {
                     { "ExactOnlineMetadata", metadata },
+                    { "ODataNext", next },
+                    { "ODataDeferred", deferred },
                     { "ODataError", error }
                 }
             }
@@ -140,6 +173,11 @@ internal class EndpointCrawler
         }
 
         return _openApiDoc;
+    }
+
+    internal void AddExtra(OpenApiDocument openApiDoc)
+    {
+        AddUsersUsers(openApiDoc);
     }
 
     private async Task<IDictionary<string, string>> GetDocsAsync(string url, CancellationToken cancellationToken)
@@ -195,16 +233,11 @@ internal class EndpointCrawler
         var isSyncInterface = baseSchemaName.StartsWith("Sync");
         var isGetOnly = docs.Count == 1;
 
-        var metaDataRef = new OpenApiSchemaReference("ExactOnlineMetadata")
-        {
-            ReadOnly = isGetOnly
-        };
-
         foreach (var (httpMethod, document) in docs)
         {
             var properties = new Dictionary<string, IOpenApiSchema>
             {
-                { "__metadata", metaDataRef }
+                { "__metadata", MetaDataRef }
             };
 
             string? keyName = null;
@@ -353,6 +386,12 @@ internal class EndpointCrawler
             Content = errorContent
         };
 
+        var error501Response = new OpenApiResponse
+        {
+            Description = $"Not Implemented: {httpMethod} operation failed",
+            Content = errorContent
+        };
+
         var operation = new OpenApiOperation
         {
             Summary = $"{httpMethod} {baseSchemaName}",
@@ -360,7 +399,8 @@ internal class EndpointCrawler
             Responses = new OpenApiResponses
             {
                 { "400", error400Response },
-                { "500", error500Response }
+                { "500", error500Response },
+                { "501", error501Response }
             }
         };
 
@@ -420,16 +460,11 @@ internal class EndpointCrawler
                 Type = JsonSchemaType.Object,
                 ReadOnly = true,
                 Properties = new Dictionary<string, IOpenApiSchema>
-                    {
-                        { "results", arrayResponseRef },
-                        { "__next", new OpenApiSchema
-                            {
-                                Type = JsonSchemaType.String,
-                                ReadOnly = true,
-                                Description = "This property contains a link to request the next set of records including the option which are passed in the initial request with a $skiptoken option."
-                            }
-                        }
-                    },
+                {
+                    { "results", arrayResponseRef },
+                    { "__count", new OpenApiSchema { Type = JsonSchemaType.Integer, Format = "int32", Description = "This property represents the total number of entities in a collection that match the query, often used alongside $inlinecount to support paging scenarios.", ReadOnly = true } },
+                    { "__next", new OpenApiSchemaReference("ODataNext") }
+                },
                 Required = new HashSet<string> { "results" }
             };
             openApiDoc.Components!.Schemas!.Add(baseSchemaName + "_Results", resultsResponse);
@@ -561,7 +596,6 @@ internal class EndpointCrawler
 
             var name = keyName?.ToLowerInvariant() ?? (isSyncInterface ? "timestamp" : "id");
             var type = (keyType == null || name == "timestamp") ? new OpenApiSchema { Type = JsonSchemaType.String } : keyType;
-            //type.Description = null;
 
             if (name == "hid")
             {
@@ -773,21 +807,6 @@ internal class EndpointCrawler
             });
         }
 
-        if (parameters.All(p => p.Name != "$count"))
-        {
-            parameters.Add(new OpenApiParameter
-            {
-                Name = "$count",
-                In = ParameterLocation.Query,
-                Required = false,
-                Schema = new OpenApiSchema
-                {
-                    Type = JsonSchemaType.Boolean
-                },
-                Description = "Include count of items, e.g., `true`"
-            });
-        }
-
         if (parameters.All(p => p.Name != "$inlinecount"))
         {
             parameters.Add(new OpenApiParameter
@@ -799,7 +818,7 @@ internal class EndpointCrawler
                 {
                     Type = JsonSchemaType.String
                 },
-                Description = "Include inline count, e.g., `allpages`"
+                Description = "Include inline count, `allpages` or `none`"
             });
         }
 
@@ -877,7 +896,7 @@ internal class EndpointCrawler
             typeof(Guid)
         };
 
-        if (EdmTypeParser.TryParse(edmType, description: null, isSyncInterface: false, out (Type Type, IOpenApiSchema Schema) typeWithSchema) && !fixedStringType.Contains(typeWithSchema.Type))
+        if (EdmTypeParser.TryParse(edmType, description: null, isGetOnly: false, out (Type Type, IOpenApiSchema Schema) typeWithSchema) && !fixedStringType.Contains(typeWithSchema.Type))
         {
             return typeWithSchema.Schema;
         }

@@ -3,8 +3,25 @@ namespace ExactOnline.Api.Client.Extensions;
 
 public static class StringExtensions
 {
-    public static string ToODataFormat(this string value)
+    /// <summary>
+    /// Escapes a string value so it can be safely used in an OData $filter expression.
+    /// Handles OData single-quote escaping and URL-encodes reserved characters.
+    /// </summary>
+    public static string ToODataFormat(this string? value)
     {
-        return $"'{value}'";
+        // 0. If null, return "null" (OData literal for null)
+        if (value == null)
+        {
+            return "null";
+        }
+
+        // Step 1: OData-specific: double the single quotes
+        var escaped = value.Replace("'", "''");
+
+        // Step 2: URL-encode
+        escaped = Uri.EscapeDataString(escaped);
+
+        // Step 3: Wrap in single quotes for OData literal
+        return $"'{escaped}'";
     }
 }

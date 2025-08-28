@@ -17,7 +17,7 @@ kiota generate `
 
 Write-Output "🔧 Patching models..."
 $modelFiles = Get-ChildItem -Path $modelsPath -Filter "*.cs" | Where-Object {
-    $_.Name -notlike "*Post.cs" -and $_.Name -notlike "*Put.cs" -and $_.Name -notlike "*_Response.cs" -and $_.Name -notlike "*Post_Response.cs" -and $_.Name -notlike "*Put_Response.cs" -and $_.Name -notlike "*_Results.cs" -and $_.Name -notlike "ExactOnlineMetadata*.cs" -and $_.Name -notlike "ODataError*.cs"
+    $_.Name -notlike "*Post.cs" -and $_.Name -notlike "*Put.cs" -and $_.Name -notlike "*_Response.cs" -and $_.Name -notlike "*Post_Response.cs" -and $_.Name -notlike "*Put_Response.cs" -and $_.Name -notlike "*_Results.cs" -and $_.Name -notlike "ExactOnlineMetadata*.cs" -and $_.Name -notlike "ODataError*.cs" -and $_.Name -notlike "ODataDeferred*.cs" -and $_.Name -notlike "ODataNext*.cs"
 }
 
 foreach ($file in $modelFiles) {
@@ -210,7 +210,7 @@ Write-Output "🔄 Generating response extension classes..."
 
 # Find all normal model files in the models directory
 $modelFiles = Get-ChildItem -Path $modelsPath -Filter "*.cs" | Where-Object {
-    $_.Name -notlike "*Post.cs" -and $_.Name -notlike "*Put.cs" -and $_.Name -notlike "*_Response.cs" -and $_.Name -notlike "*Post_Response.cs" -and $_.Name -notlike "*Put_Response.cs" -and $_.Name -notlike "*_Results.cs" -and $_.Name -notlike "ExactOnlineMetadata*.cs" -and $_.Name -notlike "ODataError*.cs"
+    $_.Name -notlike "*Post.cs" -and $_.Name -notlike "*Put.cs" -and $_.Name -notlike "*_Response.cs" -and $_.Name -notlike "*Post_Response.cs" -and $_.Name -notlike "*Put_Response.cs" -and $_.Name -notlike "*_Results.cs" -and $_.Name -notlike "ExactOnlineMetadata.cs" -and $_.Name -notlike "ODataError*.cs" -and $_.Name -notlike "ODataDeferred*.cs" -and $_.Name -notlike "ODataNext*.cs"
 }
 foreach ($file in $modelFiles) {
     $className = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)

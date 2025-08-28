@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccount
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HourEntryRecentAccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/HourEntryRecentAccounts{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", pathParameters)
+        public HourEntryRecentAccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/HourEntryRecentAccounts{?%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccount
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HourEntryRecentAccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/HourEntryRecentAccounts{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", rawUrl)
+        public HourEntryRecentAccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/read/project/HourEntryRecentAccounts{?%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", rawUrl)
         {
         }
         /// <summary>
@@ -41,6 +41,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccount
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
+        /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 501 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentAccount_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccounts.HourEntryRecentAccountsRequestBuilder.HourEntryRecentAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -55,6 +56,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccount
             {
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
+                { "501", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentAccount_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ReadProjectHourEntryRecentAccount_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -92,9 +94,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccount
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HourEntryRecentAccountsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Include count of items, e.g., `true`</summary>
-            [QueryParameter("%24count")]
-            public bool? Count { get; set; }
             /// <summary>Expand related entities, e.g., `ParentEntity`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,7 +114,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccount
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
-            /// <summary>Include inline count, e.g., `allpages`</summary>
+            /// <summary>Include inline count, `allpages` or `none`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24inlinecount")]

@@ -32,6 +32,7 @@ var client = scope.ServiceProvider.GetRequiredService<ExactOnlineServiceClient>(
 var someLogisticsItems = SelectBuilder<LogisticsItem>.Build(l => l.Description, l => l.FreeTextField01);
 var selectAllLogisticsItems = SelectBuilder<LogisticsItem>.Build();
 var filterLogisticsItems = FilterBuilder<LogisticsItem>.Build(l => l.Description == "abc" && l.FreeTextField01 == "tst");
+var filterPayrollEmployees = FilterBuilder<PayrollEmployee>.Build(p => p.Email == "test+dev@abc.com" && p.FullName == null);
 var s1 = SelectBuilder<SystemSystemMe>.Build(s => s.UserID, s => s.CurrentDivision, s => s.Email);
 var s2 = SelectBuilder<SystemSystemMe>.Build(s => new { s.UserID, s.CurrentDivision, s.Email });
 var orderBy = OrderByBuilder<WebhooksWebhookSubscription>
@@ -40,6 +41,7 @@ var orderBy = OrderByBuilder<WebhooksWebhookSubscription>
     .Build();
 var filter = FilterBuilder<WebhooksWebhookSubscription>.Build(a => a.CallbackURL!.Equals("abc") && (a.Division > 100 || a.Created > TimeProvider.System.GetUtcNow().AddDays(-30)));
 var selectAll = SelectBuilder<SyncProjectTimeCostTransaction>.Build();
+var usersUserRolesPerDivisionSelectAll = SelectBuilder<UsersUserRolesPerDivision>.Build();
 
 await RunAsync(async () =>
 {
@@ -60,6 +62,49 @@ var me = await RunAsync(async () =>
 });
 
 var division = isDevelopment ? me!.CurrentDivision!.Value : scope.ServiceProvider.GetRequiredService<IConfiguration>().GetValue<int>("Division");
+
+//var users = await RunAsync(async () =>
+//{
+//    Console.WriteLine("Getting Users/Users");
+//    var list = await client.Api.V1[division].Users.Users.GetAllAsync().AsItems();
+
+//    foreach (var x in list)
+//    {
+//        Console.WriteLine($"Fullname: {x.FullName}, UserID: {x.UserID}");
+//    }
+
+//    return list;
+//});
+
+//var usersRoles = await RunAsync(async () =>
+//{
+//    Console.WriteLine("Getting Users/UserRoles");
+//    var list = await client.Api.V1[division].Users.UserRoles.GetAllAsync().AsItems();
+
+//    foreach (var x in list)
+//    {
+//        Console.WriteLine($"UserID: {x.UserID}, Role: {x.Role}, RoleLevel: {x.RoleLevel}");
+//    }
+
+//    return list;
+//});
+
+await RunAsync(async () =>
+{
+    Console.WriteLine("Getting Users/UserRolesPerDivision");
+    var list = await client.Api.V1[division].Users.UserRolesPerDivision.GetAllAsync(b =>
+    {
+        b.QueryParameters.Select = usersUserRolesPerDivisionSelectAll;
+        b.QueryParameters.Filter = FilterBuilder<UsersUserRolesPerDivision>.Build(u => u.UserID == new Guid("..."));
+    }).AsItems();
+
+    foreach (var x in list)
+    {
+        Console.WriteLine($"UserID: {x.UserID}, Role: {x.Role}, RoleLevel: {x.RoleLevel}");
+    }
+
+    return list;
+});
 
 var ts = await RunAsync(async () =>
 {

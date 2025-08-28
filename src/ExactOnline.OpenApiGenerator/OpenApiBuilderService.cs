@@ -74,6 +74,8 @@ internal class OpenApiBuilderService
             return 1;
         }
 
+        crawler.AddExtra(openApiDoc);
+
         await using var outputStream = File.CreateText(_destination);
         var writer = new OpenApiJsonWriter(outputStream);
         openApiDoc.SerializeAsV3(writer);
