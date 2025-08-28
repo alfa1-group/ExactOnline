@@ -40,6 +40,8 @@ public partial class UsersUsers
         { nameof(Title), "Title" },
         { nameof(UserID), "UserID" },
         { nameof(UserName), "UserName" },
+        { nameof(UserRoles), "UserRoles" },
+        { nameof(UserRolesPerDivision), "UserRolesPerDivision" },
         { nameof(UserTypeCode), "UserTypeCode" },
         { nameof(UserTypesList), "UserTypesList" }
     };

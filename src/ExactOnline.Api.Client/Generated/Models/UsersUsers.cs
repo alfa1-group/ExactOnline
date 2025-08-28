@@ -208,6 +208,22 @@ namespace ExactOnline.Api.Client.Models
 #else
         public string UserName { get; private set; }
 #endif
+        /// <summary>This property contains a placeholder for a navigation property that provides a URL to fetch related data on demand instead of including it inline.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ExactOnline.Api.Client.Models.ODataDeferred? UserRoles { get; private set; }
+#nullable restore
+#else
+        public global::ExactOnline.Api.Client.Models.ODataDeferred UserRoles { get; private set; }
+#endif
+        /// <summary>This property contains a placeholder for a navigation property that provides a URL to fetch related data on demand instead of including it inline.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ExactOnline.Api.Client.Models.ODataDeferred? UserRolesPerDivision { get; private set; }
+#nullable restore
+#else
+        public global::ExactOnline.Api.Client.Models.ODataDeferred UserRolesPerDivision { get; private set; }
+#endif
         /// <summary>The UserTypeCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -277,6 +293,8 @@ namespace ExactOnline.Api.Client.Models
                 { "Title", n => { Title = n.GetStringValue(); } },
                 { "UserID", n => { UserID = n.GetGuidValue(); } },
                 { "UserName", n => { UserName = n.GetStringValue(); } },
+                { "UserRoles", n => { UserRoles = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ODataDeferred>(global::ExactOnline.Api.Client.Models.ODataDeferred.CreateFromDiscriminatorValue); } },
+                { "UserRolesPerDivision", n => { UserRolesPerDivision = n.GetObjectValue<global::ExactOnline.Api.Client.Models.ODataDeferred>(global::ExactOnline.Api.Client.Models.ODataDeferred.CreateFromDiscriminatorValue); } },
                 { "UserTypeCode", n => { UserTypeCode = n.GetStringValue(); } },
                 { "UserTypesList", n => { UserTypesList = n.GetStringValue(); } },
             };

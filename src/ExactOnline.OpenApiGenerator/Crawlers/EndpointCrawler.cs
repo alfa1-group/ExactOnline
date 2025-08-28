@@ -10,12 +10,25 @@ using MonkeyCache.FileStore;
 
 namespace ExactOnline.OpenApiGenerator.Crawlers;
 
-internal class EndpointCrawler
+internal partial class EndpointCrawler
 {
     private const int MaxRetries = 3;
     private static readonly Regex EndpointUriRegex = new(@"\{(\w+)\}", RegexOptions.Compiled);
     private static readonly Regex EndpointUriEdmTypeRegex = new(@"(\w+)=\{([^}]+)\}", RegexOptions.Compiled);
     private static readonly string[] ReturnsSingleItem = ["SystemSystemMe", "ReadSyncSyncSyncTimestamp"];
+
+    private static readonly IOpenApiSchema MetaDataRef = new OpenApiSchemaReference("ExactOnlineMetadata")
+    {
+        ReadOnly = true
+    };
+    private static readonly IOpenApiSchema ODataNextRef = new OpenApiSchemaReference("ODataNext")
+    {
+        ReadOnly = true
+    };
+    private static readonly IOpenApiSchema ODataDeferredRef = new OpenApiSchemaReference("ODataDeferred")
+    {
+        ReadOnly = true
+    };
 
     private readonly OpenApiDocument _openApiDoc;
     private readonly PuppeteerHtmlLoader _puppeteerHtmlLoader;
@@ -85,6 +98,24 @@ internal class EndpointCrawler
             Required = new HashSet<string> { "error" }
         };
 
+        var next = new OpenApiSchema
+        {
+            Type = JsonSchemaType.String,
+            ReadOnly = true,
+            Description = "This property contains a link to request the next set of records including the option which are passed in the initial request with a $skiptoken option."
+        };
+
+        var deferred = new OpenApiSchema
+        {
+            Type = JsonSchemaType.Object,
+            ReadOnly = true,
+            Properties = new Dictionary<string, IOpenApiSchema>
+            {
+                { "uri", new OpenApiSchema { Type = JsonSchemaType.String, ReadOnly = true, Description = "The URL to fetch the related data." } }
+            },
+            Description = "This property contains a placeholder for a navigation property that provides a URL to fetch related data on demand instead of including it inline."
+        };
+
         _openApiDoc = new OpenApiDocument
         {
             Info = new OpenApiInfo
@@ -106,6 +137,8 @@ internal class EndpointCrawler
                 Schemas = new Dictionary<string, IOpenApiSchema>
                 {
                     { "ExactOnlineMetadata", metadata },
+                    { "ODataNext", next },
+                    { "ODataDeferred", deferred },
                     { "ODataError", error }
                 }
             }
@@ -144,90 +177,7 @@ internal class EndpointCrawler
 
     internal void AddExtra(OpenApiDocument openApiDoc)
     {
-        var schemaName = "UsersUsers";
-        var description = "Get all Users";
-        var baseEndpointUri = "/api/v1/{division}/users/Users";
-        var keyName = "UserID";
-        var keyType = new OpenApiSchema
-        {
-            Type = JsonSchemaType.String,
-            Format = "uuid"
-        };
-        var queryParameters = new HashSet<OpenApiParameter>();
-
-        var metaDataRef = new OpenApiSchemaReference("ExactOnlineMetadata")
-        {
-            ReadOnly = true
-        };
-
-        var propertyMap = new (string Name, string Type)[]
-        {
-            ("BirthDate", "Edm.DateTime"),
-            ("BirthName", "Edm.String"),
-            ("Created", "Edm.DateTime"),
-            ("Creator", "Edm.Guid"),
-            ("CreatorFullName", "Edm.String"),
-            ("Customer", "Edm.Guid"),
-            ("CustomerName", "Edm.String"),
-            ("Email", "Edm.String"),
-            ("EndDate", "Edm.DateTime"),
-            ("FirstName", "Edm.String"),
-            ("FullName", "Edm.String"),
-            ("Gender", "Edm.String"),
-            ("HasRegisteredForTwoStepVerification", "Edm.Boolean"),
-            ("HasTwoStepVerification", "Edm.Boolean"),
-            ("Initials", "Edm.String"),
-            ("IsAnonymised", "Edm.Byte"),
-            ("Language", "Edm.String"),
-            ("LastLogin", "Edm.DateTime"),
-            ("LastName", "Edm.String"),
-            ("MiddleName", "Edm.String"),
-            ("Mobile", "Edm.String"),
-            ("Modified", "Edm.DateTime"),
-            ("Modifier", "Edm.Guid"),
-            ("ModifierFullName", "Edm.String"),
-            ("Nationality", "Edm.String"),
-            ("Notes", "Edm.String"),
-            ("Phone", "Edm.String"),
-            ("PhoneExtension", "Edm.String"),
-            ("ProfileCode", "Edm.String"),
-            ("StartDate", "Edm.DateTime"),
-            ("StartDivision", "Edm.Int32"),
-            ("Title", "Edm.String"),
-            ("UserID", "Edm.Guid"),
-            ("UserName", "Edm.String"),
-            ("UserTypeCode", "Edm.String"),
-            ("UserTypesList", "Edm.String")
-        };
-
-        var properties = new Dictionary<string, IOpenApiSchema>
-        {
-            { "__metadata", metaDataRef }
-        };
-
-        foreach (var entry in propertyMap)
-        {
-            if (EdmTypeParser.TryParse(entry.Type, description: string.Empty, isGetOnly: true, out IOpenApiSchema? property))
-            {
-                properties.Add(entry.Name, property);
-            }
-        }
-
-        var requiredProperties = new HashSet<string>()
-        {
-            keyName
-        };
-
-        var entityComponent = new OpenApiSchema
-        {
-            Type = JsonSchemaType.Object,
-            Properties = properties,
-            Required = requiredProperties
-        };
-
-        openApiDoc.Components!.Schemas!.Add(schemaName, entityComponent);
-
-        AddOperations(openApiDoc, HttpMethod.Get, baseEndpointUri, schemaName, description, queryParameters, keyName, keyType, isSyncInterface: false, isSingleResponse: false);
+        AddUsersUsers(openApiDoc);
     }
 
     private async Task<IDictionary<string, string>> GetDocsAsync(string url, CancellationToken cancellationToken)
@@ -283,16 +233,11 @@ internal class EndpointCrawler
         var isSyncInterface = baseSchemaName.StartsWith("Sync");
         var isGetOnly = docs.Count == 1;
 
-        var metaDataRef = new OpenApiSchemaReference("ExactOnlineMetadata")
-        {
-            ReadOnly = isGetOnly
-        };
-
         foreach (var (httpMethod, document) in docs)
         {
             var properties = new Dictionary<string, IOpenApiSchema>
             {
-                { "__metadata", metaDataRef }
+                { "__metadata", MetaDataRef }
             };
 
             string? keyName = null;
@@ -441,6 +386,12 @@ internal class EndpointCrawler
             Content = errorContent
         };
 
+        var error501Response = new OpenApiResponse
+        {
+            Description = $"Not Implemented: {httpMethod} operation failed",
+            Content = errorContent
+        };
+
         var operation = new OpenApiOperation
         {
             Summary = $"{httpMethod} {baseSchemaName}",
@@ -448,7 +399,8 @@ internal class EndpointCrawler
             Responses = new OpenApiResponses
             {
                 { "400", error400Response },
-                { "500", error500Response }
+                { "500", error500Response },
+                { "501", error501Response }
             }
         };
 
@@ -510,13 +462,7 @@ internal class EndpointCrawler
                 Properties = new Dictionary<string, IOpenApiSchema>
                     {
                         { "results", arrayResponseRef },
-                        { "__next", new OpenApiSchema
-                            {
-                                Type = JsonSchemaType.String,
-                                ReadOnly = true,
-                                Description = "This property contains a link to request the next set of records including the option which are passed in the initial request with a $skiptoken option."
-                            }
-                        }
+                        { "__next", new OpenApiSchemaReference("ODataNext") }
                     },
                 Required = new HashSet<string> { "results" }
             };

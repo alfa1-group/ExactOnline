@@ -41,6 +41,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversals
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
+        /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 501 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::ExactOnline.Api.Client.Models.ManufacturingByProductReversal_Response?> GetAsync(Action<RequestConfiguration<global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversals.ByProductReversalsRequestBuilder.ByProductReversalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -55,6 +56,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversals
             {
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
+                { "501", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ManufacturingByProductReversal_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ManufacturingByProductReversal_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -67,6 +69,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversals
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 400 status code</exception>
         /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 500 status code</exception>
+        /// <exception cref="global::ExactOnline.Api.Client.Models.ODataError">When receiving a 501 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::ExactOnline.Api.Client.Models.ManufacturingByProductReversalPost_Response?> PostAsync(global::ExactOnline.Api.Client.Models.ManufacturingByProductReversalPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,6 +85,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversals
             {
                 { "400", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
                 { "500", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
+                { "501", global::ExactOnline.Api.Client.Models.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::ExactOnline.Api.Client.Models.ManufacturingByProductReversalPost_Response>(requestInfo, global::ExactOnline.Api.Client.Models.ManufacturingByProductReversalPost_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
