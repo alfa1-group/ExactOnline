@@ -31,9 +31,9 @@ internal class ExactTokenService(
             return accessToken;
         }
 
-            // If expired or not present, refresh the AccessToken by contacting the authentication server using the refresh token from storage.
-            return await RefreshTokenAsync(cancellationToken);
-        }
+        // If expired or not present, refresh the AccessToken by contacting the authentication server using the refresh token from storage.
+        return await RefreshTokenAsync(cancellationToken);
+    }
 
     public async Task<string> RefreshTokenAsync(CancellationToken cancellationToken = default)
     {
