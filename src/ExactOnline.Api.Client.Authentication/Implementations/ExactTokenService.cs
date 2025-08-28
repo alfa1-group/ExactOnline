@@ -17,6 +17,9 @@ internal class ExactTokenService(
     // The expiration time to 9 minutes and 30 seconds, which is the maximum time a token is valid.
     private readonly TimeSpan _accessTokenExpirationTime = TimeSpan.FromSeconds(9 * 60 + 30);
 
+    // Ensure that only one thread refreshes the tokens at a time
+    private static readonly SemaphoreSlim RefreshTokenSemaphore = new(1, 1);
+
     public async Task<string> GetAccessTokenAsync(CancellationToken cancellationToken = default)
     {
         // First we check if we have a token in storage.
@@ -28,37 +31,46 @@ internal class ExactTokenService(
             return accessToken;
         }
 
-        // If expired or not present, refresh the AccessToken by contacting the authentication server using the refresh token from storage.
-        return await RefreshTokenAsync(cancellationToken);
-    }
+            // If expired or not present, refresh the AccessToken by contacting the authentication server using the refresh token from storage.
+            return await RefreshTokenAsync(cancellationToken);
+        }
 
     public async Task<string> RefreshTokenAsync(CancellationToken cancellationToken = default)
     {
-        // For refreshing the token we first need to fetch the current refresh token from storage
-        var refreshToken = await tokenStorageService.RetrieveRefreshTokenAsync(cancellationToken);
+        await RefreshTokenSemaphore.WaitAsync(cancellationToken);
 
-        // The client will issue the refresh request and should get a fresh refresh token + access token in response
-        var response = await RequestRefreshTokenWithRetryAndErrorHandlingAsync(refreshToken, cancellationToken);
-
-        // Store the new refresh token back in storage as the previous one is now invalid.
         try
         {
-            await tokenStorageService.StoreRefreshTokenAsync(response.RefreshToken!, cancellationToken);
-        }
-        catch (Exception ex)
-        {
-            // This is a bit nasty because it leaves the RefreshToken in the logs.
-            // But that way we can at least track it down where otherwise we need to generate a complete new token from Exact again, which requires admin.
-            throw new Exception($"Uploading the new RefreshToken failed. Here is the token: {response.RefreshToken}", ex);
-        }
+            // For refreshing the token we first need to fetch the current refresh token from storage
+            var refreshToken = await tokenStorageService.RetrieveRefreshTokenAsync(cancellationToken);
 
-        if (string.IsNullOrWhiteSpace(response.AccessToken))
-        {
-            logger.LogError("The access token is null or empty. ({ErrorType} {Error} {ErrorDescription}).", response.ErrorType, response.Error, response.ErrorDescription);
-        }
+            // The client will issue the refresh request and should get a fresh refresh token + access token in response
+            var response = await RequestRefreshTokenWithRetryAndErrorHandlingAsync(refreshToken, cancellationToken);
 
-        // Store the access token for reuse
-        return await tokenStorageService.StoreAccessTokenAsync(response.AccessToken!, _accessTokenExpirationTime, cancellationToken);
+            // Store the new refresh token back in storage as the previous one is now invalid.
+            try
+            {
+                await tokenStorageService.StoreRefreshTokenAsync(response.RefreshToken!, cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                // This is a bit nasty because it leaves the RefreshToken in the logs.
+                // But that way we can at least track it down where otherwise we need to generate a complete new token from Exact again, which requires admin.
+                throw new Exception($"Uploading the new RefreshToken failed. Here is the token: {response.RefreshToken}", ex);
+            }
+
+            if (string.IsNullOrWhiteSpace(response.AccessToken))
+            {
+                logger.LogError("The access token is null or empty. ({ErrorType} {Error} {ErrorDescription}).", response.ErrorType, response.Error, response.ErrorDescription);
+            }
+
+            // Store the access token for reuse
+            return await tokenStorageService.StoreAccessTokenAsync(response.AccessToken!, _accessTokenExpirationTime, cancellationToken);
+        }
+        finally
+        {
+            RefreshTokenSemaphore.Release();
+        }
     }
 
     private async Task<TokenResponse> RequestRefreshTokenWithRetryAndErrorHandlingAsync(string refreshToken, CancellationToken cancellationToken)
