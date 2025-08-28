@@ -6,6 +6,16 @@ namespace ExactOnline.Api.Client.Tests.Builders.Filter;
 public class FilterBuilderTests
 {
     [Test]
+    public async Task Build_With_NullableString_Equals_Expression()
+    {
+        // Act
+        var result = FilterBuilder<FilterTestModel>.Build(x => x.NullableStringProperty == null);
+
+        // Assert
+        await Assert.That(result).IsEqualTo("(NullableStringProperty eq 'null')");
+    }
+
+    [Test]
     public async Task Build_With_String_Equals_Expression()
     {
         // Act
@@ -200,6 +210,8 @@ public class FilterBuilderTests
     private class FilterTestModel
     {
         public string StringProperty { get; set; } = string.Empty;
+
+        public string? NullableStringProperty { get; set; }
 
         public bool BoolProperty { get; set; }
 

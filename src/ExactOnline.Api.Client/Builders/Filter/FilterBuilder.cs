@@ -122,6 +122,10 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
                 _filter.Append(dateTimeValue.ToODataFormat());
                 break;
 
+            case null:
+                _filter.Append("'null'");
+                break;
+
             default:
                 _filter.Append(node.Value);
                 break;
