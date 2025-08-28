@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntryLines
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CashEntryLinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financialtransaction/CashEntryLines{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", pathParameters)
+        public CashEntryLinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financialtransaction/CashEntryLines{?%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntryLines
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CashEntryLinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financialtransaction/CashEntryLines{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", rawUrl)
+        public CashEntryLinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/financialtransaction/CashEntryLines{?%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", rawUrl)
         {
         }
         /// <summary>
@@ -145,9 +145,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntryLines
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CashEntryLinesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Include count of items, e.g., `true`</summary>
-            [QueryParameter("%24count")]
-            public bool? Count { get; set; }
             /// <summary>Expand related entities, e.g., `ParentEntity`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -168,7 +165,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntryLines
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
-            /// <summary>Include inline count, e.g., `allpages`</summary>
+            /// <summary>Include inline count, `allpages` or `none`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24inlinecount")]

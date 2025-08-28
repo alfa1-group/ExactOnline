@@ -22,7 +22,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.JobGroups
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public JobGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/hrm/JobGroups{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", pathParameters)
+        public JobGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/hrm/JobGroups{?%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.JobGroups
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public JobGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/hrm/JobGroups{?%24count*,%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", rawUrl)
+        public JobGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/{division}/hrm/JobGroups{?%24expand*,%24filter*,%24inlinecount*,%24orderby*,%24select*,%24skip*,%24skiptoken*,%24top*}", rawUrl)
         {
         }
         /// <summary>
@@ -94,9 +94,6 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.JobGroups
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class JobGroupsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Include count of items, e.g., `true`</summary>
-            [QueryParameter("%24count")]
-            public bool? Count { get; set; }
             /// <summary>Expand related entities, e.g., `ParentEntity`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +114,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm.JobGroups
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
-            /// <summary>Include inline count, e.g., `allpages`</summary>
+            /// <summary>Include inline count, `allpages` or `none`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24inlinecount")]

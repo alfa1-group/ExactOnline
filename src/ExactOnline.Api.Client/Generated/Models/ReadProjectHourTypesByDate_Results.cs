@@ -12,6 +12,8 @@ namespace ExactOnline.Api.Client.Models
     public partial class ReadProjectHourTypesByDate_Results : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>This property represents the total number of entities in a collection that match the query, often used alongside $inlinecount to support paging scenarios.</summary>
+        public int? Count { get; private set; }
         /// <summary>This property contains a link to request the next set of records including the option which are passed in the initial request with a $skiptoken option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +48,7 @@ namespace ExactOnline.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "__count", n => { Count = n.GetIntValue(); } },
                 { "__next", n => { Next = n.GetStringValue(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::ExactOnline.Api.Client.Models.ReadProjectHourTypesByDate>(global::ExactOnline.Api.Client.Models.ReadProjectHourTypesByDate.CreateFromDiscriminatorValue)?.AsList(); } },
             };

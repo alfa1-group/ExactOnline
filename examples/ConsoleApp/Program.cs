@@ -42,6 +42,7 @@ var orderBy = OrderByBuilder<WebhooksWebhookSubscription>
     .Build();
 var filter = FilterBuilder<WebhooksWebhookSubscription>.Build(a => a.CallbackURL!.Equals("abc") && (a.Division > 100 || a.Created > TimeProvider.System.GetUtcNow().AddDays(-30)));
 var selectAll = SelectBuilder<SyncProjectTimeCostTransaction>.Build();
+var usersUserRolesPerDivisionSelectAll = SelectBuilder<UsersUserRolesPerDivision>.Build();
 
 await RunAsync(async () =>
 {

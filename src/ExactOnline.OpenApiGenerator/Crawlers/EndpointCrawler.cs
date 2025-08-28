@@ -460,10 +460,11 @@ internal partial class EndpointCrawler
                 Type = JsonSchemaType.Object,
                 ReadOnly = true,
                 Properties = new Dictionary<string, IOpenApiSchema>
-                    {
-                        { "results", arrayResponseRef },
-                        { "__next", new OpenApiSchemaReference("ODataNext") }
-                    },
+                {
+                    { "results", arrayResponseRef },
+                    { "__count", new OpenApiSchema { Type = JsonSchemaType.Integer, Format = "int32", Description = "This property represents the total number of entities in a collection that match the query, often used alongside $inlinecount to support paging scenarios.", ReadOnly = true } },
+                    { "__next", new OpenApiSchemaReference("ODataNext") }
+                },
                 Required = new HashSet<string> { "results" }
             };
             openApiDoc.Components!.Schemas!.Add(baseSchemaName + "_Results", resultsResponse);
@@ -806,21 +807,6 @@ internal partial class EndpointCrawler
             });
         }
 
-        if (parameters.All(p => p.Name != "$count"))
-        {
-            parameters.Add(new OpenApiParameter
-            {
-                Name = "$count",
-                In = ParameterLocation.Query,
-                Required = false,
-                Schema = new OpenApiSchema
-                {
-                    Type = JsonSchemaType.Boolean
-                },
-                Description = "Include count of items, e.g., `true`"
-            });
-        }
-
         if (parameters.All(p => p.Name != "$inlinecount"))
         {
             parameters.Add(new OpenApiParameter
@@ -832,7 +818,7 @@ internal partial class EndpointCrawler
                 {
                     Type = JsonSchemaType.String
                 },
-                Description = "Include inline count, e.g., `allpages`"
+                Description = "Include inline count, `allpages` or `none`"
             });
         }
 
