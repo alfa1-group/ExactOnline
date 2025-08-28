@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ExactOnline.Api.Client;
+﻿using ExactOnline.Api.Client;
 using ExactOnline.Api.Client.Authentication.Options;
 using ExactOnline.Api.Client.Builders.Filter;
 using ExactOnline.Api.Client.Builders.OrderBy;
@@ -90,16 +89,13 @@ var division = isDevelopment ? me!.CurrentDivision!.Value : scope.ServiceProvide
 //    return list;
 //});
 
-var guid = new Guid("110fb2c4-8ac3-4544-b70e-845485712751");
-var f = FilterBuilder<UsersUserRolesPerDivision>.Build(u => u.UserID == guid);
-
 await RunAsync(async () =>
 {
-    Console.WriteLine("Getting Users/UserRoles");
+    Console.WriteLine("Getting Users/UserRolesPerDivision");
     var list = await client.Api.V1[division].Users.UserRolesPerDivision.GetAllAsync(b =>
     {
         b.QueryParameters.Select = usersUserRolesPerDivisionSelectAll;
-        b.QueryParameters.Filter = FilterBuilder<UsersUserRolesPerDivision>.Build(u => u.UserID == new Guid("110fb2c4-8ac3-4544-b70e-845485712751"));
+        b.QueryParameters.Filter = FilterBuilder<UsersUserRolesPerDivision>.Build(u => u.UserID == new Guid("..."));
     }).AsItems();
 
     foreach (var x in list)
