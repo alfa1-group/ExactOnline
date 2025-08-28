@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq.Expressions;
 using System.Text;
@@ -30,17 +31,12 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
             return node;
         }
 
-        // Try to evaluate the method call and convert to constant
-        try
+        if (TryInvokeExpressionAndVisitAsConstant(node, out var constant))
         {
-            var result = Expression.Lambda(node).Compile().DynamicInvoke();
-            var constantExpression = Expression.Constant(result, node.Type);
-            return Visit(constantExpression);
+            return constant;
         }
-        catch
-        {
-            throw new NotSupportedException($"Method '{node.Method.Name}' could not be evaluated");
-        }
+
+        throw new NotSupportedException($"Method '{node.Method.Name}' could not be evaluated");
     }
 
     protected override Expression VisitBinary(BinaryExpression node)
@@ -80,6 +76,16 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
         }
 
         return node;
+    }
+
+    protected override Expression VisitNew(NewExpression node)
+    {
+        if (TryInvokeExpressionAndVisitAsConstant(node, out var constant))
+        {
+            return constant;
+        }
+
+        throw new NotSupportedException($"Constructor for '{node.Constructor?.DeclaringType?.Name}' could not be evaluated");
     }
 
     protected override Expression VisitConstant(ConstantExpression node)
@@ -141,5 +147,21 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
         var getter = getterLambda.Compile();
 
         return getter();
+    }
+
+    private bool TryInvokeExpressionAndVisitAsConstant(Expression node, [NotNullWhen(true)] out Expression? constant)
+    {
+        try
+        {
+            var result = Expression.Lambda(node).Compile().DynamicInvoke();
+            var constantExpression = Expression.Constant(result, node.Type);
+            constant = Visit(constantExpression);
+            return true;
+        }
+        catch
+        {
+            constant = null;
+            return false;
+        }
     }
 }

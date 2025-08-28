@@ -82,6 +82,39 @@ public class FilterBuilderTests
     }
 
     [Test]
+    public async Task Build_With_NewGuid_Equals_Expression()
+    {
+        // Act
+        var result = FilterBuilder<FilterTestModel>.Build(x => x.GuidProperty == new Guid("e7d72a8b-09a1-4349-8169-63d301f120bf"));
+
+        // Assert
+        await Assert.That(result).IsEqualTo("(GuidProperty eq guid'e7d72a8b-09a1-4349-8169-63d301f120bf')");
+    }
+
+    [Test]
+    public async Task Build_With_NullableGuid_Equals_Expression()
+    {
+        // Arrange
+        var guid = new Guid("e7d72a8b-09a1-4349-8169-63d301f120bf");
+
+        // Act
+        var result = FilterBuilder<FilterTestModel>.Build(x => x.NullableGuidProperty == guid);
+
+        // Assert
+        await Assert.That(result).IsEqualTo("(NullableGuidProperty eq guid'e7d72a8b-09a1-4349-8169-63d301f120bf')");
+    }
+
+    [Test]
+    public async Task Build_With_NewNullableGuid_Equals_Expression()
+    {
+        // Act
+        var result = FilterBuilder<FilterTestModel>.Build(x => x.NullableGuidProperty == new Guid("e7d72a8b-09a1-4349-8169-63d301f120bf"));
+
+        // Assert
+        await Assert.That(result).IsEqualTo("(NullableGuidProperty eq guid'e7d72a8b-09a1-4349-8169-63d301f120bf')");
+    }
+
+    [Test]
     public async Task Build_With_DateTimeOffset_Equals_Expression()
     {
         // Arrange
@@ -218,6 +251,8 @@ public class FilterBuilderTests
         public long LongProperty { get; set; }
 
         public Guid GuidProperty { get; set; }
+
+        public Guid? NullableGuidProperty { get; set; }
 
         public DateTimeOffset DateTimeOffsetProperty { get; set; }
 

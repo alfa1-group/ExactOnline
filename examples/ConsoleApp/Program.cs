@@ -64,23 +64,43 @@ var me = await RunAsync(async () =>
 
 var division = isDevelopment ? me!.CurrentDivision!.Value : scope.ServiceProvider.GetRequiredService<IConfiguration>().GetValue<int>("Division");
 
-var users = await RunAsync(async () =>
-{
-    Console.WriteLine("Getting Users/Users");
-    var list = await client.Api.V1[division].Users.Users.GetAllAsync().AsItems();
+//var users = await RunAsync(async () =>
+//{
+//    Console.WriteLine("Getting Users/Users");
+//    var list = await client.Api.V1[division].Users.Users.GetAllAsync().AsItems();
 
-    foreach (var x in list)
-    {
-        Console.WriteLine($"Fullname: {x.FullName}, UserID: {x.UserID}");
-    }
+//    foreach (var x in list)
+//    {
+//        Console.WriteLine($"Fullname: {x.FullName}, UserID: {x.UserID}");
+//    }
 
-    return list;
-});
+//    return list;
+//});
 
-var usersRoles = await RunAsync(async () =>
+//var usersRoles = await RunAsync(async () =>
+//{
+//    Console.WriteLine("Getting Users/UserRoles");
+//    var list = await client.Api.V1[division].Users.UserRoles.GetAllAsync().AsItems();
+
+//    foreach (var x in list)
+//    {
+//        Console.WriteLine($"UserID: {x.UserID}, Role: {x.Role}, RoleLevel: {x.RoleLevel}");
+//    }
+
+//    return list;
+//});
+
+var guid = new Guid("110fb2c4-8ac3-4544-b70e-845485712751");
+var f = FilterBuilder<UsersUserRolesPerDivision>.Build(u => u.UserID == guid);
+
+await RunAsync(async () =>
 {
     Console.WriteLine("Getting Users/UserRoles");
-    var list = await client.Api.V1[division].Users.UserRoles.GetAllAsync().AsItems();
+    var list = await client.Api.V1[division].Users.UserRolesPerDivision.GetAllAsync(b =>
+    {
+        b.QueryParameters.Select = usersUserRolesPerDivisionSelectAll;
+        b.QueryParameters.Filter = FilterBuilder<UsersUserRolesPerDivision>.Build(u => u.UserID == new Guid("110fb2c4-8ac3-4544-b70e-845485712751"));
+    }).AsItems();
 
     foreach (var x in list)
     {
