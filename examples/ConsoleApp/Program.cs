@@ -63,6 +63,26 @@ var me = await RunAsync(async () =>
 
 var division = isDevelopment ? me!.CurrentDivision!.Value : scope.ServiceProvider.GetRequiredService<IConfiguration>().GetValue<int>("Division");
 
+await RunAsync(async () =>
+{
+    // test multiple tasks in parallel
+    var task1 = client.Api.V1[division].Users.Users.GetAsync().AsItems();
+
+    var task2 = client.Api.V1[division].Users.Users.GetAsync().AsItems();
+
+    var tsTask = client.Api.V1[division].Read.Sync.Sync.SyncTimestamp.GetAsync(s =>
+    {
+        s.QueryParameters.Modified = new DateTimeOffset(2025, 8, 1, 0, 0, 0, TimeSpan.Zero).ToODataFormat();
+        s.QueryParameters.EndPoint = "TimeCostTransactions".ToODataFormat();
+    }).AsItem();
+
+    await Task.WhenAll(task1, task2, tsTask);
+
+    Console.WriteLine($"Task1 Users: {task1.Result.Count}, Task2 Users: {task2.Result.Count}, Timestamp: {tsTask.Result?.Modified} {tsTask.Result?.TimeStampAsBigInt} {tsTask.Result?.API}");
+
+    return true;
+});
+
 //var users = await RunAsync(async () =>
 //{
 //    Console.WriteLine("Getting Users/Users");
