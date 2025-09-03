@@ -15,13 +15,10 @@ public static class StringExtensions
             return "null";
         }
 
-        // Step 1: OData-specific: double the single quotes
+        // OData-specific: double the single quotes
         var escaped = value.Replace("'", "''");
 
-        // Step 2: URL-encode
-        escaped = Uri.EscapeDataString(escaped);
-
-        // Step 3: Wrap in single quotes for OData literal
+        // Wrap in single quotes for OData literal
         return $"'{escaped}'";
     }
 }

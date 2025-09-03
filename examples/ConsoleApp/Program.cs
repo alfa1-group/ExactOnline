@@ -83,6 +83,27 @@ await RunAsync(async () =>
     return true;
 });
 
+await RunAsync(async () =>
+{
+    var exactUsers = await client.Api.V1[division].Users.Users
+        .GetAllAsync(rb =>
+        {
+            rb.QueryParameters.Filter = FilterBuilder<UsersUsers>.Build(u => u.Email == "xxx");
+            rb.QueryParameters.Select = SelectBuilder<UsersUsers>.Build(u => new
+            {
+                u.Created,
+                u.Email,
+                u.UserID,
+                u.UserTypeCode
+            });
+            rb.QueryParameters.Orderby = OrderByBuilder<UsersUsers>.OrderByDescending(w => w.Created).Build();
+            rb.QueryParameters.Top = 1;
+        })
+        .AsItems();
+
+    return exactUsers;
+});
+
 //var users = await RunAsync(async () =>
 //{
 //    Console.WriteLine("Getting Users/Users");
