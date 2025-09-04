@@ -4,16 +4,9 @@ using Microsoft.Extensions.Options;
 
 namespace ExactOnline.Api.Client.Authentication.Storage.SqlServer.Data;
 
-public partial class ExactOnlineTokenDbContext : DbContext
+public partial class ExactOnlineTokenDbContext(DbContextOptions<ExactOnlineTokenDbContext> options, IOptions<ExactOnlineEntityFrameworkCoreStorageOptions> storageOptions) : DbContext(options)
 {
-    private readonly ExactOnlineEntityFrameworkCoreStorageOptions _storageOptions;
-    private readonly DatabaseProviderType _databaseProvider;
-
-    public ExactOnlineTokenDbContext(DbContextOptions<ExactOnlineTokenDbContext> options, IOptions<ExactOnlineEntityFrameworkCoreStorageOptions> storageOptions) : base(options)
-    {
-        _storageOptions = storageOptions.Value;
-        _databaseProvider = GetDatabaseProviderType();
-    }
+    private readonly ExactOnlineEntityFrameworkCoreStorageOptions _storageOptions = storageOptions.Value;
 
     public DbSet<ExactOnlineToken> Tokens { get; set; }
 

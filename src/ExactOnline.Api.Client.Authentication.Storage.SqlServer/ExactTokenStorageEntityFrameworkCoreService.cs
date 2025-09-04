@@ -41,7 +41,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
             }
             else
             {
-                // Only change the if database still has the token we just used.
+                // Only change if database still has the token we just used.
                 if (entity.RefreshToken != currentRefreshToken)
                 {
                     logger.LogInformation("Skipping refresh token update. Database already contains a newer refresh token (attempt {Attempt}).", attempt);
@@ -92,7 +92,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
 
     public async Task<string> RetrieveAccessTokenAsync(CancellationToken cancellationToken = default)
     {
-        if (TryGetNonEmptyAccessTokenFromCache(out string? accessToken))
+        if (TryGetNonEmptyAccessTokenFromCache(out var accessToken))
         {
             return accessToken;
         }
@@ -132,7 +132,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
                 return string.Empty;
             }
 
-            // Only change the if database still has a valid access token we just used.
+            // Only change if database still has a valid access token we just used.
             if (!string.IsNullOrEmpty(entity.AccessToken) && entity.AccessToken != currentAccessToken)
             {
                 logger.LogInformation("Skipping access token update. Database already contains a newer access token (attempt {Attempt}).", attempt);

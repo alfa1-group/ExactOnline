@@ -44,12 +44,11 @@ public static class ServiceCollectionExtensions
 
     private static void EnsureExactOnlineTokenTableExists(this IServiceCollection services)
     {
-        using (var serviceProvider = services.BuildServiceProvider())
-        {
-            using var scope = serviceProvider.CreateScope();
-            using var dbContext = scope.ServiceProvider.GetRequiredService<ExactOnlineTokenDbContext>();
-            dbContext.Database.EnsureCreated();
-            dbContext.EnsureExactOnlineTokenTableExists();
-        }
+        using var serviceProvider = services.BuildServiceProvider();
+        using var scope = serviceProvider.CreateScope();
+        using var dbContext = scope.ServiceProvider.GetRequiredService<ExactOnlineTokenDbContext>();
+
+        dbContext.Database.EnsureCreated();
+        dbContext.EnsureExactOnlineTokenTableExists();
     }
 }
