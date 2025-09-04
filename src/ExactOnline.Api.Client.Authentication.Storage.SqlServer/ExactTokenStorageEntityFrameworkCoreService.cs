@@ -186,9 +186,12 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
         return false;
     }
 
+    private static readonly Random s_jitterRandom = new();
+
     private Task WaitAsync(CancellationToken cancellationToken)
     {
-        // Just wait some time (1000 ms) with a bit of jitter.
-        return Task.Delay(RetryTimeOutInMs + timeProvider.GetUtcNow().Millisecond, cancellationToken);
+        // Wait some time (1000 ms) with a bit of random jitter to avoid synchronized retries.
+        int jitter = s_jitterRandom.Next(0, 1000); // 0-999 ms
+        return Task.Delay(RetryTimeOutInMs + jitter, cancellationToken);
     }
 }
