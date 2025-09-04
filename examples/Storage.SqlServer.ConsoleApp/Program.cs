@@ -51,7 +51,7 @@ await RunAsync(async () =>
         {
             var exactTokenStorageServiceForTask = scope.ServiceProvider.GetRequiredService<IExactTokenStorageService>();
 
-            await Task.Delay(new Random().Next(10));
+            await Task.Delay(Random.Shared.Next(10));
             return await exactTokenStorageServiceForTask.StoreRefreshTokenAsync(currentRefreshToken, $"r-{i}");
         });
         refreshTasks.Add(refreshTask);
@@ -60,7 +60,7 @@ await RunAsync(async () =>
         {
             var exactTokenStorageServiceForTask = scope.ServiceProvider.GetRequiredService<IExactTokenStorageService>();
 
-            await Task.Delay(new Random().Next(10));
+            await Task.Delay(Random.Shared.Next(10));
             return await exactTokenStorageServiceForTask.StoreAccessTokenAsync(currentAccessToken, $"a-{i}", TimeSpan.FromSeconds(5));
         });
         accessTasks.Add(accessTask);

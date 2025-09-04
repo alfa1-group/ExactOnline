@@ -16,6 +16,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
     ExactOnlineTokenDbContext dbContext,
     TimeProvider timeProvider) : IExactTokenStorageService
 {
+    private static readonly Random RandomJitter = new();
     private const int MaxConcurrencyRetries = 3;
     private const int RetryTimeOutInMs = 1000;
 
@@ -186,12 +187,9 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
         return false;
     }
 
-    private static readonly Random s_jitterRandom = new();
-
-    private Task WaitAsync(CancellationToken cancellationToken)
+    private static Task WaitAsync(CancellationToken cancellationToken)
     {
-        // Wait some time (1000 ms) with a bit of random jitter to avoid synchronized retries.
-        int jitter = s_jitterRandom.Next(0, 1000); // 0-999 ms
-        return Task.Delay(RetryTimeOutInMs + jitter, cancellationToken);
+        // Wait some time (1000 ms) with a bit of random jitter (0-500 ms) to avoid synchronized retries.
+        return Task.Delay(RetryTimeOutInMs + RandomJitter.Next(0, 500), cancellationToken);
     }
 }
