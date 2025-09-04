@@ -107,11 +107,17 @@ public partial class ExactOnlineTokenDbContext
         command.Parameters.Add(parameter);
 
         Database.OpenConnection();
-
-        using var result = command.ExecuteReader();
-        if (result.Read())
+        try
         {
-            exists = provider == DatabaseProviderType.PostgreSql ? result.GetBoolean(0) : result.GetInt32(0) > 0;
+            using var result = command.ExecuteReader();
+            if (result.Read())
+            {
+                exists = provider == DatabaseProviderType.PostgreSql ? result.GetBoolean(0) : result.GetInt32(0) > 0;
+            }
+        }
+        finally
+        {
+            Database.CloseConnection();
         }
 
         return exists;
