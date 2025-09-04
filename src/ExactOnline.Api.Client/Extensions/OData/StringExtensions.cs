@@ -3,6 +3,8 @@ namespace ExactOnline.Api.Client.Extensions;
 
 public static class StringExtensions
 {
+    internal const string ODataNullLiteral = "null";
+
     /// <summary>
     /// Escapes a string value so it can be safely used in an OData $filter expression.
     /// Handles OData single-quote escaping and URL-encodes reserved characters.
@@ -12,7 +14,7 @@ public static class StringExtensions
         // 0. If null, return "null" (OData literal for null)
         if (value == null)
         {
-            return "null";
+            return ODataNullLiteral;
         }
 
         // OData-specific: double the single quotes

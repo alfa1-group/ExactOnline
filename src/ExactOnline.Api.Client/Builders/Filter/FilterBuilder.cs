@@ -129,7 +129,7 @@ public class FilterBuilder<T> : ExpressionVisitor, IFilterBuilder
                 break;
 
             case null:
-                _filter.Append("'null'");
+                _filter.Append(StringExtensions.ODataNullLiteral);
                 break;
 
             default:

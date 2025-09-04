@@ -12,7 +12,7 @@ public class FilterBuilderTests
         var result = FilterBuilder<FilterTestModel>.Build(x => x.NullableStringProperty == null);
 
         // Assert
-        await Assert.That(result).IsEqualTo("(NullableStringProperty eq 'null')");
+        await Assert.That(result).IsEqualTo("(NullableStringProperty eq null)");
     }
 
     [Test]
@@ -125,6 +125,16 @@ public class FilterBuilderTests
 
         // Assert
         await Assert.That(result).IsEqualTo("(DateTimeOffsetProperty eq datetime'2023-01-01T12:00:00')");
+    }
+
+    [Test]
+    public async Task Build_With_NullableDateTimeOffset_NotEquals_Expression()
+    {
+        // Act
+        var result = FilterBuilder<FilterTestModel>.Build(x => x.NullableDateTimeOffsetProperty != null);
+
+        // Assert
+        await Assert.That(result).IsEqualTo("(NullableDateTimeOffsetProperty ne null)");
     }
 
     [Test]
@@ -248,7 +258,11 @@ public class FilterBuilderTests
 
         public bool BoolProperty { get; set; }
 
+        public bool? NullableBoolProperty { get; set; }
+
         public long LongProperty { get; set; }
+
+        public long? NullableLongProperty { get; set; }
 
         public Guid GuidProperty { get; set; }
 
@@ -256,12 +270,22 @@ public class FilterBuilderTests
 
         public DateTimeOffset DateTimeOffsetProperty { get; set; }
 
+        public DateTimeOffset? NullableDateTimeOffsetProperty { get; set; }
+
         public DateTime DateTimeProperty { get; set; }
+
+        public DateTime? NullableDateDateTimeProperty { get; set; }
 
         public int IntProperty { get; set; }
 
+        public int? NullableIntProperty { get; set; }
+
         public double DoubleProperty { get; set; }
 
+        public double? NullableDoubleProperty { get; set; }
+
         public short ShortProperty { get; set; }
+
+        public short? NullableShortProperty { get; set; }
     }
 }
