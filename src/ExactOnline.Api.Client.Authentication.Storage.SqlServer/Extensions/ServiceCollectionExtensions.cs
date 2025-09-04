@@ -22,20 +22,25 @@ public static class ServiceCollectionExtensions
 
         services.AddDbContext<ExactOnlineTokenDbContext>((serviceProvider, options) =>
         {
-            var storageOptions = serviceProvider.GetRequiredService<IOptions<ExactOnlineEntityFrameworkCoreStorageOptions>>().Value;
-
-            var connectionString = configuration.GetConnectionString(storageOptions.ConnectionStringName);
+            var connectionString = configuration.GetConnectionString(serviceProvider.GetOptions().ConnectionStringName);
 
             options.UseSqlServer(connectionString);
         });
 
         using (var serviceProvider = services.BuildServiceProvider())
         {
-            var scope = serviceProvider.CreateScope();
-            var dbContext = scope.ServiceProvider.GetRequiredService<ExactOnlineTokenDbContext>();
+            using var scope = serviceProvider.CreateScope();
+
+            using var dbContext = scope.ServiceProvider.GetRequiredService<ExactOnlineTokenDbContext>();
             dbContext.Database.EnsureCreated();
+            dbContext.EnsureExactOnlineTokenTableExists();
         }
 
         return services.AddScoped<IExactTokenStorageService, ExactTokenStorageEntityFrameworkCoreService>();
+    }
+
+    private static ExactOnlineEntityFrameworkCoreStorageOptions GetOptions(this IServiceProvider serviceProvider)
+    {
+        return serviceProvider.GetRequiredService<IOptions<ExactOnlineEntityFrameworkCoreStorageOptions>>().Value;
     }
 }
