@@ -31,11 +31,9 @@ public static class ServiceCollectionExtensions
 
         using (var serviceProvider = services.BuildServiceProvider())
         {
-            using (var scope = serviceProvider.CreateScope())
-            {
-                var dbContext = scope.ServiceProvider.GetRequiredService<ExactOnlineTokenDbContext>();
-                dbContext.Database.EnsureCreated();
-            }
+            var scope = serviceProvider.CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<ExactOnlineTokenDbContext>();
+            dbContext.Database.EnsureCreated();
         }
 
         return services.AddScoped<IExactTokenStorageService, ExactTokenStorageEntityFrameworkCoreService>();

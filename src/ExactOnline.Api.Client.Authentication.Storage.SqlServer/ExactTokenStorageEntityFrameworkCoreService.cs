@@ -12,7 +12,8 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
     ILogger<ExactTokenStorageEntityFrameworkCoreService> logger,
     IOptions<ExactOnlineEntityFrameworkCoreStorageOptions> options,
     IMemoryCache memoryCache,
-    ExactOnlineTokenDbContext dbContext) : IExactTokenStorageService
+    ExactOnlineTokenDbContext dbContext,
+    TimeProvider timeProvider) : IExactTokenStorageService
 {
     public async Task<string> StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
     {
@@ -20,11 +21,11 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
         if (existingToken != null)
         {
             existingToken.RefreshToken = refreshToken;
-            existingToken.RefreshTokenUpdatedAt = TimeProvider.System.GetUtcNow();
+            existingToken.RefreshTokenUpdatedAt = timeProvider.GetUtcNow();
         }
         else
         {
-            dbContext.Tokens.Add(new() { RefreshToken = refreshToken, RefreshTokenUpdatedAt = TimeProvider.System.GetUtcNow() });
+            dbContext.Tokens.Add(new() { RefreshToken = refreshToken, RefreshTokenUpdatedAt = timeProvider.GetUtcNow() });
         }
 
         await dbContext.SaveChangesAsync(cancellationToken);
@@ -52,7 +53,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
             return accessToken;
         }
 
-        // 2. If not found in memory cache, retrieve it from SQL.
+        // 2. If not found in memory cache, retrieve it from database.
         var token = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
         if (token == null)
         {
@@ -66,7 +67,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
             return string.Empty;
         }
 
-        if (TimeProvider.System.GetUtcNow() <= token.AccessTokenExpire)
+        if (timeProvider.GetUtcNow() <= token.AccessTokenExpire)
         {
             return memoryCache.Set(options.Value.AccessTokenColumnName, token.AccessToken, token.AccessTokenExpire);
         }
@@ -80,7 +81,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
         // 1. Store the access token in memory cache for quick access.
         memoryCache.Set(options.Value.AccessTokenColumnName, accessToken, absoluteExpirationRelativeToUtcNow);
 
-        // 2. Store the access token in SQL
+        // 2. Store the access token in database
         var token = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
         if (token == null)
         {
@@ -88,7 +89,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
             return string.Empty;
         }
 
-        var now = TimeProvider.System.GetUtcNow();
+        var now = timeProvider.GetUtcNow();
         token.AccessToken = accessToken;
         token.AccessTokenUpdatedAt = now;
         token.AccessTokenExpire = now.Add(absoluteExpirationRelativeToUtcNow);

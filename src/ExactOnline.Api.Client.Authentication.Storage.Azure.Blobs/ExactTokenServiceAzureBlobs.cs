@@ -12,7 +12,8 @@ internal class ExactTokenServiceAzureBlobs(
     ILogger<ExactTokenServiceAzureBlobs> logger,
     IOptions<ExactOnlineAzureBlobsStorageOptions> options,
     IMemoryCache memoryCache,
-    BlobContainerClient blobContainerClient) : IExactTokenStorageService
+    BlobContainerClient blobContainerClient, 
+    TimeProvider timeProvider) : IExactTokenStorageService
 {
     private const string MetadataAbsoluteExpirationRelativeToUtcNow = "AbsoluteExpirationRelativeToUtcNow";
 
@@ -57,7 +58,7 @@ internal class ExactTokenServiceAzureBlobs(
         var metadata = response.Value.Details.Metadata;
         if (metadata.TryGetValue(MetadataAbsoluteExpirationRelativeToUtcNow, out var metadataValue)
             && DateTimeOffset.TryParse(metadataValue, out var absoluteExpirationRelativeToNow)
-            && TimeProvider.System.GetUtcNow() <= absoluteExpirationRelativeToNow
+            && timeProvider.GetUtcNow() <= absoluteExpirationRelativeToNow
         )
         {
             return memoryCache.Set(options.Value.AccessTokenFilePath, response.Value.Content.ToString(), absoluteExpirationRelativeToNow);
@@ -81,7 +82,7 @@ internal class ExactTokenServiceAzureBlobs(
             },
             Metadata = new Dictionary<string, string>
             {
-                [MetadataAbsoluteExpirationRelativeToUtcNow] = TimeProvider.System.GetUtcNow().Add(absoluteExpirationRelativeToNow).ToString("O")
+                [MetadataAbsoluteExpirationRelativeToUtcNow] = timeProvider.GetUtcNow().Add(absoluteExpirationRelativeToNow).ToString("O")
             }
         };
 

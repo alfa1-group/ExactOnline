@@ -14,15 +14,17 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
     private const int MaxRequestsPerMinute = 60;
     private readonly ConcurrentDictionary<int, RateLimitState> _divisionLimits = new(); // Track limits per division
 
+    private readonly TimeProvider _timeProvider;
     private readonly ILogger<ExactOnlineRateLimitHandler> _logger;
 
-    public ExactOnlineRateLimitHandler() : this(NullLogger<ExactOnlineRateLimitHandler>.Instance)
+    public ExactOnlineRateLimitHandler() : this(NullLogger<ExactOnlineRateLimitHandler>.Instance, TimeProvider.System)
     {
     }
 
-    public ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> logger)
+    public ExactOnlineRateLimitHandler(ILogger<ExactOnlineRateLimitHandler> logger, TimeProvider timeProvider)
     {
         _logger = logger;
+        _timeProvider = timeProvider;
     }
 
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
@@ -33,7 +35,7 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
             return await base.SendAsync(request, cancellationToken);
         }
 
-        var now = TimeProvider.System.GetUtcNow();
+        var now = _timeProvider.GetUtcNow();
         var state = _divisionLimits.GetOrAdd(division, _ => new RateLimitState
         {
             MinuteWindowStartUtc = now
@@ -63,7 +65,7 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
                     Task.Delay(delay, cancellationToken).Wait(cancellationToken);
 
                     state.RequestsThisMinute = 0;
-                    state.MinuteWindowStartUtc = TimeProvider.System.GetUtcNow();
+                    state.MinuteWindowStartUtc = _timeProvider.GetUtcNow();
                 }
             }
 
@@ -78,7 +80,7 @@ public class ExactOnlineRateLimitHandler : DelegatingHandler
             if (minutelyRemaining <= 0)
             {
                 var waitUntil = state.MinuteWindowStartUtc.AddMinutes(1);
-                var delay = waitUntil - TimeProvider.System.GetUtcNow();
+                var delay = waitUntil - _timeProvider.GetUtcNow();
                 if (delay > TimeSpan.Zero)
                 {
                     _logger.LogDebug("Minutely rate limit reached for division {Division}. Waiting {Delay:F0} ms before next request.", division, delay.TotalMilliseconds);

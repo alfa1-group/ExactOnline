@@ -10,7 +10,8 @@ namespace ExactOnline.Api.Client.Authentication.Implementations;
 internal class ExactTokenService(
     ILogger<ExactTokenService> logger,
     IExactTokenStorageService tokenStorageService,
-    IExactTokenClient exactTokenClient) : IExactTokenService
+    IExactTokenClient exactTokenClient, 
+    TimeProvider timeProvider) : IExactTokenService
 {
     private const int RateLimitDelayInMinutes = 1;
 
@@ -75,7 +76,7 @@ internal class ExactTokenService(
 
     private async Task<TokenResponse> RequestRefreshTokenWithRetryAndErrorHandlingAsync(string refreshToken, CancellationToken cancellationToken)
     {
-        var startTime = TimeProvider.System.GetUtcNow();
+        var startTime = timeProvider.GetUtcNow();
 
         while (true)
         {
@@ -85,7 +86,7 @@ internal class ExactTokenService(
             {
                 if (IsRateLimitExceeded(response) || IsHttpFault(response))
                 {
-                    var elapsedTime = TimeProvider.System.GetUtcNow() - startTime;
+                    var elapsedTime = timeProvider.GetUtcNow() - startTime;
                     if (elapsedTime > _accessTokenExpirationTime)
                     {
                         throw new Exception($"AccessToken cannot be retrieved due to rate limiting and timeout exceeded ({_accessTokenExpirationTime}).");
