@@ -43,15 +43,15 @@ internal class ExactTokenService(
         try
         {
             // For refreshing the token we first need to fetch the current refresh token from storage
-            var refreshToken = await tokenStorageService.RetrieveRefreshTokenAsync(cancellationToken);
+            var currentRefreshToken = await tokenStorageService.RetrieveRefreshTokenAsync(cancellationToken);
 
             // The client will issue the refresh request and should get a fresh refresh token + access token in response
-            var response = await RequestRefreshTokenWithRetryAndErrorHandlingAsync(refreshToken, cancellationToken);
+            var response = await RequestRefreshTokenWithRetryAndErrorHandlingAsync(currentRefreshToken, cancellationToken);
 
             // Store the new refresh token back in storage as the previous one is now invalid.
             try
             {
-                await tokenStorageService.StoreRefreshTokenAsync(response.RefreshToken!, cancellationToken);
+                await tokenStorageService.StoreRefreshTokenAsync(currentRefreshToken, response.RefreshToken!, cancellationToken);
             }
             catch (Exception ex)
             {
@@ -66,7 +66,8 @@ internal class ExactTokenService(
             }
 
             // Store the access token for reuse
-            return await tokenStorageService.StoreAccessTokenAsync(response.AccessToken!, _accessTokenExpirationTime, cancellationToken);
+            var currentAccessToken = await tokenStorageService.RetrieveAccessTokenAsync(cancellationToken);
+            return await tokenStorageService.StoreAccessTokenAsync(currentAccessToken, response.AccessToken!, _accessTokenExpirationTime, cancellationToken);
         }
         finally
         {

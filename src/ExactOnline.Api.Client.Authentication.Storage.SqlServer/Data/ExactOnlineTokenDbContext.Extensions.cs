@@ -28,7 +28,8 @@ public partial class ExactOnlineTokenDbContext
                         {_storageOptions.RefreshTokenUpdatedAtColumnName} DATETIMEOFFSET NOT NULL,
                         {_storageOptions.AccessTokenColumnName} NVARCHAR(1024) NULL,
                         {_storageOptions.AccessTokenUpdatedAtColumnName} DATETIMEOFFSET NOT NULL,
-                        {_storageOptions.AccessTokenExpireColumnName} DATETIMEOFFSET NOT NULL
+                        {_storageOptions.AccessTokenExpireColumnName} DATETIMEOFFSET NOT NULL,
+                        RowVersion ROWVERSION NOT NULL
                     )",
 
             DatabaseProviderType.PostgreSql => $@"
@@ -38,7 +39,8 @@ public partial class ExactOnlineTokenDbContext
                         ""{_storageOptions.RefreshTokenUpdatedAtColumnName}"" TIMESTAMPTZ NOT NULL,
                         ""{_storageOptions.AccessTokenColumnName}"" VARCHAR(1024) NULL,
                         ""{_storageOptions.AccessTokenUpdatedAtColumnName}"" TIMESTAMPTZ NOT NULL,
-                        ""{_storageOptions.AccessTokenExpireColumnName}"" TIMESTAMPTZ NOT NULL
+                        ""{_storageOptions.AccessTokenExpireColumnName}"" TIMESTAMPTZ NOT NULL,
+                        ""RowVersion"" BYTEA NOT NULL DEFAULT ''::bytea
                     )",
 
             DatabaseProviderType.Sqlite => $@"
@@ -48,7 +50,8 @@ public partial class ExactOnlineTokenDbContext
                         {_storageOptions.RefreshTokenUpdatedAtColumnName} TEXT NOT NULL,
                         {_storageOptions.AccessTokenColumnName} TEXT NULL,
                         {_storageOptions.AccessTokenUpdatedAtColumnName} TEXT NOT NULL,
-                        {_storageOptions.AccessTokenExpireColumnName} TEXT NOT NULL
+                        {_storageOptions.AccessTokenExpireColumnName} TEXT NOT NULL,
+                        RowVersion BLOB NOT NULL DEFAULT (X'')
                     )",
 
             _ => throw new NotSupportedException($"Database provider {Database.ProviderName} is not supported")

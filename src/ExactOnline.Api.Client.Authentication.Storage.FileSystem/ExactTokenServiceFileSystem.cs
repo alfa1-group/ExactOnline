@@ -21,11 +21,16 @@ internal class ExactTokenServiceFileSystem(ILogger<ExactTokenServiceFileSystem> 
         return await File.ReadAllTextAsync(_refreshTokenFilePath, cancellationToken);
     }
 
-    public async Task<string> StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
+    public async Task<string> StoreRefreshTokenAsync(string currentRefreshToken, string newRefreshToken, CancellationToken cancellationToken = default)
     {
-        await File.WriteAllTextAsync(_refreshTokenFilePath, refreshToken, cancellationToken);
+        var existingRefreshToken = await RetrieveRefreshTokenAsync(cancellationToken);
+        if (existingRefreshToken == currentRefreshToken)
+        {
+            await File.WriteAllTextAsync(_refreshTokenFilePath, newRefreshToken, cancellationToken);
+            return newRefreshToken;
+        }
 
-        return refreshToken;
+        return existingRefreshToken;
     }
 
     public Task<string> RetrieveAccessTokenAsync(CancellationToken cancellationToken = default)
@@ -38,8 +43,16 @@ internal class ExactTokenServiceFileSystem(ILogger<ExactTokenServiceFileSystem> 
         return Task.FromResult(string.Empty);
     }
 
-    public Task<string> StoreAccessTokenAsync(string accessToken, TimeSpan absoluteExpirationRelativeToUtcNow, CancellationToken cancellationToken = default)
+    public async Task<string> StoreAccessTokenAsync(string? currentAccessToken, string newAccessToken, TimeSpan absoluteExpirationRelativeToUtcNow, CancellationToken cancellationToken = default)
     {
-        return Task.FromResult(memoryCache.Set(options.Value.AccessTokenFilePath, accessToken, absoluteExpirationRelativeToUtcNow));
+        var existingAccessToken = await RetrieveAccessTokenAsync(cancellationToken);
+
+        if (!string.IsNullOrEmpty(currentAccessToken) && existingAccessToken != currentAccessToken)
+        {
+            logger.LogWarning("The existing access token does not match the provided current access token. The access token will not be updated to avoid potential conflicts.");
+            return existingAccessToken;
+        }
+
+        return memoryCache.Set(options.Value.AccessTokenFilePath, newAccessToken, absoluteExpirationRelativeToUtcNow);
     }
 }
