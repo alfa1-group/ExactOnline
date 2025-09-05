@@ -13,7 +13,7 @@ var builder = Host.CreateDefaultBuilder(args)
 
 var host = builder.Build();
 
-using var scope = host.Services.CreateScope();
+var scope = host.Services.CreateScope();
 
 var exactTokenStorageService = scope.ServiceProvider.GetRequiredService<IExactTokenStorageService>();
 
@@ -45,23 +45,25 @@ await RunAsync(async () =>
 
     var refreshTasks = new List<Task<string>>();
     var accessTasks = new List<Task<string>>();
-    for (int i = 0; i < 10; i++)
+    for (var i = 0; i < 10; i++)
     {
-        Task<string> refreshTask = Task.Run(async () =>
+        var refreshIdx = i;
+        var refreshTask = Task.Run(async () =>
         {
             var exactTokenStorageServiceForTask = scope.ServiceProvider.GetRequiredService<IExactTokenStorageService>();
 
             await Task.Delay(Random.Shared.Next(10));
-            return await exactTokenStorageServiceForTask.StoreRefreshTokenAsync(currentRefreshToken, $"r-{i}");
+            return await exactTokenStorageServiceForTask.StoreRefreshTokenAsync(currentRefreshToken, $"r-{refreshIdx}");
         });
         refreshTasks.Add(refreshTask);
 
-        Task<string> accessTask = Task.Run(async () =>
+        var accessIdx = i;
+        var accessTask = Task.Run(async () =>
         {
             var exactTokenStorageServiceForTask = scope.ServiceProvider.GetRequiredService<IExactTokenStorageService>();
 
             await Task.Delay(Random.Shared.Next(10));
-            return await exactTokenStorageServiceForTask.StoreAccessTokenAsync(currentAccessToken, $"a-{i}", TimeSpan.FromSeconds(5));
+            return await exactTokenStorageServiceForTask.StoreAccessTokenAsync(currentAccessToken, $"a-{accessIdx}", TimeSpan.FromSeconds(5));
         });
         accessTasks.Add(accessTask);
     }
@@ -80,6 +82,8 @@ await RunAsync(async () =>
 
     return true;
 });
+
+scope.Dispose();
 
 return;
 
