@@ -11,7 +11,7 @@ namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddExactOnlineTokenStorageSqlServer(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddExactOnlineTokenStorageSqlServer(this IServiceCollection services, IConfiguration configuration, ServiceLifetime dbContextLifetime = ServiceLifetime.Scoped)
     {
         services.AddOptions<ExactOnlineEntityFrameworkCoreStorageOptions>()
             .Bind(configuration.GetSection("ExactOnlineSqlServerStorageOptions"))
@@ -22,22 +22,33 @@ public static class ServiceCollectionExtensions
 
         services.AddDbContext<ExactOnlineTokenDbContext>((serviceProvider, options) =>
         {
-            var storageOptions = serviceProvider.GetRequiredService<IOptions<ExactOnlineEntityFrameworkCoreStorageOptions>>().Value;
-
-            var connectionString = configuration.GetConnectionString(storageOptions.ConnectionStringName);
+            var connectionString = configuration.GetConnectionString(serviceProvider.GetOptions().ConnectionStringName);
 
             options.UseSqlServer(connectionString);
-        });
+        }, dbContextLifetime);
 
-        using (var serviceProvider = services.BuildServiceProvider())
+        services.EnsureExactOnlineTokenTableExists();
+
+        if (dbContextLifetime == ServiceLifetime.Scoped)
         {
-            using (var scope = serviceProvider.CreateScope())
-            {
-                var dbContext = scope.ServiceProvider.GetRequiredService<ExactOnlineTokenDbContext>();
-                dbContext.Database.EnsureCreated();
-            }
+            return services.AddScoped<IExactTokenStorageService, ExactTokenStorageEntityFrameworkCoreService>();
         }
 
-        return services.AddScoped<IExactTokenStorageService, ExactTokenStorageEntityFrameworkCoreService>();
+        return services.AddTransient<IExactTokenStorageService, ExactTokenStorageEntityFrameworkCoreService>();
+    }
+
+    private static ExactOnlineEntityFrameworkCoreStorageOptions GetOptions(this IServiceProvider serviceProvider)
+    {
+        return serviceProvider.GetRequiredService<IOptions<ExactOnlineEntityFrameworkCoreStorageOptions>>().Value;
+    }
+
+    private static void EnsureExactOnlineTokenTableExists(this IServiceCollection services)
+    {
+        using var serviceProvider = services.BuildServiceProvider();
+        using var scope = serviceProvider.CreateScope();
+        using var dbContext = scope.ServiceProvider.GetRequiredService<ExactOnlineTokenDbContext>();
+
+        dbContext.Database.EnsureCreated();
+        dbContext.EnsureExactOnlineTokenTableExists();
     }
 }

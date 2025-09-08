@@ -19,4 +19,10 @@ public class ExactOnlineToken
     public DateTimeOffset AccessTokenUpdatedAt { get; set; } = DateTimeOffset.MinValue;
 
     public DateTimeOffset AccessTokenExpire { get; set; } = DateTimeOffset.MinValue;
+
+    /// <summary>
+    /// Optimistic concurrency token.
+    /// </summary>
+    [Timestamp]
+    public byte[] RowVersion { get; set; } = [];
 }

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 
 namespace ExactOnline.Api.Client.Authentication.Storage.SqlServer.Data;
 
-public class ExactOnlineTokenDbContext(DbContextOptions<ExactOnlineTokenDbContext> options, IOptions<ExactOnlineEntityFrameworkCoreStorageOptions> storageOptions) : DbContext(options)
+public partial class ExactOnlineTokenDbContext(DbContextOptions<ExactOnlineTokenDbContext> options, IOptions<ExactOnlineEntityFrameworkCoreStorageOptions> storageOptions) : DbContext(options)
 {
     private readonly ExactOnlineEntityFrameworkCoreStorageOptions _storageOptions = storageOptions.Value;
 
@@ -13,6 +13,7 @@ public class ExactOnlineTokenDbContext(DbContextOptions<ExactOnlineTokenDbContex
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ExactOnlineToken>().ToTable(_storageOptions.TableName);
+
         modelBuilder.Entity<ExactOnlineToken>().Property(p => p.RefreshToken).HasColumnName(_storageOptions.RefreshTokenColumnName);
         modelBuilder.Entity<ExactOnlineToken>().Property(p => p.RefreshTokenUpdatedAt).HasColumnName(_storageOptions.RefreshTokenUpdatedAtColumnName);
 

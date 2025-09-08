@@ -12,7 +12,8 @@ internal class ExactTokenServiceAzureBlobs(
     ILogger<ExactTokenServiceAzureBlobs> logger,
     IOptions<ExactOnlineAzureBlobsStorageOptions> options,
     IMemoryCache memoryCache,
-    BlobContainerClient blobContainerClient) : IExactTokenStorageService
+    BlobContainerClient blobContainerClient, 
+    TimeProvider timeProvider) : IExactTokenStorageService
 {
     private const string MetadataAbsoluteExpirationRelativeToUtcNow = "AbsoluteExpirationRelativeToUtcNow";
 
@@ -31,11 +32,19 @@ internal class ExactTokenServiceAzureBlobs(
         return response.Value.Content.ToString();
     }
 
-    public async Task<string> StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
+    public async Task<string> StoreRefreshTokenAsync(string currentRefreshToken, string newRefreshToken, CancellationToken cancellationToken = default)
     {
-        _ = await _refreshTokenBlobClient.UploadAsync(BinaryData.FromString(refreshToken), overwrite: true, cancellationToken);
+        var existingRefreshToken = await RetrieveRefreshTokenAsync(cancellationToken);
 
-        return refreshToken;
+        if (existingRefreshToken != currentRefreshToken)
+        {
+            logger.LogWarning("The existing refresh token in blob storage does not match the provided current refresh token. The refresh token will not be updated to avoid potential conflicts.");
+            return existingRefreshToken;
+        }
+
+        _ = await _refreshTokenBlobClient.UploadAsync(BinaryData.FromString(newRefreshToken), overwrite: true, cancellationToken);
+
+        return newRefreshToken;
     }
 
     public async Task<string> RetrieveAccessTokenAsync(CancellationToken cancellationToken = default)
@@ -57,7 +66,7 @@ internal class ExactTokenServiceAzureBlobs(
         var metadata = response.Value.Details.Metadata;
         if (metadata.TryGetValue(MetadataAbsoluteExpirationRelativeToUtcNow, out var metadataValue)
             && DateTimeOffset.TryParse(metadataValue, out var absoluteExpirationRelativeToNow)
-            && TimeProvider.System.GetUtcNow() <= absoluteExpirationRelativeToNow
+            && timeProvider.GetUtcNow() <= absoluteExpirationRelativeToNow
         )
         {
             return memoryCache.Set(options.Value.AccessTokenFilePath, response.Value.Content.ToString(), absoluteExpirationRelativeToNow);
@@ -67,10 +76,22 @@ internal class ExactTokenServiceAzureBlobs(
         return string.Empty;
     }
 
-    public async Task<string> StoreAccessTokenAsync(string accessToken, TimeSpan absoluteExpirationRelativeToNow, CancellationToken cancellationToken = default)
+    public async Task<string> StoreAccessTokenAsync(string? currentAccessToken, string newAccessToken, TimeSpan absoluteExpirationRelativeToNow, CancellationToken cancellationToken = default)
     {
+        if (string.IsNullOrEmpty(newAccessToken))
+        {
+            throw new ArgumentException("New access token must not be null or empty.", nameof(newAccessToken));
+        }
+
+        var existingAccessToken = await RetrieveAccessTokenAsync(cancellationToken);
+        if (!string.IsNullOrEmpty(currentAccessToken) && existingAccessToken != currentAccessToken)
+        {
+            logger.LogInformation("Skipping access token update. Database already contains a newer access token.");
+            return existingAccessToken;
+        }
+
         // 1. Store the access token in memory cache for quick access.
-        memoryCache.Set(options.Value.AccessTokenFilePath, accessToken, absoluteExpirationRelativeToNow);
+        memoryCache.Set(options.Value.AccessTokenFilePath, newAccessToken, absoluteExpirationRelativeToNow);
 
         // 2. Store the access token in Azure Blob Storage with metadata for absolute expiration.
         var blobUploadOptions = new BlobUploadOptions
@@ -81,11 +102,11 @@ internal class ExactTokenServiceAzureBlobs(
             },
             Metadata = new Dictionary<string, string>
             {
-                [MetadataAbsoluteExpirationRelativeToUtcNow] = TimeProvider.System.GetUtcNow().Add(absoluteExpirationRelativeToNow).ToString("O")
+                [MetadataAbsoluteExpirationRelativeToUtcNow] = timeProvider.GetUtcNow().Add(absoluteExpirationRelativeToNow).ToString("O")
             }
         };
 
-        _ = await _accessTokenBlobClient.UploadAsync(BinaryData.FromString(accessToken), blobUploadOptions, cancellationToken);
-        return accessToken;
+        _ = await _accessTokenBlobClient.UploadAsync(BinaryData.FromString(newAccessToken), blobUploadOptions, cancellationToken);
+        return newAccessToken;
     }
 }

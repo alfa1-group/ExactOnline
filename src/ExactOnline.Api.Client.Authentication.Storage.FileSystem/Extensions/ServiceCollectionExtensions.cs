@@ -14,7 +14,9 @@ public static class ServiceCollectionExtensions
             .Bind(configuration.GetSection(nameof(ExactOnlineFileSystemOptions)))
             .ValidateDataAnnotations()
             .ValidateOnStart();
+
         services.AddMemoryCache();
+
         return services.AddSingleton<IExactTokenStorageService, ExactTokenServiceFileSystem>();
     }
 }

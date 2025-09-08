@@ -10,7 +10,8 @@ namespace ExactOnline.Api.Client.Authentication.Implementations;
 internal class ExactTokenService(
     ILogger<ExactTokenService> logger,
     IExactTokenStorageService tokenStorageService,
-    IExactTokenClient exactTokenClient) : IExactTokenService
+    IExactTokenClient exactTokenClient, 
+    TimeProvider timeProvider) : IExactTokenService
 {
     private const int RateLimitDelayInMinutes = 1;
 
@@ -42,15 +43,15 @@ internal class ExactTokenService(
         try
         {
             // For refreshing the token we first need to fetch the current refresh token from storage
-            var refreshToken = await tokenStorageService.RetrieveRefreshTokenAsync(cancellationToken);
+            var currentRefreshToken = await tokenStorageService.RetrieveRefreshTokenAsync(cancellationToken);
 
             // The client will issue the refresh request and should get a fresh refresh token + access token in response
-            var response = await RequestRefreshTokenWithRetryAndErrorHandlingAsync(refreshToken, cancellationToken);
+            var response = await RequestRefreshTokenWithRetryAndErrorHandlingAsync(currentRefreshToken, cancellationToken);
 
             // Store the new refresh token back in storage as the previous one is now invalid.
             try
             {
-                await tokenStorageService.StoreRefreshTokenAsync(response.RefreshToken!, cancellationToken);
+                await tokenStorageService.StoreRefreshTokenAsync(currentRefreshToken, response.RefreshToken!, cancellationToken);
             }
             catch (Exception ex)
             {
@@ -65,7 +66,8 @@ internal class ExactTokenService(
             }
 
             // Store the access token for reuse
-            return await tokenStorageService.StoreAccessTokenAsync(response.AccessToken!, _accessTokenExpirationTime, cancellationToken);
+            var currentAccessToken = await tokenStorageService.RetrieveAccessTokenAsync(cancellationToken);
+            return await tokenStorageService.StoreAccessTokenAsync(currentAccessToken, response.AccessToken!, _accessTokenExpirationTime, cancellationToken);
         }
         finally
         {
@@ -75,7 +77,7 @@ internal class ExactTokenService(
 
     private async Task<TokenResponse> RequestRefreshTokenWithRetryAndErrorHandlingAsync(string refreshToken, CancellationToken cancellationToken)
     {
-        var startTime = TimeProvider.System.GetUtcNow();
+        var startTime = timeProvider.GetUtcNow();
 
         while (true)
         {
@@ -85,7 +87,7 @@ internal class ExactTokenService(
             {
                 if (IsRateLimitExceeded(response) || IsHttpFault(response))
                 {
-                    var elapsedTime = TimeProvider.System.GetUtcNow() - startTime;
+                    var elapsedTime = timeProvider.GetUtcNow() - startTime;
                     if (elapsedTime > _accessTokenExpirationTime)
                     {
                         throw new Exception($"AccessToken cannot be retrieved due to rate limiting and timeout exceeded ({_accessTokenExpirationTime}).");

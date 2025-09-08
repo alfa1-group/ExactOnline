@@ -1,4 +1,5 @@
-﻿using ExactOnline.Api.Client.Authentication.Abstractions;
+﻿using System.Diagnostics.CodeAnalysis;
+using ExactOnline.Api.Client.Authentication.Abstractions;
 using ExactOnline.Api.Client.Authentication.Storage.SqlServer.Data;
 using ExactOnline.Api.Client.Authentication.Storage.SqlServer.Options;
 using Microsoft.EntityFrameworkCore;
@@ -12,89 +13,183 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
     ILogger<ExactTokenStorageEntityFrameworkCoreService> logger,
     IOptions<ExactOnlineEntityFrameworkCoreStorageOptions> options,
     IMemoryCache memoryCache,
-    ExactOnlineTokenDbContext dbContext) : IExactTokenStorageService
+    ExactOnlineTokenDbContext dbContext,
+    TimeProvider timeProvider) : IExactTokenStorageService
 {
-    public async Task<string> StoreRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
+    private static readonly Random RandomJitter = new();
+    private const int MaxConcurrencyRetries = 3;
+    private const int RetryTimeOutInMs = 1000;
+
+    public async Task<string> StoreRefreshTokenAsync(string currentRefreshToken, string newRefreshToken, CancellationToken cancellationToken = default)
     {
-        var existingToken = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
-        if (existingToken != null)
+        ArgumentException.ThrowIfNullOrEmpty(currentRefreshToken);
+        ArgumentException.ThrowIfNullOrEmpty(newRefreshToken);
+
+        for (var attempt = 1; attempt <= MaxConcurrencyRetries; attempt++)
         {
-            existingToken.RefreshToken = refreshToken;
-            existingToken.RefreshTokenUpdatedAt = TimeProvider.System.GetUtcNow();
-        }
-        else
-        {
-            dbContext.Tokens.Add(new() { RefreshToken = refreshToken, RefreshTokenUpdatedAt = TimeProvider.System.GetUtcNow() });
+            var entity = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
+
+            if (entity == null)
+            {
+                entity = new ExactOnlineToken
+                {
+                    RefreshToken = newRefreshToken,
+                    RefreshTokenUpdatedAt = timeProvider.GetUtcNow()
+                };
+
+                dbContext.Tokens.Add(entity);
+            }
+            else
+            {
+                // Only change if database still has the token we just used.
+                if (entity.RefreshToken != currentRefreshToken)
+                {
+                    logger.LogInformation("Skipping refresh token update. Database already contains a newer refresh token (attempt {Attempt}).", attempt);
+                    return entity.RefreshToken;
+                }
+
+                entity.RefreshToken = newRefreshToken;
+                entity.RefreshTokenUpdatedAt = timeProvider.GetUtcNow();
+            }
+
+            try
+            {
+                await dbContext.SaveChangesAsync(cancellationToken);
+                return newRefreshToken;
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                logger.LogWarning(ex, "Concurrency conflict while storing refresh token (attempt {Attempt}/{Max}).", attempt, MaxConcurrencyRetries);
+
+                if (attempt == MaxConcurrencyRetries)
+                {
+                    throw;
+                }
+
+                foreach (var entry in ex.Entries)
+                {
+                    await entry.ReloadAsync(cancellationToken);
+                }
+
+                await WaitAsync(cancellationToken);
+            }
         }
 
-        await dbContext.SaveChangesAsync(cancellationToken);
-
-        return refreshToken;
+        return newRefreshToken; // Should not reach here.
     }
 
     public async Task<string> RetrieveRefreshTokenAsync(CancellationToken cancellationToken = default)
     {
-        var refreshToken = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
-        if (refreshToken == null)
+        var entity = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
+        if (entity == null)
         {
             logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
             return string.Empty;
         }
 
-        return refreshToken.RefreshToken;
+        return entity.RefreshToken;
     }
 
     public async Task<string> RetrieveAccessTokenAsync(CancellationToken cancellationToken = default)
     {
-        // 1. Try to retrieve the access token from memory cache for quick access.
-        if (memoryCache.TryGetValue(options.Value.AccessTokenColumnName, out string? accessToken) && !string.IsNullOrEmpty(accessToken))
+        if (TryGetNonEmptyAccessTokenFromCache(out var accessToken))
         {
             return accessToken;
         }
 
-        // 2. If not found in memory cache, retrieve it from SQL.
-        var token = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
-        if (token == null)
+        var entity = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
+        if (entity == null)
         {
             logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
             return string.Empty;
         }
 
-        if (string.IsNullOrEmpty(token.AccessToken))
+        if (string.IsNullOrEmpty(entity.AccessToken))
         {
             logger.LogInformation("AccessToken is null or empty in table {Table}. Returning empty string.", options.Value.TableName);
             return string.Empty;
         }
 
-        if (TimeProvider.System.GetUtcNow() <= token.AccessTokenExpire)
+        if (timeProvider.GetUtcNow() <= entity.AccessTokenExpire)
         {
-            return memoryCache.Set(options.Value.AccessTokenColumnName, token.AccessToken, token.AccessTokenExpire);
+            return memoryCache.Set(options.Value.AccessTokenColumnName, entity.AccessToken, entity.AccessTokenExpire);
         }
 
-        logger.LogInformation("AccessToken blob is expired. Returning empty string value.");
+        logger.LogInformation("AccessToken is expired. Returning empty string value.");
         return string.Empty;
     }
 
-    public async Task<string> StoreAccessTokenAsync(string accessToken, TimeSpan absoluteExpirationRelativeToUtcNow, CancellationToken cancellationToken = default)
+    public async Task<string> StoreAccessTokenAsync(string? currentAccessToken, string newAccessToken, TimeSpan absoluteExpirationRelativeToUtcNow, CancellationToken cancellationToken = default)
     {
-        // 1. Store the access token in memory cache for quick access.
-        memoryCache.Set(options.Value.AccessTokenColumnName, accessToken, absoluteExpirationRelativeToUtcNow);
+        ArgumentException.ThrowIfNullOrEmpty(newAccessToken);
 
-        // 2. Store the access token in SQL
-        var token = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
-        if (token == null)
+        for (var attempt = 1; attempt <= MaxConcurrencyRetries; attempt++)
         {
-            logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
-            return string.Empty;
+            var entity = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
+            if (entity == null)
+            {
+                logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
+                return string.Empty;
+            }
+
+            // Only change if database still has a valid access token we just used.
+            if (!string.IsNullOrEmpty(entity.AccessToken) && entity.AccessToken != currentAccessToken)
+            {
+                logger.LogInformation("Skipping access token update. Database already contains a newer access token (attempt {Attempt}).", attempt);
+
+                // Add to cache if not present.
+                if (!TryGetNonEmptyAccessTokenFromCache(out _))
+                {
+                    return memoryCache.Set(options.Value.AccessTokenColumnName, entity.AccessToken, entity.AccessTokenExpire);
+                }
+
+                return entity.AccessToken;
+            }
+
+            var now = timeProvider.GetUtcNow();
+            entity.AccessToken = newAccessToken;
+            entity.AccessTokenUpdatedAt = now;
+            entity.AccessTokenExpire = now.Add(absoluteExpirationRelativeToUtcNow);
+
+            try
+            {
+                await dbContext.SaveChangesAsync(cancellationToken);
+                return memoryCache.Set(options.Value.AccessTokenColumnName, newAccessToken, absoluteExpirationRelativeToUtcNow);
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                logger.LogWarning(ex, "Concurrency conflict while storing access token (attempt {Attempt}/{Max}).", attempt, MaxConcurrencyRetries);
+
+                if (attempt == MaxConcurrencyRetries)
+                {
+                    throw;
+                }
+
+                foreach (var entry in ex.Entries)
+                {
+                    await entry.ReloadAsync(cancellationToken);
+                }
+
+                await WaitAsync(cancellationToken);
+            }
         }
 
-        var now = TimeProvider.System.GetUtcNow();
-        token.AccessToken = accessToken;
-        token.AccessTokenUpdatedAt = now;
-        token.AccessTokenExpire = now.Add(absoluteExpirationRelativeToUtcNow);
+        return string.Empty; // Should not reach here.
+    }
 
-        await dbContext.SaveChangesAsync(cancellationToken);
+    private bool TryGetNonEmptyAccessTokenFromCache([NotNullWhen(true)] out string? accessToken)
+    {
+        if (memoryCache.TryGetValue(options.Value.AccessTokenColumnName, out accessToken))
+        {
+            return !string.IsNullOrEmpty(accessToken);
+        }
 
-        return accessToken;
+        return false;
+    }
+
+    private static Task WaitAsync(CancellationToken cancellationToken)
+    {
+        // Wait some time (1000 ms) with a bit of random jitter (0-500 ms) to avoid synchronized retries.
+        return Task.Delay(RetryTimeOutInMs + RandomJitter.Next(0, 500), cancellationToken);
     }
 }
