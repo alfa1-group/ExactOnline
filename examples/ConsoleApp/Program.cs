@@ -17,7 +17,8 @@ var builder = Host.CreateDefaultBuilder(args)
         services
             .AddSingleton(TimeProvider.System)
             .AddLogging()
-            .AddExactOnlineTokenStorageAzureBlobs(context.Configuration)
+            //.AddExactOnlineTokenStorageAzureBlobs(context.Configuration)
+            .AddExactOnlineTokenStorageSqlServer(context.Configuration, ServiceLifetime.Singleton)
             .AddExactOnlineKiotaAuthentication(context.Configuration);
     });
 
