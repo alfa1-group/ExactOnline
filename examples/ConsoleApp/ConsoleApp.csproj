@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\ExactOnline.Api.Client.Authentication.Kiota\ExactOnline.Api.Client.Authentication.Kiota.csproj" />
     <ProjectReference Include="..\..\src\ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs\ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs.csproj" />
+    <ProjectReference Include="..\..\src\ExactOnline.Api.Client.Authentication.Storage.SqlServer\ExactOnline.Api.Client.Authentication.Storage.SqlServer.csproj" />
     <ProjectReference Include="..\..\src\ExactOnline.Api.Client\ExactOnline.Api.Client.csproj" />
   </ItemGroup>
 

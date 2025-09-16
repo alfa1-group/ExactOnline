@@ -132,8 +132,10 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
                 return string.Empty;
             }
 
-            // Only change if database still has a valid access token we just used.
-            if (!string.IsNullOrEmpty(entity.AccessToken) && entity.AccessToken != currentAccessToken)
+            // Skip update if:
+            // - currentAccessToken is not null or empty
+            // - database contains a newer access token than the one we just used
+            if (!string.IsNullOrEmpty(currentAccessToken) && !string.IsNullOrEmpty(entity.AccessToken) && entity.AccessToken != currentAccessToken)
             {
                 logger.LogInformation("Skipping access token update. Database already contains a newer access token (attempt {Attempt}).", attempt);
 

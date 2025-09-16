@@ -29,12 +29,12 @@ public static class ServiceCollectionExtensions
 
         services.EnsureExactOnlineTokenTableExists();
 
-        if (dbContextLifetime == ServiceLifetime.Scoped)
+        return dbContextLifetime switch
         {
-            return services.AddScoped<IExactTokenStorageService, ExactTokenStorageEntityFrameworkCoreService>();
-        }
-
-        return services.AddTransient<IExactTokenStorageService, ExactTokenStorageEntityFrameworkCoreService>();
+            ServiceLifetime.Singleton => services.AddSingleton<IExactTokenStorageService, ExactTokenStorageEntityFrameworkCoreService>(),
+            ServiceLifetime.Scoped => services.AddScoped<IExactTokenStorageService, ExactTokenStorageEntityFrameworkCoreService>(),
+            _ => services.AddTransient<IExactTokenStorageService, ExactTokenStorageEntityFrameworkCoreService>()
+        };
     }
 
     private static ExactOnlineEntityFrameworkCoreStorageOptions GetOptions(this IServiceProvider serviceProvider)
