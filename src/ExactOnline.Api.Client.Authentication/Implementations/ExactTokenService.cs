@@ -88,7 +88,7 @@ internal class ExactTokenService(
             {
                 var elapsedTime = timeProvider.GetUtcNow() - startTime;
 
-                if (IsRateLimitExceeded(response) || IsHttpProxyFault(response))
+                if (IsRateLimitExceeded(response))
                 {
                     await DelayOrThrowExceptionAsync(elapsedTime, "Rate limit exceeded", cancellationToken);
                     continue;
