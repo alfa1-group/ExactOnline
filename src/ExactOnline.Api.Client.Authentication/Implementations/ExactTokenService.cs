@@ -100,12 +100,6 @@ internal class ExactTokenService(
                     continue;
                 }
 
-                if (IsUnauthorized(response))
-                {
-                    await DelayOrThrowExceptionAsync(elapsedTime, "Unauthorized", cancellationToken);
-                    continue;
-                }
-
                 if (response.ErrorDescription?.IndexOf("expired", StringComparison.InvariantCultureIgnoreCase) >= 0)
                 {
                     logger.LogError("The Exact refresh token has expired ({ErrorType} {Error} {ErrorDescription}). You need to update the refresh token stored in the storage with a fresh token from Exact.",
@@ -138,11 +132,6 @@ internal class ExactTokenService(
     {
         return response.HttpResponse?.StatusCode == HttpStatusCode.BadRequest &&
                response.ErrorDescription?.Contains("Rate limit exceeded: access_token not expired", StringComparison.OrdinalIgnoreCase) == true;
-    }
-
-    private static bool IsUnauthorized(TokenResponse response)
-    {
-        return response.HttpResponse?.StatusCode == HttpStatusCode.Unauthorized;
     }
 
     private static bool IsHttpProxyFault(TokenResponse response)
