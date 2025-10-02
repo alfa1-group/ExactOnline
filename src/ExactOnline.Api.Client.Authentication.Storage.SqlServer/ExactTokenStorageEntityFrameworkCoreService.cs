@@ -115,7 +115,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
             return memoryCache.Set(options.Value.AccessTokenColumnName, entity.AccessToken, entity.AccessTokenExpire);
         }
 
-        logger.LogInformation("AccessToken is expired. Returning empty string value.");
+        logger.LogInformation("AccessToken is expired at {AccessTokenExpire}. Returning empty string value.", entity.AccessTokenExpire);
         return string.Empty;
     }
 
