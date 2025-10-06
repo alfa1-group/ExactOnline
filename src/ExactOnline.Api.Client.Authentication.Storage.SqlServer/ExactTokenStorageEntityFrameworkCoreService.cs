@@ -80,7 +80,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
 
     public async Task<string> RetrieveRefreshTokenAsync(CancellationToken cancellationToken = default)
     {
-        var entity = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
+        var entity = await dbContext.Tokens.AsNoTracking().SingleOrDefaultAsync(cancellationToken);
         if (entity == null)
         {
             logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
@@ -97,7 +97,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
             return accessToken;
         }
 
-        var entity = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
+        var entity = await dbContext.Tokens.AsNoTracking().SingleOrDefaultAsync(cancellationToken);
         if (entity == null)
         {
             logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
