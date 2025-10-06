@@ -80,10 +80,10 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
 
     public async Task<string> RetrieveRefreshTokenAsync(CancellationToken cancellationToken = default)
     {
-        var entity = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
+        var entity = await dbContext.Tokens.AsNoTracking().SingleOrDefaultAsync(cancellationToken);
         if (entity == null)
         {
-            logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
+            logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string for RefreshToken.", options.Value.TableName);
             return string.Empty;
         }
 
@@ -97,16 +97,16 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
             return accessToken;
         }
 
-        var entity = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
+        var entity = await dbContext.Tokens.AsNoTracking().SingleOrDefaultAsync(cancellationToken);
         if (entity == null)
         {
-            logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
+            logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string for AccessToken.", options.Value.TableName);
             return string.Empty;
         }
 
         if (string.IsNullOrEmpty(entity.AccessToken))
         {
-            logger.LogInformation("AccessToken is null or empty in table {Table}. Returning empty string.", options.Value.TableName);
+            logger.LogInformation("AccessToken is null or empty in table {Table}. Returning empty string for AccessToken.", options.Value.TableName);
             return string.Empty;
         }
 
@@ -115,7 +115,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
             return memoryCache.Set(options.Value.AccessTokenColumnName, entity.AccessToken, entity.AccessTokenExpire);
         }
 
-        logger.LogInformation("AccessToken is expired. Returning empty string value.");
+        logger.LogInformation("AccessToken is expired at {AccessTokenExpire}. Returning empty string value for AccessToken.", entity.AccessTokenExpire);
         return string.Empty;
     }
 
@@ -128,7 +128,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
             var entity = await dbContext.Tokens.SingleOrDefaultAsync(cancellationToken);
             if (entity == null)
             {
-                logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string.", options.Value.TableName);
+                logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string for AccessToken.", options.Value.TableName);
                 return string.Empty;
             }
 
