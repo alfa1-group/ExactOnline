@@ -4,6 +4,7 @@ using ExactOnline.Api.Client.Authentication.Storage.SqlServer.Data;
 using ExactOnline.Api.Client.Authentication.Storage.SqlServer.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -14,7 +15,8 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
     IOptions<ExactOnlineEntityFrameworkCoreStorageOptions> options,
     IMemoryCache memoryCache,
     ExactOnlineTokenDbContext dbContext,
-    TimeProvider timeProvider) : IExactTokenStorageService
+    TimeProvider timeProvider,
+    IServiceProvider serviceProvider) : IExactTokenStorageService
 {
     private static readonly Random RandomJitter = new();
     private const int MaxConcurrencyRetries = 3;
@@ -80,7 +82,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
 
     public async Task<string> RetrieveRefreshTokenAsync(CancellationToken cancellationToken = default)
     {
-        var entity = await dbContext.Tokens.AsNoTracking().SingleOrDefaultAsync(cancellationToken);
+        var entity = await RetrieveTokenEntityAsync(cancellationToken);
         if (entity == null)
         {
             logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string for RefreshToken.", options.Value.TableName);
@@ -97,7 +99,7 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
             return accessToken;
         }
 
-        var entity = await dbContext.Tokens.AsNoTracking().SingleOrDefaultAsync(cancellationToken);
+        var entity = await RetrieveTokenEntityAsync(cancellationToken);
         if (entity == null)
         {
             logger.LogInformation("Token entity does not exist in table {Table}. Returning empty string for AccessToken.", options.Value.TableName);
@@ -177,6 +179,13 @@ internal class ExactTokenStorageEntityFrameworkCoreService(
         }
 
         return string.Empty; // Should not reach here.
+    }
+
+    private async Task<ExactOnlineToken?> RetrieveTokenEntityAsync(CancellationToken cancellationToken)
+    {
+        using var scope = serviceProvider.CreateScope();
+        var scopedDbContext = scope.ServiceProvider.GetRequiredService<ExactOnlineTokenDbContext>();
+        return await scopedDbContext.Tokens.AsNoTracking().SingleOrDefaultAsync(cancellationToken);
     }
 
     private bool TryGetNonEmptyAccessTokenFromCache([NotNullWhen(true)] out string? accessToken)
