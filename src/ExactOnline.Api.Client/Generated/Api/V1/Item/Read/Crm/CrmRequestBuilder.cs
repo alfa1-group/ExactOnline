@@ -84,7 +84,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// <param name="id">Unique identifier (uuid) of the ReadCRMAccountDocumentFolder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentFoldersWithId.AccountDocumentFoldersWithIdRequestBuilder AccountDocumentFoldersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentFoldersWithId.AccountDocumentFoldersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -104,7 +104,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// <param name="id">Unique identifier (uuid) of the ReadCRMAccountDocument</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentsWithId.AccountDocumentsWithIdRequestBuilder AccountDocumentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.AccountDocumentsWithId.AccountDocumentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -130,7 +130,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// <param name="id">Unique identifier (uuid) of the ReadCRMDefaultAddressForAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DefaultAddressForAccountWithId.DefaultAddressForAccountWithIdRequestBuilder DefaultAddressForAccountWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DefaultAddressForAccountWithId.DefaultAddressForAccountWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -140,7 +140,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// <param name="id">Unique identifier (uuid) of the ReadCRMDocumentsAttachment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsAttachmentsWithId.DocumentsAttachmentsWithIdRequestBuilder DocumentsAttachmentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsAttachmentsWithId.DocumentsAttachmentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -150,7 +150,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// <param name="id">Unique identifier (uuid) of the ReadCRMDocument</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsWithId.DocumentsWithIdRequestBuilder DocumentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.DocumentsWithId.DocumentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -160,7 +160,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// <param name="id">Unique identifier (uuid) of the ReadCRMOpportunityContact</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityContactsWithId.OpportunityContactsWithIdRequestBuilder OpportunityContactsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityContactsWithId.OpportunityContactsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -180,7 +180,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Crm
         /// <param name="id">Unique identifier (uuid) of the ReadCRMOpportunityDocument</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsWithId.OpportunityDocumentsWithIdRequestBuilder OpportunityDocumentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Crm.OpportunityDocumentsWithId.OpportunityDocumentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

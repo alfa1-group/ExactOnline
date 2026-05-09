@@ -56,7 +56,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction
         /// <param name="entryid">Unique identifier (uuid) of the FinancialTransactionBankEntry</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.BankEntriesWithEntryid.BankEntriesWithEntryidRequestBuilder BankEntriesWithEntryid(Guid? entryid)
         {
-            _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
+            if(ReferenceEquals(entryid, null)) throw new ArgumentNullException(nameof(entryid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.BankEntriesWithEntryid.BankEntriesWithEntryidRequestBuilder(PathParameters, RequestAdapter, entryid);
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction
         /// <param name="id">Unique identifier (uuid) of the FinancialTransactionBankEntryLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.BankEntryLinesWithId.BankEntryLinesWithIdRequestBuilder BankEntryLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.BankEntryLinesWithId.BankEntryLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction
         /// <param name="entryid">Unique identifier (uuid) of the FinancialTransactionCashEntry</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntriesWithEntryid.CashEntriesWithEntryidRequestBuilder CashEntriesWithEntryid(Guid? entryid)
         {
-            _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
+            if(ReferenceEquals(entryid, null)) throw new ArgumentNullException(nameof(entryid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntriesWithEntryid.CashEntriesWithEntryidRequestBuilder(PathParameters, RequestAdapter, entryid);
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction
         /// <param name="id">Unique identifier (uuid) of the FinancialTransactionCashEntryLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntryLinesWithId.CashEntryLinesWithIdRequestBuilder CashEntryLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.CashEntryLinesWithId.CashEntryLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -112,7 +112,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financialtransaction
         /// <param name="id">Unique identifier (uuid) of the FinancialTransactionTransactionLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.TransactionLinesWithId.TransactionLinesWithIdRequestBuilder TransactionLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financialtransaction.TransactionLinesWithId.TransactionLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

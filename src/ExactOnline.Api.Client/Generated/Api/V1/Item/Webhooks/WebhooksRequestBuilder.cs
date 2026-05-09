@@ -44,7 +44,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Webhooks
         /// <param name="id">Unique identifier (uuid) of the WebhooksWebhookSubscription</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Webhooks.WebhookSubscriptionsWithId.WebhookSubscriptionsWithIdRequestBuilder WebhookSubscriptionsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Webhooks.WebhookSubscriptionsWithId.WebhookSubscriptionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

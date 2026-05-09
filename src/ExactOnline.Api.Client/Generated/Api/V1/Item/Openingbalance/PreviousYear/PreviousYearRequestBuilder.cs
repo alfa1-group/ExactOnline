@@ -35,7 +35,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Openingbalance.PreviousYear
         /// <param name="reportingyear">Unique identifier (int32) of the OpeningBalancePreviousYearAfterEntry</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Openingbalance.PreviousYear.AfterEntryWithReportingyear.AfterEntryWithReportingyearRequestBuilder AfterEntryWithReportingyear(int? reportingyear)
         {
-            _ = reportingyear ?? throw new ArgumentNullException(nameof(reportingyear));
+            if(ReferenceEquals(reportingyear, null)) throw new ArgumentNullException(nameof(reportingyear));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Openingbalance.PreviousYear.AfterEntryWithReportingyear.AfterEntryWithReportingyearRequestBuilder(PathParameters, RequestAdapter, reportingyear);
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Openingbalance.PreviousYear
         /// <param name="reportingyear">Unique identifier (int32) of the OpeningBalancePreviousYearProcessed</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Openingbalance.PreviousYear.ProcessedWithReportingyear.ProcessedWithReportingyearRequestBuilder ProcessedWithReportingyear(int? reportingyear)
         {
-            _ = reportingyear ?? throw new ArgumentNullException(nameof(reportingyear));
+            if(ReferenceEquals(reportingyear, null)) throw new ArgumentNullException(nameof(reportingyear));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Openingbalance.PreviousYear.ProcessedWithReportingyear.ProcessedWithReportingyearRequestBuilder(PathParameters, RequestAdapter, reportingyear);
         }
     }

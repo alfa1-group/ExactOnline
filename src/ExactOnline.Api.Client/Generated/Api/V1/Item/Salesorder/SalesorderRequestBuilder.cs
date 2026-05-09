@@ -105,7 +105,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <param name="id">Unique identifier (uuid) of the SalesOrderCompleteSalesOrderLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderLineWithId.CompleteSalesOrderLineWithIdRequestBuilder CompleteSalesOrderLineWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderLineWithId.CompleteSalesOrderLineWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -115,7 +115,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <param name="orderid">Unique identifier (uuid) of the SalesOrderCompleteSalesOrder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithOrderid.CompleteSalesOrderWithOrderidRequestBuilder CompleteSalesOrderWithOrderid(Guid? orderid)
         {
-            _ = orderid ?? throw new ArgumentNullException(nameof(orderid));
+            if(ReferenceEquals(orderid, null)) throw new ArgumentNullException(nameof(orderid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.CompleteSalesOrderWithOrderid.CompleteSalesOrderWithOrderidRequestBuilder(PathParameters, RequestAdapter, orderid);
         }
         /// <summary>
@@ -141,7 +141,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <param name="id">Unique identifier (uuid) of the SalesOrderDropShipmentLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId.DropShipmentLinesWithIdRequestBuilder DropShipmentLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentLinesWithId.DropShipmentLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -151,7 +151,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <param name="entryid">Unique identifier (uuid) of the SalesOrderDropShipment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentsWithEntryid.DropShipmentsWithEntryidRequestBuilder DropShipmentsWithEntryid(Guid? entryid)
         {
-            _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
+            if(ReferenceEquals(entryid, null)) throw new ArgumentNullException(nameof(entryid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.DropShipmentsWithEntryid.DropShipmentsWithEntryidRequestBuilder(PathParameters, RequestAdapter, entryid);
         }
         /// <summary>
@@ -161,7 +161,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <param name="entryid">Unique identifier (uuid) of the SalesOrderGoodsDelivery</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveriesWithEntryid.GoodsDeliveriesWithEntryidRequestBuilder GoodsDeliveriesWithEntryid(Guid? entryid)
         {
-            _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
+            if(ReferenceEquals(entryid, null)) throw new ArgumentNullException(nameof(entryid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveriesWithEntryid.GoodsDeliveriesWithEntryidRequestBuilder(PathParameters, RequestAdapter, entryid);
         }
         /// <summary>
@@ -171,7 +171,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <param name="id">Unique identifier (uuid) of the SalesOrderGoodsDeliveryLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveryLinesWithId.GoodsDeliveryLinesWithIdRequestBuilder GoodsDeliveryLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.GoodsDeliveryLinesWithId.GoodsDeliveryLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -181,7 +181,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <param name="id">Unique identifier (uuid) of the SalesOrderPlannedSalesReturnLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnLinesWithId.PlannedSalesReturnLinesWithIdRequestBuilder PlannedSalesReturnLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnLinesWithId.PlannedSalesReturnLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -191,7 +191,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <param name="plannedsalesreturnid">Unique identifier (uuid) of the SalesOrderPlannedSalesReturn</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnsWithPlannedsalesreturnid.PlannedSalesReturnsWithPlannedsalesreturnidRequestBuilder PlannedSalesReturnsWithPlannedsalesreturnid(Guid? plannedsalesreturnid)
         {
-            _ = plannedsalesreturnid ?? throw new ArgumentNullException(nameof(plannedsalesreturnid));
+            if(ReferenceEquals(plannedsalesreturnid, null)) throw new ArgumentNullException(nameof(plannedsalesreturnid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PlannedSalesReturnsWithPlannedsalesreturnid.PlannedSalesReturnsWithPlannedsalesreturnidRequestBuilder(PathParameters, RequestAdapter, plannedsalesreturnid);
         }
         /// <summary>
@@ -201,7 +201,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <param name="orderid">Unique identifier (uuid) of the SalesOrderPrintedSalesOrder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithOrderid.PrintedSalesOrdersWithOrderidRequestBuilder PrintedSalesOrdersWithOrderid(Guid? orderid)
         {
-            _ = orderid ?? throw new ArgumentNullException(nameof(orderid));
+            if(ReferenceEquals(orderid, null)) throw new ArgumentNullException(nameof(orderid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.PrintedSalesOrdersWithOrderid.PrintedSalesOrdersWithOrderidRequestBuilder(PathParameters, RequestAdapter, orderid);
         }
         /// <summary>
@@ -211,7 +211,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <param name="id">Unique identifier (uuid) of the SalesOrderSalesOrderLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderLinesWithId.SalesOrderLinesWithIdRequestBuilder SalesOrderLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderLinesWithId.SalesOrderLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -221,7 +221,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <param name="id">Unique identifier (uuid) of the SalesOrderSalesOrderOrderChargeLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderOrderChargeLinesWithId.SalesOrderOrderChargeLinesWithIdRequestBuilder SalesOrderOrderChargeLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrderOrderChargeLinesWithId.SalesOrderOrderChargeLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -231,7 +231,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesorder
         /// <param name="orderid">Unique identifier (uuid) of the SalesOrderSalesOrder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithOrderid.SalesOrdersWithOrderidRequestBuilder SalesOrdersWithOrderid(Guid? orderid)
         {
-            _ = orderid ?? throw new ArgumentNullException(nameof(orderid));
+            if(ReferenceEquals(orderid, null)) throw new ArgumentNullException(nameof(orderid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesorder.SalesOrdersWithOrderid.SalesOrdersWithOrderidRequestBuilder(PathParameters, RequestAdapter, orderid);
         }
     }

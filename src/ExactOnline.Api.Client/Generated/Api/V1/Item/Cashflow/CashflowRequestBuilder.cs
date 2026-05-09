@@ -63,7 +63,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow
         /// <param name="id">Unique identifier (uuid) of the CashflowBank</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.BanksWithId.BanksWithIdRequestBuilder BanksWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.BanksWithId.BanksWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow
         /// <param name="id">Unique identifier (uuid) of the CashflowDirectDebitMandate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.DirectDebitMandatesWithId.DirectDebitMandatesWithIdRequestBuilder DirectDebitMandatesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.DirectDebitMandatesWithId.DirectDebitMandatesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -99,7 +99,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow
         /// <param name="id">Unique identifier (uuid) of the CashflowPaymentCondition</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.PaymentConditionsWithId.PaymentConditionsWithIdRequestBuilder PaymentConditionsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.PaymentConditionsWithId.PaymentConditionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow
         /// <param name="id">Unique identifier (uuid) of the CashflowPayment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.PaymentsWithId.PaymentsWithIdRequestBuilder PaymentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.PaymentsWithId.PaymentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -119,7 +119,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow
         /// <param name="id">Unique identifier (uuid) of the CashflowProcessPayment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.ProcessPaymentsWithId.ProcessPaymentsWithIdRequestBuilder ProcessPaymentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.ProcessPaymentsWithId.ProcessPaymentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -129,7 +129,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Cashflow
         /// <param name="id">Unique identifier (uuid) of the CashflowReceivable</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.ReceivablesWithId.ReceivablesWithIdRequestBuilder ReceivablesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Cashflow.ReceivablesWithId.ReceivablesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

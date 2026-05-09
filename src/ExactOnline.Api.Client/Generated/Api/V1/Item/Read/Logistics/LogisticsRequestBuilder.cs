@@ -56,7 +56,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics
         /// <param name="id">Unique identifier (uuid) of the ReadLogisticsAccountItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.AccountItemsWithId.AccountItemsWithIdRequestBuilder AccountItemsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.AccountItemsWithId.AccountItemsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Logistics
         /// <param name="id">Unique identifier (uuid) of the ReadLogisticsItemDetailsByID</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.ItemDetailsByIDWithId.ItemDetailsByIDWithIdRequestBuilder ItemDetailsByIDWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Logistics.ItemDetailsByIDWithId.ItemDetailsByIDWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>

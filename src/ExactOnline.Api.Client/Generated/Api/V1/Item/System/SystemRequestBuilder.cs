@@ -56,7 +56,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.System
         /// <param name="id">Unique identifier (uuid) of the SystemSystemAccountantInfo</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.System.AccountantInfoWithId.AccountantInfoWithIdRequestBuilder AccountantInfoWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.System.AccountantInfoWithId.AccountantInfoWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.System
         /// <param name="code">Unique identifier (int32) of the SystemSystemAllDivision</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.System.AllDivisionsWithCode.AllDivisionsWithCodeRequestBuilder AllDivisionsWithCode(int? code)
         {
-            _ = code ?? throw new ArgumentNullException(nameof(code));
+            if(ReferenceEquals(code, null)) throw new ArgumentNullException(nameof(code));
             return new global::ExactOnline.Api.Client.Api.V1.Item.System.AllDivisionsWithCode.AllDivisionsWithCodeRequestBuilder(PathParameters, RequestAdapter, code);
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.System
         /// <param name="id">Unique identifier (int32) of the SystemSystemAvailableFeature</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.System.AvailableFeaturesWithId.AvailableFeaturesWithIdRequestBuilder AvailableFeaturesWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.System.AvailableFeaturesWithId.AvailableFeaturesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.System
         /// <param name="code">Unique identifier (int32) of the SystemSystemDivision</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.System.DivisionsWithCode.DivisionsWithCodeRequestBuilder DivisionsWithCode(int? code)
         {
-            _ = code ?? throw new ArgumentNullException(nameof(code));
+            if(ReferenceEquals(code, null)) throw new ArgumentNullException(nameof(code));
             return new global::ExactOnline.Api.Client.Api.V1.Item.System.DivisionsWithCode.DivisionsWithCodeRequestBuilder(PathParameters, RequestAdapter, code);
         }
         /// <summary>
@@ -112,7 +112,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.System
         /// <param name="code">Unique identifier (int32) of the SystemSystemGetMostRecentlyUsedDivision</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.System.GetMostRecentlyUsedDivisionsWithCode.GetMostRecentlyUsedDivisionsWithCodeRequestBuilder GetMostRecentlyUsedDivisionsWithCode(int? code)
         {
-            _ = code ?? throw new ArgumentNullException(nameof(code));
+            if(ReferenceEquals(code, null)) throw new ArgumentNullException(nameof(code));
             return new global::ExactOnline.Api.Client.Api.V1.Item.System.GetMostRecentlyUsedDivisionsWithCode.GetMostRecentlyUsedDivisionsWithCodeRequestBuilder(PathParameters, RequestAdapter, code);
         }
     }

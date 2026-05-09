@@ -154,7 +154,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryAssemblyBillOfMaterialHeader</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyBillOfMaterialHeaderWithId.AssemblyBillOfMaterialHeaderWithIdRequestBuilder AssemblyBillOfMaterialHeaderWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyBillOfMaterialHeaderWithId.AssemblyBillOfMaterialHeaderWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -164,7 +164,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryAssemblyBillOfMaterialMaterial</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyBillOfMaterialMaterialsWithId.AssemblyBillOfMaterialMaterialsWithIdRequestBuilder AssemblyBillOfMaterialMaterialsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyBillOfMaterialMaterialsWithId.AssemblyBillOfMaterialMaterialsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -174,7 +174,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryAssemblyOrder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyOrdersWithId.AssemblyOrdersWithIdRequestBuilder AssemblyOrdersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.AssemblyOrdersWithId.AssemblyOrdersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -184,7 +184,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryBatchNumber</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.BatchNumbersWithId.BatchNumbersWithIdRequestBuilder BatchNumbersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.BatchNumbersWithId.BatchNumbersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -210,7 +210,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="assemblyorder">Unique identifier (uuid) of the InventoryFinishAssemblyOrder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.FinishAssemblyOrderWithAssemblyorder.FinishAssemblyOrderWithAssemblyorderRequestBuilder FinishAssemblyOrderWithAssemblyorder(Guid? assemblyorder)
         {
-            _ = assemblyorder ?? throw new ArgumentNullException(nameof(assemblyorder));
+            if(ReferenceEquals(assemblyorder, null)) throw new ArgumentNullException(nameof(assemblyorder));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.FinishAssemblyOrderWithAssemblyorder.FinishAssemblyOrderWithAssemblyorderRequestBuilder(PathParameters, RequestAdapter, assemblyorder);
         }
         /// <summary>
@@ -220,7 +220,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryItemWarehousePlanningDetail</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousePlanningDetailsWithId.ItemWarehousePlanningDetailsWithIdRequestBuilder ItemWarehousePlanningDetailsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousePlanningDetailsWithId.ItemWarehousePlanningDetailsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -230,7 +230,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryItemWarehouseStorageLocation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehouseStorageLocationsWithId.ItemWarehouseStorageLocationsWithIdRequestBuilder ItemWarehouseStorageLocationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehouseStorageLocationsWithId.ItemWarehouseStorageLocationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -240,7 +240,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryItemWarehouse</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousesWithId.ItemWarehousesWithIdRequestBuilder ItemWarehousesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ItemWarehousesWithId.ItemWarehousesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -250,7 +250,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="stockcountid">Unique identifier (uuid) of the InventoryProcessStockCount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessStockCountWithStockcountid.ProcessStockCountWithStockcountidRequestBuilder ProcessStockCountWithStockcountid(Guid? stockcountid)
         {
-            _ = stockcountid ?? throw new ArgumentNullException(nameof(stockcountid));
+            if(ReferenceEquals(stockcountid, null)) throw new ArgumentNullException(nameof(stockcountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessStockCountWithStockcountid.ProcessStockCountWithStockcountidRequestBuilder(PathParameters, RequestAdapter, stockcountid);
         }
         /// <summary>
@@ -260,7 +260,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="transferid">Unique identifier (uuid) of the InventoryProcessWarehouseTransfer</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessWarehouseTransferWithTransferid.ProcessWarehouseTransferWithTransferidRequestBuilder ProcessWarehouseTransferWithTransferid(Guid? transferid)
         {
-            _ = transferid ?? throw new ArgumentNullException(nameof(transferid));
+            if(ReferenceEquals(transferid, null)) throw new ArgumentNullException(nameof(transferid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.ProcessWarehouseTransferWithTransferid.ProcessWarehouseTransferWithTransferidRequestBuilder(PathParameters, RequestAdapter, transferid);
         }
         /// <summary>
@@ -270,7 +270,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventorySerialNumber</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.SerialNumbersWithId.SerialNumbersWithIdRequestBuilder SerialNumbersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.SerialNumbersWithId.SerialNumbersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -280,7 +280,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryStockBatchNumber</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StockBatchNumbersWithId.StockBatchNumbersWithIdRequestBuilder StockBatchNumbersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StockBatchNumbersWithId.StockBatchNumbersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -290,7 +290,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryStockCountLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StockCountLinesWithId.StockCountLinesWithIdRequestBuilder StockCountLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StockCountLinesWithId.StockCountLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -300,7 +300,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="stockcountid">Unique identifier (uuid) of the InventoryStockCount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StockCountsWithStockcountid.StockCountsWithStockcountidRequestBuilder StockCountsWithStockcountid(Guid? stockcountid)
         {
-            _ = stockcountid ?? throw new ArgumentNullException(nameof(stockcountid));
+            if(ReferenceEquals(stockcountid, null)) throw new ArgumentNullException(nameof(stockcountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StockCountsWithStockcountid.StockCountsWithStockcountidRequestBuilder(PathParameters, RequestAdapter, stockcountid);
         }
         /// <summary>
@@ -310,7 +310,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryStockSerialNumber</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StockSerialNumbersWithId.StockSerialNumbersWithIdRequestBuilder StockSerialNumbersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StockSerialNumbersWithId.StockSerialNumbersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -320,7 +320,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryStorageLocation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StorageLocationsWithId.StorageLocationsWithIdRequestBuilder StorageLocationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.StorageLocationsWithId.StorageLocationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -330,7 +330,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryWarehouse</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehousesWithId.WarehousesWithIdRequestBuilder WarehousesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehousesWithId.WarehousesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -340,7 +340,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="id">Unique identifier (uuid) of the InventoryWarehouseTransferLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehouseTransferLinesWithId.WarehouseTransferLinesWithIdRequestBuilder WarehouseTransferLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehouseTransferLinesWithId.WarehouseTransferLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -350,7 +350,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Inventory
         /// <param name="transferid">Unique identifier (uuid) of the InventoryWarehouseTransfer</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehouseTransfersWithTransferid.WarehouseTransfersWithTransferidRequestBuilder WarehouseTransfersWithTransferid(Guid? transferid)
         {
-            _ = transferid ?? throw new ArgumentNullException(nameof(transferid));
+            if(ReferenceEquals(transferid, null)) throw new ArgumentNullException(nameof(transferid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Inventory.WarehouseTransfersWithTransferid.WarehouseTransfersWithTransferidRequestBuilder(PathParameters, RequestAdapter, transferid);
         }
     }

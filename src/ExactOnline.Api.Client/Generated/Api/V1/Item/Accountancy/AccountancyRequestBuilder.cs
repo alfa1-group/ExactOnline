@@ -63,7 +63,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy
         /// <param name="id">Unique identifier (uuid) of the AccountancyAccountInvolvedAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountInvolvedAccountsWithId.AccountInvolvedAccountsWithIdRequestBuilder AccountInvolvedAccountsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountInvolvedAccountsWithId.AccountInvolvedAccountsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy
         /// <param name="id">Unique identifier (uuid) of the AccountancyAccountOwner</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId.AccountOwnersWithIdRequestBuilder AccountOwnersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.AccountOwnersWithId.AccountOwnersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -99,7 +99,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy
         /// <param name="id">Unique identifier (uuid) of the AccountancyInvolvedUserRole</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.InvolvedUserRolesWithId.InvolvedUserRolesWithIdRequestBuilder InvolvedUserRolesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.InvolvedUserRolesWithId.InvolvedUserRolesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy
         /// <param name="id">Unique identifier (uuid) of the AccountancyInvolvedUser</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.InvolvedUsersWithId.InvolvedUsersWithIdRequestBuilder InvolvedUsersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.InvolvedUsersWithId.InvolvedUsersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -119,7 +119,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy
         /// <param name="id">Unique identifier (uuid) of the AccountancySolutionLink</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.SolutionLinksWithId.SolutionLinksWithIdRequestBuilder SolutionLinksWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.SolutionLinksWithId.SolutionLinksWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -129,7 +129,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Accountancy
         /// <param name="id">Unique identifier (uuid) of the AccountancyTaskType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.TaskTypesWithId.TaskTypesWithIdRequestBuilder TaskTypesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Accountancy.TaskTypesWithId.TaskTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

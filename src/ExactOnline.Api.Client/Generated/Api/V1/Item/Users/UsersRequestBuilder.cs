@@ -74,7 +74,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Users
         /// <param name="id">Unique identifier (uuid) of the UsersUserRolesPerDivision</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesPerDivisionWithId.UserRolesPerDivisionWithIdRequestBuilder UserRolesPerDivisionWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesPerDivisionWithId.UserRolesPerDivisionWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Users
         /// <param name="id">Unique identifier (uuid) of the UsersUserRole</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesWithId.UserRolesWithIdRequestBuilder UserRolesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Users.UserRolesWithId.UserRolesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -94,7 +94,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Users
         /// <param name="userid">Unique identifier (uuid) of the UsersUsers</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Users.UsersWithUserid.UsersWithUseridRequestBuilder UsersWithUserid(Guid? userid)
         {
-            _ = userid ?? throw new ArgumentNullException(nameof(userid));
+            if(ReferenceEquals(userid, null)) throw new ArgumentNullException(nameof(userid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Users.UsersWithUserid.UsersWithUseridRequestBuilder(PathParameters, RequestAdapter, userid);
         }
     }

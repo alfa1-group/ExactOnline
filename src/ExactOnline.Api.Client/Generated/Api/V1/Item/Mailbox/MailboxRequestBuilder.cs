@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox
         /// <param name="id">Unique identifier (uuid) of the MailboxMailbox</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailboxesWithId.MailboxesWithIdRequestBuilder MailboxesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailboxesWithId.MailboxesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox
         /// <param name="id">Unique identifier (uuid) of the MailboxMailMessageAttachment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachmentsWithId.MailMessageAttachmentsWithIdRequestBuilder MailMessageAttachmentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessageAttachmentsWithId.MailMessageAttachmentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Mailbox
         /// <param name="id">Unique identifier (uuid) of the MailboxMailMessagesSent</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessagesSentWithId.MailMessagesSentWithIdRequestBuilder MailMessagesSentWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Mailbox.MailMessagesSentWithId.MailMessagesSentWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

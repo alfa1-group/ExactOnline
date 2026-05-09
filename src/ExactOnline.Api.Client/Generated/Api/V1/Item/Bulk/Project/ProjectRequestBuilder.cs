@@ -44,7 +44,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Project
         /// <param name="id">Unique identifier (uuid) of the BulkProjectProjectWB</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Project.ProjectWBSWithId.ProjectWBSWithIdRequestBuilder ProjectWBSWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Project.ProjectWBSWithId.ProjectWBSWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

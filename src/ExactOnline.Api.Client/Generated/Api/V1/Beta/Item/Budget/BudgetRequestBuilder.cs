@@ -28,7 +28,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Budget
         /// <param name="id">Unique identifier (uuid) of the BudgetBudgetScenario</param>
         public global::ExactOnline.Api.Client.Api.V1.Beta.Item.Budget.BudgetScenariosWithId.BudgetScenariosWithIdRequestBuilder BudgetScenariosWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Beta.Item.Budget.BudgetScenariosWithId.BudgetScenariosWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>

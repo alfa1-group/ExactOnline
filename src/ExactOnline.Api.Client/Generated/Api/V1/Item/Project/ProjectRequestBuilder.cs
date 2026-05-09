@@ -177,7 +177,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectCostTransaction</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.CostTransactionsWithId.CostTransactionsWithIdRequestBuilder CostTransactionsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.CostTransactionsWithId.CostTransactionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -187,7 +187,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectEmployeeRestrictionItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.EmployeeRestrictionItemsWithId.EmployeeRestrictionItemsWithIdRequestBuilder EmployeeRestrictionItemsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.EmployeeRestrictionItemsWithId.EmployeeRestrictionItemsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -197,7 +197,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectEmploymentInternalRate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.EmploymentInternalRatesWithId.EmploymentInternalRatesWithIdRequestBuilder EmploymentInternalRatesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.EmploymentInternalRatesWithId.EmploymentInternalRatesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -207,7 +207,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectInvoiceTerm</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.InvoiceTermsWithId.InvoiceTermsWithIdRequestBuilder InvoiceTermsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.InvoiceTermsWithId.InvoiceTermsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -217,7 +217,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectProjectAccountMutation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectAccountMutationsWithId.ProjectAccountMutationsWithIdRequestBuilder ProjectAccountMutationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectAccountMutationsWithId.ProjectAccountMutationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -227,7 +227,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (int16) of the ProjectProjectBudgetType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypesWithId.ProjectBudgetTypesWithIdRequestBuilder ProjectBudgetTypesWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectBudgetTypesWithId.ProjectBudgetTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -237,7 +237,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectProjectClassification</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectClassificationsWithId.ProjectClassificationsWithIdRequestBuilder ProjectClassificationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectClassificationsWithId.ProjectClassificationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -247,7 +247,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectProjectHourBudget</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectHourBudgetsWithId.ProjectHourBudgetsWithIdRequestBuilder ProjectHourBudgetsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectHourBudgetsWithId.ProjectHourBudgetsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -257,7 +257,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectProjectPlanningRecurring</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectPlanningRecurringWithId.ProjectPlanningRecurringWithIdRequestBuilder ProjectPlanningRecurringWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectPlanningRecurringWithId.ProjectPlanningRecurringWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -267,7 +267,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectProjectPlanning</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectPlanningWithId.ProjectPlanningWithIdRequestBuilder ProjectPlanningWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectPlanningWithId.ProjectPlanningWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -277,7 +277,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectProjectRestrictionEmployeeItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionEmployeeItemsWithId.ProjectRestrictionEmployeeItemsWithIdRequestBuilder ProjectRestrictionEmployeeItemsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionEmployeeItemsWithId.ProjectRestrictionEmployeeItemsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -287,7 +287,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectProjectRestrictionEmployee</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionEmployeesWithId.ProjectRestrictionEmployeesWithIdRequestBuilder ProjectRestrictionEmployeesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionEmployeesWithId.ProjectRestrictionEmployeesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -297,7 +297,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectProjectRestrictionItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionItemsWithId.ProjectRestrictionItemsWithIdRequestBuilder ProjectRestrictionItemsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionItemsWithId.ProjectRestrictionItemsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -307,7 +307,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectProjectRestrictionRebilling</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionRebillingsWithId.ProjectRestrictionRebillingsWithIdRequestBuilder ProjectRestrictionRebillingsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectRestrictionRebillingsWithId.ProjectRestrictionRebillingsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -317,7 +317,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectsWithId.ProjectsWithIdRequestBuilder ProjectsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.ProjectsWithId.ProjectsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -327,7 +327,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectTimeCorrection</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeCorrectionsWithId.TimeCorrectionsWithIdRequestBuilder TimeCorrectionsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeCorrectionsWithId.TimeCorrectionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -337,7 +337,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectTimeTransaction</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeTransactionsWithId.TimeTransactionsWithIdRequestBuilder TimeTransactionsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.TimeTransactionsWithId.TimeTransactionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -347,7 +347,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectWBSActivity</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.WBSActivitiesWithId.WBSActivitiesWithIdRequestBuilder WBSActivitiesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.WBSActivitiesWithId.WBSActivitiesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -357,7 +357,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectWBSDeliverable</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.WBSDeliverablesWithId.WBSDeliverablesWithIdRequestBuilder WBSDeliverablesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.WBSDeliverablesWithId.WBSDeliverablesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -367,7 +367,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Project
         /// <param name="id">Unique identifier (uuid) of the ProjectWBSExpense</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Project.WBSExpensesWithId.WBSExpensesWithIdRequestBuilder WBSExpensesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Project.WBSExpensesWithId.WBSExpensesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }
