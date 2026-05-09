@@ -51,7 +51,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Customfield
         /// <param name="linkid">Unique identifier (uuid) of the CustomFieldCustomField</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Customfield.CustomFieldsWithLinkid.CustomFieldsWithLinkidRequestBuilder CustomFieldsWithLinkid(Guid? linkid)
         {
-            _ = linkid ?? throw new ArgumentNullException(nameof(linkid));
+            if(ReferenceEquals(linkid, null)) throw new ArgumentNullException(nameof(linkid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Customfield.CustomFieldsWithLinkid.CustomFieldsWithLinkidRequestBuilder(PathParameters, RequestAdapter, linkid);
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Customfield
         /// <param name="linkid">Unique identifier (uuid) of the CustomFieldUpdateCustomField</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomFieldWithLinkid.UpdateCustomFieldWithLinkidRequestBuilder UpdateCustomFieldWithLinkid(Guid? linkid)
         {
-            _ = linkid ?? throw new ArgumentNullException(nameof(linkid));
+            if(ReferenceEquals(linkid, null)) throw new ArgumentNullException(nameof(linkid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Customfield.UpdateCustomFieldWithLinkid.UpdateCustomFieldWithLinkidRequestBuilder(PathParameters, RequestAdapter, linkid);
         }
     }

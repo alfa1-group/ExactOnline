@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll
         /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentConditionGroup</param>
         public global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.EmploymentConditionGroupsWithId.EmploymentConditionGroupsWithIdRequestBuilder EmploymentConditionGroupsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.EmploymentConditionGroupsWithId.EmploymentConditionGroupsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll
         /// <param name="id">Unique identifier (uuid) of the PayrollPayrollComponent</param>
         public global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponentsWithId.PayrollComponentsWithIdRequestBuilder PayrollComponentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollComponentsWithId.PayrollComponentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll
         /// <param name="id">Unique identifier (uuid) of the PayrollPayrollTransactionsByPayrollYear</param>
         public global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollTransactionsByPayrollYearWithId.PayrollTransactionsByPayrollYearWithIdRequestBuilder PayrollTransactionsByPayrollYearWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Beta.Item.Payroll.PayrollTransactionsByPayrollYearWithId.PayrollTransactionsByPayrollYearWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

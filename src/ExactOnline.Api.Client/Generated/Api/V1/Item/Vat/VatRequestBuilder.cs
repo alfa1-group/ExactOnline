@@ -51,7 +51,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Vat
         /// <param name="id">Unique identifier (uuid) of the VATVATCode</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Vat.VATCodesWithId.VATCodesWithIdRequestBuilder VATCodesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Vat.VATCodesWithId.VATCodesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Vat
         /// <param name="id">Unique identifier (uuid) of the VATVatPercentage</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Vat.VatPercentagesWithId.VatPercentagesWithIdRequestBuilder VatPercentagesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Vat.VatPercentagesWithId.VatPercentagesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

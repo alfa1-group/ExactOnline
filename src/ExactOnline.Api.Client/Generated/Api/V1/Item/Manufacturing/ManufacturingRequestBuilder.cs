@@ -196,7 +196,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingBillOfMaterialMaterial</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialMaterialsWithId.BillOfMaterialMaterialsWithIdRequestBuilder BillOfMaterialMaterialsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialMaterialsWithId.BillOfMaterialMaterialsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -206,7 +206,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingBillOfMaterialRouting</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialRoutingsWithId.BillOfMaterialRoutingsWithIdRequestBuilder BillOfMaterialRoutingsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialRoutingsWithId.BillOfMaterialRoutingsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -216,7 +216,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingBillOfMaterialVersion</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialVersionsWithId.BillOfMaterialVersionsWithIdRequestBuilder BillOfMaterialVersionsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.BillOfMaterialVersionsWithId.BillOfMaterialVersionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -226,7 +226,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="stocktransactionid">Unique identifier (uuid) of the ManufacturingByProductReceipt</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReceiptsWithStocktransactionid.ByProductReceiptsWithStocktransactionidRequestBuilder ByProductReceiptsWithStocktransactionid(Guid? stocktransactionid)
         {
-            _ = stocktransactionid ?? throw new ArgumentNullException(nameof(stocktransactionid));
+            if(ReferenceEquals(stocktransactionid, null)) throw new ArgumentNullException(nameof(stocktransactionid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReceiptsWithStocktransactionid.ByProductReceiptsWithStocktransactionidRequestBuilder(PathParameters, RequestAdapter, stocktransactionid);
         }
         /// <summary>
@@ -236,7 +236,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="reversalstocktransactionid">Unique identifier (uuid) of the ManufacturingByProductReversal</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversalsWithReversalstocktransactionid.ByProductReversalsWithReversalstocktransactionidRequestBuilder ByProductReversalsWithReversalstocktransactionid(Guid? reversalstocktransactionid)
         {
-            _ = reversalstocktransactionid ?? throw new ArgumentNullException(nameof(reversalstocktransactionid));
+            if(ReferenceEquals(reversalstocktransactionid, null)) throw new ArgumentNullException(nameof(reversalstocktransactionid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ByProductReversalsWithReversalstocktransactionid.ByProductReversalsWithReversalstocktransactionidRequestBuilder(PathParameters, RequestAdapter, reversalstocktransactionid);
         }
         /// <summary>
@@ -262,7 +262,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="division">The path parameter: division</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ManufacturingSettingsWithDivision.ManufacturingSettingsWithDivisionRequestBuilder ManufacturingSettingsWithDivision(int? division)
         {
-            _ = division ?? throw new ArgumentNullException(nameof(division));
+            if(ReferenceEquals(division, null)) throw new ArgumentNullException(nameof(division));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ManufacturingSettingsWithDivision.ManufacturingSettingsWithDivisionRequestBuilder(PathParameters, RequestAdapter, division);
         }
         /// <summary>
@@ -272,7 +272,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="stocktransactionid">Unique identifier (uuid) of the ManufacturingMaterialIssue</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialIssuesWithStocktransactionid.MaterialIssuesWithStocktransactionidRequestBuilder MaterialIssuesWithStocktransactionid(Guid? stocktransactionid)
         {
-            _ = stocktransactionid ?? throw new ArgumentNullException(nameof(stocktransactionid));
+            if(ReferenceEquals(stocktransactionid, null)) throw new ArgumentNullException(nameof(stocktransactionid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialIssuesWithStocktransactionid.MaterialIssuesWithStocktransactionidRequestBuilder(PathParameters, RequestAdapter, stocktransactionid);
         }
         /// <summary>
@@ -282,7 +282,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="reversalstocktransactionid">Unique identifier (uuid) of the ManufacturingMaterialReversal</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialReversalsWithReversalstocktransactionid.MaterialReversalsWithReversalstocktransactionidRequestBuilder MaterialReversalsWithReversalstocktransactionid(Guid? reversalstocktransactionid)
         {
-            _ = reversalstocktransactionid ?? throw new ArgumentNullException(nameof(reversalstocktransactionid));
+            if(ReferenceEquals(reversalstocktransactionid, null)) throw new ArgumentNullException(nameof(reversalstocktransactionid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.MaterialReversalsWithReversalstocktransactionid.MaterialReversalsWithReversalstocktransactionidRequestBuilder(PathParameters, RequestAdapter, reversalstocktransactionid);
         }
         /// <summary>
@@ -292,7 +292,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingOperationResource</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationResourcesWithId.OperationResourcesWithIdRequestBuilder OperationResourcesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationResourcesWithId.OperationResourcesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -302,7 +302,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingOperation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationsWithId.OperationsWithIdRequestBuilder OperationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.OperationsWithId.OperationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -312,7 +312,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingProductionArea</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ProductionAreasWithId.ProductionAreasWithIdRequestBuilder ProductionAreasWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ProductionAreasWithId.ProductionAreasWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -322,7 +322,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingShopOrderMaterialPlanDetail</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlanDetailsWithId.ShopOrderMaterialPlanDetailsWithIdRequestBuilder ShopOrderMaterialPlanDetailsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlanDetailsWithId.ShopOrderMaterialPlanDetailsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -332,7 +332,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingShopOrderMaterialPlan</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlansWithId.ShopOrderMaterialPlansWithIdRequestBuilder ShopOrderMaterialPlansWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderMaterialPlansWithId.ShopOrderMaterialPlansWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -342,7 +342,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingShopOrderPriority</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderPrioritiesWithId.ShopOrderPrioritiesWithIdRequestBuilder ShopOrderPrioritiesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderPrioritiesWithId.ShopOrderPrioritiesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -352,7 +352,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="stocktransactionid">Unique identifier (uuid) of the ManufacturingShopOrderReceipt</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReceiptsWithStocktransactionid.ShopOrderReceiptsWithStocktransactionidRequestBuilder ShopOrderReceiptsWithStocktransactionid(Guid? stocktransactionid)
         {
-            _ = stocktransactionid ?? throw new ArgumentNullException(nameof(stocktransactionid));
+            if(ReferenceEquals(stocktransactionid, null)) throw new ArgumentNullException(nameof(stocktransactionid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReceiptsWithStocktransactionid.ShopOrderReceiptsWithStocktransactionidRequestBuilder(PathParameters, RequestAdapter, stocktransactionid);
         }
         /// <summary>
@@ -362,7 +362,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="reversalstocktransactionid">Unique identifier (uuid) of the ManufacturingShopOrderReversal</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReversalsWithReversalstocktransactionid.ShopOrderReversalsWithReversalstocktransactionidRequestBuilder ShopOrderReversalsWithReversalstocktransactionid(Guid? reversalstocktransactionid)
         {
-            _ = reversalstocktransactionid ?? throw new ArgumentNullException(nameof(reversalstocktransactionid));
+            if(ReferenceEquals(reversalstocktransactionid, null)) throw new ArgumentNullException(nameof(reversalstocktransactionid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderReversalsWithReversalstocktransactionid.ShopOrderReversalsWithReversalstocktransactionidRequestBuilder(PathParameters, RequestAdapter, reversalstocktransactionid);
         }
         /// <summary>
@@ -372,7 +372,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingShopOrderRoutingStepPlan</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderRoutingStepPlansWithId.ShopOrderRoutingStepPlansWithIdRequestBuilder ShopOrderRoutingStepPlansWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrderRoutingStepPlansWithId.ShopOrderRoutingStepPlansWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -382,7 +382,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingShopOrder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrdersWithId.ShopOrdersWithIdRequestBuilder ShopOrdersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.ShopOrdersWithId.ShopOrdersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -392,7 +392,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingStageForDeliveryReceipt</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReceiptsWithId.StageForDeliveryReceiptsWithIdRequestBuilder StageForDeliveryReceiptsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReceiptsWithId.StageForDeliveryReceiptsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -402,7 +402,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingStageForDeliveryReversal</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReversalsWithId.StageForDeliveryReversalsWithIdRequestBuilder StageForDeliveryReversalsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.StageForDeliveryReversalsWithId.StageForDeliveryReversalsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -412,7 +412,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="shoporderreceiptstocktransactionid">Unique identifier (uuid) of the ManufacturingSubOrderReceipt</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReceiptsWithShoporderreceiptstocktransactionid.SubOrderReceiptsWithShoporderreceiptstocktransactionidRequestBuilder SubOrderReceiptsWithShoporderreceiptstocktransactionid(Guid? shoporderreceiptstocktransactionid)
         {
-            _ = shoporderreceiptstocktransactionid ?? throw new ArgumentNullException(nameof(shoporderreceiptstocktransactionid));
+            if(ReferenceEquals(shoporderreceiptstocktransactionid, null)) throw new ArgumentNullException(nameof(shoporderreceiptstocktransactionid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReceiptsWithShoporderreceiptstocktransactionid.SubOrderReceiptsWithShoporderreceiptstocktransactionidRequestBuilder(PathParameters, RequestAdapter, shoporderreceiptstocktransactionid);
         }
         /// <summary>
@@ -422,7 +422,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="materialreversalstocktransactionid">Unique identifier (uuid) of the ManufacturingSubOrderReversal</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReversalsWithMaterialreversalstocktransactionid.SubOrderReversalsWithMaterialreversalstocktransactionidRequestBuilder SubOrderReversalsWithMaterialreversalstocktransactionid(Guid? materialreversalstocktransactionid)
         {
-            _ = materialreversalstocktransactionid ?? throw new ArgumentNullException(nameof(materialreversalstocktransactionid));
+            if(ReferenceEquals(materialreversalstocktransactionid, null)) throw new ArgumentNullException(nameof(materialreversalstocktransactionid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.SubOrderReversalsWithMaterialreversalstocktransactionid.SubOrderReversalsWithMaterialreversalstocktransactionidRequestBuilder(PathParameters, RequestAdapter, materialreversalstocktransactionid);
         }
         /// <summary>
@@ -432,7 +432,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingTimedTimeTransaction</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.TimedTimeTransactionsWithId.TimedTimeTransactionsWithIdRequestBuilder TimedTimeTransactionsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.TimedTimeTransactionsWithId.TimedTimeTransactionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -442,7 +442,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingTimeTransaction</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.TimeTransactionsWithId.TimeTransactionsWithIdRequestBuilder TimeTransactionsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.TimeTransactionsWithId.TimeTransactionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -452,7 +452,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ManufacturingWorkcenter</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.WorkcentersWithId.WorkcentersWithIdRequestBuilder WorkcentersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Manufacturing.WorkcentersWithId.WorkcentersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

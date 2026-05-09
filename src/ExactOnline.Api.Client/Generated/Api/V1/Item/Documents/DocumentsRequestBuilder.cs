@@ -13,6 +13,8 @@ using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeFoldersWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypes;
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypesWithId;
 using ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentsWithId;
+using ExactOnline.Api.Client.Api.V1.Item.Documents.GetSharePointDocumentUrl;
+using ExactOnline.Api.Client.Api.V1.Item.Documents.GetSharePointDocumentUrlWithId;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -62,6 +64,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypes.DocumentTypesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Use this endpoint to retrieve the SharePoint URL of a document. The document must be linked to SharePoint.Note: This endpoint requires both the SharePoint Integration and Document Management feature sets. The current user must have access to the document, must not be a client user, and must have the DocumentOverview and SharepointConnection function rights.</summary>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Documents.GetSharePointDocumentUrl.GetSharePointDocumentUrlRequestBuilder GetSharePointDocumentUrl
+        {
+            get => new global::ExactOnline.Api.Client.Api.V1.Item.Documents.GetSharePointDocumentUrl.GetSharePointDocumentUrlRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -85,7 +92,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents
         /// <param name="id">Unique identifier (uuid) of the DocumentsDocumentAttachment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId.DocumentAttachmentsWithIdRequestBuilder DocumentAttachmentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentAttachmentsWithId.DocumentAttachmentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -95,7 +102,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents
         /// <param name="id">Unique identifier (uuid) of the DocumentsDocumentCategory</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentCategoriesWithId.DocumentCategoriesWithIdRequestBuilder DocumentCategoriesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentCategoriesWithId.DocumentCategoriesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -105,7 +112,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents
         /// <param name="id">Unique identifier (uuid) of the DocumentsDocumentFolder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFoldersWithId.DocumentFoldersWithIdRequestBuilder DocumentFoldersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentFoldersWithId.DocumentFoldersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -115,7 +122,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents
         /// <param name="id">Unique identifier (uuid) of the DocumentsDocument</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentsWithId.DocumentsWithIdRequestBuilder DocumentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentsWithId.DocumentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -125,7 +132,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents
         /// <param name="id">Unique identifier (int32) of the DocumentsDocumentTypeCategory</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeCategoriesWithId.DocumentTypeCategoriesWithIdRequestBuilder DocumentTypeCategoriesWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeCategoriesWithId.DocumentTypeCategoriesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -135,7 +142,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents
         /// <param name="id">Unique identifier (uuid) of the DocumentsDocumentTypeFolder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeFoldersWithId.DocumentTypeFoldersWithIdRequestBuilder DocumentTypeFoldersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypeFoldersWithId.DocumentTypeFoldersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -145,8 +152,18 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Documents
         /// <param name="id">Unique identifier (int32) of the DocumentsDocumentType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypesWithId.DocumentTypesWithIdRequestBuilder DocumentTypesWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentTypesWithId.DocumentTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+        }
+        /// <summary>
+        /// Use this endpoint to retrieve the SharePoint URL of a document. The document must be linked to SharePoint.Note: This endpoint requires both the SharePoint Integration and Document Management feature sets. The current user must have access to the document, must not be a client user, and must have the DocumentOverview and SharepointConnection function rights.
+        /// </summary>
+        /// <returns>A <see cref="global::ExactOnline.Api.Client.Api.V1.Item.Documents.GetSharePointDocumentUrlWithId.GetSharePointDocumentUrlWithIdRequestBuilder"/></returns>
+        /// <param name="id">Unique identifier of the DocumentsGetSharePointDocumentUrl</param>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Documents.GetSharePointDocumentUrlWithId.GetSharePointDocumentUrlWithIdRequestBuilder GetSharePointDocumentUrlWithId(string id)
+        {
+            if(string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
+            return new global::ExactOnline.Api.Client.Api.V1.Item.Documents.GetSharePointDocumentUrlWithId.GetSharePointDocumentUrlWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }
 }

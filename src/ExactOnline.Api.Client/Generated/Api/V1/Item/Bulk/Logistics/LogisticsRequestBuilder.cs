@@ -51,7 +51,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics
         /// <param name="id">Unique identifier (uuid) of the BulkLogisticsItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics.ItemsWithId.ItemsWithIdRequestBuilder ItemsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics.ItemsWithId.ItemsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics
         /// <param name="id">Unique identifier (uuid) of the BulkLogisticsSalesItemPrice</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics.SalesItemPricesWithId.SalesItemPricesWithIdRequestBuilder SalesItemPricesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Logistics.SalesItemPricesWithId.SalesItemPricesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

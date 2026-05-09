@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox
         /// <param name="id">Unique identifier (uuid) of the ReadMailboxDefaultMailbox</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.DefaultMailboxWithId.DefaultMailboxWithIdRequestBuilder DefaultMailboxWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.DefaultMailboxWithId.DefaultMailboxWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox
         /// <param name="id">Unique identifier (uuid) of the ReadMailboxPreferredMailboxForOperation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxForOperationWithId.PreferredMailboxForOperationWithIdRequestBuilder PreferredMailboxForOperationWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxForOperationWithId.PreferredMailboxForOperationWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox
         /// <param name="id">Unique identifier (uuid) of the ReadMailboxPreferredMailbox</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxWithId.PreferredMailboxWithIdRequestBuilder PreferredMailboxWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox.PreferredMailboxWithId.PreferredMailboxWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

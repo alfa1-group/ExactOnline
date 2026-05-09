@@ -7,6 +7,7 @@ using ExactOnline.Api.Client.Api.V1.Item.Read.Mailbox;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Payroll;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Project;
+using ExactOnline.Api.Client.Api.V1.Item.Read.Salesinvoice;
 using ExactOnline.Api.Client.Api.V1.Item.Read.Sync;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
@@ -56,6 +57,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectRequestBuilder Project
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The salesinvoice property</summary>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Read.Salesinvoice.SalesinvoiceRequestBuilder Salesinvoice
+        {
+            get => new global::ExactOnline.Api.Client.Api.V1.Item.Read.Salesinvoice.SalesinvoiceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sync property</summary>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Sync.SyncRequestBuilder Sync

@@ -9,6 +9,7 @@ using ExactOnline.Api.Client.Api.V1.Item.Cashflow;
 using ExactOnline.Api.Client.Api.V1.Item.Crm;
 using ExactOnline.Api.Client.Api.V1.Item.Customfield;
 using ExactOnline.Api.Client.Api.V1.Item.Documents;
+using ExactOnline.Api.Client.Api.V1.Item.Expensemanagement;
 using ExactOnline.Api.Client.Api.V1.Item.Financial;
 using ExactOnline.Api.Client.Api.V1.Item.Financialtransaction;
 using ExactOnline.Api.Client.Api.V1.Item.General;
@@ -93,6 +94,11 @@ namespace ExactOnline.Api.Client.Api.V1.Item
         public global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentsRequestBuilder Documents
         {
             get => new global::ExactOnline.Api.Client.Api.V1.Item.Documents.DocumentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The expensemanagement property</summary>
+        public global::ExactOnline.Api.Client.Api.V1.Item.Expensemanagement.ExpensemanagementRequestBuilder Expensemanagement
+        {
+            get => new global::ExactOnline.Api.Client.Api.V1.Item.Expensemanagement.ExpensemanagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The financial property</summary>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.FinancialRequestBuilder Financial

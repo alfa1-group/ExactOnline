@@ -86,7 +86,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// <param name="id">Unique identifier (uuid) of the SalesOrderCharge</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.OrderChargesWithId.OrderChargesWithIdRequestBuilder OrderChargesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Sales.OrderChargesWithId.OrderChargesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// <param name="id">Unique identifier (uuid) of the SalesSalesChannel</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesChannelsWithId.SalesChannelsWithIdRequestBuilder SalesChannelsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesChannelsWithId.SalesChannelsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -106,7 +106,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// <param name="id">Unique identifier (uuid) of the SalesSalesPriceListLinkedAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListLinkedAccountsWithId.SalesPriceListLinkedAccountsWithIdRequestBuilder SalesPriceListLinkedAccountsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListLinkedAccountsWithId.SalesPriceListLinkedAccountsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// <param name="id">Unique identifier (uuid) of the SalesSalesPriceListPeriod</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListPeriodsWithId.SalesPriceListPeriodsWithIdRequestBuilder SalesPriceListPeriodsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListPeriodsWithId.SalesPriceListPeriodsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -126,7 +126,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// <param name="id">Unique identifier (uuid) of the SalesSalesPriceList</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListsWithId.SalesPriceListsWithIdRequestBuilder SalesPriceListsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListsWithId.SalesPriceListsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -136,7 +136,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// <param name="id">Unique identifier (uuid) of the SalesSalesPriceListVolumeDiscount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListVolumeDiscountsWithId.SalesPriceListVolumeDiscountsWithIdRequestBuilder SalesPriceListVolumeDiscountsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Sales.SalesPriceListVolumeDiscountsWithId.SalesPriceListVolumeDiscountsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -146,7 +146,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Sales
         /// <param name="id">Unique identifier (uuid) of the SalesShippingMethod</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Sales.ShippingMethodsWithId.ShippingMethodsWithIdRequestBuilder ShippingMethodsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Sales.ShippingMethodsWithId.ShippingMethodsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

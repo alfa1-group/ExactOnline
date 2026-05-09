@@ -79,7 +79,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
         /// <param name="id">Unique identifier (uuid) of the PurchaseOrderGoodsReceiptLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptLinesWithId.GoodsReceiptLinesWithIdRequestBuilder GoodsReceiptLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptLinesWithId.GoodsReceiptLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
         /// <param name="id">Unique identifier (uuid) of the PurchaseOrderGoodsReceipt</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptsWithId.GoodsReceiptsWithIdRequestBuilder GoodsReceiptsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.GoodsReceiptsWithId.GoodsReceiptsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -99,7 +99,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
         /// <param name="id">Unique identifier (uuid) of the PurchaseOrderPurchaseOrderLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrderLinesWithId.PurchaseOrderLinesWithIdRequestBuilder PurchaseOrderLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrderLinesWithId.PurchaseOrderLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
         /// <param name="purchaseorderid">Unique identifier (uuid) of the PurchaseOrderPurchaseOrder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithPurchaseorderid.PurchaseOrdersWithPurchaseorderidRequestBuilder PurchaseOrdersWithPurchaseorderid(Guid? purchaseorderid)
         {
-            _ = purchaseorderid ?? throw new ArgumentNullException(nameof(purchaseorderid));
+            if(ReferenceEquals(purchaseorderid, null)) throw new ArgumentNullException(nameof(purchaseorderid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseOrdersWithPurchaseorderid.PurchaseOrdersWithPurchaseorderidRequestBuilder(PathParameters, RequestAdapter, purchaseorderid);
         }
         /// <summary>
@@ -119,7 +119,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
         /// <param name="id">Unique identifier (uuid) of the PurchaseOrderPurchaseReturnLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLinesWithId.PurchaseReturnLinesWithIdRequestBuilder PurchaseReturnLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnLinesWithId.PurchaseReturnLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -129,7 +129,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchaseorder
         /// <param name="id">Unique identifier (uuid) of the PurchaseOrderPurchaseReturn</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnsWithId.PurchaseReturnsWithIdRequestBuilder PurchaseReturnsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchaseorder.PurchaseReturnsWithId.PurchaseReturnsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

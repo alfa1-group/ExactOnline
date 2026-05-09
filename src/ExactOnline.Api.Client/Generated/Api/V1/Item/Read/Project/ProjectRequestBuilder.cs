@@ -394,7 +394,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectCostEntryExpensesByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryExpensesByProjectWithId.CostEntryExpensesByProjectWithIdRequestBuilder CostEntryExpensesByProjectWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryExpensesByProjectWithId.CostEntryExpensesByProjectWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -404,7 +404,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="accountid">Unique identifier (uuid) of the ReadProjectCostEntryRecentAccountsByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsByProjectWithAccountid.CostEntryRecentAccountsByProjectWithAccountidRequestBuilder CostEntryRecentAccountsByProjectWithAccountid(Guid? accountid)
         {
-            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            if(ReferenceEquals(accountid, null)) throw new ArgumentNullException(nameof(accountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsByProjectWithAccountid.CostEntryRecentAccountsByProjectWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
@@ -414,7 +414,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="accountid">Unique identifier (uuid) of the ReadProjectCostEntryRecentAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsWithAccountid.CostEntryRecentAccountsWithAccountidRequestBuilder CostEntryRecentAccountsWithAccountid(Guid? accountid)
         {
-            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            if(ReferenceEquals(accountid, null)) throw new ArgumentNullException(nameof(accountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentAccountsWithAccountid.CostEntryRecentAccountsWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
@@ -424,7 +424,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="itemid">Unique identifier (uuid) of the ReadProjectCostEntryRecentCostTypesByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesByProjectWithItemid.CostEntryRecentCostTypesByProjectWithItemidRequestBuilder CostEntryRecentCostTypesByProjectWithItemid(Guid? itemid)
         {
-            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            if(ReferenceEquals(itemid, null)) throw new ArgumentNullException(nameof(itemid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesByProjectWithItemid.CostEntryRecentCostTypesByProjectWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
@@ -434,7 +434,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="itemid">Unique identifier (uuid) of the ReadProjectCostEntryRecentCostType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesWithItemid.CostEntryRecentCostTypesWithItemidRequestBuilder CostEntryRecentCostTypesWithItemid(Guid? itemid)
         {
-            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            if(ReferenceEquals(itemid, null)) throw new ArgumentNullException(nameof(itemid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentCostTypesWithItemid.CostEntryRecentCostTypesWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
@@ -444,7 +444,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectCostEntryRecentExpensesByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentExpensesByProjectWithId.CostEntryRecentExpensesByProjectWithIdRequestBuilder CostEntryRecentExpensesByProjectWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentExpensesByProjectWithId.CostEntryRecentExpensesByProjectWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -454,7 +454,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="projectid">Unique identifier (uuid) of the ReadProjectCostEntryRecentProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProjectsWithProjectid.CostEntryRecentProjectsWithProjectidRequestBuilder CostEntryRecentProjectsWithProjectid(Guid? projectid)
         {
-            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            if(ReferenceEquals(projectid, null)) throw new ArgumentNullException(nameof(projectid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostEntryRecentProjectsWithProjectid.CostEntryRecentProjectsWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
         /// <summary>
@@ -464,7 +464,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (int32) of the ReadProjectCostsByDate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByDateWithId.CostsByDateWithIdRequestBuilder CostsByDateWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByDateWithId.CostsByDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -474,7 +474,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (int32) of the ReadProjectCostsById</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByIdWithId.CostsByIdWithIdRequestBuilder CostsByIdWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostsByIdWithId.CostsByIdWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -484,7 +484,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="itemid">Unique identifier (uuid) of the ReadProjectCostTypesByDate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByDateWithItemid.CostTypesByDateWithItemidRequestBuilder CostTypesByDateWithItemid(Guid? itemid)
         {
-            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            if(ReferenceEquals(itemid, null)) throw new ArgumentNullException(nameof(itemid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByDateWithItemid.CostTypesByDateWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
@@ -494,7 +494,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="itemid">Unique identifier (uuid) of the ReadProjectCostTypesByProjectAndDate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndDateWithItemid.CostTypesByProjectAndDateWithItemidRequestBuilder CostTypesByProjectAndDateWithItemid(Guid? itemid)
         {
-            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            if(ReferenceEquals(itemid, null)) throw new ArgumentNullException(nameof(itemid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesByProjectAndDateWithItemid.CostTypesByProjectAndDateWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
@@ -504,7 +504,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="itemid">Unique identifier (uuid) of the ReadProjectCostType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesWithItemid.CostTypesWithItemidRequestBuilder CostTypesWithItemid(Guid? itemid)
         {
-            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            if(ReferenceEquals(itemid, null)) throw new ArgumentNullException(nameof(itemid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.CostTypesWithItemid.CostTypesWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
@@ -514,7 +514,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourCostType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourCostTypesWithItemid.HourCostTypesWithItemidRequestBuilder HourCostTypesWithItemid(Guid? itemid)
         {
-            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            if(ReferenceEquals(itemid, null)) throw new ArgumentNullException(nameof(itemid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourCostTypesWithItemid.HourCostTypesWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
@@ -524,7 +524,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectHourEntryActivitiesByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryActivitiesByProjectWithId.HourEntryActivitiesByProjectWithIdRequestBuilder HourEntryActivitiesByProjectWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryActivitiesByProjectWithId.HourEntryActivitiesByProjectWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -534,7 +534,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="accountid">Unique identifier (uuid) of the ReadProjectHourEntryRecentAccountsByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsByProjectWithAccountid.HourEntryRecentAccountsByProjectWithAccountidRequestBuilder HourEntryRecentAccountsByProjectWithAccountid(Guid? accountid)
         {
-            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            if(ReferenceEquals(accountid, null)) throw new ArgumentNullException(nameof(accountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsByProjectWithAccountid.HourEntryRecentAccountsByProjectWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
@@ -544,7 +544,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="accountid">Unique identifier (uuid) of the ReadProjectHourEntryRecentAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsWithAccountid.HourEntryRecentAccountsWithAccountidRequestBuilder HourEntryRecentAccountsWithAccountid(Guid? accountid)
         {
-            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            if(ReferenceEquals(accountid, null)) throw new ArgumentNullException(nameof(accountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentAccountsWithAccountid.HourEntryRecentAccountsWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
@@ -554,7 +554,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectHourEntryRecentActivitiesByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentActivitiesByProjectWithId.HourEntryRecentActivitiesByProjectWithIdRequestBuilder HourEntryRecentActivitiesByProjectWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentActivitiesByProjectWithId.HourEntryRecentActivitiesByProjectWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -564,7 +564,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourEntryRecentHourTypesByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesByProjectWithItemid.HourEntryRecentHourTypesByProjectWithItemidRequestBuilder HourEntryRecentHourTypesByProjectWithItemid(Guid? itemid)
         {
-            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            if(ReferenceEquals(itemid, null)) throw new ArgumentNullException(nameof(itemid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesByProjectWithItemid.HourEntryRecentHourTypesByProjectWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
@@ -574,7 +574,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourEntryRecentHourType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesWithItemid.HourEntryRecentHourTypesWithItemidRequestBuilder HourEntryRecentHourTypesWithItemid(Guid? itemid)
         {
-            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            if(ReferenceEquals(itemid, null)) throw new ArgumentNullException(nameof(itemid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentHourTypesWithItemid.HourEntryRecentHourTypesWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
@@ -584,7 +584,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="projectid">Unique identifier (uuid) of the ReadProjectHourEntryRecentProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentProjectsWithProjectid.HourEntryRecentProjectsWithProjectidRequestBuilder HourEntryRecentProjectsWithProjectid(Guid? projectid)
         {
-            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            if(ReferenceEquals(projectid, null)) throw new ArgumentNullException(nameof(projectid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourEntryRecentProjectsWithProjectid.HourEntryRecentProjectsWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
         /// <summary>
@@ -594,7 +594,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (int32) of the ReadProjectHoursByDate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByDateWithId.HoursByDateWithIdRequestBuilder HoursByDateWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByDateWithId.HoursByDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -604,7 +604,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (int32) of the ReadProjectHoursById</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByIdWithId.HoursByIdWithIdRequestBuilder HoursByIdWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HoursByIdWithId.HoursByIdWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -614,7 +614,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourTypesByDate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByDateWithItemid.HourTypesByDateWithItemidRequestBuilder HourTypesByDateWithItemid(Guid? itemid)
         {
-            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            if(ReferenceEquals(itemid, null)) throw new ArgumentNullException(nameof(itemid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByDateWithItemid.HourTypesByDateWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
@@ -624,7 +624,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourTypesByProjectAndDate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndDateWithItemid.HourTypesByProjectAndDateWithItemidRequestBuilder HourTypesByProjectAndDateWithItemid(Guid? itemid)
         {
-            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            if(ReferenceEquals(itemid, null)) throw new ArgumentNullException(nameof(itemid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesByProjectAndDateWithItemid.HourTypesByProjectAndDateWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
@@ -634,7 +634,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="itemid">Unique identifier (uuid) of the ReadProjectHourType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesWithItemid.HourTypesWithItemidRequestBuilder HourTypesWithItemid(Guid? itemid)
         {
-            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            if(ReferenceEquals(itemid, null)) throw new ArgumentNullException(nameof(itemid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.HourTypesWithItemid.HourTypesWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
@@ -644,7 +644,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectProjectWBSByProjectAndWB</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectAndWBSWithId.ProjectWBSByProjectAndWBSWithIdRequestBuilder ProjectWBSByProjectAndWBSWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectAndWBSWithId.ProjectWBSByProjectAndWBSWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -654,7 +654,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectProjectWBSByProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectWithId.ProjectWBSByProjectWithIdRequestBuilder ProjectWBSByProjectWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.ProjectWBSByProjectWithId.ProjectWBSByProjectWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -664,7 +664,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (int32) of the ReadProjectRecentCostsByNumberOfWeeksByDate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksByDateWithId.RecentCostsByNumberOfWeeksByDateWithIdRequestBuilder RecentCostsByNumberOfWeeksByDateWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksByDateWithId.RecentCostsByNumberOfWeeksByDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -674,7 +674,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (int32) of the ReadProjectRecentCostsByNumberOfWeek</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksWithId.RecentCostsByNumberOfWeeksWithIdRequestBuilder RecentCostsByNumberOfWeeksWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsByNumberOfWeeksWithId.RecentCostsByNumberOfWeeksWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -684,7 +684,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (int32) of the ReadProjectRecentCost</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsWithId.RecentCostsWithIdRequestBuilder RecentCostsWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentCostsWithId.RecentCostsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -694,7 +694,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (int32) of the ReadProjectRecentHoursByNumberOfWeeksByDate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfWeeksByDateWithId.RecentHoursByNumberOfWeeksByDateWithIdRequestBuilder RecentHoursByNumberOfWeeksByDateWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfWeeksByDateWithId.RecentHoursByNumberOfWeeksByDateWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -704,7 +704,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (int32) of the ReadProjectRecentHoursByNumberOfWeek</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfWeeksWithId.RecentHoursByNumberOfWeeksWithIdRequestBuilder RecentHoursByNumberOfWeeksWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursByNumberOfWeeksWithId.RecentHoursByNumberOfWeeksWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -714,7 +714,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (int32) of the ReadProjectRecentHour</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursWithId.RecentHoursWithIdRequestBuilder RecentHoursWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.RecentHoursWithId.RecentHoursWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -724,7 +724,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingAccountDetailsByID</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingAccountDetailsByIDWithId.TimeAndBillingAccountDetailsByIDWithIdRequestBuilder TimeAndBillingAccountDetailsByIDWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingAccountDetailsByIDWithId.TimeAndBillingAccountDetailsByIDWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -734,7 +734,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingAccountDetail</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingAccountDetailsWithId.TimeAndBillingAccountDetailsWithIdRequestBuilder TimeAndBillingAccountDetailsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingAccountDetailsWithId.TimeAndBillingAccountDetailsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -744,7 +744,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingActivitiesAndExpense</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingActivitiesAndExpensesWithId.TimeAndBillingActivitiesAndExpensesWithIdRequestBuilder TimeAndBillingActivitiesAndExpensesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingActivitiesAndExpensesWithId.TimeAndBillingActivitiesAndExpensesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -754,7 +754,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="accountid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryAccountsByDate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByDateWithAccountid.TimeAndBillingEntryAccountsByDateWithAccountidRequestBuilder TimeAndBillingEntryAccountsByDateWithAccountid(Guid? accountid)
         {
-            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            if(ReferenceEquals(accountid, null)) throw new ArgumentNullException(nameof(accountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByDateWithAccountid.TimeAndBillingEntryAccountsByDateWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
@@ -764,7 +764,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="accountid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryAccountsByProjectAndDate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByProjectAndDateWithAccountid.TimeAndBillingEntryAccountsByProjectAndDateWithAccountidRequestBuilder TimeAndBillingEntryAccountsByProjectAndDateWithAccountid(Guid? accountid)
         {
-            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            if(ReferenceEquals(accountid, null)) throw new ArgumentNullException(nameof(accountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsByProjectAndDateWithAccountid.TimeAndBillingEntryAccountsByProjectAndDateWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
@@ -774,7 +774,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="accountid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsWithAccountid.TimeAndBillingEntryAccountsWithAccountidRequestBuilder TimeAndBillingEntryAccountsWithAccountid(Guid? accountid)
         {
-            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            if(ReferenceEquals(accountid, null)) throw new ArgumentNullException(nameof(accountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryAccountsWithAccountid.TimeAndBillingEntryAccountsWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
@@ -784,7 +784,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="projectid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryProjectsByAccountAndDate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByAccountAndDateWithProjectid.TimeAndBillingEntryProjectsByAccountAndDateWithProjectidRequestBuilder TimeAndBillingEntryProjectsByAccountAndDateWithProjectid(Guid? projectid)
         {
-            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            if(ReferenceEquals(projectid, null)) throw new ArgumentNullException(nameof(projectid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByAccountAndDateWithProjectid.TimeAndBillingEntryProjectsByAccountAndDateWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
         /// <summary>
@@ -794,7 +794,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="projectid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryProjectsByDate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByDateWithProjectid.TimeAndBillingEntryProjectsByDateWithProjectidRequestBuilder TimeAndBillingEntryProjectsByDateWithProjectid(Guid? projectid)
         {
-            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            if(ReferenceEquals(projectid, null)) throw new ArgumentNullException(nameof(projectid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsByDateWithProjectid.TimeAndBillingEntryProjectsByDateWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
         /// <summary>
@@ -804,7 +804,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="projectid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsWithProjectid.TimeAndBillingEntryProjectsWithProjectidRequestBuilder TimeAndBillingEntryProjectsWithProjectid(Guid? projectid)
         {
-            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            if(ReferenceEquals(projectid, null)) throw new ArgumentNullException(nameof(projectid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryProjectsWithProjectid.TimeAndBillingEntryProjectsWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
         /// <summary>
@@ -814,7 +814,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="accountid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryRecentAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentAccountsWithAccountid.TimeAndBillingEntryRecentAccountsWithAccountidRequestBuilder TimeAndBillingEntryRecentAccountsWithAccountid(Guid? accountid)
         {
-            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            if(ReferenceEquals(accountid, null)) throw new ArgumentNullException(nameof(accountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentAccountsWithAccountid.TimeAndBillingEntryRecentAccountsWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
@@ -824,7 +824,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryRecentActivitiesAndExpense</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentActivitiesAndExpensesWithId.TimeAndBillingEntryRecentActivitiesAndExpensesWithIdRequestBuilder TimeAndBillingEntryRecentActivitiesAndExpensesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentActivitiesAndExpensesWithId.TimeAndBillingEntryRecentActivitiesAndExpensesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -834,7 +834,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="itemid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryRecentHourCostType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentHourCostTypesWithItemid.TimeAndBillingEntryRecentHourCostTypesWithItemidRequestBuilder TimeAndBillingEntryRecentHourCostTypesWithItemid(Guid? itemid)
         {
-            _ = itemid ?? throw new ArgumentNullException(nameof(itemid));
+            if(ReferenceEquals(itemid, null)) throw new ArgumentNullException(nameof(itemid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentHourCostTypesWithItemid.TimeAndBillingEntryRecentHourCostTypesWithItemidRequestBuilder(PathParameters, RequestAdapter, itemid);
         }
         /// <summary>
@@ -844,7 +844,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="projectid">Unique identifier (uuid) of the ReadProjectTimeAndBillingEntryRecentProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjectsWithProjectid.TimeAndBillingEntryRecentProjectsWithProjectidRequestBuilder TimeAndBillingEntryRecentProjectsWithProjectid(Guid? projectid)
         {
-            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            if(ReferenceEquals(projectid, null)) throw new ArgumentNullException(nameof(projectid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingEntryRecentProjectsWithProjectid.TimeAndBillingEntryRecentProjectsWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
         /// <summary>
@@ -854,7 +854,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingItemDetailsByID</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDetailsByIDWithId.TimeAndBillingItemDetailsByIDWithIdRequestBuilder TimeAndBillingItemDetailsByIDWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDetailsByIDWithId.TimeAndBillingItemDetailsByIDWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -864,7 +864,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingItemDetail</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDetailsWithId.TimeAndBillingItemDetailsWithIdRequestBuilder TimeAndBillingItemDetailsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingItemDetailsWithId.TimeAndBillingItemDetailsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -874,7 +874,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingProjectDetailsByID</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingProjectDetailsByIDWithId.TimeAndBillingProjectDetailsByIDWithIdRequestBuilder TimeAndBillingProjectDetailsByIDWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingProjectDetailsByIDWithId.TimeAndBillingProjectDetailsByIDWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -884,7 +884,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="id">Unique identifier (uuid) of the ReadProjectTimeAndBillingProjectDetail</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingProjectDetailsWithId.TimeAndBillingProjectDetailsWithIdRequestBuilder TimeAndBillingProjectDetailsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingProjectDetailsWithId.TimeAndBillingProjectDetailsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -894,7 +894,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Project
         /// <param name="projectid">Unique identifier (uuid) of the ReadProjectTimeAndBillingRecentProject</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingRecentProjectsWithProjectid.TimeAndBillingRecentProjectsWithProjectidRequestBuilder TimeAndBillingRecentProjectsWithProjectid(Guid? projectid)
         {
-            _ = projectid ?? throw new ArgumentNullException(nameof(projectid));
+            if(ReferenceEquals(projectid, null)) throw new ArgumentNullException(nameof(projectid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Project.TimeAndBillingRecentProjectsWithProjectid.TimeAndBillingRecentProjectsWithProjectidRequestBuilder(PathParameters, RequestAdapter, projectid);
         }
     }

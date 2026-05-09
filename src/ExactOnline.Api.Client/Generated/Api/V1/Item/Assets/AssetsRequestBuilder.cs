@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Assets
         /// <param name="id">Unique identifier (uuid) of the AssetsAssetGroup</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Assets.AssetGroupsWithId.AssetGroupsWithIdRequestBuilder AssetGroupsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Assets.AssetGroupsWithId.AssetGroupsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Assets
         /// <param name="id">Unique identifier (uuid) of the AssetsAsset</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Assets.AssetsWithId.AssetsWithIdRequestBuilder AssetsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Assets.AssetsWithId.AssetsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Assets
         /// <param name="id">Unique identifier (uuid) of the AssetsCommercialBuildingValue</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Assets.CommercialBuildingValuesWithId.CommercialBuildingValuesWithIdRequestBuilder CommercialBuildingValuesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Assets.CommercialBuildingValuesWithId.CommercialBuildingValuesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -94,7 +94,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Assets
         /// <param name="id">Unique identifier (uuid) of the AssetsDepreciationMethod</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Assets.DepreciationMethodsWithId.DepreciationMethodsWithIdRequestBuilder DepreciationMethodsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Assets.DepreciationMethodsWithId.DepreciationMethodsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

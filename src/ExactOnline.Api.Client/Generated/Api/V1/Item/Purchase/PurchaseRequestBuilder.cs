@@ -51,7 +51,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchase
         /// <param name="id">Unique identifier (uuid) of the PurchasePurchaseInvoiceLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchase.PurchaseInvoiceLinesWithId.PurchaseInvoiceLinesWithIdRequestBuilder PurchaseInvoiceLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchase.PurchaseInvoiceLinesWithId.PurchaseInvoiceLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Purchase
         /// <param name="id">Unique identifier (uuid) of the PurchasePurchaseInvoice</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Purchase.PurchaseInvoicesWithId.PurchaseInvoicesWithIdRequestBuilder PurchaseInvoicesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Purchase.PurchaseInvoicesWithId.PurchaseInvoicesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }
