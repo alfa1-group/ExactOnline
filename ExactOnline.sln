@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11723.231 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.OpenApiGenerator", "src\ExactOnline.OpenApiGenerator\ExactOnline.OpenApiGenerator.csproj", "{D4DBA69A-6739-D278-E2D9-C4DCBDB8C07D}"
 EndProject
@@ -35,16 +35,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Auth
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Authentication.Kiota", "src\ExactOnline.Api.Client.Authentication.Kiota\ExactOnline.Api.Client.Authentication.Kiota.csproj", "{98F2A25F-3868-D8DF-3866-D0F1027DCFEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Authentication.Abstractions", "src\ExactOnline.Api.Client.Authentication.Abstractions\ExactOnline.Api.Client.Authentication.Abstractions.csproj", "{476D0FB7-3FDF-325D-0CF7-1110AA17B62E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs", "src\ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs\ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs.csproj", "{45AB7FA6-1807-D495-5B2F-54DEDB2939BA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Authentication.Storage.SqlServer", "src\ExactOnline.Api.Client.Authentication.Storage.SqlServer\ExactOnline.Api.Client.Authentication.Storage.SqlServer.csproj", "{2EB5D207-88E6-2812-04C5-F663CEC315DC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Authentication.Storage.FileSystem", "src\ExactOnline.Api.Client.Authentication.Storage.FileSystem\ExactOnline.Api.Client.Authentication.Storage.FileSystem.csproj", "{EC6FCC6D-6DA9-9861-4FD3-00359424C005}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Api.Client.Authentication.Storage.PostgreSQL", "src\ExactOnline.Api.Client.Authentication.Storage.PostgreSQL\ExactOnline.Api.Client.Authentication.Storage.PostgreSQL.csproj", "{DEF5826A-27E4-0464-A0A7-EB08D507A0C5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storage.SqlServer.ConsoleApp", "examples\Storage.SqlServer.ConsoleApp\Storage.SqlServer.ConsoleApp.csproj", "{7666AAB4-A863-93EB-F503-D33F00680567}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0C88DD14-F956-CE84-757C-A364CCF449FC}"
@@ -77,26 +67,6 @@ Global
 		{98F2A25F-3868-D8DF-3866-D0F1027DCFEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98F2A25F-3868-D8DF-3866-D0F1027DCFEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98F2A25F-3868-D8DF-3866-D0F1027DCFEC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{476D0FB7-3FDF-325D-0CF7-1110AA17B62E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{476D0FB7-3FDF-325D-0CF7-1110AA17B62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{476D0FB7-3FDF-325D-0CF7-1110AA17B62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{476D0FB7-3FDF-325D-0CF7-1110AA17B62E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45AB7FA6-1807-D495-5B2F-54DEDB2939BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45AB7FA6-1807-D495-5B2F-54DEDB2939BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45AB7FA6-1807-D495-5B2F-54DEDB2939BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45AB7FA6-1807-D495-5B2F-54DEDB2939BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2EB5D207-88E6-2812-04C5-F663CEC315DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2EB5D207-88E6-2812-04C5-F663CEC315DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2EB5D207-88E6-2812-04C5-F663CEC315DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2EB5D207-88E6-2812-04C5-F663CEC315DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EC6FCC6D-6DA9-9861-4FD3-00359424C005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC6FCC6D-6DA9-9861-4FD3-00359424C005}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC6FCC6D-6DA9-9861-4FD3-00359424C005}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC6FCC6D-6DA9-9861-4FD3-00359424C005}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DEF5826A-27E4-0464-A0A7-EB08D507A0C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DEF5826A-27E4-0464-A0A7-EB08D507A0C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DEF5826A-27E4-0464-A0A7-EB08D507A0C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DEF5826A-27E4-0464-A0A7-EB08D507A0C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7666AAB4-A863-93EB-F503-D33F00680567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7666AAB4-A863-93EB-F503-D33F00680567}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7666AAB4-A863-93EB-F503-D33F00680567}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -115,11 +85,6 @@ Global
 		{6593AF44-A596-CCF5-3363-0C2E74DFEE34} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{7518FDA6-7FBC-4FCE-B784-3DF4FD2F24EB} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{98F2A25F-3868-D8DF-3866-D0F1027DCFEC} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
-		{476D0FB7-3FDF-325D-0CF7-1110AA17B62E} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
-		{45AB7FA6-1807-D495-5B2F-54DEDB2939BA} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
-		{2EB5D207-88E6-2812-04C5-F663CEC315DC} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
-		{EC6FCC6D-6DA9-9861-4FD3-00359424C005} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
-		{DEF5826A-27E4-0464-A0A7-EB08D507A0C5} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{7666AAB4-A863-93EB-F503-D33F00680567} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{EAB60EC4-C1CB-4D45-9F1E-B2E1172A8714} = {0C88DD14-F956-CE84-757C-A364CCF449FC}
 	EndGlobalSection

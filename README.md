@@ -28,34 +28,21 @@ Console.WriteLine($"{me.CurrentDivision} {me.Email}");
 ```
 
 
-## ExactOnline.Api.Client.Authentication
-Implementation of the OAuth authentication for Exact Online.
-It uses the `ExactOnline.Api.Client.Authentication.Abstractions` interfaces package to store the Refresh Token in a storage.
+## Authentication using Refresh and AccessToken
 
-[![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication)
-
-
-## ExactOnline.Api.Client.Authentication.Kiota
-Contains an implementation of the `IAuthenticationProvider` interface for Kiota, which is used to authenticate requests to the Exact Online API.
-
-[![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication.Kiota)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Kiota)
-
-
-## ExactOnline.Api.Client.Authentication.Abstractions
-An interface `IExactTokenStorageService` which defines how to store and retrieve the Refresh and Access Tokens.
-
-
-
-
-This interface is implemented by several packages, like:
+### Getting
+For getting an AccessToken (based on RefreshToken), these two projects are used:
 
 | Package | NuGet |
 | :- | :- |
-| ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs | [![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.Azure.Blobs)
-| ExactOnline.Api.Client.Authentication.Storage.FileSystem | [![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication.Storage.FileSystem)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.FileSystem)
-| ExactOnline.Api.Client.Authentication.Storage.SqlServer | [![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication.Storage.SqlServer)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.SqlServer)
-| ExactOnline.Api.Client.Authentication.Storage.PostgreSQL | [![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication.Storage.PostgreSQL)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Storage.PostgreSQL)
+| ExactOnline.Api.Client.Authentication | [![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication)
+| ExactOnline.Api.Client.Authentication.Kiota | [![NuGet Badge](https://img.shields.io/nuget/v/ExactOnline.Api.Client.Authentication.Kiota)](https://www.nuget.org/packages/ExactOnline.Api.Client.Authentication.Kiota)
 
+Note that the `ExactOnline.Api.Client.Authentication` can also be used when not using the Kiota generated client, but it is required for the `ExactOnline.Api.Client.Authentication.Kiota` package.
+
+### Storing
+For storing and retrieving the RefreshToken and AccessToken, this project used:
+- [Alfa1.TokenStorage](https://github.com/alfa1-group/Alfa1.TokenStorage)
 
 ---
 
