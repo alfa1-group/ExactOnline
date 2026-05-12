@@ -1,4 +1,4 @@
-﻿using ExactOnline.Api.Client.Authentication.Abstractions;
+﻿using Alfa1.TokenStorage.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -8,14 +8,14 @@ var builder = Host.CreateDefaultBuilder(args)
         services
             .AddSingleton(TimeProvider.System)
             .AddLogging()
-            .AddExactOnlineTokenStorageSqlServer(context.Configuration, ServiceLifetime.Transient); // Use Transient to demonstrate concurrency handling
+            .AddTokenStorageSqlServer(context.Configuration, ServiceLifetime.Transient); // Use Transient to demonstrate concurrency handling
     });
 
 var host = builder.Build();
 
 var scope = host.Services.CreateScope();
 
-var exactTokenStorageService = scope.ServiceProvider.GetRequiredService<IExactTokenStorageService>();
+var exactTokenStorageService = scope.ServiceProvider.GetRequiredService<ITokenStorageService>();
 
 await RunAsync(async () =>
 {
@@ -50,7 +50,7 @@ await RunAsync(async () =>
         var refreshIdx = i;
         var refreshTask = Task.Run(async () =>
         {
-            var exactTokenStorageServiceForTask = scope.ServiceProvider.GetRequiredService<IExactTokenStorageService>();
+            var exactTokenStorageServiceForTask = scope.ServiceProvider.GetRequiredService<ITokenStorageService>();
 
             await Task.Delay(Random.Shared.Next(10));
             return await exactTokenStorageServiceForTask.StoreRefreshTokenAsync(currentRefreshToken, $"r-{refreshIdx}");
@@ -60,7 +60,7 @@ await RunAsync(async () =>
         var accessIdx = i;
         var accessTask = Task.Run(async () =>
         {
-            var exactTokenStorageServiceForTask = scope.ServiceProvider.GetRequiredService<IExactTokenStorageService>();
+            var exactTokenStorageServiceForTask = scope.ServiceProvider.GetRequiredService<ITokenStorageService>();
 
             await Task.Delay(Random.Shared.Next(10));
             return await exactTokenStorageServiceForTask.StoreAccessTokenAsync(currentAccessToken, $"a-{accessIdx}", TimeSpan.FromSeconds(5));
