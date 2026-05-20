@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ReadManufacturingRecentTimeTransaction</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing.RecentTimeTransactionsWithId.RecentTimeTransactionsWithIdRequestBuilder RecentTimeTransactionsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing.RecentTimeTransactionsWithId.RecentTimeTransactionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing
         /// <param name="routingstep">Unique identifier (uuid) of the ReadManufacturingShopOrderRoutingStepPlansAvailableToWork</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing.ShopOrderRoutingStepPlansAvailableToWorkWithRoutingstep.ShopOrderRoutingStepPlansAvailableToWorkWithRoutingstepRequestBuilder ShopOrderRoutingStepPlansAvailableToWorkWithRoutingstep(Guid? routingstep)
         {
-            _ = routingstep ?? throw new ArgumentNullException(nameof(routingstep));
+            if(ReferenceEquals(routingstep, null)) throw new ArgumentNullException(nameof(routingstep));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing.ShopOrderRoutingStepPlansAvailableToWorkWithRoutingstep.ShopOrderRoutingStepPlansAvailableToWorkWithRoutingstepRequestBuilder(PathParameters, RequestAdapter, routingstep);
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing
         /// <param name="id">Unique identifier (uuid) of the ReadManufacturingStartedTimedTimeTransaction</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing.StartedTimedTimeTransactionsWithId.StartedTimedTimeTransactionsWithIdRequestBuilder StartedTimedTimeTransactionsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Manufacturing.StartedTimedTimeTransactionsWithId.StartedTimedTimeTransactionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

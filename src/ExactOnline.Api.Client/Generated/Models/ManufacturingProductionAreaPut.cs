@@ -48,7 +48,7 @@ namespace ExactOnline.Api.Client.Models
         public Guid? ID { get; set; }
         /// <summary>Indicates if this is the default production area. This will be used when creating a new production area</summary>
         public int? IsDefault { get; set; }
-        /// <summary>The __metadata property</summary>
+        /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ExactOnline.Api.Client.Models.ExactOnlineMetadata? Metadata { get; private set; }
@@ -71,7 +71,7 @@ namespace ExactOnline.Api.Client.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ExactOnline.Api.Client.Models.ManufacturingProductionAreaPut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ExactOnline.Api.Client.Models.ManufacturingProductionAreaPut();
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace ExactOnline.Api.Client.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Code", Code);
             writer.WriteStringValue("Costcenter", Costcenter);
             writer.WriteStringValue("Costunit", Costunit);

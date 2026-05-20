@@ -44,7 +44,7 @@ namespace ExactOnline.Api.Client.Api.V1.Current
         /// <param name="userid">Unique identifier (uuid) of the SystemSystemMe</param>
         public global::ExactOnline.Api.Client.Api.V1.Current.MeWithUserid.MeWithUseridRequestBuilder MeWithUserid(Guid? userid)
         {
-            _ = userid ?? throw new ArgumentNullException(nameof(userid));
+            if(ReferenceEquals(userid, null)) throw new ArgumentNullException(nameof(userid));
             return new global::ExactOnline.Api.Client.Api.V1.Current.MeWithUserid.MeWithUseridRequestBuilder(PathParameters, RequestAdapter, userid);
         }
     }

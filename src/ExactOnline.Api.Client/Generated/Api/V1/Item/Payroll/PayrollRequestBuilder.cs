@@ -98,7 +98,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// <param name="id">Unique identifier (uuid) of the PayrollActiveEmployment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.ActiveEmploymentsWithId.ActiveEmploymentsWithIdRequestBuilder ActiveEmploymentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Payroll.ActiveEmploymentsWithId.ActiveEmploymentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -124,7 +124,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// <param name="id">Unique identifier (uuid) of the PayrollEmployee</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmployeesWithId.EmployeesWithIdRequestBuilder EmployeesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmployeesWithId.EmployeesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -134,7 +134,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// <param name="id">Unique identifier (int32) of the PayrollEmploymentContractFlexPhase</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContractFlexPhasesWithId.EmploymentContractFlexPhasesWithIdRequestBuilder EmploymentContractFlexPhasesWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContractFlexPhasesWithId.EmploymentContractFlexPhasesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -144,7 +144,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentContract</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContractsWithId.EmploymentContractsWithIdRequestBuilder EmploymentContractsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentContractsWithId.EmploymentContractsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -154,7 +154,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// <param name="id">Unique identifier (int32) of the PayrollEmploymentEndReason</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentEndReasonsWithId.EmploymentEndReasonsWithIdRequestBuilder EmploymentEndReasonsWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentEndReasonsWithId.EmploymentEndReasonsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -164,7 +164,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentOrganization</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentOrganizationsWithId.EmploymentOrganizationsWithIdRequestBuilder EmploymentOrganizationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentOrganizationsWithId.EmploymentOrganizationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -174,7 +174,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentSalary</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentSalariesWithId.EmploymentSalariesWithIdRequestBuilder EmploymentSalariesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentSalariesWithId.EmploymentSalariesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -184,7 +184,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// <param name="id">Unique identifier (uuid) of the PayrollEmployment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentsWithId.EmploymentsWithIdRequestBuilder EmploymentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentsWithId.EmploymentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -194,7 +194,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// <param name="id">Unique identifier (uuid) of the PayrollEmploymentTaxAuthoritiesGeneral</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentTaxAuthoritiesGeneralWithId.EmploymentTaxAuthoritiesGeneralWithIdRequestBuilder EmploymentTaxAuthoritiesGeneralWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Payroll.EmploymentTaxAuthoritiesGeneralWithId.EmploymentTaxAuthoritiesGeneralWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -204,7 +204,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// <param name="id">Unique identifier (uuid) of the PayrollTaxEmploymentEndFlexCode</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.TaxEmploymentEndFlexCodesWithId.TaxEmploymentEndFlexCodesWithIdRequestBuilder TaxEmploymentEndFlexCodesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Payroll.TaxEmploymentEndFlexCodesWithId.TaxEmploymentEndFlexCodesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -214,7 +214,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Payroll
         /// <param name="id">Unique identifier (uuid) of the PayrollVariableMutation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Payroll.VariableMutationsWithId.VariableMutationsWithIdRequestBuilder VariableMutationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Payroll.VariableMutationsWithId.VariableMutationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

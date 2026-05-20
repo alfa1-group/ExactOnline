@@ -128,7 +128,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="id">Unique identifier (uuid) of the FinancialDeductibilityPercentage</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.DeductibilityPercentagesWithId.DeductibilityPercentagesWithIdRequestBuilder DeductibilityPercentagesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.DeductibilityPercentagesWithId.DeductibilityPercentagesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -138,7 +138,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="id">Unique identifier (uuid) of the FinancialExchangeRate</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.ExchangeRatesWithId.ExchangeRatesWithIdRequestBuilder ExchangeRatesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.ExchangeRatesWithId.ExchangeRatesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -148,7 +148,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="id">Unique identifier (uuid) of the FinancialFinancialPeriod</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.FinancialPeriodsWithId.FinancialPeriodsWithIdRequestBuilder FinancialPeriodsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.FinancialPeriodsWithId.FinancialPeriodsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -158,7 +158,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="id">Unique identifier (uuid) of the FinancialGLAccountClassificationMapping</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountClassificationMappingsWithId.GLAccountClassificationMappingsWithIdRequestBuilder GLAccountClassificationMappingsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountClassificationMappingsWithId.GLAccountClassificationMappingsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -168,7 +168,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="id">Unique identifier (uuid) of the FinancialGLAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountsWithId.GLAccountsWithIdRequestBuilder GLAccountsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLAccountsWithId.GLAccountsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -178,7 +178,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="id">Unique identifier (uuid) of the FinancialGLClassification</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLClassificationsWithId.GLClassificationsWithIdRequestBuilder GLClassificationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLClassificationsWithId.GLClassificationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -188,7 +188,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="id">Unique identifier (uuid) of the FinancialGLScheme</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLSchemesWithId.GLSchemesWithIdRequestBuilder GLSchemesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLSchemesWithId.GLSchemesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -198,7 +198,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="id">Unique identifier (int32) of the FinancialGLTransactionSource</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionSourcesWithId.GLTransactionSourcesWithIdRequestBuilder GLTransactionSourcesWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionSourcesWithId.GLTransactionSourcesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -208,7 +208,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="id">Unique identifier (int32) of the FinancialGLTransactionType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionTypesWithId.GLTransactionTypesWithIdRequestBuilder GLTransactionTypesWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.GLTransactionTypesWithId.GLTransactionTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -218,7 +218,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="id">Unique identifier (uuid) of the FinancialJournal</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.JournalsWithId.JournalsWithIdRequestBuilder JournalsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.JournalsWithId.JournalsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -228,7 +228,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="id">Unique identifier (uuid) of the FinancialOfficialReturn</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.OfficialReturnsWithId.OfficialReturnsWithIdRequestBuilder OfficialReturnsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.OfficialReturnsWithId.OfficialReturnsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -238,7 +238,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="request">Unique identifier (uuid) of the FinancialProcessReturn</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.ProcessReturnWithRequest.ProcessReturnWithRequestRequestBuilder ProcessReturnWithRequest(Guid? request)
         {
-            _ = request ?? throw new ArgumentNullException(nameof(request));
+            if(ReferenceEquals(request, null)) throw new ArgumentNullException(nameof(request));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.ProcessReturnWithRequest.ProcessReturnWithRequestRequestBuilder(PathParameters, RequestAdapter, request);
         }
         /// <summary>
@@ -248,7 +248,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Financial
         /// <param name="id">Unique identifier (int64) of the FinancialReportingBalance</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Financial.ReportingBalanceWithId.ReportingBalanceWithIdRequestBuilder ReportingBalanceWithId(long? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Financial.ReportingBalanceWithId.ReportingBalanceWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

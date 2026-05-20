@@ -44,7 +44,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Sync.Sync
         /// <param name="modified">Unique identifier (date-time) of the ReadSyncSyncSyncTimestamp</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Sync.Sync.SyncTimestampWithModified.SyncTimestampWithModifiedRequestBuilder SyncTimestampWithModified(DateTimeOffset? modified)
         {
-            _ = modified ?? throw new ArgumentNullException(nameof(modified));
+            if(ReferenceEquals(modified, null)) throw new ArgumentNullException(nameof(modified));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Sync.Sync.SyncTimestampWithModified.SyncTimestampWithModifiedRequestBuilder(PathParameters, RequestAdapter, modified);
         }
     }

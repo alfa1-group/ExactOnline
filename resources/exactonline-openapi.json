@@ -2323,6 +2323,333 @@
         }
       }
     },
+    "/api/v1/{division}/activities/AnnualStatements": {
+      "description": "",
+      "get": {
+        "summary": "GET ActivitiesAnnualStatement",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Comma-separated list of fields to return, e.g., `ID`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Number of records to return, e.g., `100`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Number of records to skip, e.g., `10`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skiptoken",
+            "in": "query",
+            "description": "A server-generated token used to fetch the next page of results in a paginated query.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order by field, e.g., `ID desc`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$inlinecount",
+            "in": "query",
+            "description": "Include inline count, `allpages` or `none`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, e.g., `ParentEntity`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivitiesAnnualStatement_Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "POST ActivitiesAnnualStatement",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The ActivitiesAnnualStatement entity to create.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivitiesAnnualStatementPost"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad request: POST operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: POST operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: POST operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "POST operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivitiesAnnualStatementPost_Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{division}/activities/AnnualStatements({id})": {
+      "description": "",
+      "get": {
+        "summary": "GET ActivitiesAnnualStatement",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier (uuid) of the ActivitiesAnnualStatement",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The Primary key",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivitiesAnnualStatementGet_Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "PUT ActivitiesAnnualStatement",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier (uuid) of the ActivitiesAnnualStatement",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The Primary key",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The ActivitiesAnnualStatement entity to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivitiesAnnualStatementPut"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad request: PUT operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: PUT operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: PUT operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "PUT operation successful"
+          }
+        }
+      }
+    },
     "/api/v1/{division}/activities/CommunicationNotes": {
       "description": "",
       "get": {
@@ -3090,6 +3417,333 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/v1/{division}/activities/Fiscals": {
+      "description": "",
+      "get": {
+        "summary": "GET ActivitiesFiscal",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Comma-separated list of fields to return, e.g., `ID`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Number of records to return, e.g., `100`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Number of records to skip, e.g., `10`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skiptoken",
+            "in": "query",
+            "description": "A server-generated token used to fetch the next page of results in a paginated query.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order by field, e.g., `ID desc`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$inlinecount",
+            "in": "query",
+            "description": "Include inline count, `allpages` or `none`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, e.g., `ParentEntity`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivitiesFiscal_Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "POST ActivitiesFiscal",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The ActivitiesFiscal entity to create.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivitiesFiscalPost"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad request: POST operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: POST operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: POST operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "POST operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivitiesFiscalPost_Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{division}/activities/Fiscals({id})": {
+      "description": "",
+      "get": {
+        "summary": "GET ActivitiesFiscal",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier (uuid) of the ActivitiesFiscal",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The Primary key",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivitiesFiscalGet_Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "PUT ActivitiesFiscal",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier (uuid) of the ActivitiesFiscal",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The Primary key",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The ActivitiesFiscal entity to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivitiesFiscalPut"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad request: PUT operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: PUT operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: PUT operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "PUT operation successful"
           }
         }
       }
@@ -19728,6 +20382,971 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/v1/{division}/documents/GetSharePointDocumentUrl": {
+      "description": "Use this endpoint to retrieve the SharePoint URL of a document. The document must be linked to SharePoint.Note: This endpoint requires both the SharePoint Integration and Document Management feature sets. The current user must have access to the document, must not be a client user, and must have the DocumentOverview and SharepointConnection function rights.",
+      "get": {
+        "summary": "GET DocumentsGetSharePointDocumentUrl",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "documentId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Comma-separated list of fields to return, e.g., `ID`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Number of records to return, e.g., `100`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Number of records to skip, e.g., `10`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skiptoken",
+            "in": "query",
+            "description": "A server-generated token used to fetch the next page of results in a paginated query.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order by field, e.g., `ID desc`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$inlinecount",
+            "in": "query",
+            "description": "Include inline count, `allpages` or `none`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, e.g., `ParentEntity`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentsGetSharePointDocumentUrl_Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{division}/documents/GetSharePointDocumentUrl({id})": {
+      "description": "Use this endpoint to retrieve the SharePoint URL of a document. The document must be linked to SharePoint.Note: This endpoint requires both the SharePoint Integration and Document Management feature sets. The current user must have access to the document, must not be a client user, and must have the DocumentOverview and SharepointConnection function rights.",
+      "get": {
+        "summary": "GET DocumentsGetSharePointDocumentUrl",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier of the DocumentsGetSharePointDocumentUrl",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentsGetSharePointDocumentUrlGet_Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{division}/expensemanagement/ExpenseReports": {
+      "description": "Use this endpoint to create, read, update and delete Expense reports.This endpoint provides access to expense reports with details about claimants, approvers, status, and financial information.\n\t\t\tExpense reports contain information about employee expense claims including submission status, approval workflow, and monetary amounts. Each report can contain multiple expense items and follows an approval process from submission through to final processing.\n\t\t\tThe endpoint includes comprehensive user information for all roles involved in the expense process: claimant, approver, submitter, rejecter, controller, creator, and modifier.\n\t\t\tOperations supported:\n\t\t\t• GET: Retrieve expense reports\n\t\t\t• POST: Create new expense reports\n\t\t\t• PUT: Update existing expense reports (status changes, approvals, etc.)\n\t\t\t• DELETE: Delete expense reportsFor more information about the ExpenseManagement functionality in Exact Online, see Work with expense management.",
+      "get": {
+        "summary": "GET ExpenseManagementExpenseReport",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Comma-separated list of fields to return, e.g., `ID`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Number of records to return, e.g., `100`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Number of records to skip, e.g., `10`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skiptoken",
+            "in": "query",
+            "description": "A server-generated token used to fetch the next page of results in a paginated query.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order by field, e.g., `ID desc`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$inlinecount",
+            "in": "query",
+            "description": "Include inline count, `allpages` or `none`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, e.g., `ParentEntity`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseManagementExpenseReport_Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "POST ExpenseManagementExpenseReport",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The ExpenseManagementExpenseReport entity to create.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExpenseManagementExpenseReportPost"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad request: POST operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: POST operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: POST operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "POST operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseManagementExpenseReportPost_Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{division}/expensemanagement/ExpenseReports({id})": {
+      "description": "Use this endpoint to create, read, update and delete Expense reports.This endpoint provides access to expense reports with details about claimants, approvers, status, and financial information.\n\t\t\tExpense reports contain information about employee expense claims including submission status, approval workflow, and monetary amounts. Each report can contain multiple expense items and follows an approval process from submission through to final processing.\n\t\t\tThe endpoint includes comprehensive user information for all roles involved in the expense process: claimant, approver, submitter, rejecter, controller, creator, and modifier.\n\t\t\tOperations supported:\n\t\t\t• GET: Retrieve expense reports\n\t\t\t• POST: Create new expense reports\n\t\t\t• PUT: Update existing expense reports (status changes, approvals, etc.)\n\t\t\t• DELETE: Delete expense reportsFor more information about the ExpenseManagement functionality in Exact Online, see Work with expense management.",
+      "get": {
+        "summary": "GET ExpenseManagementExpenseReport",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier (uuid) of the ExpenseManagementExpenseReport",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Primary key",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseManagementExpenseReportGet_Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "PUT ExpenseManagementExpenseReport",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier (uuid) of the ExpenseManagementExpenseReport",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Primary key",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The ExpenseManagementExpenseReport entity to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExpenseManagementExpenseReportPut"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad request: PUT operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: PUT operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: PUT operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "PUT operation successful"
+          }
+        }
+      },
+      "delete": {
+        "summary": "DELETE ExpenseManagementExpenseReport",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier (uuid) of the ExpenseManagementExpenseReport",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Primary key",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: DELETE operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: DELETE operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: DELETE operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "DELETE operation successful"
+          }
+        }
+      }
+    },
+    "/api/v1/{division}/expensemanagement/Expenses": {
+      "description": "Use this endpoint to create, read, update and delete Individual expense entries.This endpoint provides access to individual expense entries with comprehensive details about expense types, amounts, locations, and related information.\n\t\t\tExpenses represent individual expense line items that can be of three types: Receipts (regular expenses with vendor information), Mileage (travel expenses with from/to locations and distance), and Per Diem (daily allowance expenses with quantity and rates).\n\t\t\tEach expense entry includes complete financial information with amounts in both division currency (DC) and foreign currency (FC), exchange rates, project associations, categorization, and approval workflow details.\n\t\t\tThe endpoint provides enriched data including user names for all related personnel (claimant, creator, modifier), project descriptions, category descriptions, status descriptions, and expense type descriptions for better usability.\n\t\t\tRetrieving Expenses with Child Data:\n\t\t\t• Standard OData: GET /Expenses or GET /Expenses?$filter=Report eq guid'{id}' automatically includes child data\n\t\t\t• Child data (ExpenseLine and Waypoint) are loaded via subqueries for each expense\n\t\t\t• ExpenseLine - For Receipt type expenses (Type 1), single line with amount and category\n\t\t\t• Waypoint - For Mileage type expenses (Type 2), single location with coordinates\n\t\t\t• Per Diem expenses (Type 3) have no child data\n\t\t\tExpense Types:\n\t\t\t• Type 1: Receipts - Standard expenses with vendor and receipt information, includes single ExpenseLine\n\t\t\t• Type 2: Mileage - Travel expenses with distance and location tracking, includes single Waypoint\n\t\t\t• Type 3: Per Diem - Daily allowance expenses with quantity-based calculations\n\t\t\tStatus Values:\n\t\t\t• Status 1: Reviewed - Expense has been reviewed and approved\n\t\t\t• Status 2: Not reviewed - Expense awaiting review (default)\n\t\t\t• Status 3: Flagged - Expense requires attention or clarification\n\t\t\t• Status 4: Deleted - Expense marked for deletion\n\t\t\tAuthorization:\n\t\t\t• Users can only view and delete expenses they created\n\t\t\t• Report approvers can view and delete all expenses in reports they approve\n\t\t\t• Delete operations check creator ownership and report status\n\t\t\t• Expenses cannot be deleted if report status is Submitted, Approved, FinanceApproved, or Processed\n\t\t\tOperations supported:\n\t\t\t• GET: Retrieve expenses with filtering and sorting capabilities (includes child data)\n\t\t\t• POST: Create new expense entries with type-specific validation\n\t\t\t• PUT: Update existing expenses (amounts, descriptions, status, etc.)\n\t\t\t• DELETE: Delete expense entries (validates authorization and report status)\n\t\t\t• POST (Service Operation): DeleteExpenses - Bulk delete multiple expenses with authorization checks\n\t\t\tSpecial Features:\n\t\t\t• DeleteExpenses: Bulk delete with proper child data cleanup and detailed failure reporting\n\t\t\t• Type-specific validation for mileage and per diem expenses\n\t\t\t• Automatic currency conversion support\n\t\t\t• Project and category association for detailed reporting\n\t\t\t• Business Component (BC) pattern ensures data integrity and proper child deletionFor more information about the ExpenseManagement functionality in Exact Online, see Work with expense management.",
+      "get": {
+        "summary": "GET ExpenseManagementExpense",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Comma-separated list of fields to return, e.g., `ID`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Number of records to return, e.g., `100`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Number of records to skip, e.g., `10`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skiptoken",
+            "in": "query",
+            "description": "A server-generated token used to fetch the next page of results in a paginated query.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order by field, e.g., `ID desc`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$inlinecount",
+            "in": "query",
+            "description": "Include inline count, `allpages` or `none`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, e.g., `ParentEntity`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseManagementExpense_Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "POST ExpenseManagementExpense",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The ExpenseManagementExpense entity to create.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExpenseManagementExpensePost"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad request: POST operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: POST operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: POST operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "POST operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseManagementExpensePost_Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{division}/expensemanagement/Expenses({id})": {
+      "description": "Use this endpoint to create, read, update and delete Individual expense entries.This endpoint provides access to individual expense entries with comprehensive details about expense types, amounts, locations, and related information.\n\t\t\tExpenses represent individual expense line items that can be of three types: Receipts (regular expenses with vendor information), Mileage (travel expenses with from/to locations and distance), and Per Diem (daily allowance expenses with quantity and rates).\n\t\t\tEach expense entry includes complete financial information with amounts in both division currency (DC) and foreign currency (FC), exchange rates, project associations, categorization, and approval workflow details.\n\t\t\tThe endpoint provides enriched data including user names for all related personnel (claimant, creator, modifier), project descriptions, category descriptions, status descriptions, and expense type descriptions for better usability.\n\t\t\tRetrieving Expenses with Child Data:\n\t\t\t• Standard OData: GET /Expenses or GET /Expenses?$filter=Report eq guid'{id}' automatically includes child data\n\t\t\t• Child data (ExpenseLine and Waypoint) are loaded via subqueries for each expense\n\t\t\t• ExpenseLine - For Receipt type expenses (Type 1), single line with amount and category\n\t\t\t• Waypoint - For Mileage type expenses (Type 2), single location with coordinates\n\t\t\t• Per Diem expenses (Type 3) have no child data\n\t\t\tExpense Types:\n\t\t\t• Type 1: Receipts - Standard expenses with vendor and receipt information, includes single ExpenseLine\n\t\t\t• Type 2: Mileage - Travel expenses with distance and location tracking, includes single Waypoint\n\t\t\t• Type 3: Per Diem - Daily allowance expenses with quantity-based calculations\n\t\t\tStatus Values:\n\t\t\t• Status 1: Reviewed - Expense has been reviewed and approved\n\t\t\t• Status 2: Not reviewed - Expense awaiting review (default)\n\t\t\t• Status 3: Flagged - Expense requires attention or clarification\n\t\t\t• Status 4: Deleted - Expense marked for deletion\n\t\t\tAuthorization:\n\t\t\t• Users can only view and delete expenses they created\n\t\t\t• Report approvers can view and delete all expenses in reports they approve\n\t\t\t• Delete operations check creator ownership and report status\n\t\t\t• Expenses cannot be deleted if report status is Submitted, Approved, FinanceApproved, or Processed\n\t\t\tOperations supported:\n\t\t\t• GET: Retrieve expenses with filtering and sorting capabilities (includes child data)\n\t\t\t• POST: Create new expense entries with type-specific validation\n\t\t\t• PUT: Update existing expenses (amounts, descriptions, status, etc.)\n\t\t\t• DELETE: Delete expense entries (validates authorization and report status)\n\t\t\t• POST (Service Operation): DeleteExpenses - Bulk delete multiple expenses with authorization checks\n\t\t\tSpecial Features:\n\t\t\t• DeleteExpenses: Bulk delete with proper child data cleanup and detailed failure reporting\n\t\t\t• Type-specific validation for mileage and per diem expenses\n\t\t\t• Automatic currency conversion support\n\t\t\t• Project and category association for detailed reporting\n\t\t\t• Business Component (BC) pattern ensures data integrity and proper child deletionFor more information about the ExpenseManagement functionality in Exact Online, see Work with expense management.",
+      "get": {
+        "summary": "GET ExpenseManagementExpense",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier (uuid) of the ExpenseManagementExpense",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Expense ID",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseManagementExpenseGet_Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "PUT ExpenseManagementExpense",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier of the ExpenseManagementExpense",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The ExpenseManagementExpense entity to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExpenseManagementExpensePut"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad request: PUT operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: PUT operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: PUT operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "PUT operation successful"
+          }
+        }
+      },
+      "delete": {
+        "summary": "DELETE ExpenseManagementExpense",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier of the ExpenseManagementExpense",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: DELETE operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: DELETE operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: DELETE operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "DELETE operation successful"
           }
         }
       }
@@ -80142,6 +81761,206 @@
         }
       }
     },
+    "/api/v1/{division}/read/salesinvoice/InvoiceSalesOrderResult": {
+      "description": "Use this endpoint to invoice sales orders.Use this endpoint to get the results of the backgroundjob started via endpoint InvoiceSalesOrders. Note: Use the ProcessID in the return message of InvoiceSalesOrders to get the results via this endpoint.The To be invoiced page in Exact Online contains a list of all sales orders for which you need to create invoices.For more information about the Sales order to be invoiced functionality in Exact Online, see About sales orders to be invoiced.",
+      "get": {
+        "summary": "GET ReadSalesInvoiceInvoiceSalesOrderResult",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "ProcessID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData filter, e.g., `ID eq guid'00000000-0000-0000-0000-000000000000'`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Comma-separated list of fields to return, e.g., `ID`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Number of records to return, e.g., `100`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Number of records to skip, e.g., `10`",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$skiptoken",
+            "in": "query",
+            "description": "A server-generated token used to fetch the next page of results in a paginated query.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order by field, e.g., `ID desc`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$inlinecount",
+            "in": "query",
+            "description": "Include inline count, `allpages` or `none`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, e.g., `ParentEntity`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadSalesInvoiceInvoiceSalesOrderResult_Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{division}/read/salesinvoice/InvoiceSalesOrderResult({processid})": {
+      "description": "Use this endpoint to invoice sales orders.Use this endpoint to get the results of the backgroundjob started via endpoint InvoiceSalesOrders. Note: Use the ProcessID in the return message of InvoiceSalesOrders to get the results via this endpoint.The To be invoiced page in Exact Online contains a list of all sales orders for which you need to create invoices.For more information about the Sales order to be invoiced functionality in Exact Online, see About sales orders to be invoiced.",
+      "get": {
+        "summary": "GET ReadSalesInvoiceInvoiceSalesOrderResult",
+        "parameters": [
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "processid",
+            "in": "path",
+            "description": "Unique identifier (uuid) of the ReadSalesInvoiceInvoiceSalesOrderResult",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Use to get the InvoiceSalesOrders result",
+              "format": "uuid",
+              "readOnly": true
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented: GET operation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "GET operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadSalesInvoiceInvoiceSalesOrderResultGet_Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/{division}/read/sync/Sync/SyncTimestamp": {
       "description": "The sync APIs have the goal to keep the data between Exact Online and a 3rd party application the same. When you use the Sync APIs for the first time, you might not want to sync all data, but you want to start syncing on a particular date. Via the Modified date filter, you can retrieve a single timestamp and use it in the Sync APIs. You must provide datetime as 'modified' and name of the endpoint as 'endpoint' to filter on property 'Modified' of each sync endpoint. The first record found will be return based on the greater than or equal to logical operator.  You can provide the endPoint value based on the following supported endPoints: &nbsp; &nbsp; • sync/CRM/QuotationHeaders use QuotationHeaders as endPoint value. &nbsp; &nbsp; • sync/CRM/QuotationLines use QuotationLines as endPoint value. &nbsp; &nbsp; • sync/Financial/TransactionLines use TransactionLines as endPoint value. &nbsp; &nbsp; • sync/Inventory/ItemStorageLocations use ItemStorageLocations as endPoint value. &nbsp; &nbsp; • sync/Manufacturing/ShopOrders use ShopOrders as endPoint value. &nbsp; &nbsp; • sync/Manufacturing/ShopOrderMaterialPlans use ShopOrderMaterialPlans as endPoint value. &nbsp; &nbsp; • sync/Manufacturing/ShopOrderRoutingStepPlans use ShopOrderRoutingStepPlans as endPoint value. &nbsp; &nbsp; • sync/Manufacturing/ShopOrderPurchasePlanning use ShopOrderPurchasePlanning as endPoint value. &nbsp; &nbsp; • sync/Manufacturing/ShopOrderSubOrders use ShopOrderSubOrders as endPoint value. &nbsp; &nbsp; • sync/Manufacturing/MaterialIssues use MaterialIssues as endPoint value. &nbsp; &nbsp; • sync/Manufacturing/BillOfMaterialVersions use BillOfMaterialVersions as endPoint value. &nbsp; &nbsp; • sync/Manufacturing/BillOfMaterialMaterials use BillOfMaterialMaterials as endPoint value. &nbsp; &nbsp; • sync/PurchaseOrder/PurchaseOrders use PurchaseOrders as endPoint value. &nbsp; &nbsp; • sync/Project/Projects use Projects as endPoint value. &nbsp; &nbsp; • sync/Project/ProjectPlanning use ProjectPlanning as endPoint value. &nbsp; &nbsp; • sync/Project/ProjectWBS use ProjectWBS as endPoint value. &nbsp; &nbsp; • sync/Project/TimeCostTransactions use TimeCostTransactions as endPoint value. &nbsp; &nbsp; • sync/SalesInvoice/SalesInvoices use SalesInvoices as as endPoint value. &nbsp; &nbsp; • sync/SalesOrder/GoodsDeliveries use GoodsDeliveries as as endPoint value. &nbsp; &nbsp; • sync/SalesOrder/GoodsDeliveryLines use GoodsDeliveryLines as endPoint value. &nbsp; &nbsp; • sync/SalesOrder/SalesOrderHeaders use SalesOrderHeaders as endPoint value. &nbsp; &nbsp; • sync/SalesOrder/SalesOrderLines use SalesOrderLines as endPoint value. &nbsp; &nbsp; • sync/Subscription/Subscriptions use Subscriptions as endPoint value. &nbsp; &nbsp; • sync/Subscription/SubscriptionLines use SubscriptionLines as endPoint value.  For example : modified=datetime'2022-01-01'&amp;endPoint='QuotationHeaders' For this function to work correctly, you must supply all parameters.",
       "get": {
@@ -106585,6 +108404,317 @@
           }
         }
       },
+      "ActivitiesAnnualStatement": {
+        "required": [
+          "ID"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ID": {
+            "type": "string",
+            "description": "The Primary key",
+            "format": "uuid"
+          },
+          "ActionDate": {
+            "type": "string",
+            "description": "The date indicating by when the action has to be taken",
+            "format": "date-time"
+          },
+          "AnnualStatementStatus": {
+            "type": "string",
+            "description": "The status of the Annual Statement request"
+          },
+          "AnnualStatementStatusRemark": {
+            "type": "string",
+            "description": "The remark of the Annual Statement request status"
+          },
+          "AssignedTo": {
+            "type": "string",
+            "description": "The user that the request is assigned to",
+            "format": "uuid"
+          },
+          "AssignedToFullName": {
+            "type": "string",
+            "description": "The user name"
+          },
+          "Created": {
+            "type": "string",
+            "description": "Creation date",
+            "format": "date-time"
+          },
+          "Creator": {
+            "type": "string",
+            "description": "User ID of the creator",
+            "format": "uuid"
+          },
+          "CreatorFullName": {
+            "type": "string",
+            "description": "Name of the creator"
+          },
+          "Description": {
+            "type": "string",
+            "description": "The description"
+          },
+          "Division": {
+            "type": "integer",
+            "description": "The division",
+            "format": "int32"
+          },
+          "HID": {
+            "type": "integer",
+            "description": "The human readable key",
+            "format": "int32"
+          },
+          "Message": {
+            "type": "string",
+            "description": "The message content of the Annual Statement request"
+          },
+          "Modified": {
+            "type": "string",
+            "description": "Last modified date",
+            "format": "date-time"
+          },
+          "Modifier": {
+            "type": "string",
+            "description": "User ID of the last modifier",
+            "format": "uuid"
+          },
+          "ModifierFullName": {
+            "type": "string",
+            "description": "Name of the last modifier"
+          },
+          "MyFirmUserEmail": {
+            "type": "string",
+            "description": "The email of MyFirm user"
+          },
+          "Status": {
+            "type": "integer",
+            "description": "Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed",
+            "format": "int32"
+          },
+          "StatusDescription": {
+            "type": "string",
+            "description": "The description of the status"
+          },
+          "Type": {
+            "type": "string",
+            "description": "The message content of the Annual Statement request"
+          },
+          "Url": {
+            "type": "string",
+            "description": "The URL back to Annual Statement"
+          }
+        }
+      },
+      "ActivitiesAnnualStatement_Array": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ActivitiesAnnualStatement"
+        },
+        "readOnly": true
+      },
+      "ActivitiesAnnualStatement_Results": {
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "$ref": "#/components/schemas/ActivitiesAnnualStatement_Array"
+          },
+          "__count": {
+            "type": "integer",
+            "description": "This property represents the total number of entities in a collection that match the query, often used alongside $inlinecount to support paging scenarios.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "__next": {
+            "$ref": "#/components/schemas/ODataNext"
+          }
+        },
+        "readOnly": true
+      },
+      "ActivitiesAnnualStatement_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ActivitiesAnnualStatement_Array"
+              },
+              {
+                "$ref": "#/components/schemas/ActivitiesAnnualStatement_Results"
+              }
+            ],
+            "discriminator": {
+              "propertyName": "results",
+              "mapping": {
+                "_Results": "#/components/schemas/ActivitiesAnnualStatement_Results"
+              }
+            }
+          }
+        },
+        "description": "A collection of ActivitiesAnnualStatement entities.",
+        "readOnly": true
+      },
+      "ActivitiesAnnualStatementGet_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/ActivitiesAnnualStatement"
+          }
+        },
+        "description": "The ActivitiesAnnualStatement entity.",
+        "readOnly": true
+      },
+      "ActivitiesAnnualStatementPost": {
+        "required": [
+          "ID"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ID": {
+            "type": "string",
+            "description": "The Primary key",
+            "format": "uuid"
+          },
+          "ActionDate": {
+            "type": "string",
+            "description": "The date indicating by when the action has to be taken",
+            "format": "date-time"
+          },
+          "AnnualStatementStatus": {
+            "type": "string",
+            "description": "The status of the Annual Statement request"
+          },
+          "AnnualStatementStatusRemark": {
+            "type": "string",
+            "description": "The remark of the Annual Statement request status"
+          },
+          "AssignedTo": {
+            "type": "string",
+            "description": "The user that the request is assigned to",
+            "format": "uuid"
+          },
+          "AssignedToFullName": {
+            "type": "string",
+            "description": "The user name"
+          },
+          "Description": {
+            "type": "string",
+            "description": "The description"
+          },
+          "HID": {
+            "type": "integer",
+            "description": "The human readable key",
+            "format": "int32"
+          },
+          "Message": {
+            "type": "string",
+            "description": "The message content of the Annual Statement request"
+          },
+          "MyFirmUserEmail": {
+            "type": "string",
+            "description": "The email of MyFirm user"
+          },
+          "Type": {
+            "type": "string",
+            "description": "The message content of the Annual Statement request"
+          },
+          "Url": {
+            "type": "string",
+            "description": "The URL back to Annual Statement"
+          }
+        }
+      },
+      "ActivitiesAnnualStatementPost_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/ActivitiesAnnualStatementPost"
+          }
+        },
+        "description": "The ActivitiesAnnualStatement entity.",
+        "readOnly": true
+      },
+      "ActivitiesAnnualStatementPut": {
+        "required": [
+          "ID"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ID": {
+            "type": "string",
+            "description": "The Primary key",
+            "format": "uuid"
+          },
+          "ActionDate": {
+            "type": "string",
+            "description": "The date indicating by when the action has to be taken",
+            "format": "date-time"
+          },
+          "AnnualStatementStatus": {
+            "type": "string",
+            "description": "The status of the Annual Statement request"
+          },
+          "AnnualStatementStatusRemark": {
+            "type": "string",
+            "description": "The remark of the Annual Statement request status"
+          },
+          "AssignedTo": {
+            "type": "string",
+            "description": "The user that the request is assigned to",
+            "format": "uuid"
+          },
+          "AssignedToFullName": {
+            "type": "string",
+            "description": "The user name"
+          },
+          "Description": {
+            "type": "string",
+            "description": "The description"
+          },
+          "HID": {
+            "type": "integer",
+            "description": "The human readable key",
+            "format": "int32"
+          },
+          "Message": {
+            "type": "string",
+            "description": "The message content of the Annual Statement request"
+          },
+          "MyFirmUserEmail": {
+            "type": "string",
+            "description": "The email of MyFirm user"
+          },
+          "Type": {
+            "type": "string",
+            "description": "The message content of the Annual Statement request"
+          },
+          "Url": {
+            "type": "string",
+            "description": "The URL back to Annual Statement"
+          }
+        }
+      },
       "ActivitiesCommunicationNote": {
         "required": [
           "ID"
@@ -107457,6 +109587,317 @@
         },
         "description": "The ActivitiesEvent entity.",
         "readOnly": true
+      },
+      "ActivitiesFiscal": {
+        "required": [
+          "ID"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ID": {
+            "type": "string",
+            "description": "The Primary key",
+            "format": "uuid"
+          },
+          "ActionDate": {
+            "type": "string",
+            "description": "The date indicating by when the action has to be taken",
+            "format": "date-time"
+          },
+          "AssignedTo": {
+            "type": "string",
+            "description": "The user that the request is assigned to",
+            "format": "uuid"
+          },
+          "AssignedToFullName": {
+            "type": "string",
+            "description": "The user name"
+          },
+          "Created": {
+            "type": "string",
+            "description": "Creation date",
+            "format": "date-time"
+          },
+          "Creator": {
+            "type": "string",
+            "description": "User ID of the creator",
+            "format": "uuid"
+          },
+          "CreatorFullName": {
+            "type": "string",
+            "description": "Name of the creator"
+          },
+          "Description": {
+            "type": "string",
+            "description": "The description"
+          },
+          "Division": {
+            "type": "integer",
+            "description": "The division",
+            "format": "int32"
+          },
+          "FiscalStatus": {
+            "type": "string",
+            "description": "The status of the Fiscal request"
+          },
+          "FiscalStatusRemark": {
+            "type": "string",
+            "description": "The remark of the Fiscal request status"
+          },
+          "HID": {
+            "type": "integer",
+            "description": "The human readable key",
+            "format": "int32"
+          },
+          "Message": {
+            "type": "string",
+            "description": "The message content of the Fiscal request"
+          },
+          "Modified": {
+            "type": "string",
+            "description": "Last modified date",
+            "format": "date-time"
+          },
+          "Modifier": {
+            "type": "string",
+            "description": "User ID of the last modifier",
+            "format": "uuid"
+          },
+          "ModifierFullName": {
+            "type": "string",
+            "description": "Name of the last modifier"
+          },
+          "MyFirmUserEmail": {
+            "type": "string",
+            "description": "The email of MyFirm user"
+          },
+          "Status": {
+            "type": "integer",
+            "description": "Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed",
+            "format": "int32"
+          },
+          "StatusDescription": {
+            "type": "string",
+            "description": "The description of the status"
+          },
+          "Type": {
+            "type": "string",
+            "description": "The message content of the Fiscal request"
+          },
+          "Url": {
+            "type": "string",
+            "description": "The URL back to Fiscal"
+          }
+        }
+      },
+      "ActivitiesFiscal_Array": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ActivitiesFiscal"
+        },
+        "readOnly": true
+      },
+      "ActivitiesFiscal_Results": {
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "$ref": "#/components/schemas/ActivitiesFiscal_Array"
+          },
+          "__count": {
+            "type": "integer",
+            "description": "This property represents the total number of entities in a collection that match the query, often used alongside $inlinecount to support paging scenarios.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "__next": {
+            "$ref": "#/components/schemas/ODataNext"
+          }
+        },
+        "readOnly": true
+      },
+      "ActivitiesFiscal_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ActivitiesFiscal_Array"
+              },
+              {
+                "$ref": "#/components/schemas/ActivitiesFiscal_Results"
+              }
+            ],
+            "discriminator": {
+              "propertyName": "results",
+              "mapping": {
+                "_Results": "#/components/schemas/ActivitiesFiscal_Results"
+              }
+            }
+          }
+        },
+        "description": "A collection of ActivitiesFiscal entities.",
+        "readOnly": true
+      },
+      "ActivitiesFiscalGet_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/ActivitiesFiscal"
+          }
+        },
+        "description": "The ActivitiesFiscal entity.",
+        "readOnly": true
+      },
+      "ActivitiesFiscalPost": {
+        "required": [
+          "ID"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ID": {
+            "type": "string",
+            "description": "The Primary key",
+            "format": "uuid"
+          },
+          "ActionDate": {
+            "type": "string",
+            "description": "The date indicating by when the action has to be taken",
+            "format": "date-time"
+          },
+          "AssignedTo": {
+            "type": "string",
+            "description": "The user that the request is assigned to",
+            "format": "uuid"
+          },
+          "AssignedToFullName": {
+            "type": "string",
+            "description": "The user name"
+          },
+          "Description": {
+            "type": "string",
+            "description": "The description"
+          },
+          "FiscalStatus": {
+            "type": "string",
+            "description": "The status of the Fiscal request"
+          },
+          "FiscalStatusRemark": {
+            "type": "string",
+            "description": "The remark of the Fiscal request status"
+          },
+          "HID": {
+            "type": "integer",
+            "description": "The human readable key",
+            "format": "int32"
+          },
+          "Message": {
+            "type": "string",
+            "description": "The message content of the Fiscal request"
+          },
+          "MyFirmUserEmail": {
+            "type": "string",
+            "description": "The email of MyFirm user"
+          },
+          "Type": {
+            "type": "string",
+            "description": "The message content of the Fiscal request"
+          },
+          "Url": {
+            "type": "string",
+            "description": "The URL back to Fiscal"
+          }
+        }
+      },
+      "ActivitiesFiscalPost_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/ActivitiesFiscalPost"
+          }
+        },
+        "description": "The ActivitiesFiscal entity.",
+        "readOnly": true
+      },
+      "ActivitiesFiscalPut": {
+        "required": [
+          "ID"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ID": {
+            "type": "string",
+            "description": "The Primary key",
+            "format": "uuid"
+          },
+          "ActionDate": {
+            "type": "string",
+            "description": "The date indicating by when the action has to be taken",
+            "format": "date-time"
+          },
+          "AssignedTo": {
+            "type": "string",
+            "description": "The user that the request is assigned to",
+            "format": "uuid"
+          },
+          "AssignedToFullName": {
+            "type": "string",
+            "description": "The user name"
+          },
+          "Description": {
+            "type": "string",
+            "description": "The description"
+          },
+          "FiscalStatus": {
+            "type": "string",
+            "description": "The status of the Fiscal request"
+          },
+          "FiscalStatusRemark": {
+            "type": "string",
+            "description": "The remark of the Fiscal request status"
+          },
+          "HID": {
+            "type": "integer",
+            "description": "The human readable key",
+            "format": "int32"
+          },
+          "Message": {
+            "type": "string",
+            "description": "The message content of the Fiscal request"
+          },
+          "MyFirmUserEmail": {
+            "type": "string",
+            "description": "The email of MyFirm user"
+          },
+          "Type": {
+            "type": "string",
+            "description": "The message content of the Fiscal request"
+          },
+          "Url": {
+            "type": "string",
+            "description": "The URL back to Fiscal"
+          }
+        }
       },
       "ActivitiesServiceRequest": {
         "required": [
@@ -129853,6 +132294,978 @@
         },
         "description": "The DocumentsDocumentType entity.",
         "readOnly": true
+      },
+      "DocumentsGetSharePointDocumentUrl": {
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          }
+        }
+      },
+      "DocumentsGetSharePointDocumentUrl_Array": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DocumentsGetSharePointDocumentUrl"
+        },
+        "readOnly": true
+      },
+      "DocumentsGetSharePointDocumentUrl_Results": {
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "$ref": "#/components/schemas/DocumentsGetSharePointDocumentUrl_Array"
+          },
+          "__count": {
+            "type": "integer",
+            "description": "This property represents the total number of entities in a collection that match the query, often used alongside $inlinecount to support paging scenarios.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "__next": {
+            "$ref": "#/components/schemas/ODataNext"
+          }
+        },
+        "readOnly": true
+      },
+      "DocumentsGetSharePointDocumentUrl_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DocumentsGetSharePointDocumentUrl_Array"
+              },
+              {
+                "$ref": "#/components/schemas/DocumentsGetSharePointDocumentUrl_Results"
+              }
+            ],
+            "discriminator": {
+              "propertyName": "results",
+              "mapping": {
+                "_Results": "#/components/schemas/DocumentsGetSharePointDocumentUrl_Results"
+              }
+            }
+          }
+        },
+        "description": "A collection of DocumentsGetSharePointDocumentUrl entities.",
+        "readOnly": true
+      },
+      "DocumentsGetSharePointDocumentUrlGet_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/DocumentsGetSharePointDocumentUrl"
+          }
+        },
+        "description": "The DocumentsGetSharePointDocumentUrl entity.",
+        "readOnly": true
+      },
+      "ExpenseManagementExpenseReport": {
+        "required": [
+          "ID",
+          "Division"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ID": {
+            "type": "string",
+            "description": "Primary key",
+            "format": "uuid"
+          },
+          "ApprovedDate": {
+            "type": "string",
+            "description": "Date when the expense report was approved",
+            "format": "date-time"
+          },
+          "Approver": {
+            "type": "string",
+            "description": "User who approved the expense report",
+            "format": "uuid"
+          },
+          "ApproverComment": {
+            "type": "string",
+            "description": "Additional approver comment"
+          },
+          "ApproverFullName": {
+            "type": "string",
+            "description": "Name of the user who approved the expense report"
+          },
+          "Claimant": {
+            "type": "string",
+            "description": "The claimant (employee) who owns this expense report",
+            "format": "uuid"
+          },
+          "ClaimantFullName": {
+            "type": "string",
+            "description": "Name of the claimant"
+          },
+          "ControlledDate": {
+            "type": "string",
+            "description": "Date when the expense report was controlled",
+            "format": "date-time"
+          },
+          "Controller": {
+            "type": "string",
+            "description": "User who controlled the expense report",
+            "format": "uuid"
+          },
+          "ControllerFullName": {
+            "type": "string",
+            "description": "Name of the user who controlled the expense report"
+          },
+          "Created": {
+            "type": "string",
+            "description": "Date when the expense report was created",
+            "format": "date-time"
+          },
+          "Creator": {
+            "type": "string",
+            "description": "User ID of the creator",
+            "format": "uuid"
+          },
+          "CreatorFullName": {
+            "type": "string",
+            "description": "Name of the creator"
+          },
+          "Currency": {
+            "type": "string",
+            "description": "Currency code of the expense report"
+          },
+          "Description": {
+            "type": "string",
+            "description": "Description of the expense report"
+          },
+          "Division": {
+            "type": "integer",
+            "description": "The division to which the expense report belongs",
+            "format": "int32"
+          },
+          "ExpenseCount": {
+            "type": "integer",
+            "description": "Number of expense items in the report",
+            "format": "int32"
+          },
+          "Modified": {
+            "type": "string",
+            "description": "Date when the expense report was last modified",
+            "format": "date-time"
+          },
+          "Modifier": {
+            "type": "string",
+            "description": "User ID of the modifier",
+            "format": "uuid"
+          },
+          "ModifierFullName": {
+            "type": "string",
+            "description": "Name of the modifier"
+          },
+          "RejectedDate": {
+            "type": "string",
+            "description": "Date when the expense report was rejected",
+            "format": "date-time"
+          },
+          "Rejecter": {
+            "type": "string",
+            "description": "User who rejected the expense report",
+            "format": "uuid"
+          },
+          "RejecterFullName": {
+            "type": "string",
+            "description": "Name of the user who rejected the expense report"
+          },
+          "ReportNumber": {
+            "type": "integer",
+            "description": "The expense report number",
+            "format": "int32"
+          },
+          "Status": {
+            "type": "integer",
+            "description": "Status of the expense report: 1 = Not reviewed, 2 = Submitted, 3 = Approved, 4 = Rejected, 5 = Finance Approved, 6 = Processed",
+            "format": "int32"
+          },
+          "StatusDescription": {
+            "type": "string",
+            "description": "Status description of the expense report"
+          },
+          "SubmittedDate": {
+            "type": "string",
+            "description": "Date when the expense report was submitted",
+            "format": "date-time"
+          },
+          "Submitter": {
+            "type": "string",
+            "description": "User who submitted the expense report",
+            "format": "uuid"
+          },
+          "SubmitterFullName": {
+            "type": "string",
+            "description": "Name of the user who submitted the expense report"
+          },
+          "TotalAmountDC": {
+            "type": "number",
+            "description": "Total amount of the expense report in division currency",
+            "format": "double"
+          }
+        }
+      },
+      "ExpenseManagementExpenseReport_Array": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExpenseManagementExpenseReport"
+        },
+        "readOnly": true
+      },
+      "ExpenseManagementExpenseReport_Results": {
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "$ref": "#/components/schemas/ExpenseManagementExpenseReport_Array"
+          },
+          "__count": {
+            "type": "integer",
+            "description": "This property represents the total number of entities in a collection that match the query, often used alongside $inlinecount to support paging scenarios.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "__next": {
+            "$ref": "#/components/schemas/ODataNext"
+          }
+        },
+        "readOnly": true
+      },
+      "ExpenseManagementExpenseReport_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ExpenseManagementExpenseReport_Array"
+              },
+              {
+                "$ref": "#/components/schemas/ExpenseManagementExpenseReport_Results"
+              }
+            ],
+            "discriminator": {
+              "propertyName": "results",
+              "mapping": {
+                "_Results": "#/components/schemas/ExpenseManagementExpenseReport_Results"
+              }
+            }
+          }
+        },
+        "description": "A collection of ExpenseManagementExpenseReport entities.",
+        "readOnly": true
+      },
+      "ExpenseManagementExpenseReportGet_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/ExpenseManagementExpenseReport"
+          }
+        },
+        "description": "The ExpenseManagementExpenseReport entity.",
+        "readOnly": true
+      },
+      "ExpenseManagementExpenseReportPost": {
+        "required": [
+          "ID",
+          "Division"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ID": {
+            "type": "string",
+            "description": "Primary key",
+            "format": "uuid"
+          },
+          "ApprovedDate": {
+            "type": "string",
+            "description": "Date when the expense report was approved",
+            "format": "date-time"
+          },
+          "Approver": {
+            "type": "string",
+            "description": "User who approved the expense report",
+            "format": "uuid"
+          },
+          "ApproverComment": {
+            "type": "string",
+            "description": "Additional approver comment"
+          },
+          "Claimant": {
+            "type": "string",
+            "description": "The claimant (employee) who owns this expense report",
+            "format": "uuid"
+          },
+          "ControlledDate": {
+            "type": "string",
+            "description": "Date when the expense report was controlled",
+            "format": "date-time"
+          },
+          "Controller": {
+            "type": "string",
+            "description": "User who controlled the expense report",
+            "format": "uuid"
+          },
+          "Currency": {
+            "type": "string",
+            "description": "Currency code of the expense report"
+          },
+          "Description": {
+            "type": "string",
+            "description": "Description of the expense report"
+          },
+          "Division": {
+            "type": "integer",
+            "description": "The division to which the expense report belongs",
+            "format": "int32"
+          },
+          "RejectedDate": {
+            "type": "string",
+            "description": "Date when the expense report was rejected",
+            "format": "date-time"
+          },
+          "Rejecter": {
+            "type": "string",
+            "description": "User who rejected the expense report",
+            "format": "uuid"
+          },
+          "ReportNumber": {
+            "type": "integer",
+            "description": "The expense report number",
+            "format": "int32"
+          },
+          "Status": {
+            "type": "integer",
+            "description": "Status of the expense report: 1 = Not reviewed, 2 = Submitted, 3 = Approved, 4 = Rejected, 5 = Finance Approved, 6 = Processed",
+            "format": "int32"
+          },
+          "SubmittedDate": {
+            "type": "string",
+            "description": "Date when the expense report was submitted",
+            "format": "date-time"
+          },
+          "Submitter": {
+            "type": "string",
+            "description": "User who submitted the expense report",
+            "format": "uuid"
+          }
+        }
+      },
+      "ExpenseManagementExpenseReportPost_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/ExpenseManagementExpenseReportPost"
+          }
+        },
+        "description": "The ExpenseManagementExpenseReport entity.",
+        "readOnly": true
+      },
+      "ExpenseManagementExpenseReportPut": {
+        "required": [
+          "ID"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ID": {
+            "type": "string",
+            "description": "Primary key",
+            "format": "uuid"
+          },
+          "ApprovedDate": {
+            "type": "string",
+            "description": "Date when the expense report was approved",
+            "format": "date-time"
+          },
+          "Approver": {
+            "type": "string",
+            "description": "User who approved the expense report",
+            "format": "uuid"
+          },
+          "ApproverComment": {
+            "type": "string",
+            "description": "Additional approver comment"
+          },
+          "Claimant": {
+            "type": "string",
+            "description": "The claimant (employee) who owns this expense report",
+            "format": "uuid"
+          },
+          "ControlledDate": {
+            "type": "string",
+            "description": "Date when the expense report was controlled",
+            "format": "date-time"
+          },
+          "Controller": {
+            "type": "string",
+            "description": "User who controlled the expense report",
+            "format": "uuid"
+          },
+          "Currency": {
+            "type": "string",
+            "description": "Currency code of the expense report"
+          },
+          "Description": {
+            "type": "string",
+            "description": "Description of the expense report"
+          },
+          "RejectedDate": {
+            "type": "string",
+            "description": "Date when the expense report was rejected",
+            "format": "date-time"
+          },
+          "Rejecter": {
+            "type": "string",
+            "description": "User who rejected the expense report",
+            "format": "uuid"
+          },
+          "Status": {
+            "type": "integer",
+            "description": "Status of the expense report: 1 = Not reviewed, 2 = Submitted, 3 = Approved, 4 = Rejected, 5 = Finance Approved, 6 = Processed",
+            "format": "int32"
+          },
+          "SubmittedDate": {
+            "type": "string",
+            "description": "Date when the expense report was submitted",
+            "format": "date-time"
+          },
+          "Submitter": {
+            "type": "string",
+            "description": "User who submitted the expense report",
+            "format": "uuid"
+          }
+        }
+      },
+      "ExpenseManagementExpenseReportDelete": {
+        "required": [
+          "ID"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ID": {
+            "type": "string",
+            "description": "Primary key",
+            "format": "uuid"
+          }
+        }
+      },
+      "ExpenseManagementExpense": {
+        "required": [
+          "ID"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ID": {
+            "type": "string",
+            "description": "Expense ID",
+            "format": "uuid"
+          },
+          "ApproverComment": {
+            "type": "string",
+            "description": "Approver comment (alternative field)"
+          },
+          "Claimant": {
+            "type": "string",
+            "description": "Employee who made the expense",
+            "format": "uuid"
+          },
+          "ClaimantFullName": {
+            "type": "string",
+            "description": "Full name of the employee who made the expense"
+          },
+          "Country": {
+            "type": "string",
+            "description": "Country code (3 characters)"
+          },
+          "Currency": {
+            "type": "string",
+            "description": "Currency code (3 characters)"
+          },
+          "Description": {
+            "type": "string",
+            "description": "Description of the expense"
+          },
+          "Distance": {
+            "type": "number",
+            "description": "Distance (for mileage expenses)",
+            "format": "decimal"
+          },
+          "DistanceUnit": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Distance unit: 1=KM, 2=MILE",
+            "format": "int32"
+          },
+          "DistanceUnitDescription": {
+            "type": "string",
+            "description": "Distance unit description"
+          },
+          "Division": {
+            "type": "integer",
+            "description": "Division expense belong to",
+            "format": "int32"
+          },
+          "DocumentId": {
+            "type": "string",
+            "description": "Document ID associated with the expense",
+            "format": "uuid"
+          },
+          "ExpenseDate": {
+            "type": "string",
+            "description": "Date of the expense",
+            "format": "date-time"
+          },
+          "ExpenseLines": {
+            "type": "object",
+            "description": "Expense lines for Receipt expenses (split amounts)"
+          },
+          "ExpenseNumber": {
+            "type": "integer",
+            "description": "Expense number - auto-generated",
+            "format": "int32"
+          },
+          "ExpenseType": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Expense type: 1=Receipts, 2=Mileage, 3=Per Diem",
+            "format": "int32"
+          },
+          "ExpenseTypeDescription": {
+            "type": "string",
+            "description": "Expense type description"
+          },
+          "MileageRate": {
+            "type": "string",
+            "description": "Mileage rate (for mileage expenses only)",
+            "format": "uuid"
+          },
+          "MileageRateDescription": {
+            "type": "string",
+            "description": "Mileage rate description"
+          },
+          "PaymentMethod": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Payment method (0:Others , 1=Company Credit Card)",
+            "format": "int32"
+          },
+          "PerDiemRate": {
+            "type": "string",
+            "description": "Per diem rate (for per diem expenses only)",
+            "format": "uuid"
+          },
+          "PerDiemRateDescription": {
+            "type": "string",
+            "description": "Per diem rate description"
+          },
+          "Project": {
+            "type": "string",
+            "description": "Project associated with the expense",
+            "format": "uuid"
+          },
+          "ProjectDescription": {
+            "type": "string",
+            "description": "Project description"
+          },
+          "RateFC": {
+            "type": "number",
+            "description": "Rate in foreign currency",
+            "format": "double"
+          },
+          "Report": {
+            "type": "string",
+            "description": "Associated expense report",
+            "format": "uuid"
+          },
+          "ReportDescription": {
+            "type": "string",
+            "description": "Expense report description"
+          },
+          "Status": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Status: 1=Not reviewed, 2=Reviewed, 3=Flagged",
+            "format": "int32"
+          },
+          "StatusDescription": {
+            "type": "string",
+            "description": "Status description"
+          },
+          "SysCreated": {
+            "type": "string",
+            "description": "Created date",
+            "format": "date-time"
+          },
+          "SysCreator": {
+            "type": "string",
+            "description": "Creator",
+            "format": "uuid"
+          },
+          "SysCreatorFullName": {
+            "type": "string",
+            "description": "Creator full name"
+          },
+          "SysModified": {
+            "type": "string",
+            "description": "Modified date",
+            "format": "date-time"
+          },
+          "SysModifier": {
+            "type": "string",
+            "description": "Modifier",
+            "format": "uuid"
+          },
+          "SysModifierFullName": {
+            "type": "string",
+            "description": "Modifier full name"
+          },
+          "TotalAmountDC": {
+            "type": "number",
+            "description": "Total amount in division currency",
+            "format": "double"
+          },
+          "TotalAmountFC": {
+            "type": "number",
+            "description": "Total amount in foreign currency",
+            "format": "double"
+          },
+          "Waypoints": {
+            "type": "object",
+            "description": "Waypoints for Mileage expenses (route tracking)"
+          }
+        }
+      },
+      "ExpenseManagementExpense_Array": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExpenseManagementExpense"
+        },
+        "readOnly": true
+      },
+      "ExpenseManagementExpense_Results": {
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "$ref": "#/components/schemas/ExpenseManagementExpense_Array"
+          },
+          "__count": {
+            "type": "integer",
+            "description": "This property represents the total number of entities in a collection that match the query, often used alongside $inlinecount to support paging scenarios.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "__next": {
+            "$ref": "#/components/schemas/ODataNext"
+          }
+        },
+        "readOnly": true
+      },
+      "ExpenseManagementExpense_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ExpenseManagementExpense_Array"
+              },
+              {
+                "$ref": "#/components/schemas/ExpenseManagementExpense_Results"
+              }
+            ],
+            "discriminator": {
+              "propertyName": "results",
+              "mapping": {
+                "_Results": "#/components/schemas/ExpenseManagementExpense_Results"
+              }
+            }
+          }
+        },
+        "description": "A collection of ExpenseManagementExpense entities.",
+        "readOnly": true
+      },
+      "ExpenseManagementExpenseGet_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/ExpenseManagementExpense"
+          }
+        },
+        "description": "The ExpenseManagementExpense entity.",
+        "readOnly": true
+      },
+      "ExpenseManagementExpensePost": {
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ApproverComment": {
+            "type": "string",
+            "description": "Approver comment (alternative field)"
+          },
+          "Claimant": {
+            "type": "string",
+            "description": "Employee who made the expense",
+            "format": "uuid"
+          },
+          "Country": {
+            "type": "string",
+            "description": "Country code (3 characters)"
+          },
+          "Currency": {
+            "type": "string",
+            "description": "Currency code (3 characters)"
+          },
+          "Description": {
+            "type": "string",
+            "description": "Description of the expense"
+          },
+          "Distance": {
+            "type": "number",
+            "description": "Distance (for mileage expenses)",
+            "format": "decimal"
+          },
+          "DistanceUnit": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Distance unit: 1=KM, 2=MILE",
+            "format": "int32"
+          },
+          "Division": {
+            "type": "integer",
+            "description": "Division expense belong to",
+            "format": "int32"
+          },
+          "ExpenseDate": {
+            "type": "string",
+            "description": "Date of the expense",
+            "format": "date-time"
+          },
+          "ExpenseLines": {
+            "type": "object",
+            "description": "Expense lines for Receipt expenses (split amounts)"
+          },
+          "ExpenseType": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Expense type: 1=Receipts, 2=Mileage, 3=Per Diem",
+            "format": "int32"
+          },
+          "MileageRate": {
+            "type": "string",
+            "description": "Mileage rate (for mileage expenses only)",
+            "format": "uuid"
+          },
+          "PaymentMethod": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Payment method (0:Others , 1=Company Credit Card)",
+            "format": "int32"
+          },
+          "PerDiemRate": {
+            "type": "string",
+            "description": "Per diem rate (for per diem expenses only)",
+            "format": "uuid"
+          },
+          "Project": {
+            "type": "string",
+            "description": "Project associated with the expense",
+            "format": "uuid"
+          },
+          "RateFC": {
+            "type": "number",
+            "description": "Rate in foreign currency",
+            "format": "double"
+          },
+          "Report": {
+            "type": "string",
+            "description": "Associated expense report",
+            "format": "uuid"
+          },
+          "Status": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Status: 1=Not reviewed, 2=Reviewed, 3=Flagged",
+            "format": "int32"
+          },
+          "Waypoints": {
+            "type": "object",
+            "description": "Waypoints for Mileage expenses (route tracking)"
+          }
+        }
+      },
+      "ExpenseManagementExpensePost_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/ExpenseManagementExpensePost"
+          }
+        },
+        "description": "The ExpenseManagementExpense entity.",
+        "readOnly": true
+      },
+      "ExpenseManagementExpensePut": {
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ApproverComment": {
+            "type": "string",
+            "description": "Approver comment (alternative field)"
+          },
+          "Claimant": {
+            "type": "string",
+            "description": "Employee who made the expense",
+            "format": "uuid"
+          },
+          "Country": {
+            "type": "string",
+            "description": "Country code (3 characters)"
+          },
+          "Currency": {
+            "type": "string",
+            "description": "Currency code (3 characters)"
+          },
+          "Description": {
+            "type": "string",
+            "description": "Description of the expense"
+          },
+          "Distance": {
+            "type": "number",
+            "description": "Distance (for mileage expenses)",
+            "format": "decimal"
+          },
+          "DistanceUnit": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Distance unit: 1=KM, 2=MILE",
+            "format": "int32"
+          },
+          "Division": {
+            "type": "integer",
+            "description": "Division expense belong to",
+            "format": "int32"
+          },
+          "ExpenseDate": {
+            "type": "string",
+            "description": "Date of the expense",
+            "format": "date-time"
+          },
+          "ExpenseType": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Expense type: 1=Receipts, 2=Mileage, 3=Per Diem",
+            "format": "int32"
+          },
+          "MileageRate": {
+            "type": "string",
+            "description": "Mileage rate (for mileage expenses only)",
+            "format": "uuid"
+          },
+          "PaymentMethod": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Payment method (0:Others , 1=Company Credit Card)",
+            "format": "int32"
+          },
+          "PerDiemRate": {
+            "type": "string",
+            "description": "Per diem rate (for per diem expenses only)",
+            "format": "uuid"
+          },
+          "Project": {
+            "type": "string",
+            "description": "Project associated with the expense",
+            "format": "uuid"
+          },
+          "RateFC": {
+            "type": "number",
+            "description": "Rate in foreign currency",
+            "format": "double"
+          },
+          "Report": {
+            "type": "string",
+            "description": "Associated expense report",
+            "format": "uuid"
+          },
+          "Status": {
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Status: 1=Not reviewed, 2=Reviewed, 3=Flagged",
+            "format": "int32"
+          }
+        }
+      },
+      "ExpenseManagementExpenseDelete": {
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          }
+        }
       },
       "FinancialDeductibilityPercentage": {
         "required": [
@@ -186573,6 +189986,112 @@
           }
         },
         "description": "The ReadProjectTimeAndBillingRecentProject entity.",
+        "readOnly": true
+      },
+      "ReadSalesInvoiceInvoiceSalesOrderResult": {
+        "required": [
+          "ProcessID"
+        ],
+        "type": "object",
+        "properties": {
+          "__metadata": {
+            "$ref": "#/components/schemas/ExactOnlineMetadata"
+          },
+          "ProcessID": {
+            "type": "string",
+            "description": "Use to get the InvoiceSalesOrders result",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "Errors": {
+            "type": "string",
+            "description": "Error messages when process invoicesalesorder background job.",
+            "readOnly": true
+          },
+          "NumberOfCreatedInvoices": {
+            "type": "integer",
+            "description": "Number of invoices successfully created.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "NumberOfFailedInvoices": {
+            "type": "integer",
+            "description": "Number of invoices failed to create.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "Status": {
+            "type": "string",
+            "description": "Status of the process invoicesalesorder background job.",
+            "readOnly": true
+          }
+        }
+      },
+      "ReadSalesInvoiceInvoiceSalesOrderResult_Array": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ReadSalesInvoiceInvoiceSalesOrderResult"
+        },
+        "readOnly": true
+      },
+      "ReadSalesInvoiceInvoiceSalesOrderResult_Results": {
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "$ref": "#/components/schemas/ReadSalesInvoiceInvoiceSalesOrderResult_Array"
+          },
+          "__count": {
+            "type": "integer",
+            "description": "This property represents the total number of entities in a collection that match the query, often used alongside $inlinecount to support paging scenarios.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "__next": {
+            "$ref": "#/components/schemas/ODataNext"
+          }
+        },
+        "readOnly": true
+      },
+      "ReadSalesInvoiceInvoiceSalesOrderResult_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ReadSalesInvoiceInvoiceSalesOrderResult_Array"
+              },
+              {
+                "$ref": "#/components/schemas/ReadSalesInvoiceInvoiceSalesOrderResult_Results"
+              }
+            ],
+            "discriminator": {
+              "propertyName": "results",
+              "mapping": {
+                "_Results": "#/components/schemas/ReadSalesInvoiceInvoiceSalesOrderResult_Results"
+              }
+            }
+          }
+        },
+        "description": "A collection of ReadSalesInvoiceInvoiceSalesOrderResult entities.",
+        "readOnly": true
+      },
+      "ReadSalesInvoiceInvoiceSalesOrderResultGet_Response": {
+        "required": [
+          "d"
+        ],
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/ReadSalesInvoiceInvoiceSalesOrderResult"
+          }
+        },
+        "description": "The ReadSalesInvoiceInvoiceSalesOrderResult entity.",
         "readOnly": true
       },
       "ReadSyncSyncSyncTimestamp": {

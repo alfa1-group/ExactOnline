@@ -126,7 +126,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMAbsenceRegistration</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.AbsenceRegistrationsWithId.AbsenceRegistrationsWithIdRequestBuilder AbsenceRegistrationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.AbsenceRegistrationsWithId.AbsenceRegistrationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -136,7 +136,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMAbsenceRegistrationTransaction</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.AbsenceRegistrationTransactionsWithId.AbsenceRegistrationTransactionsWithIdRequestBuilder AbsenceRegistrationTransactionsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.AbsenceRegistrationTransactionsWithId.AbsenceRegistrationTransactionsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -162,7 +162,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMCostcenter</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.CostcentersWithId.CostcentersWithIdRequestBuilder CostcentersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.CostcentersWithId.CostcentersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -172,7 +172,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMCostunit</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.CostunitsWithId.CostunitsWithIdRequestBuilder CostunitsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.CostunitsWithId.CostunitsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -182,7 +182,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMDepartment</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DepartmentsWithId.DepartmentsWithIdRequestBuilder DepartmentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DepartmentsWithId.DepartmentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -192,7 +192,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMDivisionClass</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassesWithId.DivisionClassesWithIdRequestBuilder DivisionClassesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassesWithId.DivisionClassesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -202,7 +202,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMDivisionClassName</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassNamesWithId.DivisionClassNamesWithIdRequestBuilder DivisionClassNamesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassNamesWithId.DivisionClassNamesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -212,7 +212,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMDivisionClassValue</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassValuesWithId.DivisionClassValuesWithIdRequestBuilder DivisionClassValuesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionClassValuesWithId.DivisionClassValuesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -222,7 +222,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="code">Unique identifier (int32) of the HRMDivision</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionsWithCode.DivisionsWithCodeRequestBuilder DivisionsWithCode(int? code)
         {
-            _ = code ?? throw new ArgumentNullException(nameof(code));
+            if(ReferenceEquals(code, null)) throw new ArgumentNullException(nameof(code));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.DivisionsWithCode.DivisionsWithCodeRequestBuilder(PathParameters, RequestAdapter, code);
         }
         /// <summary>
@@ -232,7 +232,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMJobGroup</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.JobGroupsWithId.JobGroupsWithIdRequestBuilder JobGroupsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.JobGroupsWithId.JobGroupsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -242,7 +242,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMJobTitle</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.JobTitlesWithId.JobTitlesWithIdRequestBuilder JobTitlesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.JobTitlesWithId.JobTitlesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -252,7 +252,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMLeaveAbsenceHoursByDay</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveAbsenceHoursByDayWithId.LeaveAbsenceHoursByDayWithIdRequestBuilder LeaveAbsenceHoursByDayWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveAbsenceHoursByDayWithId.LeaveAbsenceHoursByDayWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -262,7 +262,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMLeaveBuildUpRegistration</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveBuildUpRegistrationsWithId.LeaveBuildUpRegistrationsWithIdRequestBuilder LeaveBuildUpRegistrationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveBuildUpRegistrationsWithId.LeaveBuildUpRegistrationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -272,7 +272,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMLeaveRegistration</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveRegistrationsWithId.LeaveRegistrationsWithIdRequestBuilder LeaveRegistrationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.LeaveRegistrationsWithId.LeaveRegistrationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -282,7 +282,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Hrm
         /// <param name="id">Unique identifier (uuid) of the HRMSchedule</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Hrm.SchedulesWithId.SchedulesWithIdRequestBuilder SchedulesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Hrm.SchedulesWithId.SchedulesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

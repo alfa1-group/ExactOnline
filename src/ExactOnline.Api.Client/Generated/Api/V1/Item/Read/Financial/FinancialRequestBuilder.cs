@@ -182,7 +182,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="agegroup">Unique identifier (int32) of the ReadFinancialAgingOverviewByAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewByAccountWithAgegroup.AgingOverviewByAccountWithAgegroupRequestBuilder AgingOverviewByAccountWithAgegroup(int? agegroup)
         {
-            _ = agegroup ?? throw new ArgumentNullException(nameof(agegroup));
+            if(ReferenceEquals(agegroup, null)) throw new ArgumentNullException(nameof(agegroup));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewByAccountWithAgegroup.AgingOverviewByAccountWithAgegroupRequestBuilder(PathParameters, RequestAdapter, agegroup);
         }
         /// <summary>
@@ -192,7 +192,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="agegroup">Unique identifier (int32) of the ReadFinancialAgingOverview</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewWithAgegroup.AgingOverviewWithAgegroupRequestBuilder AgingOverviewWithAgegroup(int? agegroup)
         {
-            _ = agegroup ?? throw new ArgumentNullException(nameof(agegroup));
+            if(ReferenceEquals(agegroup, null)) throw new ArgumentNullException(nameof(agegroup));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingOverviewWithAgegroup.AgingOverviewWithAgegroupRequestBuilder(PathParameters, RequestAdapter, agegroup);
         }
         /// <summary>
@@ -202,7 +202,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="accountid">Unique identifier (uuid) of the ReadFinancialAgingPayablesListByAgeGroup</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListByAgeGroupWithAccountid.AgingPayablesListByAgeGroupWithAccountidRequestBuilder AgingPayablesListByAgeGroupWithAccountid(Guid? accountid)
         {
-            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            if(ReferenceEquals(accountid, null)) throw new ArgumentNullException(nameof(accountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListByAgeGroupWithAccountid.AgingPayablesListByAgeGroupWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
@@ -212,7 +212,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="accountid">Unique identifier (uuid) of the ReadFinancialAgingPayablesList</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListWithAccountid.AgingPayablesListWithAccountidRequestBuilder AgingPayablesListWithAccountid(Guid? accountid)
         {
-            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            if(ReferenceEquals(accountid, null)) throw new ArgumentNullException(nameof(accountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingPayablesListWithAccountid.AgingPayablesListWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
@@ -222,7 +222,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="accountid">Unique identifier (uuid) of the ReadFinancialAgingReceivablesListByAgeGroup</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListByAgeGroupWithAccountid.AgingReceivablesListByAgeGroupWithAccountidRequestBuilder AgingReceivablesListByAgeGroupWithAccountid(Guid? accountid)
         {
-            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            if(ReferenceEquals(accountid, null)) throw new ArgumentNullException(nameof(accountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListByAgeGroupWithAccountid.AgingReceivablesListByAgeGroupWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
@@ -232,7 +232,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="accountid">Unique identifier (uuid) of the ReadFinancialAgingReceivablesList</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListWithAccountid.AgingReceivablesListWithAccountidRequestBuilder AgingReceivablesListWithAccountid(Guid? accountid)
         {
-            _ = accountid ?? throw new ArgumentNullException(nameof(accountid));
+            if(ReferenceEquals(accountid, null)) throw new ArgumentNullException(nameof(accountid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.AgingReceivablesListWithAccountid.AgingReceivablesListWithAccountidRequestBuilder(PathParameters, RequestAdapter, accountid);
         }
         /// <summary>
@@ -258,7 +258,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="year">Unique identifier (int32) of the ReadFinancialJournalStatusByFinancialPeriod</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusByFinancialPeriodWithYear.JournalStatusByFinancialPeriodWithYearRequestBuilder JournalStatusByFinancialPeriodWithYear(int? year)
         {
-            _ = year ?? throw new ArgumentNullException(nameof(year));
+            if(ReferenceEquals(year, null)) throw new ArgumentNullException(nameof(year));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusByFinancialPeriodWithYear.JournalStatusByFinancialPeriodWithYearRequestBuilder(PathParameters, RequestAdapter, year);
         }
         /// <summary>
@@ -268,7 +268,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="year">Unique identifier (int32) of the ReadFinancialJournalStatusList</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusListWithYear.JournalStatusListWithYearRequestBuilder JournalStatusListWithYear(int? year)
         {
-            _ = year ?? throw new ArgumentNullException(nameof(year));
+            if(ReferenceEquals(year, null)) throw new ArgumentNullException(nameof(year));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.JournalStatusListWithYear.JournalStatusListWithYearRequestBuilder(PathParameters, RequestAdapter, year);
         }
         /// <summary>
@@ -288,7 +288,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="id">Unique identifier (int64) of the ReadFinancialPayablesListByAccountAndAgeGroup</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountAndAgeGroupWithId.PayablesListByAccountAndAgeGroupWithIdRequestBuilder PayablesListByAccountAndAgeGroupWithId(long? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountAndAgeGroupWithId.PayablesListByAccountAndAgeGroupWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -298,7 +298,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="id">Unique identifier (int64) of the ReadFinancialPayablesListByAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountWithId.PayablesListByAccountWithIdRequestBuilder PayablesListByAccountWithId(long? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAccountWithId.PayablesListByAccountWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -308,7 +308,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="id">Unique identifier (int64) of the ReadFinancialPayablesListByAgeGroup</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAgeGroupWithId.PayablesListByAgeGroupWithIdRequestBuilder PayablesListByAgeGroupWithId(long? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListByAgeGroupWithId.PayablesListByAgeGroupWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -318,7 +318,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="id">Unique identifier (int64) of the ReadFinancialPayablesList</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListWithId.PayablesListWithIdRequestBuilder PayablesListWithId(long? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.PayablesListWithId.PayablesListWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -328,7 +328,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="currentyear">Unique identifier (int32) of the ReadFinancialProfitLossOverview</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ProfitLossOverviewWithCurrentyear.ProfitLossOverviewWithCurrentyearRequestBuilder ProfitLossOverviewWithCurrentyear(int? currentyear)
         {
-            _ = currentyear ?? throw new ArgumentNullException(nameof(currentyear));
+            if(ReferenceEquals(currentyear, null)) throw new ArgumentNullException(nameof(currentyear));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ProfitLossOverviewWithCurrentyear.ProfitLossOverviewWithCurrentyearRequestBuilder(PathParameters, RequestAdapter, currentyear);
         }
         /// <summary>
@@ -338,7 +338,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="id">Unique identifier (int64) of the ReadFinancialReceivablesListByAccountAndAgeGroup</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountAndAgeGroupWithId.ReceivablesListByAccountAndAgeGroupWithIdRequestBuilder ReceivablesListByAccountAndAgeGroupWithId(long? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountAndAgeGroupWithId.ReceivablesListByAccountAndAgeGroupWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -348,7 +348,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="id">Unique identifier (int64) of the ReadFinancialReceivablesListByAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountWithId.ReceivablesListByAccountWithIdRequestBuilder ReceivablesListByAccountWithId(long? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAccountWithId.ReceivablesListByAccountWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -358,7 +358,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="id">Unique identifier (int64) of the ReadFinancialReceivablesListByAgeGroup</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAgeGroupWithId.ReceivablesListByAgeGroupWithIdRequestBuilder ReceivablesListByAgeGroupWithId(long? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListByAgeGroupWithId.ReceivablesListByAgeGroupWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -368,7 +368,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="id">Unique identifier (int64) of the ReadFinancialReceivablesList</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListWithId.ReceivablesListWithIdRequestBuilder ReceivablesListWithId(long? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReceivablesListWithId.ReceivablesListWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -378,7 +378,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="id">Unique identifier (int64) of the ReadFinancialReportingBalanceByClassification</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReportingBalanceByClassificationWithId.ReportingBalanceByClassificationWithIdRequestBuilder ReportingBalanceByClassificationWithId(long? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReportingBalanceByClassificationWithId.ReportingBalanceByClassificationWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -388,7 +388,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="documentid">Unique identifier (uuid) of the ReadFinancialReturn</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReturnsWithDocumentid.ReturnsWithDocumentidRequestBuilder ReturnsWithDocumentid(Guid? documentid)
         {
-            _ = documentid ?? throw new ArgumentNullException(nameof(documentid));
+            if(ReferenceEquals(documentid, null)) throw new ArgumentNullException(nameof(documentid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.ReturnsWithDocumentid.ReturnsWithDocumentidRequestBuilder(PathParameters, RequestAdapter, documentid);
         }
         /// <summary>
@@ -398,7 +398,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="year">Unique identifier (int32) of the ReadFinancialRevenueListByYearAndStatu</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearAndStatusWithYear.RevenueListByYearAndStatusWithYearRequestBuilder RevenueListByYearAndStatusWithYear(int? year)
         {
-            _ = year ?? throw new ArgumentNullException(nameof(year));
+            if(ReferenceEquals(year, null)) throw new ArgumentNullException(nameof(year));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearAndStatusWithYear.RevenueListByYearAndStatusWithYearRequestBuilder(PathParameters, RequestAdapter, year);
         }
         /// <summary>
@@ -408,7 +408,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="year">Unique identifier (int32) of the ReadFinancialRevenueListByYear</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearWithYear.RevenueListByYearWithYearRequestBuilder RevenueListByYearWithYear(int? year)
         {
-            _ = year ?? throw new ArgumentNullException(nameof(year));
+            if(ReferenceEquals(year, null)) throw new ArgumentNullException(nameof(year));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListByYearWithYear.RevenueListByYearWithYearRequestBuilder(PathParameters, RequestAdapter, year);
         }
         /// <summary>
@@ -418,7 +418,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Read.Financial
         /// <param name="year">Unique identifier (int32) of the ReadFinancialRevenueList</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListWithYear.RevenueListWithYearRequestBuilder RevenueListWithYear(int? year)
         {
-            _ = year ?? throw new ArgumentNullException(nameof(year));
+            if(ReferenceEquals(year, null)) throw new ArgumentNullException(nameof(year));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Read.Financial.RevenueListWithYear.RevenueListWithYearRequestBuilder(PathParameters, RequestAdapter, year);
         }
     }

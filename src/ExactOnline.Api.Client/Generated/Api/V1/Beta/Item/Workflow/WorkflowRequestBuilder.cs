@@ -44,7 +44,7 @@ namespace ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow
         /// <param name="id">Unique identifier (uuid) of the WorkflowRequestAttachment</param>
         public global::ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachmentsWithId.RequestAttachmentsWithIdRequestBuilder RequestAttachmentsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Beta.Item.Workflow.RequestAttachmentsWithId.RequestAttachmentsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

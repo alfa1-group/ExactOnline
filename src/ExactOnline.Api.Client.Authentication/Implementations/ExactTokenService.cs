@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Text.Json;
+using Alfa1.TokenStorage.Abstractions;
 using Duende.IdentityModel.Client;
-using ExactOnline.Api.Client.Authentication.Abstractions;
 using ExactOnline.Api.Client.Authentication.Interfaces;
 using Microsoft.Extensions.Logging;
 
@@ -9,7 +9,7 @@ namespace ExactOnline.Api.Client.Authentication.Implementations;
 
 internal class ExactTokenService(
     ILogger<ExactTokenService> logger,
-    IExactTokenStorageService tokenStorageService,
+    ITokenStorageService tokenStorageService,
     IExactTokenClient exactTokenClient,
     TimeProvider timeProvider) : IExactTokenService
 {

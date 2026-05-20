@@ -1,4 +1,4 @@
-﻿using ExactOnline.Api.Client.Authentication.Abstractions;
+﻿using Alfa1.TokenStorage.Abstractions;
 using ExactOnline.Api.Client.Authentication.Implementations;
 using ExactOnline.Api.Client.Authentication.Interfaces;
 using ExactOnline.Api.Client.Authentication.Options;
@@ -30,9 +30,9 @@ public static class ServiceCollectionExtensions
         services.TryAddTransient<IExactTokenClient, ExactTokenClient>();
         services.TryAddTransient<IExactTokenService, ExactTokenService>();
 
-        if (services.All(s => s.ServiceType != typeof(IExactTokenStorageService)))
+        if (services.All(s => s.ServiceType != typeof(ITokenStorageService)))
         {
-            throw new InvalidOperationException($"An implementation for {nameof(IExactTokenStorageService)} is required. Please register it in the service collection.");
+            throw new InvalidOperationException($"An implementation for {nameof(ITokenStorageService)} is required. Please register it in the service collection.");
         }
 
         return services;

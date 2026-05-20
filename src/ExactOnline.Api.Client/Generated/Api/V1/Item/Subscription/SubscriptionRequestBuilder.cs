@@ -86,7 +86,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionLinesWithId.SubscriptionLinesWithIdRequestBuilder SubscriptionLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionLinesWithId.SubscriptionLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// <param name="id">Unique identifier (int16) of the SubscriptionSubscriptionLineType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionLineTypesWithId.SubscriptionLineTypesWithIdRequestBuilder SubscriptionLineTypesWithId(int? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionLineTypesWithId.SubscriptionLineTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -106,7 +106,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionReasonCode</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionReasonCodesWithId.SubscriptionReasonCodesWithIdRequestBuilder SubscriptionReasonCodesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionReasonCodesWithId.SubscriptionReasonCodesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionRestrictionEmployee</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictionEmployeesWithId.SubscriptionRestrictionEmployeesWithIdRequestBuilder SubscriptionRestrictionEmployeesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictionEmployeesWithId.SubscriptionRestrictionEmployeesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -126,7 +126,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionRestrictionItem</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictionItemsWithId.SubscriptionRestrictionItemsWithIdRequestBuilder SubscriptionRestrictionItemsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionRestrictionItemsWithId.SubscriptionRestrictionItemsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -136,7 +136,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// <param name="entryid">Unique identifier (uuid) of the SubscriptionSubscription</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionsWithEntryid.SubscriptionsWithEntryidRequestBuilder SubscriptionsWithEntryid(Guid? entryid)
         {
-            _ = entryid ?? throw new ArgumentNullException(nameof(entryid));
+            if(ReferenceEquals(entryid, null)) throw new ArgumentNullException(nameof(entryid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionsWithEntryid.SubscriptionsWithEntryidRequestBuilder(PathParameters, RequestAdapter, entryid);
         }
         /// <summary>
@@ -146,7 +146,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Subscription
         /// <param name="id">Unique identifier (uuid) of the SubscriptionSubscriptionType</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionTypesWithId.SubscriptionTypesWithIdRequestBuilder SubscriptionTypesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Subscription.SubscriptionTypesWithId.SubscriptionTypesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

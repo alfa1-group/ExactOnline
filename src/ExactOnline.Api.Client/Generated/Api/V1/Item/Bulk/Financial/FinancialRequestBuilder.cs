@@ -58,7 +58,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial
         /// <param name="id">Unique identifier (uuid) of the BulkFinancialGLAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.GLAccountsWithId.GLAccountsWithIdRequestBuilder GLAccountsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.GLAccountsWithId.GLAccountsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial
         /// <param name="id">Unique identifier (uuid) of the BulkFinancialGLClassification</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.GLClassificationsWithId.GLClassificationsWithIdRequestBuilder GLClassificationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.GLClassificationsWithId.GLClassificationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial
         /// <param name="id">Unique identifier (uuid) of the BulkFinancialTransactionLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.TransactionLinesWithId.TransactionLinesWithIdRequestBuilder TransactionLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Bulk.Financial.TransactionLinesWithId.TransactionLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

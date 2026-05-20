@@ -86,7 +86,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// <param name="id">Unique identifier (uuid) of the SalesInvoiceInvoiceSalesOrder</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.InvoiceSalesOrdersWithId.InvoiceSalesOrdersWithIdRequestBuilder InvoiceSalesOrdersWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.InvoiceSalesOrdersWithId.InvoiceSalesOrdersWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// <param name="id">Unique identifier (uuid) of the SalesInvoiceLayout</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.LayoutsWithId.LayoutsWithIdRequestBuilder LayoutsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.LayoutsWithId.LayoutsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -106,7 +106,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// <param name="invoiceid">Unique identifier (uuid) of the SalesInvoicePrintedSalesInvoice</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.PrintedSalesInvoicesWithInvoiceid.PrintedSalesInvoicesWithInvoiceidRequestBuilder PrintedSalesInvoicesWithInvoiceid(Guid? invoiceid)
         {
-            _ = invoiceid ?? throw new ArgumentNullException(nameof(invoiceid));
+            if(ReferenceEquals(invoiceid, null)) throw new ArgumentNullException(nameof(invoiceid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.PrintedSalesInvoicesWithInvoiceid.PrintedSalesInvoicesWithInvoiceidRequestBuilder(PathParameters, RequestAdapter, invoiceid);
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// <param name="id">Unique identifier (uuid) of the SalesInvoiceSalesInvoiceLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceLinesWithId.SalesInvoiceLinesWithIdRequestBuilder SalesInvoiceLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceLinesWithId.SalesInvoiceLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -126,7 +126,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// <param name="id">Unique identifier (uuid) of the SalesInvoiceSalesInvoiceOrderChargeLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceOrderChargeLinesWithId.SalesInvoiceOrderChargeLinesWithIdRequestBuilder SalesInvoiceOrderChargeLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoiceOrderChargeLinesWithId.SalesInvoiceOrderChargeLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -136,7 +136,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// <param name="invoiceid">Unique identifier (uuid) of the SalesInvoiceSalesInvoice</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoicesWithInvoiceid.SalesInvoicesWithInvoiceidRequestBuilder SalesInvoicesWithInvoiceid(Guid? invoiceid)
         {
-            _ = invoiceid ?? throw new ArgumentNullException(nameof(invoiceid));
+            if(ReferenceEquals(invoiceid, null)) throw new ArgumentNullException(nameof(invoiceid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesInvoicesWithInvoiceid.SalesInvoicesWithInvoiceidRequestBuilder(PathParameters, RequestAdapter, invoiceid);
         }
         /// <summary>
@@ -146,7 +146,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Salesinvoice
         /// <param name="id">Unique identifier (uuid) of the SalesInvoiceSalesOrderID</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesOrderIDWithId.SalesOrderIDWithIdRequestBuilder SalesOrderIDWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Salesinvoice.SalesOrderIDWithId.SalesOrderIDWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
     }

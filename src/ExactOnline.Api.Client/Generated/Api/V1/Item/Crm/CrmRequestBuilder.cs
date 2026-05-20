@@ -175,7 +175,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="quotationid">Unique identifier (uuid) of the CRMAcceptQuotation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AcceptQuotationWithQuotationid.AcceptQuotationWithQuotationidRequestBuilder AcceptQuotationWithQuotationid(Guid? quotationid)
         {
-            _ = quotationid ?? throw new ArgumentNullException(nameof(quotationid));
+            if(ReferenceEquals(quotationid, null)) throw new ArgumentNullException(nameof(quotationid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.AcceptQuotationWithQuotationid.AcceptQuotationWithQuotationidRequestBuilder(PathParameters, RequestAdapter, quotationid);
         }
         /// <summary>
@@ -185,7 +185,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMAccountClass</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassesWithId.AccountClassesWithIdRequestBuilder AccountClassesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassesWithId.AccountClassesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -195,7 +195,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMAccountClassificationName</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassificationNamesWithId.AccountClassificationNamesWithIdRequestBuilder AccountClassificationNamesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassificationNamesWithId.AccountClassificationNamesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -205,7 +205,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMAccountClassification</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassificationsWithId.AccountClassificationsWithIdRequestBuilder AccountClassificationsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountClassificationsWithId.AccountClassificationsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -215,7 +215,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountsWithId.AccountsWithIdRequestBuilder AccountsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.AccountsWithId.AccountsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -225,7 +225,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMAddress</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AddressesWithId.AddressesWithIdRequestBuilder AddressesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.AddressesWithId.AddressesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -235,7 +235,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMAddressState</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.AddressStatesWithId.AddressStatesWithIdRequestBuilder AddressStatesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.AddressStatesWithId.AddressStatesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -245,7 +245,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMBankAccount</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId.BankAccountsWithIdRequestBuilder BankAccountsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.BankAccountsWithId.BankAccountsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -271,7 +271,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMContact</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.ContactsWithId.ContactsWithIdRequestBuilder ContactsWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.ContactsWithId.ContactsWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -281,7 +281,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="quotationid">Unique identifier (uuid) of the CRMEmailWithSignOffQuotation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.EmailWithSignOffQuotationWithQuotationid.EmailWithSignOffQuotationWithQuotationidRequestBuilder EmailWithSignOffQuotationWithQuotationid(Guid? quotationid)
         {
-            _ = quotationid ?? throw new ArgumentNullException(nameof(quotationid));
+            if(ReferenceEquals(quotationid, null)) throw new ArgumentNullException(nameof(quotationid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.EmailWithSignOffQuotationWithQuotationid.EmailWithSignOffQuotationWithQuotationidRequestBuilder(PathParameters, RequestAdapter, quotationid);
         }
         /// <summary>
@@ -291,7 +291,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMLeadPurpose</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.LeadPurposesWithId.LeadPurposesWithIdRequestBuilder LeadPurposesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.LeadPurposesWithId.LeadPurposesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -301,7 +301,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMLeadSource</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.LeadSourcesWithId.LeadSourcesWithIdRequestBuilder LeadSourcesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.LeadSourcesWithId.LeadSourcesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -311,7 +311,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMOpportunity</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.OpportunitiesWithId.OpportunitiesWithIdRequestBuilder OpportunitiesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.OpportunitiesWithId.OpportunitiesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -321,7 +321,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMOptionalQuotationLineID</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.OptionalQuotationLineIDWithId.OptionalQuotationLineIDWithIdRequestBuilder OptionalQuotationLineIDWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.OptionalQuotationLineIDWithId.OptionalQuotationLineIDWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -331,7 +331,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="quotationid">Unique identifier (uuid) of the CRMPrintQuotation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.PrintQuotationWithQuotationid.PrintQuotationWithQuotationidRequestBuilder PrintQuotationWithQuotationid(Guid? quotationid)
         {
-            _ = quotationid ?? throw new ArgumentNullException(nameof(quotationid));
+            if(ReferenceEquals(quotationid, null)) throw new ArgumentNullException(nameof(quotationid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.PrintQuotationWithQuotationid.PrintQuotationWithQuotationidRequestBuilder(PathParameters, RequestAdapter, quotationid);
         }
         /// <summary>
@@ -341,7 +341,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMQuotationLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationLinesWithId.QuotationLinesWithIdRequestBuilder QuotationLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationLinesWithId.QuotationLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -351,7 +351,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMQuotationOrderChargeLine</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationOrderChargeLinesWithId.QuotationOrderChargeLinesWithIdRequestBuilder QuotationOrderChargeLinesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationOrderChargeLinesWithId.QuotationOrderChargeLinesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -361,7 +361,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="quotationid">Unique identifier (uuid) of the CRMQuotation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationsWithQuotationid.QuotationsWithQuotationidRequestBuilder QuotationsWithQuotationid(Guid? quotationid)
         {
-            _ = quotationid ?? throw new ArgumentNullException(nameof(quotationid));
+            if(ReferenceEquals(quotationid, null)) throw new ArgumentNullException(nameof(quotationid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.QuotationsWithQuotationid.QuotationsWithQuotationidRequestBuilder(PathParameters, RequestAdapter, quotationid);
         }
         /// <summary>
@@ -371,7 +371,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="id">Unique identifier (uuid) of the CRMReasonCode</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.ReasonCodesWithId.ReasonCodesWithIdRequestBuilder ReasonCodesWithId(Guid? id)
         {
-            _ = id ?? throw new ArgumentNullException(nameof(id));
+            if(ReferenceEquals(id, null)) throw new ArgumentNullException(nameof(id));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.ReasonCodesWithId.ReasonCodesWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
@@ -381,7 +381,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="quotationid">Unique identifier (uuid) of the CRMRejectQuotation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.RejectQuotationWithQuotationid.RejectQuotationWithQuotationidRequestBuilder RejectQuotationWithQuotationid(Guid? quotationid)
         {
-            _ = quotationid ?? throw new ArgumentNullException(nameof(quotationid));
+            if(ReferenceEquals(quotationid, null)) throw new ArgumentNullException(nameof(quotationid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.RejectQuotationWithQuotationid.RejectQuotationWithQuotationidRequestBuilder(PathParameters, RequestAdapter, quotationid);
         }
         /// <summary>
@@ -391,7 +391,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="quotationid">Unique identifier (uuid) of the CRMReopenQuotation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.ReopenQuotationWithQuotationid.ReopenQuotationWithQuotationidRequestBuilder ReopenQuotationWithQuotationid(Guid? quotationid)
         {
-            _ = quotationid ?? throw new ArgumentNullException(nameof(quotationid));
+            if(ReferenceEquals(quotationid, null)) throw new ArgumentNullException(nameof(quotationid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.ReopenQuotationWithQuotationid.ReopenQuotationWithQuotationidRequestBuilder(PathParameters, RequestAdapter, quotationid);
         }
         /// <summary>
@@ -401,7 +401,7 @@ namespace ExactOnline.Api.Client.Api.V1.Item.Crm
         /// <param name="quotationid">Unique identifier (uuid) of the CRMReviewQuotation</param>
         public global::ExactOnline.Api.Client.Api.V1.Item.Crm.ReviewQuotationWithQuotationid.ReviewQuotationWithQuotationidRequestBuilder ReviewQuotationWithQuotationid(Guid? quotationid)
         {
-            _ = quotationid ?? throw new ArgumentNullException(nameof(quotationid));
+            if(ReferenceEquals(quotationid, null)) throw new ArgumentNullException(nameof(quotationid));
             return new global::ExactOnline.Api.Client.Api.V1.Item.Crm.ReviewQuotationWithQuotationid.ReviewQuotationWithQuotationidRequestBuilder(PathParameters, RequestAdapter, quotationid);
         }
     }
