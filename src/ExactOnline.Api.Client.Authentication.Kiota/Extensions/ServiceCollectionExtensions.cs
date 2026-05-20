@@ -3,6 +3,7 @@ using ExactOnline.Api.Client.Authentication.Kiota;
 using ExactOnline.Api.Client.Authentication.Options;
 using ExactOnline.Api.Client.Middleware;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 
 // ReSharper disable once CheckNamespace
@@ -16,8 +17,8 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddExactOnlineKiotaAuthentication(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddExactOnlineAuthentication(configuration);
-        services.AddSingleton<ExactOnlineAuthenticationProvider>();
-        services.AddSingleton<ExactOnlineRateLimitHandler>();
+        services.TryAddTransient<ExactOnlineAuthenticationProvider>();
+        services.TryAddTransient<ExactOnlineRateLimitHandler>();
         services.AddServices();
 
         return services;
@@ -25,7 +26,7 @@ public static class ServiceCollectionExtensions
 
     private static IServiceCollection AddServices(this IServiceCollection services)
     {
-        return services.AddSingleton(sp =>
+        services.TryAddTransient(sp =>
         {
             var authenticationProvider = sp.GetRequiredService<ExactOnlineAuthenticationProvider>();
             var options = sp.GetRequiredService<IOptions<ExactOnlineOptions>>();
@@ -33,5 +34,7 @@ public static class ServiceCollectionExtensions
 
             return new ExactOnlineServiceClient(authenticationProvider, options.Value.BaseUrl, exactOnlineRateLimitHandler);
         });
+
+        return services;
     }
 }

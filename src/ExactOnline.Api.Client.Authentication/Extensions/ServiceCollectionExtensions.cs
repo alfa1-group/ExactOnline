@@ -3,6 +3,7 @@ using ExactOnline.Api.Client.Authentication.Implementations;
 using ExactOnline.Api.Client.Authentication.Interfaces;
 using ExactOnline.Api.Client.Authentication.Options;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection;
@@ -26,8 +27,8 @@ public static class ServiceCollectionExtensions
 
     private static IServiceCollection AddServices(this IServiceCollection services)
     {
-        services.AddSingleton<IExactTokenClient, ExactTokenClient>();
-        services.AddSingleton<IExactTokenService, ExactTokenService>();
+        services.TryAddTransient<IExactTokenClient, ExactTokenClient>();
+        services.TryAddTransient<IExactTokenService, ExactTokenService>();
 
         if (services.All(s => s.ServiceType != typeof(IExactTokenStorageService)))
         {
