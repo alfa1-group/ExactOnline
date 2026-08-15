@@ -369,7 +369,7 @@ internal partial class EndpointCrawler
             ReadOnly = true
         };
 
-        var errorContent = new Dictionary<string, OpenApiMediaType>
+        var errorContent = new Dictionary<string, IOpenApiMediaType>
         {
             { MediaTypeNames.Application.Json, new OpenApiMediaType { Schema = oDataErrorRef } }
         };
@@ -534,7 +534,7 @@ internal partial class EndpointCrawler
             var getResponse = new OpenApiResponse
             {
                 Description = $"{httpMethod} operation successful",
-                Content = new Dictionary<string, OpenApiMediaType>
+                Content = new Dictionary<string, IOpenApiMediaType>
                 {
                     {
                         MediaTypeNames.Application.Json, new OpenApiMediaType
@@ -562,7 +562,7 @@ internal partial class EndpointCrawler
             {
                 Description = $"The {baseSchemaName} entity to create.",
                 Required = true,
-                Content = new Dictionary<string, OpenApiMediaType>
+                Content = new Dictionary<string, IOpenApiMediaType>
                 {
                     { MediaTypeNames.Application.Json, new OpenApiMediaType { Schema = schemaRef } }
                 }
@@ -571,7 +571,7 @@ internal partial class EndpointCrawler
             var postResponse = new OpenApiResponse
             {
                 Description = $"{httpMethod} operation successful",
-                Content = new Dictionary<string, OpenApiMediaType>
+                Content = new Dictionary<string, IOpenApiMediaType>
                 {
                     {
                         MediaTypeNames.Application.Json, new OpenApiMediaType
@@ -653,7 +653,7 @@ internal partial class EndpointCrawler
                 var getResponse = new OpenApiResponse
                 {
                     Description = $"{httpMethod} operation successful",
-                    Content = new Dictionary<string, OpenApiMediaType>
+                    Content = new Dictionary<string, IOpenApiMediaType>
                     {
                         { MediaTypeNames.Application.Json, new OpenApiMediaType { Schema = responseRef } }
                     }
@@ -671,7 +671,7 @@ internal partial class EndpointCrawler
                 {
                     Description = $"The {baseSchemaName} entity to update.",
                     Required = true,
-                    Content = new Dictionary<string, OpenApiMediaType>
+                    Content = new Dictionary<string, IOpenApiMediaType>
                     {
                         { MediaTypeNames.Application.Json, new OpenApiMediaType { Schema = schemaRef } }
                     }

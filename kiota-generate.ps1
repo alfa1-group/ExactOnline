@@ -1,5 +1,7 @@
 ﻿# Kiota generation script for Exact Online API client in C#
 
+dotnet tool install --global Microsoft.OpenApi.Kiota
+
 $buildersGeneratedPath = "src/ExactOnline.Api.Client/Generated/Api/V1"
 $modelsPath = "./src/ExactOnline.Api.Client/Generated/Models"
 $extensionsModelsPath = "./src/ExactOnline.Api.Client/Extensions/Models"
